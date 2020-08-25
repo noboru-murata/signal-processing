@@ -1,6 +1,6 @@
 # Local IspellDict: de
 
-# SPDX-FileCopyrightText: 2018-2019 Jens Lechtenbörger
+# SPDX-FileCopyrightText: 2018-2020 Jens Lechtenbörger
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Diese Datei ist nicht für den direkten HTML-Export gedacht,
@@ -25,19 +25,22 @@ erzeugt und nutzen das HTML-Framework
   - Zoom mit Strg-Maus oder Alt-Maus
   - Suche mit Strg-Umschalt-F
 - PDF-Export
-  - Warum wollen Sie das machen?
-    - Die Quelldateien können im Texteditor kommentiert/ergänzt werden
-      - [[https://orgmode.org/][Org Mode]], reines Textformat
-  - Ändern der Browser-URL durch Hinzufügen von ~?print-pdf~ nach ~.html~,
+  - Ändern der Browser-URL durch Hinzufügen von ~?print-pdf~ nach ~.html~
+    (z. B. ~https://oer.gitlab.io/OS/Operating-Systems-JiTT.html?print-pdf~),
     dann in PDF-Datei drucken (Strg-p)
+    - Reveal.js gibt an, dass dies mit dem Chromium/Chrome funktioniert,
+      [[https://revealjs.com/pdf-export/][vorgeschlagene Einstellungen]]
   - Je nach Projekt sind möglicherweise bereits PDF-Dateien aus den
     Quelldateien generiert worden.  In diesem Fall kann die Endung
     ~.html~ der URL einer Präsentation durch ~.pdf~ ersetzt werden.
+  - Alternativ können Sie statt eines PDF-Exports die Quelldateien im
+    Texteditor kommentieren oder ergänzen
+      - [[https://orgmode.org/][Org Mode]], reines Textformat
 - Offline-Verwendung
   - Präsentationen können als ZIP-Archive von Build-Pipelines ihrer
     Quellprojekte heruntergeladen werden
     - Archiv-Inhalte extrahieren, lokale HTML-Datei(en) im Browser öffnen
-    - Z. B. von [[https://gitlab.com/oer/OS/pipelines][Pipelines eines Kurses zu Betriebssystemen]]
+    - Z. B. von [[https://gitlab.com/oer/OS/-/pipelines][Pipelines eines Kurses zu Betriebssystemen]]
       durch Klick auf Download-Icon der aktuellsten Pipeline
   - Alternativ können Präsentationen lokal aus Quelldateien erzeugt werden
 - Audio
@@ -48,9 +51,10 @@ erzeugt und nutzen das HTML-Framework
         scheint überall zu funktionieren
     - Audio-Steuerung links unten (weitere Optionen wie
       Geschwindigkeit per Rechts-Klick)
+    - Taste „+“ startet und pausiert Ton
 - Notizen
   - Folien enthalten Notizen, wenn das Ordner-Symbol dargestellt wird
-    [[./reveal.js/css/theme/folder_inbox.png]]
+    [[./reveal.js/dist/theme/folder_inbox.png]]
     - Taste „v“ öffnet „Courseware-Ansicht“; alternativ öffnen Klick
       auf das Symbol sowie Taste „s“ die Vortragsansicht
       - Pop-Ups müssen für Vortragsansicht erlaubt werden
@@ -80,6 +84,20 @@ erzeugt und nutzen das HTML-Framework
       - Relativ zu anderer Präsentation (blau mit Symbol)
       - Relativ innerhalb selber Präsentation (blau), entweder zurück
         (◂) oder vorwärts (▸)
+  - Einige Studierende schlagen vor, Verweise zu entfernen.  Dies
+    lässt sich durch Hinzufügen von ~?hidelinks~ nach ~.html~ in der
+    URL konfigurieren, wodurch die meisten Verweise verborgen werden.
+    Zusätzlich können durch einen numerischen Wert wie ~?hidelinks=24~
+    verschiedene Arten von Verweisen basierend auf folgenden
+    Bit-Werten verborgen werden:
+    - 1: Verweise zu vorigen Folien
+    - 2: Verweise zu nachfolgenden Folien
+    - 4: Verweise zwischen Präsentationen
+    - 8: Verweise zu anderen Ressourcen unter ~oer.gitlab.io~
+    - 16: Externe Verweise
+    Beispielsweise werden mit ~?hidelinks=28~ (28 = 16 + 8 + 4) weder
+    externe Verweise (16) noch Verweise unter ~oer.gitlab.io~ (8) noch Verweise
+    zu anderen Präsentationen (4) angezeigt.
 
 Das Dokument
 [[https://gitlab.com/oer/oer.gitlab.io/blob/master/CONTRIBUTING.org][CONTRIBUTING.org]]
