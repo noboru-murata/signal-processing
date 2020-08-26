@@ -6,13 +6,11 @@ draft = false
 weight = 1009
 +++
 
-## 講義資料 {#講義資料}
+## スライド {#スライド}
 
-<iframe src="https://noboru-murata.github.io/signal-processing/slides/slide09.html"
-	width="800" height="500" frameborder="0"
-	allowfullscreen="allowfullscreen"
-	allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
-</iframe>
+{{< myslide base="signal-processing" name="slide09" >}}
 
--   [slide (html)](https://noboru-murata.github.io/probability-statistics/slides/slide09.html)
--   [handout (PDF)](https://noboru-murata.github.io/probability-statistics/pdfs/slide09.pdf)
+
+## ハンドアウト {#ハンドアウト}
+
+-   [PDF file](https://noboru-murata.github.io/signal-processing/pdfs/slide09.pdf)
