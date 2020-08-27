@@ -119,5 +119,14 @@
       <description>スライド    full size  ハンドアウト  PDF file  </description>
     </item>
     
+    <item>
+      <title>講義15</title>
+      <link>https://noboru-murata.github.io/signal-processing/page/lecture15/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/page/lecture15/</guid>
+      <description>楯スライド    full size  </description>
+    </item>
+    
   </channel>
 </rss>
