@@ -158,6 +158,33 @@
 ** 過去の試験問題
    5年分 Moodle に掲載しました．
 
+* スライドの使い方
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: ./post
+  :EXPORT_FILE_NAME: post2
+  :EXPORT_DATE: <2020-08-27 Thu>
+  :END:
+  スライドは
+  [[https://revealjs.com][reveal.js]]
+  を使って作っています．
+  
+  スライドを click して "?" を入力すると
+  shortcut key が表示されますが，
+  これ以外にも以下の key などが使えます．
+
+** フルスクリーン
+   - f フルスクリーン表示
+   - esc 元に戻る
+** 黒板
+   - w スライドと黒板の切り替え (toggle)
+   - x/y チョークの色の切り替え (巡回)
+   - c 消去
+** メモ書き
+   - e 編集モードの切り替え (toggle)
+   - x/y ペンの色の切り替え (巡回)
+   - c 消去
+  
+
 * COMMENT ローカル変数
 # Local Variables:
 # eval: (org-hugo-auto-export-mode)
