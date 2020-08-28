@@ -142,14 +142,6 @@
 ** ハンドアウト
    - [[github:pdfs/slide14.pdf][PDF file]]
 
-* 講義15
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture15
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-** 楯スライド
-   #+html: {{< myslide "https://drive.google.com/file/d/1HbgaMbH-qW82JTOn1femOME9cZ0pFQ5w/preview" >}}
-
 * COMMENT お知らせ
   おしらせは以下を利用     
 
