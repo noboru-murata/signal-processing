@@ -6,18 +6,15 @@
     <description>Recent content in Pages on 信号処理</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://noboru-murata.github.io/signal-processing/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/signal-processing/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>講義1</title>
       <link>https://noboru-murata.github.io/signal-processing/page/lecture01/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture01/</guid>
-      <description>スライド    full size  ハンドアウト  PDF file  </description>
+      <description>&amp;lt;2021-04-06 Tue&amp;gt;
+スライド    full size  ハンドアウト  PDF file  </description>
     </item>
     
     <item>
@@ -26,7 +23,8 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture02/</guid>
-      <description>スライド    full size  ハンドアウト  PDF file  </description>
+      <description>&amp;lt;2021-04-06 Tue&amp;gt;
+スライド    full size  ハンドアウト  PDF file  </description>
     </item>
     
     <item>
@@ -66,6 +64,15 @@
     </item>
     
     <item>
+      <title>講義7</title>
+      <link>https://noboru-murata.github.io/signal-processing/page/lecture07/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/page/lecture07/</guid>
+      <description>理解度の確認</description>
+    </item>
+    
+    <item>
       <title>講義8</title>
       <link>https://noboru-murata.github.io/signal-processing/page/lecture08/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
@@ -93,6 +100,15 @@
     </item>
     
     <item>
+      <title>講義11</title>
+      <link>https://noboru-murata.github.io/signal-processing/page/lecture11/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/page/lecture11/</guid>
+      <description>理解度の確認</description>
+    </item>
+    
+    <item>
       <title>講義12</title>
       <link>https://noboru-murata.github.io/signal-processing/page/lecture12/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
@@ -117,6 +133,15 @@
       
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture14/</guid>
       <description>スライド    full size  ハンドアウト  PDF file  </description>
+    </item>
+    
+    <item>
+      <title>講義15</title>
+      <link>https://noboru-murata.github.io/signal-processing/page/lecture15/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/page/lecture15/</guid>
+      <description>理解度の確認</description>
     </item>
     
   </channel>

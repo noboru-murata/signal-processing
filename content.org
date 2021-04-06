@@ -1,8 +1,9 @@
 #+HUGO_BASE_DIR: ./
 #+HUGO_SECTION: page
 #+HUGO_WEIGHT: auto
-#+author: Noboru Murata
-#+link: github https://noboru-murata.github.io/signal-processing/
+#+AUTHOR: Noboru Murata
+#+LINK: github https://noboru-murata.github.io/signal-processing/
+#+STARTUP: hidestars content
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
@@ -19,7 +20,7 @@
    - [[github:pdfs/signal-processing.pdf][信号処理]]
    随時修正します．
 
-** 参考資料   
+** 参考資料
   必要な参考書については講義中に指示します．
   
 * 講義1
@@ -27,8 +28,9 @@
   :EXPORT_FILE_NAME: lecture01
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
+  <2021-04-06 Tue>
 ** スライド
-   #+html: {{< myslide base="signal-processing" name="slide01" >}}
+   {{< myslide base="signal-processing" name="slide01" >}}
 ** ハンドアウト
    - [[github:pdfs/slide01.pdf][PDF file]]
 
@@ -37,8 +39,9 @@
   :EXPORT_FILE_NAME: lecture02
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
+  <2021-04-06 Tue>
 ** スライド
-   #+html: {{< myslide base="signal-processing" name="slide02" >}}
+   {{< myslide base="signal-processing" name="slide02" >}}
 ** ハンドアウト
    - [[github:pdfs/slide02.pdf][PDF file]]
 
@@ -82,6 +85,12 @@
 ** ハンドアウト
    - [[github:pdfs/slide06.pdf][PDF file]]
 
+* 講義7
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: lecture07
+  :EXPORT_DATE: <2021-04-01 Thu>
+  :END:
+  理解度の確認
 * 講義8
   :PROPERTIES:
   :EXPORT_FILE_NAME: lecture08
@@ -112,6 +121,12 @@
 ** ハンドアウト
    - [[github:pdfs/slide10.pdf][PDF file]]
 
+* 講義11
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: lecture11
+  :EXPORT_DATE: <2021-04-01 Thu>
+  :END:
+  理解度の確認
 * 講義12
   :PROPERTIES:
   :EXPORT_FILE_NAME: lecture12
@@ -141,6 +156,13 @@
    #+html: {{< myslide base="signal-processing" name="slide14" >}}
 ** ハンドアウト
    - [[github:pdfs/slide14.pdf][PDF file]]
+
+* 講義15
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: lecture15
+  :EXPORT_DATE: <2021-04-01 Thu>
+  :END:
+  理解度の確認
 
 * COMMENT お知らせ
   おしらせは以下を利用     
