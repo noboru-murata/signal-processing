@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-06 14:30:15 mura>
+# Time-stamp: <2021-04-07 16:23:28 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -33,19 +33,19 @@
      *ベクトル空間 \(V\)* という．\\
      (体 \(K\) はベクトル空間 \(V\) の *係数体* と呼ぶ．)
      #+end_quote
-     #+reveal: split
+   #+reveal: split
    - ベクトル空間の満たすべき性質
      #+begin_quote
-     1. \(a,b\in V\;\Rightarrow\;a+b\in V\)
-     2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
-     3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
-     4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
-     5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
-     6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
-     7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
-     8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
-     9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
-     10. \(\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a\) (分配則)
+     1. \(a,b\in V\,\Rightarrow\,a+b\in V\)
+     2. \(a,b,c\in V\,\Rightarrow\,(a+b)+c=a+(b+c)\) (結合則)
+     3. \(a,b\in V\,\Rightarrow\,a+b=b+a\) (交換則)
+     4. \(\exists0\in V\,\text{s.t.}\,\forall a\in V,\,a+0=a\) (零元)
+     5. \(\forall a\in V\,\Rightarrow\,\exists -a\in V\,\text{s.t.}\,a+(-a)=0\) (逆元)
+     6. \(\forall \lambda\in K,\forall a\in V\,\Rightarrow\,\lambda a\in V\) (スカラ倍)
+     7. \(\forall \lambda,\mu\in K,\forall a\in V\,\Rightarrow\,(\lambda\mu)a=\lambda(\mu a)\) (結合則)
+     8. \(\exists 1\in K\,\text{s.t.}\forall a\in V,\,1a=a\) (\(K\) の単位元)
+     9. \(\forall\lambda\in K,\forall a,b\in V\,\Rightarrow\,\lambda(a+b)=\lambda a+\lambda b\) (分配則)
+     10. \(\forall\lambda,\mu\in K,\forall a\in V\,\Rightarrow\,(\lambda+\mu)a=\lambda a+\mu a\) (分配則)
      #+end_quote
 
 ** ベクトル空間の例
@@ -67,7 +67,7 @@
      和は成分ごとの和で，
      スカラ倍は各成分のスカラ倍で定義される．
      #+end_quote
-     #+reveal: split
+   #+reveal: split
    - 関数空間 \(C^{m}[0,1]\)
      #+begin_quote
      区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
@@ -126,52 +126,54 @@
      #+end_src
      を \(a_{1},\dotsc,a_{k}\) の *線形結合* という．
      #+end_quote
+
 ** 線形従属
-	- 定義
-	  #+begin_quote
-	  "全てが \(0\)" ではないある係数の組
-	  \(\lambda_{1},\dotsc,\lambda_{k}\) に対して
-	  #+begin_src latex
-	    \begin{equation}
-	      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-	    \end{equation}
-	  #+end_src
-	  となるとき
-	  \(\{a_{1},\dotsc,a_{k}\}\) は *線形従属* であるという．
-	  また
-	  #+begin_src latex
-	    \begin{equation}
-	      b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
-	    \end{equation}
-	  #+end_src
-	  となるとき
-	  \(b\) は \(\{a_{1},\dotsc,a_{k}\}\) に *線形従属* であるという．
-	  #+end_quote
+   - 定義
+     #+begin_quote
+     "全てが \(0\)" ではないある係数の組
+     \(\lambda_{1},\dotsc,\lambda_{k}\) に対して
+     #+begin_src latex
+       \begin{equation}
+	 \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+       \end{equation}
+     #+end_src
+     となるとき，
+     \(\{a_{1},\dotsc,a_{k}\}\) は *線形従属* であるという．
+
+     また
+     #+begin_src latex
+       \begin{equation}
+	 b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
+       \end{equation}
+     #+end_src
+     となるとき，
+     \(b\) は \(\{a_{1},\dotsc,a_{k}\}\) に *線形従属* であるという．
+     #+end_quote
 
 ** 線形独立
-	- 定義
-	  #+begin_quote
-	  #+begin_src latex
-	    \begin{equation}
-	      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-	    \end{equation}
-	  #+end_src
-	  となるのが
-	  \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
-	  に限られるとき，
-	  \(\{a_{1},\dotsc,a_{k}\}\) は *線形独立* であるという．
-	  #+end_quote
+   - 定義
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+       \end{equation}
+     #+end_src
+     となるのが
+     \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
+     に限られるとき，
+     \(\{a_{1},\dotsc,a_{k}\}\) は *線形独立* であるという．
+     #+end_quote
 
-	  # ** 注意
-	  #    - 線形従属なベクトル\(b\)
-	  #      #+begin_src latex
-	  #        \begin{equation}
-	  # 	 b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
-	  #        \end{equation}
-	  #      #+end_src
-	  #    を考えたとき，特殊な例は\(b=0\)の場合で，
-	  #    \(k+1\)個のベクトル
-	  #    \(\{0,a_{1},\dotsc,a_{k}\}\)は常に線形従属となる．
+     # ** 注意
+     #    - 線形従属なベクトル\(b\)
+     #      #+begin_src latex
+     #        \begin{equation}
+     # 	 b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
+     #        \end{equation}
+     #      #+end_src
+     #    を考えたとき，特殊な例は\(b=0\)の場合で，
+     #    \(k+1\)個のベクトル
+     #    \(\{0,a_{1},\dotsc,a_{k}\}\)は常に線形従属となる．
 
 ** 線形従属・独立の例
    - 関数空間 \(C^{m}[0,1]\)
@@ -242,11 +244,11 @@
      - \(\mathrm{rank}(S\cup\{b\})=\mathrm{rank}S\) または \(\mathrm{rank}S+1\)
      - \(\forall b_{1},b_{2}\) に対して
        #+begin_src latex
-	 \begin{align}
-	   \mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})&=\mathrm{rank}S\\
-                                                                      &\;\Rightarrow\;
-                                                                        \mathrm{rank}(S\cup\{b_{1},b_{2}\})=\mathrm{rank}S
-	 \end{align}
+         \begin{multline}
+	   \mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})=\mathrm{rank}S\\
+           \;\Rightarrow\;
+           \mathrm{rank}(S\cup\{b_{1},b_{2}\})=\mathrm{rank}S
+         \end{multline}
        #+end_src
      #+end_quote
 
@@ -256,6 +258,7 @@
    - 定義
      #+begin_quote
      \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
+
      \(V\) の階数，すなわち極大独立集合の基数を
      \(V\) の *次元 (dimension)* という．
      #+end_quote
@@ -273,7 +276,7 @@
        \end{align}
      #+end_src
      #+end_quote
-     #+reveal: split
+   #+reveal: split
    - 定理
      #+begin_quote
      \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
@@ -296,7 +299,7 @@
      となることより，
      \(\lambda_{i}=\mu_{i}\) となることがわかる．
      #+end_quote
-     #+reveal: split
+   #+reveal: split
    - 定理
      #+begin_quote
      \(B=\{u_{1},\dotsc,u_{n}\}\), \(u_{i}\in V_{n}\) とする．
@@ -336,7 +339,7 @@
      \(\dim K^{n}=n\) となる．\\
      \(e_{k}\) を自然基底と呼ぶことがある．
      #+end_quote
-     #+reveal: split
+   #+reveal: split
    - 関数空間 \(C^{m}[0,1]\)
      #+begin_quote
      \(C^{m}[0,1]\) において，
