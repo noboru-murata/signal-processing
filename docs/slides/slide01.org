@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-07 16:23:28 mura>
+# Time-stamp: <2021-04-09 08:47:41 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -100,7 +100,7 @@
      - \(V=\{f\in C^{3}(-\pi,\pi)\}\) \\
        (\((-\pi,\pi)\) 上で定義された3階微分可能な関数の集合)
      - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\)
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -201,7 +201,7 @@
      - \(\{1,\;\sin(x),\;\sin^{2}(x)\}\quad(x\in\mathbb{R})\)
      - \(\{1,\;\log(x),\;\log(2x)\}\quad(x>0)\)
      - \(\{\exp(ix),\exp(3ix),\exp(5ix)\}\quad(x\in\mathbb{R})\)
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -322,7 +322,7 @@
      - 数ベクトル空間 \(K^{n}\) (\(K\) は体)
      - 関数空間 \(C^{m}[0,1]\)
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
