@@ -6,6 +6,9 @@ draft = false
 weight = 1004
 +++
 
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-16 Fri&gt; </span></span> 更新
+
+
 ## スライド {#スライド}
 
 {{< myslide base="signal-processing" name="slide03" >}}

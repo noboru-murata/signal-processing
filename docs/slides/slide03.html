@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/font/source-sans-pro/source-sans-pro.css"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
 
@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">正規直交基底</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 講義3</p>
+    <p>信号処理 - 講義3</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,21 +47,21 @@
 </section>
 
 <section>
-<section id="slide-org0516235">
-<h2 id="org0516235">復習</h2>
-<div class="outline-text-2" id="text-org0516235">
+<section id="slide-org5592e84">
+<h2 id="org5592e84">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org5592e84">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge5e404c">
-<h3 id="orge5e404c">ベクトル空間</h3>
+<section id="slide-orga0eea9e">
+<h3 id="orga0eea9e">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
 </p>
 <blockquote>
 <ol>
-<li>\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)</li>
+<li>\(a,b\in V\;\Rightarrow\;a+b\in V\)</li>
 <li>\(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)</li>
 <li>\(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)</li>
 <li>\(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)</li>
@@ -78,8 +78,8 @@
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbf8d34b">
-<h3 id="orgbf8d34b">内積空間</h3>
+<section id="slide-orgfee2c95">
+<h3 id="orgfee2c95">内積空間</h3>
 <ul>
 <li><p>
 内積の定義
@@ -117,8 +117,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org829989c">
-<h3 id="org829989c">Hilbert 空間</h3>
+<section id="slide-org27497d9">
+<h3 id="org27497d9">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
@@ -130,7 +130,7 @@
 </p>
 <div>
 \begin{equation}
-  \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列)}
+  \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
 \end{equation}
 
 </div>
@@ -147,7 +147,7 @@
 </p>
 <blockquote>
 <p>
-内積空間 \(\mathcal{H}\) がノルムに関して完備なとき
+内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
 <b>Hilbert 空間</b>
 という．
 </p>
@@ -157,8 +157,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4054f75">
-<h3 id="org4054f75">Hilbert 空間の例</h3>
+<section id="slide-org8455f3d">
+<h3 id="org8455f3d">Hilbert 空間の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間 (無限次元数ベクトル空間)
@@ -215,12 +215,19 @@
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgcc29e19" data-background="#fef4f4">
-<h2 id="orgcc29e19">演習</h2>
+<section id="slide-org5d92a11" data-background="#fef4f4">
+<h2 id="org5d92a11">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org73fe86d" data-background="#fef4f4">
+<h3 id="org73fe86d">練習問題</h3>
+<ul>
+<li>以下の問に答えよ
 <ul>
 <li>係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
 以下を展開せよ．
@@ -241,56 +248,21 @@
 
 </ul></li>
 
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org29b9512" data-background="#fef4f4">
-<h3 id="org29b9512">ヒント</h3>
-<ul>
-<li>定義に則って計算すればよい</li>
+</ul></li>
 
 </ul>
-<ul>
-<li><p>
-定義に則って計算すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle
-  &=\alpha_1\langle u_1, v\rangle
-  +\alpha_2\langle u_2, v\rangle\\
-  \langle u, \beta_1 v_1+\beta_2 v_2\rangle
-  &=\overline{\langle\beta_1 v_1+\beta_2 v_2, u\rangle}\\
-  &=\overline{\beta_1}\cdot\overline{\langle v_1, u\rangle}
-    +\overline{\beta_2}\cdot\overline{\langle v_2, u\rangle}\\
-  &=\overline{\beta_1}\langle u, v_1\rangle
-    +\overline{\beta_2}\langle u, v_2\rangle\\
-  \langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle
-  &=\alpha_1\overline{\beta_1}\langle u_1, v_1\rangle
-    +\alpha_1\overline{\beta_2}\langle u_1, v_2\rangle\\
-  &\quad+\alpha_2\overline{\beta_1}\langle u_2, v_1\rangle
-    +\alpha_2\overline{\beta_2}\langle u_2, v_2\rangle
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgfd32fa5">
-<h2 id="orgfd32fa5">正規直交系</h2>
-<div class="outline-text-2" id="text-orgfd32fa5">
+<section id="slide-org931a4b4">
+<h2 id="org931a4b4">正規直交系</h2>
+<div class="outline-text-2" id="text-org931a4b4">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4707dc6">
-<h3 id="org4707dc6">正規直交系</h3>
+<section id="slide-org3fb8af7">
+<h3 id="org3fb8af7">正規直交系</h3>
 <ul>
 <li><p>
 定義
@@ -339,8 +311,8 @@ Hilbert空間 \(\mathcal{H}\) の
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8e546d5">
-<h3 id="org8e546d5">正規直交系の例</h3>
+<section id="slide-orgb30e9bd">
+<h3 id="orgb30e9bd">正規直交系の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間の自然な系
@@ -400,8 +372,8 @@ Hilbert空間 \(\mathcal{H}\) の
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org99598eb">
-<h3 id="org99598eb">Hilbert空間の正規直交系</h3>
+<section id="slide-org3dfb0af">
+<h3 id="org3dfb0af">Hilbert 空間の正規直交系</h3>
 <ul>
 <li><p>
 稠密の定義
@@ -593,8 +565,8 @@ Hilbert空間 \(\mathcal{H}\) の
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4204cb5">
-<h3 id="org4204cb5">正規直交系の存在</h3>
+<section id="slide-org8e58aae">
+<h3 id="org8e58aae">正規直交系の存在</h3>
 <ul>
 <li><p>
 定理
@@ -655,8 +627,8 @@ Gram-Schmidt の直交化法
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcd4d948">
-<h3 id="orgcd4d948">正規直交系の構成例</h3>
+<section id="slide-org5d3311e">
+<h3 id="org5d3311e">正規直交系の構成例</h3>
 <ul>
 <li><p>
 問題
@@ -684,12 +656,19 @@ Gram-Schmidt の直交化法
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgb17cd87" data-background="#fef4f4">
-<h2 id="orgb17cd87">演習</h2>
+<section id="slide-org6eed383" data-background="#fef4f4">
+<h2 id="org6eed383">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgeaff20e" data-background="#fef4f4">
+<h3 id="orgeaff20e">練習問題</h3>
+<ul>
+<li>以下の問に答えよ
 <ul>
 <li>Gram-Schmidt の直交化法において
 \(\phi_{n}\)
@@ -701,57 +680,22 @@ Gram-Schmidt の直交化法
 以下の集合から正規直交系を構成せよ．
 </p>
 <div>
-\begin{align}
-  \{1,\sin(2\pi x),\cos(2\pi x)\}\in& L^{2}[0,1],\\
-  &\langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
-\end{align}
+\begin{equation}
+  \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}[0,1],
+\end{equation}
+
+</div>
+<p>
+ただし内積は以下で定めるものとする
+</p>
+<div>
+\begin{equation}
+  \langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
+\end{equation}
 
 </div></li>
 
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgc0cbec6" data-background="#fef4f4">
-<h3 id="orgc0cbec6">ヒント</h3>
-<ul>
-<li><p>
-\(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\) が
-直交しているとして内積を計算すればよい(帰納法)．
-たとえば
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle\phi_{n},\phi_{1}\rangle
-  &=\frac{1}{\|\phi'_{n}\|}
-    \langle\psi_{n}-\sum_{k=1}^{n-1}\langle\psi_{n},\phi_{k}\rangle\phi_{k},\phi_{1}\rangle\\
-  &=\frac{1}{\|\phi'_{n}\|}
-    \left(\langle\psi_{n},\phi_{1}\rangle
-    -\langle\psi_{n},\phi_{1}\rangle\langle\phi_{1},\phi_{1}\rangle\right)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-定義に従って計算すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \phi'_{2}&=x^{2}-\frac{1}{3}\\
-  \|\phi'_{2}\|^{2}&=\int_{-1}^{1}\left(x^{2}-\frac{1}{3}\right)^{2}dx\\
-  &=\frac{8}{45}
-\end{align}
-
-</div>
-</blockquote></li>
+</ul></li>
 
 </ul>
 
@@ -759,14 +703,14 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org060b598">
-<h2 id="org060b598">完全正規直交系</h2>
-<div class="outline-text-2" id="text-org060b598">
+<section id="slide-org08d1b6d">
+<h2 id="org08d1b6d">完全正規直交系</h2>
+<div class="outline-text-2" id="text-org08d1b6d">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5f6d216">
-<h3 id="org5f6d216">正規直交系の性質</h3>
+<section id="slide-org93da9d9">
+<h3 id="org93da9d9">正規直交系の性質</h3>
 <ul>
 <li><p>
 正規直交系 \(\{\phi_{k}\}_{k=1,2,\dotsc}\)
@@ -803,8 +747,8 @@ Gram-Schmidt の直交化法
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfce9525">
-<h3 id="orgfce9525">Bessel の不等式</h3>
+<section id="slide-org526cbaf">
+<h3 id="org526cbaf">Bessel の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -856,8 +800,8 @@ Gram-Schmidt の直交化法
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8466499">
-<h3 id="org8466499">完全性</h3>
+<section id="slide-orgccc36a3">
+<h3 id="orgccc36a3">完全性</h3>
 <ul>
 <li><p>
 定義
@@ -896,8 +840,8 @@ Gram-Schmidt の直交化法
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb6c3091">
-<h3 id="orgb6c3091">完全性の同値な条件</h3>
+<section id="slide-org1ebbd4b">
+<h3 id="org1ebbd4b">完全性の同値な条件</h3>
 <ul>
 <li><p>
 定理
@@ -935,8 +879,8 @@ Gram-Schmidt の直交化法
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5496477">
-<h3 id="org5496477">完全正規直交系の性質</h3>
+<section id="slide-orgc19f681">
+<h3 id="orgc19f681">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
@@ -960,8 +904,8 @@ Gram-Schmidt の直交化法
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdec7786">
-<h3 id="orgdec7786">完全正規直交系の例</h3>
+<section id="slide-org8b4d830">
+<h3 id="org8b4d830">完全正規直交系の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間
@@ -999,66 +943,25 @@ Gram-Schmidt の直交化法
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org11934e5" data-background="#fef4f4">
-<h2 id="org11934e5">演習</h2>
+<section id="slide-org15a376f" data-background="#fef4f4">
+<h2 id="org15a376f">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org957b8ce" data-background="#fef4f4">
+<h3 id="org957b8ce">練習問題</h3>
+<ul>
+<li>以下の問に答えよ
 <ul>
 <li>\(L^{2}(-\pi,\pi)\) 空間において 
 \(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．</li>
 <li>\(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．</li>
 
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orge88f97c" data-background="#fef4f4">
-<h3 id="orge88f97c">ヒント</h3>
-<ul>
-<li><p>
-任意の \(j,k\) について内積を計算してみれば良い
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle\phi_{j},\phi_{k}\rangle
-  &=\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{ijx}\overline{e^{ikx}}dx
-  =\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{i(j-k)x}dx\\
-  &=
-    \begin{cases}
-      \frac{1}{2\pi i(j-k)} 
-      \left[e^{i(j-k)x}\right]_{-\pi}^{\pi},& j\not=k\\
-      \frac{1}{2\pi}\left[x\right]_{-\pi}^{\pi}, &j=k
-    \end{cases}\\
-  &=\delta_{jk}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-定義域が変わっただけなので，同じ関数形を拡大縮小すればよい
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \phi_{k}(x)
-  =a e^{ik\pi x},\;k=0,\pm1,\pm2,\dotsc
-\end{equation}
-
-</div>
-
-<p>
-正規性を満たすように係数 \(a\) を決めればよい．
-</p>
-</blockquote></li>
+</ul></li>
 
 </ul>
 
@@ -1066,8 +969,8 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org0045f67">
-<h2 id="org0045f67">まとめ</h2>
+<section id="slide-org3a20dff">
+<h2 id="org3a20dff">今回のまとめ</h2>
 <ul>
 <li>正規直交系
 <ul>
@@ -1128,7 +1031,7 @@ center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
-mouseWheel: true,
+mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
@@ -1137,7 +1040,7 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }},
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
@@ -1145,7 +1048,8 @@ plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 // Optional libraries used to extend reveal.js
 dependencies: [
 { src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'}]
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>
