@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-16 11:40:30 mura>
+# Time-stamp: <2021-04-16 11:49:19 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -111,11 +111,12 @@
    - ヒント
      - 条件の線形性として，\(h=f+g\)のとき
        #+begin_src latex
-         \begin{multline}
-           h^{(2)}+h^{(1)}+h\\
-           =(f^{(2)}+f^{(1)}+f)
-           +(g^{(2)}+g^{(1)}+g)
-         \end{multline}
+         \begin{align}
+           &h^{(2)}+h^{(1)}+h\\
+           &\quad
+             =(f^{(2)}+f^{(1)}+f)
+             +(g^{(2)}+g^{(1)}+g)
+         \end{align}
        #+end_src
        がどうなるか考えればよい
      - 適当な\(x\)を用いて連立方程式の解を考えればよい
