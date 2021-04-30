@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-20 14:42:55 mura>
+# Time-stamp: <2021-04-30 11:08:00 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -108,6 +108,8 @@
    :reveal_background: #fef4f4
    :END:
    - 条件の線形性として，\(h=f+g\)のとき
+     がどうなるか考えればよい
+     #+begin_quote
      #+begin_src latex
        \begin{align}
 	 &h^{(2)}+h^{(1)}+h\\
@@ -116,13 +118,15 @@
 	   +(g^{(2)}+g^{(1)}+g)
        \end{align}
      #+end_src
-     がどうなるか考えればよい
+     #+end_quote
    - 適当な\(x\)を用いて連立方程式の解を考えればよい
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 \alpha f(x) + \beta g(x) + \gamma h(x) = 0
        \end{equation}
      #+end_src
+     #+end_quote
    - 線形独立な要素がいくつ取れるかを考えればよい
 
 
@@ -319,14 +323,15 @@
        Cauchy 列を考えるということ
      - 完備の厳密な定義は解析学の本を参照
 
-** Hilbert 空間の例 (1/2)
+** Hilbert 空間の例
    - \(l^{2}\) 空間 (無限次元数ベクトル空間)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 l^{2}=
-	 \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\; 
-	   \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
+	 \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
+           \|u\|<\infty
+	   %\sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
 	 \right\}
        \end{equation}
      #+end_src
@@ -334,7 +339,11 @@
        \begin{equation}
 	 \langle u,v\rangle
 	 =
-	 \sum_{i=1}^{\infty}u_{i}\overline{v_{i}}
+	 \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
+         \quad
+         \|u\|^{2}
+         =
+         \sum_{i=1}^{\infty}|u_{i}|^{2}.
        \end{equation}
      #+end_src
      #+end_quote
@@ -343,15 +352,15 @@
        により，条件(ノルムが有限の値を持つ)から必ず内積の値は存在
      - 完備性の証明はかなり面倒．
        興味のあるものは成書を参照
-
-** Hilbert 空間の例 (2/2)
+   #+reveal: split
    - \(L^{2}\) 空間
      #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 L^{2}(\Omega)=
 	 \left\{
-	   f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+	   f\:\big|\:\|f\|<\infty
+	   %f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
 	 \right\}
        \end{equation}
      #+end_src
@@ -359,10 +368,16 @@
        \begin{equation}
 	 \langle f,g\rangle
 	 =
-	 \int_{\Omega}f(x)\overline{g(x)}dx
+	 \int_{\Omega}f(x)\overline{g(x)}dx,
+         \quad
+         \|f\|^{2}
+         =
+         \int_{\Omega}|f(x)|^{2}dx
        \end{equation}
      #+end_src
      #+end_quote
+     - 今後扱う信号の空間に対応する
+     - ノルムが有界であることは信号の物理的な性質と関係する
 
 
 * 演習

@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-09 08:47:41 mura>
+# Time-stamp: <2021-04-30 10:59:49 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -205,15 +205,17 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 線形結合
+   - 線形結合を考え，
+     適当な\(x\)の値で \(\alpha,\beta,\gamma\) を解いてみればよい
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \alpha f(x) + \beta g(x) + \gamma h(x) = 0
        \end{equation}
      #+end_src
-     を考え，適当な\(x\)の値で \(\alpha,\beta,\gamma\) を解いてみればよい
+     #+end_quote
      - \(\{1,\;\log(x),\;\log(2x)\}=\{1,\;\log(x),\;\log(2)+\log(x)\}\)
-       なので，独立でない
+       なので，独立ではない
 
 
 * 階数

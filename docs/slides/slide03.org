@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-21 11:24:40 mura>
+# Time-stamp: <2021-04-30 11:12:00 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -413,6 +413,7 @@
      と直交することを示せ．
    - 前の例の \(\phi_{2}\) (2次関数から作られる) を求めよ．
    - 以下の集合から正規直交系を構成せよ．
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}[0,1],
@@ -422,6 +423,7 @@
 	 \langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
        \end{equation}
      #+end_src
+     #+end_quote
 
 ** 解答例
    :PROPERTIES:
@@ -648,12 +650,14 @@
   #+reveal: split 
   - 完全正規直交系
     - Parseval の等式を満たす正規直交系
+      #+begin_quote
       #+begin_src latex
         \begin{equation}
           \forall u\in\mathcal{H}\;\Rightarrow\;
           \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
         \end{equation}
       #+end_src
+      #+end_quote
     - 完全正規直交系の存在: 
       可分な Hilbert 空間には完全正規直交系が存在する
     - Hilbert 空間の表現:
