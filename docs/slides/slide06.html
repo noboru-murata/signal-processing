@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/font/source-sans-pro/source-sans-pro.css"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
 
@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">Fourier 変換</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 講義6</p>
+    <p>信号処理 - 講義6</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org7589065">
-<h2 id="org7589065">復習</h2>
-<div class="outline-text-2" id="text-org7589065">
+<section id="slide-orga2ef6c3">
+<h2 id="orga2ef6c3">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orga2ef6c3">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgda9d098">
-<h3 id="orgda9d098">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-org9c60359">
+<h3 id="org9c60359">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -84,8 +84,8 @@ Hilbert 空間
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org58643ba">
-<h3 id="org58643ba">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-orgfd40bfd">
+<h3 id="orgfd40bfd">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -125,8 +125,8 @@ Hilbert 空間
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdebbad7">
-<h3 id="orgdebbad7">Fourier 級数展開</h3>
+<section id="slide-org117541a">
+<h3 id="org117541a">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -169,12 +169,17 @@ Fourier級数展開
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgcd79a41" data-background="#fef4f4">
-<h2 id="orgcd79a41">演習</h2>
+<section id="slide-orgfaf5a92" data-background="#fef4f4">
+<h2 id="orgfaf5a92">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgff67a67" data-background="#fef4f4">
+<h3 id="orgff67a67">練習問題</h3>
 <ul>
 <li>以下の問に答えよ．
 <ul>
@@ -199,62 +204,14 @@ Fourier 級数展開せよ．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5b812e0" data-background="#fef4f4">
-<h3 id="org5b812e0">解答例</h3>
-<ul>
-<li>関数 \(\cos(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．</li>
-<li><p>
-積分計算は \(n=\pm1\) で場合分けが必要となる．
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  f(x)=\sum_{n=-\infty}^{\infty}c_{n}e^{inx}
-\end{equation}
-
-</div>
-
-<div>
-\begin{align}
-  c_{n}
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\pi/2}^{\pi/2}
-    \frac{e^{ix}+e^{-ix}}{2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
-  &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{ix}+e^{-ix})e^{-inx}dx\\
-  &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{-i(n-1)x}+e^{-i(n+1)x})dx
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-Fourier 級数展開
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x)
-  &=\frac{1}{4}e^{-ix}+\frac{1}{4}e^{ix}
-    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{inx}\\
-  &=\frac{1}{4}e^{-ix}+\frac{1}{4}e^{ix}
-    +\sum_{m=-\infty}^{\infty}\frac{(-1)^{m}}{\pi(1-4m^{2})}e^{2imx}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
 </section>
 <section>
-<section id="slide-orgd101029" data-background="#fef4f4">
-<h2 id="orgd101029">演習</h2>
+<section id="slide-orgbf370c6" data-background="#fef4f4">
+<h2 id="orgbf370c6">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc361cc2" data-background="#fef4f4">
+<h3 id="orgc361cc2">練習問題</h3>
 <ul>
 <li><p>
 以下の問に答えよ．
@@ -289,77 +246,16 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4cbb065">
-<h3 id="org4cbb065">解答例</h3>
-<ul>
-<li><p>
-周期
-</p>
-<blockquote>
-<p>
-区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
-</p>
-<div>
-\begin{equation}
-  \alpha=\frac{2\pi}{T}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
 </section>
 <section>
-<ul>
-<li><p>
-正規化
-</p>
-<blockquote>
-<p>
-正規化定数を
-\(c_{n}(> 0)\) とするとき，
-内積の定義より
-</p>
-<div>
-\begin{equation}
-  |c_{n}|^{2}\int_{-\frac{T}{2}}^{\frac{T}{2}}|e^{\frac{2\pi inx}{T}}|^{2}dx
-  =|c_{n}|^{2}T
-\end{equation}
-
-</div>
-
-<p>
-であるから
-</p>
-<div>
-\begin{equation}
-  \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
-  x\in\left[-\frac{T}{2},\frac{T}{2}\right],\;
-  n=0,\pm1,\pm2,\dotsc
-\end{equation}
-
-</div>
-
-<p>
-となる．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org336b9ed">
-<h2 id="org336b9ed">Fourier変換</h2>
-<div class="outline-text-2" id="text-org336b9ed">
+<section id="slide-org157eb18">
+<h2 id="org157eb18">Fourier変換</h2>
+<div class="outline-text-2" id="text-org157eb18">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org01748eb">
-<h3 id="org01748eb">Fourier級数の一般化</h3>
+<section id="slide-orga444f59">
+<h3 id="orga444f59">Fourier級数の一般化</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の場合
@@ -525,8 +421,8 @@ Riemann 和は
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4819cad">
-<h3 id="org4819cad">Fourier 変換と反転公式</h3>
+<section id="slide-orgbb2f5cb">
+<h3 id="orgbb2f5cb">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -560,8 +456,8 @@ Riemann 和は
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7d2fa66">
-<h3 id="org7d2fa66">多次元 Fourier 変換</h3>
+<section id="slide-org12d1a4b">
+<h3 id="org12d1a4b">多次元 Fourier 変換</h3>
 <ul>
 <li><p>
 d次元の場合
@@ -601,12 +497,17 @@ d次元の場合
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgbcb4365" data-background="#fef4f4">
-<h2 id="orgbcb4365">演習</h2>
+<section id="slide-org1c86fc5" data-background="#fef4f4">
+<h2 id="org1c86fc5">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5692a54" data-background="#fef4f4">
+<h3 id="org5692a54">練習問題</h3>
 <ul>
 <li><p>
 以下の積分値を求めよ．
@@ -622,58 +523,10 @@ d次元の場合
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org19112d0">
-<h3 id="org19112d0">解答例</h3>
-<ul>
-<li><p>
-2重積分を利用する
-</p>
-<blockquote>
-<div>
-\begin{align}
-  &\int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
-    \int_{-\infty}^{\infty}e^{-\epsilon y^{2}}dy\\
-  &=
-    \int_{-\infty}^{\infty}
-    \int_{-\infty}^{\infty}e^{-\epsilon(x^{2}+y^{2})}dxdy\\
-  &=
-    \int_{0}^{2\pi}
-    \int_{0}^{\infty}e^{-\epsilon r^{2}}rdrd\theta
-  &&(\text{極座標変換})\\
-  &=
-    2\pi\int_{0}^{\infty}e^{-\epsilon r^{2}}rdr
-  &&(\text{変数変換}z=r^{2})\\
-  &=
-    \pi\int_{0}^{\infty}e^{-\epsilon z}dz
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
 </section>
 <section>
-<ul>
-<li><p>
-解答
-</p>
-<div>
-\begin{equation}
-  \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
-  =\sqrt{\frac{\pi}{\epsilon}}
-\end{equation}
-
-</div></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org719d87e">
-<h2 id="org719d87e">反転公式の証明</h2>
+<section id="slide-orgd943f87">
+<h2 id="orgd943f87">反転公式の証明</h2>
 <aside class="notes">
 <p>
 一般に \(\hat{f}(\omega)\) は可積分かどうかわからないので，
@@ -683,8 +536,8 @@ Poisson核と似た原理を用いて反転公式を示す．
 </aside>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4cb68bd">
-<h3 id="org4cb68bd">証明</h3>
+<section id="slide-orgce63b02">
+<h3 id="orgce63b02">証明</h3>
 <ul>
 <li><p>
 step 1
@@ -859,8 +712,8 @@ step 6
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org66677a2">
-<h3 id="org66677a2">反転公式</h3>
+<section id="slide-org3968c3b">
+<h3 id="org3968c3b">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -894,12 +747,17 @@ step 6
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org0e3a0e2" data-background="#fef4f4">
-<h2 id="org0e3a0e2">演習</h2>
+<section id="slide-orgb286b42" data-background="#fef4f4">
+<h2 id="orgb286b42">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org12c4e53" data-background="#fef4f4">
+<h3 id="org12c4e53">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -933,8 +791,8 @@ step 6
 </section>
 </section>
 <section>
-<section id="slide-orgc6814ec">
-<h2 id="orgc6814ec">まとめ</h2>
+<section id="slide-org0bc6293">
+<h2 id="org0bc6293">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換
 <ul>
@@ -968,7 +826,7 @@ center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
-mouseWheel: true,
+mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
@@ -977,7 +835,7 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }},
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
@@ -985,7 +843,8 @@ plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 // Optional libraries used to extend reveal.js
 dependencies: [
 { src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'}]
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>

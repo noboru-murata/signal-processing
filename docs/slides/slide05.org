@@ -1,8 +1,9 @@
 #+TITLE: Fourier級数の性質
-#+SUBTITLE: 信号処理 講義5
+#+SUBTITLE: 信号処理 - 講義5
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-07-03 11:03:00 mura>
+#+DATE:
+# Time-stamp: <2021-04-29 17:46:57 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,7 +12,7 @@
 # C-c '
 :end:
 
-* 復習
+* 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert空間
    - ベクトル空間
      #+begin_quote
@@ -33,11 +34,11 @@
      #+end_quote
    - 定理
      #+begin_quote
-     可分な無限次元Hilbert空間は $l^{2}$ 空間と同型である．
+     可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
      #+end_quote
    - 定理
      #+begin_quote
-     $\{\phi_{k}\}$ が $\mathcal{H}$ の完全正規直交系のとき
+     \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
      以下が成り立つ．
      #+begin_src latex
        \begin{equation}
@@ -50,7 +51,7 @@
 ** Fourier級数展開
    - 定理
      #+begin_quote
-     $f\in L^{2}(-\pi,\pi)$ 
+     \(f\in L^{2}(-\pi,\pi)\) 
      は
      以下のように
      *Fourier級数展開*
@@ -66,7 +67,7 @@
          \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
        \end{equation}
      #+end_src
-     内積は $f,g\in L^{2}(-\pi,\pi)$ に対して
+     内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
      以下で定義する．
      #+begin_src latex
        \begin{equation}
@@ -76,28 +77,34 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 次の関数 $f\in L^{2}(-\pi,\pi)$ を
-      Fourier 級数展開せよ．
-      #+begin_src latex
-        \begin{equation}
-          f(x)=
-          \begin{cases}
-            0,&x\le 0\\
-            1,&x > 0
-          \end{cases}
-        \end{equation}
-      #+end_src
-** 解答
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 係数 $\langle f,\phi_{n}\rangle$ の計算
-     - $n=0$ のとき
+   - 以下の問に答えよ．
+     - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+       Fourier 級数展開せよ．
+       #+begin_src latex
+	 \begin{equation}
+	   f(x)=
+	   \begin{cases}
+	     0,&x\le 0\\
+	     1,&x > 0
+	   \end{cases}
+	 \end{equation}
+       #+end_src
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 係数 \(\langle f,\phi_{n}\rangle\) の計算
+     - \(n=0\) のとき
        #+begin_src latex
          \begin{align}
            \langle f,\phi_{0}\rangle
@@ -105,7 +112,7 @@
              =\frac{\pi}{\sqrt{2\pi}}
          \end{align}
        #+end_src
-     - $n\not=0$ のとき
+     - \(n\not=0\) のとき
        #+begin_src latex
          \begin{align}
            \langle f,\phi_{n}\rangle
@@ -116,8 +123,8 @@
              =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-in\pi}-1)\\
            &=\frac{i}{n\sqrt{2\pi}}((-1)^{n}-1)
              =\begin{cases}
-               \frac{-2i}{n\sqrt{2\pi}},&\text{$n$が奇数}\\
-               0,&\text{$n$が偶数}
+               \frac{-2i}{n\sqrt{2\pi}},&\text{\(n\)が奇数}\\
+               0,&\text{\(n\)が偶数}
              \end{cases}
          \end{align}
        #+end_src
@@ -132,16 +139,17 @@
        \end{align}
      #+end_src
 
+
 * 不連続点の性質
   #+begin_notes
-  これまでは暗黙の内に関数 $f$ の連続性を仮定しているが，
-  $f$ に不連続点がある場合には注意する必要がある．
+  これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
+  \(f\) に不連続点がある場合には注意する必要がある．
   #+end_notes
 
 ** 片側極限
    - 定義
      #+begin_quote
-     $h>0$ として
+     \(h>0\) として
      #+begin_src latex
        \begin{align}
          f(x{-}0)&=\lim_{h\to0}f(x-h)\\
@@ -154,13 +162,13 @@
 ** 不連続点
    - 不連続関数
      #+begin_quote
-     点 $x$ において不連続な関数を考える
+     点 \(x\) において不連続な関数を考える
      #+begin_src latex
        \begin{equation}
          f(x{-}0)\not=f(x{+}0)
        \end{equation}
      #+end_src
-     点 $x$ 以外の近傍での有界性を仮定する
+     点 \(x\) 以外の近傍での有界性を仮定する
      #+begin_src latex
        \begin{align}
          &\sup_{0 < h < \delta}|f(x-h)-f(x{-}0)| < \infty\\
@@ -183,9 +191,9 @@
        \end{equation}
      #+end_src
      #+end_quote
-   - $P_{r}$ の性質
+   - \(P_{r}\) の性質
      #+begin_quote
-     $P_{r}$ の積分は偶関数であることから以下が成り立つ．
+     \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
      #+begin_src latex
        \begin{equation}
          \int_{-\infty}^{0}P_{r}(y)dy=\frac{1}{2}
@@ -211,7 +219,7 @@
    #+reveal: split
    - 不連続点の Fourier 級数展開
      #+begin_quote
-     関数 $f$ の Fourier 級数展開 $\tilde{f}$ は
+     関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
      #+begin_src latex
        \begin{equation}
          \tilde{f}(x)
@@ -220,27 +228,34 @@
        \end{equation}
      #+end_src
      が成り立つので，
-     $f$ の不連続点での Fourier 級数展開は
+     \(f\) の不連続点での Fourier 級数展開は
      両側からの極限の平均値となる．
      #+end_quote
+
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ
-    - 以下の関数は $x=0$ で不連続となる．
-      Fourier 級数での $f(0)$ の値を求めよ．
-      #+begin_src latex
-        \begin{equation}
-          f(x)=
-          \begin{cases}
-            0,&x\le 0\\
-            1,&x > 0
-          \end{cases}
-          \quad\in L^{2}(-\pi,\pi)
-        \end{equation}
-      #+end_src
-** 解答
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問に答えよ
+     - 以下の関数は \(x=0\) で不連続となる．
+       Fourier 級数での \(f(0)\) の値を求めよ．
+       #+begin_src latex
+	 \begin{equation}
+	   f(x)=
+	   \begin{cases}
+	     0,&x\le 0\\
+	     1,&x > 0
+	   \end{cases}
+	   \quad\in L^{2}(-\pi,\pi)
+	 \end{equation}
+       #+end_src
+
+** COMMENT 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -256,12 +271,13 @@
         \end{align}
      #+end_src
 
+
 * 係数の性質
 ** 畳み込み
    - 定義
      #+begin_quote
-     周期 $2\pi$ をもつ関数 $f$ と $g$ の
-     畳み込み(合成積; convolution) $h$
+     周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
+     畳み込み(合成積; convolution) \(h\)
      を以下で定義される．
      #+begin_src latex
        \begin{align}
@@ -272,22 +288,22 @@
        \end{align}
      #+end_src
      #+end_quote
-     - 関数 $f,g$ は周期 $2\pi$ をもつことに注意して，
-       変数変換 $x-y=z$ を用いて2つの定義が同値であることを確認せよ
-** $L^p$ ノルム
+     - 関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
+       変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ
+** \(L^p\) ノルム
    - 定義
      #+begin_quote
-     関数 $f$ の $L^{p}$ ノルムを以下で定義する．
+     関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
      #+begin_src latex
        \begin{equation}
          \|f\|_{L^{p}}=\left(\int_{\Omega}|f(x)|^{p}dx\right)^{1/p}
        \end{equation}
      #+end_src
-     - $\Omega$ は定義域で，一般には $\mathbb{R}$ 上の適当な区間
+     - \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間
      #+end_quote
-     - 内積から自然に導かれたノルムは $L^{2}$ ノルムである
+     - 内積から自然に導かれたノルムは \(L^{2}\) ノルムである
 
-** $L^{p}$ 空間
+** \(L^{p}\) 空間
    - 定義
      #+begin_quote
      #+begin_src latex
@@ -297,12 +313,12 @@
          &=\left\{f\;\big|\|f\|_{L^{p}} < \infty\right\}
        \end{align}
      #+end_src
-     - $\Omega$ は定義域で，一般には $\mathbb{R}$ 上の適当な区間
+     - \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間
      #+end_quote
 ** Riemann-Lebesgue の定理
    - 定理
      #+begin_quote
-     $f\in L^{1}(-\pi,\pi)$ の Fourier 係数 $a_{n}=\langle f,\phi_{n}\rangle$ は
+     \(f\in L^{1}(-\pi,\pi)\) の Fourier 係数 \(a_{n}=\langle f,\phi_{n}\rangle\) は
      #+begin_src latex
        \begin{equation}
          \lim_{n\to\pm\infty}a_{n}=0
@@ -313,7 +329,7 @@
    #+reveal: split
    - 証明
      #+begin_quote
-     $f_r$ の Fourier 係数を $a_{n}(r)$ と書くと
+     \(f_r\) の Fourier 係数を \(a_{n}(r)\) と書くと
      #+begin_src latex
        \begin{align}
          |a_{n}|
@@ -323,11 +339,11 @@
            +\frac{1}{\sqrt{2\pi}}r^{|n|}\|f\|_{L^{1}}
        \end{align}
      #+end_src
-     ただし $*$ は畳み込みを表す．
+     ただし \(*\) は畳み込みを表す．
 
-     ここで $r$ を1に近くとれば第1項はいくらでも小さくすることができる．
-     また $|n|$ を十分大きくとれば第2項はいくらでも小さくなるので，
-     $\lim_{n\to\pm\infty}a_{n}=0$ が示される．
+     ここで \(r\) を1に近くとれば第1項はいくらでも小さくすることができる．
+     また \(|n|\) を十分大きくとれば第2項はいくらでも小さくなるので，
+     \(\lim_{n\to\pm\infty}a_{n}=0\) が示される．
      #+end_quote
    #+reveal: split
    - (証明のつづき)
@@ -343,16 +359,16 @@
        \end{align}
      #+end_src
      #+end_quote
-     - $L^{1}$ 関数であれば係数の存在が保証されることを示している
+     - \(L^{1}\) 関数であれば係数の存在が保証されることを示している
 
 ** Riemann-Lebesgue の定理の応用
    - Fourier 級数の項別微分
      #+begin_quote
-     関数 $f$ は区間 $[-\pi,\pi]$ で連続，
-     $f(-\pi)=f(\pi)$ ，
-     ほとんどいたるところで $f'$ が存在し，
-     $f'\in L^{2}\cap L^{1}$ であるとする．
-     $f,f'$ の Fourier 級数展開をそれぞれ
+     関数 \(f\) は区間 \([-\pi,\pi]\) で連続，
+     \(f(-\pi)=f(\pi)\) ，
+     ほとんどいたるところで \(f'\) が存在し，
+     \(f'\in L^{2}\cap L^{1}\) であるとする．
+     \(f,f'\) の Fourier 級数展開をそれぞれ
      #+begin_src latex
        \begin{align}
          f(x)&=\sum_{n} a_{n}\phi_{n}(x)\\
@@ -360,8 +376,8 @@
        \end{align}
      #+end_src
      とする．
-     $f$ を項別に微分すると
-     $a_{n}$ と $b_{n}$ の間には
+     \(f\) を項別に微分すると
+     \(a_{n}\) と \(b_{n}\) の間には
      #+begin_src latex
        \begin{equation}
          b_{n}=in\cdot a_{n}
@@ -372,12 +388,13 @@
    #+reveal: split
    - 滑らかな関数の高周波成分
      #+begin_quote
-     Riemann-Lebesgueの定理より $b_{n}\to0\;(n\to\infty)$ なので，
-     $a_{n}=o(1/n)$ (Landau の記号)となる．
+     Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
+     \(a_{n}=o(1/n)\) (Landau の記号)となる．
      すなわち微分できるくらい滑らかな関数は
-     $n\to\infty$ において $1/n$ より速く $a_{n}$ が小さくなる
+     \(n\to\infty\) において \(1/n\) より速く \(a_{n}\) が小さくなる
      (高周波成分が減衰する)．
      #+end_quote
+
 
 * 関数の積とノルム
   #+begin_notes
@@ -388,7 +405,7 @@
 ** Hölderの不等式
    - 定理
      #+begin_quote
-     $1/p+1/q=1,\,p,q>0$
+     \(1/p+1/q=1,\,p,q>0\)
      とする．
      このとき
      #+begin_src latex
@@ -397,12 +414,12 @@
        \end{equation}
      #+end_src
      #+end_quote
-     - Cauchy-Schwarz の不等式 ($p=q=2$) の一般化である
+     - Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である
    #+reveal: split
    - 証明
      #+begin_quote
-     対数関数の凸性と $1/p+1/q=1$ から
-     任意の $a,b>0$ について
+     対数関数の凸性と \(1/p+1/q=1\) から
+     任意の \(a,b>0\) について
      #+begin_src latex
        \begin{equation}
          \log\left(\frac{a^{p}}{p}+\frac{b^{q}}{q}\right)
@@ -458,7 +475,7 @@
    #+reveal: split
    - 証明
      #+begin_quote
-     $1/p+1/q=1$ とする．
+     \(1/p+1/q=1\) とする．
      #+begin_src latex
        \begin{align}
          |h(x)|
@@ -500,21 +517,21 @@
 ** 畳み込みの Fourier 級数
    - 係数の存在
      #+begin_quote
-     先の定理において $p=1$ とすると
+     先の定理において \(p=1\) とすると
      #+begin_src latex
        \begin{equation}
          \|h\|_{L^{1}}\le\|f\|_{L^{1}}\|g\|_{L^{1}}
        \end{equation}
      #+end_src
      となり，
-     $f,g\in L^{1}(-\pi,\pi)$ なら
-     $h\in L^{1}(-\pi,\pi)$ となる．
-     このとき $h$ のFourier 係数が存在することが保証される．
+     \(f,g\in L^{1}(-\pi,\pi)\) なら
+     \(h\in L^{1}(-\pi,\pi)\) となる．
+     このとき \(h\) のFourier 係数が存在することが保証される．
      #+end_quote
    #+reveal: split
    - 係数の関係
      #+begin_quote
-     $f,g,h$ のFourier 係数をそれぞれ $a_{n},b_{n},c_{n}$ とすると
+     \(f,g,h\) のFourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
      #+begin_src latex
        \begin{align}
          c_{n}
@@ -528,26 +545,32 @@
      #+end_src
      という関係が成り立つ．
      #+end_quote
+
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 関数 $f$ を
-      #+begin_src latex
-        \begin{equation}
-          f(x)=
-          \begin{cases}
-            0,&x\le 0\\
-            1,&x > 0
-          \end{cases}
-          \in L^{2}(-\pi,\pi)
-        \end{equation}
-      #+end_src
-      とするとき，畳み込み $f*f$ を求めよ．
-    - 関数 $f*f$ を Fourier 級数展開せよ．
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問に答えよ．
+     - 関数 \(f\) を
+       #+begin_src latex
+	 \begin{equation}
+	   f(x)=
+	   \begin{cases}
+	     0,&x\le 0\\
+	     1,&x > 0
+	   \end{cases}
+	   \in L^{2}(-\pi,\pi)
+	 \end{equation}
+       #+end_src
+       とするとき，畳み込み \(f*f\) を求めよ．
+     - 関数 \(f*f\) を Fourier 級数展開せよ．
 
-** 解答
+** COMMENT 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -571,7 +594,8 @@
      #+end_src
      - 図を描いて確認せよ．
 
-* まとめ
+
+* 今回のまとめ
   - Fourier級数の性質
     - Fourier級数展開:
       #+begin_src latex
@@ -591,8 +615,14 @@
 
 ** COMMENT 注意
    - 確認テスト (講義5の中)
-     - 期間: 6/12講義終了-6/18 13:00
-     - 時間制限: 1時間
-     - 4問 (計算問題) (ある関数の Fourier 級数展開の係数を計算)
      - 試験の意味を考えて誠実な対応をすること
      - ネットワーク環境等には自身で配慮すること
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+   
+   

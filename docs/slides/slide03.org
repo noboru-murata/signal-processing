@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-14 17:09:53 mura>
+# Time-stamp: <2021-04-21 11:24:40 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -78,15 +78,19 @@
        \begin{equation}
 	 l^{2}=
 	 \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\; 
-	   \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
-	 \right\}
+	   \|u\|<\infty
+	 \right\},
        \end{equation}
      #+end_src
      #+begin_src latex
        \begin{equation}
 	 \langle u,v\rangle
 	 =
-	 \sum_{i=1}^{\infty}u_{i}\overline{v_{i}}
+	 \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
+         \quad
+         \|u\|^{2}
+         =
+	 \sum_{i=1}^{\infty}|u_{i}|^{2}.
        \end{equation}
      #+end_src
      #+end_quote
@@ -97,15 +101,19 @@
        \begin{equation}
 	 L^{2}(\Omega)=
 	 \left\{
-	   f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
-	 \right\}
+	   f\:\Big|\:\|f\|<\infty
+	 \right\},
        \end{equation}
      #+end_src
      #+begin_src latex
        \begin{equation}
 	 \langle f,g\rangle
 	 =
-	 \int_{\Omega}f(x)\overline{g(x)}dx
+	 \int_{\Omega}f(x)\overline{g(x)}dx,
+         \quad
+         \|f\|^{2}
+	 =
+	 \int_{\Omega}|f(x)|^{2}dx.
        \end{equation}
      #+end_src
      #+end_quote
@@ -119,20 +127,20 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
-       以下を展開せよ．
-       - \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
-       - \(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)
-       - \(\langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle\)
-     - 複素数 \(\mathbb{C}\) を係数体とする
-       以下の内積空間で Hilbert 空間となるものはどれか?
-       なお，内積は 
-       \(\langle f,g\rangle=\int_{-1}^{1}f(x)\overline{g(x)}dx\) 
-       とする．
-       - 区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\) 
-       - 区間 \([-1,1]\) 上のノルムの値が有限の複素数値関数の空間
-** COMMENT 解答例
+   - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+     以下を展開せよ．
+     - \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
+     - \(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)
+     - \(\langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle\)
+   - 複素数 \(\mathbb{C}\) を係数体とする
+     以下の内積空間で Hilbert 空間となるものはどれか?
+     なお，内積は 
+     \(\langle f,g\rangle=\int_{-1}^{1}f(x)\overline{g(x)}dx\) 
+     とする．
+     - 区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\) 
+     - 区間 \([-1,1]\) 上のノルムが有限の複素数値関数の空間 \(L^{2}[-1,1]\) 
+
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -157,6 +165,10 @@
      \end{align}
      #+end_src
      #+end_quote
+   #+reveal: split
+   - それぞれの空間でCauchy列を考えてみよ
+     - 不連続な関数の中に連続関数の極限として定義できるものがある
+     - ノルムの値である実数値のCauchy列を考えればよい
 
 
 * 正規直交系
@@ -191,17 +203,19 @@
      #+end_quote
 
 ** 正規直交系の例
-   - \(l^{2}\) 空間の自然な系
+   - \(l^{2}\) 空間
      #+begin_quote
      無限次元数ベクトル空間 \(l^{2}\) を考える．
      #+begin_src latex
        \begin{align}
-	 &u=(u_{k})_{k=1,2,\dotsc}\\
-	 &\sum_{k=1}^{\infty}|u_{k}|^{2}<\infty
+	 u=
+         &(u_{1},u_{2},\dotsc,u_{k},\dotsc),\\
+         &\|u\|^{2}=\sum_{k=1}^{\infty}|u_{k}|^{2}<\infty
        \end{align}
      #+end_src
      #+end_quote
-     #+reveal: split
+   #+reveal: split
+   - \(l^{2}\) 空間の自然な系
      #+begin_quote
      \(\phi_{k}\) 
      を以下で定義する．
@@ -240,6 +254,7 @@
    #+attr_reveal: :frag (appear)
    - 稠密な集合の例
      - 実数の中の有理数
+     - 実数の中の無理数
    #+reveal: split
    - 可分の定義
      #+begin_quote
@@ -248,6 +263,10 @@
      とはその集合の中に稠密な可算部分集合を取ることができることをいう．
      #+end_quote
    #+attr_reveal: :frag (appear)
+   - 可算(番号付けが可能)な集合の例
+     - 自然数 (番号そのもの)
+     - 自然数の組 (2次元の表)
+     - 有理数 (自然数/自然数)
    - 可分な集合の例
      - 実数 (稠密な集合: 有理数)
      - 複素数 (稠密な集合: 実部と虚部がそれぞれ有理数)
@@ -387,24 +406,24 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - Gram-Schmidt の直交化法において
-       \(\phi_{n}\)
-       が
-       \(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\)
-       と直交することを示せ．
-     - 前の例の \(\phi_{2}\) (2次関数から作られる) を求めよ．
-     - 以下の集合から正規直交系を構成せよ．
-       #+begin_src latex
-         \begin{equation}
-           \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}[0,1],
-         \end{equation}
-         ただし内積は以下で定めるものとする
-         \begin{equation}
-           \langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
-         \end{equation}
-       #+end_src
-** COMMENT 解答例
+   - Gram-Schmidt の直交化法において
+     \(\phi_{n}\)
+     が
+     \(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\)
+     と直交することを示せ．
+   - 前の例の \(\phi_{2}\) (2次関数から作られる) を求めよ．
+   - 以下の集合から正規直交系を構成せよ．
+     #+begin_src latex
+       \begin{equation}
+	 \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}[0,1],
+       \end{equation}
+       ただし内積は以下で定めるものとする
+       \begin{equation}
+	 \langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
+       \end{equation}
+     #+end_src
+
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -483,9 +502,10 @@
 	 &=\langle u-\sum_{j}\langle u,\phi_{j}\rangle\phi_{j},
 	   u-\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\rangle\\
 	 &=\|u\|^{2}
-	   -\sum_{k}\overline{\langle u,\phi_{k}\rangle}\langle u,\phi_{k}\rangle
+	   -\sum_{k}\overline{\langle u,\phi_{k}\rangle}\langle u,\phi_{k}\rangle\\
+         &\qquad
 	   -\sum_{j}\langle u,\phi_{j}\rangle\overline{\langle u,\phi_{j}\rangle}
-	   +\sum_{j,k}\langle u,\phi_{j}\rangle
+           +\sum_{j,k}\langle u,\phi_{j}\rangle
 	   \overline{\langle u,\phi_{k}\rangle}\delta_{jk}\\
 	 &=\|u\|^{2}-\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
        \end{align}
@@ -579,12 +599,11 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - \(L^{2}(-\pi,\pi)\) 空間において 
-       \(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．
-     - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
+   - \(L^{2}(-\pi,\pi)\) 空間において 
+     \(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．
+   - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:

@@ -1,8 +1,9 @@
-#+TITLE: Fourier級数
-#+SUBTITLE: 信号処理 講義4
+#+TITLE: Fourier 級数
+#+SUBTITLE: 信号処理 - 講義4
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-07-03 10:59:33 mura>
+#+DATE:
+# Time-stamp: <2021-04-30 10:54:04 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,35 +12,36 @@
 # C-c '
 :end:
 
-* 復習
+* 前回のおさらい
 ** ベクトル空間
    - 満たすべき条件
      #+begin_quote
-     1. $a,b\in V\;\Rightarrow\;a+b\in V$ (線形性)
-     2. $a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)$ (結合則)
-     3. $a,b\in V\;\Rightarrow\;a+b=b+a$ (交換則)
-     4. $\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a$ (零元)
-     5. $\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0$ (逆元)
-     6. $\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V$ (スカラ倍)
-     7. $\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)$ (結合則)
-     8. $\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a$ ($K$ の単位元)
-     9. $\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b$ (分配則)
-     10. $\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a$ (分配則)
+     1. \(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)
+     2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
+     3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
+     4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
+     5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
+     6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
+     7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
+     8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
+     9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
+     10. \(\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a\) (分配則)
      #+end_quote
+
 ** 内積空間
    - 内積の定義
      #+begin_quote
      ベクトル空間の2つの要素
-     $u,v\in\mathcal{H}$ に対して，
+     \(u,v\in\mathcal{H}\) に対して，
      次の性質を持つ2変数関数を
      *内積*
      という．
-     1. $\langle u,u\rangle\geq0$ 
-	特に $\langle u,u\rangle=0\;\Rightarrow\;u=0$
-     2. $\langle u,v\rangle = \overline{\langle v,u\rangle}$ (複素共役)\\
-	なお，体 $K$ が実数の場合は $\langle u,v\rangle = \langle v,u\rangle$
-     3. $\langle \alpha u+\beta u',v\rangle
-	=\alpha\langle u,v\rangle+\beta\langle u',v\rangle$ (線形性)
+     1. \(\langle u,u\rangle\geq0\) 
+	特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
+     2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
+	なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)
+     3. \(\langle \alpha u+\beta u',v\rangle
+	=\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
      #+end_quote
    - 定義
      #+begin_quote
@@ -57,7 +59,7 @@
 	 \lim_{n,m\to\infty}d(u_{n},u_{m})=0
        \end{equation}
      #+end_src
-     の収束先 $\lim_{n\to\infty}u_{n}$ がもとの集合に含まれるとき，
+     の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
      その集合は
      *完備*
      であるという．
@@ -72,8 +74,8 @@
 ** 正規直交系
    - 定義
      #+begin_quote
-     Hilbert空間 $\mathcal{H}$ の
-     部分集合 $\mathcal{A}$ が
+     Hilbert空間 \(\mathcal{H}\) の
+     部分集合 \(\mathcal{A}\) が
      #+begin_src latex
        \begin{equation}
 	 \forall\phi,\psi\in\mathcal{A},\,\phi\not=\psi\;
@@ -82,7 +84,7 @@
        \end{equation}
      #+end_src
      となるとき，
-     $\mathcal{A}$ を
+     \(\mathcal{A}\) を
      *直交系* 
      という．
 
@@ -94,7 +96,7 @@
        \end{equation}
      #+end_src
      となるとき，
-     $\mathcal{A}$ を
+     \(\mathcal{A}\) を
      *正規直交系*
      という．
      #+end_quote
@@ -102,19 +104,20 @@
 ** 完全正規直交系
    - 定義
      #+begin_quote
-     Hilbert 空間 $\mathcal{H}$ の正規直交系 $\{\phi_{k}\}$ が 
+     Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が 
      *Parseval の等式*
      #+begin_src latex
        \begin{equation}
-	\forall u\in\mathcal{H},\; 
-	\|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+         \forall u\in\mathcal{H},\; 
+         \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
        \end{equation}
      #+end_src
      を満たすとき，
-     $\{\phi_{k}\}$ を
+     \(\{\phi_{k}\}\) を
      *完全正規直交系*
      という．
      #+end_quote
+
 ** 完全正規直交系の性質
    - 定理
      #+begin_quote
@@ -123,43 +126,46 @@
      #+end_quote
    - 定理
      #+begin_quote
-     可分な無限次元Hilbert空間は $l^{2}$ 空間と同型である．
+     可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
      #+end_quote
    - 定理
      #+begin_quote
-     $\{\phi_{k}\}$ が $\mathcal{H}$ の完全正規直交系のとき
+     \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
+     以下が成り立つ．
      #+begin_src latex
        \begin{equation}
          \forall u\in\mathcal{H}\;\Rightarrow\;
          u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
        \end{equation}
      #+end_src
-     が成り立つ．
      #+end_quote
 
-* Fourier級数
-  #+begin_notes
-  これまで
-  Hilbert空間の完全正規直交系を考察した．
-  本章では，これらの結果を踏まえて，
-  基底関数を用いた周期関数の具体的な展開法を議論する．
-  #+end_notes
+
+* Fourier 級数
+  # #+begin_notes
+  # これまで
+  # Hilbert空間の完全正規直交系を考察した．
+  # 本章では，これらの結果を踏まえて，
+  # 基底関数を用いた周期関数の具体的な展開法を議論する．
+  # #+end_notes
 
 ** 周期関数
    - 周期的な信号: 性質の良い(取り扱い易い)信号
-   - $2\pi$ 周期の信号を考えることにする
-   - $\mathbb{R}$ 上の関数 $f(x)$ が
-     周期 $2\pi$ を持つ: 
+   - \(2\pi\) 周期の信号を考えることにする
+   - \(\mathbb{R}\) 上の関数 \(f(x)\) が
+     周期 \(2\pi\) を持つ:
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          f(x+2\pi)=f(x)
        \end{equation}
      #+end_src
+     #+end_quote
    #+reveal: split
    - 1周期の範囲は
-     $[-\pi,\pi]$ ， $[0,2\pi]$ ，$[\pi,3\pi]$ など
+     \([-\pi,\pi]\) ， \([0,2\pi]\) ，\([\pi,3\pi]\) など
      自由に取ってよい
-   - 計算上取り扱いが簡単なので主に $[-\pi,\pi]$ を用いる
+   - 計算上取り扱いが簡単なので \([-\pi,\pi]\) を用いる
    - 対象とする関数は2乗可積分な複素数値関数とする
      #+begin_quote
      #+begin_src latex
@@ -170,12 +176,32 @@
      #+end_src
      #+end_quote
 
-** Fourier級数展開
+** Fourier 級数展開
    - 定理
      #+begin_quote
-     $f\in L^{2}(-\pi,\pi)$ 
+     #+begin_src latex
+       \begin{equation}
+         \left\{
+           \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+         \right\}
+       \end{equation}
+     #+end_src
+     とし，
+     \(f,g\in L^{2}(-\pi,\pi)\) に対して内積を
+     #+begin_src latex
+       \begin{equation}
+	 \langle f,g\rangle
+	 =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+       \end{equation}
+     #+end_src
+     で定義する．
+     #+end_quote
+   #+reveal: split
+   - (定理のつづき)
+     #+begin_quote
+     \(f\in L^{2}(-\pi,\pi)\) 
      は以下のように
-     *Fourier級数展開*
+     *Fourier 級数展開*
      される．
      #+begin_src latex
        \begin{align}
@@ -185,37 +211,25 @@
          &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}f(y)e^{in(x-y)}dy
        \end{align}
      #+end_src
-     #+begin_src latex
-       \begin{equation}
-         \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - (定理のつづき)
-     #+begin_quote
-     ただし内積は $f,g\in L^{2}(-\pi,\pi)$ に対して
-     #+begin_src latex
-       \begin{equation}
-	 \langle f,g\rangle
-	 =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-       \end{equation}
-     #+end_src
-     で定義する．
      #+end_quote
 
 ** 注意
    - あとで示すように
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
-         \left\{\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc\right\}
+         \left\{
+           \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+         \right\}
        \end{equation}
      #+end_src
+     #+end_quote
      は
-     $L^{2}(-\pi,\pi)$
+     \(L^{2}(-\pi,\pi)\)
      上の *完全正規直交系* となる．
    #+reveal: split
    - *正規直交系* であることは容易に確かめられる．
+     #+begin_quote
      #+begin_src latex
        \begin{align}
          \langle\phi_{m},\phi_{n}\rangle
@@ -230,12 +244,14 @@
          =\frac{1}{2\pi}\int_{-\pi}^{\pi}1dx=1
        \end{equation}
      #+end_src
+     #+end_quote
    
-** Fourier級数展開の例
-   - 区間 $(-\pi,\pi)$ 上の周期関数 $f(x)=x$
-     ($\in L^{2}(-\pi,\pi)$) 
-     Fourier級数展開を求める
+** Fourier 級数展開の例
+   - 区間 \((-\pi,\pi)\) 上の周期関数 \(f(x)=x\)
+     (\(\in L^{2}(-\pi,\pi)\)) 
+     Fourier 級数展開を求める
    - 係数は以下の式を計算すればよい．
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \langle f,\phi_{n}\rangle
@@ -243,8 +259,9 @@
          \frac{1}{\sqrt{2\pi}}e^{-inx}dx
        \end{equation}
      #+end_src
+     #+end_quote
    #+reveal: split
-   - 部分積分を用いて計算する ($n\not=0$ のとき)
+   - 部分積分を用いて計算する (\(n\not=0\) のとき)
      #+begin_quote
      #+begin_src latex
        \begin{align}
@@ -263,81 +280,102 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $n=0$ も計算してまとめると以下のようになる
+   - \(n=0\) も計算してまとめると以下のようになる
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          x
          =i\sum_{\substack{n=-\infty\\n\not=0}}^{\infty}\frac{(-1)^{n}}{n}e^{inx}
        \end{equation}
      #+end_src
+     #+end_quote
+   #+reveal: split
    - Euler の公式
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          e^{inx}=\cos(nx)+i\sin(nx)
        \end{equation}
      #+end_src
+     #+end_quote
      を用いると三角関数で書くことができる
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          x
          =2\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}\sin{nx}
        \end{equation}
      #+end_src
+     #+end_quote
+
 
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - $L^{2}(-\pi,\pi)$ に含まれる以下の関数を
-    Fourier 級数展開せよ．
-    - $f(x)=|x|$
-    - $f(x)=x^{2}$
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
+     Fourier 級数展開せよ．
+     - \(f(x)=|x|\)
+     - \(f(x)=x^{2}\)
 
-** 解答
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
    - 定義に則って計算すればよい
-     - $f(x)=|x|$
-       #+begin_src latex
-	 \begin{align}
-           |x|
-           &=\frac{\pi}{2}
-             -\frac{2}{\pi}\sum_{m=-\infty}^{\infty}\frac{1}{(2m+1)^{2}}e^{i(2m+1)x}\\
-           &=\frac{\pi}{2}
-             -\frac{4}{\pi}\sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}}\cos{(2m+1)x}
-         \end{align}
-       #+end_src
-     - 偶関数なので余弦関数で書き直すことができる
-     #+reveal: split
-     - $f(x)=x^{2}$
-       #+begin_src latex
-	 \begin{align}
-           x^{2}
-           &=\frac{\pi^{2}}{3}
-             +2\sum_{\substack{n=-\infty\\n\not=0}}^{\infty}\frac{(-1)^{n}}{n^{2}}e^{inx}\\
-           &=\frac{\pi^{2}}{3}
-             +4\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{2}}\cos{nx}
-         \end{align}
-       #+end_src
-     - $f(x)=x$ の結果と比較してみよ．
+   - \(f(x)=|x|\)
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+	 |x|
+	 &=\frac{\pi}{2}
+	   -\frac{2}{\pi}\sum_{m=-\infty}^{\infty}\frac{1}{(2m+1)^{2}}e^{i(2m+1)x}\\
+	 &=\frac{\pi}{2}
+	   -\frac{4}{\pi}\sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}}\cos{(2m+1)x}
+       \end{align}
+     #+end_src
+     #+end_quote
+   - 偶関数なので余弦関数で書き直すことができる
+   #+reveal: split
+   - \(f(x)=x^{2}\)
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+	 x^{2}
+	 &=\frac{\pi^{2}}{3}
+	   +2\sum_{\substack{n=-\infty\\n\not=0}}^{\infty}\frac{(-1)^{n}}{n^{2}}e^{inx}\\
+	 &=\frac{\pi^{2}}{3}
+	   +4\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{2}}\cos{nx}
+       \end{align}
+     #+end_src
+     #+end_quote
+   - \(f(x)=x\) の結果と比較してみよ
 
-* Fourier級数の応用
+
+* Fourier 級数の応用
 ** 級数和の計算
    - 展開式から級数和に関していろいろな公式を得ることができる．
-   - $f(x)=|x|$ に対して $x=0$ とすれば
+   - \(f(x)=|x|\) に対して \(x=0\) とすれば
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}} = \frac{\pi^{2}}{8}
        \end{equation}
      #+end_src
+     #+end_quote
    #+reveal: split
-   - $f(x)=x^{2}$ に対して $x=0$ とすれば
+   - \(f(x)=x^{2}\) に対して \(x=0\) とすれば
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^{2}} = \frac{\pi^{2}}{12}
        \end{equation}
      #+end_src
+     #+end_quote
 
 ** Fourier級数の性質
    - 三角関数による展開
@@ -365,20 +403,20 @@
    #+reveal: split
    - 実数値関数の係数
      #+begin_quote
-     関数 $f(x)$ が実数値の場合
+     関数 \(f(x)\) が実数値の場合
      #+begin_src latex
        \begin{equation}
          \frac{a_{n}+a_{-n}}{\sqrt{2\pi}},\;
          i\frac{a_{n}-a_{-n}}{\sqrt{2\pi}}
        \end{equation}
      #+end_src
-     は実数になることから，
-     $a_{n}$ と $a_{-n}$ は複素共役の関係にある．
+     は実数になることから
+     \(a_{n}\) と \(a_{-n}\) は複素共役の関係にある．
      #+end_quote
    #+reveal: split
    - 定義域の異なる基底
      #+begin_quote
-     $L^{2}(0,\pi)$ においては，
+     \(L^{2}(0,\pi)\) においては
      #+begin_src latex
        \begin{align}
          &\left\{\sqrt{\frac{1}{\pi}},\sqrt{\frac{2}{\pi}}\cos nx;\;n=1,2,\dotsc\right\}\\
@@ -387,55 +425,68 @@
      #+end_src
      がそれぞれ完全正規直交系となる．
 
-     これは $(0,\pi)$ で定義された関数をそれぞれ偶関数，奇関数として
-     $(-\pi,\pi)$ に拡張すれば，
+     これは \((0,\pi)\) で定義された関数をそれぞれ偶関数，奇関数として
+     \((-\pi,\pi)\) に拡張すれば，
      余弦関数または正弦関数のみで展開できることを利用すればよい．
      #+end_quote
+
 
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 以下の級数和を求めよ
-      #+begin_src latex
-	\begin{equation}
-          \sum_{n=1}^{\infty}\frac{1}{n^{2}}
-        \end{equation}
-      #+end_src
-    - 正弦関数と余弦関数で正規直交系を構成せよ．
-
-** 解答
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - $f(x)=x^{2}$ の Fourier 級数展開において $x=\pm\pi$ とすればよい
+   - 以下の級数和を求めよ
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \sum_{n=1}^{\infty}\frac{1}{n^{2}}
+       \end{equation}
+     #+end_src
+     #+end_quote
+   - 正弦関数と余弦関数で正規直交系を構成せよ．
+
+** 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - \(f(x)=x^{2}\) の Fourier 級数展開において \(x=\pm\pi\) とすればよい
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 \sum_{n=1}^{\infty}\frac{1}{n^{2}} = \frac{\pi^{2}}{6}
        \end{equation}
      #+end_src
+     #+end_quote
    #+reveal: split
-   - 三角関数の公式を駆使してもよいが，
+   - 三角関数の積の展開は公式を駆使してもよいが，
      Euler の公式から
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \cos(nx)=\frac{e^{inx}+e^{-inx}}{2},\quad
          \sin(nx)=\frac{e^{inx}-e^{-inx}}{2i}
        \end{equation}
      #+end_src
+     #+end_quote
      となることを利用すればよい．またグラフより以下は明らか．
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
          \int_{-\pi}^{\pi}\cos^{2}(nx)dx=2\pi\times\frac{1}{2},\quad
          \int_{-\pi}^{\pi}\sin^{2}(nx)dx=2\pi\times\frac{1}{2}
        \end{equation}
      #+end_src
+     #+end_quote
+
 
 * 完全性の証明
   - step 1
     #+begin_quote
-    関数 $f$ が
+    関数 \(f\) が
     #+begin_src latex
       \begin{equation}
         f(x)
@@ -470,7 +521,7 @@
         f_{r}(x)=\sum_{n=-\infty}^{\infty} a_{n}r^{|n|}\phi_{n}(x)
       \end{equation}
     #+end_src
-    $0 < r < 1$ とすれば級数和は必ず存在する．
+    \(0 < r < 1\) とすれば級数和は必ず存在する．
     #+end_quote
   #+reveal: split
   - step 4
@@ -510,13 +561,13 @@
         \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
       \end{equation}
     #+end_src
-    の右辺の和の各項は $(-\pi,\pi)$ の周期関数なので，
-    $(-\infty,\infty)$ に拡大可能である．
+    の右辺の和の各項は \((-\pi,\pi)\) の周期関数なので，
+    \((-\infty,\infty)\) に拡大可能である．
     #+end_quote
   #+reveal: split
   - step 7
     #+begin_quote
-    周期関数 $f$ も同様に $(-\infty,\infty)$ に拡大可能であるので，
+    周期関数 \(f\) も同様に \((-\infty,\infty)\) に拡大可能であるので，
     一周期分の積分区間を適切に取り直して
     #+begin_src latex
       \begin{equation}
@@ -531,6 +582,7 @@
   - step 8
     #+begin_quote
     右辺の級数和を計算すると
+    以下になる．
     #+begin_src latex
       \begin{align}
         P_{r}(x)
@@ -543,29 +595,28 @@
         &=\frac{1}{2\pi}\frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
       \end{align}
     #+end_src
-    となる．
     #+end_quote
   #+reveal: split
   - step 9
     #+begin_quote
-    $P_{r}(x)$ は
-    $r\to1$ で $P_{r}(x)$ はDiracのdelta関数
+    \(P_{r}(x)\) は
+    \(r\to1\) で \(P_{r}(x)\) はDiracのdelta関数
     となる．
-    - $P_{r}(x) > 0$ (3行目の表現より明らか)
-    - $P_{r}$ の一周期分の積分は
+    - \(P_{r}(x) > 0\) (3行目の表現より明らか)
+    - \(P_{r}\) の一周期分の積分は
       #+begin_src latex
 	\begin{equation}
 	  \int_{-\pi}^{\pi}P_{r}(x)dx
 	  =\int_{-\pi}^{\pi}\frac{1}{2\pi}\sum_{n}r^{|n|}e^{inx}dx=1
 	\end{equation}
       #+end_src
-    - $\forall\delta\;(0<\delta<\pi)$ に対して
+    - \(\forall\delta\;(0<\delta<\pi)\) に対して
       #+begin_src latex
 	\begin{equation}
 	  \lim_{r\to1}\sup_{\delta\leq|x|\leq\pi}P_{r}(x)=0
 	\end{equation}
       #+end_src
-      $\cos x$ は上記の範囲では $\cos\delta$ で最大となることから
+      \(\cos x\) は上記の範囲では \(\cos\delta\) で最大となることから
       #+begin_src latex
 	\begin{equation}
 	  \frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
@@ -576,7 +627,7 @@
   #+reveal: split
   - step 10
     #+begin_quote
-    $f_{r}$ と $f$ の差
+    \(f_{r}\) と \(f\) の差
     #+begin_src latex
       \begin{equation}
         f_{r}(x)-f(x)
@@ -595,47 +646,62 @@
   #+reveal: split
   - step 11
     #+begin_quote
-    $\delta$ と $r$ は適当に選ぶことができることに注意する．
-    - 積分の第1,3項では $P_{r}$ をいくらでも小さくすることができる
-    - 第2項では $f(x-y)-f(x)$ をいくらでも小さくすることできる
+    \(\delta\) と \(r\) は適当に選ぶことができることに注意する．
+    - 積分の第1,3項では \(P_{r}\) をいくらでも小さくすることができる
+    - 第2項では \(f(x-y)-f(x)\) をいくらでも小さくすることできる
     この結果，
-    $\delta$ と $r$ とを適当に選ぶことによって
+    \(\delta\) と \(r\) とを適当に選ぶことによって
     3つの積分の和はいくらでも小さくなる．
     #+end_quote
   #+reveal: split
   - step 12
     #+begin_quote
-    以上より，各点 $x$ において
+    以上より，各点 \(x\) において
     #+begin_src latex
       \begin{equation}
-        \lim_{r\to1}f_{r}(x)=f(x)
+        \lim_{r\to1}f_{r}(x)
+        =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+        =f(x)
       \end{equation}
     #+end_src
     となることが示された．
     #+end_quote
+    - 前回の定理(完全性の同値な条件)の2を参照
 
-* まとめ
-  - Fourier級数展開:
-    - 周期関数 ($\in L^{2}(-\pi,\pi)$) のFourier級数展開:
+
+* 今回のまとめ
+  - Fourier 級数展開:
+    - 周期関数 (\(\in L^{2}(-\pi,\pi)\)) の Fourier 級数展開:
+      #+begin_quote
       #+begin_src latex
 	\begin{equation}
           f(x)
           =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
         \end{equation}
       #+end_src
-    - Fourier基底の完全性: 
+      #+end_quote
+    - Fourier 基底の完全性:
+      #+begin_quote
       #+begin_src latex
 	\begin{equation}
-          \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+          \left\{
+            \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+          \right\}
         \end{equation}
       #+end_src
+      #+end_quote
       は完全正規直交系である
 
 ** COMMENT 注意
    - 確認テスト (講義4の中)
-     - 期間: 6/5講義終了-6/11正午
-     - 時間制限: 20分
-     - 6問 (○×式) (ベクトル空間と線形独立性の基本問題)
      - 試験の意味を考えて誠実な対応をすること
      - ネットワーク環境等には自身で配慮すること
      - 過去問などに取り組んでから受けることをお勧め
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+   

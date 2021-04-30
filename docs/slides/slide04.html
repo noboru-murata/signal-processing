@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Fourier級数</title>
+<title>Fourier 級数</title>
 <meta name="author" content="村田 昇"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/font/source-sans-pro/source-sans-pro.css"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
 
@@ -31,10 +31,10 @@
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
 <div class="talk-title">
-    <h1 class="no-toc-progress">Fourier級数</h1>
+    <h1 class="no-toc-progress">Fourier 級数</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 講義4</p>
+    <p>信号処理 - 講義4</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org48ac140">
-<h2 id="org48ac140">復習</h2>
-<div class="outline-text-2" id="text-org48ac140">
+<section id="slide-org9689d3c">
+<h2 id="org9689d3c">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org9689d3c">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org111e830">
-<h3 id="org111e830">ベクトル空間</h3>
+<section id="slide-org4dbe067">
+<h3 id="org4dbe067">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
@@ -76,10 +76,11 @@
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4b14efe">
-<h3 id="org4b14efe">内積空間</h3>
+<section id="slide-org1d2e6c3">
+<h3 id="org1d2e6c3">内積空間</h3>
 <ul>
 <li><p>
 内積の定義
@@ -117,8 +118,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3ca92b4">
-<h3 id="org3ca92b4">Hilbert 空間</h3>
+<section id="slide-orgbc33a55">
+<h3 id="orgbc33a55">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
@@ -156,8 +157,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga481d7c">
-<h3 id="orga481d7c">正規直交系</h3>
+<section id="slide-org828b17e">
+<h3 id="org828b17e">正規直交系</h3>
 <ul>
 <li><p>
 定義
@@ -206,8 +207,8 @@ Hilbert空間 \(\mathcal{H}\) の
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbddcc9a">
-<h3 id="orgbddcc9a">完全正規直交系</h3>
+<section id="slide-orgb619f97">
+<h3 id="orgb619f97">完全正規直交系</h3>
 <ul>
 <li><p>
 定義
@@ -219,8 +220,8 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 </p>
 <div>
 \begin{equation}
- \forall u\in\mathcal{H},\; 
- \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+  \forall u\in\mathcal{H},\; 
+  \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
 \end{equation}
 
 </div>
@@ -234,10 +235,11 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org17b2b70">
-<h3 id="org17b2b70">完全正規直交系の性質</h3>
+<section id="slide-orgd30cdcd">
+<h3 id="orgd30cdcd">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
@@ -262,6 +264,7 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 <blockquote>
 <p>
 \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
+以下が成り立つ．
 </p>
 <div>
 \begin{equation}
@@ -270,50 +273,38 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 \end{equation}
 
 </div>
-
-<p>
-が成り立つ．
-</p>
 </blockquote></li>
 
 </ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org1d69b60">
-<h2 id="org1d69b60">Fourier級数</h2>
-<aside class="notes">
-<p>
-これまで
-Hilbert空間の完全正規直交系を考察した．
-本章では，これらの結果を踏まえて，
-基底関数を用いた周期関数の具体的な展開法を議論する．
-</p>
-
-</aside>
-
+<section id="slide-orga4a5f29">
+<h2 id="orga4a5f29">Fourier 級数</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc0e0cf7">
-<h3 id="orgc0e0cf7">周期関数</h3>
+<section id="slide-org3117342">
+<h3 id="org3117342">周期関数</h3>
 <ul>
 <li>周期的な信号: 性質の良い(取り扱い易い)信号</li>
 <li>\(2\pi\) 周期の信号を考えることにする</li>
 <li><p>
 \(\mathbb{R}\) 上の関数 \(f(x)\) が
-周期 \(2\pi\) を持つ: 
+周期 \(2\pi\) を持つ:
 </p>
+<blockquote>
 <div>
 \begin{equation}
   f(x+2\pi)=f(x)
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -321,7 +312,7 @@ Hilbert空間の完全正規直交系を考察した．
 <li>1周期の範囲は
 \([-\pi,\pi]\) ， \([0,2\pi]\) ，\([\pi,3\pi]\) など
 自由に取ってよい</li>
-<li>計算上取り扱いが簡単なので主に \([-\pi,\pi]\) を用いる</li>
+<li>計算上取り扱いが簡単なので \([-\pi,\pi]\) を用いる</li>
 <li><p>
 対象とする関数は2乗可積分な複素数値関数とする
 </p>
@@ -339,48 +330,25 @@ Hilbert空間の完全正規直交系を考察した．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org380bcac">
-<h3 id="org380bcac">Fourier級数展開</h3>
+<section id="slide-orgbb3ee1f">
+<h3 id="orgbb3ee1f">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
 </p>
 <blockquote>
-<p>
-\(f\in L^{2}(-\pi,\pi)\) 
-は以下のように
-<b>Fourier級数展開</b>
-される．
-</p>
-<div>
-\begin{align}
-  f(x)
-  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
-  &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}e^{inx}\int_{-\pi}^{\pi}f(y)e^{-iny}dy\\
-  &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}f(y)e^{in(x-y)}dy
-\end{align}
-
-</div>
-
 <div>
 \begin{equation}
-  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \left\{
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \right\}
 \end{equation}
 
 </div>
-</blockquote></li>
 
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-(定理のつづき)
-</p>
-<blockquote>
 <p>
-ただし内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+とし，
+\(f,g\in L^{2}(-\pi,\pi)\) に対して内積を
 </p>
 <div>
 \begin{equation}
@@ -396,22 +364,51 @@ Hilbert空間の完全正規直交系を考察した．
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+(定理のつづき)
+</p>
+<blockquote>
+<p>
+\(f\in L^{2}(-\pi,\pi)\) 
+は以下のように
+<b>Fourier 級数展開</b>
+される．
+</p>
+<div>
+\begin{align}
+  f(x)
+  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+  &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}e^{inx}\int_{-\pi}^{\pi}f(y)e^{-iny}dy\\
+  &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}\int_{-\pi}^{\pi}f(y)e^{in(x-y)}dy
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1df4c9c">
-<h3 id="org1df4c9c">注意</h3>
+<section id="slide-orgf4fafd8">
+<h3 id="orgf4fafd8">注意</h3>
 <ul>
 <li><p>
 あとで示すように
 </p>
+<blockquote>
 <div>
 \begin{equation}
-  \left\{\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc\right\}
+  \left\{
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \right\}
 \end{equation}
 
 </div>
-
+</blockquote>
 <p>
 は
 \(L^{2}(-\pi,\pi)\)
@@ -426,6 +423,7 @@ Hilbert空間の完全正規直交系を考察した．
 <li><p>
 <b>正規直交系</b> であることは容易に確かめられる．
 </p>
+<blockquote>
 <div>
 \begin{align}
   \langle\phi_{m},\phi_{n}\rangle
@@ -442,21 +440,23 @@ Hilbert空間の完全正規直交系を考察した．
   =\frac{1}{2\pi}\int_{-\pi}^{\pi}1dx=1
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9c69168">
-<h3 id="org9c69168">Fourier級数展開の例</h3>
+<section id="slide-org2f1fa05">
+<h3 id="org2f1fa05">Fourier 級数展開の例</h3>
 <ul>
 <li>区間 \((-\pi,\pi)\) 上の周期関数 \(f(x)=x\)
 (\(\in L^{2}(-\pi,\pi)\)) 
-Fourier級数展開を求める</li>
+Fourier 級数展開を求める</li>
 <li><p>
 係数は以下の式を計算すればよい．
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \langle f,\phi_{n}\rangle
@@ -464,10 +464,10 @@ Fourier級数展開を求める</li>
   \frac{1}{\sqrt{2\pi}}e^{-inx}dx
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -502,43 +502,58 @@ Fourier級数展開を求める</li>
 <li><p>
 \(n=0\) も計算してまとめると以下のようになる
 </p>
+<blockquote>
 <div>
 \begin{equation}
   x
   =i\sum_{\substack{n=-\infty\\n\not=0}}^{\infty}\frac{(-1)^{n}}{n}e^{inx}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
 <li><p>
 Euler の公式
 </p>
+<blockquote>
 <div>
 \begin{equation}
   e^{inx}=\cos(nx)+i\sin(nx)
 \end{equation}
 
 </div>
-
+</blockquote>
 <p>
 を用いると三角関数で書くことができる
 </p>
+<blockquote>
 <div>
 \begin{equation}
   x
   =2\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}\sin{nx}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org43c3d6a" data-background="#fef4f4">
-<h2 id="org43c3d6a">演習</h2>
+<section id="slide-orgded4587" data-background="#fef4f4">
+<h2 id="orgded4587">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1aa1ab6" data-background="#fef4f4">
+<h3 id="org1aa1ab6">練習問題</h3>
 <ul>
 <li>\(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
 Fourier 級数展開せよ．
@@ -552,16 +567,14 @@ Fourier 級数展開せよ．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdbc13cb" data-background="#fef4f4">
-<h3 id="orgdbc13cb">解答</h3>
+<section id="slide-orgb519561" data-background="#fef4f4">
+<h3 id="orgb519561">解答例</h3>
 <ul>
-<li><p>
-定義に則って計算すればよい
-</p>
-<ul>
+<li>定義に則って計算すればよい</li>
 <li><p>
 \(f(x)=|x|\)
 </p>
+<blockquote>
 <div>
 \begin{align}
   |x|
@@ -571,8 +584,8 @@ Fourier 級数展開せよ．
     -\frac{4}{\pi}\sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}}\cos{(2m+1)x}
 \end{align}
 
-</div></li>
-
+</div>
+</blockquote></li>
 <li>偶関数なので余弦関数で書き直すことができる</li>
 
 </ul>
@@ -583,6 +596,7 @@ Fourier 級数展開せよ．
 <li><p>
 \(f(x)=x^{2}\)
 </p>
+<blockquote>
 <div>
 \begin{align}
   x^{2}
@@ -592,40 +606,40 @@ Fourier 級数展開せよ．
     +4\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{2}}\cos{nx}
 \end{align}
 
-</div></li>
-
-<li>\(f(x)=x\) の結果と比較してみよ．</li>
-
-</ul></li>
+</div>
+</blockquote></li>
+<li>\(f(x)=x\) の結果と比較してみよ</li>
 
 </ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org95035f5">
-<h2 id="org95035f5">Fourier級数の応用</h2>
-<div class="outline-text-2" id="text-org95035f5">
+<section id="slide-orgfc44c01">
+<h2 id="orgfc44c01">Fourier 級数の応用</h2>
+<div class="outline-text-2" id="text-orgfc44c01">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfd3fe76">
-<h3 id="orgfd3fe76">級数和の計算</h3>
+<section id="slide-orgf9fb01f">
+<h3 id="orgf9fb01f">級数和の計算</h3>
 <ul>
 <li>展開式から級数和に関していろいろな公式を得ることができる．</li>
 <li><p>
 \(f(x)=|x|\) に対して \(x=0\) とすれば
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}} = \frac{\pi^{2}}{8}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -633,19 +647,21 @@ Fourier 級数展開せよ．
 <li><p>
 \(f(x)=x^{2}\) に対して \(x=0\) とすれば
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^{2}} = \frac{\pi^{2}}{12}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3994dd7">
-<h3 id="org3994dd7">Fourier級数の性質</h3>
+<section id="slide-orga720f95">
+<h3 id="orga720f95">Fourier級数の性質</h3>
 <ul>
 <li><p>
 三角関数による展開
@@ -699,7 +715,7 @@ Eulerの公式により以下のように変形することができる
 </div>
 
 <p>
-は実数になることから，
+は実数になることから
 \(a_{n}\) と \(a_{-n}\) は複素共役の関係にある．
 </p>
 </blockquote></li>
@@ -714,7 +730,7 @@ Eulerの公式により以下のように変形することができる
 </p>
 <blockquote>
 <p>
-\(L^{2}(0,\pi)\) においては，
+\(L^{2}(0,\pi)\) においては
 </p>
 <div>
 \begin{align}
@@ -737,56 +753,60 @@ Eulerの公式により以下のように変形することができる
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgbd8755a" data-background="#fef4f4">
-<h2 id="orgbd8755a">演習</h2>
-<ul>
-<li>以下の問に答えよ．
+<section id="slide-orgb609886" data-background="#fef4f4">
+<h2 id="orgb609886">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgfe003d0" data-background="#fef4f4">
+<h3 id="orgfe003d0">練習問題</h3>
 <ul>
 <li><p>
 以下の級数和を求めよ
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \sum_{n=1}^{\infty}\frac{1}{n^{2}}
 \end{equation}
 
-</div></li>
-
+</div>
+</blockquote></li>
 <li>正弦関数と余弦関数で正規直交系を構成せよ．</li>
-
-</ul></li>
 
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org00ebc4a" data-background="#fef4f4">
-<h3 id="org00ebc4a">解答</h3>
+<section id="slide-org706c4b5" data-background="#fef4f4">
+<h3 id="org706c4b5">解答例</h3>
 <ul>
 <li><p>
 \(f(x)=x^{2}\) の Fourier 級数展開において \(x=\pm\pi\) とすればよい
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \sum_{n=1}^{\infty}\frac{1}{n^{2}} = \frac{\pi^{2}}{6}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
 </section>
 <section data-background="#fef4f4">
 <ul>
 <li><p>
-三角関数の公式を駆使してもよいが，
+三角関数の積の展開は公式を駆使してもよいが，
 Euler の公式から
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \cos(nx)=\frac{e^{inx}+e^{-inx}}{2},\quad
@@ -794,26 +814,29 @@ Euler の公式から
 \end{equation}
 
 </div>
-
+</blockquote>
 <p>
 となることを利用すればよい．またグラフより以下は明らか．
 </p>
+<blockquote>
 <div>
 \begin{equation}
   \int_{-\pi}^{\pi}\cos^{2}(nx)dx=2\pi\times\frac{1}{2},\quad
   \int_{-\pi}^{\pi}\sin^{2}(nx)dx=2\pi\times\frac{1}{2}
 \end{equation}
 
-</div></li>
+</div>
+</blockquote></li>
 
 </ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgaf112ba">
-<h2 id="orgaf112ba">完全性の証明</h2>
+<section id="slide-org073a682">
+<h2 id="org073a682">完全性の証明</h2>
 <ul>
 <li><p>
 step 1
@@ -1008,6 +1031,7 @@ step 8
 <blockquote>
 <p>
 右辺の級数和を計算すると
+以下になる．
 </p>
 <div>
 \begin{align}
@@ -1022,10 +1046,6 @@ step 8
 \end{align}
 
 </div>
-
-<p>
-となる．
-</p>
 </blockquote></li>
 
 </ul>
@@ -1150,7 +1170,9 @@ step 12
 </p>
 <div>
 \begin{equation}
-  \lim_{r\to1}f_{r}(x)=f(x)
+  \lim_{r\to1}f_{r}(x)
+  =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+  =f(x)
 \end{equation}
 
 </div>
@@ -1158,40 +1180,49 @@ step 12
 <p>
 となることが示された．
 </p>
-</blockquote></li>
+</blockquote>
+<ul>
+<li>前回の定理(完全性の同値な条件)の2を参照</li>
+
+</ul></li>
 
 </ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgdecfebd">
-<h2 id="orgdecfebd">まとめ</h2>
+<section id="slide-orgc8548ef">
+<h2 id="orgc8548ef">今回のまとめ</h2>
 <ul>
-<li>Fourier級数展開:
+<li>Fourier 級数展開:
 <ul>
 <li><p>
-周期関数 (\(\in L^{2}(-\pi,\pi)\)) のFourier級数展開:
+周期関数 (\(\in L^{2}(-\pi,\pi)\)) の Fourier 級数展開:
 </p>
+<blockquote>
 <div>
 \begin{equation}
   f(x)
   =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
 \end{equation}
 
-</div></li>
-
+</div>
+</blockquote></li>
 <li><p>
-Fourier基底の完全性: 
+Fourier 基底の完全性:
 </p>
+<blockquote>
 <div>
 \begin{equation}
-  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \left\{
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \right\}
 \end{equation}
 
 </div>
-
+</blockquote>
 <p>
 は完全正規直交系である
 </p></li>
@@ -1221,7 +1252,7 @@ center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
-mouseWheel: true,
+mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
@@ -1230,7 +1261,7 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }},
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
@@ -1238,7 +1269,8 @@ plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 // Optional libraries used to extend reveal.js
 dependencies: [
 { src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'}]
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>

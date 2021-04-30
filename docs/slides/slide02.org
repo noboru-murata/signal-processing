@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-16 11:49:19 mura>
+# Time-stamp: <2021-04-20 14:42:55 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -93,39 +93,37 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - 以下の集合 \(V\) のうちベクトル空間はどれか？
-       - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
-       - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
-     - 以下の集合のうち線形独立なものはどれか？
-       - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
-       - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
-     - 以下のベクトル空間の空間の次元は?
-       - \(C^{m}[0,1]\)
-       - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
+   - 以下の集合 \(V\) のうちベクトル空間はどれか？
+     - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
+     - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
+   - 以下の集合のうち線形独立なものはどれか？
+     - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
+     - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
+   - 以下のベクトル空間の空間の次元は?
+     - \(C^{m}[0,1]\)
+     - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
 
-** 解答例
+** ヒント
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - ヒント
-     - 条件の線形性として，\(h=f+g\)のとき
-       #+begin_src latex
-         \begin{align}
-           &h^{(2)}+h^{(1)}+h\\
-           &\quad
-             =(f^{(2)}+f^{(1)}+f)
-             +(g^{(2)}+g^{(1)}+g)
-         \end{align}
-       #+end_src
-       がどうなるか考えればよい
-     - 適当な\(x\)を用いて連立方程式の解を考えればよい
-       #+begin_src latex
-         \begin{equation}
-           \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-         \end{equation}
-       #+end_src
-     - 線形独立な要素がいくつ取れるかを考えればよい
+   - 条件の線形性として，\(h=f+g\)のとき
+     #+begin_src latex
+       \begin{align}
+	 &h^{(2)}+h^{(1)}+h\\
+	 &\quad
+	   =(f^{(2)}+f^{(1)}+f)
+	   +(g^{(2)}+g^{(1)}+g)
+       \end{align}
+     #+end_src
+     がどうなるか考えればよい
+   - 適当な\(x\)を用いて連立方程式の解を考えればよい
+     #+begin_src latex
+       \begin{equation}
+	 \alpha f(x) + \beta g(x) + \gamma h(x) = 0
+       \end{equation}
+     #+end_src
+   - 線形独立な要素がいくつ取れるかを考えればよい
 
 
 * 内積空間
@@ -248,19 +246,18 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - 距離の定義を述べよ．
-     - 2つのベクトルの差のノルムが距離となることを確かめよ．
-     - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
-       内積およびノルムの性質として正しいものはどれか？
-       # ベクトル \(u,v\in\mathcal{H}\) の内積を \(\langle u,v\rangle\)， 
-       # ベクトル \(u\in\mathcal{H}\) のノルムを \(\|u\|\) と書く．
-       - \(\langle u,v\rangle = \langle v,u\rangle\)
-       - \(\|u\|=0\) ならば \(u=0\)
-       - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
-       - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
+   - 距離の定義を述べよ．
+   - 2つのベクトルの差のノルムが距離となることを確かめよ．
+   - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+     内積およびノルムの性質として正しいものはどれか？
+     # ベクトル \(u,v\in\mathcal{H}\) の内積を \(\langle u,v\rangle\)， 
+     # ベクトル \(u\in\mathcal{H}\) のノルムを \(\|u\|\) と書く．
+     - \(\langle u,v\rangle = \langle v,u\rangle\)
+     - \(\|u\|=0\) ならば \(u=0\)
+     - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
+     - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
 
-** 解答例
+** ヒント
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
@@ -376,42 +373,40 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - 以下の集合の中で完備なものはどれか?
-       - 実数全体 \((-\infty,\infty)\)
-       - 0以外の実数
-       - 区間 \([0,1]\) の無理数
-     - 実数 \(\mathbb{R}\) を係数体とする
-       以下の内積空間で Hilbert 空間となるものはどれか?
-       - \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
-         (内積は \(\langle u,v\rangle=\sum_{i=1}^{3}u_{i}v_{i}\))
-       - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
-         (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\))
+   - 以下の集合の中で完備なものはどれか?
+     - 実数全体 \((-\infty,\infty)\)
+     - 0以外の実数
+     - 区間 \([0,1]\) の無理数
+   - 実数 \(\mathbb{R}\) を係数体とする
+     以下の内積空間で Hilbert 空間となるものはどれか?
+     - \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
+       (内積は \(\langle u,v\rangle=\sum_{i=1}^{3}u_{i}v_{i}\))
+     - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
+       (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\))
 
-** 解答例
+** ヒント
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - ヒント
-     - 点列の収束先に含まれない要素の有無を考える．
-     - \(C[-1,1]\) は Hilbert 空間にならない．
-       #+begin_quote
-       関数列 \(f_{n}\) として例えば次のようなものを考える．
-       #+begin_src latex
-         \begin{equation}
-           f_{n}(x)
-           =
-           \begin{cases}
-             -1, & (x<-1/n)\\
-             nx, & (-1/n\le x\le 1/n)\\
-             1,  & (x>1/n)
-           \end{cases}
-         \end{equation}
-       #+end_src
-       \(f_{n}\) は連続関数であるが，
-       \(\lim_{n\to\infty}f_{n}\) は不連続になる．
-       #+end_quote
-	  
+   - 点列の収束先に含まれない要素の有無を考える．
+   - \(C[-1,1]\) は Hilbert 空間にならない．
+     #+begin_quote
+     関数列 \(f_{n}\) として例えば次のようなものを考える．
+     #+begin_src latex
+       \begin{equation}
+	 f_{n}(x)
+	 =
+	 \begin{cases}
+	   -1, & (x<-1/n)\\
+	   nx, & (-1/n\le x\le 1/n)\\
+	   1,  & (x>1/n)
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     \(f_{n}\) は連続関数であるが，
+     \(\lim_{n\to\infty}f_{n}\) は不連続になる．
+     #+end_quote
+
 
 * 今回のまとめ
   - 内積: 

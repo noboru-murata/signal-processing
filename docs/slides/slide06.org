@@ -1,8 +1,9 @@
 #+TITLE: Fourier 変換
-#+SUBTITLE: 信号処理 講義6
+#+SUBTITLE: 信号処理 - 講義6
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-07-03 11:03:47 mura>
+#+DATE:
+# Time-stamp: <2021-04-21 12:00:08 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,7 +12,7 @@
 # C-c '
 :end:
 
-* 復習
+* 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
    - ベクトル空間
      #+begin_quote
@@ -33,11 +34,11 @@
      #+end_quote
    - 定理
      #+begin_quote
-     可分な無限次元Hilbert空間は $l^{2}$ 空間と同型である．
+     可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
      #+end_quote
    - 定理
      #+begin_quote
-     $\{\phi_{k}\}$ が $\mathcal{H}$ の完全正規直交系のとき
+     \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
      以下が成り立つ．
      #+begin_src latex
        \begin{equation}
@@ -50,7 +51,7 @@
 ** Fourier 級数展開
    - 定理
      #+begin_quote
-     $f\in L^{2}(-\pi,\pi)$ 
+     \(f\in L^{2}(-\pi,\pi)\) 
      は
      以下のように
      Fourier級数展開
@@ -66,7 +67,7 @@
          \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
        \end{equation}
      #+end_src
-     内積は $f,g\in L^{2}(-\pi,\pi)$ に対して
+     内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
      以下で定義する．
      #+begin_src latex
        \begin{equation}
@@ -76,28 +77,34 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 次の関数 $f\in L^{2}(-\pi,\pi)$ を
-      Fourier 級数展開せよ．
-      #+begin_src latex
-        \begin{equation}
-          f(x)=
-          \begin{cases}
-            \cos(x),&|x|\le\pi/2\\
-            0,&|x| > \pi/2
-          \end{cases}
-        \end{equation}
-      #+end_src
-** 解答例
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 関数 $\cos(x)$ は $\exp(ix)$ と $\exp(-ix)$ で表せる．
-   - 積分計算は $n=\pm1$ で場合分けが必要となる．
+   - 以下の問に答えよ．
+     - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+       Fourier 級数展開せよ．
+       #+begin_src latex
+	 \begin{equation}
+	   f(x)=
+	   \begin{cases}
+	     \cos(x),&|x|\le\pi/2\\
+	     0,&|x| > \pi/2
+	   \end{cases}
+	 \end{equation}
+       #+end_src
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(\cos(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．
+   - 積分計算は \(n=\pm1\) で場合分けが必要となる．
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -128,29 +135,34 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 以下の系が周期 $T$ の直交系となるように $\alpha$ を定めよ．
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問に答えよ．
+     - 以下の系が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
+       #+begin_src latex
+	 \begin{equation}
+	   \{e^{\alpha inx},\;
+	   n=0,\pm1,\pm2,\dotsc\}
+	 \end{equation}
+       #+end_src
+    - 以下を内積とするとき，前問の直交系を正規化せよ．
       #+begin_src latex
-        \begin{equation}
-          \{e^{\alpha inx},\;
-          n=0,\pm1,\pm2,\dotsc\}
-        \end{equation}
+	\begin{equation}
+	  \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
+	\end{equation}
       #+end_src
-   - 以下を内積とするとき，前問の直交系を正規化せよ．
-     #+begin_src latex
-       \begin{equation}
-         \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
-       \end{equation}
-     #+end_src
-      
-** 解答例
+
+** COMMENT 解答例
    - 周期
      #+begin_quote
-     区間 $[-\pi,\pi]$ と区間 $[-T/2,T/2]$ の関係を考えればよい．
+     区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
      #+begin_src latex
        \begin{equation}
          \alpha=\frac{2\pi}{T}
@@ -161,7 +173,7 @@
    - 正規化
      #+begin_quote
      正規化定数を
-     $c_{n}(> 0)$ とするとき，
+     \(c_{n}(> 0)\) とするとき，
      内積の定義より
      #+begin_src latex
        \begin{equation}
@@ -180,10 +192,11 @@
      となる．
      #+end_quote
 
+
 * Fourier変換
 
 ** Fourier級数の一般化
-   - 周期 $2\pi$ の場合
+   - 周期 \(2\pi\) の場合
      #+begin_quote
      正規直交系
      #+begin_src latex
@@ -194,7 +207,7 @@
        \end{equation}
      #+end_src
      #+end_quote
-   - 周期 $T$ の場合
+   - 周期 \(T\) の場合
      #+begin_quote
      正規直交系
      #+begin_src latex
@@ -206,7 +219,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 周期 $T$ の場合
+   - 周期 \(T\) の場合
      #+begin_quote
      Fourier 級数展開
      #+begin_src latex
@@ -221,7 +234,7 @@
    #+reveal: split
    - 極限操作のための書き換え
      #+begin_quote
-     ここで $\frac{2\pi}{T}=\Delta$ とする
+     ここで \(\frac{2\pi}{T}=\Delta\) とする
      #+begin_src latex
        \begin{equation}
          f(x)=
@@ -232,7 +245,7 @@
      #+end_quote
    - 周期無限大における積分
      #+begin_quote
-     $T$ が十分大きい($\Delta$ が十分小さい)極限を考えるために，
+     \(T\) が十分大きい(\(\Delta\) が十分小さい)極限を考えるために，
      以下の積分を定義する．
      #+begin_src latex
        \begin{equation}
@@ -245,7 +258,7 @@
    - 級数和の近似
      #+begin_quote
      Fourier 展開の積分部分は
-     $\sqrt{2\pi}\hat{f}(n\Delta)$
+     \(\sqrt{2\pi}\hat{f}(n\Delta)\)
      で十分良く近似できると考え
      Riemann 和の形で書く．
      #+begin_src latex
@@ -259,8 +272,8 @@
    - 区分求積法
      #+begin_quote
      Riemann 和は
-     $n\Delta\to\omega$,
-     $\Delta\to d\omega$
+     \(n\Delta\to\omega\),
+     \(\Delta\to d\omega\)
      として積分で表される．
      #+begin_src latex
        \begin{equation}
@@ -288,9 +301,9 @@
 ** Fourier 変換と反転公式
    - 定義
      #+begin_quote
-     $\mathbb{R}$
+     \(\mathbb{R}\)
      上の関数
-     $f$
+     \(f\)
      に対して
      #+begin_src latex
        \begin{align}
@@ -309,9 +322,9 @@
 ** 多次元 Fourier 変換
    - d次元の場合
      #+begin_quote
-     $\mathbb{R}^{d}$
+     \(\mathbb{R}^{d}\)
      上の関数
-     $f$
+     \(f\)
      について
      #+begin_src latex
        \begin{align}
@@ -327,25 +340,31 @@
      #+end_src
      で定義する．
      なお
-     $\boldsymbol{\omega}\cdot\boldsymbol{x}$
+     \(\boldsymbol{\omega}\cdot\boldsymbol{x}\)
      はベクトル
-     $\boldsymbol{\omega}\in\mathbb{R}^{d}$
+     \(\boldsymbol{\omega}\in\mathbb{R}^{d}\)
      とベクトル
-     $\boldsymbol{x}\in\mathbb{R}^{d}$
+     \(\boldsymbol{x}\in\mathbb{R}^{d}\)
      の通常の内積である．
      #+end_quote
+
 
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の積分値を求めよ．
-    #+begin_src latex
-      \begin{equation}
-        \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
-      \end{equation}
-    #+end_src
-** 解答例
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の積分値を求めよ．
+     #+begin_src latex
+       \begin{equation}
+	 \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+       \end{equation}
+     #+end_src
+
+** COMMENT 解答例
    - 2重積分を利用する
      #+begin_quote
      #+begin_src latex
@@ -376,15 +395,16 @@
       \end{equation}
     #+end_src
 
+
 * 反転公式の証明
   #+begin_notes
-  一般に $\hat{f}(\omega)$ は可積分かどうかわからないので，
+  一般に \(\hat{f}(\omega)\) は可積分かどうかわからないので，
   Poisson核と似た原理を用いて反転公式を示す．
   #+end_notes
 ** 証明
    - step 1
      #+begin_quote
-     関数 $\hat{f}$ は各点で値が決まるが，
+     関数 \(\hat{f}\) は各点で値が決まるが，
      積分
      #+begin_src latex
        \begin{equation}
@@ -398,7 +418,7 @@
    - step 2
      #+begin_quote
      収束因子
-     $e^{-\epsilon\omega^{2}}$
+     \(e^{-\epsilon\omega^{2}}\)
      を用いて以下の積分を定義する．
      #+begin_src latex
        \begin{align}
@@ -431,8 +451,8 @@
      #+end_quote
    - step 4
      #+begin_quote
-     $\omega$ の積分を行い
-     $f_{\epsilon}$
+     \(\omega\) の積分を行い
+     \(f_{\epsilon}\)
      を整理する．
      #+begin_src latex
        \begin{equation}
@@ -447,7 +467,7 @@
    - step 5
      #+begin_quote
      関数
-     $G_{\epsilon}$
+     \(G_{\epsilon}\)
      (Gauss核と呼ばれる)を
      #+begin_src latex
        \begin{equation}
@@ -457,7 +477,7 @@
        \end{equation}
      #+end_src
      と定義し，
-     $f_{\epsilon}$
+     \(f_{\epsilon}\)
      を畳み込みで書き直す．
      #+begin_src latex
        \begin{equation}
@@ -474,20 +494,20 @@
    - step 6
      #+begin_quote
      関数
-     $G_{\epsilon}$
+     \(G_{\epsilon}\)
      は以下の性質を持つことが
      確かめられる．
      #+end_quote
-     1. $G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}$
-     2. $\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1$
-     3. $\forall\delta>0$ $\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0$
+     1. \(G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}\)
+     2. \(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)
+     3. \(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)
      #+begin_quote
      したがってPoisson核と同様に，
-     $G_{\epsilon}$
+     \(G_{\epsilon}\)
      は
-     $\epsilon\to0$
+     \(\epsilon\to0\)
      において
-     $\delta$ 関数になる．
+     \(\delta\) 関数になる．
      #+end_quote
 
 ** 反転公式
@@ -502,10 +522,10 @@
        \end{equation}
      #+end_src
      より正確には
-     $f\in L^{1}\cap L^{p}$
+     \(f\in L^{1}\cap L^{p}\)
      であれば，
      上の式は
-     $L^{p}$
+     \(L^{p}\)
      の意味で成り立つと表現される．
      #+begin_src latex
        \begin{equation}
@@ -514,32 +534,37 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 関数 $\Xi$ を以下で定義する．
-    #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        \Xi_{(a,b)}(x)
-        =
-        \begin{cases}
-          1,& x\in (a,b)\\
-          0,&\text{otherwise}
-        \end{cases}
-      \end{equation}
-    #+end_src
-    #+end_quote
-    以下の関数の Fourier 変換を求めよ．
-    - $f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)$
-    - $g(x)=e^{-\beta x^{2}}\;(\beta>0)$
-    - $h(x)=\Xi_{(-1,1)}(x)$
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(\Xi\) を以下で定義する．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \Xi_{(a,b)}(x)
+	 =
+	 \begin{cases}
+	   1,& x\in (a,b)\\
+	   0,&\text{otherwise}
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
+     以下の関数の Fourier 変換を求めよ．
+     - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
+     - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
+     - \(h(x)=\Xi_{(-1,1)}(x)\)
 
 ** COMMENT Fourier 変換の例
      - 定義関数
        #+begin_quote
-       関数 $\Xi$ を以下で定義する．
+       関数 \(\Xi\) を以下で定義する．
        #+begin_src latex
 	 \begin{equation}
 	   \Xi_{(a,b)}(x)
@@ -555,13 +580,14 @@
    - 代表的な例
      | 関数                                         | Fourier変換                                         |
      |----------------------------------------------+-----------------------------------------------------|
-     | $\Xi_{(-1,1)}(x),\;x\in\mathbb{R}$           | $\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}$     |
-     | $e^{-ax^{2}},\;x\in\mathbb{R}$               | $\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}$             |
-     | $\frac{1}{x-ia},\;x\in\mathbb{R},a>0$        | $\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)$  |
-     | $\frac{1}{x+ia},\;x\in\mathbb{R},a>0$        | $-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)$ |
-     | $\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0$ | $\sqrt{\frac{\pi}{2}}e^{-a\omega  }$                |
+     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
+     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
+     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
+     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
+     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
 
-* まとめ
+
+* 今回のまとめ
   - Fourier 変換
     - Fourier 級数の周期の一般化
     - 周期無限大の極限の表現
