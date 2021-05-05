@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-21 12:00:08 mura>
+# Time-stamp: <2021-05-05 18:07:51 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -86,18 +86,19 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ．
-     - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
-       Fourier 級数展開せよ．
-       #+begin_src latex
-	 \begin{equation}
-	   f(x)=
-	   \begin{cases}
-	     \cos(x),&|x|\le\pi/2\\
-	     0,&|x| > \pi/2
-	   \end{cases}
-	 \end{equation}
-       #+end_src
+   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+     Fourier 級数展開せよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=
+	 \begin{cases}
+	   \cos(x),&|x|\le\pi/2\\
+	   0,&|x| > \pi/2
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
 
 ** COMMENT 解答例
    :PROPERTIES:
@@ -135,29 +136,27 @@
      #+end_src
      #+end_quote
 
-
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
 ** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ．
-     - 以下の系が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
-       #+begin_src latex
-	 \begin{equation}
-	   \{e^{\alpha inx},\;
-	   n=0,\pm1,\pm2,\dotsc\}
-	 \end{equation}
-       #+end_src
-    - 以下を内積とするとき，前問の直交系を正規化せよ．
-      #+begin_src latex
-	\begin{equation}
-	  \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
-	\end{equation}
-      #+end_src
+   - 以下が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \{e^{\alpha inx},\;
+	 n=0,\pm1,\pm2,\dotsc\}
+       \end{equation}
+     #+end_src
+     #+end_quote
+   - 以下を内積とするとき前問の直交系を正規化せよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
+       \end{equation}
+     #+end_src
+     #+end_quote
 
 ** COMMENT 解答例
    - 周期
@@ -194,7 +193,6 @@
 
 
 * Fourier変換
-
 ** Fourier級数の一般化
    - 周期 \(2\pi\) の場合
      #+begin_quote
@@ -358,11 +356,13 @@
    :reveal_background: #fef4f4
    :END:
    - 以下の積分値を求めよ．
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
        \end{equation}
      #+end_src
+     #+end_quote
 
 ** COMMENT 解答例
    - 2重積分を利用する
@@ -388,19 +388,22 @@
      #+end_quote
    #+reveal: split
    - 解答
+     #+begin_quote
      #+begin_src latex
       \begin{equation}
         \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
         =\sqrt{\frac{\pi}{\epsilon}}
       \end{equation}
     #+end_src
+    #+end_quote
 
 
 * 反転公式の証明
-  #+begin_notes
-  一般に \(\hat{f}(\omega)\) は可積分かどうかわからないので，
-  Poisson核と似た原理を用いて反転公式を示す．
-  #+end_notes
+  # #+begin_notes
+  # 一般に \(\hat{f}(\omega)\) は可積分かどうかわからないので，
+  # Poisson核と似た原理を用いて反転公式を示す．
+  # #+end_notes
+
 ** 証明
    - step 1
      #+begin_quote
@@ -497,11 +500,11 @@
      \(G_{\epsilon}\)
      は以下の性質を持つことが
      確かめられる．
-     #+end_quote
+
      1. \(G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}\)
      2. \(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)
      3. \(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)
-     #+begin_quote
+
      したがってPoisson核と同様に，
      \(G_{\epsilon}\)
      は
@@ -601,3 +604,13 @@
      - 4問 (計算問題) (ある関数の Fourier 級数展開の係数を計算)
      - 試験であることを念頭に誠実な対応をすること
      - ネットワーク環境等には自身で配慮すること
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+   
+   
+   
