@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Fourier級数の性質</title>
+<title>Fourier 級数の性質</title>
 <meta name="author" content="村田 昇"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -31,7 +31,7 @@
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
 <div class="talk-title">
-    <h1 class="no-toc-progress">Fourier級数の性質</h1>
+    <h1 class="no-toc-progress">Fourier 級数の性質</h1>
 </div>
 <div class="talk-subtitle">
     <p>信号処理 - 講義5</p>
@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-orgd855f0d">
-<h2 id="orgd855f0d">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgd855f0d">
+<section id="slide-orgc8371db">
+<h2 id="orgc8371db">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgc8371db">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge28c163">
-<h3 id="orge28c163">ベクトル空間・内積空間・Hilbert空間</h3>
+<section id="slide-org9b12c3c">
+<h3 id="org9b12c3c">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -84,8 +84,8 @@ Hilbert 空間
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5d61a33">
-<h3 id="org5d61a33">Hilbert空間の完全正規直交系</h3>
+<section id="slide-org3e4f6c6">
+<h3 id="org3e4f6c6">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -125,8 +125,8 @@ Hilbert 空間
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org326087a">
-<h3 id="org326087a">Fourier級数展開</h3>
+<section id="slide-org77f33b3">
+<h3 id="org77f33b3">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -136,7 +136,7 @@ Hilbert 空間
 \(f\in L^{2}(-\pi,\pi)\) 
 は
 以下のように
-<b>Fourier級数展開</b>
+<b>Fourier 級数展開</b>
 される．
 </p>
 <div>
@@ -174,12 +174,12 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-org58a8916" data-background="#fef4f4">
-<h2 id="org58a8916">演習</h2>
+<section id="slide-org833859e" data-background="#fef4f4">
+<h2 id="org833859e">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org04e3658" data-background="#fef4f4">
-<h3 id="org04e3658">練習問題</h3>
+<section id="slide-org38b825e" data-background="#fef4f4">
+<h3 id="org38b825e">練習問題</h3>
 <ul>
 <li>以下の問に答えよ．
 <ul>
@@ -206,20 +206,12 @@ Fourier 級数展開せよ．
 </section>
 </section>
 <section>
-<section id="slide-orgb301e38">
-<h2 id="orgb301e38">不連続点の性質</h2>
-<aside class="notes">
-<p>
-これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
-\(f\) に不連続点がある場合には注意する必要がある．
-</p>
-
-</aside>
-
+<section id="slide-org0b382d3">
+<h2 id="org0b382d3">不連続点の性質</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfa37a42">
-<h3 id="orgfa37a42">片側極限</h3>
+<section id="slide-org397de12">
+<h3 id="org397de12">片側極限</h3>
 <ul>
 <li><p>
 定義
@@ -245,8 +237,8 @@ Fourier 級数展開せよ．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb3ea8e8">
-<h3 id="orgb3ea8e8">不連続点</h3>
+<section id="slide-orgeeddd2a">
+<h3 id="orgeeddd2a">不連続点</h3>
 <ul>
 <li><p>
 不連続関数
@@ -277,8 +269,8 @@ Fourier 級数展開せよ．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbe0387b">
-<h3 id="orgbe0387b">不連続点での評価</h3>
+<section id="slide-org3152e2b">
+<h3 id="org3152e2b">不連続点での評価</h3>
 <ul>
 <li><p>
 定理で評価した式
@@ -300,6 +292,12 @@ Fourier 級数展開せよ．
 
 </div>
 </blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
 <li><p>
 \(P_{r}\) の性質
 </p>
@@ -308,9 +306,10 @@ Fourier 級数展開せよ．
 \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
 </p>
 <div>
-\begin{equation}
-  \int_{-\infty}^{0}P_{r}(y)dy=\frac{1}{2}
-\end{equation}
+\begin{align}
+  \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
+  \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
+\end{align}
 
 </div>
 </blockquote></li>
@@ -374,12 +373,12 @@ Fourier 級数展開せよ．
 </section>
 </section>
 <section>
-<section id="slide-org691d9c5" data-background="#fef4f4">
-<h2 id="org691d9c5">演習</h2>
+<section id="slide-orgb644919" data-background="#fef4f4">
+<h2 id="orgb644919">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8d18077" data-background="#fef4f4">
-<h3 id="org8d18077">練習問題</h3>
+<section id="slide-orgf2b1ad5" data-background="#fef4f4">
+<h3 id="orgf2b1ad5">練習問題</h3>
 <ul>
 <li>以下の問に答えよ
 <ul>
@@ -407,14 +406,14 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 </section>
 </section>
 <section>
-<section id="slide-orgb7a32ed">
-<h2 id="orgb7a32ed">係数の性質</h2>
-<div class="outline-text-2" id="text-orgb7a32ed">
+<section id="slide-org2b5f2a3">
+<h2 id="org2b5f2a3">係数の性質</h2>
+<div class="outline-text-2" id="text-org2b5f2a3">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9493ce6">
-<h3 id="org9493ce6">畳み込み</h3>
+<section id="slide-org3dd0e5d">
+<h3 id="org3dd0e5d">畳み込み</h3>
 <ul>
 <li><p>
 定義
@@ -422,7 +421,7 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 <blockquote>
 <p>
 周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
-畳み込み(合成積; convolution) \(h\)
+<b>畳み込み</b> (合成積; convolution) \(h\)
 を以下で定義される．
 </p>
 <div>
@@ -444,8 +443,8 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb1adb6d">
-<h3 id="orgb1adb6d">\(L^p\) ノルム</h3>
+<section id="slide-org0517c38">
+<h3 id="org0517c38">\(L^p\) ノルム</h3>
 <ul>
 <li><p>
 定義
@@ -461,10 +460,9 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 
 </div>
 
-<ul>
-<li>\(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間</li>
-
-</ul>
+<p>
+ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間とする．
+</p>
 </blockquote>
 <ul>
 <li>内積から自然に導かれたノルムは \(L^{2}\) ノルムである</li>
@@ -475,8 +473,8 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1d5c143">
-<h3 id="org1d5c143">\(L^{p}\) 空間</h3>
+<section id="slide-orga1c86c1">
+<h3 id="orga1c86c1">\(L^{p}\) 空間</h3>
 <ul>
 <li><p>
 定義
@@ -490,18 +488,14 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 \end{align}
 
 </div>
-
-<ul>
-<li>\(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間</li>
-
-</ul>
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3fef8c2">
-<h3 id="org3fef8c2">Riemann-Lebesgue の定理</h3>
+<section id="slide-org4933ca6">
+<h3 id="org4933ca6">Riemann-Lebesgue の定理</h3>
 <ul>
 <li><p>
 定理
@@ -588,8 +582,8 @@ Fourier 級数での \(f(0)\) の値を求めよ．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2d7c2f9">
-<h3 id="org2d7c2f9">Riemann-Lebesgue の定理の応用</h3>
+<section id="slide-orgfcfb035">
+<h3 id="orgfcfb035">Riemann-Lebesgue の定理の応用</h3>
 <ul>
 <li><p>
 Fourier 級数の項別微分
@@ -601,6 +595,7 @@ Fourier 級数の項別微分
 ほとんどいたるところで \(f'\) が存在し，
 \(f'\in L^{2}\cap L^{1}\) であるとする．
 \(f,f'\) の Fourier 級数展開をそれぞれ
+以下で表す．
 </p>
 <div>
 \begin{align}
@@ -611,9 +606,8 @@ Fourier 級数の項別微分
 </div>
 
 <p>
-とする．
-\(f\) を項別に微分すると
-\(a_{n}\) と \(b_{n}\) の間には
+\(f\) を項別に微分して
+\(a_{n}\) と \(b_{n}\) の間の以下の関係を得る．
 </p>
 <div>
 \begin{equation}
@@ -621,10 +615,6 @@ Fourier 級数の項別微分
 \end{equation}
 
 </div>
-
-<p>
-という関係が成立する．
-</p>
 </blockquote></li>
 
 </ul>
@@ -637,7 +627,7 @@ Fourier 級数の項別微分
 </p>
 <blockquote>
 <p>
-Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
+Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 \(a_{n}=o(1/n)\) (Landau の記号)となる．
 すなわち微分できるくらい滑らかな関数は
 \(n\to\infty\) において \(1/n\) より速く \(a_{n}\) が小さくなる
@@ -652,20 +642,12 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgabc19f9">
-<h2 id="orgabc19f9">関数の積とノルム</h2>
-<aside class="notes">
-<p>
-このとき関数の積のノルム
-関数のノルムの間にはいくつかの関係が成り立つ．
-</p>
-
-</aside>
-
+<section id="slide-orgfd3e7a1">
+<h2 id="orgfd3e7a1">関数の積とノルム</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org30c1fb2">
-<h3 id="org30c1fb2">Hölderの不等式</h3>
+<section id="slide-orgcfe44c1">
+<h3 id="orgcfe44c1">Hölder の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -763,8 +745,8 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org268f612">
-<h3 id="org268f612">畳み込みのノルム</h3>
+<section id="slide-org86ec65c">
+<h3 id="org86ec65c">畳み込みのノルム</h3>
 <ul>
 <li><p>
 定理
@@ -856,8 +838,8 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org689bd19">
-<h3 id="org689bd19">畳み込みの Fourier 級数</h3>
+<section id="slide-orga38e07a">
+<h3 id="orga38e07a">畳み込みの Fourier 級数</h3>
 <ul>
 <li><p>
 係数の存在
@@ -877,7 +859,7 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 となり，
 \(f,g\in L^{1}(-\pi,\pi)\) なら
 \(h\in L^{1}(-\pi,\pi)\) となる．
-このとき \(h\) のFourier 係数が存在することが保証される．
+このとき \(h\) の Fourier 係数が存在することが保証される．
 </p>
 </blockquote></li>
 
@@ -891,7 +873,7 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </p>
 <blockquote>
 <p>
-\(f,g,h\) のFourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
+\(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
 </p>
 <div>
 \begin{align}
@@ -918,12 +900,12 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgce2d972" data-background="#fef4f4">
-<h2 id="orgce2d972">演習</h2>
+<section id="slide-org6167406" data-background="#fef4f4">
+<h2 id="org6167406">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga02a71a" data-background="#fef4f4">
-<h3 id="orga02a71a">練習問題</h3>
+<section id="slide-org801bccc" data-background="#fef4f4">
+<h3 id="org801bccc">練習問題</h3>
 <ul>
 <li>以下の問に答えよ．
 <ul>
@@ -955,13 +937,13 @@ Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-org4585939">
-<h2 id="org4585939">今回のまとめ</h2>
+<section id="slide-org9fb82a4">
+<h2 id="org9fb82a4">今回のまとめ</h2>
 <ul>
-<li>Fourier級数の性質
+<li>Fourier 級数の性質
 <ul>
 <li><p>
-Fourier級数展開:
+Fourier 級数展開:
 </p>
 <div>
 \begin{equation}
@@ -978,9 +960,9 @@ Fourier級数展開:
 
 </div></li>
 
-<li>不連続点でのFoureir級数の値は平均値</li>
-<li>連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgueの定理)</li>
-<li>畳み込みのFourier係数は元の関数の係数の積に比例する</li>
+<li>不連続点での Foureir 級数の値は平均値</li>
+<li>連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgue の定理)</li>
+<li>畳み込みの Fourier 係数は元の関数の係数の積に比例する</li>
 
 </ul></li>
 

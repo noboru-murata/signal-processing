@@ -1,9 +1,9 @@
-#+TITLE: Fourier級数の性質
+#+TITLE: Fourier 級数の性質
 #+SUBTITLE: 信号処理 - 講義5
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-29 17:46:57 mura>
+# Time-stamp: <2021-05-05 17:48:38 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -13,7 +13,7 @@
 :end:
 
 * 前回のおさらい
-** ベクトル空間・内積空間・Hilbert空間
+** ベクトル空間・内積空間・Hilbert 空間
    - ベクトル空間
      #+begin_quote
      線形演算について閉じた空間
@@ -26,7 +26,7 @@
      #+begin_quote
      ノルムに関して完備な内積空間
      #+end_quote
-** Hilbert空間の完全正規直交系
+** Hilbert 空間の完全正規直交系
    - 定理
      #+begin_quote
      可分な無限次元Hilbert空間には
@@ -48,13 +48,13 @@
      #+end_src
      #+end_quote
 
-** Fourier級数展開
+** Fourier 級数展開
    - 定理
      #+begin_quote
      \(f\in L^{2}(-\pi,\pi)\) 
      は
      以下のように
-     *Fourier級数展開*
+     *Fourier 級数展開*
      される．
      #+begin_src latex
        \begin{align}
@@ -86,18 +86,17 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ．
-     - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
-       Fourier 級数展開せよ．
-       #+begin_src latex
-	 \begin{equation}
-	   f(x)=
-	   \begin{cases}
-	     0,&x\le 0\\
-	     1,&x > 0
-	   \end{cases}
-	 \end{equation}
-       #+end_src
+   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+     Fourier 級数展開せよ．
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=
+	 \begin{cases}
+	   0,&x\le 0\\
+	   1,&x > 0
+	 \end{cases}
+       \end{equation}
+     #+end_src
 
 ** COMMENT 解答例
    :PROPERTIES:
@@ -141,10 +140,10 @@
 
 
 * 不連続点の性質
-  #+begin_notes
-  これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
-  \(f\) に不連続点がある場合には注意する必要がある．
-  #+end_notes
+  # #+begin_notes
+  # これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
+  # \(f\) に不連続点がある場合には注意する必要がある．
+  # #+end_notes
 
 ** 片側極限
    - 定義
@@ -191,13 +190,15 @@
        \end{equation}
      #+end_src
      #+end_quote
+   #+reveal: split
    - \(P_{r}\) の性質
      #+begin_quote
      \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
      #+begin_src latex
-       \begin{equation}
-         \int_{-\infty}^{0}P_{r}(y)dy=\frac{1}{2}
-       \end{equation}
+       \begin{align}
+         \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
+         \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
+       \end{align}
      #+end_src
      #+end_quote
    #+reveal: split
@@ -277,7 +278,7 @@
    - 定義
      #+begin_quote
      周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
-     畳み込み(合成積; convolution) \(h\)
+     *畳み込み* (合成積; convolution) \(h\)
      を以下で定義される．
      #+begin_src latex
        \begin{align}
@@ -299,7 +300,7 @@
          \|f\|_{L^{p}}=\left(\int_{\Omega}|f(x)|^{p}dx\right)^{1/p}
        \end{equation}
      #+end_src
-     - \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間
+     ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間．
      #+end_quote
      - 内積から自然に導かれたノルムは \(L^{2}\) ノルムである
 
@@ -313,8 +314,8 @@
          &=\left\{f\;\big|\|f\|_{L^{p}} < \infty\right\}
        \end{align}
      #+end_src
-     - \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間
      #+end_quote
+
 ** Riemann-Lebesgue の定理
    - 定理
      #+begin_quote
@@ -369,26 +370,25 @@
      ほとんどいたるところで \(f'\) が存在し，
      \(f'\in L^{2}\cap L^{1}\) であるとする．
      \(f,f'\) の Fourier 級数展開をそれぞれ
+     以下で表す．
      #+begin_src latex
        \begin{align}
          f(x)&=\sum_{n} a_{n}\phi_{n}(x)\\
          f'(x)&=\sum_{n} b_{n}\phi_{n}(x)
        \end{align}
      #+end_src
-     とする．
-     \(f\) を項別に微分すると
-     \(a_{n}\) と \(b_{n}\) の間には
+     \(f\) を項別に微分して
+     \(a_{n}\) と \(b_{n}\) の間の以下の関係を得る．
      #+begin_src latex
        \begin{equation}
          b_{n}=in\cdot a_{n}
        \end{equation}
      #+end_src
-     という関係が成立する．
      #+end_quote
    #+reveal: split
    - 滑らかな関数の高周波成分
      #+begin_quote
-     Riemann-Lebesgueの定理より \(b_{n}\to0\;(n\to\infty)\) なので，
+     Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
      \(a_{n}=o(1/n)\) (Landau の記号)となる．
      すなわち微分できるくらい滑らかな関数は
      \(n\to\infty\) において \(1/n\) より速く \(a_{n}\) が小さくなる
@@ -397,12 +397,12 @@
 
 
 * 関数の積とノルム
-  #+begin_notes
-  このとき関数の積のノルム
-  関数のノルムの間にはいくつかの関係が成り立つ．
-  #+end_notes
+  # #+begin_notes
+  # このとき関数の積のノルム
+  # 関数のノルムの間にはいくつかの関係が成り立つ．
+  # #+end_notes
 
-** Hölderの不等式
+** Hölder の不等式
    - 定理
      #+begin_quote
      \(1/p+1/q=1,\,p,q>0\)
@@ -526,12 +526,13 @@
      となり，
      \(f,g\in L^{1}(-\pi,\pi)\) なら
      \(h\in L^{1}(-\pi,\pi)\) となる．
-     このとき \(h\) のFourier 係数が存在することが保証される．
+     このことから
+     畳み込み \(h\) の Fourier 係数が存在することが保証される．
      #+end_quote
    #+reveal: split
    - 係数の関係
      #+begin_quote
-     \(f,g,h\) のFourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
+     \(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
      #+begin_src latex
        \begin{align}
          c_{n}
@@ -596,8 +597,8 @@
 
 
 * 今回のまとめ
-  - Fourier級数の性質
-    - Fourier級数展開:
+  - Fourier 級数の性質
+    - Fourier 級数展開:
       #+begin_src latex
         \begin{equation}
           f(x)
@@ -609,9 +610,9 @@
           \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
         \end{equation}
       #+end_src
-    - 不連続点でのFoureir級数の値は平均値
-    - 連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgueの定理)
-    - 畳み込みのFourier係数は元の関数の係数の積に比例する
+    - 不連続点での Foureir 級数の値は平均値
+    - 連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgue の定理)
+    - 畳み込みの Fourier 係数は元の関数の係数の積に比例する
 
 ** COMMENT 注意
    - 確認テスト (講義5の中)
