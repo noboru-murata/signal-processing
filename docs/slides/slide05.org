@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-05 17:48:38 mura>
+# Time-stamp: <2021-05-05 17:58:51 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -86,8 +86,8 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
-     Fourier 級数展開せよ．
+   - 以下の関数 \(f\) を Fourier 級数展開せよ．
+     #+begin_quote
      #+begin_src latex
        \begin{equation}
 	 f(x)=
@@ -95,8 +95,11 @@
 	   0,&x\le 0\\
 	   1,&x > 0
 	 \end{cases}
+         \quad
+         \in L^{2}(-\pi,\pi)
        \end{equation}
      #+end_src
+     #+end_quote
 
 ** COMMENT 解答例
    :PROPERTIES:
@@ -104,6 +107,7 @@
    :END:
    - 係数 \(\langle f,\phi_{n}\rangle\) の計算
      - \(n=0\) のとき
+       #+begin_quote
        #+begin_src latex
          \begin{align}
            \langle f,\phi_{0}\rangle
@@ -111,7 +115,9 @@
              =\frac{\pi}{\sqrt{2\pi}}
          \end{align}
        #+end_src
+       #+end_quote
      - \(n\not=0\) のとき
+       #+begin_quote
        #+begin_src latex
          \begin{align}
            \langle f,\phi_{n}\rangle
@@ -127,8 +133,10 @@
              \end{cases}
          \end{align}
        #+end_src
+       #+end_quote
    #+reveal: split
    - Fourier 級数展開
+     #+begin_quote
      #+begin_src latex
        \begin{align}
          f(x)
@@ -137,6 +145,7 @@
          &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i}{\pi(2m+1)}e^{i(2m+1)x}
        \end{align}
      #+end_src
+     #+end_quote
 
 
 * 不連続点の性質
@@ -242,25 +251,28 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ
-     - 以下の関数は \(x=0\) で不連続となる．
-       Fourier 級数での \(f(0)\) の値を求めよ．
-       #+begin_src latex
-	 \begin{equation}
-	   f(x)=
-	   \begin{cases}
-	     0,&x\le 0\\
-	     1,&x > 0
-	   \end{cases}
-	   \quad\in L^{2}(-\pi,\pi)
-	 \end{equation}
-       #+end_src
+   - 以下の関数 \(f\) は \(x=0\) で不連続となる．
+     Fourier 級数での \(f(0)\) の値を求めよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=
+	 \begin{cases}
+	   0,&x\le 0\\
+	   1,&x > 0
+	 \end{cases}
+	 \quad
+         \in L^{2}(-\pi,\pi)
+       \end{equation}
+     #+end_src
+     #+end_quote
 
 ** COMMENT 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
    - Fourier 級数展開に代入すればよい
+     #+begin_quote
      #+begin_src latex
        \begin{align}
          f(0)
@@ -271,6 +283,7 @@
            =\frac{f(0{-}0)+f(0{+}0)}{2}
         \end{align}
      #+end_src
+     #+end_quote
 
 
 * 係数の性質
@@ -556,26 +569,29 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 以下の問に答えよ．
-     - 関数 \(f\) を
-       #+begin_src latex
-	 \begin{equation}
-	   f(x)=
-	   \begin{cases}
-	     0,&x\le 0\\
-	     1,&x > 0
-	   \end{cases}
-	   \in L^{2}(-\pi,\pi)
-	 \end{equation}
-       #+end_src
-       とするとき，畳み込み \(f*f\) を求めよ．
-     - 関数 \(f*f\) を Fourier 級数展開せよ．
+   - 関数 \(f\) を
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=
+	 \begin{cases}
+	   0,&x\le 0\\
+	   1,&x > 0
+	 \end{cases}
+         \quad
+	 \in L^{2}(-\pi,\pi)
+       \end{equation}
+     #+end_src
+     #+end_quote
+     とするとき，畳み込み \(f*f\) を求めよ．
+   - 関数 \(f*f\) を Fourier 級数展開せよ．
 
 ** COMMENT 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
    - 周期関数であることに注意して定義に従って計算する．
+     #+begin_quote
      #+begin_src latex
        \begin{align}
          f(x-y)
@@ -593,6 +609,7 @@
            \end{cases}
        \end{align}
      #+end_src
+     #+end_quote
      - 図を描いて確認せよ．
 
 
