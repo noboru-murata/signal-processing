@@ -1,8 +1,9 @@
 #+TITLE: Fourier 変換の性質
-#+SUBTITLE: 信号処理 講義8
+#+SUBTITLE: 信号処理 - 講義8
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-06-26 11:04:58 mura>
+#+DATE:
+# Time-stamp: <2021-05-05 19:10:11 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,8 +12,7 @@
 # C-c '
 :end:
 
-
-* 復習
+* 前回のおさらい
 ** Fourier 級数展開
    - 定理
      #+begin_quote
@@ -86,6 +86,7 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
@@ -138,6 +139,7 @@
        \end{align}
      #+end_src
      #+end_quote
+
 
 * 演習
   :PROPERTIES:
@@ -208,6 +210,7 @@
      \end{align}
      #+end_src
      #+end_quote
+
 
 * 演習
   :PROPERTIES:

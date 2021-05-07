@@ -72,7 +72,7 @@
   :EXPORT_FILE_NAME: lecture05
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
-  <2021-04-30 Fri> 更新
+  <2021-05-07 Fri> 更新
 ** スライド
    {{< myslide base="signal-processing" name="slide05" >}}
 ** ハンドアウト
