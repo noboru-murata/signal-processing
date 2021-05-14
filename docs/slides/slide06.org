@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-05 18:07:51 mura>
+# Time-stamp: <2021-05-14 09:56:15 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -100,7 +100,7 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -117,7 +117,7 @@
          c_{n}
          &=\frac{1}{\sqrt{2\pi}}\int_{-\pi/2}^{\pi/2}
            \frac{e^{ix}+e^{-ix}}{2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
-         &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{ix}+e^{-ix})e^{-inx}dx\\
+         % &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{ix}+e^{-ix})e^{-inx}dx\\
          &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{-i(n-1)x}+e^{-i(n+1)x})dx
        \end{align}
      #+end_src
@@ -158,7 +158,7 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    - 周期
      #+begin_quote
      区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
@@ -196,7 +196,7 @@
 ** Fourier級数の一般化
    - 周期 \(2\pi\) の場合
      #+begin_quote
-     正規直交系
+     正規直交系:
      #+begin_src latex
        \begin{equation}
          \phi_{n}=\frac{1}{\sqrt{2\pi}}e^{inx},\;
@@ -207,7 +207,7 @@
      #+end_quote
    - 周期 \(T\) の場合
      #+begin_quote
-     正規直交系
+     正規直交系:
      #+begin_src latex
        \begin{equation}
          \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
@@ -219,7 +219,7 @@
    #+reveal: split
    - 周期 \(T\) の場合
      #+begin_quote
-     Fourier 級数展開
+     Fourier 級数展開は以下で与えられる．
      #+begin_src latex
        \begin{align}
          f(x)
@@ -232,7 +232,7 @@
    #+reveal: split
    - 極限操作のための書き換え
      #+begin_quote
-     ここで \(\frac{2\pi}{T}=\Delta\) とする
+     ここで \(\frac{2\pi}{T}=\Delta\) とする．
      #+begin_src latex
        \begin{equation}
          f(x)=
@@ -364,7 +364,7 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    - 2重積分を利用する
      #+begin_quote
      #+begin_src latex
@@ -396,6 +396,105 @@
       \end{equation}
     #+end_src
     #+end_quote
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(\Xi\) を以下で定義する．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \Xi_{(a,b)}(x)
+	 =
+	 \begin{cases}
+	   1,& x\in (a,b)\\
+	   0,&\text{otherwise}
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
+     以下の関数の Fourier 変換を求めよ．
+     - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
+     - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
+     - \(h(x)=\Xi_{(-1,1)}(x)\)
+
+** 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \hat{f}(\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+         &=\frac{1}{\sqrt{2\pi}}
+           \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+         &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+       \end{align}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - \(g(x)=e^{-\beta x^{2}}\)
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \hat{g}(\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+         &=e^{-\frac{\omega^{2}}{4\beta}}
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+         &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+         &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+       \end{align}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - \(h(x)=\Xi_{(-1,1)}(x)\)
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \hat{h}(\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-1}^{1}e^{-i\omega x}dx\\
+         &=\frac{1}{\sqrt{2\pi}}
+           \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+           &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+         &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+     \end{align}
+     #+end_src
+     #+end_quote
+
+
+* Fourier変換の例
+** 応用上重要な関数の例
+     - 定義関数
+       #+begin_quote
+       関数 \(\Xi\) を以下で定義する．
+       #+begin_src latex
+	 \begin{equation}
+	   \Xi_{(a,b)}(x)
+	 =
+	 \begin{cases}
+	   1,& x\in (a,b)\\
+	   0,&\text{otherwise}
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - 代表的な例
+     | 関数                                         | Fourier変換                                         |
+     |----------------------------------------------+-----------------------------------------------------|
+     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
+     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
+     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
+     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
+     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
+
 
 
 * 反転公式の証明
@@ -505,13 +604,14 @@
      2. \(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)
      3. \(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)
 
-     したがってPoisson核と同様に，
+     したがって
      \(G_{\epsilon}\)
      は
      \(\epsilon\to0\)
      において
-     \(\delta\) 関数になる．
+     Dirac の\(\delta\)関数になる．
      #+end_quote
+     - Fourier 級数展開の証明で出た Poisson 核と同様な性質
 
 ** 反転公式
    - 定理
@@ -536,58 +636,6 @@
        \end{equation}
      #+end_src
      #+end_quote
-
-
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 関数 \(\Xi\) を以下で定義する．
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 \Xi_{(a,b)}(x)
-	 =
-	 \begin{cases}
-	   1,& x\in (a,b)\\
-	   0,&\text{otherwise}
-	 \end{cases}
-       \end{equation}
-     #+end_src
-     #+end_quote
-     以下の関数の Fourier 変換を求めよ．
-     - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
-     - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
-     - \(h(x)=\Xi_{(-1,1)}(x)\)
-
-** COMMENT Fourier 変換の例
-     - 定義関数
-       #+begin_quote
-       関数 \(\Xi\) を以下で定義する．
-       #+begin_src latex
-	 \begin{equation}
-	   \Xi_{(a,b)}(x)
-	 =
-	 \begin{cases}
-	   1,& x\in (a,b)\\
-	   0,&\text{otherwise}
-	 \end{cases}
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 代表的な例
-     | 関数                                         | Fourier変換                                         |
-     |----------------------------------------------+-----------------------------------------------------|
-     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
-     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
-     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
-     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
-     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
 
 
 * 今回のまとめ

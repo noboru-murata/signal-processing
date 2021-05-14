@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-07 08:54:31 mura>
+# Time-stamp: <2021-05-07 10:56:43 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -105,7 +105,7 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 係数 \(\langle f,\phi_{n}\rangle\) の計算
+   - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
      - \(n=0\) のとき
        #+begin_quote
        #+begin_src latex
@@ -329,7 +329,7 @@
      #+end_quote
 
 
-* 係数の性質
+* Fourier 係数の性質
 ** 畳み込み
    - 定義
      #+begin_quote
@@ -593,7 +593,7 @@
        \begin{align}
          c_{n}
          &=\frac{1}{\sqrt{2\pi}}\int h(x) e^{-inx}dx\\
-         &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)g(y)dy e^{-inx}dx\\
+         &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)g(y)dy\; e^{-inx}dx\\
          &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)e^{-in(x-y)}g(y)e^{-iny}dxdy\\
          &=\sqrt{2\pi}\cdot\frac{1}{\sqrt{2\pi}}\int f(z)e^{-inz}dz
            \cdot\frac{1}{\sqrt{2\pi}}\int g(y)e^{-iny}dy\\

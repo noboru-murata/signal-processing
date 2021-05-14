@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-30 10:54:04 mura>
+# Time-stamp: <2021-05-12 13:52:11 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -548,7 +548,7 @@
         \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
       \end{equation}
     #+end_src
-    とおく．
+    とおく(Poisson 核という)．
     #+end_quote
   #+reveal: split
   - step 6
@@ -600,7 +600,7 @@
   - step 9
     #+begin_quote
     \(P_{r}(x)\) は
-    \(r\to1\) で \(P_{r}(x)\) はDiracのdelta関数
+    \(r\to1\) で \(P_{r}(x)\) は Dirac の\(\delta\)関数
     となる．
     - \(P_{r}(x) > 0\) (3行目の表現より明らか)
     - \(P_{r}\) の一周期分の積分は

@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/font/source-sans-pro/source-sans-pro.css"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
 
@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">Fourier 変換の性質</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 講義8</p>
+    <p>信号処理 - 講義8</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -46,16 +46,15 @@
 
 </section>
 
-
 <section>
-<section id="slide-org1ab4eee">
-<h2 id="org1ab4eee">復習</h2>
-<div class="outline-text-2" id="text-org1ab4eee">
+<section id="slide-org69c9491">
+<h2 id="org69c9491">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org69c9491">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfef3d0f">
-<h3 id="orgfef3d0f">Fourier 級数展開</h3>
+<section id="slide-org2d5537b">
+<h3 id="org2d5537b">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -99,8 +98,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3ece332">
-<h3 id="org3ece332">Fourier 変換と反転公式</h3>
+<section id="slide-orgb09ca22">
+<h3 id="orgb09ca22">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -134,8 +133,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3a738e4">
-<h3 id="org3a738e4">反転公式</h3>
+<section id="slide-org76f6513">
+<h3 id="org76f6513">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -169,88 +168,27 @@ Fourier級数展開
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org0a3462f" data-background="#fef4f4">
-<h2 id="org0a3462f">演習</h2>
-<ul>
-<li>以下の問に答えよ．
+<section id="slide-orgadb68eb" data-background="#fef4f4">
+<h2 id="orgadb68eb">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga3d1b5e" data-background="#fef4f4">
+<h3 id="orga3d1b5e">練習問題</h3>
 <ul>
 <li><p>
 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
 Fourier 級数展開せよ．
 </p>
+<blockquote>
 <div>
 \begin{equation}
   f(x)=|\sin(x)|
 \end{equation}
-
-</div></li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org99874f9" data-background="#fef4f4">
-<h3 id="org99874f9">解答例</h3>
-<ul>
-<li>関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．</li>
-<li>積分計算は \(n=\pm1\) で場合分けが必要となる．</li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-関数 \(f\) は別の表現も可能
-</p>
-<div>
-\begin{align}
-  f(x)
-  &=|\sin(x)|\\
-  &=
-    \begin{cases}
-     -\sin(x),&x\le0\\
-     \sin(x),&x>0
-   \end{cases}\\
-  &=
-    \begin{cases}
-     \cos(x+\pi/2),&x\le0\\
-     \cos(x-\pi/2),&x>0
-   \end{cases}
-\end{align}
-
-</div>
-
-<ul>
-<li>前回の計算結果を利用できる．</li>
-
-</ul></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-Fourier 級数展開
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x)
-  &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
-    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
-  &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
-    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
-  &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
-  &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
-\end{align}
 
 </div>
 </blockquote></li>
@@ -259,10 +197,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-</section>
-<section>
-<section id="slide-org65c9564" data-background="#fef4f4">
-<h2 id="org65c9564">演習</h2>
+<section id="slide-org0e9c35a" data-background="#fef4f4">
+<h3 id="org0e9c35a">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -291,83 +227,11 @@ Fourier 級数展開
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org96962eb" data-background="#fef4f4">
-<h3 id="org96962eb">解答例</h3>
-<ul>
-<li><p>
-\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{f}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
-  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(g(x)=e^{-\beta x^{2}}\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{g}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
-  &=e^{-\frac{\omega^{2}}{4\beta}}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
-  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
-  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(h(x)=\Xi_{(-1,1)}(x)\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-    \hat{h}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-1}^{1}e^{-i\omega x}dx\\
-    &=\frac{1}{\sqrt{2\pi}}
-      \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
-      &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
-    &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-</section>
-<section>
-<section id="slide-org34bbd7d" data-background="#fef4f4">
-<h2 id="org34bbd7d">演習</h2>
+<section id="slide-orge213e8c" data-background="#fef4f4">
+<h3 id="orge213e8c">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -392,21 +256,92 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-</section>
-<section>
-<section id="slide-orga966036">
-<h2 id="orga966036">Fourier 変換の性質</h2>
-<aside class="notes">
-<p>
-Fourier変換の基本的な性質を確認する．
+<section id="slide-org7682955" data-background="#fef4f4">
+<h3 id="org7682955">Fourier 変換の例</h3>
+<ul>
+<li><p>
+定義関数
 </p>
+<blockquote>
+<p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
 
-</aside>
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+代表的な例
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga5340a6">
-<h3 id="orga5340a6">記法</h3>
+</section>
+<section>
+<section id="slide-org30000fe">
+<h2 id="org30000fe">Fourier 変換の性質</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org89e6c30">
+<h3 id="org89e6c30">記法</h3>
 <ul>
 <li>関数の対応
 <ul>
@@ -424,7 +359,7 @@ Fourier変換の基本的な性質を確認する．
 </ul>
 <blockquote>
 <p>
-例えば
+例えば以下のように使う.
 </p>
 <div>
 \begin{align}
@@ -435,10 +370,6 @@ Fourier変換の基本的な性質を確認する．
 \end{align}
 
 </div>
-
-<p>
-のように使う.
-</p>
 </blockquote></li>
 
 </ul>
@@ -470,8 +401,8 @@ Fourier変換の基本的な性質を確認する．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6cb0156">
-<h3 id="org6cb0156">対象とする関数の性質</h3>
+<section id="slide-org4d6f6b8">
+<h3 id="org4d6f6b8">対象とする関数の性質</h3>
 <ul>
 <li><p>
 絶対可積分 
@@ -560,8 +491,8 @@ Fourier変換の基本的な性質を確認する．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgaaca5f6">
-<h3 id="orgaaca5f6">Parseval の定理</h3>
+<section id="slide-org90af679">
+<h3 id="org90af679">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -635,8 +566,8 @@ Fourier変換の基本的な性質を確認する．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3d3f858">
-<h3 id="org3d3f858">Plancherel の定理</h3>
+<section id="slide-orga8c0770">
+<h3 id="orga8c0770">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -669,8 +600,8 @@ Fourier変換の基本的な性質を確認する．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5f44938">
-<h3 id="org5f44938">Riemann-Lebesgue の定理(補題)</h3>
+<section id="slide-org0af03b0">
+<h3 id="org0af03b0">Riemann-Lebesgue の定理(補題)</h3>
 <ul>
 <li><p>
 定理
@@ -722,26 +653,21 @@ Fourier変換の基本的な性質を確認する．
 
 </ul>
 
+
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org91d0ff8">
-<h2 id="org91d0ff8">演算との関係</h2>
-<aside class="notes">
-<p>
-関数に対する演算とFourier変換の関係を確認する．
-</p>
-
-</aside>
-
+<section id="slide-org05c238d" data-background="#fef4f4">
+<h2 id="org05c238d">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb7c2ed0">
-<h3 id="orgb7c2ed0">符号の反転</h3>
+<section id="slide-org3e57499" data-background="#fef4f4">
+<h3 id="org3e57499">練習問題</h3>
 <ul>
 <li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -753,58 +679,11 @@ Fourier変換の基本的な性質を確認する．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section>
+<section id="slide-org57ad50e" data-background="#fef4f4">
+<h3 id="org57ad50e">練習問題</h3>
 <ul>
 <li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[f](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-  &=\mathcal{F}[f](-\omega)
-  =\mathcal{F}^{-1}[f](\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-注意
-</p>
-<blockquote>
-<p>
-符号が反転しているだけなので，ほとんど対称だと思ってよい．
-すなわち，
-Fourier 変換 \(\mathcal{F}\) について成り立つことは
-逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-ただし符号の反転などには注意すること．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orge51306c">
-<h3 id="orge51306c">微分</h3>
-<ul>
-<li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -814,45 +693,14 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-  &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-    +i\omega
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-  \mathcal{F}[f'](\omega)
-  &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-\end{align}
-
-</div>
-
-<ul>
-<li>Fourier 変換可能な関数は
-\(|x|\to\infty\) での値が 0 になるとしてよい．</li>
-
-</ul>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgedb8cb0">
-<h3 id="orgedb8cb0">高階微分</h3>
+<section id="slide-org6d29e0c" data-background="#fef4f4">
+<h3 id="org6d29e0c">練習問題</h3>
 <ul>
 <li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -862,40 +710,14 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-  &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-    +i\omega
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-  &=\text{(部分積分を繰り返す)}\\
-  \mathcal{F}[f^{(k)}](\omega)
-  &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org71f8347">
-<h3 id="org71f8347">畳み込み</h3>
+<section id="slide-org0b0725c" data-background="#fef4f4">
+<h3 id="org0b0725c">練習問題</h3>
 <ul>
 <li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -917,48 +739,14 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[h](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-  &=\sqrt{2\pi}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-  &=\sqrt{2\pi}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-  \mathcal{F}[f{*}g](\omega)
-  &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-    =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9924904">
-<h3 id="org9924904">移動</h3>
+<section id="slide-orge3df78a" data-background="#fef4f4">
+<h3 id="orge3df78a">練習問題</h3>
 <ul>
 <li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -968,40 +756,14 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-  \mathcal{F}[T_{a}[f]](\omega)
-  &=e^{-i\omega a}\mathcal{F}[f](\omega)
-    =e^{-i\omega a}\hat{f}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org581b477">
-<h3 id="org581b477">拡大縮小</h3>
+<section id="slide-org337620b" data-background="#fef4f4">
+<h3 id="org337620b">練習問題</h3>
 <ul>
 <li><p>
-練習問題
+以下の問題に答えよ
 </p>
 <blockquote>
 <p>
@@ -1011,35 +773,19 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-  &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-  \mathcal{F}[D_{b}[f]](\omega)
-  &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-    =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-\end{align}
-
+<section id="slide-org009d340">
+<h2 id="org009d340">演算との関係</h2>
+<div class="outline-text-2" id="text-org009d340">
 </div>
-</blockquote></li>
-
-</ul>
-
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd3478b1">
-<h3 id="orgd3478b1">演算との関係(まとめ)</h3>
+<section id="slide-orgfa11b8d">
+<h3 id="orgfa11b8d">Fourier 変換で用いる基本演算</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1082,12 +828,13 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </tbody>
 </table>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgc817508">
-<h2 id="orgc817508">まとめ</h2>
+<section id="slide-orgfbfd56d">
+<h2 id="orgfbfd56d">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換の性質
 <ul>
@@ -1126,7 +873,7 @@ center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
-mouseWheel: true,
+mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
@@ -1135,7 +882,7 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }},
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
@@ -1143,7 +890,8 @@ plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 // Optional libraries used to extend reveal.js
 dependencies: [
 { src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'}]
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>

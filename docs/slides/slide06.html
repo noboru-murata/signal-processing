@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org80ce976">
-<h2 id="org80ce976">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org80ce976">
+<section id="slide-orgf8aa612">
+<h2 id="orgf8aa612">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgf8aa612">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org84185a3">
-<h3 id="org84185a3">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-orgb1412c5">
+<h3 id="orgb1412c5">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -84,8 +84,8 @@ Hilbert 空間
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org24d9dc8">
-<h3 id="org24d9dc8">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-org502f8ea">
+<h3 id="org502f8ea">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -125,8 +125,8 @@ Hilbert 空間
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3f72ac8">
-<h3 id="org3f72ac8">Fourier 級数展開</h3>
+<section id="slide-org0daa114">
+<h3 id="org0daa114">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -174,12 +174,12 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-orgc6c1853" data-background="#fef4f4">
-<h2 id="orgc6c1853">演習</h2>
+<section id="slide-orgca62501" data-background="#fef4f4">
+<h2 id="orgca62501">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcbe1b28" data-background="#fef4f4">
-<h3 id="orgcbe1b28">練習問題</h3>
+<section id="slide-org126c0fe" data-background="#fef4f4">
+<h3 id="org126c0fe">練習問題</h3>
 <ul>
 <li><p>
 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
@@ -202,8 +202,60 @@ Fourier 級数展開せよ．
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb7b6601" data-background="#fef4f4">
-<h3 id="orgb7b6601">練習問題</h3>
+<section id="slide-orgf47cb5c" data-background="#fef4f4">
+<h3 id="orgf47cb5c">解答例</h3>
+<ul>
+<li>関数 \(\cos(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．</li>
+<li><p>
+積分計算は \(n=\pm1\) で場合分けが必要となる．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=\sum_{n=-\infty}^{\infty}c_{n}e^{inx}
+\end{equation}
+
+</div>
+
+<div>
+\begin{align}
+  c_{n}
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\pi/2}^{\pi/2}
+    \frac{e^{ix}+e^{-ix}}{2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
+  % &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{ix}+e^{-ix})e^{-inx}dx\\
+  &=\frac{1}{4\pi}\int_{-\pi/2}^{\pi/2}(e^{-i(n-1)x}+e^{-i(n+1)x})dx
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+Fourier 級数展開
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(x)
+  &=\frac{1}{4}e^{-ix}+\frac{1}{4}e^{ix}
+    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{inx}\\
+  &=\frac{1}{4}e^{-ix}+\frac{1}{4}e^{ix}
+    +\sum_{m=-\infty}^{\infty}\frac{(-1)^{m}}{\pi(1-4m^{2})}e^{2imx}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd6859a9" data-background="#fef4f4">
+<h3 id="orgd6859a9">練習問題</h3>
 <ul>
 <li><p>
 以下が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
@@ -233,23 +285,85 @@ Fourier 級数展開せよ．
 
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-org6c81e29">
+<h3 id="org6c81e29">解答例</h3>
+<ul>
+<li><p>
+周期
+</p>
+<blockquote>
+<p>
+区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
+</p>
+<div>
+\begin{equation}
+  \alpha=\frac{2\pi}{T}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
 </section>
 <section>
-<section id="slide-org95c27ea">
-<h2 id="org95c27ea">Fourier変換</h2>
-<div class="outline-text-2" id="text-org95c27ea">
+<ul>
+<li><p>
+正規化
+</p>
+<blockquote>
+<p>
+正規化定数を
+\(c_{n}(> 0)\) とするとき，
+内積の定義より
+</p>
+<div>
+\begin{equation}
+  |c_{n}|^{2}\int_{-\frac{T}{2}}^{\frac{T}{2}}|e^{\frac{2\pi inx}{T}}|^{2}dx
+  =|c_{n}|^{2}T
+\end{equation}
+
+</div>
+
+<p>
+であるから
+</p>
+<div>
+\begin{equation}
+  \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
+  x\in\left[-\frac{T}{2},\frac{T}{2}\right],\;
+  n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org0dde8eb">
+<h2 id="org0dde8eb">Fourier変換</h2>
+<div class="outline-text-2" id="text-org0dde8eb">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org56198ae">
-<h3 id="org56198ae">Fourier級数の一般化</h3>
+<section id="slide-org16d7913">
+<h3 id="org16d7913">Fourier級数の一般化</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の場合
 </p>
 <blockquote>
 <p>
-正規直交系
+正規直交系:
 </p>
 <div>
 \begin{equation}
@@ -265,7 +379,7 @@ Fourier 級数展開せよ．
 </p>
 <blockquote>
 <p>
-正規直交系
+正規直交系:
 </p>
 <div>
 \begin{equation}
@@ -287,7 +401,7 @@ Fourier 級数展開せよ．
 </p>
 <blockquote>
 <p>
-Fourier 級数展開
+Fourier 級数展開は以下で与えられる．
 </p>
 <div>
 \begin{align}
@@ -310,7 +424,7 @@ Fourier 級数展開
 </p>
 <blockquote>
 <p>
-ここで \(\frac{2\pi}{T}=\Delta\) とする
+ここで \(\frac{2\pi}{T}=\Delta\) とする．
 </p>
 <div>
 \begin{equation}
@@ -408,8 +522,8 @@ Riemann 和は
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org724b5e8">
-<h3 id="org724b5e8">Fourier 変換と反転公式</h3>
+<section id="slide-org3b041b9">
+<h3 id="org3b041b9">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -443,8 +557,8 @@ Riemann 和は
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9ca3caf">
-<h3 id="org9ca3caf">多次元 Fourier 変換</h3>
+<section id="slide-org4573122">
+<h3 id="org4573122">多次元 Fourier 変換</h3>
 <ul>
 <li><p>
 d次元の場合
@@ -489,12 +603,12 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-org95749cc" data-background="#fef4f4">
-<h2 id="org95749cc">演習</h2>
+<section id="slide-org807e2f0" data-background="#fef4f4">
+<h2 id="org807e2f0">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3bffec7" data-background="#fef4f4">
-<h3 id="org3bffec7">練習問題</h3>
+<section id="slide-org1a6d075" data-background="#fef4f4">
+<h3 id="org1a6d075">練習問題</h3>
 <ul>
 <li><p>
 以下の積分値を求めよ．
@@ -512,14 +626,256 @@ d次元の場合
 
 <div class="slide-footer"><br></div>
 </section>
-</section>
-<section>
-<section id="slide-org98d829d">
-<h2 id="org98d829d">反転公式の証明</h2>
+<section id="slide-orgd2e1580">
+<h3 id="orgd2e1580">解答例</h3>
+<ul>
+<li><p>
+2重積分を利用する
+</p>
+<blockquote>
+<div>
+\begin{align}
+  &\int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+    \int_{-\infty}^{\infty}e^{-\epsilon y^{2}}dy\\
+  &=
+    \int_{-\infty}^{\infty}
+    \int_{-\infty}^{\infty}e^{-\epsilon(x^{2}+y^{2})}dxdy\\
+  &=
+    \int_{0}^{2\pi}
+    \int_{0}^{\infty}e^{-\epsilon r^{2}}rdrd\theta
+  &&(\text{極座標変換})\\
+  &=
+    2\pi\int_{0}^{\infty}e^{-\epsilon r^{2}}rdr
+  &&(\text{変数変換}z=r^{2})\\
+  &=
+    \pi\int_{0}^{\infty}e^{-\epsilon z}dz
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2954cc3">
-<h3 id="org2954cc3">証明</h3>
+<section>
+<ul>
+<li><p>
+解答
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+  =\sqrt{\frac{\pi}{\epsilon}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5e8c62b" data-background="#fef4f4">
+<h3 id="org5e8c62b">練習問題</h3>
+<ul>
+<li><p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+以下の関数の Fourier 変換を求めよ．
+</p>
+<ul>
+<li>\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)</li>
+<li>\(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)</li>
+<li>\(h(x)=\Xi_{(-1,1)}(x)\)</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga99fa55" data-background="#fef4f4">
+<h3 id="orga99fa55">解答例</h3>
+<ul>
+<li><p>
+\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(g(x)=e^{-\beta x^{2}}\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(h(x)=\Xi_{(-1,1)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+    \hat{h}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-1}^{1}e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+      &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+    &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org5235a02">
+<h2 id="org5235a02">Fourier変換の例</h2>
+<div class="outline-text-2" id="text-org5235a02">
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc304a8a">
+<h3 id="orgc304a8a">応用上重要な関数の例</h3>
+<ul>
+<li><p>
+定義関数
+</p>
+<blockquote>
+<p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<div>
+\begin{equation}
+    \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+代表的な例
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+
+
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-orgc4b233a">
+<h2 id="orgc4b233a">反転公式の証明</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb83ecb1">
+<h3 id="orgb83ecb1">証明</h3>
 <ul>
 <li><p>
 step 1
@@ -681,21 +1037,25 @@ step 6
 </ol>
 
 <p>
-したがってPoisson核と同様に，
+したがって
 \(G_{\epsilon}\)
 は
 \(\epsilon\to0\)
 において
-\(\delta\) 関数になる．
+Dirac の\(\delta\)関数になる．
 </p>
-</blockquote></li>
+</blockquote>
+<ul>
+<li>Fourier 級数展開の証明で出た Poisson 核と同様な性質</li>
+
+</ul></li>
 
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org38114cb">
-<h3 id="org38114cb">反転公式</h3>
+<section id="slide-org82ad15a">
+<h3 id="org82ad15a">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -734,47 +1094,8 @@ step 6
 </section>
 </section>
 <section>
-<section id="slide-org2bb3e79" data-background="#fef4f4">
-<h2 id="org2bb3e79">演習</h2>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgeac7cec" data-background="#fef4f4">
-<h3 id="orgeac7cec">練習問題</h3>
-<ul>
-<li><p>
-関数 \(\Xi\) を以下で定義する．
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \Xi_{(a,b)}(x)
-  =
-  \begin{cases}
-    1,& x\in (a,b)\\
-    0,&\text{otherwise}
-  \end{cases}
-\end{equation}
-
-</div>
-</blockquote>
-<p>
-以下の関数の Fourier 変換を求めよ．
-</p>
-<ul>
-<li>\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)</li>
-<li>\(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)</li>
-<li>\(h(x)=\Xi_{(-1,1)}(x)\)</li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org8a8c33f">
-<h2 id="org8a8c33f">今回のまとめ</h2>
+<section id="slide-orgc24bed8">
+<h2 id="orgc24bed8">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換
 <ul>

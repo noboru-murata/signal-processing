@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-05 19:10:11 mura>
+# Time-stamp: <2021-05-13 17:18:50 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -16,7 +16,7 @@
 ** Fourier 級数展開
    - 定理
      #+begin_quote
-     $f\in L^{2}(-\pi,\pi)$ 
+     \(f\in L^{2}(-\pi,\pi)\) 
      は
      以下のように
      Fourier級数展開
@@ -32,7 +32,7 @@
          \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
        \end{equation}
      #+end_src
-     内積は $f,g\in L^{2}(-\pi,\pi)$ に対して
+     内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
      以下で定義する．
      #+begin_src latex
        \begin{equation}
@@ -44,9 +44,9 @@
 ** Fourier 変換と反転公式
    - 定義
      #+begin_quote
-     $\mathbb{R}$
+     \(\mathbb{R}\)
      上の関数
-     $f$
+     \(f\)
      に対して
      #+begin_src latex
        \begin{align}
@@ -74,10 +74,10 @@
        \end{equation}
      #+end_src
      より正確には
-     $f\in L^{1}\cap L^{p}$
+     \(f\in L^{1}\cap L^{p}\)
      であれば，
      上の式は
-     $L^{p}$
+     \(L^{p}\)
      の意味で成り立つと表現される．
      #+begin_src latex
        \begin{equation}
@@ -91,22 +91,29 @@
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ．
-    - 次の関数 $f\in L^{2}(-\pi,\pi)$ を
-      Fourier 級数展開せよ．
-      #+begin_src latex
-        \begin{equation}
-          f(x)=|\sin(x)|
-        \end{equation}
-      #+end_src
-** 解答例
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 関数 $\sin(x)$ は $\exp(ix)$ と $\exp(-ix)$ で表せる．
-   - 積分計算は $n=\pm1$ で場合分けが必要となる．
+   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+     Fourier 級数展開せよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=|\sin(x)|
+       \end{equation}
+     #+end_src
+     #+end_quote
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．
+   - 積分計算は \(n=\pm1\) で場合分けが必要となる．
    #+reveal: split
-   - 関数 $f$ は別の表現も可能
+   - 関数 \(f\) は別の表現も可能
+     #+begin_quote
      #+begin_src latex
        \begin{align}
          f(x)
@@ -123,6 +130,7 @@
           \end{cases}
        \end{align}
      #+end_src
+     #+end_quote
      - 前回の計算結果を利用できる．
    #+reveal: split  
    - Fourier 級数展開
@@ -140,33 +148,33 @@
      #+end_src
      #+end_quote
 
-
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-  - 関数 $\Xi$ を以下で定義する．
-    #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        \Xi_{(a,b)}(x)
-        =
-        \begin{cases}
-          1,& x\in (a,b)\\
-          0,&\text{otherwise}
-        \end{cases}
-      \end{equation}
-    #+end_src
-    #+end_quote
-    以下の関数の Fourier 変換を求めよ．
-    - $f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)$
-    - $g(x)=e^{-\beta x^{2}}\;(\beta>0)$
-    - $h(x)=\Xi_{(-1,1)}(x)$
-** 解答例
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - $f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)$
+   - 関数 \(\Xi\) を以下で定義する．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 \Xi_{(a,b)}(x)
+	 =
+	 \begin{cases}
+	   1,& x\in (a,b)\\
+	   0,&\text{otherwise}
+	 \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
+     以下の関数の Fourier 変換を求めよ．
+     - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
+     - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
+     - \(h(x)=\Xi_{(-1,1)}(x)\)
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
      #+begin_quote
      #+begin_src latex
        \begin{align}
@@ -180,7 +188,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $g(x)=e^{-\beta x^{2}}$
+   - \(g(x)=e^{-\beta x^{2}}\)
      #+begin_quote
      #+begin_src latex
        \begin{align}
@@ -196,7 +204,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $h(x)=\Xi_{(-1,1)}(x)$
+   - \(h(x)=\Xi_{(-1,1)}(x)\)
      #+begin_quote
      #+begin_src latex
        \begin{align}
@@ -211,33 +219,35 @@
      #+end_src
      #+end_quote
 
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=\frac{1}{x-ia}\;(a>0)        
+       \end{equation}
+     #+end_src
+     の Fourier 変換を求めよ．
+     - Fourier 変換と逆 Fourier 変換の関係を利用
+     - 複素積分を利用
 
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-  - 関数
-    #+begin_src latex
-      \begin{equation}
-        f(x)=\frac{1}{x-ia}\;(a>0)        
-      \end{equation}
-    #+end_src
-    の Fourier 変換を求めよ．
-    - Fourier 変換と逆 Fourier 変換の関係を利用
-    - 複素積分を利用
-      
-** COMMENT Fourier 変換の例
-     - 定義関数
-       #+begin_quote
-       関数 $\Xi$ を以下で定義する．
-       #+begin_src latex
-	 \begin{equation}
-	   \Xi_{(a,b)}(x)
-	 =
-	 \begin{cases}
-	   1,& x\in (a,b)\\
-	   0,&\text{otherwise}
-	 \end{cases}
+** Fourier 変換の例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 定義関数
+     #+begin_quote
+     関数 \(\Xi\) を以下で定義する．
+     #+begin_src latex
+       \begin{equation}
+	 \Xi_{(a,b)}(x)
+         =
+         \begin{cases}
+           1,& x\in (a,b)\\
+           0,&\text{otherwise}
+         \end{cases}
        \end{equation}
      #+end_src
      #+end_quote
@@ -245,27 +255,27 @@
    - 代表的な例
      | 関数                                         | Fourier変換                                         |
      |----------------------------------------------+-----------------------------------------------------|
-     | $\Xi_{(-1,1)}(x),\;x\in\mathbb{R}$           | $\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}$     |
-     | $e^{-ax^{2}},\;x\in\mathbb{R}$               | $\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}$             |
-     | $\frac{1}{x-ia},\;x\in\mathbb{R},a>0$        | $\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)$  |
-     | $\frac{1}{x+ia},\;x\in\mathbb{R},a>0$        | $-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)$ |
-     | $\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0$ | $\sqrt{\frac{\pi}{2}}e^{-a\omega  }$                |
+     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
+     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
+     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
+     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
+     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
 
 
 * Fourier 変換の性質
-  #+begin_notes
-  Fourier変換の基本的な性質を確認する．
-  #+end_notes
+  # #+begin_notes
+  # Fourier変換の基本的な性質を確認する．
+  # #+end_notes
 
 ** 記法
    - 関数の対応
-     - $f$: もとの関数 (以下では Fourier 変換の存在を仮定)
-     - $\hat{f}$: Fourier 変換
+     - \(f\): もとの関数 (以下では Fourier 変換の存在を仮定)
+     - \(\hat{f}\): Fourier 変換
    - 変換の演算子
-     - $\mathcal{F}$: Fourier 変換
-     - $\mathcal{F}^{-1}$: 逆 Fourier 変換
+     - \(\mathcal{F}\): Fourier 変換
+     - \(\mathcal{F}^{-1}\): 逆 Fourier 変換
      #+begin_quote
-     例えば
+     例えば以下のように使う.
      #+begin_src latex
        \begin{align}
          \hat{f}&=\mathcal{F}[f],\quad
@@ -274,7 +284,6 @@
          &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
        \end{align}
      #+end_src
-     のように使う.
      #+end_quote
    #+reveal: split
    - 引数に関する注意
@@ -325,9 +334,9 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $|x|\to\infty$ での挙動
+   - \(|x|\to\infty\) での挙動
      #+begin_quote
-     適当に大きな値 $M>0$ に対して
+     適当に大きな値 \(M>0\) に対して
      #+begin_src latex
        \begin{equation}
          |f(x)|>\epsilon>0,\;|x|>M
@@ -352,7 +361,7 @@
 ** Parseval の定理
    - 定理
      #+begin_quote
-     関数  $f,g$ は $f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})$ とする．
+     関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
      このとき以下の関係が成り立つ．
      #+begin_src latex
        \begin{equation}
@@ -396,12 +405,12 @@
            dx
        \end{align}
      #+end_src
-     $\epsilon\to0$ とすると定理の両辺が一致することがわかる．
+     \(\epsilon\to0\) とすると定理の両辺が一致することがわかる．
      #+end_quote
 ** Plancherel の定理
    - 定理
      #+begin_quote
-     関数 $f$ は $f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})$ とする．
+     関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
      このとき以下の関係が成り立つ．
      #+begin_src latex
        \begin{equation}
@@ -422,8 +431,8 @@
 ** Riemann-Lebesgue の定理(補題)
    - 定理
      #+begin_quote
-     関数 $f\in L^{1}(\mathbb{R})$ は滑らかで
-     $f'\in L^{1}(\mathbb{R})$ とする．
+     関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
+     \(f'\in L^{1}(\mathbb{R})\) とする．
      このとき以下の性質をもつ．
      #+begin_src latex
        \begin{equation}
@@ -452,16 +461,244 @@
      より明らか．
      #+end_quote
 
-* 演算との関係
-  #+begin_notes
-  関数に対する演算とFourier変換の関係を確認する．
-  #+end_notes
+
+
+* 演習
+  :PROPERTIES:
+  :reveal_background: #fef4f4
+  :END:
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
+     #+end_quote
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 符号の反転
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[f](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+         \mathcal{F}[g](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
+         &=\mathcal{F}[f](-\omega)
+         =\mathcal{F}^{-1}[f](\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - 注意
+     #+begin_quote
+     符号が反転しているだけなので，ほとんど対称だと思ってよい．
+     すなわち，
+     Fourier 変換 \(\mathcal{F}\) について成り立つことは
+     逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+     ただし符号の反転などには注意すること．
+     #+end_quote
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f\) の Fourier 変換と
+     関数 \(g=f'\) の Fourier 変換の関係を考えよ．
+     #+end_quote
+   
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 微分
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[g](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
+         &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+           +i\omega
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+         \mathcal{F}[f'](\omega)
+         &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+     - Fourier 変換可能な関数は
+       \(|x|\to\infty\) での値が 0 になるとしてよい．
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f\) の Fourier 変換と
+     関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
+     #+end_quote
+   
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 高階微分
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[g](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
+         &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+           +i\omega
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
+         &=\text{(部分積分を繰り返す)}\\
+         \mathcal{F}[f^{(k)}](\omega)
+         &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f,g\) の Fourier 変換と
+     関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
+     #+begin_src latex
+       \begin{equation}
+         h(x)
+         =
+         \int_{-\infty}^{\infty}f(x-y)g(y)dy
+         =
+         \int_{-\infty}^{\infty}f(y)g(x-y)dy
+         =
+         f{*}g(x)
+       \end{equation}
+     #+end_src
+     #+end_quote
+   
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 畳み込み
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[h](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
+         &=\sqrt{2\pi}
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+         &=\sqrt{2\pi}
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
+           \frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+         \mathcal{F}[f{*}g](\omega)
+         &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
+           =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
+     #+end_quote
+   
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 移動
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[g](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
+         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
+         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
+         \mathcal{F}[T_{a}[f]](\omega)
+         &=e^{-i\omega a}\mathcal{F}[f](\omega)
+           =e^{-i\omega a}\hat{f}(\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の問題に答えよ
+     #+begin_quote
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
+     #+end_quote
+   
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 拡大縮小
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[g](\omega)
+         &=\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
+         &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
+           \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
+         \mathcal{F}[D_{b}[f]](\omega)
+         &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
+           =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
+       \end{align}
+     #+end_src
+     #+end_quote
+
+
+* COMMENT 演算との関係
+  # #+begin_notes
+  # 関数に対する演算とFourier変換の関係を確認する．
+  # #+end_notes
 
 ** 符号の反転
    - 練習問題
      #+begin_quote
-     関数 $f(x)$ の Fourier 変換と
-     関数 $g(x)=f(-x)$ の Fourier 変換の関係を考えよ．
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
      #+end_quote
    #+reveal: split
    - 解答例
@@ -488,16 +725,16 @@
      #+begin_quote
      符号が反転しているだけなので，ほとんど対称だと思ってよい．
      すなわち，
-     Fourier 変換 $\mathcal{F}$ について成り立つことは
-     逆 Fourier 変換 $\mathcal{F}^{-1}$ でも成り立つ．
+     Fourier 変換 \(\mathcal{F}\) について成り立つことは
+     逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
      ただし符号の反転などには注意すること．
      #+end_quote
 
 ** 微分
    - 練習問題
      #+begin_quote
-     関数 $f$ の Fourier 変換と
-     関数 $g=f'$ の Fourier 変換の関係を考えよ．
+     関数 \(f\) の Fourier 変換と
+     関数 \(g=f'\) の Fourier 変換の関係を考えよ．
      #+end_quote
    #+reveal: split
    - 解答例
@@ -516,14 +753,14 @@
        \end{align}
      #+end_src
      - Fourier 変換可能な関数は
-       $|x|\to\infty$ での値が 0 になるとしてよい．
+       \(|x|\to\infty\) での値が 0 になるとしてよい．
      #+end_quote
 
 ** 高階微分
    - 練習問題
      #+begin_quote
-     関数 $f$ の Fourier 変換と
-     関数 $g=f^{(k)}$ (k階微分)の Fourier 変換の関係を考えよ．
+     関数 \(f\) の Fourier 変換と
+     関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
      #+end_quote
    #+reveal: split
    - 解答例
@@ -547,8 +784,8 @@
 ** 畳み込み
    - 練習問題
      #+begin_quote
-     関数 $f,g$ の Fourier 変換と
-     関数 $h=f{*}g$ の Fourier 変換の関係を考えよ．
+     関数 \(f,g\) の Fourier 変換と
+     関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
      #+begin_src latex
        \begin{equation}
          h(x)
@@ -591,8 +828,8 @@
 ** 移動
    - 練習問題
      #+begin_quote
-     関数 $f(x)$ の Fourier 変換と
-     関数 $g(x)=f(x-a)$ の Fourier 変換の関係を考えよ．
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
      #+end_quote
    #+reveal: split
    - 解答例
@@ -616,8 +853,8 @@
 ** 拡大縮小
    - 練習問題
      #+begin_quote
-     関数 $f(x)$ の Fourier 変換と
-     関数 $g(x)=f(bx)$ ($b>0$) の Fourier 変換の関係を考えよ．
+     関数 \(f(x)\) の Fourier 変換と
+     関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
      #+end_quote
    #+reveal: split
    - 解答例
@@ -639,13 +876,25 @@
 ** 演算との関係(まとめ)
    | 関数                         | Fourier変換                                    |
    |------------------------------+------------------------------------------------|
-   | $f'(x)$ (微分)               | $i\omega\hat{f}(\omega)$                       |
-   | $f^{(k)}(x)$ (k階微分)       | $(i\omega)^{k}\hat{f}(\omega)$                 |
-   | $f*g(x)$ (畳み込み)          | $\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)$    |
-   | $T_{a}f(x)=f(x-a)$ (移動)    | $e^{-ia\omega}\hat{f}(\omega)$                 |
-   | $D_{b}f(x)=f(bx)$ (拡大縮小) | ${1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)$ |
+   | \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
+   | \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
+   | \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
+   | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
+   | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
    
-* まとめ
+
+* 演算との関係
+** Fourier 変換で用いる基本演算
+   | 関数                           | Fourier変換                                      |
+   |--------------------------------+--------------------------------------------------|
+   | \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
+   | \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
+   | \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
+   | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
+   | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
+   
+   
+* 今回のまとめ
   - Fourier 変換の性質
     - Fourier 変換な可能な関数
     - Fourier 変換の基本的な性質
@@ -653,3 +902,10 @@
       - Plancherel の定理
       - Riemann-Lebesgue の定理(補題)
     - 関数の演算とFourier 変換の関係
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
