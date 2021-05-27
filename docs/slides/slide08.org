@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-13 17:18:50 mura>
+# Time-stamp: <2021-05-27 14:11:55 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -105,7 +105,7 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -218,48 +218,6 @@
      \end{align}
      #+end_src
      #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 関数
-     #+begin_src latex
-       \begin{equation}
-	 f(x)=\frac{1}{x-ia}\;(a>0)        
-       \end{equation}
-     #+end_src
-     の Fourier 変換を求めよ．
-     - Fourier 変換と逆 Fourier 変換の関係を利用
-     - 複素積分を利用
-
-** Fourier 変換の例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 定義関数
-     #+begin_quote
-     関数 \(\Xi\) を以下で定義する．
-     #+begin_src latex
-       \begin{equation}
-	 \Xi_{(a,b)}(x)
-         =
-         \begin{cases}
-           1,& x\in (a,b)\\
-           0,&\text{otherwise}
-         \end{cases}
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 代表的な例
-     | 関数                                         | Fourier変換                                         |
-     |----------------------------------------------+-----------------------------------------------------|
-     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
-     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
-     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
-     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
-     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
 
 
 * Fourier 変換の性質
@@ -467,7 +425,7 @@
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-** 練習問題
+** COMMENT 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -882,7 +840,7 @@
    | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
    | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
    
-
+   
 * 演算との関係
 ** Fourier 変換で用いる基本演算
    | 関数                           | Fourier変換                                      |
@@ -893,7 +851,53 @@
    | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
    | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
    
-   
+
+* 演習
+  :PROPERTIES:
+  :reveal_background: #fef4f4
+  :END:
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=\frac{1}{x-ia}\;(a>0)        
+       \end{equation}
+     #+end_src
+     の Fourier 変換を求めよ．
+     - Fourier 変換と逆 Fourier 変換の関係を利用
+     - /[[color:gray][複素積分を利用]]/
+** COMMENT Fourier 変換の例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 定義関数
+     #+begin_quote
+     関数 \(\Xi\) を以下で定義する．
+     #+begin_src latex
+       \begin{equation}
+	 \Xi_{(a,b)}(x)
+         =
+         \begin{cases}
+           1,& x\in (a,b)\\
+           0,&\text{otherwise}
+         \end{cases}
+       \end{equation}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - 代表的な例
+     | 関数                                         | Fourier変換                                         |
+     |----------------------------------------------+-----------------------------------------------------|
+     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
+     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
+     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
+     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
+     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
+
+
 * 今回のまとめ
   - Fourier 変換の性質
     - Fourier 変換な可能な関数
