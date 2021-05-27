@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-27 14:11:55 mura>
+# Time-stamp: <2021-05-27 14:16:08 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -91,7 +91,7 @@
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-** 練習問題
+** COMMENT 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -105,7 +105,7 @@
      #+end_src
      #+end_quote
 
-** 解答例
+** COMMENT 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -425,7 +425,7 @@
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-** COMMENT 練習問題
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:

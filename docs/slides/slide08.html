@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-orgd6c2caa">
-<h2 id="orgd6c2caa">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgd6c2caa">
+<section id="slide-org1735ecd">
+<h2 id="org1735ecd">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org1735ecd">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8d4f58e">
-<h3 id="org8d4f58e">Fourier 級数展開</h3>
+<section id="slide-org7b14979">
+<h3 id="org7b14979">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -98,8 +98,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org87640fb">
-<h3 id="org87640fb">Fourier 変換と反転公式</h3>
+<section id="slide-org6198653">
+<h3 id="org6198653">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -133,8 +133,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org01cb7c1">
-<h3 id="org01cb7c1">反転公式</h3>
+<section id="slide-org36df211">
+<h3 id="org36df211">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -173,97 +173,12 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-org7471e9b" data-background="#fef4f4">
-<h2 id="org7471e9b">演習</h2>
+<section id="slide-org63fd7a9" data-background="#fef4f4">
+<h2 id="org63fd7a9">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org92be179" data-background="#fef4f4">
-<h3 id="org92be179">練習問題</h3>
-<ul>
-<li><p>
-次の関数 \(f\in L^{2}(-\pi,\pi)\) を
-Fourier 級数展開せよ．
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  f(x)=|\sin(x)|
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgd25032f" data-background="#fef4f4">
-<h3 id="orgd25032f">解答例</h3>
-<ul>
-<li>関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．</li>
-<li>積分計算は \(n=\pm1\) で場合分けが必要となる．</li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-関数 \(f\) は別の表現も可能
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x)
-  &=|\sin(x)|\\
-  &=
-    \begin{cases}
-     -\sin(x),&x\le0\\
-     \sin(x),&x>0
-   \end{cases}\\
-  &=
-    \begin{cases}
-     \cos(x+\pi/2),&x\le0\\
-     \cos(x-\pi/2),&x>0
-   \end{cases}
-\end{align}
-
-</div>
-</blockquote>
-<ul>
-<li>前回の計算結果を利用できる．</li>
-
-</ul></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-Fourier 級数展開
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x)
-  &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
-    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
-  &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
-    +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
-  &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
-  &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgd7233d8" data-background="#fef4f4">
-<h3 id="orgd7233d8">練習問題</h3>
+<section id="slide-orgb3bb345" data-background="#fef4f4">
+<h3 id="orgb3bb345">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -297,12 +212,12 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-orgd675c27">
-<h2 id="orgd675c27">Fourier 変換の性質</h2>
+<section id="slide-org1bb3455">
+<h2 id="org1bb3455">Fourier 変換の性質</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf3b4041">
-<h3 id="orgf3b4041">記法</h3>
+<section id="slide-org0fb3ef5">
+<h3 id="org0fb3ef5">記法</h3>
 <ul>
 <li>関数の対応
 <ul>
@@ -362,8 +277,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org58b2dc1">
-<h3 id="org58b2dc1">対象とする関数の性質</h3>
+<section id="slide-org5c1707b">
+<h3 id="org5c1707b">対象とする関数の性質</h3>
 <ul>
 <li><p>
 絶対可積分 
@@ -452,8 +367,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org88e6667">
-<h3 id="org88e6667">Parseval の定理</h3>
+<section id="slide-org068393d">
+<h3 id="org068393d">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -527,8 +442,8 @@ Fourier 級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcb70929">
-<h3 id="orgcb70929">Plancherel の定理</h3>
+<section id="slide-orgd7847ea">
+<h3 id="orgd7847ea">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -561,8 +476,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1dd2795">
-<h3 id="org1dd2795">Riemann-Lebesgue の定理(補題)</h3>
+<section id="slide-org8e2aa49">
+<h3 id="org8e2aa49">Riemann-Lebesgue の定理(補題)</h3>
 <ul>
 <li><p>
 定理
@@ -620,12 +535,28 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org9dec8ab" data-background="#fef4f4">
-<h2 id="org9dec8ab">演習</h2>
+<section id="slide-org4297972" data-background="#fef4f4">
+<h2 id="org4297972">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org06afa59" data-background="#fef4f4">
-<h3 id="org06afa59">練習問題</h3>
+<section id="slide-org9c5eea3" data-background="#fef4f4">
+<h3 id="org9c5eea3">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f(x)\) の Fourier 変換と
+関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6adcbd9" data-background="#fef4f4">
+<h3 id="org6adcbd9">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -641,8 +572,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd4d0f70" data-background="#fef4f4">
-<h3 id="orgd4d0f70">練習問題</h3>
+<section id="slide-orgd6038a7" data-background="#fef4f4">
+<h3 id="orgd6038a7">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -658,8 +589,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf1cda58" data-background="#fef4f4">
-<h3 id="orgf1cda58">練習問題</h3>
+<section id="slide-org2db73c7" data-background="#fef4f4">
+<h3 id="org2db73c7">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -687,8 +618,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge6f79ef" data-background="#fef4f4">
-<h3 id="orge6f79ef">練習問題</h3>
+<section id="slide-orgf57c063" data-background="#fef4f4">
+<h3 id="orgf57c063">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -704,8 +635,8 @@ Fourier 級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2b3d30d" data-background="#fef4f4">
-<h3 id="org2b3d30d">練習問題</h3>
+<section id="slide-org15fa102" data-background="#fef4f4">
+<h3 id="org15fa102">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -723,14 +654,14 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org2bc599c">
-<h2 id="org2bc599c">演算との関係</h2>
-<div class="outline-text-2" id="text-org2bc599c">
+<section id="slide-org1b4b5c2">
+<h2 id="org1b4b5c2">演算との関係</h2>
+<div class="outline-text-2" id="text-org1b4b5c2">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5957cad">
-<h3 id="org5957cad">Fourier 変換で用いる基本演算</h3>
+<section id="slide-orgc333d05">
+<h3 id="orgc333d05">Fourier 変換で用いる基本演算</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -778,12 +709,12 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org5bd41c4" data-background="#fef4f4">
-<h2 id="org5bd41c4">演習</h2>
+<section id="slide-org30eea37" data-background="#fef4f4">
+<h2 id="org30eea37">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf848913" data-background="#fef4f4">
-<h3 id="orgf848913">練習問題</h3>
+<section id="slide-org1d8ac10" data-background="#fef4f4">
+<h3 id="org1d8ac10">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -809,8 +740,8 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org08df86f">
-<h2 id="org08df86f">今回のまとめ</h2>
+<section id="slide-orgc7a1c88">
+<h2 id="orgc7a1c88">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換の性質
 <ul>
