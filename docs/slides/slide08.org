@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-27 14:38:11 mura>
+# Time-stamp: <2021-05-28 11:18:12 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -170,7 +170,7 @@
      - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
      - \(h(x)=\Xi_{(-1,1)}(x)\)
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -439,7 +439,7 @@
      関数 \(f(x)\) の Fourier 変換と
      関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
      #+end_quote
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -482,7 +482,7 @@
      関数 \(g=f'\) の Fourier 変換の関係を考えよ．
      #+end_quote
    
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -515,7 +515,7 @@
      関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
      #+end_quote
    
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -536,7 +536,6 @@
        \end{align}
      #+end_src
      #+end_quote
-
 
 ** 練習問題
    :PROPERTIES:
@@ -559,7 +558,7 @@
      #+end_src
      #+end_quote
    
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -599,7 +598,7 @@
      関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
      #+end_quote
    
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -631,7 +630,7 @@
      関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
      #+end_quote
    
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -874,7 +873,55 @@
      の Fourier 変換を求めよ．
      - Fourier 変換と逆 Fourier 変換の関係を利用
      - /[[color:gray][複素積分を利用]]/
-** COMMENT Fourier 変換の例
+** 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の Fourier 変換を利用
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         g(x)
+         &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
+         \hat{g}(\omega)
+         &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
+         &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
+       \end{align}
+     #+end_src
+     #+end_quote
+   - 関数 \(f\) は \(\hat{g}\) で表される
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+         f(x)
+         =i\sqrt{2\pi}\hat{g}(x)
+       \end{equation}
+     #+end_src
+     #+end_quote
+   #+reveal: split
+   - Fourier 変換と逆 Fourier 変換の関係
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+         \mathcal{F}[f](-\omega)
+         =\mathcal{F}^{-1}[f](\omega)
+       \end{equation}
+     #+end_src
+     #+end_quote
+   - 整理すると
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         \mathcal{F}[f](\omega)
+         &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
+         &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
+         &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
+         &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
+       \end{align}
+     #+end_src
+     #+end_quote
+
+** Fourier 変換の代表的な例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
@@ -900,7 +947,7 @@
      | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
      | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
      | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
-     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)                |
+     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)                   |
 
 
 * 今回のまとめ

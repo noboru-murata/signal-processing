@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org691c918">
-<h2 id="org691c918">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org691c918">
+<section id="slide-org62a1557">
+<h2 id="org62a1557">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org62a1557">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd250030">
-<h3 id="orgd250030">Fourier 級数展開</h3>
+<section id="slide-orgde2e414">
+<h3 id="orgde2e414">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -98,8 +98,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcf5b0a0">
-<h3 id="orgcf5b0a0">Fourier 変換と反転公式</h3>
+<section id="slide-orgdae613a">
+<h3 id="orgdae613a">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -133,8 +133,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9074774">
-<h3 id="org9074774">反転公式</h3>
+<section id="slide-org623f793">
+<h3 id="org623f793">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -173,12 +173,12 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-org37c0bf8" data-background="#fef4f4">
-<h2 id="org37c0bf8">演習</h2>
+<section id="slide-org0a7f7fa" data-background="#fef4f4">
+<h2 id="org0a7f7fa">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd5fb32e" data-background="#fef4f4">
-<h3 id="orgd5fb32e">練習問題</h3>
+<section id="slide-org166182e" data-background="#fef4f4">
+<h3 id="org166182e">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -210,14 +210,86 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-</section>
-<section>
-<section id="slide-org0fc1198">
-<h2 id="org0fc1198">Fourier 変換の性質</h2>
+<section id="slide-org7a632f0" data-background="#fef4f4">
+<h3 id="org7a632f0">解答例</h3>
+<ul>
+<li><p>
+\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orged3f8ba">
-<h3 id="orged3f8ba">記法</h3>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(g(x)=e^{-\beta x^{2}}\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(h(x)=\Xi_{(-1,1)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+    \hat{h}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-1}^{1}e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+      &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+    &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org72ed3c6">
+<h2 id="org72ed3c6">Fourier 変換の性質</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org666ee1b">
+<h3 id="org666ee1b">記法</h3>
 <ul>
 <li>関数の対応
 <ul>
@@ -277,8 +349,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org15d5777">
-<h3 id="org15d5777">絶対可積分</h3>
+<section id="slide-org8c074d0">
+<h3 id="org8c074d0">絶対可積分</h3>
 <ul>
 <li><p>
 定義
@@ -376,8 +448,8 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org421f0b2">
-<h3 id="org421f0b2">Parseval の定理</h3>
+<section id="slide-org6f7f885">
+<h3 id="org6f7f885">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -451,8 +523,8 @@ Fourier 変換の存在 (各点)
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgff051a7">
-<h3 id="orgff051a7">Plancherel の定理</h3>
+<section id="slide-orgdb6c745">
+<h3 id="orgdb6c745">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -485,8 +557,8 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org437e597">
-<h3 id="org437e597">Riemann-Lebesgue の定理(補題)</h3>
+<section id="slide-org0a1d587">
+<h3 id="org0a1d587">Riemann-Lebesgue の定理(補題)</h3>
 <ul>
 <li><p>
 定理
@@ -544,12 +616,12 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-org66ced4e" data-background="#fef4f4">
-<h2 id="org66ced4e">演習</h2>
+<section id="slide-orga1511c9" data-background="#fef4f4">
+<h2 id="orga1511c9">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9024c2b" data-background="#fef4f4">
-<h3 id="org9024c2b">練習問題</h3>
+<section id="slide-org68b9658" data-background="#fef4f4">
+<h3 id="org68b9658">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -564,8 +636,56 @@ Fourier 変換の存在 (各点)
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1525b64" data-background="#fef4f4">
-<h3 id="org1525b64">練習問題</h3>
+<section id="slide-orgea31f45" data-background="#fef4f4">
+<h3 id="orgea31f45">解答例</h3>
+<ul>
+<li><p>
+符号の反転
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[f](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+  \mathcal{F}[g](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
+  &=\mathcal{F}[f](-\omega)
+  =\mathcal{F}^{-1}[f](\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+注意
+</p>
+<blockquote>
+<p>
+符号が反転しているだけなので，ほとんど対称だと思ってよい．
+すなわち，
+Fourier 変換 \(\mathcal{F}\) について成り立つことは
+逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+ただし符号の反転などには注意すること．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org02d63f3" data-background="#fef4f4">
+<h3 id="org02d63f3">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -581,8 +701,40 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org782d24c" data-background="#fef4f4">
-<h3 id="org782d24c">練習問題</h3>
+<section id="slide-org0d00172" data-background="#fef4f4">
+<h3 id="org0d00172">解答例</h3>
+<ul>
+<li><p>
+微分
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[g](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
+  &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+    +i\omega
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+  \mathcal{F}[f'](\omega)
+  &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>Fourier 変換可能な関数は
+\(|x|\to\infty\) での値が 0 になるとしてよい．</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0228f23" data-background="#fef4f4">
+<h3 id="org0228f23">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -598,8 +750,36 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf89e623" data-background="#fef4f4">
-<h3 id="orgf89e623">練習問題</h3>
+<section id="slide-org97dacaf" data-background="#fef4f4">
+<h3 id="org97dacaf">解答例</h3>
+<ul>
+<li><p>
+高階微分
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[g](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
+  &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+    +i\omega
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
+  &=\text{(部分積分を繰り返す)}\\
+  \mathcal{F}[f^{(k)}](\omega)
+  &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org60cceb5" data-background="#fef4f4">
+<h3 id="org60cceb5">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -627,8 +807,44 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org25fd666" data-background="#fef4f4">
-<h3 id="org25fd666">練習問題</h3>
+<section id="slide-org4ed09ce" data-background="#fef4f4">
+<h3 id="org4ed09ce">解答例</h3>
+<ul>
+<li><p>
+畳み込み
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[h](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
+  &=\sqrt{2\pi}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+  &=\sqrt{2\pi}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+  \mathcal{F}[f{*}g](\omega)
+  &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
+    =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7fc046a" data-background="#fef4f4">
+<h3 id="org7fc046a">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -644,8 +860,36 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge02219b" data-background="#fef4f4">
-<h3 id="orge02219b">練習問題</h3>
+<section id="slide-org598e234" data-background="#fef4f4">
+<h3 id="org598e234">解答例</h3>
+<ul>
+<li><p>
+移動
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[g](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
+  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
+  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
+  \mathcal{F}[T_{a}[f]](\omega)
+  &=e^{-i\omega a}\mathcal{F}[f](\omega)
+    =e^{-i\omega a}\hat{f}(\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org9b76505" data-background="#fef4f4">
+<h3 id="org9b76505">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -661,16 +905,43 @@ Fourier 変換の存在 (各点)
 
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-org517cde7" data-background="#fef4f4">
+<h3 id="org517cde7">解答例</h3>
+<ul>
+<li><p>
+拡大縮小
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[g](\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
+  &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
+  \mathcal{F}[D_{b}[f]](\omega)
+  &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
+    =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<section id="slide-org3ff25ec">
-<h2 id="org3ff25ec">演算との関係</h2>
-<div class="outline-text-2" id="text-org3ff25ec">
+<section id="slide-org9a14048">
+<h2 id="org9a14048">演算との関係</h2>
+<div class="outline-text-2" id="text-org9a14048">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga784932">
-<h3 id="orga784932">Fourier 変換で用いる基本演算</h3>
+<section id="slide-orge3b1487">
+<h3 id="orge3b1487">Fourier 変換で用いる基本演算</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -718,12 +989,12 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-org4624091" data-background="#fef4f4">
-<h2 id="org4624091">演習</h2>
+<section id="slide-org3941428" data-background="#fef4f4">
+<h2 id="org3941428">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8d001b3" data-background="#fef4f4">
-<h3 id="org8d001b3">練習問題</h3>
+<section id="slide-orgf64b6b5" data-background="#fef4f4">
+<h3 id="orgf64b6b5">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -747,10 +1018,156 @@ Fourier 変換の存在 (各点)
 </ul>
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-orgbf9b178" data-background="#fef4f4">
+<h3 id="orgbf9b178">解答例</h3>
+<ul>
+<li><p>
+以下の Fourier 変換を利用
+</p>
+<blockquote>
+<div>
+\begin{align}
+  g(x)
+  &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
+  &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
+\end{align}
+
+</div>
+</blockquote></li>
+<li><p>
+関数 \(f\) は \(\hat{g}\) で表される
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)
+  =i\sqrt{2\pi}\hat{g}(x)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+Fourier 変換と逆 Fourier 変換の関係
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \mathcal{F}[f](-\omega)
+  =\mathcal{F}^{-1}[f](\omega)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+整理すると
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[f](\omega)
+  &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
+  &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
+  &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
+  &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd9ffe3a" data-background="#fef4f4">
+<h3 id="orgd9ffe3a">Fourier 変換の代表的な例</h3>
+<ul>
+<li><p>
+定義関数
+</p>
+<blockquote>
+<p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+代表的な例
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<section id="slide-org13ba87a">
-<h2 id="org13ba87a">今回のまとめ</h2>
+<section id="slide-orge0d1782">
+<h2 id="orge0d1782">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換の性質
 <ul>

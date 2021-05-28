@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-14 09:56:15 mura>
+# Time-stamp: <2021-05-27 14:49:03 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -132,6 +132,63 @@
            +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{inx}\\
          &=\frac{1}{4}e^{-ix}+\frac{1}{4}e^{ix}
            +\sum_{m=-\infty}^{\infty}\frac{(-1)^{m}}{\pi(1-4m^{2})}e^{2imx}
+       \end{align}
+     #+end_src
+     #+end_quote
+
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
+     Fourier 級数展開せよ．
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+	 f(x)=|\sin(x)|
+       \end{equation}
+     #+end_src
+     #+end_quote
+
+** 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．
+   - 積分計算は \(n=\pm1\) で場合分けが必要となる．
+   #+reveal: split
+   - 関数 \(f\) は別の表現も可能
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         f(x)
+         &=|\sin(x)|\\
+         &=
+           \begin{cases}
+            -\sin(x),&x\le0\\
+            \sin(x),&x>0
+          \end{cases}\\
+         &=
+           \begin{cases}
+            \cos(x+\pi/2),&x\le0\\
+            \cos(x-\pi/2),&x>0
+          \end{cases}
+       \end{align}
+     #+end_src
+     #+end_quote
+     - 前問の計算結果を利用できる．
+   #+reveal: split  
+   - Fourier 級数展開
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         f(x)
+         &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
+           +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
+         &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
+           +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
+         &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
+         &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
        \end{align}
      #+end_src
      #+end_quote

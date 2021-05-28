@@ -2,7 +2,8 @@
 #+SUBTITLE: 信号処理 講義9
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-07-03 10:12:03 mura>
+#+DATE:
+# Time-stamp: <2021-05-28 08:49:03 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -636,7 +637,7 @@
 
 
 
-* まとめ
+* 今回のまとめ
   - 線形時不変フィルタ
     - 線形性
     - 時不変性
@@ -646,3 +647,11 @@
     - 重ね合わせの原理
     - 畳み込み積分
     - インパルス応答
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+  
