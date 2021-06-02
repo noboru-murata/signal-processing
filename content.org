@@ -100,7 +100,7 @@
   :EXPORT_FILE_NAME: lecture08
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
-  <2021-05-14 Fri> 更新
+  <2021-06-02 Wed> 更新
 ** スライド
    {{< myslide base="signal-processing" name="slide08" >}}
 ** ハンドアウト
@@ -111,8 +111,9 @@
   :EXPORT_FILE_NAME: lecture09
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
+  <2021-06-02 Wed> 更新
 ** スライド
-   #+html: {{< myslide base="signal-processing" name="slide09" >}}
+   {{< myslide base="signal-processing" name="slide09" >}}
 ** ハンドアウト
    - [[github:pdfs/slide09.pdf][PDF file]]
 
@@ -121,8 +122,9 @@
   :EXPORT_FILE_NAME: lecture10
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
+  <2021-06-02 Wed> 更新
 ** スライド
-   #+html: {{< myslide base="signal-processing" name="slide10" >}}
+   {{< myslide base="signal-processing" name="slide10" >}}
 ** ハンドアウト
    - [[github:pdfs/slide10.pdf][PDF file]]
 

@@ -1,8 +1,9 @@
 #+TITLE: 線形フィルタ回路
-#+SUBTITLE: 信号処理 講義10
+#+SUBTITLE: 信号処理 - 講義10
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-08-23 22:46:06 mura>
+#+DATE:
+# Time-stamp: <2021-06-02 18:38:35 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,11 +12,11 @@
 # C-c '
 :end:
 
-* 復習
+* 前回のおさらい
 ** フィルタ
    - 定義
      #+begin_quote
-     入力 $f(t)$ を変換して出力 $g(t)$ を生成する機構
+     入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
      #+end_quote
      #+NAME: fig:filter1
      #+ATTR_HTML: :width 100%
@@ -40,7 +41,7 @@
 ** 時不変性
    - 定義
      #+begin_quote
-     入力の時刻が $s$ ずれた場合，出力も $s$ だけずれる性質
+     入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
      #+end_quote
      - 時間が経過してもフィルタの性質は変わらない
      #+NAME: fig:filter5
@@ -67,7 +68,7 @@
        \end{equation}
      #+end_src
      #+end_quote
-     - $h(t)$ はフィルタに $\delta(t)$ を入力した時の出力でもある
+     - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある
 ** Fourier変換による表現
   - 時間領域では畳み込み積分
     #+begin_quote
@@ -103,8 +104,8 @@
      - 時刻0にインパルスが入力される前には何も出力がされない
    - 因果的フィルタの畳み込み
      #+begin_quote
-     時刻 $t$ での出力は
-     時刻 $t$ 以前での入力のみにより定まる
+     時刻 \(t\) での出力は
+     時刻 \(t\) 以前での入力のみにより定まる
      #+begin_src latex
        \begin{equation}
          g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
@@ -112,20 +113,25 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 以下の問に答えよ
-    - 関数 $t e^{-\frac{t^2}{2}}$ を Fourier 変換せよ
-    - 関数 $\Xi_{(-1,1)}(t)$ を Fourier 変換せよ
-    - 関数 $(\sin(\omega)/\omega)^{2}$ を 逆 Fourier 変換せよ
-      
-** 解答
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 関数 $t e^{-\frac{t^2}{2}}$ の Fourier 変換
+   - 以下の問に答えよ
+     - 関数 \(t e^{-\frac{t^2}{2}}\) を Fourier 変換せよ
+     - 関数 \(\Xi_{(-1,1)}(t)\) を Fourier 変換せよ
+     - 関数 \((\sin(\omega)/\omega)^{2}\) を 逆 Fourier 変換せよ
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 関数 \(t e^{-\frac{t^2}{2}}\) の Fourier 変換
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -153,7 +159,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 関数 $\Xi_{(-1,1)}(t)$ の Fourier 変換
+   - 関数 \(\Xi_{(-1,1)}(t)\) の Fourier 変換
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -164,7 +170,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 関数 $(\sin(\omega)/\omega)^{2}$ の 逆 Fourier 変換
+   - 関数 \((\sin(\omega)/\omega)^{2}\) の 逆 Fourier 変換
      #+begin_quote
      畳み込みを利用
      #+begin_src latex
@@ -184,9 +190,10 @@
      #+end_src
      #+end_quote
 
+
 * フィルタ回路
-** インパルス応答
-   - $\delta(t)$ を入力した時のフィルタ出力
+** インパルス応答とは
+   - \(\delta(t)\) を入力した時のフィルタ出力
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -196,9 +203,9 @@
      #+end_src
      #+end_quote
    - 物理的には
-     面積1 ($\Delta \times 1/\Delta$)
+     面積1 (\(\Delta \times 1/\Delta\))
      の矩形波に対する出力を
-     時間幅 $\Delta\to0$ としたときの波形
+     時間幅 \(\Delta\to0\) としたときの波形
 
 ** 2端子対回路
    #+NAME: fig:draw1
@@ -234,14 +241,26 @@
      #+end_quote
    - 同じ形になることに注意
      
-** 例題
+
+* 演習
+  :PROPERTIES:
+  :reveal_background: #fef4f4
+  :END:
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
    - 以下の回路の時間領域での入出力関係を求めよ
    - 同じく周波数領域での入出力関係を求めよ
    #+NAME: fig:draw3
    #+ATTR_HTML: :width 90%
    #+ATTR_LATEX: :width 0.5\linewidth
    [[file:figs/信号処理 3.png]]
-** 解答
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
    - 時間領域
      #+begin_quote
      以下の微分方程式が成り立つ
@@ -308,10 +327,12 @@
      #+end_quote
      - 周波数依存性について考察せよ
        
-** インパルス応答 (逆 Fourier 変換)
+
+* 逆 Fourier 変換による解析
+** インパルス応答
    - 逆 Fourier 変換
      #+begin_quote
-     式を見易くするため $a=1/CR$ とおく
+     式を見易くするため \(a=1/CR\) とおく
      #+begin_src latex
        \begin{align}
          h(t)
@@ -323,8 +344,8 @@
      #+end_quote
    #+reveal: split
    - 複素積分の積分路
-     - $t>0$ のとき， $ia$ を囲む上半平面
-     - $t<0$ のとき， 下半平面
+     - \(t>0\) のとき， \(ia\) を囲む上半平面
+     - \(t<0\) のとき， 下半平面
 
    #+NAME: fig:draw4
    #+ATTR_HTML: :width 90%
@@ -333,7 +354,7 @@
    #+reveal: split
    - 留数定理
      #+begin_quote
-     積分路が孤立特異点 $c$ を含むとき以下が成り立つ
+     積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
      #+begin_src latex
        \begin{equation}
          \frac{1}{2\pi i}\oint f(z)dz
@@ -356,21 +377,27 @@
      #+end_src
      #+end_quote
 
+
 * 演習
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-  - 矩形波の入力に対して微分方程式を直接解き，
-    その極限からインパルス応答を求めよ．
-    #+NAME: fig:draw5
-    #+ATTR_HTML: :width 90%
-    #+ATTR_LATEX: :width 0.5\linewidth
-    [[file:figs/信号処理 5.png]]
-** 解答例
+** 練習問題
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - $0 < t \le \Delta$
+   - 矩形波の入力に対して微分方程式を直接解き，
+     その極限からインパルス応答を求めよ．
+     #+NAME: fig:draw5
+     #+ATTR_HTML: :width 90%
+     #+ATTR_LATEX: :width 0.5\linewidth
+     [[file:figs/信号処理 5.png]]
+
+** COMMENT 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - \(0 < t \le \Delta\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -379,7 +406,7 @@
          +V_{out}(t)
        \end{equation}
      #+end_src
-     $U(t)=V_{out}(t)-1/\Delta$ と置くと
+     \(U(t)=V_{out}(t)-1/\Delta\) と置くと
      #+begin_src latex
        \begin{equation}
          \frac{d}{dt}U(t)=-\frac{1}{CR}U(t)
@@ -393,7 +420,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 初期条件 $V_{out}(0)=0$
+   - 初期条件 \(V_{out}(0)=0\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -408,7 +435,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $\Delta < t$
+   - \(\Delta < t\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -425,7 +452,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 初期条件 $V_{out}(\Delta)=1/\Delta\cdot(1-e^{-\frac{\Delta}{CR}})$
+   - 初期条件 \(V_{out}(\Delta)=1/\Delta\cdot(1-e^{-\frac{\Delta}{CR}})\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -441,7 +468,7 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - $\Delta\to 0$
+   - \(\Delta\to 0\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -458,12 +485,14 @@
      #+end_src
      #+end_quote
 
-* まとめ
+
+* 今回のまとめ
   - 線形フィルタ回路
     - 時間領域での表現(微分方程式)
     - 周波数領域での表現(関数の積)
     - フィルタの周波数特性
     - インパルス応答の求め方
+
 ** COMMENT 注意
    - 確認テスト (講義10の中)
      - 期間: 7/10講義終了-7/16 13:00
@@ -475,3 +504,12 @@
 
 
   
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+  
+   
