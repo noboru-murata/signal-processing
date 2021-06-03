@@ -5,7 +5,7 @@
 #+LINK: github https://noboru-murata.github.io/signal-processing/
 #+STARTUP: hidestars content
 
-# Time-stamp: <2021-06-03 14:09:01 mura>
+# Time-stamp: <2021-06-03 14:39:14 mura>
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
@@ -186,11 +186,11 @@
   :EXPORT_DATE: <2020-04-01 Wed>
   :END:
 
-** COMMENT 講義ノート
-   Moodle に掲載しました．
+** 講義ノート
+   Moodle に URL を掲載しました．
 
-** COMMENT 過去の試験問題
-   3年分 Moodle に掲載しました．
+** 過去の試験問題
+   Moodle に3年分を掲載しました．
 
 * スライドの使い方
   :PROPERTIES:
