@@ -1,8 +1,9 @@
 #+TITLE: 標本化定理
-#+SUBTITLE: 信号処理 講義12
+#+SUBTITLE: 信号処理 - 講義12
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
-# #+DATE: Time-stamp: <2020-07-16 22:37:21 mura>
+#+DATE:
+# Time-stamp: <2021-06-03 13:42:39 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -11,11 +12,11 @@
 # C-c '
 :end:
 
-* 復習
+* 前回のおさらい
 ** フィルタ
    - 定義
      #+begin_quote
-     入力 $f(t)$ を変換して出力 $g(t)$ を生成する機構
+     入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
      #+end_quote
    - 線形性 
      #+begin_quote
@@ -34,7 +35,7 @@
          g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
        \end{equation}
      #+end_src
-     $h$: インパルス応答 = フィルタの表現
+     \(h\): インパルス応答 = フィルタの表現
      #+end_quote
 
 ** Fourier変換による表現
@@ -69,11 +70,11 @@
        \end{equation}
      #+end_src
      #+end_quote
-   - $h(t)$ はフィルタに $\delta(t)$ を入力した時の出力
+   - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力
    - 物理的には
-     面積1 ($\Delta \times 1/\Delta$)
+     面積1 (\(\Delta \times 1/\Delta\))
      の矩形波に対する出力を
-     時間幅 $\Delta\to0$ としたときの波形
+     時間幅 \(\Delta\to0\) としたときの波形
 
 ** ローパスフィルタ(RC回路)
    #+NAME: fig:draw3
@@ -152,7 +153,7 @@
        \end{equation}
      #+end_src
      #+end_quote
-   - $\Delta\to 0$
+   - \(\Delta\to 0\)
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -211,12 +212,13 @@
      #+ATTR_LATEX: :width 0.5\linewidth
      [[file:figs/信号処理 9.png]]
 
+
 * 標本化定理
 ** 標本化定理
    - 定理
      #+begin_quote
-     信号 $f(t)$ が $B\,[\mathrm{Hz}]$ 未満の周波数しか含んでいないなら，
-     $1/2B\,[s]$ ごとのサンプル点を用いて元の信号は完全に求められる．
+     信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
+     \(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
      #+end_quote
      #+NAME: fig:draw10
      #+ATTR_HTML: :width 80%
@@ -232,24 +234,70 @@
      - 染谷の標本化定理 
    #+reveal: split
    - 用語
-     - 1秒間に取るサンプル数 $f_{s}\,[\mathrm{Hz}]$: \\
+     - 1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): \\
        サンプリング周波数 (sampling frequency)
-     - 再構成に必要なサンプリング周波数の下限 $2B\,[\mathrm{Hz}]$: \\
+     - 再構成に必要なサンプリング周波数の下限 \(2B\,[\mathrm{Hz}]\): \\
        Nyquist レート (Nyquist rate)
-     - 信号に含まれる周波数の上限 $B\,[\mathrm{Hz}]$: \\
+     - 信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): \\
        Nyquist 周波数 (Nyquist frequency) 
 
-** 標本化定理の証明       
+
+* 演習
+  :PROPERTIES:
+  :reveal_background: #fef4f4
+  :END:
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+         \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
+       \end{equation}
+     #+end_src
+     #+end_quote
+     としたとき，
+     周期 \(2\pi\cdot 2B\) の基底は
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+         \psi_{n}(\omega)
+         =
+         a\cdot \phi_{n}\left(b\omega\right)
+       \end{equation}
+     #+end_src
+     #+end_quote
+     で構成することができる．\(a\) と \(b\) を求めよ．
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 以下の積分
+     #+begin_quote
+     #+begin_src latex
+       \begin{equation}
+         \int_{-2\pi B}^{2\pi B}
+         e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+       \end{equation}
+     #+end_src
+     #+end_quote
+     を計算しなさい．
+
+     
+* 定理の証明と注意
+** 標本化定理の証明  
    - step 1
      #+begin_quote
      定理の仮定より
-     $f(t)$
+     \(f(t)\)
      の Fourier 変換を
-     $\hat{f}(\omega)$
-     の台 (0でない $\omega$ の領域) は
-     $(-2\pi B, 2\pi B)$
+     \(\hat{f}(\omega)\)
+     の台 (0でない \(\omega\) の領域) は
+     \((-2\pi B, 2\pi B)\)
      である．
-     ($B\,[\mathrm{Hz}]=2\pi B\,[\mathrm{rad}]$)
+     (\(B\,[\mathrm{Hz}]=2\pi B\,[\mathrm{rad}]\))
      #+end_quote
      #+NAME: fig:draw6
      #+ATTR_HTML: :width 70%
@@ -259,10 +307,10 @@
    #+reveal: split
    - step 2
      #+begin_quote
-     $\hat{f}$ を $2\pi\cdot 2B$ ごとに繰り返したものを
-     $\tilde{f}$ とする．
+     \(\hat{f}\) を \(2\pi\cdot 2B\) ごとに繰り返したものを
+     \(\tilde{f}\) とする．
      
-     これは周期 $2\pi\cdot 2B$ を持つ周期関数なので
+     これは周期 \(2\pi\cdot 2B\) を持つ周期関数なので
      Fourier 級数展開が存在する．
      #+end_quote
      #+NAME: fig:draw7
@@ -271,37 +319,16 @@
      [[file:figs/信号処理 7.png]]
 
    #+reveal: split
-   - *練習問題*
-     #+begin_quote
-     周期 $2\pi$ の Fourier 級数展開の基底(正規直交系)を
-     #+begin_src latex
-       \begin{equation}
-         \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
-       \end{equation}
-     #+end_src
-     としたとき，
-     周期 $2\pi\cdot 2B$ の基底は
-     #+begin_src latex
-       \begin{equation}
-         \psi_{n}(\omega)
-         =
-         a\cdot \phi_{n}\left(b\omega\right)
-       \end{equation}
-     #+end_src
-     で構成することができる．$a$ と $b$ を求めよ．
-     #+end_quote
-
-   #+reveal: split
    - step 3
      #+begin_quote
-     周期 $2\pi$ の Fourier 級数展開の基底を
+     周期 \(2\pi\) の Fourier 級数展開の基底を
      #+begin_src latex
        \begin{equation}
          \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
        \end{equation}
      #+end_src
      とすると，
-     周期 $2\pi\cdot 2B$ の基底は
+     周期 \(2\pi\cdot 2B\) の基底は
      #+begin_src latex
        \begin{equation}
          \psi_{n}(\omega)=\phi_{n}\left(\frac{\omega}{2B}\right)\frac{1}{\sqrt{2B}}
@@ -313,7 +340,7 @@
    #+reveal: split
    - step 4
      #+begin_quote
-     $\tilde{f}$ の Fourier 級数展開は
+     \(\tilde{f}\) の Fourier 級数展開は
      #+begin_src latex
        \begin{equation}
          \tilde{f}(\omega)
@@ -344,9 +371,9 @@
      #+end_src
      #+end_quote
      - 1周期分の積分範囲に注意して
-       $\tilde{f}$
+       \(\tilde{f}\)
        をもとの
-       $\hat{f}$
+       \(\hat{f}\)
        で置き換える
 
    #+reveal: split
@@ -366,9 +393,9 @@
        \end{align}
      #+end_src
      #+end_quote
-     - $\hat{f}$ 
+     - \(\hat{f}\) 
        は区間
-       $(-2\pi B, 2\pi B)$
+       \((-2\pi B, 2\pi B)\)
        の外では0
 
    #+reveal: split
@@ -387,9 +414,9 @@
        \end{align}
      #+end_src
      #+end_quote
-     - $x=-n/2B$
+     - \(x=-n/2B\)
        における
-       $\hat{f}$
+       \(\hat{f}\)
        の Fourier 逆変換
        #+begin_quote
        #+begin_src latex
@@ -429,10 +456,10 @@
        \end{align}
      #+end_src
      #+end_quote
-     - $\hat{h}_{B}$ は
-       $\tilde{f}$
+     - \(\hat{h}_{B}\) は
+       \(\tilde{f}\)
        から
-       $\hat{f}$
+       \(\hat{f}\)
        を取り出す周波数フィルタ
 
    #+reveal: split
@@ -454,21 +481,8 @@
        \end{align}
      #+end_src
      #+end_quote
-     - $\hat{h}_{B}$
+     - \(\hat{h}_{B}\)
        の定義に従って積分領域を書き換える
-
-   #+reveal: split
-   - *練習問題*
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-         \int_{-2\pi B}^{2\pi B}
-         e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
-       \end{equation}
-     #+end_src
-     を計算し，
-     それを用いて $f$ を表しなさい．
-     #+end_quote
 
    #+reveal: split
    - step 10
@@ -495,11 +509,11 @@
    - step 11
      #+begin_quote
      以上から，
-     $f(t)$
+     \(f(t)\)
      は
-     $1/2B$
+     \(1/2B\)
      ごとのサンプル点
-     $f(n/2B)$
+     \(f(n/2B)\)
      を用いて完全に再構成できる．
      #+end_quote
 
@@ -512,7 +526,7 @@
    #+reveal: split
    - Nyquist 周波数での挙動
      #+begin_quote
-     周波数 $B$ で $\theta$ の値によって位相と振幅が異なる
+     周波数 \(B\) で \(\theta\) の値によって位相と振幅が異なる
      次の波形を考える．
      #+begin_src latex
        \begin{equation*}
@@ -522,7 +536,7 @@
          =\cos(2\pi Bt)-\sin(2\pi Bt)\tan\theta
        \end{equation*}
      #+end_src
-     標本点を ${n}/{2B}$ とすると
+     標本点を \({n}/{2B}\) とすると
      #+begin_src latex
        \begin{align*}
          f\left(\frac{n}{2B}\right)
@@ -530,12 +544,12 @@
            =(-1)^{n}
        \end{align*}
      #+end_src
-     $\theta$
+     \(\theta\)
      によらないため，
      サンプリングンレート
-     $2B$
+     \(2B\)
      の標本点からは
-     $\theta$
+     \(\theta\)
      の値を推定することはできない．
      #+end_quote
 
@@ -543,8 +557,8 @@
    - 定理の前提
      #+begin_quote
      信号の Fourier 変換が
-     $(-2\pi B,2\pi B)$
-     以外で0とである．
+     \((-2\pi B,2\pi B)\)
+     以外で0である．
      #+end_quote
    - 成立しない場合に生じる雑音
      - エイリアシング (aliasing)
@@ -552,11 +566,11 @@
    #+reveal: split
    - 雑音の原因
      #+begin_quote
-     $4\pi B$
+     \(4\pi B\)
      周期の関数
-     $\tilde{f}$
+     \(\tilde{f}\)
      を構成する際に重なりが生じ，
-     $(-2\pi B,2\pi B)$
+     \((-2\pi B,2\pi B)\)
      領域を切り出しても
      元に戻すことができない．
      #+end_quote
@@ -565,7 +579,8 @@
    #+ATTR_LATEX: :width 0.5\linewidth
    [[file:figs/信号処理 8.png]]
 
-* まとめ
+
+* 今回のまとめ
   - デジタル信号処理
     - アナログとデジタル
     - 標本化と量子化
@@ -573,3 +588,13 @@
     - Nyquist 周波数 
     - サンプリング周波数
     - エイリアシング
+
+
+* COMMENT ローカル変数
+# Local Variables:
+# org-latex-listings: minted
+# End:
+      
+  
+   
+  

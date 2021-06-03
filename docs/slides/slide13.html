@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/font/source-sans-pro/source-sans-pro.css"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
 
@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">離散 Fourier 変換</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 講義13</p>
+    <p>信号処理 - 講義13</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org20845e3">
-<h2 id="org20845e3">復習</h2>
-<div class="outline-text-2" id="text-org20845e3">
+<section id="slide-org92c38e4">
+<h2 id="org92c38e4">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org92c38e4">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org38118b1">
-<h3 id="org38118b1">デジタル信号処理</h3>
+<section id="slide-orgf836ca8">
+<h3 id="orgf836ca8">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -69,8 +69,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga436c92">
-<h3 id="orga436c92">標本化と量子化</h3>
+<section id="slide-org7cd847e">
+<h3 id="org7cd847e">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化
 <ul>
@@ -83,8 +83,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgefbdbc8">
-<h3 id="orgefbdbc8">標本化定理</h3>
+<section id="slide-orgdd00c5f">
+<h3 id="orgdd00c5f">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -96,7 +96,7 @@
 </p>
 </blockquote>
 
-<div id="orgab232c8" class="figure">
+<div id="org053b8bf" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div></li>
@@ -105,8 +105,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org970cff3">
-<h3 id="org970cff3">標本化における用語</h3>
+<section id="slide-orgf34e085">
+<h3 id="orgf34e085">標本化における用語</h3>
 <ul>
 <li>1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): <br />
 サンプリング周波数</li>
@@ -120,8 +120,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd5f6dd0">
-<h3 id="orgd5f6dd0">エイリアシング</h3>
+<section id="slide-org5b98fb1">
+<h3 id="org5b98fb1">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -140,7 +140,7 @@ Nyquist 周波数</li>
 
 </ul>
 
-<div id="orgb811917" class="figure">
+<div id="orgb962bc5" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
@@ -150,14 +150,14 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-org5a1a6bd">
-<h2 id="org5a1a6bd">離散 Fourier 変換</h2>
-<div class="outline-text-2" id="text-org5a1a6bd">
+<section id="slide-org9d8c2f0">
+<h2 id="org9d8c2f0">離散 Fourier 変換</h2>
+<div class="outline-text-2" id="text-org9d8c2f0">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8960558">
-<h3 id="org8960558">計算機による信号処理</h3>
+<section id="slide-orgd3e6237">
+<h3 id="orgd3e6237">計算機による信号処理</h3>
 <ul>
 <li>連続時間では扱えない
 <ul>
@@ -176,8 +176,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org48b50e7">
-<h3 id="org48b50e7">離散 Fourier 変換</h3>
+<section id="slide-orge296b94">
+<h3 id="orge296b94">離散 Fourier 変換</h3>
 <ul>
 <li><p>
 定義
@@ -229,13 +229,21 @@ Nyquist 周波数</li>
 </ul></li>
 
 </ul>
+
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org0ad46d4">
-<h3 id="org0ad46d4">練習問題</h3>
+</section>
+<section>
+<section id="slide-org5c7da82" data-background="#fef4f4">
+<h2 id="org5c7da82">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org553a783" data-background="#fef4f4">
+<h3 id="org553a783">練習問題</h3>
 <ul>
 <li><p>
-問題1
+問1
 </p>
 <blockquote>
 <p>
@@ -246,7 +254,7 @@ Nyquist 周波数</li>
 </p>
 </blockquote></li>
 <li><p>
-問題2
+問2
 </p>
 <blockquote>
 <p>
@@ -256,65 +264,14 @@ Nyquist 周波数</li>
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例1
-</p>
-<blockquote>
-<p>
-サンプルの区間幅は \(1/f_s\) [s] なので，
-長さ \(N\) の信号は \(N/f_s\) [s] の信号となる．
-これが1周期に対応するので，基本周波数は \(f_s/N\) [Hz] となり，
-信号はこの高調波で展開される．
-</p>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例2
-</p>
-<blockquote>
-<p>
-\(t\) を整数とすると \(e^{2\pi i t}=1\) であるから
-</p>
-<div>
-\begin{equation}
-  e^{-i\frac{2\pi}{N}t}
-  =e^{-i\frac{2\pi}{N}t}e^{2\pi i t}
-  =e^{i\frac{2\pi}{N}(N{-}1)t}
-\end{equation}
-
-</div>
-
-<p>
-となり \(k=N{-}1\) である．
-</p>
-</blockquote>
-<ul>
-<li>これは標本点のみでは周波数が \(-1\) なのか \(N{-}1\)
-なのか区別できないことを示している．</li>
-<li>一般に \(n\ge N/2\) 以上の高調波は負の周波数に対応させ，
-信号は \(f_{s}/2\) 未満の(正負の)周波数で展開される．</li>
-<li>標本化定理の結果と比較せよ．</li>
-
-</ul></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org22b8811">
-<h3 id="org22b8811">1のN乗根</h3>
+<section id="slide-orgafd9db2" data-background="#fef4f4">
+<h3 id="orgafd9db2">練習問題</h3>
 <ul>
 <li><p>
-定義
+問3
 </p>
 <blockquote>
 <div>
@@ -329,27 +286,13 @@ Nyquist 周波数</li>
 </p>
 <div>
 \begin{equation}
-  \alpha^{N}=e^{2\pi i}=1 \quad(\text{1の$N$乗根の一つ})
+  \alpha^{N}=e^{2\pi i}=1 \quad(\text{1の\(N\)乗根の一つ})
 \end{equation}
 
 </div>
 
 <p>
 となる．
-</p>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org7b457e5">
-<h3 id="org7b457e5">練習問題</h3>
-<ul>
-<li><p>
-問題
-</p>
-<blockquote>
-<p>
 \(m\) を整数とするとき以下の値を求めよ．
 </p>
 <div>
@@ -361,50 +304,19 @@ Nyquist 周波数</li>
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<p>
-\(k\) を整数として \(m=kN\) のとき (\(m\) が \(N\) の倍数)
-</p>
-<div>
-\begin{equation}
-  \alpha^{m}=(\alpha^{N})^{k}=1
-\end{equation}
-
+<section id="slide-orge8244de">
+<h2 id="orge8244de">離散 Fourier 変換の行列表現</h2>
+<div class="outline-text-2" id="text-orge8244de">
 </div>
-
-<p>
-であるから，与式はNとなる．
-</p>
-
-<p>
-それ以外のとき，等比数列の和から
-</p>
-<div>
-\begin{align}
-  \text{(与式)}
-  &=\frac{1-\alpha^{mN}}{1-\alpha^{m}}
-  =\frac{1-(\alpha^{N})^{m}}{1-\alpha^{m}}=0
-\end{align}
-
-</div>
-
-<p>
-となる．
-</p>
-</blockquote></li>
-
-</ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcf3ac39">
-<h3 id="orgcf3ac39">行列による表現</h3>
+<section id="slide-orgc4842b2">
+<h3 id="orgc4842b2">行列による表現</h3>
 <ul>
 <li><p>
 \(N\) 乗根を用いた展開
@@ -541,8 +453,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8ae460b">
-<h3 id="org8ae460b">変換と逆変換の関係</h3>
+<section id="slide-orgb0a6155">
+<h3 id="orgb0a6155">変換と逆変換の関係</h3>
 <ul>
 <li><p>
 行列 \(F,F^{*}\) の積
@@ -658,18 +570,19 @@ Nyquist 周波数</li>
 
 </ul>
 
+
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org7959c93">
-<h2 id="org7959c93">フィルタの表現</h2>
-<div class="outline-text-2" id="text-org7959c93">
+<section id="slide-orgddf30fe">
+<h2 id="orgddf30fe">フィルタの表現</h2>
+<div class="outline-text-2" id="text-orgddf30fe">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbb074ec">
-<h3 id="orgbb074ec">フィルタ</h3>
+<section id="slide-org65864c5">
+<h3 id="org65864c5">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -700,8 +613,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org95886f6">
-<h3 id="org95886f6">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-org4bd8001">
+<h3 id="org4bd8001">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現
@@ -748,10 +661,18 @@ Nyquist 周波数</li>
 </blockquote></li>
 
 </ul>
+
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5c8d5a5">
-<h3 id="org5c8d5a5">練習問題</h3>
+</section>
+<section>
+<section id="slide-orga777272" data-background="#fef4f4">
+<h2 id="orga777272">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0c861b4" data-background="#fef4f4">
+<h3 id="org0c861b4">練習問題</h3>
 <ul>
 <li><p>
 問題
@@ -772,77 +693,19 @@ Nyquist 周波数</li>
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{g}(n)
-  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}g(t)\alpha^{-nt}\\
-  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
-    \sum_{s=0}^{N-1}f(s)h(t{-}s)\alpha^{-n(t-s+s)}\\
-  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
-    \sum_{s=0}^{N-1}f(s)\alpha^{-ns}h(t{-}s)\alpha^{-n(t-s)}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-解答例 (つづき)
-</p>
-<blockquote>
-<p>
-周期 \(N\) の関数であることに注意すると
-</p>
-<div>
-\begin{equation}
-  \sum_{t=0}^{N-1}h(t{-}s)\alpha^{-n(t-s)}
-  =\sum_{t=0}^{N-1}h(t)\alpha^{-nt}
-  =\sqrt{N}\hat{h}(n)
-\end{equation}
-
-</div>
-<div>
-\begin{equation}
-  \sum_{s=0}^{N-1}f(s)\alpha^{-ns}
-  =\sqrt{N}\hat{f}(n)
-\end{equation}
-
-</div>
-<div>
-\begin{equation}
-  \hat{g}(n)
-  =\sqrt{N}\hat{f}(n)\hat{h}(n)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org3089974">
-<h2 id="org3089974">窓関数</h2>
-<div class="outline-text-2" id="text-org3089974">
+<section id="slide-org0154ce3">
+<h2 id="org0154ce3">窓関数</h2>
+<div class="outline-text-2" id="text-org0154ce3">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6a6234f">
-<h3 id="org6a6234f">有限長のデータ</h3>
+<section id="slide-org9eda585">
+<h3 id="org9eda585">有限長のデータ</h3>
 <ul>
 <li>信号の一部を切り出す必要がある
 <ul>
@@ -861,8 +724,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org599872c">
-<h3 id="org599872c">窓関数</h3>
+<section id="slide-orgf653a11">
+<h3 id="orgf653a11">窓関数</h3>
 <ul>
 <li><p>
 信号の切り出し
@@ -888,8 +751,8 @@ Nyquist 周波数</li>
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge620005">
-<h3 id="orge620005">矩形窓</h3>
+<section id="slide-org9197af5">
+<h3 id="org9197af5">矩形窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -900,7 +763,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org4153c91" class="figure">
+<div id="org7964c0d" class="figure">
 <p><img src="figs/rect.png" alt="rect.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 3: </span>矩形窓</p>
@@ -909,7 +772,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="orgdf56145" class="figure">
+<div id="orgc7e4f51" class="figure">
 <p><img src="figs/rect_freq.png" alt="rect_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 4: </span>周波数特性</p>
@@ -919,8 +782,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8ccec4f">
-<h3 id="org8ccec4f">gauss 窓</h3>
+<section id="slide-org0d49eb5">
+<h3 id="org0d49eb5">gauss 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -931,7 +794,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org37c5d86" class="figure">
+<div id="org8dd0df4" class="figure">
 <p><img src="figs/gauss.png" alt="gauss.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 5: </span>gauss 窓</p>
@@ -940,7 +803,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="orgfeb76c4" class="figure">
+<div id="orge4316fb" class="figure">
 <p><img src="figs/gauss_freq.png" alt="gauss_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 6: </span>周波数特性</p>
@@ -950,8 +813,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org06af6d8">
-<h3 id="org06af6d8">hann 窓</h3>
+<section id="slide-orgdef4d5c">
+<h3 id="orgdef4d5c">hann 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -962,7 +825,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org18d2702" class="figure">
+<div id="orgd426ea1" class="figure">
 <p><img src="figs/hann.png" alt="hann.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 7: </span>hann 窓</p>
@@ -971,7 +834,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="org78b6e5c" class="figure">
+<div id="org2cde1ee" class="figure">
 <p><img src="figs/hann_freq.png" alt="hann_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 8: </span>周波数特性</p>
@@ -981,8 +844,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8096bc8">
-<h3 id="org8096bc8">hamming 窓</h3>
+<section id="slide-orgc2bdb6c">
+<h3 id="orgc2bdb6c">hamming 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -993,7 +856,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="orgff1cfa2" class="figure">
+<div id="org03b00dc" class="figure">
 <p><img src="figs/hamm.png" alt="hamm.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 9: </span>hamming 窓</p>
@@ -1002,7 +865,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="orgf850efb" class="figure">
+<div id="org9bb61f7" class="figure">
 <p><img src="figs/hamm_freq.png" alt="hamm_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 10: </span>周波数特性</p>
@@ -1015,8 +878,8 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-orga26d191">
-<h2 id="orga26d191">まとめ</h2>
+<section id="slide-orgdc2e18d">
+<h2 id="orgdc2e18d">今回のまとめ</h2>
 <ul>
 <li>離散 Fourier 変換
 <ul>
@@ -1054,7 +917,7 @@ center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
-mouseWheel: true,
+mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
@@ -1063,7 +926,7 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }},
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
@@ -1071,7 +934,8 @@ plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 // Optional libraries used to extend reveal.js
 dependencies: [
 { src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'}]
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>
