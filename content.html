@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="author" content="Noboru Murata"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/black.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h2 class="author">Noboru Murata</h2><p class="date">Created: 2021-06-03 Thu 14:40</p>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-1">1. 概要</a>
+<ul>
+<li><a href="#/slide-1-1">1.1. 講義資料</a></li>
+<li><a href="#/slide-1-2">1.2. 参考資料</a></li>
+</ul>
+</li>
+<li><a href="#/slide-2">2. 講義1</a>
+<ul>
+<li><a href="#/slide-2-1">2.1. スライド</a></li>
+<li><a href="#/slide-2-2">2.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-3">3. 講義2</a>
+<ul>
+<li><a href="#/slide-3-1">3.1. スライド</a></li>
+<li><a href="#/slide-3-2">3.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-4">4. 講義3</a>
+<ul>
+<li><a href="#/slide-4-1">4.1. スライド</a></li>
+<li><a href="#/slide-4-2">4.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-5">5. 講義4</a>
+<ul>
+<li><a href="#/slide-5-1">5.1. スライド</a></li>
+<li><a href="#/slide-5-2">5.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-6">6. 講義5</a>
+<ul>
+<li><a href="#/slide-6-1">6.1. スライド</a></li>
+<li><a href="#/slide-6-2">6.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-7">7. 講義6</a>
+<ul>
+<li><a href="#/slide-7-1">7.1. スライド</a></li>
+<li><a href="#/slide-7-2">7.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-8">8. 講義7</a></li>
+<li><a href="#/slide-9">9. 講義8</a>
+<ul>
+<li><a href="#/slide-9-1">9.1. スライド</a></li>
+<li><a href="#/slide-9-2">9.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-10">10. 講義9</a>
+<ul>
+<li><a href="#/slide-10-1">10.1. スライド</a></li>
+<li><a href="#/slide-10-2">10.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-11">11. 講義10</a>
+<ul>
+<li><a href="#/slide-11-1">11.1. スライド</a></li>
+<li><a href="#/slide-11-2">11.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-12">12. 講義11</a></li>
+<li><a href="#/slide-13">13. 講義12</a>
+<ul>
+<li><a href="#/slide-13-1">13.1. スライド</a></li>
+<li><a href="#/slide-13-2">13.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-14">14. 講義13</a>
+<ul>
+<li><a href="#/slide-14-1">14.1. スライド</a></li>
+<li><a href="#/slide-14-2">14.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-15">15. 講義14</a>
+<ul>
+<li><a href="#/slide-15-1">15.1. スライド</a></li>
+<li><a href="#/slide-15-2">15.2. ハンドアウト</a></li>
+</ul>
+</li>
+<li><a href="#/slide-16">16. 講義15</a></li>
+<li><a href="#/slide-17">17. 講義の進め方</a>
+<ul>
+<li><a href="#/slide-17-1">17.1. 講義ノート</a></li>
+<li><a href="#/slide-17-2">17.2. 過去の試験問題</a></li>
+</ul>
+</li>
+<li><a href="#/slide-18">18. スライドの使い方</a>
+<ul>
+<li><a href="#/slide-18-1">18.1. フルスクリーン</a></li>
+<li><a href="#/slide-18-2">18.2. 黒板</a></li>
+<li><a href="#/slide-18-3">18.3. メモ書き</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-1">
+<h2 id="1"><span class="section-number-2">1</span> 概要</h2>
+<p>
+本講義では
+フーリエ変換に代表される基底による信号の表現と取り扱い，
+簡単なフィルタの理論を学ぶことを目的とします．
+</p>
+
+</section>
+<section id="slide-1-1">
+<h3 id="1-1"><span class="section-number-3">1.1</span> 講義資料</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/signal-processing.pdf">信号処理</a></li>
+
+</ul>
+<p>
+随時修正します．
+</p>
+
+</section>
+<section id="slide-1-2">
+<h3 id="1-2"><span class="section-number-3">1.2</span> 参考資料</h3>
+<p>
+必要な参考書については講義中に指示します．
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-2">
+<h2 id="2"><span class="section-number-2">2</span> 講義1</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-30 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-2-1">
+<h3 id="2-1"><span class="section-number-3">2.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide01" &gt;}}
+</p>
+</section>
+<section id="slide-2-2">
+<h3 id="2-2"><span class="section-number-3">2.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide01.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-3">
+<h2 id="3"><span class="section-number-2">3</span> 講義2</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-30 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-3-1">
+<h3 id="3-1"><span class="section-number-3">3.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide02" &gt;}}
+</p>
+</section>
+<section id="slide-3-2">
+<h3 id="3-2"><span class="section-number-3">3.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide02.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-4">
+<h2 id="4"><span class="section-number-2">4</span> 講義3</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-30 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-4-1">
+<h3 id="4-1"><span class="section-number-3">4.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide03" &gt;}}
+</p>
+</section>
+<section id="slide-4-2">
+<h3 id="4-2"><span class="section-number-3">4.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide03.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-5">
+<h2 id="5"><span class="section-number-2">5</span> 講義4</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-04-30 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-5-1">
+<h3 id="5-1"><span class="section-number-3">5.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide04" &gt;}}
+</p>
+</section>
+<section id="slide-5-2">
+<h3 id="5-2"><span class="section-number-3">5.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide04.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-6">
+<h2 id="6"><span class="section-number-2">6</span> 講義5</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-05-07 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-6-1">
+<h3 id="6-1"><span class="section-number-3">6.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide05" &gt;}}
+</p>
+</section>
+<section id="slide-6-2">
+<h3 id="6-2"><span class="section-number-3">6.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide05.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-7">
+<h2 id="7"><span class="section-number-2">7</span> 講義6</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-05-14 Fri&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-7-1">
+<h3 id="7-1"><span class="section-number-3">7.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide06" &gt;}}
+</p>
+</section>
+<section id="slide-7-2">
+<h3 id="7-2"><span class="section-number-3">7.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide06.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-8">
+<h2 id="8"><span class="section-number-2">8</span> 講義7</h2>
+<p>
+理解度の確認
+</p>
+</section>
+</section>
+<section>
+<section id="slide-9">
+<h2 id="9"><span class="section-number-2">9</span> 講義8</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-02 Wed&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-9-1">
+<h3 id="9-1"><span class="section-number-3">9.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide08" &gt;}}
+</p>
+</section>
+<section id="slide-9-2">
+<h3 id="9-2"><span class="section-number-3">9.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide08.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-10">
+<h2 id="10"><span class="section-number-2">10</span> 講義9</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-02 Wed&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-10-1">
+<h3 id="10-1"><span class="section-number-3">10.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide09" &gt;}}
+</p>
+</section>
+<section id="slide-10-2">
+<h3 id="10-2"><span class="section-number-3">10.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide09.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-11">
+<h2 id="11"><span class="section-number-2">11</span> 講義10</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-02 Wed&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-11-1">
+<h3 id="11-1"><span class="section-number-3">11.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide10" &gt;}}
+</p>
+</section>
+<section id="slide-11-2">
+<h3 id="11-2"><span class="section-number-3">11.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide10.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-12">
+<h2 id="12"><span class="section-number-2">12</span> 講義11</h2>
+<p>
+理解度の確認
+</p>
+</section>
+</section>
+<section>
+<section id="slide-13">
+<h2 id="13"><span class="section-number-2">13</span> 講義12</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-03 Thu&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-13-1">
+<h3 id="13-1"><span class="section-number-3">13.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide12" &gt;}}
+</p>
+</section>
+<section id="slide-13-2">
+<h3 id="13-2"><span class="section-number-3">13.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide12.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-14">
+<h2 id="14"><span class="section-number-2">14</span> 講義13</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-02 Wed&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-14-1">
+<h3 id="14-1"><span class="section-number-3">14.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide13" &gt;}}
+</p>
+</section>
+<section id="slide-14-2">
+<h3 id="14-2"><span class="section-number-3">14.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide13.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-15">
+<h2 id="15"><span class="section-number-2">15</span> 講義14</h2>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-03 Thu&gt; </span></span> 更新
+</p>
+</section>
+<section id="slide-15-1">
+<h3 id="15-1"><span class="section-number-3">15.1</span> スライド</h3>
+<p>
+{{&lt; myslide base="signal-processing" name="slide14" &gt;}}
+</p>
+</section>
+<section id="slide-15-2">
+<h3 id="15-2"><span class="section-number-3">15.2</span> ハンドアウト</h3>
+<ul>
+<li><a href="https://noboru-murata.github.io/signal-processing/pdfs/slide14.pdf">PDF file</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-16">
+<h2 id="16"><span class="section-number-2">16</span> 講義15</h2>
+<p>
+理解度の確認
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-17">
+<h2 id="17"><span class="section-number-2">17</span> 講義の進め方</h2>
+</section>
+<section id="slide-17-1">
+<h3 id="17-1"><span class="section-number-3">17.1</span> 講義ノート</h3>
+<p>
+Moodle に URL を掲載しました．
+</p>
+
+</section>
+<section id="slide-17-2">
+<h3 id="17-2"><span class="section-number-3">17.2</span> 過去の試験問題</h3>
+<p>
+Moodle に3年分を掲載しました．
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-18">
+<h2 id="18"><span class="section-number-2">18</span> スライドの使い方</h2>
+<p>
+スライドは
+<a href="https://revealjs.com">reveal.js</a>
+を使って作っています．
+</p>
+
+<p>
+スライドを click して "?" を入力すると
+shortcut key が表示されますが，
+これ以外にも以下の key などが使えます．
+</p>
+
+</section>
+<section id="slide-18-1">
+<h3 id="18-1"><span class="section-number-3">18.1</span> フルスクリーン</h3>
+<ul>
+<li>f フルスクリーン表示</li>
+<li>esc 元に戻る</li>
+
+</ul>
+</section>
+<section id="slide-18-2">
+<h3 id="18-2"><span class="section-number-3">18.2</span> 黒板</h3>
+<ul>
+<li>w スライドと黒板の切り替え (toggle)</li>
+<li>x/y チョークの色の切り替え (巡回)</li>
+<li>c 消去</li>
+
+</ul>
+</section>
+<section id="slide-18-3">
+<h3 id="18-3"><span class="section-number-3">18.3</span> メモ書き</h3>
+<ul>
+<li>e 編集モードの切り替え (toggle)</li>
+<li>x/y ペンの色の切り替え (巡回)</li>
+<li>c 消去</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // see README of reveal.js for options
+transitionSpeed: 'default',
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+});
+</script>
+</body>
+</html>

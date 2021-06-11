@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-orgc1ccee8">
-<h2 id="orgc1ccee8">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgc1ccee8">
+<section id="slide-orgcc063c7">
+<h2 id="orgcc063c7">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgcc063c7">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8b64deb">
-<h3 id="org8b64deb">Fourier 級数展開</h3>
+<section id="slide-orgb2fcf99">
+<h3 id="orgb2fcf99">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -98,8 +98,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org0d51b91">
-<h3 id="org0d51b91">Fourier 変換と反転公式</h3>
+<section id="slide-orgbe73916">
+<h3 id="orgbe73916">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -133,8 +133,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge838de4">
-<h3 id="orge838de4">Parseval の定理</h3>
+<section id="slide-org33bbffe">
+<h3 id="org33bbffe">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -166,8 +166,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgca3d37c">
-<h3 id="orgca3d37c">Plancherel の定理</h3>
+<section id="slide-org4ba9d58">
+<h3 id="org4ba9d58">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -199,8 +199,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org02d1a8a">
-<h3 id="org02d1a8a">Riemann-Lebesgue の補題</h3>
+<section id="slide-org2fc446d">
+<h3 id="org2fc446d">Riemann-Lebesgue の補題</h3>
 <ul>
 <li><p>
 定理
@@ -222,8 +222,8 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6250ac8">
-<h3 id="org6250ac8">演算との関係</h3>
+<section id="slide-orge14d3d6">
+<h3 id="orge14d3d6">演算との関係</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -271,23 +271,24 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-org099aa73" data-background="#fef4f4">
-<h2 id="org099aa73">演習</h2>
+<section id="slide-org94dc56c" data-background="#fef4f4">
+<h2 id="org94dc56c">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7489c97" data-background="#fef4f4">
-<h3 id="org7489c97">練習問題</h3>
+<section id="slide-orgbc188a6" data-background="#fef4f4">
+<h3 id="orgbc188a6">練習問題</h3>
 <ul>
 <li><p>
 関数
 </p>
+<blockquote>
 <div>
 \begin{equation}
   f(x)=\frac{1}{x-ia}\;(a>0)        
 \end{equation}
 
 </div>
-
+</blockquote>
 <p>
 の Fourier 変換を求めよ．
 </p>
@@ -300,8 +301,180 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3e26650" data-background="#fef4f4">
-<h3 id="org3e26650">練習問題</h3>
+<section id="slide-org682f66b" data-background="#fef4f4">
+<h3 id="org682f66b">解答例</h3>
+<ul>
+<li><p>
+Cauchy の積分定理
+</p>
+<blockquote>
+<p>
+\(f\) を正則関数とするとき以下が成り立つ
+</p>
+<div>
+\begin{equation}
+  \oint f(z)dz = 0
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+Cauchy の積分公式 (第2定理)
+</p>
+<blockquote>
+<p>
+\(f\) を正則関数とするとき以下が成り立つ
+</p>
+<div>
+\begin{equation}
+  f(c)
+  =\frac{1}{2\pi i}\oint \frac{f(z)}{z-c}dz
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+留数定理 
+</p>
+<blockquote>
+<p>
+積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
+</p>
+<div>
+\begin{equation}
+  \mathrm{Res}_{z=c}f(z)
+  =\frac{1}{2\pi i}\oint f(z)dz
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+留数計算
+</p>
+<blockquote>
+<p>
+孤立特異点が1位の極なら以下で計算できる
+</p>
+<div>
+\begin{equation}
+  \mathrm{Res}_{z=c}f(z)
+  =
+  \lim_{z\to c}(z-c)f(z)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+以下の Fourier 変換を求める
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \mathcal{F}[f](\omega)
+  =\frac{1}{\sqrt{2\pi}}\int\frac{1}{x-ia}e^{-i\omega x}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+被積分関数を以下で定義
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  g(z)=\frac{e^{-i\omega z}}{\sqrt{2\pi}(z-ia)}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+積分路
+</p>
+<blockquote>
+<p>
+\(\omega<0\) のとき積分路を \(ia\) を含む \(x\) 軸と上半平面で考える
+</p>
+
+<p>
+\(\omega>0\) のとき積分路は \(x\) 軸と下半平面で考える
+</p>
+</blockquote>
+<ul>
+<li>\(e^{-i\omega z},\;(\omega<0)\) が上半平面でどうなるか考えよ</li>
+<li>\(e^{-i\omega z},\;(\omega>0)\) が下半平面でどうなるか考えよ</li>
+
+</ul>
+<blockquote>
+<div>
+\begin{equation}
+  \oint g(z)dz
+  =
+  \int_{-\infty}^{\infty} g(x)dx +\text{(積分に寄与しない)}
+  =\mathcal{F}[f](\omega)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+留数
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  Res_{z=ia}g(z)
+  =\lim_{z=ia}(z-ia)g(z)=\frac{e^{a\omega}}{\sqrt{2\pi}}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+整理すると
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \mathcal{F}[f](\omega)
+  &= 2\pi i Res_{z=ia}g(z)\\
+  &=
+    \begin{cases}
+      i\sqrt{2\pi}e^{a\omega}, & \omega<0\\
+      0, & \omega>0
+    \end{cases}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org871e026" data-background="#fef4f4">
+<h3 id="org871e026">練習問題</h3>
 <ul>
 <li><p>
 以下の関数の Fourier 変換を求めよ．
@@ -321,16 +494,125 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-orge60df9d" data-background="#fef4f4">
+<h3 id="orge60df9d">解答例</h3>
+<ul>
+<li><p>
+以下の関係を利用すればよい
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \frac{1}{x+ia}
+  &=-i\sqrt{2\pi}\hat{g}(-x)\\
+  \frac{a}{x^{2}+a^{2}}
+  &=\frac{a}{(x-ia)(x+ia)}\\
+  &=\frac{1}{2i}\left(\frac{1}{x-ia}-\frac{1}{x+ia}\right)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+積の Fourier 変換は畳み込みを利用すればよい
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \mathcal{F}[f{*}f](\alpha)
+  =\sqrt{2\pi}\cdot\hat{f}(\alpha)^{2}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \mathcal{F}[\Xi_{(-1,1)}](\alpha)
+  =
+  \sqrt{\frac{2}{\pi}}\frac{\sin(\alpha)}{\alpha}
+  =\sqrt{\frac{2}{\pi}}\hat{f}(\alpha)
+\end{equation}
+
+</div>
+<div>
+\begin{align}
+  \mathcal{F}[\hat{f}^{2}](\omega)
+  &=
+  \mathcal{F}^{-1}[\hat{f}^{2}](-\omega)
+  =\frac{1}{\sqrt{2\pi}}f{*}f(-\omega)\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(-\omega)\\
+  &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(\omega)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgb01bb53">
+<h3 id="orgb01bb53">Fourier 変換の例</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<section id="slide-org2f223a2">
-<h2 id="org2f223a2">線形時不変フィルタ</h2>
-<div class="outline-text-2" id="text-org2f223a2">
+<section id="slide-org751bc8b">
+<h2 id="org751bc8b">線形時不変フィルタ</h2>
+<div class="outline-text-2" id="text-org751bc8b">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org229aaf5">
-<h3 id="org229aaf5">注意</h3>
+<section id="slide-org6c4fe49">
+<h3 id="org6c4fe49">注意</h3>
 <ul>
 <li>以降，音声や音楽などの時系列信号を扱う</li>
 <li><p>
@@ -352,8 +634,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8c0950a">
-<h3 id="org8c0950a">フィルタ</h3>
+<section id="slide-org71dc772">
+<h3 id="org71dc772">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -364,7 +646,7 @@ Fourier級数展開
 </p>
 </blockquote>
 
-<div id="org4385db8" class="figure">
+<div id="org1afdd3c" class="figure">
 <p><img src="figs/filter1.png" alt="filter1.png" width="100%" />
 </p>
 </div></li>
@@ -373,8 +655,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3fc67e0">
-<h3 id="org3fc67e0">フィルタの例</h3>
+<section id="slide-org124296f">
+<h3 id="org124296f">フィルタの例</h3>
 <ul>
 <li><span style="color:darkgreen;">エレキギターのエフェクター</span> (effects unit, pedal)
 <ul>
@@ -390,8 +672,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2ebe943">
-<h3 id="org2ebe943">フィルタ</h3>
+<section id="slide-orgdbf5146">
+<h3 id="orgdbf5146">フィルタ</h3>
 <ul>
 <li>関数 \(f(t)\) を関数 \(g(t)\) に変換する</li>
 <li>関数に作用する作用素(演算子)</li>
@@ -402,8 +684,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdf24b44">
-<h3 id="orgdf24b44">線形性</h3>
+<section id="slide-orgadc6c99">
+<h3 id="orgadc6c99">線形性</h3>
 <ul>
 <li><p>
 定義
@@ -415,12 +697,12 @@ Fourier級数展開
 </p>
 </blockquote>
 
-<div id="org8cd9779" class="figure">
+<div id="orgebf301c" class="figure">
 <p><img src="figs/filter2.png" alt="filter2.png" width="100%" />
 </p>
 </div>
 
-<div id="org7dc847d" class="figure">
+<div id="org5abb7f4" class="figure">
 <p><img src="figs/filter3.png" alt="filter3.png" width="100%" />
 </p>
 </div></li>
@@ -429,8 +711,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgff49f73">
-<h3 id="orgff49f73">線形フィルタ</h3>
+<section id="slide-orgc5e8d40">
+<h3 id="orgc5e8d40">線形フィルタ</h3>
 <ul>
 <li>線形性を持つフィルタ</li>
 <li><p>
@@ -451,7 +733,7 @@ Fourier級数展開
 フィルタによる基底関数の変換
 </p>
 
-<div id="orga93e3f4" class="figure">
+<div id="org5b43f32" class="figure">
 <p><img src="figs/filter4.png" alt="filter4.png" width="100%" />
 </p>
 </div></li>
@@ -481,8 +763,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1f57b3c">
-<h3 id="org1f57b3c">非線形フィルタ</h3>
+<section id="slide-orgf27c5eb">
+<h3 id="orgf27c5eb">非線形フィルタ</h3>
 <ul>
 <li>信号の変換において非線形作用を持つフィルタ</li>
 <li>多くのフィルタは線形性を持っている</li>
@@ -503,8 +785,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org1790dfe">
-<h3 id="org1790dfe">時不変性</h3>
+<section id="slide-org4caad7a">
+<h3 id="org4caad7a">時不変性</h3>
 <ul>
 <li><p>
 定義
@@ -519,7 +801,7 @@ Fourier級数展開
 
 </ul>
 
-<div id="orgecd1cca" class="figure">
+<div id="org7f88926" class="figure">
 <p><img src="figs/filter5.png" alt="filter5.png" width="100%" />
 </p>
 </div></li>
@@ -531,14 +813,14 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-org4c95cd6">
-<h2 id="org4c95cd6">フィルタの数学的表現</h2>
-<div class="outline-text-2" id="text-org4c95cd6">
+<section id="slide-orge7bc427">
+<h2 id="orge7bc427">フィルタの数学的表現</h2>
+<div class="outline-text-2" id="text-orge7bc427">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf015381">
-<h3 id="orgf015381">信号の近似</h3>
+<section id="slide-orga06efab">
+<h3 id="orga06efab">信号の近似</h3>
 <ul>
 <li><p>
 信号 \(f(t)\) の階段関数近似
@@ -584,7 +866,7 @@ Fourier級数展開
 </p>
 </blockquote>
 
-<div id="org01a6e11" class="figure">
+<div id="orgfd5856c" class="figure">
 <p><img src="figs/filter6.png" alt="filter6.png" width="100%" />
 </p>
 </div></li>
@@ -604,7 +886,7 @@ Fourier級数展開
 </p>
 </blockquote>
 
-<div id="orgc7b96e0" class="figure">
+<div id="orgf469f2d" class="figure">
 <p><img src="figs/filter7.png" alt="filter7.png" width="100%" />
 </p>
 </div></li>
@@ -624,7 +906,7 @@ Fourier級数展開
 </p>
 </blockquote>
 
-<div id="orgfa35fbd" class="figure">
+<div id="org33f0477" class="figure">
 <p><img src="figs/filter8.png" alt="filter8.png" width="100%" />
 </p>
 </div></li>
@@ -667,8 +949,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org98be879">
-<h3 id="org98be879">積分による表現</h3>
+<section id="slide-org9774b8e">
+<h3 id="org9774b8e">積分による表現</h3>
 <ul>
 <li><p>
 階段関数の係数
@@ -767,8 +1049,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgde50336">
-<h3 id="orgde50336">インパルス応答</h3>
+<section id="slide-org0e46861">
+<h3 id="org0e46861">インパルス応答</h3>
 <ul>
 <li><p>
 変換された信号の表現(畳み込み積分)
@@ -825,8 +1107,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org0d92716">
-<h3 id="org0d92716">因果的フィルタ</h3>
+<section id="slide-orgb487d6f">
+<h3 id="orgb487d6f">因果的フィルタ</h3>
 <ul>
 <li><p>
 音響信号などのフィルタのインパルス応答
@@ -877,8 +1159,8 @@ Fourier級数展開
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc22abac">
-<h3 id="orgc22abac">非因果的フィルタ</h3>
+<section id="slide-orgc3f1b5a">
+<h3 id="orgc3f1b5a">非因果的フィルタ</h3>
 <ul>
 <li>理想的なローパスフィルタ <br />
 (物理的な回路では作成することができない)</li>
@@ -894,12 +1176,12 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-orge208e59" data-background="#fef4f4">
-<h2 id="orge208e59">演習</h2>
+<section id="slide-orged12be1" data-background="#fef4f4">
+<h2 id="orged12be1">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbf1d5cd" data-background="#fef4f4">
-<h3 id="orgbf1d5cd">練習問題</h3>
+<section id="slide-orge0a215f" data-background="#fef4f4">
+<h3 id="orge0a215f">練習問題</h3>
 <ul>
 <li><p>
 線形時不変フィルタの機能は
@@ -922,10 +1204,87 @@ Fourier級数展開
 </ul>
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-orgb478f62">
+<h3 id="orgb478f62">解答例</h3>
+<ul>
+<li><p>
+入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt\\
+  \hat{h}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t)e^{-i\omega t}dt
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
 </section>
 <section>
-<section id="slide-org8f08b6b">
-<h2 id="org8f08b6b">今回のまとめ</h2>
+<ul>
+<li><p>
+出力信号 \(g\) のFourier 変換
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)e^{-i\omega t}dt\\
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+    \left(\int_{-\infty}^{\infty}h(t-s)f(s)ds\right) e^{-i\omega t}dt\\
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+    h(t-s)f(s)e^{-i\omega(t-s)}e^{-i\omega s}dtds\\
+  &=\sqrt{2\pi}
+    \cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t-s)e^{-i\omega(t-s)}dt\\
+  &\qquad\times\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}ds
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+整理すると
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \hat{g}(\omega)
+  =
+  \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+時間 \(t\) に対して \(\omega\) は周波数に対応
+</p>
+<blockquote>
+<p>
+Fourier 変換した周波数領域で見ると
+フィルタの機能は周波数毎の振幅と位相の変換として理解できる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org80fe46f">
+<h2 id="org80fe46f">今回のまとめ</h2>
 <ul>
 <li>線形時不変フィルタ
 <ul>
