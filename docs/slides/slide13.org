@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-06-03 14:03:13 mura>
+# Time-stamp: <2021-07-02 08:37:16 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -38,12 +38,12 @@
 
 ** 標本化における用語
    - 1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): \\
-     サンプリング周波数
+     *サンプリング周波数*
    - 再構成に必要なサンプリング周波数の下限 \(2B\,[\mathrm{Hz}]\): \\
-     Nyquist レート
+     *Nyquist レート*
    - 信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): \\
-     Nyquist 周波数
-   - (角周波数と周波数の関係に注意)
+     *Nyquist 周波数*
+   - [[color:gray][角周波数と周波数の関係に注意]]
 
 ** エイリアシング
    - 折り返しによる雑音
@@ -52,8 +52,9 @@
      周期の関数
      \(\tilde{f}\)
      を構成する際に重なりが生じ，
+     切り出した
      \((-2\pi B,2\pi B)\)
-     領域を切り出しても
+     領域を
      元に戻すことができない．
      #+end_quote
    #+NAME: fig:draw8
@@ -62,6 +63,23 @@
    [[file:figs/信号処理 8.png]]
 
 
+* 演習
+  :PROPERTIES:
+  :reveal_background: #fef4f4
+  :END:
+** 練習問題
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
+     CD で完全に再現される周波数はどのような範囲にあると考えられるか?
+
+** 解答例
+   :PROPERTIES:
+   :reveal_background: #fef4f4
+   :END:
+   - 標本化定理によれば 22.05 [kHz] 未満となる
+     
 * 離散 Fourier 変換
 ** 計算機による信号処理
    - 連続時間では扱えない
@@ -83,7 +101,9 @@
        \end{equation}
      #+end_src
      #+end_quote
-     - 慣習的に \(n\) や \(t\) は1ではなく0から始まることに注意する
+     - 慣習的に周波数 \(n\) や時間 \(t\) は1ではなく0から始まる整数
+     - 時間 [s] や周波数 [Hz] とは異なることに注意
+
    #+reveal: split
    - 逆変換の定義
      #+begin_quote
@@ -97,7 +117,7 @@
      #+end_src
      #+end_quote
      - 信号 \(f\) は周期信号(基底) \(e^{i\frac{2\pi}{N}nt}\) の重ね合わせで表現される
-     - 基底は \(e^{i\frac{2\pi}{N}t}\) (基本周波数の信号)の高調波になる
+     - 基底は \(e^{i\frac{2\pi}{N}t}\) の高調波(基本周波数の整数倍)になる
      - 各周波数信号の振幅が \(\hat{f}(n)/\sqrt{N}\) となる
 
 
@@ -109,24 +129,25 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 問1
+   - サンプリング周波数と基本周波数
      #+begin_quote
      サンプリング周波数 \(f_{s}\) [Hz] のデジタル信号から
      長さ \(N\) のベクトルを切り出し
      離散 Fourier 変換を考えたとき，   
      基本周波数はいくつになるか?
      #+end_quote
-   - 問2
+   - 周波数の正負の関係
      #+begin_quote
-     "負"の基本周波数 \(e^{-i\frac{2\pi}{N}t}\) と標本点 (\(t\) が整数の点)で
-     同じ値を持つ信号 \(e^{i\frac{2\pi}{N}kt}\;(k>0)\) を求めよ．
+     "負"の基本周波数 \(e^{-i\frac{2\pi}{N}t}\) と
+     標本点 (\(t\) が整数の点)で
+     同じ値を持つ正の基底 \(e^{i\frac{2\pi}{N}kt}\;(k>0)\) を求めよ．
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 問1
+   - サンプリング周波数と基本周波数
      #+begin_quote
      サンプルの区間幅は \(1/f_s\) [s] なので，
      長さ \(N\) の信号は \(N/f_s\) [s] の信号となる．
@@ -134,7 +155,7 @@
      信号はこの高調波で展開される．
      #+end_quote
    #+reveal: split
-   - 問2
+   - 周波数の正負の関係
      #+begin_quote
      \(t\) を整数とすると \(e^{2\pi i t}=1\) であるから
      #+begin_src latex
@@ -156,7 +177,7 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 問3
+   - 基本周波数の性質
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -178,11 +199,11 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 問3
+   - 基本周波数の性質
      #+begin_quote
      \(k\) を整数として \(m=kN\) のとき (\(m\) が \(N\) の倍数)
      #+begin_src latex
@@ -409,9 +430,9 @@
          g(t)=\sum_{s=t-N+1}^{t}f(s)h(t{-}s)
        \end{equation}
      #+end_src
+     #+end_quote
      - \(f,g\): 周期 \(N\) の入力・出力信号
      - \(h\): 長さ \(N\) のインパルス応答
-     #+end_quote
    #+reveal: split
    - 周期関数の畳み込みによる表現
      #+begin_quote
@@ -424,8 +445,8 @@
          &\quad t=0,1,\dotsc,N-1
        \end{align}
      #+end_src
-     - \(f,g,h\): 周期 \(N\) の関数
      #+end_quote
+     - \(f,g,h\): 周期 \(N\) の関数
 
 
 * 演習
@@ -436,7 +457,7 @@
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 問題
+   - 離散 Fourier 変換によるフィルタの表現
      #+begin_quote
      \(f,g,h\) を長さ \(N\) のベクトルと考え，
      \(g\) の離散 Fourier 変換を
@@ -449,11 +470,11 @@
      #+end_src
      #+end_quote
 
-** COMMENT 解答例
+** 解答例
    :PROPERTIES:
    :reveal_background: #fef4f4
    :END:
-   - 解答例
+   - 定義どおり展開していく
      #+begin_quote
      #+begin_src latex
        \begin{align}
@@ -467,10 +488,8 @@
      #+end_src
      #+end_quote
    #+reveal: split
-   - 解答例 (つづき)
+   - 周期 \(N\) の関数であることに注意する
      #+begin_quote
-     周期 \(N\)
-      の関数であることに注意すると
      #+begin_src latex
        \begin{equation}
          \sum_{t=0}^{N-1}h(t{-}s)\alpha^{-n(t-s)}
@@ -682,6 +701,16 @@
    [[file:figs/hamm_freq.png]]
    #+end_rightcol  
      
+** 窓関数を用いたデジタル信号処理
+   - 処理の流れ
+     - 不連続性を緩和した系列の断片化 (窓関数)
+     - デジタル信号処理 (フィルタ処理)
+     - 切り出された断片を再構成 (重なりを考慮した合成処理)
+   #+NAME: fig:draw11
+   #+ATTR_HTML: :width 80%
+   #+ATTR_LATEX: :width 0.5\linewidth
+   [[file:figs/信号処理 11.png]]
+
 
 * 今回のまとめ
   - 離散 Fourier 変換

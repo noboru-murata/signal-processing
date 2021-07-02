@@ -47,14 +47,14 @@
 </section>
 
 <section>
-<section id="slide-org92c38e4">
-<h2 id="org92c38e4">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org92c38e4">
+<section id="slide-org81a875b">
+<h2 id="org81a875b">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org81a875b">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf836ca8">
-<h3 id="orgf836ca8">デジタル信号処理</h3>
+<section id="slide-org1a5c194">
+<h3 id="org1a5c194">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -69,8 +69,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7cd847e">
-<h3 id="org7cd847e">標本化と量子化</h3>
+<section id="slide-orge60d13d">
+<h3 id="orge60d13d">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化
 <ul>
@@ -83,8 +83,8 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdd00c5f">
-<h3 id="orgdd00c5f">標本化定理</h3>
+<section id="slide-org9650f18">
+<h3 id="org9650f18">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -96,7 +96,7 @@
 </p>
 </blockquote>
 
-<div id="org053b8bf" class="figure">
+<div id="org65fd65a" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div></li>
@@ -105,23 +105,23 @@
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf34e085">
-<h3 id="orgf34e085">標本化における用語</h3>
+<section id="slide-org43918cf">
+<h3 id="org43918cf">標本化における用語</h3>
 <ul>
 <li>1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): <br />
-サンプリング周波数</li>
+<b>サンプリング周波数</b></li>
 <li>再構成に必要なサンプリング周波数の下限 \(2B\,[\mathrm{Hz}]\): <br />
-Nyquist レート</li>
+<b>Nyquist レート</b></li>
 <li>信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): <br />
-Nyquist 周波数</li>
-<li>(角周波数と周波数の関係に注意)</li>
+<b>Nyquist 周波数</b></li>
+<li><span style="color:gray;">角周波数と周波数の関係に注意</span></li>
 
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org5b98fb1">
-<h3 id="org5b98fb1">エイリアシング</h3>
+<section id="slide-org8350057">
+<h3 id="org8350057">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -132,15 +132,16 @@ Nyquist 周波数</li>
 周期の関数
 \(\tilde{f}\)
 を構成する際に重なりが生じ，
+切り出した
 \((-2\pi B,2\pi B)\)
-領域を切り出しても
+領域を
 元に戻すことができない．
 </p>
 </blockquote></li>
 
 </ul>
 
-<div id="orgb962bc5" class="figure">
+<div id="org438cd91" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
@@ -150,14 +151,39 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-org9d8c2f0">
-<h2 id="org9d8c2f0">離散 Fourier 変換</h2>
-<div class="outline-text-2" id="text-org9d8c2f0">
+<section id="slide-org6a0cef7" data-background="#fef4f4">
+<h2 id="org6a0cef7">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3428b86" data-background="#fef4f4">
+<h3 id="org3428b86">練習問題</h3>
+<ul>
+<li>CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
+CD で完全に再現される周波数はどのような範囲にあると考えられるか?</li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge816ee9" data-background="#fef4f4">
+<h3 id="orge816ee9">解答例</h3>
+<ul>
+<li>標本化定理によれば 22.05 [kHz] 未満となる</li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+</section>
+<section>
+<section id="slide-org6d2581c">
+<h2 id="org6d2581c">離散 Fourier 変換</h2>
+<div class="outline-text-2" id="text-org6d2581c">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd3e6237">
-<h3 id="orgd3e6237">計算機による信号処理</h3>
+<section id="slide-org42a9f0e">
+<h3 id="org42a9f0e">計算機による信号処理</h3>
 <ul>
 <li>連続時間では扱えない
 <ul>
@@ -176,8 +202,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge296b94">
-<h3 id="orge296b94">離散 Fourier 変換</h3>
+<section id="slide-org5426dc5">
+<h3 id="org5426dc5">離散 Fourier 変換</h3>
 <ul>
 <li><p>
 定義
@@ -196,11 +222,13 @@ Nyquist 周波数</li>
 </div>
 </blockquote>
 <ul>
-<li>慣習的に \(n\) や \(t\) は1ではなく0から始まることに注意する</li>
+<li>慣習的に周波数 \(n\) や時間 \(t\) は1ではなく0から始まる整数</li>
+<li>時間 [s] や周波数 [Hz] とは異なることに注意</li>
 
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -223,7 +251,7 @@ Nyquist 周波数</li>
 </blockquote>
 <ul>
 <li>信号 \(f\) は周期信号(基底) \(e^{i\frac{2\pi}{N}nt}\) の重ね合わせで表現される</li>
-<li>基底は \(e^{i\frac{2\pi}{N}t}\) (基本周波数の信号)の高調波になる</li>
+<li>基底は \(e^{i\frac{2\pi}{N}t}\) の高調波(基本周波数の整数倍)になる</li>
 <li>各周波数信号の振幅が \(\hat{f}(n)/\sqrt{N}\) となる</li>
 
 </ul></li>
@@ -235,15 +263,15 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-org5c7da82" data-background="#fef4f4">
-<h2 id="org5c7da82">演習</h2>
+<section id="slide-org8c2f491" data-background="#fef4f4">
+<h2 id="org8c2f491">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org553a783" data-background="#fef4f4">
-<h3 id="org553a783">練習問題</h3>
+<section id="slide-org733846a" data-background="#fef4f4">
+<h3 id="org733846a">練習問題</h3>
 <ul>
 <li><p>
-問1
+サンプリング周波数と基本周波数
 </p>
 <blockquote>
 <p>
@@ -254,12 +282,13 @@ Nyquist 周波数</li>
 </p>
 </blockquote></li>
 <li><p>
-問2
+周波数の正負の関係
 </p>
 <blockquote>
 <p>
-&ldquo;負&rdquo;の基本周波数 \(e^{-i\frac{2\pi}{N}t}\) と標本点 (\(t\) が整数の点)で
-同じ値を持つ信号 \(e^{i\frac{2\pi}{N}kt}\;(k>0)\) を求めよ．
+&ldquo;負&rdquo;の基本周波数 \(e^{-i\frac{2\pi}{N}t}\) と
+標本点 (\(t\) が整数の点)で
+同じ値を持つ正の基底 \(e^{i\frac{2\pi}{N}kt}\;(k>0)\) を求めよ．
 </p>
 </blockquote></li>
 
@@ -267,11 +296,64 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgafd9db2" data-background="#fef4f4">
-<h3 id="orgafd9db2">練習問題</h3>
+<section id="slide-orgac13ed2" data-background="#fef4f4">
+<h3 id="orgac13ed2">解答例</h3>
 <ul>
 <li><p>
-問3
+サンプリング周波数と基本周波数
+</p>
+<blockquote>
+<p>
+サンプルの区間幅は \(1/f_s\) [s] なので，
+長さ \(N\) の信号は \(N/f_s\) [s] の信号となる．
+これが1周期に対応するので，基本周波数は \(f_s/N\) [Hz] となり，
+信号はこの高調波で展開される．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+周波数の正負の関係
+</p>
+<blockquote>
+<p>
+\(t\) を整数とすると \(e^{2\pi i t}=1\) であるから
+</p>
+<div>
+\begin{equation}
+  e^{-i\frac{2\pi}{N}t}
+  =e^{-i\frac{2\pi}{N}t}e^{2\pi i t}
+  =e^{i\frac{2\pi}{N}(N{-}1)t}
+\end{equation}
+
+</div>
+
+<p>
+となり \(k=N{-}1\) である．
+</p>
+</blockquote>
+<ul>
+<li>これは標本点のみでは周波数が \(-1\) なのか \(N{-}1\)
+なのか区別できないことを示している．</li>
+<li>一般に \(n\ge N/2\) 以上の高調波は負の周波数に対応させ，
+信号は \(f_{s}/2\) 未満の(正負の)周波数で展開される．</li>
+<li>標本化定理の結果と比較せよ．</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org1a352ad" data-background="#fef4f4">
+<h3 id="org1a352ad">練習問題</h3>
+<ul>
+<li><p>
+基本周波数の性質
 </p>
 <blockquote>
 <div>
@@ -307,16 +389,59 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-orgea18b0a" data-background="#fef4f4">
+<h3 id="orgea18b0a">解答例</h3>
+<ul>
+<li><p>
+基本周波数の性質
+</p>
+<blockquote>
+<p>
+\(k\) を整数として \(m=kN\) のとき (\(m\) が \(N\) の倍数)
+</p>
+<div>
+\begin{equation}
+  \alpha^{m}=(\alpha^{N})^{k}=1
+\end{equation}
+
+</div>
+
+<p>
+であるから，与式はNとなる．
+</p>
+
+<p>
+それ以外のとき，等比数列の和から
+</p>
+<div>
+\begin{align}
+  \text{(与式)}
+  &=\frac{1-\alpha^{mN}}{1-\alpha^{m}}
+  =\frac{1-(\alpha^{N})^{m}}{1-\alpha^{m}}=0
+\end{align}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<section id="slide-orge8244de">
-<h2 id="orge8244de">離散 Fourier 変換の行列表現</h2>
-<div class="outline-text-2" id="text-orge8244de">
+<section id="slide-org67a8b4a">
+<h2 id="org67a8b4a">離散 Fourier 変換の行列表現</h2>
+<div class="outline-text-2" id="text-org67a8b4a">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc4842b2">
-<h3 id="orgc4842b2">行列による表現</h3>
+<section id="slide-orga9eace6">
+<h3 id="orga9eace6">行列による表現</h3>
 <ul>
 <li><p>
 \(N\) 乗根を用いた展開
@@ -453,8 +578,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb0a6155">
-<h3 id="orgb0a6155">変換と逆変換の関係</h3>
+<section id="slide-org05d54f3">
+<h3 id="org05d54f3">変換と逆変換の関係</h3>
 <ul>
 <li><p>
 行列 \(F,F^{*}\) の積
@@ -575,14 +700,14 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-orgddf30fe">
-<h2 id="orgddf30fe">フィルタの表現</h2>
-<div class="outline-text-2" id="text-orgddf30fe">
+<section id="slide-orgc1c210c">
+<h2 id="orgc1c210c">フィルタの表現</h2>
+<div class="outline-text-2" id="text-orgc1c210c">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org65864c5">
-<h3 id="org65864c5">フィルタ</h3>
+<section id="slide-orge1a0f3b">
+<h3 id="orge1a0f3b">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -613,8 +738,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4bd8001">
-<h3 id="org4bd8001">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-org3b9d433">
+<h3 id="org3b9d433">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現
@@ -626,13 +751,12 @@ Nyquist 周波数</li>
 \end{equation}
 
 </div>
-
+</blockquote>
 <ul>
 <li>\(f,g\): 周期 \(N\) の入力・出力信号</li>
 <li>\(h\): 長さ \(N\) のインパルス応答</li>
 
-</ul>
-</blockquote></li>
+</ul></li>
 
 </ul>
 <div class="slide-footer"><br></div>
@@ -653,12 +777,11 @@ Nyquist 周波数</li>
 \end{align}
 
 </div>
-
+</blockquote>
 <ul>
 <li>\(f,g,h\): 周期 \(N\) の関数</li>
 
-</ul>
-</blockquote></li>
+</ul></li>
 
 </ul>
 
@@ -667,15 +790,15 @@ Nyquist 周波数</li>
 </section>
 </section>
 <section>
-<section id="slide-orga777272" data-background="#fef4f4">
-<h2 id="orga777272">演習</h2>
+<section id="slide-org9db90a4" data-background="#fef4f4">
+<h2 id="org9db90a4">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org0c861b4" data-background="#fef4f4">
-<h3 id="org0c861b4">練習問題</h3>
+<section id="slide-orgb2df5fa" data-background="#fef4f4">
+<h3 id="orgb2df5fa">練習問題</h3>
 <ul>
 <li><p>
-問題
+離散 Fourier 変換によるフィルタの表現
 </p>
 <blockquote>
 <p>
@@ -696,16 +819,74 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
+<section id="slide-org9401002" data-background="#fef4f4">
+<h3 id="org9401002">解答例</h3>
+<ul>
+<li><p>
+定義どおり展開していく
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(n)
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}g(t)\alpha^{-nt}\\
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    \sum_{s=0}^{N-1}f(s)h(t{-}s)\alpha^{-n(t-s+s)}\\
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    \sum_{s=0}^{N-1}f(s)\alpha^{-ns}h(t{-}s)\alpha^{-n(t-s)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+周期 \(N\) の関数であることに注意する
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \sum_{t=0}^{N-1}h(t{-}s)\alpha^{-n(t-s)}
+  =\sum_{t=0}^{N-1}h(t)\alpha^{-nt}
+  =\sqrt{N}\hat{h}(n)
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \sum_{s=0}^{N-1}f(s)\alpha^{-ns}
+  =\sqrt{N}\hat{f}(n)
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \hat{g}(n)
+  =\sqrt{N}\hat{f}(n)\hat{h}(n)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+
+<div class="slide-footer"><br></div>
+</section>
 </section>
 <section>
-<section id="slide-org0154ce3">
-<h2 id="org0154ce3">窓関数</h2>
-<div class="outline-text-2" id="text-org0154ce3">
+<section id="slide-org47a442d">
+<h2 id="org47a442d">窓関数</h2>
+<div class="outline-text-2" id="text-org47a442d">
 </div>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9eda585">
-<h3 id="org9eda585">有限長のデータ</h3>
+<section id="slide-org3d866b2">
+<h3 id="org3d866b2">有限長のデータ</h3>
 <ul>
 <li>信号の一部を切り出す必要がある
 <ul>
@@ -724,8 +905,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf653a11">
-<h3 id="orgf653a11">窓関数</h3>
+<section id="slide-orga69a5ff">
+<h3 id="orga69a5ff">窓関数</h3>
 <ul>
 <li><p>
 信号の切り出し
@@ -751,8 +932,8 @@ Nyquist 周波数</li>
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9197af5">
-<h3 id="org9197af5">矩形窓</h3>
+<section id="slide-orgb59f967">
+<h3 id="orgb59f967">矩形窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -763,7 +944,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org7964c0d" class="figure">
+<div id="org0808155" class="figure">
 <p><img src="figs/rect.png" alt="rect.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 3: </span>矩形窓</p>
@@ -772,7 +953,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="orgc7e4f51" class="figure">
+<div id="org929a5ab" class="figure">
 <p><img src="figs/rect_freq.png" alt="rect_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 4: </span>周波数特性</p>
@@ -782,8 +963,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org0d49eb5">
-<h3 id="org0d49eb5">gauss 窓</h3>
+<section id="slide-org1d57a8d">
+<h3 id="org1d57a8d">gauss 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -794,7 +975,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org8dd0df4" class="figure">
+<div id="org7b7b65e" class="figure">
 <p><img src="figs/gauss.png" alt="gauss.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 5: </span>gauss 窓</p>
@@ -803,7 +984,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="orge4316fb" class="figure">
+<div id="orgfc9dfc0" class="figure">
 <p><img src="figs/gauss_freq.png" alt="gauss_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 6: </span>周波数特性</p>
@@ -813,8 +994,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdef4d5c">
-<h3 id="orgdef4d5c">hann 窓</h3>
+<section id="slide-org470a5f7">
+<h3 id="org470a5f7">hann 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -825,7 +1006,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="orgd426ea1" class="figure">
+<div id="org0c4bc3d" class="figure">
 <p><img src="figs/hann.png" alt="hann.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 7: </span>hann 窓</p>
@@ -834,7 +1015,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="org2cde1ee" class="figure">
+<div id="orgdf0e3df" class="figure">
 <p><img src="figs/hann_freq.png" alt="hann_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 8: </span>周波数特性</p>
@@ -844,8 +1025,8 @@ Nyquist 周波数</li>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc2bdb6c">
-<h3 id="orgc2bdb6c">hamming 窓</h3>
+<section id="slide-orga2add19">
+<h3 id="orga2add19">hamming 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -856,7 +1037,7 @@ Nyquist 周波数</li>
 </blockquote>
 <div class="leftcol">
 
-<div id="org03b00dc" class="figure">
+<div id="org5af4633" class="figure">
 <p><img src="figs/hamm.png" alt="hamm.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 9: </span>hamming 窓</p>
@@ -865,7 +1046,7 @@ Nyquist 周波数</li>
 </div>
 <div class="rightcol">
 
-<div id="org9bb61f7" class="figure">
+<div id="orgae7f81f" class="figure">
 <p><img src="figs/hamm_freq.png" alt="hamm_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 10: </span>周波数特性</p>
@@ -873,13 +1054,33 @@ Nyquist 周波数</li>
 
 </div>
 
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2e5a359">
+<h3 id="org2e5a359">窓関数を用いたデジタル信号処理</h3>
+<ul>
+<li>処理の流れ
+<ul>
+<li>不連続性を緩和した系列の断片化 (窓関数)</li>
+<li>デジタル信号処理 (フィルタ処理)</li>
+<li>切り出された断片を再構成 (重なりを考慮した合成処理)</li>
+
+</ul></li>
+
+</ul>
+
+<div id="orge75ece2" class="figure">
+<p><img src="figs/信号処理 11.png" alt="信号処理 11.png" width="80%" />
+</p>
+</div>
+
 
 <div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgdc2e18d">
-<h2 id="orgdc2e18d">今回のまとめ</h2>
+<section id="slide-orgef43ee0">
+<h2 id="orgef43ee0">今回のまとめ</h2>
 <ul>
 <li>離散 Fourier 変換
 <ul>
