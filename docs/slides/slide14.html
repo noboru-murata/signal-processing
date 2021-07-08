@@ -47,14 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org61842a3">
-<h2 id="org61842a3">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org61842a3">
+<section id="slide-orgb90c8b8">
+<h2 id="orgb90c8b8">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgb90c8b8">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6bb7d09">
-<h3 id="org6bb7d09">デジタル信号処理</h3>
+<section id="slide-org0aeec64">
+<h3 id="org0aeec64">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論
 <ul>
@@ -75,11 +74,11 @@
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgc8f6dd8">
-<h3 id="orgc8f6dd8">標本化定理</h3>
+<section id="slide-org8220179">
+<h3 id="org8220179">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -91,17 +90,17 @@
 </p>
 </blockquote>
 
-<div id="orgb7109c6" class="figure">
+<div id="org675b577" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="60%" />
 </p>
 </div></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org97e4904">
-<h3 id="org97e4904">エイリアシング</h3>
+<section id="slide-org7147e07">
+<h3 id="org7147e07">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -120,15 +119,15 @@
 
 </ul>
 
-<div id="orge803e7b" class="figure">
+<div id="orgfebdf9c" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="60%" />
 </p>
 </div>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org9e7dd76">
-<h3 id="org9e7dd76">離散 Fourier 変換と逆変換</h3>
+<section id="slide-orga2a32b9">
+<h3 id="orga2a32b9">離散 Fourier 変換と逆変換</h3>
 <ul>
 <li><p>
 定義
@@ -153,13 +152,18 @@
 \end{equation}
 
 </div>
-</blockquote></li>
+</blockquote>
+<ul>
+<li>時間も周波数も有限であることに注意</li>
+
+</ul></li>
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org3268551">
-<h3 id="org3268551">行列による表現</h3>
+<section id="slide-org1b011d4">
+<h3 id="org1b011d4">行列による表現</h3>
 <ul>
 <li><p>
 変換行列
@@ -258,11 +262,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgd38cfb9">
-<h3 id="orgd38cfb9">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-orge9ccbaf">
+<h3 id="orge9ccbaf">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現 (周期関数の畳み込み)
@@ -272,9 +276,9 @@
 \begin{align}
   g(t)
   &=f{*}h(t)\\
-  &=\sum_{s=0}^{N-1}f(s)h(t{-}s)
-  =\sum_{s=0}^{N-1}f(t{-}s)h(s),\\
-  &\quad t=0,1,\dotsc,N-1
+  &=\sum_{s=0}^{N{-}1}f(s)h(t{-}s)
+  =\sum_{s=0}^{N{-}1}f(t{-}s)h(s),\\
+  &\quad t=0,1,\dotsc,N{-}1
 \end{align}
 
 </div>
@@ -288,8 +292,8 @@
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org621bb8d">
-<h3 id="org621bb8d">有限長のデータ</h3>
+<section id="slide-orgddbfe77">
+<h3 id="orgddbfe77">有限長のデータ</h3>
 <ul>
 <li><p>
 信号の一部の切り出し
@@ -317,37 +321,504 @@
 </ul></li>
 
 </ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org149fb5c">
+<h2 id="org149fb5c">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-org149fb5c">
+</div>
+</section>
+<section id="slide-org5e0138b">
+<h3 id="org5e0138b">デジタル信号処理の流れ</h3>
+<ul>
+<li>データの取得 (アナログ信号)</li>
+<li>ローパスフィルタリング (標本化のため)</li>
+<li>A/D変換 (標本化; デジタル信号)</li>
+<li>窓関数による切り出し (有限長の時間表現)</li>
+<li>離散 Fourier 変換 (有限長の周波数表現; 複素数)</li>
+<li>デジタルフィルタリング (有限個の周波数の操作)</li>
+<li>逆変換 (有限長の時間表現; デジタル信号)</li>
+<li>窓関数の影響を考慮して合成</li>
+<li>D/A変換 (アナログ信号)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org66a81ca">
+<h3 id="org66a81ca">デジタルフィルタ</h3>
+<ul>
+<li><p>
+音声信号
+</p>
+
+<div id="org65a4b20" class="figure">
+<p><img src="figs/filter.001.jpeg" alt="filter.001.jpeg" height="100%" />
+</p>
+</div></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org331e71c">
+<h4 id="org331e71c">スペクトログラム</h4>
+<div class="leftcol" id="orga6bb89e">
+
+<div id="orga4e76d1" class="figure">
+<p><img src="figs/filter4.jpg" alt="filter4.jpg" width="100%" />
+</p>
+</div>
+<audio controls src="figs/sig1.wav"></audi>
+
+</div>
+<div class="rightcol" id="org37d2290">
+
+<div id="orgcb3fc51" class="figure">
+<p><img src="figs/filter5.jpg" alt="filter5.jpg" width="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2.wav"></audi>
+
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgc1c8f63">
+<h4 id="orgc1c8f63">ローパスフィルタ</h4>
+
+<div id="org9a28f3a" class="figure">
+<p><img src="figs/filter7.jpg" alt="filter7.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2_low.wav"></audi>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3469e8f">
+<h4 id="org3469e8f">ハイパスフィルタ</h4>
+
+<div id="org481b27e" class="figure">
+<p><img src="figs/filter9.jpg" alt="filter9.jpg" hight="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2_high.wav"></audi>
+<div class="slide-footer"><br></div>
+
+
+</section>
+<section id="slide-org2a7d0bc">
+<h3 id="org2a7d0bc">音の合成</h3>
+<ul>
+<li>正弦波の重ね合わせでさまざまな音色を合成</li>
+<li>Fourier 級数展開で求めた係数を利用 <br />
+(離散 Fourier 変換では周波数に上限がある)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgfffdd0b">
+<h4 id="orgfffdd0b">矩形波の合成 (1)</h4>
+
+<div id="orgb8e1f4d" class="figure">
+<p><img src="figs/square1.jpg" alt="square1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc31e02a">
+<h4 id="orgc31e02a">矩形波の合成 (2)</h4>
+
+<div id="org3705087" class="figure">
+<p><img src="figs/square2.jpg" alt="square2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgca6c118">
+<h4 id="orgca6c118">矩形波の合成 (3)</h4>
+
+<div id="orgc3a38a3" class="figure">
+<p><img src="figs/square3.jpg" alt="square3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgef0f0cf">
+<h4 id="orgef0f0cf">矩形波の合成 (4)</h4>
+
+<div id="orgb1c8d2f" class="figure">
+<p><img src="figs/square4.jpg" alt="square4.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/square.wav"></audi>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org56972ed">
+<h4 id="org56972ed">三角波の合成 (1)</h4>
+
+<div id="org0d9ce55" class="figure">
+<p><img src="figs/triangle1.jpg" alt="triangle1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge99b561">
+<h4 id="orge99b561">三角波の合成 (2)</h4>
+
+<div id="orge7f7e4c" class="figure">
+<p><img src="figs/triangle2.jpg" alt="triangle2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6ce1e33">
+<h4 id="org6ce1e33">三角波の合成 (3)</h4>
+
+<div id="org8bd4a06" class="figure">
+<p><img src="figs/triangle3.jpg" alt="triangle3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org3da67dc">
+<h4 id="org3da67dc">三角波の合成 (4)</h4>
+
+<div id="orgd92f83e" class="figure">
+<p><img src="figs/triangle4.jpg" alt="triangle4.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/triangle.wav"></audi>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org758bb95">
+<h4 id="org758bb95">鋸波の合成 (1)</h4>
+
+<div id="orgd055754" class="figure">
+<p><img src="figs/sawtooth1.jpg" alt="sawtooth1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org0059ed0">
+<h4 id="org0059ed0">鋸波の合成 (2)</h4>
+
+<div id="org7c0abce" class="figure">
+<p><img src="figs/sawtooth2.jpg" alt="sawtooth2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org4b75677">
+<h4 id="org4b75677">鋸波の合成 (3)</h4>
+
+<div id="orgfd33267" class="figure">
+<p><img src="figs/sawtooth3.jpg" alt="sawtooth3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6998443">
+<h4 id="org6998443">鋸波の合成 (4)</h4>
+
+<div id="org113a11c" class="figure">
+<p><img src="figs/sawtooth6.jpg" alt="sawtooth6.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/sawtooth.wav"></audi>
+<div class="slide-footer"><br></div>
+
+
+</section>
+<section id="slide-org55129d5">
+<h4 id="org55129d5">時間・周波数表現の比較</h4>
+
+<div id="orgf3accff" class="figure">
+<p><img src="figs/waves.001.jpeg" alt="waves.001.jpeg" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org096fdb2">
+<h4 id="org096fdb2">スペクトログラムの比較</h4>
+
+<div id="orgca77b42" class="figure">
+<p><img src="figs/waves.002.jpeg" alt="waves.002.jpeg" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org284f022">
+<h2 id="org284f022">高速 Fourier 変換</h2>
+<div class="outline-text-2" id="text-org284f022">
+</div>
+</section>
+<section id="slide-org1d0ea78">
+<h3 id="org1d0ea78">離散 Fourier 変換の計算量</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(n)
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    f(t)e^{-i\frac{2\pi}{N}nt}, \quad (n=0,1,2,\dotsc,N{-}1)\\
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    f(t)\alpha^{-nt}, \quad \alpha=e^{i\frac{2\pi}{N}}
+\end{align}
+
+</div>
+</blockquote></li>
+<li>定義に従うと離散フーリエ変換の計算量は \(O(N^2)\) <br />
+(\(N^2\)回程度の乗算が必要)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5c3f50d">
+<h3 id="org5c3f50d">離散 Fourier 変換行列の性質</h3>
+<ul>
+<li><p>
+\(N=4\) で考える
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&\alpha^{-1}&\alpha^{-2}&\alpha^{-3}\\
+    1&\alpha^{-2}&\alpha^{-4}&\alpha^{-6}\\
+    1&\alpha^{-3}&\alpha^{-6}&\alpha^{-9}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&\alpha^{-1}&-1&\alpha^{-3}\\
+    1&-1&1&-1\\
+    1&\alpha^{-3}&-1&\alpha^{-1}
+  \end{pmatrix}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \alpha=e^{i\frac{2\pi}{4}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+2列目と3列目を入れ換える
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&-1&\alpha^{-1}&\alpha^{-3}\\
+    1&1&-1&-1\\
+    1&-1&\alpha^{-3}&\alpha^{-1}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&0&1&0\\
+    0&1&0&\alpha^{-1}\\
+    1&0&-1&0\\
+    0&1&0&\alpha^{-3}
+  \end{pmatrix}
+  \begin{pmatrix}
+    1&1&0&0\\
+    1&-1&0&0\\
+    0&0&1&1\\
+    0&0&1&-1
+  \end{pmatrix}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>疎な行列の積になっている</li>
+<li>\(N\not=4\)でも同様に議論できる</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org13ee9c1">
+<h3 id="org13ee9c1">係数の分解</h3>
+<ul>
+<li>\(N\)は二つの整数の積\(N=N_1N_2\)とする</li>
+<li><p>
+\(t\),\(n\)をそれぞれ\(N_1\),\(N_2\)で割った商と余りで表す
+</p>
+<blockquote>
+<div>
+\begin{align}
+  t&=t_1+t_2N_1,&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
+  n&=n_1N_2+n_2,&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
+\end{align}
+
+</div>
+</blockquote></li>
+<li><p>
+1の\(N_1,N_2\)乗根を\(\beta,\gamma\)とする
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \beta=e^{i\frac{2\pi}{N_{1}}},\quad
+  \gamma=e^{i\frac{2\pi}{N_{2}}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
 
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8364431">
-<h3 id="org8364431">スペクトログラム</h3>
-
-<div id="org43c8b31" class="figure">
-<p><img src="figs/original_voice.png" alt="original_voice.png" width="100%" />
+<section>
+<ul>
+<li><p>
+係数は以下のように分解される
 </p>
+<blockquote>
+<div>
+\begin{align}
+  \alpha^{-nt}
+  &=\alpha^{-(n_1N_2+n_2)(t_1+t_2N_1)}\\
+  &=\alpha^{-n_1t_2N_2N_1}
+    \alpha^{-n_1t_1N_2}
+    \alpha^{-n_2t_2N_1}
+    \alpha^{-n_2t_1}\\
+  &=\beta^{-n_1t_1}\gamma^{-n_2t_2}\alpha^{-n_2t_1}\\
+\end{align}
+
 </div>
-<audio controls src="figs/original_voice.wav"></audi>
+<div>
+\begin{equation}
+  \alpha=e^{i\frac{2\pi}{N}},\quad
+  \beta=e^{i\frac{2\pi}{N_{1}}},\quad
+  \gamma=e^{i\frac{2\pi}{N_{2}}}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>\(n_1t_2\)の項は1になるので消えることに注意</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf5f97a7">
+<h3 id="orgf5f97a7">計算の分解</h3>
+<ul>
+<li><p>
+計算は以下のように分解される
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(t)=f(t_{1},t_{2}),\quad
+  \hat{f}(n)=f(n_{1},n_{2})
+\end{equation}
+
+</div>
+<div>
+\begin{align}
+  \bar{f}(t_{1},n_{2})
+  &=\sum_{t_{2}=0}^{N_{2}{-}1}f(t_{1},t_{2})\gamma^{-n_{2}t_{2}}
+  &&\forall t_{1},n_{2}\\
+  \tilde{f}(t_{1},n_{2})
+  &=\bar{f}(t_{1},n_{2})\alpha^{-n_2t_1}
+  &&\forall t_{1},n_{2}\\
+  \hat{f}(n_{1},n_{2})
+  &=\sum_{t_{1}=0}^{N_{1}{-}1}\tilde{f}(t_{1},n_{2})\beta^{-n_{1}t_{1}}
+  &&\forall t_{1},t_{2}\\
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5a762ee">
+<h3 id="org5a762ee">計算量の漸化式</h3>
+<ul>
+<li>長さ \(N_{i}\) の系列の計算量(乗算回数)を\(T(N_i)\)</li>
+<li><p>
+長さ \(N=N_{1}N_{2}\)の系列の計算量\(T(N)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  T(N)
+  &=\left[N_{1}T(N_2)+N+N_{2}T(N_1)\right]\\
+  &=N\left[\frac{T(N_1)}{N_1}+\frac{T(N_2)}{N_2}+1\right]
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4a9b68a">
-<h3 id="org4a9b68a">加工後 (ローパスフィルタ)</h3>
-
-<div id="orgcc96e9f" class="figure">
-<p><img src="figs/lowpass_voice.png" alt="lowpass_voice.png" width="100%" />
+<section>
+<ul>
+<li><p>
+一般に \(N=N_1N_2\dots N_P\) のとき
 </p>
-</div>
-<audio controls src="figs/lowpass_voice.wav"></audi>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgf1570ff">
-<h3 id="orgf1570ff">加工後 (ハイパスフィルタ)</h3>
+<blockquote>
+<div>
+\begin{equation}
+  T(N)
+  =N\left[\sum_{i=1}^{P}\frac{T(N_i)}{N_i}+1\right]
+\end{equation}
 
-<div id="org0a33464" class="figure">
-<p><img src="figs/highpass_voice.png" alt="highpass_voice.png" width="100%" />
-</p>
 </div>
-<audio controls src="figs/highpass_voice.wav"></audi>
+</blockquote></li>
+<li><p>
+特に \(N=2^P,\;(P=\log_{2}N)\) のとき 
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  T(N)
+  =N\log_{2}N\cdot\frac{T(2)}{2}+N
+  \quad\ll N^{2}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
 <div class="slide-footer"><br></div>
 </section>
 </section>
@@ -374,7 +845,6 @@ mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
-
 overview: true,
 
 transition: 'fade',
