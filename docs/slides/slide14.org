@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-07-09 08:44:13 mura>
+# Time-stamp: <2021-07-09 08:47:19 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -472,7 +472,7 @@
          \tilde{f}(t_{1},n_{2})
          &=\bar{f}(t_{1},n_{2})\alpha^{-n_{2}t_{1}}
          &&\forall t_{1},n_{2}\\
-         \hat{f}(n_{1},n_{2})
+         \sqrt{N}\hat{f}(n_{1},n_{2})
          &=\sum_{t_{1}=0}^{N_{1}{-}1}\tilde{f}(t_{1},n_{2})\beta^{-n_{1}t_{1}}
          &&\forall n_{1},n_{2}\\
        \end{align}
