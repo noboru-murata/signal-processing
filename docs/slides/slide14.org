@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-07-08 20:34:52 mura>
+# Time-stamp: <2021-07-08 23:50:57 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -395,17 +395,17 @@
      - \(N\not=4\)でも同様に議論できる
 
 ** 係数の分解
-   - \(N\)は二つの整数の積\(N=N_1N_2\)とする
-   - \(t\),\(n\)をそれぞれ\(N_1\),\(N_2\)で割った商と余りで表す
+   - \(N\)は二つの整数の積\(N=N_{1}N_{2}\)とする
+   - \(t\),\(n\)をそれぞれ\(N_{1}\),\(N_{2}\)で割った商と余りで表す
      #+begin_quote
      #+begin_src latex
        \begin{align}
-         t&=t_1+t_2N_1,&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
-         n&=n_1N_2+n_2,&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
+         t&=t_{1}+t_{2}N_{1},&&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
+         n&=n_{1}N_{2}+n_{2},&&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
        \end{align}
      #+end_src
      #+end_quote
-   - 1の\(N_1,N_2\)乗根を\(\beta,\gamma\)とする
+   - 1の\(N_{1},N_{2}\)乗根を\(\beta,\gamma\)とする
      #+begin_quote
      #+begin_src latex
        \begin{equation}
@@ -421,12 +421,12 @@
      #+begin_src latex
        \begin{align}
          \alpha^{-nt}
-         &=\alpha^{-(n_1N_2+n_2)(t_1+t_2N_1)}\\
-         &=\alpha^{-n_1t_2N_2N_1}
-           \alpha^{-n_1t_1N_2}
-           \alpha^{-n_2t_2N_1}
-           \alpha^{-n_2t_1}\\
-         &=\beta^{-n_1t_1}\gamma^{-n_2t_2}\alpha^{-n_2t_1}\\
+         &=\alpha^{-(n_{1}N_{2}+n_{2})(t_{1}+t_{2}N_{1})}\\
+         &=\alpha^{-n_{1}t_{2}N_{2}N_{1}}
+           \alpha^{-n_{1}t_{1}N_{2}}
+           \alpha^{-n_{2}t_{2}N_{1}}
+           \alpha^{-n_{2}t_{1}}\\
+         &=\beta^{-n_{1}t_{1}}\gamma^{-n_{2}t_{2}}\alpha^{-n_{2}t_{1}}\\
        \end{align}
        \begin{equation}
          \alpha=e^{i\frac{2\pi}{N}},\quad
@@ -435,30 +435,53 @@
        \end{equation}
      #+end_src
      #+end_quote
-     - \(n_1t_2\)の項は1になるので消えることに注意
+     - \(n_{1}t_{2}\)の項は1になるので消えることに注意
 
 ** 計算の分解
+   - 記法
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+         f(t)&=f(t_{1},t_{2}),
+         &&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
+         \hat{f}(n)&=\hat{f}(n_{1},n_{2})
+         &&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
+       \end{align}
+     #+end_src
+     #+end_quote
+   - 定義
+     #+begin_quote
+     #+begin_src latex
+       \begin{align}
+	 \sqrt{N}\hat{f}(n_{1},n_{2})
+	 &=\sum_{t=0}^{N{-}1}f(t)\alpha^{-nt}\\
+	 &=\sum_{t_{1}=0}^{N_{1}{-}1}\sum_{t_{2}=0}^{N_{2}{-}1}
+           f(t_{1},t_{2})
+           \beta^{-n_{1}t_{1}}\gamma^{-n_{2}t_{2}}\alpha^{-n_{2}t_{1}}
+       \end{align}
+     #+end_src
+     #+end_quote
+
+   #+reveal: split
    - 計算は以下のように分解される
      #+begin_quote
      #+begin_src latex
-       \begin{equation}
-         f(t)=f(t_{1},t_{2}),\quad
-         \hat{f}(n)=f(n_{1},n_{2})
-       \end{equation}
        \begin{align}
          \bar{f}(t_{1},n_{2})
          &=\sum_{t_{2}=0}^{N_{2}{-}1}f(t_{1},t_{2})\gamma^{-n_{2}t_{2}}
          &&\forall t_{1},n_{2}\\
          \tilde{f}(t_{1},n_{2})
-         &=\bar{f}(t_{1},n_{2})\alpha^{-n_2t_1}
+         &=\bar{f}(t_{1},n_{2})\alpha^{-n_{2}t_{1}}
          &&\forall t_{1},n_{2}\\
          \hat{f}(n_{1},n_{2})
          &=\sum_{t_{1}=0}^{N_{1}{-}1}\tilde{f}(t_{1},n_{2})\beta^{-n_{1}t_{1}}
-         &&\forall t_{1},t_{2}\\
+         &&\forall n_{1},n_{2}\\
        \end{align}
      #+end_src
      #+end_quote
-
+     - 1行目は長さ\(N_{2}\)の離散 Fourier 変換を\(N_{1}\)回
+     - 3行目は長さ\(N_{1}\)の離散 Fourier 変換を\(N_{2}\)回
+       
 ** 計算量の漸化式
    - 長さ \(N_{i}\) の系列の計算量(乗算回数)を\(T(N_i)\)
    - 長さ \(N=N_{1}N_{2}\)の系列の計算量\(T(N)\)
@@ -466,14 +489,14 @@
      #+begin_src latex
        \begin{align}
          T(N)
-         &=\left[N_{1}T(N_2)+N+N_{2}T(N_1)\right]\\
-         &=N\left[\frac{T(N_1)}{N_1}+\frac{T(N_2)}{N_2}+1\right]
+         &=\left[N_{1}T(N_{2})+N+N_{2}T(N_{1})\right]\\
+         &=N\left[\frac{T(N_{1})}{N_{1}}+\frac{T(N_{2})}{N_{2}}+1\right]
        \end{align}
      #+end_src
      #+end_quote
 
    #+reveal: split
-   - 一般に \(N=N_1N_2\dots N_P\) のとき
+   - 一般に \(N=N_{1}N_{2}\dots N_{P}\) のとき
      #+begin_quote
      #+begin_src latex
        \begin{equation}
