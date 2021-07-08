@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-07-08 23:50:57 mura>
+# Time-stamp: <2021-07-09 08:44:13 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -309,7 +309,6 @@
     #+ATTR_LATEX: :width 0.5\linewidth
     [[file:figs/sawtooth6.jpg]]
     #+REVEAL_HTML: <audio controls src="figs/sawtooth.wav"></audi>
-
 
 *** 時間・周波数表現の比較
     #+NAME: fig:highpass_voice
