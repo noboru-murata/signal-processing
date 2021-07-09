@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-07-09 08:47:19 mura>
+# Time-stamp: <2021-07-09 12:55:07 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content
@@ -488,7 +488,7 @@
      #+begin_src latex
        \begin{align}
          T(N)
-         &=\left[N_{1}T(N_{2})+N+N_{2}T(N_{1})\right]\\
+         &=N_{1}T(N_{2})+N+N_{2}T(N_{1})\\
          &=N\left[\frac{T(N_{1})}{N_{1}}+\frac{T(N_{2})}{N_{2}}+1\right]
        \end{align}
      #+end_src
@@ -500,7 +500,7 @@
      #+begin_src latex
        \begin{equation}
          T(N)
-         =N\left[\sum_{i=1}^{P}\frac{T(N_i)}{N_i}+1\right]
+         =N\left[\sum_{i=1}^{P}\frac{T(N_i)}{N_i}+P-1\right]
        \end{equation}
      #+end_src
      #+end_quote
@@ -509,11 +509,12 @@
      #+begin_src latex
        \begin{equation}
          T(N)
-         =N\log_{2}N\cdot\frac{T(2)}{2}+N
+         =N\log_{2}N\cdot\frac{T(2)}{2}+N\log_{2}N-N
          \quad\ll N^{2}
        \end{equation}
      #+end_src
      #+end_quote
+
 
 * COMMENT 課題の説明
 ** 注意
