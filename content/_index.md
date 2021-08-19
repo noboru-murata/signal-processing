@@ -12,8 +12,7 @@ weight = 1001
 ## 講義資料 {#講義資料}
 
 -   [信号処理](https://noboru-murata.github.io/signal-processing/pdfs/signal-processing.pdf)
-
-随時修正します．
+    随時修正します．
 
 
 ## 参考資料 {#参考資料}

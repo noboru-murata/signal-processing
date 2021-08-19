@@ -1,12 +1,12 @@
 +++
-title = "講義10"
+title = "第10講"
 author = ["Noboru Murata"]
 date = 2020-04-01T00:00:00+09:00
 draft = false
 weight = 1011
 +++
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-06-11 Fri&gt; </span></span> 更新
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-08-19 Thu&gt; </span></span> 更新
 
 
 ## スライド {#スライド}
