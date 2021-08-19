@@ -1,12 +1,12 @@
 #+TITLE: Hilbert 空間
-#+SUBTITLE: 信号処理 - 講義2
+#+SUBTITLE: 信号処理 - 第2講
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-04-30 11:08:00 mura>
+# Time-stamp: <2021-08-19 12:02:50 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
-#+STARTUP: hidestars content
+#+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -14,445 +14,455 @@
 
 * 前回のおさらい
 ** ベクトル空間
-   - 以下の条件を満たす
-     #+begin_quote
-     1. \(a,b\in V\;\Rightarrow\;a+b\in V\)
-     2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
-     3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
-     4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
-     5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
-     6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
-     7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
-     8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
-     9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
-     10. \(\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a\) (分配則)
-     #+end_quote
+- 以下の条件を満たす
+  #+begin_quote
+  1. \(a,b\in V\;\Rightarrow\;a+b\in V\)
+  2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
+  3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
+  4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
+  5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
+  6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
+  7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
+  8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
+  9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
+  10. \(\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a\) (分配則)
+  #+end_quote
+
 ** ベクトル空間の例
-   - 幾何ベクトル
-   - 数ベクトル
-   - 関数空間 \(C^{m}[0,1]\)
-     #+begin_quote
-     区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
-     和とスカラ倍は以下で定義される．
-     #+begin_src latex
-       \begin{align}
-	 &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
-	 &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
-       \end{align}
-     #+end_src
-     #+end_quote
+- 幾何ベクトル
+- 数ベクトル
+- 関数空間 \(C^{m}[0,1]\)
+  #+begin_quote
+  区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
+  和とスカラ倍は以下で定義される．
+  #+begin_src latex
+    \begin{align}
+      &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
+      &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
+    \end{align}
+  #+end_src
+  #+end_quote
+
 ** 線形独立
-   - 定義
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-       \end{equation}
-     #+end_src
-     となるのが
-     \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
-     に限られるとき，
-     \(\{a_{1},\dotsc,a_{k}\}\) は *線形独立* であるという．
-     #+end_quote
+- 定義
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+    \end{equation}
+  #+end_src
+  となるのが
+  \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
+  に限られるとき，
+  \(\{a_{1},\dotsc,a_{k}\}\) は *線形独立* であるという．
+  #+end_quote
+
 ** 基底
-   - 定義
-     #+begin_quote
-     \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
-     \(V\) の階数，すなわち極大独立集合の基数を
-     \(V\) の *次元 (dimension)* という．
-     #+end_quote
-   - 極大独立集合
-     #+begin_quote
-     ある集合 \(S\) の線形独立な部分集合 \(B\subset S\) を考える．
-     \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
-     \(B\) は *極大独立集合* であるという．
-     #+end_quote
+- 定義
+  #+begin_quote
+  \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
+  \(V\) の階数，すなわち極大独立集合の基数を
+  \(V\) の *次元 (dimension)* という．
+  #+end_quote
+- 極大独立集合
+  #+begin_quote
+  ある集合 \(S\) の線形独立な部分集合 \(B\subset S\) を考える．
+  \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
+  \(B\) は *極大独立集合* であるという．
+  #+end_quote
 
 ** 基底の重要性
-   - 定理
-     #+begin_quote
-     \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
-     \(\forall b\in V_{n}\) は \(B\) に線形従属で，
-     #+begin_src latex
-       \begin{equation}
-	 b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
-       \end{equation}
-     #+end_src
-     と一意に表される．
-     #+end_quote
-     - ベクトル \(b\) を数ベクトル
-       \((\lambda_{1},\dotsc,\lambda_{n})\)
-       で表すことができる
+    - 定理
+      #+begin_quote
+      \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
+      \(\forall b\in V_{n}\) は \(B\) に線形従属で，
+      #+begin_src latex
+	\begin{equation}
+	  b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
+	\end{equation}
+      #+end_src
+      と一意に表される．
+      #+end_quote
+      - ベクトル \(b\) を数ベクトル
+	\((\lambda_{1},\dotsc,\lambda_{n})\)
+	で表すことができる
 
 
 * 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
 ** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の集合 \(V\) のうちベクトル空間はどれか？
-     - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
-     - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
-   - 以下の集合のうち線形独立なものはどれか？
-     - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
-     - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
-   - 以下のベクトル空間の空間の次元は?
-     - \(C^{m}[0,1]\)
-     - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の集合 \(V\) のうちベクトル空間はどれか？
+  - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
+  - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
+- 以下の集合のうち線形独立なものはどれか？
+  - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
+  - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
+- 以下のベクトル空間の空間の次元は?
+  - \(C^{m}[0,1]\)
+  - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
 
-** ヒント
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 条件の線形性として，\(h=f+g\)のとき
-     がどうなるか考えればよい
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-	 &h^{(2)}+h^{(1)}+h\\
-	 &\quad
-	   =(f^{(2)}+f^{(1)}+f)
-	   +(g^{(2)}+g^{(1)}+g)
-       \end{align}
-     #+end_src
-     #+end_quote
-   - 適当な\(x\)を用いて連立方程式の解を考えればよい
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-       \end{equation}
-     #+end_src
-     #+end_quote
-   - 線形独立な要素がいくつ取れるかを考えればよい
+** COMMENT ヒント
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 条件の線形性として，\(h=f+g\)のとき
+  がどうなるか考えればよい
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      &h^{(2)}+h^{(1)}+h\\
+      &\quad
+	=(f^{(2)}+f^{(1)}+f)
+	+(g^{(2)}+g^{(1)}+g)
+    \end{align}
+  #+end_src
+  #+end_quote
+- 適当な\(x\)を用いて連立方程式の解を考えればよい
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \alpha f(x) + \beta g(x) + \gamma h(x) = 0
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 線形独立な要素がいくつ取れるかを考えればよい
 
 
 * 内積空間
-  # #+begin_notes
-  # ベクトル空間に少し条件を加えた空間 \(\mathcal{H}\) を考える．
-  # #+end_notes
+# #+begin_notes
+# ベクトル空間に少し条件を加えた空間 \(\mathcal{H}\) を考える．
+# #+end_notes
 
 ** 内積
-   - 定義
-     #+begin_quote
-     ベクトル空間の2つの要素
-     \(u,v\in\mathcal{H}\) に対して，
-     次の性質を持つ2変数関数を
-     *内積*
-     という．
-     1. \(\langle u,u\rangle\geq0\) 
-	特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
-     2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
-	なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)
-     3. \(\langle \alpha u+\beta u',v\rangle
-	=\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
-     #+end_quote
-     - \(\langle u,v\rangle\), \((u,v)\), \(u\cdot v\) 
-       などいろいろな書き方があるが，
-       講義では \(\langle u,v\rangle\) を用いる
+- 定義
+  #+begin_quote
+  ベクトル空間の2つの要素
+  \(u,v\in\mathcal{H}\) に対して，
+  次の性質を持つ2変数関数を
+  *内積*
+  という．
+  1. \(\langle u,u\rangle\geq0\) 
+     特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
+  2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
+     なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)
+  3. \(\langle \alpha u+\beta u',v\rangle
+     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
+  #+end_quote
+  - \(\langle u,v\rangle\), \((u,v)\), \(u\cdot v\) 
+    などいろいろな書き方があるが，
+    講義では \(\langle u,v\rangle\) を用いる
 
 ** 内積空間
-   - 定義
-     #+begin_quote
-     内積が定義されたベクトル空間を
-     *内積空間* 
-     という．
-     #+end_quote
+- 定義
+  #+begin_quote
+  内積が定義されたベクトル空間を
+  *内積空間* 
+  という．
+  #+end_quote
 
 ** 内積空間の例
-   - 幾何ベクトル空間
-   - 数ベクトル空間
-   - 関数空間
+- 幾何ベクトル空間
+- 数ベクトル空間
+- 関数空間
+
 ** 内積の例
-   - 幾何ベクトル空間
-     #+begin_quote
-     2つの有効線分のなす角 \(\theta\) とそ
-     れぞれの長さ \(|u|,|v|\) を用いて定義
-     #+begin_src latex
-       \begin{equation}
-	 \langle u,v\rangle = |u||v|\cos\theta
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 数ベクトル空間
-     #+begin_quote
-     2つの複素数値ベクトル 
-     \(u=(u_{1},u_{2},\dotsc,u_{n})\),
-     \(v=(v_{1},v_{2},\dotsc,v_{n})\)
-     に対して
-     #+begin_src latex
-       \begin{equation}
-	 \langle u,v\rangle
-	 = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
-       \end{equation}
-     #+end_src
-     ただし
-     \(\bar{\cdot}\)
-     は複素共役
-     #+end_quote
-   #+reveal: split
-   - 関数空間
-     #+begin_quote
-     2つの複素数値関数
-     \(u,v\)
-     に対して
-     #+begin_src latex
-       \begin{equation}
-	 \langle u,v\rangle
-	 = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
-       \end{equation}
-     #+end_src
-     #+end_quote
+- 幾何ベクトル空間
+  #+begin_quote
+  2つの有効線分のなす角 \(\theta\) とそ
+  れぞれの長さ \(|u|,|v|\) を用いて定義
+  #+begin_src latex
+    \begin{equation}
+      \langle u,v\rangle = |u||v|\cos\theta
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+  - 数ベクトル空間
+    #+begin_quote
+    2つの複素数値ベクトル 
+    \(u=(u_{1},u_{2},\dotsc,u_{n})\),
+    \(v=(v_{1},v_{2},\dotsc,v_{n})\)
+    に対して
+    #+begin_src latex
+      \begin{equation}
+	\langle u,v\rangle
+	= \sum_{i=1}^{n}u_{i}\bar{v}_{i}
+      \end{equation}
+    #+end_src
+    ただし
+    \(\bar{\cdot}\)
+    は複素共役
+    #+end_quote
+
+#+reveal: split
+- 関数空間
+  #+begin_quote
+  2つの複素数値関数
+  \(u,v\)
+  に対して
+  #+begin_src latex
+    \begin{equation}
+      \langle u,v\rangle
+      = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
+    \end{equation}
+  #+end_src
+  #+end_quote
 
 ** ノルム
-   - 定義
-     #+begin_quote
-     \(u\in\mathcal{H}\) に対して，
-     その
-     *ノルム* 
-     を
-     #+begin_src latex
-       \begin{equation}
-	 \|u\|=\sqrt{\langle u,u\rangle}
-       \end{equation}
-     #+end_src
-     で定義する．
+- 定義
+  #+begin_quote
+  \(u\in\mathcal{H}\) に対して，
+  その
+  *ノルム* 
+  を
+  #+begin_src latex
+    \begin{equation}
+      \|u\|=\sqrt{\langle u,u\rangle}
+    \end{equation}
+  #+end_src
+  で定義する．
 
-     ノルムは以下の性質を満たす．
-     - \(\|u\|\ge0\)
-       特に \(\|u\|=0\;\Rightarrow\;u=0\)
-     - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\) \\
-       (係数体 \(K\) としては \(\mathbb{R}\) か \(\mathbb{C}\) を考え，
-       \(|\cdot|\) は \(K\) 上の絶対値を表す)
-     - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
-       (Cauchy-Schwarzの不等式)
-     - \(\|u+v\|\leq\|u\|+\|v\|\) 
-       (三角不等式)
-     #+end_quote
+  ノルムは以下の性質を満たす．
+  - \(\|u\|\ge0\)
+    特に \(\|u\|=0\;\Rightarrow\;u=0\)
+  - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\) \\
+    (係数体 \(K\) としては \(\mathbb{R}\) か \(\mathbb{C}\) を考え，
+    \(|\cdot|\) は \(K\) 上の絶対値を表す)
+  - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
+    (Cauchy-Schwarzの不等式)
+  - \(\|u+v\|\leq\|u\|+\|v\|\) 
+    (三角不等式)
+  #+end_quote
 
 ** 距離
-   - 内積空間では自然に距離が導入される
-     #+begin_quote
-     \(d(u,v)=\|u-v\|\) を考えると \(d\) は
-     *距離* になっている．
-     #+end_quote
+- 内積空間では自然に距離が導入される
+  #+begin_quote
+  \(d(u,v)=\|u-v\|\) を考えると \(d\) は
+  *距離* になっている．
+  #+end_quote
 
 
 * 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
 ** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 距離の定義を述べよ．
-   - 2つのベクトルの差のノルムが距離となることを確かめよ．
-   - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
-     内積およびノルムの性質として正しいものはどれか？
-     # ベクトル \(u,v\in\mathcal{H}\) の内積を \(\langle u,v\rangle\)， 
-     # ベクトル \(u\in\mathcal{H}\) のノルムを \(\|u\|\) と書く．
-     - \(\langle u,v\rangle = \langle v,u\rangle\)
-     - \(\|u\|=0\) ならば \(u=0\)
-     - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
-     - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 距離の定義を述べよ．
+- 2つのベクトルの差のノルムが距離となることを確かめよ．
+- 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+  内積およびノルムの性質として正しいものはどれか？
+  # ベクトル \(u,v\in\mathcal{H}\) の内積を \(\langle u,v\rangle\)， 
+  # ベクトル \(u\in\mathcal{H}\) のノルムを \(\|u\|\) と書く．
+  - \(\langle u,v\rangle = \langle v,u\rangle\)
+  - \(\|u\|=0\) ならば \(u=0\)
+  - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
+  - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
 
-** ヒント
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-  - 距離は以下の4つの条件を満たす
-    - \(d(x,y)\ge0\) (非負性)
-    - \(d(x,y)=0\Leftrightarrow x=y\) (非退化性)
-    - \(d(x,y)=d(y,x)\) (対称性)
-    - \(d(x,y)+d(y,z)\ge d(x,z)\) (三角不等式)
-  - 内積，ノルムの定義を確認せよ
+** COMMENT ヒント
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 距離は以下の4つの条件を満たす
+  - \(d(x,y)\ge0\) (非負性)
+  - \(d(x,y)=0\Leftrightarrow x=y\) (非退化性)
+  - \(d(x,y)=d(y,x)\) (対称性)
+  - \(d(x,y)+d(y,z)\ge d(x,z)\) (三角不等式)
+- 内積，ノルムの定義を確認せよ
 
 
 * Hilbert 空間
-  # #+begin_notes
-  # 点列の収束に関する強い条件を入れて
-  # より扱い易い内積空間を定義する．
-  # #+end_notes
+# #+begin_notes
+# 点列の収束に関する強い条件を入れて
+# より扱い易い内積空間を定義する．
+# #+end_notes
 
 ** 完備性
-   - 定義
-     #+begin_quote
-     ある集合の中で無限に続く点列 \(u_{n}\) を考え，
-     この点列がだんだん動かなくなる状況を考える．
-     #+begin_src latex
-       \begin{equation}
-	 \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
-       \end{equation}
-     #+end_src
-     この点列の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
-     その集合は
-     *完備*
-     であるという．
-     #+end_quote
+- 定義
+  #+begin_quote
+  ある集合の中で無限に続く点列 \(u_{n}\) を考え，
+  この点列がだんだん動かなくなる状況を考える．
+  #+begin_src latex
+    \begin{equation}
+      \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
+    \end{equation}
+  #+end_src
+  この点列の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
+  その集合は
+  *完備*
+  であるという．
+  #+end_quote
 
 ** 完備性の例
-   - 有理数は完備でない
-     #+attr_reveal: :frag (appear)
-     #+begin_quote
-     点列 \(a_{n}\) を円周率の小数 \(n\) 桁以下を
-     切り捨てた数と定義する．
-     明らかに \(a_{n}\) は有限桁なので有理数であるが，
-     \(\lim_{n\to\infty}a_{n}=\pi\) は無理数
-     #+end_quote
-   - 実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない
-     #+attr_reveal: :frag (appear)
-     #+begin_quote
-     点列 \(1/n \in (0,1)\) であるが，
-     \(\lim_{n\to\infty}1/n=0\not\in (0,1)\)
-     #+end_quote
+- 有理数は完備でない
+  #+attr_reveal: :frag (appear)
+  #+begin_quote
+  点列 \(a_{n}\) を円周率の小数 \(n\) 桁以下を
+  切り捨てた数と定義する．
+  明らかに \(a_{n}\) は有限桁なので有理数であるが，
+  \(\lim_{n\to\infty}a_{n}=\pi\) は無理数
+  #+end_quote
+- 実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない
+  #+attr_reveal: :frag (appear)
+  #+begin_quote
+  点列 \(1/n \in (0,1)\) であるが，
+  \(\lim_{n\to\infty}1/n=0\not\in (0,1)\)
+  #+end_quote
 
 ** Hilbert 空間
-   - 定義
-     #+begin_quote
-     内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
-     *Hilbert 空間*
-     という．
-     #+end_quote
-     - "ノルムに関して"とは
-       ノルムから自然に導出された距離を用いて 
-       Cauchy 列を考えるということ
-     - 完備の厳密な定義は解析学の本を参照
+- 定義
+  #+begin_quote
+  内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
+  *Hilbert 空間*
+  という．
+  #+end_quote
+  - "ノルムに関して"とは
+    ノルムから自然に導出された距離を用いて 
+    Cauchy 列を考えるということ
+  - 完備の厳密な定義は解析学の本を参照
 
 ** Hilbert 空間の例
-   - \(l^{2}\) 空間 (無限次元数ベクトル空間)
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 l^{2}=
-	 \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
-           \|u\|<\infty
-	   %\sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
-	 \right\}
-       \end{equation}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-	 \langle u,v\rangle
-	 =
-	 \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
-         \quad
-         \|u\|^{2}
-         =
-         \sum_{i=1}^{\infty}|u_{i}|^{2}.
-       \end{equation}
-     #+end_src
-     #+end_quote
-     - Cauchy-Schwarzの不等式
-       \(\langle u,v\rangle\leq\|u\|\cdot\|v\|\)
-       により，条件(ノルムが有限の値を持つ)から必ず内積の値は存在
-     - 完備性の証明はかなり面倒．
-       興味のあるものは成書を参照
-   #+reveal: split
-   - \(L^{2}\) 空間
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 L^{2}(\Omega)=
-	 \left\{
-	   f\:\big|\:\|f\|<\infty
-	   %f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
-	 \right\}
-       \end{equation}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-	 \langle f,g\rangle
-	 =
-	 \int_{\Omega}f(x)\overline{g(x)}dx,
-         \quad
-         \|f\|^{2}
-         =
-         \int_{\Omega}|f(x)|^{2}dx
-       \end{equation}
-     #+end_src
-     #+end_quote
-     - 今後扱う信号の空間に対応する
-     - ノルムが有界であることは信号の物理的な性質と関係する
+- \(l^{2}\) 空間 (無限次元数ベクトル空間)
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      l^{2}=
+      \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
+	\|u\|<\infty
+	% \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
+      \right\}
+    \end{equation}
+  #+end_src
+  #+begin_src latex
+    \begin{equation}
+      \langle u,v\rangle
+      =
+      \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
+      \quad
+      \|u\|^{2}
+      =
+      \sum_{i=1}^{\infty}|u_{i}|^{2}.
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - Cauchy-Schwarzの不等式
+    \(\langle u,v\rangle\leq\|u\|\cdot\|v\|\)
+    により，条件(ノルムが有限の値を持つ)から必ず内積の値は存在
+  - 完備性の証明はかなり面倒．
+    興味のあるものは成書を参照
+
+#+reveal: split
+- \(L^{2}\) 空間
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      L^{2}(\Omega)=
+      \left\{
+	f\:\big|\:\|f\|<\infty
+	% f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+      \right\}
+    \end{equation}
+  #+end_src
+  #+begin_src latex
+    \begin{equation}
+      \langle f,g\rangle
+      =
+      \int_{\Omega}f(x)\overline{g(x)}dx,
+      \quad
+      \|f\|^{2}
+      =
+      \int_{\Omega}|f(x)|^{2}dx
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - 今後扱う信号の空間に対応する
+  - ノルムが有界であることは信号の物理的な性質と関係する
 
 
 * 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
 ** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の集合の中で完備なものはどれか?
-     - 実数全体 \((-\infty,\infty)\)
-     - 0以外の実数
-     - 区間 \([0,1]\) の無理数
-   - 実数 \(\mathbb{R}\) を係数体とする
-     以下の内積空間で Hilbert 空間となるものはどれか?
-     - \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
-       (内積は \(\langle u,v\rangle=\sum_{i=1}^{3}u_{i}v_{i}\))
-     - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
-       (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\))
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の集合の中で完備なものはどれか?
+  - 実数全体 \((-\infty,\infty)\)
+  - 0以外の実数
+  - 区間 \([0,1]\) の無理数
+- 実数 \(\mathbb{R}\) を係数体とする
+  以下の内積空間で Hilbert 空間となるものはどれか?
+  - \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
+    (内積は \(\langle u,v\rangle=\sum_{i=1}^{3}u_{i}v_{i}\))
+  - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
+    (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\))
 
-** ヒント
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 点列の収束先に含まれない要素の有無を考える．
-   - \(C[-1,1]\) は Hilbert 空間にならない．
-     #+begin_quote
-     関数列 \(f_{n}\) として例えば次のようなものを考える．
-     #+begin_src latex
-       \begin{equation}
-	 f_{n}(x)
-	 =
-	 \begin{cases}
-	   -1, & (x<-1/n)\\
-	   nx, & (-1/n\le x\le 1/n)\\
-	   1,  & (x>1/n)
-	 \end{cases}
-       \end{equation}
-     #+end_src
-     \(f_{n}\) は連続関数であるが，
-     \(\lim_{n\to\infty}f_{n}\) は不連続になる．
-     #+end_quote
+** COMMENT ヒント
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 点列の収束先に含まれない要素の有無を考える．
+- \(C[-1,1]\) は Hilbert 空間にならない．
+  #+begin_quote
+  関数列 \(f_{n}\) として例えば次のようなものを考える．
+  #+begin_src latex
+    \begin{equation}
+      f_{n}(x)
+      =
+      \begin{cases}
+	-1, & (x<-1/n)\\
+	nx, & (-1/n\le x\le 1/n)\\
+	1,  & (x>1/n)
+      \end{cases}
+    \end{equation}
+  #+end_src
+  \(f_{n}\) は連続関数であるが，
+  \(\lim_{n\to\infty}f_{n}\) は不連続になる．
+  #+end_quote
 
 
 * 今回のまとめ
-  - 内積: 
-    ベクトル空間の2つの要素に対して定義され，
-    以下の性質を持つ
-    - \(\langle u,u\rangle\geq0\) 
-      特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
-    - \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
-    - \(\langle \alpha u+\beta u',v\rangle
-      =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
-  #+reveal: split
-  - ノルム:
-    内積を用いて
-    \(\|u\|=\sqrt{\langle u,u\rangle}\)
-    で定義され，
-    以下の性質を持つ
-    - \(\|u\|\geq0\)
-      特に \(\|u\|=0\;\Rightarrow\;u=0\)
-    - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\)
-    - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
-      (Cauchy-Schwarzの不等式)
-    - \(\|u+v\|\leq\|u\|+\|v\|\) 
-      (三角不等式)
-  #+reveal: split
-  - 完備性: ある集合の点列の収束先がもとの集合に含まれること
-  - 内積空間: 内積が定義されたベクトル空間
-  - Hilbert 空間: 完備な内積空間
+- 内積: 
+  ベクトル空間の2つの要素に対して定義され，
+  以下の性質を持つ
+  - \(\langle u,u\rangle\geq0\) 
+    特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
+  - \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
+  - \(\langle \alpha u+\beta u',v\rangle
+    =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
+
+#+reveal: split
+- ノルム:
+  内積を用いて
+  \(\|u\|=\sqrt{\langle u,u\rangle}\)
+  で定義され，
+  以下の性質を持つ
+  - \(\|u\|\geq0\)
+    特に \(\|u\|=0\;\Rightarrow\;u=0\)
+  - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\)
+  - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
+    (Cauchy-Schwarzの不等式)
+  - \(\|u+v\|\leq\|u\|+\|v\|\) 
+    (三角不等式)
+
+#+reveal: split
+- 完備性: ある集合の点列の収束先がもとの集合に含まれること
+- 内積空間: 内積が定義されたベクトル空間
+- Hilbert 空間: 完備な内積空間
 
 
 * COMMENT ローカル変数
 # Local Variables:
 # org-latex-listings: minted
 # End:
-      
+
+

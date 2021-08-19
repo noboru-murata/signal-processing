@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">Hilbert 空間</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 - 講義2</p>
+    <p>信号処理 - 第2講</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org6c0a9f4">
-<h2 id="org6c0a9f4">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org6c0a9f4">
+<section id="slide-orgccf060f">
+<h2 id="orgccf060f">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgccf060f">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9cd6dd3">
-<h3 id="org9cd6dd3">ベクトル空間</h3>
+<section id="slide-org0cf89b4">
+<h3 id="org0cf89b4">ベクトル空間</h3>
 <ul>
 <li><p>
 以下の条件を満たす
@@ -77,9 +76,10 @@
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org39bb8d0">
-<h3 id="org39bb8d0">ベクトル空間の例</h3>
+<section id="slide-org1ab587f">
+<h3 id="org1ab587f">ベクトル空間の例</h3>
 <ul>
 <li>幾何ベクトル</li>
 <li>数ベクトル</li>
@@ -102,9 +102,10 @@
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org2f7a06d">
-<h3 id="org2f7a06d">線形独立</h3>
+<section id="slide-orgeb83c30">
+<h3 id="orgeb83c30">線形独立</h3>
 <ul>
 <li><p>
 定義
@@ -127,9 +128,10 @@
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org69decaa">
-<h3 id="org69decaa">基底</h3>
+<section id="slide-org75ed7a3">
+<h3 id="org75ed7a3">基底</h3>
 <ul>
 <li><p>
 定義
@@ -153,11 +155,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org9471876">
-<h3 id="org9471876">基底の重要性</h3>
+<section id="slide-orgd1ee6ba">
+<h3 id="orgd1ee6ba">基底の重要性</h3>
 <ul>
 <li><p>
 定理
@@ -186,18 +188,18 @@
 </ul></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-orgaf8a615" data-background="#fef4f4">
-<h2 id="orgaf8a615">演習</h2>
+<section id="slide-org76ebd13" data-background="#fef4f4">
+<h2 id="org76ebd13">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8e54b81" data-background="#fef4f4">
-<h3 id="org8e54b81">練習問題</h3>
+<section id="slide-org7c692fc" data-background="#fef4f4">
+<h3 id="org7c692fc">練習問題</h3>
 <ul>
 <li>以下の集合 \(V\) のうちベクトル空間はどれか？
 <ul>
@@ -219,53 +221,18 @@
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org3aaed2b" data-background="#fef4f4">
-<h3 id="org3aaed2b">ヒント</h3>
-<ul>
-<li><p>
-条件の線形性として，\(h=f+g\)のとき
-がどうなるか考えればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  &h^{(2)}+h^{(1)}+h\\
-  &\quad
-    =(f^{(2)}+f^{(1)}+f)
-    +(g^{(2)}+g^{(1)}+g)
-\end{align}
 
-</div>
-</blockquote></li>
-<li><p>
-適当な\(x\)を用いて連立方程式の解を考えればよい
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-\end{equation}
-
-</div>
-</blockquote></li>
-<li>線形独立な要素がいくつ取れるかを考えればよい</li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org4b0c0c3">
-<h2 id="org4b0c0c3">内積空間</h2>
+<section id="slide-org683679a">
+<h2 id="org683679a">内積空間</h2>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgf43c719">
-<h3 id="orgf43c719">内積</h3>
+<section id="slide-orgbb44724">
+<h3 id="orgbb44724">内積</h3>
 <ul>
 <li><p>
 定義
@@ -284,7 +251,7 @@
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br />
 なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)</li>
 <li>\(\langle \alpha u+\beta u',v\rangle
-	=\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
 
 </ol>
 </blockquote>
@@ -296,11 +263,11 @@
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org159dfa8">
-<h3 id="org159dfa8">内積空間</h3>
+<section id="slide-orgdef32dc">
+<h3 id="orgdef32dc">内積空間</h3>
 <ul>
 <li><p>
 定義
@@ -314,11 +281,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgfa54b62">
-<h3 id="orgfa54b62">内積空間の例</h3>
+<section id="slide-org3fff0b9">
+<h3 id="org3fff0b9">内積空間の例</h3>
 <ul>
 <li>幾何ベクトル空間</li>
 <li>数ベクトル空間</li>
@@ -326,9 +293,10 @@
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org89cc507">
-<h3 id="org89cc507">内積の例</h3>
+<section id="slide-org81347b4">
+<h3 id="org81347b4">内積の例</h3>
 <ul>
 <li><p>
 幾何ベクトル空間
@@ -347,6 +315,7 @@
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -377,6 +346,7 @@
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -400,11 +370,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgfdbe295">
-<h3 id="orgfdbe295">ノルム</h3>
+<section id="slide-orgaffdc9f">
+<h3 id="orgaffdc9f">ノルム</h3>
 <ul>
 <li><p>
 定義
@@ -445,11 +415,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgdc27e36">
-<h3 id="orgdc27e36">距離</h3>
+<section id="slide-org5def86c">
+<h3 id="org5def86c">距離</h3>
 <ul>
 <li><p>
 内積空間では自然に距離が導入される
@@ -462,18 +432,18 @@
 </blockquote></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-org6b20378" data-background="#fef4f4">
-<h2 id="org6b20378">演習</h2>
+<section id="slide-org004c2b6" data-background="#fef4f4">
+<h2 id="org004c2b6">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org411b55b" data-background="#fef4f4">
-<h3 id="org411b55b">練習問題</h3>
+<section id="slide-org559396f" data-background="#fef4f4">
+<h3 id="org559396f">練習問題</h3>
 <ul>
 <li>距離の定義を述べよ．</li>
 <li>2つのベクトルの差のノルムが距離となることを確かめよ．</li>
@@ -489,35 +459,18 @@
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org4a05441" data-background="#fef4f4">
-<h3 id="org4a05441">ヒント</h3>
-<ul>
-<li>距離は以下の4つの条件を満たす
-<ul>
-<li>\(d(x,y)\ge0\) (非負性)</li>
-<li>\(d(x,y)=0\Leftrightarrow x=y\) (非退化性)</li>
-<li>\(d(x,y)=d(y,x)\) (対称性)</li>
-<li>\(d(x,y)+d(y,z)\ge d(x,z)\) (三角不等式)</li>
 
-</ul></li>
-<li>内積，ノルムの定義を確認せよ</li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org2b899d4">
-<h2 id="org2b899d4">Hilbert 空間</h2>
+<section id="slide-orge2c33e8">
+<h2 id="orge2c33e8">Hilbert 空間</h2>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orge0a74ec">
-<h3 id="orge0a74ec">完備性</h3>
+<section id="slide-orgd99b5b0">
+<h3 id="orgd99b5b0">完備性</h3>
 <ul>
 <li><p>
 定義
@@ -543,16 +496,16 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org09a7dfa">
-<h3 id="org09a7dfa">完備性の例</h3>
+<section id="slide-orgbbf4d48">
+<h3 id="orgbbf4d48">完備性の例</h3>
 <ul>
 <li><p>
 有理数は完備でない
 </p>
-<blockquote  class="fragment (appear)">
+<blockquote class="fragment (appear)">
 <p>
 点列 \(a_{n}\) を円周率の小数 \(n\) 桁以下を
 切り捨てた数と定義する．
@@ -563,7 +516,7 @@
 <li><p>
 実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない
 </p>
-<blockquote  class="fragment (appear)">
+<blockquote class="fragment (appear)">
 <p>
 点列 \(1/n \in (0,1)\) であるが，
 \(\lim_{n\to\infty}1/n=0\not\in (0,1)\)
@@ -571,11 +524,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orge5d52ed">
-<h3 id="orge5d52ed">Hilbert 空間</h3>
+<section id="slide-org2c6f3a3">
+<h3 id="org2c6f3a3">Hilbert 空間</h3>
 <ul>
 <li><p>
 定義
@@ -596,11 +549,11 @@ Cauchy 列を考えるということ</li>
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org34dffda">
-<h3 id="org34dffda">Hilbert 空間の例</h3>
+<section id="slide-org4892a4f">
+<h3 id="org4892a4f">Hilbert 空間の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間 (無限次元数ベクトル空間)
@@ -611,7 +564,7 @@ Cauchy 列を考えるということ</li>
   l^{2}=
   \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
     \|u\|<\infty
-    %\sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
+    % \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
   \right\}
 \end{equation}
 
@@ -640,6 +593,7 @@ Cauchy 列を考えるということ</li>
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -653,7 +607,7 @@ Cauchy 列を考えるということ</li>
   L^{2}(\Omega)=
   \left\{
     f\:\big|\:\|f\|<\infty
-    %f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+    % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
   \right\}
 \end{equation}
 
@@ -679,18 +633,18 @@ Cauchy 列を考えるということ</li>
 </ul></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-org249b055" data-background="#fef4f4">
-<h2 id="org249b055">演習</h2>
+<section id="slide-org4f395e7" data-background="#fef4f4">
+<h2 id="org4f395e7">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org8eb7480" data-background="#fef4f4">
-<h3 id="org8eb7480">練習問題</h3>
+<section id="slide-org1d1479a" data-background="#fef4f4">
+<h3 id="org1d1479a">練習問題</h3>
 <ul>
 <li>以下の集合の中で完備なものはどれか?
 <ul>
@@ -710,48 +664,13 @@ Cauchy 列を考えるということ</li>
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org363581c" data-background="#fef4f4">
-<h3 id="org363581c">ヒント</h3>
-<ul>
-<li>点列の収束先に含まれない要素の有無を考える．</li>
-<li><p>
-\(C[-1,1]\) は Hilbert 空間にならない．
-</p>
-<blockquote>
-<p>
-関数列 \(f_{n}\) として例えば次のようなものを考える．
-</p>
-<div>
-\begin{equation}
-  f_{n}(x)
-  =
-  \begin{cases}
-    -1, & (x<-1/n)\\
-    nx, & (-1/n\le x\le 1/n)\\
-    1,  & (x>1/n)
-  \end{cases}
-\end{equation}
 
-</div>
-
-<p>
-\(f_{n}\) は連続関数であるが，
-\(\lim_{n\to\infty}f_{n}\) は不連続になる．
-</p>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org7893385">
-<h2 id="org7893385">今回のまとめ</h2>
+<section id="slide-org49865d1">
+<h2 id="org49865d1">今回のまとめ</h2>
 <ul>
 <li>内積: 
 ベクトル空間の2つの要素に対して定義され，
@@ -761,11 +680,12 @@ Cauchy 列を考えるということ</li>
 特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)</li>
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br /></li>
 <li>\(\langle \alpha u+\beta u',v\rangle
-      =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+    =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
 
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -787,6 +707,7 @@ Cauchy 列を考えるということ</li>
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -822,7 +743,6 @@ mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
-
 overview: true,
 
 transition: 'fade',

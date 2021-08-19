@@ -3,221 +3,231 @@
 #+HUGO_WEIGHT: auto
 #+AUTHOR: Noboru Murata
 #+LINK: github https://noboru-murata.github.io/signal-processing/
-#+STARTUP: hidestars content
+#+STARTUP: hidestars content indent
 
-# Time-stamp: <2021-07-08 20:41:02 mura>
+# Time-stamp: <2021-08-19 14:53:03 mura>
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: _index
-  :EXPORT_HUGO_SECTION: ./
-  :EXPORT_DATE: <2020-03-18 Wed>
-  :END:
-  本講義では
-  フーリエ変換に代表される基底による信号の表現と取り扱い，
-  簡単なフィルタの理論を学ぶことを目的とします．
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:EXPORT_HUGO_SECTION: ./
+:EXPORT_DATE: <2020-03-18 Wed>
+:END:
+本講義では
+フーリエ変換に代表される基底による信号の表現と取り扱い，
+簡単なフィルタの理論を学ぶことを目的とします．
 
 ** 講義資料
-   - [[github:pdfs/signal-processing.pdf][信号処理]]
-   随時修正します．
+- [[github:pdfs/signal-processing.pdf][信号処理]]
+  随時修正します．
 
 ** 参考資料
-  必要な参考書については講義中に指示します．
+必要な参考書については講義中に指示します．
   
-* 講義1
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture01
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-04-30 Fri> 更新
+* 第1講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture01
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide01" >}}
+{{< myslide base="signal-processing" name="slide01" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide01.pdf][PDF file]]
+- [[github:pdfs/slide01.pdf][PDF file]]
 
-* 講義2
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture02
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-04-30 Fri> 更新
+* 第2講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture02
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide02" >}}
+{{< myslide base="signal-processing" name="slide02" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide02.pdf][PDF file]]
+- [[github:pdfs/slide02.pdf][PDF file]]
 
-* 講義3
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture03
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-04-30 Fri> 更新
+* 第3講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture03
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide03" >}}
+{{< myslide base="signal-processing" name="slide03" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide03.pdf][PDF file]]
+- [[github:pdfs/slide03.pdf][PDF file]]
 
-* 講義4
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture04
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-04-30 Fri> 更新
+* 第4講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture04
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide04" >}}
+{{< myslide base="signal-processing" name="slide04" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide04.pdf][PDF file]]
+- [[github:pdfs/slide04.pdf][PDF file]]
 
-* 講義5
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture05
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-05-07 Fri> 更新
+* 第5講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture05
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide05" >}}
+{{< myslide base="signal-processing" name="slide05" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide05.pdf][PDF file]]
+- [[github:pdfs/slide05.pdf][PDF file]]
 
-* 講義6
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture06
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-05-14 Fri> 更新
+* 第6講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture06
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide06" >}}
+{{< myslide base="signal-processing" name="slide06" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide06.pdf][PDF file]]
+- [[github:pdfs/slide06.pdf][PDF file]]
 
-* 講義7
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture07
-  :EXPORT_DATE: <2021-04-01 Thu>
-  :END:
-  理解度の確認
-* 講義8
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture08
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-06-02 Wed> 更新
+* 第7講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture07
+:EXPORT_DATE: <2021-04-01 Thu>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide08" >}}
+{{< myslide base="signal-processing" name="slide07" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide08.pdf][PDF file]]
+- [[github:pdfs/slide07.pdf][PDF file]]
 
-* 講義9
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture09
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-06-04 Fri> 更新
+* 第8講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture08
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide09" >}}
+{{< myslide base="signal-processing" name="slide08" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide09.pdf][PDF file]]
+- [[github:pdfs/slide08.pdf][PDF file]]
 
-* 講義10
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture10
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-06-11 Fri> 更新
+* 第9講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture09
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide10" >}}
+{{< myslide base="signal-processing" name="slide09" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide10.pdf][PDF file]]
+- [[github:pdfs/slide09.pdf][PDF file]]
 
-* 講義11
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture11
-  :EXPORT_DATE: <2021-04-01 Thu>
-  :END:
-  理解度の確認
-* 講義12
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture12
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-06-25 Fri> 更新
+* 第10講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture10
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide12" >}}
+{{< myslide base="signal-processing" name="slide10" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide12.pdf][PDF file]]
+- [[github:pdfs/slide10.pdf][PDF file]]
 
-* 講義13
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture13
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-07-02 Fri> 更新
+* 第11講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture11
+:EXPORT_DATE: <2021-04-01 Thu>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide13" >}}
+{{< myslide base="signal-processing" name="slide11" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide13.pdf][PDF file]]
+- [[github:pdfs/slide11.pdf][PDF file]]
 
-* 講義14
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture14
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
-  <2021-07-08 Thu> 更新
+* 第12講
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture12
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-08-19 Thu> 更新
 ** スライド
-   {{< myslide base="signal-processing" name="slide14" >}}
+{{< myslide base="signal-processing" name="slide12" >}}
 ** ハンドアウト
-   - [[github:pdfs/slide14.pdf][PDF file]]
+- [[github:pdfs/slide12.pdf][PDF file]]
 
-* 講義15
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: lecture15
-  :EXPORT_DATE: <2021-04-01 Thu>
-  :END:
-  理解度の確認
+* COMMENT 講義13
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture13
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-07-02 Fri> 更新
+** スライド
+{{< myslide base="signal-processing" name="slide13" >}}
+** ハンドアウト
+- [[github:pdfs/slide13.pdf][PDF file]]
+
+* COMMENT 講義14
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture14
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
+<2021-07-08 Thu> 更新
+** スライド
+{{< myslide base="signal-processing" name="slide14" >}}
+** ハンドアウト
+- [[github:pdfs/slide14.pdf][PDF file]]
+
+* COMMENT 講義15
+:PROPERTIES:
+:EXPORT_FILE_NAME: lecture15
+:EXPORT_DATE: <2021-04-01 Thu>
+:END:
+理解度の確認
 
 * COMMENT お知らせ
-  おしらせは以下を利用     
+おしらせは以下を利用     
 
 * 講義の進め方
-  :PROPERTIES:
-  :EXPORT_HUGO_SECTION: ./post
-  :EXPORT_FILE_NAME: post1
-  :EXPORT_DATE: <2020-04-01 Wed>
-  :END:
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: ./post
+:EXPORT_FILE_NAME: post1
+:EXPORT_DATE: <2020-04-01 Wed>
+:END:
 
 ** 講義ノート
-   Moodle に URL を掲載しました．
+Moodle に URL を掲載しました．
 
 ** 過去の試験問題
-   Moodle に3年分を掲載しました．
+Moodle に3年分を掲載しました．
 
 * スライドの使い方
-  :PROPERTIES:
-  :EXPORT_HUGO_SECTION: ./post
-  :EXPORT_FILE_NAME: post2
-  :EXPORT_DATE: <2020-08-27 Thu>
-  :END:
-  スライドは
-  [[https://revealjs.com][reveal.js]]
-  を使って作っています．
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: ./post
+:EXPORT_FILE_NAME: post2
+:EXPORT_DATE: <2020-08-27 Thu>
+:END:
+スライドは
+[[https://revealjs.com][reveal.js]]
+を使って作っています．
   
-  スライドを click して "?" を入力すると
-  shortcut key が表示されますが，
-  これ以外にも以下の key などが使えます．
+スライドを click して "?" を入力すると
+shortcut key が表示されますが，
+これ以外にも以下の key などが使えます．
 
 ** フルスクリーン
-   - f フルスクリーン表示
-   - esc 元に戻る
+- f フルスクリーン表示
+- esc 元に戻る
 ** 黒板
-   - w スライドと黒板の切り替え (toggle)
-   - x/y チョークの色の切り替え (巡回)
-   - c 消去
+- w スライドと黒板の切り替え (toggle)
+- x/y チョークの色の切り替え (巡回)
+- c 消去
 ** メモ書き
-   - e 編集モードの切り替え (toggle)
-   - x/y ペンの色の切り替え (巡回)
-   - c 消去
-  
+- e 編集モードの切り替え (toggle)
+- x/y ペンの色の切り替え (巡回)
+- c 消去
+
 
 * COMMENT ローカル変数
 # Local Variables:

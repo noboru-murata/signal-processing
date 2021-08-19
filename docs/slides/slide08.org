@@ -1,12 +1,12 @@
-#+TITLE: Fourier 変換の性質
-#+SUBTITLE: 信号処理 - 講義8
+#+TITLE: 線形フィルタ
+#+SUBTITLE: 信号処理 - 第8講
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-05-28 13:17:35 mura>
+# Time-stamp: <2021-08-19 14:09:11 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
-#+STARTUP: hidestars content
+#+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -14,952 +14,758 @@
 
 * 前回のおさらい
 ** Fourier 級数展開
-   - 定理
-     #+begin_quote
-     \(f\in L^{2}(-\pi,\pi)\) 
-     は
-     以下のように
-     Fourier級数展開
-     される．
-     #+begin_src latex
-       \begin{align}
-         f(x)
-         &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-       \end{align}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-         \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-       \end{equation}
-     #+end_src
-     内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
-     以下で定義する．
-     #+begin_src latex
-       \begin{equation}
-	 \langle f,g\rangle
-	 =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-       \end{equation}
-     #+end_src
-     #+end_quote
+- 定理
+  #+begin_quote
+  \(f\in L^{2}(-\pi,\pi)\) 
+  は
+  以下のように
+  Fourier級数展開
+  される．
+  #+begin_src latex
+    \begin{align}
+      f(x)
+      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+    \end{align}
+  #+end_src
+  #+begin_src latex
+    \begin{equation}
+      \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+    \end{equation}
+  #+end_src
+  内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+  以下で定義する．
+  #+begin_src latex
+    \begin{equation}
+      \langle f,g\rangle
+      =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+    \end{equation}
+  #+end_src
+  #+end_quote
+
 ** Fourier 変換と反転公式
-   - 定義
-     #+begin_quote
-     \(\mathbb{R}\)
-     上の関数
-     \(f\)
-     に対して
-     #+begin_src latex
-       \begin{align}
-         \hat{f}(\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
-         &\text{(Fourier変換)}\\
-         f(x)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
-         &\text{(逆Fourier変換)}
-       \end{align}
-     #+end_src
-     で定義する．
-     #+end_quote
-** 反転公式
-   - 定理
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-         f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
-         =\lim_{\epsilon\to0}
-         \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
-         \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
-       \end{equation}
-     #+end_src
-     より正確には
-     \(f\in L^{1}\cap L^{p}\)
-     であれば，
-     上の式は
-     \(L^{p}\)
-     の意味で成り立つと表現される．
-     #+begin_src latex
-       \begin{equation}
-	 \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
-       \end{equation}
-     #+end_src
-     #+end_quote
-
-
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-** COMMENT 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
-     Fourier 級数展開せよ．
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 f(x)=|\sin(x)|
-       \end{equation}
-     #+end_src
-     #+end_quote
-
-** COMMENT 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．
-   - 積分計算は \(n=\pm1\) で場合分けが必要となる．
-   #+reveal: split
-   - 関数 \(f\) は別の表現も可能
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         f(x)
-         &=|\sin(x)|\\
-         &=
-           \begin{cases}
-            -\sin(x),&x\le0\\
-            \sin(x),&x>0
-          \end{cases}\\
-         &=
-           \begin{cases}
-            \cos(x+\pi/2),&x\le0\\
-            \cos(x-\pi/2),&x>0
-          \end{cases}
-       \end{align}
-     #+end_src
-     #+end_quote
-     - 前回の計算結果を利用できる．
-   #+reveal: split  
-   - Fourier 級数展開
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         f(x)
-         &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
-           +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
-         &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
-           +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
-         &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
-         &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 関数 \(\Xi\) を以下で定義する．
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 \Xi_{(a,b)}(x)
-	 =
-	 \begin{cases}
-	   1,& x\in (a,b)\\
-	   0,&\text{otherwise}
-	 \end{cases}
-       \end{equation}
-     #+end_src
-     #+end_quote
-     以下の関数の Fourier 変換を求めよ．
-     - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
-     - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
-     - \(h(x)=\Xi_{(-1,1)}(x)\)
-
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \hat{f}(\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
-         &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
-       \end{align}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - \(g(x)=e^{-\beta x^{2}}\)
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \hat{g}(\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
-         &=e^{-\frac{\omega^{2}}{4\beta}}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
-         &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
-         &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
-       \end{align}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - \(h(x)=\Xi_{(-1,1)}(x)\)
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \hat{h}(\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-1}^{1}e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
-           &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
-         &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-     \end{align}
-     #+end_src
-     #+end_quote
-
-
-* Fourier 変換の性質
-  # #+begin_notes
-  # Fourier変換の基本的な性質を確認する．
-  # #+end_notes
-
-** 記法
-   - 関数の対応
-     - \(f\): もとの関数 (以下では Fourier 変換の存在を仮定)
-     - \(\hat{f}\): Fourier 変換
-   - 変換の演算子
-     - \(\mathcal{F}\): Fourier 変換
-     - \(\mathcal{F}^{-1}\): 逆 Fourier 変換
-     #+begin_quote
-     例えば以下のように使う.
-     #+begin_src latex
-       \begin{align}
-         \hat{f}&=\mathcal{F}[f],\quad
-           &f&=\mathcal{F}^{-1}[\hat{f}]\\
-         \hat{f}(\omega)&=\mathcal{F}[f](\omega),\quad
-         &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
-       \end{align}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 引数に関する注意
-     #+begin_quote
-     関数の引数(変数)は単なる名前なので何でも良い．
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[f](\alpha)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
-         \mathcal{F}^{-1}[\hat{f}](\beta)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 絶対可積分 
-   - 定義
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-         \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
-         f\in L^{1}(\mathbb{R})
-       \end{equation}
-     #+end_src
-     #+end_quote
-   - 以下ではこの条件を満たす関数を考える
-   #+reveal: split
-   - Fourier 変換の存在 (各点)
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         |\hat{f}(\omega)|
-         &=
-           \left|\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-         &<
-         \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}|f(x)e^{-i\omega x}|dx
-           =
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}|f(x)|dx<\infty
-       \end{align}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-         \|\hat{f}\|_{L^{\infty}}
-         \left(=\sup_{\omega}|\hat{f}(\omega)|\right)
-         <
-         \frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - \(|x|\to\infty\) での挙動
-     #+begin_quote
-     適当に大きな値 \(M>0\) に対して
-     #+begin_src latex
-       \begin{equation}
-         |f(x)|>\epsilon>0,\;|x|>M
-       \end{equation}
-     #+end_src
-     とすると，以下のように絶対可積分に矛盾する．
-     #+begin_src latex
-       \begin{equation}
-         \int_{-\infty}^{-M}|f(x)|dx+
-         \int_{M}^{\infty}|f(x)|dx
-         >\epsilon\times\text{(積分区間)}\to\infty
-       \end{equation}
-     #+end_src
-     したがって以下の性質が成り立つ．
-     #+begin_src latex
-       \begin{equation}
-         \lim_{|x|\to\infty}f(x)=0
-       \end{equation}
-     #+end_src
-     #+end_quote
+- 定義
+  #+begin_quote
+  \(\mathbb{R}\)
+  上の関数
+  \(f\)
+  に対して
+  #+begin_src latex
+    \begin{align}
+      \hat{f}(\omega)
+      &=\frac{1}{\sqrt{2\pi}}
+	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+      &\text{(Fourier変換)}\\
+      f(x)
+      &=\frac{1}{\sqrt{2\pi}}
+	\int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+      &\text{(逆Fourier変換)}
+    \end{align}
+  #+end_src
+  で定義する．
+  #+end_quote
 
 ** Parseval の定理
-   - 定理
-     #+begin_quote
-     関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
-     このとき以下の関係が成り立つ．
-     #+begin_src latex
-       \begin{equation}
-         \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
-         =
-         \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
-       \end{equation}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-         \langle f,g\rangle
-         =
-         \langle \hat{f},\hat{g}\rangle
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 略証
-     #+begin_quote
-     反転公式と同様に収束因子を考える．
-     #+begin_src latex
-       \begin{align}
-         &\int_{-\infty}^{\infty}
-           \hat{f}(\omega)\overline{\hat{g}(\omega)}
-           e^{-\epsilon \omega^{2}}d\omega\\
-         &=
-           \int_{-\infty}^{\infty}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{i\omega x}dx\cdot
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\overline{g(y)e^{i\omega y}}dy\cdot
-           e^{-\epsilon \omega^{2}}d\omega\\
-         &=
-           \int_{-\infty}^{\infty}
-           \int_{-\infty}^{\infty}
-           f(x)\overline{g}(y)G_{\epsilon}(x-y)
-           dxdy\\
-         &=
-           \int_{-\infty}^{\infty}
-           f(x)\overline{g_{\epsilon}(x)}
-           dx
-       \end{align}
-     #+end_src
-     \(\epsilon\to0\) とすると定理の両辺が一致することがわかる．
-     #+end_quote
+- 定理
+  #+begin_quote
+  関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+  このとき以下の関係が成り立つ．
+  #+begin_src latex
+    \begin{equation}
+      \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
+      =
+      \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
+    \end{equation}
+  #+end_src
+  #+begin_src latex
+    \begin{equation}
+      \langle f,g\rangle
+      =
+      \langle \hat{f},\hat{g}\rangle
+    \end{equation}
+  #+end_src
+  #+end_quote
+
 ** Plancherel の定理
-   - 定理
-     #+begin_quote
-     関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
-     このとき以下の関係が成り立つ．
-     #+begin_src latex
-       \begin{equation}
-         \int_{-\infty}^{\infty}|f(x)|^{2}dx
-         =
-         \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
-       \end{equation}
-     #+end_src
-     #+begin_src latex
-       \begin{equation}
-         \|f\|_{L^{2}}
-         =
-         \|\hat{f}\|_{L^{2}}
-       \end{equation}
-     #+end_src
-     #+end_quote
+- 定理
+  #+begin_quote
+  関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+  このとき以下の関係が成り立つ．
+  #+begin_src latex
+    \begin{equation}
+      \int_{-\infty}^{\infty}|f(x)|^{2}dx
+      =
+      \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
+    \end{equation}
+  #+end_src
+  #+begin_src latex
+    \begin{equation}
+      \|f\|_{L^{2}}
+      =
+      \|\hat{f}\|_{L^{2}}
+    \end{equation}
+  #+end_src
+  #+end_quote
 
-** Riemann-Lebesgue の定理(補題)
-   - 定理
-     #+begin_quote
-     関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
-     \(f'\in L^{1}(\mathbb{R})\) とする．
-     このとき以下の性質をもつ．
-     #+begin_src latex
-       \begin{equation}
-         \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 略証
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         |\hat{f}(\omega)|
-         &=\left|\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-         &<\left|\left[\frac{f(x)}{\sqrt{2\pi}}\frac{e^{-i\omega x}}{-i\omega}\right]_{-\infty}^{\infty}\right|
-           +\left|\frac{1}{i\omega}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\right|\\
-         &<\frac{1}{|\omega|}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\left|f'(x)\right|dx\\
-         &=\frac{1}{|\omega|}\frac{1}{\sqrt{2\pi}}\|f'\|_{L^{1}}
-       \end{align}
-     #+end_src
-     より明らか．
-     #+end_quote
+** Riemann-Lebesgue の補題
+- 定理
+  #+begin_quote
+  関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
+  \(f'\in L^{1}(\mathbb{R})\) とする．
+  このとき以下の性質をもつ．
+  #+begin_src latex
+    \begin{equation}
+      \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
+    \end{equation}
+  #+end_src
+  #+end_quote
 
-
-
-* 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 符号の反転
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[f](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-         &=\mathcal{F}[f](-\omega)
-         =\mathcal{F}^{-1}[f](\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 注意
-     #+begin_quote
-     符号が反転しているだけなので，ほとんど対称だと思ってよい．
-     すなわち，
-     Fourier 変換 \(\mathcal{F}\) について成り立つことは
-     逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-     ただし符号の反転などには注意すること．
-     #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f\) の Fourier 変換と
-     関数 \(g=f'\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 微分
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-         &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-           +i\omega
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-         \mathcal{F}[f'](\omega)
-         &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-     - Fourier 変換可能な関数は
-       \(|x|\to\infty\) での値が 0 になるとしてよい．
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f\) の Fourier 変換と
-     関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
-     #+end_quote
-   
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 高階微分
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-         &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-           +i\omega
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-         &=\text{(部分積分を繰り返す)}\\
-         \mathcal{F}[f^{(k)}](\omega)
-         &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f,g\) の Fourier 変換と
-     関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
-     #+begin_src latex
-       \begin{equation}
-         h(x)
-         =
-         \int_{-\infty}^{\infty}f(x-y)g(y)dy
-         =
-         \int_{-\infty}^{\infty}f(y)g(x-y)dy
-         =
-         f{*}g(x)
-       \end{equation}
-     #+end_src
-     #+end_quote
-   
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 畳み込み
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[h](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-         &=\sqrt{2\pi}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-         &=\sqrt{2\pi}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-         \mathcal{F}[f{*}g](\omega)
-         &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-           =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 移動
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-         \mathcal{F}[T_{a}[f]](\omega)
-         &=e^{-i\omega a}\mathcal{F}[f](\omega)
-           =e^{-i\omega a}\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の問題に答えよ
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 拡大縮小
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-         &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-         \mathcal{F}[D_{b}[f]](\omega)
-         &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-           =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-
-* COMMENT 演算との関係
-  # #+begin_notes
-  # 関数に対する演算とFourier変換の関係を確認する．
-  # #+end_notes
-
-** 符号の反転
-   - 練習問題
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[f](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-         &=\mathcal{F}[f](-\omega)
-         =\mathcal{F}^{-1}[f](\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 注意
-     #+begin_quote
-     符号が反転しているだけなので，ほとんど対称だと思ってよい．
-     すなわち，
-     Fourier 変換 \(\mathcal{F}\) について成り立つことは
-     逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-     ただし符号の反転などには注意すること．
-     #+end_quote
-
-** 微分
-   - 練習問題
-     #+begin_quote
-     関数 \(f\) の Fourier 変換と
-     関数 \(g=f'\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-         &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-           +i\omega
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-         \mathcal{F}[f'](\omega)
-         &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     - Fourier 変換可能な関数は
-       \(|x|\to\infty\) での値が 0 になるとしてよい．
-     #+end_quote
-
-** 高階微分
-   - 練習問題
-     #+begin_quote
-     関数 \(f\) の Fourier 変換と
-     関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-         &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-           +i\omega
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-         &=\text{(部分積分を繰り返す)}\\
-         \mathcal{F}[f^{(k)}](\omega)
-         &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-   
-** 畳み込み
-   - 練習問題
-     #+begin_quote
-     関数 \(f,g\) の Fourier 変換と
-     関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
-     #+begin_src latex
-       \begin{equation}
-         h(x)
-         =
-         \int_{-\infty}^{\infty}f(x-y)g(y)dy
-         =
-         \int_{-\infty}^{\infty}f(y)g(x-y)dy
-         =
-         f{*}g(x)
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[h](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-         &=\sqrt{2\pi}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-         &=\sqrt{2\pi}
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-           \frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-         \mathcal{F}[f{*}g](\omega)
-         &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-           =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 移動
-   - 練習問題
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-         &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-         \mathcal{F}[T_{a}[f]](\omega)
-         &=e^{-i\omega a}\mathcal{F}[f](\omega)
-           =e^{-i\omega a}\hat{f}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 拡大縮小
-   - 練習問題
-     #+begin_quote
-     関数 \(f(x)\) の Fourier 変換と
-     関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
-     #+end_quote
-   #+reveal: split
-   - 解答例
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[g](\omega)
-         &=\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-         &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-           \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-         \mathcal{F}[D_{b}[f]](\omega)
-         &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-           =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-       \end{align}
-     #+end_src
-     #+end_quote
-
-** 演算との関係(まとめ)
-   | 関数                         | Fourier変換                                    |
-   |------------------------------+------------------------------------------------|
-   | \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
-   | \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
-   | \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
-   | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
-   | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
-   
-   
-* 演算との関係
-** Fourier 変換で用いる基本演算
-   | 関数                           | Fourier変換                                      |
-   |--------------------------------+--------------------------------------------------|
-   | \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
-   | \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
-   | \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
-   | \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
-   | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
+** 演算との関係
+| 関数                           | Fourier変換                                      |
+|--------------------------------+--------------------------------------------------|
+| \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
+| \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
+| \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
+| \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
+| \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
    
 
 * 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
 ** 練習問題
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 関数
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-	 f(x)=\frac{1}{x-ia}\;(a>0)        
-       \end{equation}
-     #+end_src
-     #+end_quote
-     の Fourier 変換を求めよ．
-     - Fourier 変換と逆 Fourier 変換の関係を利用
-     - /[[color:gray][複素積分を利用]]/
-** 解答例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 以下の Fourier 変換を利用
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         g(x)
-         &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
-         \hat{g}(\omega)
-         &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
-         &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
-       \end{align}
-     #+end_src
-     #+end_quote
-   - 関数 \(f\) は \(\hat{g}\) で表される
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-         f(x)
-         =i\sqrt{2\pi}\hat{g}(x)
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - Fourier 変換と逆 Fourier 変換の関係
-     #+begin_quote
-     #+begin_src latex
-       \begin{equation}
-         \mathcal{F}[f](-\omega)
-         =\mathcal{F}^{-1}[f](\omega)
-       \end{equation}
-     #+end_src
-     #+end_quote
-   - 整理すると
-     #+begin_quote
-     #+begin_src latex
-       \begin{align}
-         \mathcal{F}[f](\omega)
-         &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
-         &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
-         &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
-         &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
-       \end{align}
-     #+end_src
-     #+end_quote
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=\frac{1}{x-ia}\;(a>0)        
+    \end{equation}
+  #+end_src
+  #+end_quote
+  の Fourier 変換を求めよ．
+  - /[[color:gray][Fourier 変換と逆 Fourier 変換の関係を利用]]/
+  - 複素積分を利用
 
-** Fourier 変換の代表的な例
-   :PROPERTIES:
-   :reveal_background: #fef4f4
-   :END:
-   - 定義関数
-     #+begin_quote
-     関数 \(\Xi\) を以下で定義する．
-     #+begin_src latex
-       \begin{equation}
-	 \Xi_{(a,b)}(x)
-         =
-         \begin{cases}
-           1,& x\in (a,b)\\
-           0,&\text{otherwise}
-         \end{cases}
-       \end{equation}
-     #+end_src
-     #+end_quote
-   #+reveal: split
-   - 代表的な例
-     | 関数                                         | Fourier変換                                         |
-     |----------------------------------------------+-----------------------------------------------------|
-     | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
-     | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
-     | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
-     | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
-     | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)                   |
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+# - 以下の Fourier 変換を利用 (先週計算した)
+#   #+begin_quote
+#   #+begin_src latex
+#     \begin{align}
+#       g(x)
+#       &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
+#       \hat{g}(\omega)
+#       &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
+#       &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
+#     \end{align}
+#   #+end_src
+#   #+end_quote
+# - 関数 \(f\) は \(\hat{g}\) で表される
+#   #+begin_quote
+#   #+begin_src latex
+#     \begin{equation}
+#       f(x)
+#       =i\sqrt{2\pi}\hat{g}(x)
+#     \end{equation}
+#   #+end_src
+#   #+end_quote
+# #+reveal: split
+# - Fourier 変換と逆 Fourier 変換の関係
+#   #+begin_quote
+#   #+begin_src latex
+#     \begin{equation}
+#       \mathcal{F}[f](-\omega)
+#       =\mathcal{F}^{-1}[f](\omega)
+#     \end{equation}
+#   #+end_src
+#   #+end_quote
+# - 整理すると
+#   #+begin_quote
+#   #+begin_src latex
+#     \begin{align}
+#       \mathcal{F}[f](\omega)
+#       &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
+#       &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
+#       &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
+#       &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
+#     \end{align}
+#   #+end_src
+#   #+end_quote
+# #+reveal: split
+- Cauchy の積分定理
+  #+begin_quote
+  \(f\) を正則関数とするとき以下が成り立つ
+  #+begin_src latex
+    \begin{equation}
+      \oint f(z)dz = 0
+    \end{equation}
+  #+end_src
+  #+end_quote
+- Cauchy の積分公式 (第2定理)
+  #+begin_quote
+  \(f\) を正則関数とするとき以下が成り立つ
+  #+begin_src latex
+    \begin{equation}
+      f(c)
+      =\frac{1}{2\pi i}\oint \frac{f(z)}{z-c}dz
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split     
+- 留数定理 
+  #+begin_quote
+  積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
+  #+begin_src latex
+    \begin{equation}
+      \mathrm{Res}_{z=c}f(z)
+      =\frac{1}{2\pi i}\oint f(z)dz
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 留数計算
+  #+begin_quote
+  孤立特異点が1位の極なら以下で計算できる
+  #+begin_src latex
+    \begin{equation}
+      \mathrm{Res}_{z=c}f(z)
+      =
+      \lim_{z\to c}(z-c)f(z)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 以下の Fourier 変換を求める
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \mathcal{F}[f](\omega)
+      =\frac{1}{\sqrt{2\pi}}\int\frac{1}{x-ia}e^{-i\omega x}dx
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 被積分関数を以下で定義
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      g(z)=\frac{e^{-i\omega z}}{\sqrt{2\pi}(z-ia)}
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 積分路
+  #+begin_quote
+  \(\omega<0\) のとき積分路を \(ia\) を含む \(x\) 軸と上半平面で考える
+
+  \(\omega>0\) のとき積分路は \(x\) 軸と下半平面で考える
+  #+end_quote
+  - \(e^{-i\omega z},\;(\omega<0)\) が上半平面でどうなるか考えよ
+  - \(e^{-i\omega z},\;(\omega>0)\) が下半平面でどうなるか考えよ
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \oint g(z)dz
+      =
+      \int_{-\infty}^{\infty} g(x)dx +\text{(積分に寄与しない)}
+      =\mathcal{F}[f](\omega)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 留数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      Res_{z=ia}g(z)
+      =\lim_{z=ia}(z-ia)g(z)=\frac{e^{a\omega}}{\sqrt{2\pi}}
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 整理すると
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      \mathcal{F}[f](\omega)
+      &= 2\pi i Res_{z=ia}g(z)\\
+      &=
+	\begin{cases}
+	  i\sqrt{2\pi}e^{a\omega}, & \omega<0\\
+	  0, & \omega>0
+	\end{cases}
+    \end{align}
+  #+end_src
+  #+end_quote
+
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の関数の Fourier 変換を求めよ．
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      &\frac{1}{x+ia}\;(a>0) \\       
+      &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
+      & \left(\frac{\sin(x)}{x}\right)^{2}
+    \end{align}
+  #+end_src
+  #+end_quote
+
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の関係を利用すればよい
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      \frac{1}{x+ia}
+      &=-i\sqrt{2\pi}\hat{g}(-x)\\
+      \frac{a}{x^{2}+a^{2}}
+      &=\frac{a}{(x-ia)(x+ia)}\\
+      &=\frac{1}{2i}\left(\frac{1}{x-ia}-\frac{1}{x+ia}\right)
+    \end{align}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 積の Fourier 変換は畳み込みを利用すればよい
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \mathcal{F}[f{*}f](\alpha)
+      =\sqrt{2\pi}\cdot\hat{f}(\alpha)^{2}
+    \end{equation}
+    \begin{equation}
+      \mathcal{F}[\Xi_{(-1,1)}](\alpha)
+      =
+      \sqrt{\frac{2}{\pi}}\frac{\sin(\alpha)}{\alpha}
+      =\sqrt{\frac{2}{\pi}}\hat{f}(\alpha)
+    \end{equation}
+    \begin{align}
+      \mathcal{F}[\hat{f}^{2}](\omega)
+      &=
+        \mathcal{F}^{-1}[\hat{f}^{2}](-\omega)
+        =\frac{1}{\sqrt{2\pi}}f{*}f(-\omega)\\
+      &=\frac{1}{\sqrt{2\pi}}
+	\sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(-\omega)\\
+      &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(\omega)
+    \end{align}
+  #+end_src
+  #+end_quote
+
+** Fourier 変換の例
+| 関数                                         | Fourier変換                                         |
+|----------------------------------------------+-----------------------------------------------------|
+| \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
+| \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
+| \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
+| \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
+| \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)                   |
+     
+
+* 線形時不変フィルタ
+** 注意
+- 以降，音声や音楽などの時系列信号を扱う
+- 時間 \(t\) を明示的に表すために
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(t),\,g(t),\,h(t)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  のように書く
+
+** フィルタ
+- 定義
+  #+begin_quote
+  入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
+  #+end_quote
+
+#+NAME: fig:filter1
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter1.png]]
+
+** フィルタの例
+- [[color:darkgreen][エレキギターのエフェクター]] (effects unit, pedal)
+  - 歪み: オーバードライブ / ディストーション / ファズ
+  - モジュレーション: コーラス / フランジャー / トレモロ
+  - 空間系: リバーブ / ディレイ
+  - フィルタ: ワウ / ピッチシフター / ワーミー
+  - その他:  イコライザー / コンプレッサー / ノイズゲート
+
+** フィルタ
+- 関数 \(f(t)\) を関数 \(g(t)\) に変換する
+- 関数に作用する作用素(演算子)
+- いろいろな機能が有り得る
+- 以降では理論的に扱い易い性質を想定
+
+** 線形性
+- 定義
+  #+begin_quote
+  2つの入出力関係を考えたとき，
+  入力の線形結合がそのまま出力に反映される性質
+  #+end_quote
+
+#+NAME: fig:filter2
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter2.png]]
+#+NAME: fig:filter3
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter3.png]]
+
+** 線形フィルタ
+- 線形性を持つフィルタ
+- 入力の分解表現
+  #+begin_quote
+  入力信号 \(f(t)\) を基底関数 \(\phi_{n}(t)\) を用いて分解
+  #+begin_src latex
+    \begin{equation}
+      f(t)=\sum_{n}a_{n}\phi_{n}(t)
+    \end{equation}
+  #+end_src
+  #+end_quote
+- フィルタによる基底関数の変換
+
+#+NAME: fig:filter4
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter4.png]]
+
+#+reveal: split
+- 出力の分解表現
+  #+begin_quote
+  出力信号 \(g(t)\) は変換された基底関数 \(\psi_{n}(t)\) の合成
+  #+begin_src latex
+    \begin{equation}
+      g(t)=\sum_{n}a_{n}\psi_{n}(t)
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 入出力の基底の変換にだけ着目すれば十分
+
+** 非線形フィルタ
+- 信号の変換において非線形作用を持つフィルタ
+- 多くのフィルタは線形性を持っている
+- [[color:darkgreen][線形でない例]] (エフェクタ)
+  - ディストーション
+  - オーバードライブ
+  入力信号の振幅の大きさによって歪みが生じる
+- 非線形フィルタでは出力から入力を再現することが難しい
+
+** 時不変性
+- 定義
+  #+begin_quote
+  入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
+  #+end_quote
+  - 時間が経過してもフィルタの性質は変わらない
+
+#+NAME: fig:filter5
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter5.png]]
+
+
+* フィルタの数学的表現
+** 信号の近似
+- 信号 \(f(t)\) の階段関数近似
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f_{\tau}(t)=\sum_{n} a_{n}\Delta(t{-}t_{n})
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 階段関数の基底
+  #+begin_quote
+  \(\Delta(t)\) は
+  区間 \((0,\tau)\) で高さ1となる単一の矩形波で，
+  時間 \(t_{n}=n\tau\) だけシフトした矩形波の集合
+  #+begin_src latex
+    \begin{equation}
+      \Delta(t{-}t_{n})=\Delta(t{-}n\tau),\quad
+      (n\text{ は整数})
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 矩形波(基底関数)の変換
+  #+begin_quote
+  矩形波 \(\Delta(t)\) はフィルタによって
+  \(H(t)\) に変換される．
+  #+end_quote
+
+#+NAME: fig:filter6
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter6.png]]
+
+#+reveal: split
+- 時不変性
+  #+begin_quote
+  矩形波 \(\Delta\) を平行移動したものは
+  フィルタの時不変性により \(H\) を平行移動したものとなる．
+  #+end_quote
+
+#+NAME: fig:filter7
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter7.png]]
+
+#+reveal: split
+- 線形性
+  #+begin_quote
+  フィルタの線形性から入力を定数倍すると
+  出力も定数倍される．
+  #+end_quote
+  
+#+NAME: fig:filter8
+#+ATTR_HTML: :width 100%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/filter8.png]]
+
+#+reveal: split
+- 階段関数の変換
+  #+begin_quote
+  階段関数 
+  #+begin_src latex
+    \begin{equation}
+      f_{\tau}(t)=\sum_{n}a_{n}\Delta(t{-}t_{n})
+    \end{equation}
+  #+end_src
+  はフィルタにより \(H\) の線形和である
+  #+begin_src latex
+    \begin{equation}
+      g_{\tau}(t)=\sum_{n}a_{n}H(t{-}t_{n})
+    \end{equation}
+  #+end_src
+  に変換される．
+  #+end_quote
+
+** 積分による表現
+- 階段関数の係数
+  #+begin_quote
+  信号 \(f(t)\) の階段関数近似の係数は
+  \(a_{n}=f(t_{n})=f(n\tau)\) とすれば良い．
+  #+begin_src latex
+    \begin{align}
+      f_{\tau}(t)&=\sum_{n}f(t_{n})\Delta(t{-}t_{n})
+		   =\sum_{n}f(n\tau)\Delta(t{-}n\tau)\\
+      g_{\tau}(t)&=\sum_{n}f(t_{n})H(t{-}t_{n})
+		   =\sum_{n}f(n\tau)H(t{-}n\tau)
+    \end{align}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 矩形波の極限
+  #+begin_quote
+  関数 \(\Delta(t)\) は
+  区間 \((0,\tau)\) で高さ1となる単一の矩形波なので，
+  極限は以下のようになる．
+  #+begin_src latex
+    \begin{equation}
+      \delta_{\tau}(t)=\Delta(t)/\tau
+      \xrightarrow{\tau\to0}\delta(t)\;(\text{デルタ関数})
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 階段関数の極限
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      f_{\tau}(t)
+      &=\sum_{n}f(n\tau)\Delta(t{-}n\tau)/\tau\cdot\tau
+	\xrightarrow{\tau\to0}\int f(s)\delta(t{-}s)ds\\
+      g_{\tau}(t)
+      &=\sum_{n}f(n\tau)H(t{-}n\tau)/\tau\cdot\tau
+	\xrightarrow{\tau\to0}\int f(s)h(t{-}s)ds
+    \end{align}
+    \begin{equation}
+      H(t)/\tau
+      \xrightarrow{\tau\to0}h(t)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - \(n\tau=s\) とおいて区分求積法の原理を用いればよい
+
+#+reveal: split
+- フィルタの積分表現
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      f(t)&=\int f(s)\delta(t{-}s)ds\\
+      g(t)&=\int f(s)h(t{-}s)ds
+    \end{align}
+  #+end_src
+  #+end_quote
+
+** インパルス応答
+- 変換された信号の表現(畳み込み積分)
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      g(t)=\int_{-\infty}^{\infty}f(s)h(t-s)ds
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 入力の表現
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(t)=\int_{-\infty}^{\infty}f(s)\delta(t-s)ds
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - \(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ
+
+#+reveal: split
+- フィルタの表現
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      h(t)
+      =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+      =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある
+  - \(h(t)\) をフィルタの *インパルス応答* という
+
+** 因果的フィルタ
+- 音響信号などのフィルタのインパルス応答
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      h(t)=0\;(t<0)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  - 時刻0にインパルスが入力される前には何も出力がされない
+  - *因果的* という
+
+#+reveal: split
+- 因果的フィルタの畳み込み
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      h(t-s)=0\;(t < s)
+    \end{equation}
+  #+end_src
+  時刻 \(t\) での出力は
+  時刻 \(t\) 以前での入力のみにより定まる
+  #+begin_src latex
+    \begin{equation}
+      g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+** 非因果的フィルタ
+- 理想的なローパスフィルタ \\
+  (物理的な回路では作成することができない)
+- 画像処理に用いられるフィルタ \\
+  (画素の上下左右に因果律があるわけではない)
+- オフラインの信号処理 \\
+  (時間遅れを許容するデジタル信号処理)
+
+
+* 演習
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 線形時不変フィルタの機能は
+  インパルス応答の畳み込み積分として表される．
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      g(t)
+      =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+      = h{*}f(t)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  これを Fourier 変換を用いて表せ．
+
+** COMMENT 解答例
+- 入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      \hat{f}(\omega)
+      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt\\
+      \hat{h}(\omega)
+      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t)e^{-i\omega t}dt
+    \end{align}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 出力信号 \(g\) のFourier 変換
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      \hat{g}(\omega)
+      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)e^{-i\omega t}dt\\
+      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+	\left(\int_{-\infty}^{\infty}h(t-s)f(s)ds\right) e^{-i\omega t}dt\\
+      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+	h(t-s)f(s)e^{-i\omega(t-s)}e^{-i\omega s}dtds\\
+      &=\sqrt{2\pi}
+	\cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t-s)e^{-i\omega(t-s)}dt\\
+      &\qquad\times\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}ds
+    \end{align}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- 整理すると
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \hat{g}(\omega)
+      =
+      \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 時間 \(t\) に対して \(\omega\) は周波数に対応
+  #+begin_quote
+  Fourier 変換した周波数領域で見ると
+  フィルタの機能は周波数毎の振幅と位相の変換として理解できる．
+  #+end_quote
 
 
 * 今回のまとめ
-  - Fourier 変換の性質
-    - Fourier 変換な可能な関数
-    - Fourier 変換の基本的な性質
-      - Parseval の定理
-      - Plancherel の定理
-      - Riemann-Lebesgue の定理(補題)
-    - 関数の演算とFourier 変換の関係
+- 線形時不変フィルタ
+  - 線形性
+  - 時不変性
+  - 因果的フィルタ
+- フィルタの数学的表現
+  - 階段関数近似
+  - 重ね合わせの原理
+  - 畳み込み積分
+  - インパルス応答
 
 
 * COMMENT ローカル変数
@@ -967,3 +773,4 @@
 # org-latex-listings: minted
 # End:
       
+  

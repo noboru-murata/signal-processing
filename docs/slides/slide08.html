@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Fourier 変換の性質</title>
+<title>線形フィルタ</title>
 <meta name="author" content="村田 昇"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -31,10 +31,10 @@
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
 <div class="talk-title">
-    <h1 class="no-toc-progress">Fourier 変換の性質</h1>
+    <h1 class="no-toc-progress">線形フィルタ</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 - 講義8</p>
+    <p>信号処理 - 第8講</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org8c29910">
-<h2 id="org8c29910">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org8c29910">
+<section id="slide-org25f356b">
+<h2 id="org25f356b">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org25f356b">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org55fd465">
-<h3 id="org55fd465">Fourier 級数展開</h3>
+<section id="slide-org7ef24d2">
+<h3 id="org7ef24d2">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -97,9 +96,10 @@ Fourier級数展開
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgb956139">
-<h3 id="orgb956139">Fourier 変換と反転公式</h3>
+<section id="slide-org95eb7f9">
+<h3 id="org95eb7f9">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -132,324 +132,10 @@ Fourier級数展開
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org0d6857c">
-<h3 id="org0d6857c">反転公式</h3>
-<ul>
-<li><p>
-定理
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
-  =\lim_{\epsilon\to0}
-  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
-  \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
-\end{equation}
-
-</div>
-
-<p>
-より正確には
-\(f\in L^{1}\cap L^{p}\)
-であれば，
-上の式は
-\(L^{p}\)
-の意味で成り立つと表現される．
-</p>
-<div>
-\begin{equation}
-  \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org8d366f1" data-background="#fef4f4">
-<h2 id="org8d366f1">演習</h2>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org87a0fb9" data-background="#fef4f4">
-<h3 id="org87a0fb9">練習問題</h3>
-<ul>
-<li><p>
-関数 \(\Xi\) を以下で定義する．
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \Xi_{(a,b)}(x)
-  =
-  \begin{cases}
-    1,& x\in (a,b)\\
-    0,&\text{otherwise}
-  \end{cases}
-\end{equation}
-
-</div>
-</blockquote>
-<p>
-以下の関数の Fourier 変換を求めよ．
-</p>
-<ul>
-<li>\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)</li>
-<li>\(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)</li>
-<li>\(h(x)=\Xi_{(-1,1)}(x)\)</li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org4e2263d" data-background="#fef4f4">
-<h3 id="org4e2263d">解答例</h3>
-<ul>
-<li><p>
-\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{f}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
-  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(g(x)=e^{-\beta x^{2}}\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{g}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
-  &=e^{-\frac{\omega^{2}}{4\beta}}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
-  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
-  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(h(x)=\Xi_{(-1,1)}(x)\)
-</p>
-<blockquote>
-<div>
-\begin{align}
-    \hat{h}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-1}^{1}e^{-i\omega x}dx\\
-    &=\frac{1}{\sqrt{2\pi}}
-      \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
-      &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
-    &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org4ae4aff">
-<h2 id="org4ae4aff">Fourier 変換の性質</h2>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgff3d389">
-<h3 id="orgff3d389">記法</h3>
-<ul>
-<li>関数の対応
-<ul>
-<li>\(f\): もとの関数 (以下では Fourier 変換の存在を仮定)</li>
-<li>\(\hat{f}\): Fourier 変換</li>
-
-</ul></li>
-<li><p>
-変換の演算子
-</p>
-<ul>
-<li>\(\mathcal{F}\): Fourier 変換</li>
-<li>\(\mathcal{F}^{-1}\): 逆 Fourier 変換</li>
-
-</ul>
-<blockquote>
-<p>
-例えば以下のように使う.
-</p>
-<div>
-\begin{align}
-  \hat{f}&=\mathcal{F}[f],\quad
-    &f&=\mathcal{F}^{-1}[\hat{f}]\\
-  \hat{f}(\omega)&=\mathcal{F}[f](\omega),\quad
-  &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-引数に関する注意
-</p>
-<blockquote>
-<p>
-関数の引数(変数)は単なる名前なので何でも良い．
-</p>
-<div>
-\begin{align}
-  \mathcal{F}[f](\alpha)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
-  \mathcal{F}^{-1}[\hat{f}](\beta)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgf960df4">
-<h3 id="orgf960df4">絶対可積分</h3>
-<ul>
-<li><p>
-定義
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
-  f\in L^{1}(\mathbb{R})
-\end{equation}
-
-</div>
-</blockquote></li>
-<li>以下ではこの条件を満たす関数を考える</li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-Fourier 変換の存在 (各点)
-</p>
-<blockquote>
-<div>
-\begin{align}
-  |\hat{f}(\omega)|
-  &=
-    \left|\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-  &<
-  \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}|f(x)e^{-i\omega x}|dx
-    =
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}|f(x)|dx<\infty
-\end{align}
-
-</div>
-
-<div>
-\begin{equation}
-  \|\hat{f}\|_{L^{\infty}}
-  \left(=\sup_{\omega}|\hat{f}(\omega)|\right)
-  <
-  \frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-\(|x|\to\infty\) での挙動
-</p>
-<blockquote>
-<p>
-適当に大きな値 \(M>0\) に対して
-</p>
-<div>
-\begin{equation}
-  |f(x)|>\epsilon>0,\;|x|>M
-\end{equation}
-
-</div>
-
-<p>
-とすると，以下のように絶対可積分に矛盾する．
-</p>
-<div>
-\begin{equation}
-  \int_{-\infty}^{-M}|f(x)|dx+
-  \int_{M}^{\infty}|f(x)|dx
-  >\epsilon\times\text{(積分区間)}\to\infty
-\end{equation}
-
-</div>
-
-<p>
-したがって以下の性質が成り立つ．
-</p>
-<div>
-\begin{equation}
-  \lim_{|x|\to\infty}f(x)=0
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgfcc264e">
-<h3 id="orgfcc264e">Parseval の定理</h3>
+<section id="slide-org5d397b0">
+<h3 id="org5d397b0">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -480,51 +166,10 @@ Fourier 変換の存在 (各点)
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section>
-<ul>
-<li><p>
-略証
-</p>
-<blockquote>
-<p>
-反転公式と同様に収束因子を考える．
-</p>
-<div>
-\begin{align}
-  &\int_{-\infty}^{\infty}
-    \hat{f}(\omega)\overline{\hat{g}(\omega)}
-    e^{-\epsilon \omega^{2}}d\omega\\
-  &=
-    \int_{-\infty}^{\infty}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{i\omega x}dx\cdot
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}\overline{g(y)e^{i\omega y}}dy\cdot
-    e^{-\epsilon \omega^{2}}d\omega\\
-  &=
-    \int_{-\infty}^{\infty}
-    \int_{-\infty}^{\infty}
-    f(x)\overline{g}(y)G_{\epsilon}(x-y)
-    dxdy\\
-  &=
-    \int_{-\infty}^{\infty}
-    f(x)\overline{g_{\epsilon}(x)}
-    dx
-\end{align}
-
-</div>
-
-<p>
-\(\epsilon\to0\) とすると定理の両辺が一致することがわかる．
-</p>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgd656aa4">
-<h3 id="orgd656aa4">Plancherel の定理</h3>
+<section id="slide-org594d869">
+<h3 id="org594d869">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -554,11 +199,11 @@ Fourier 変換の存在 (各点)
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org733094c">
-<h3 id="org733094c">Riemann-Lebesgue の定理(補題)</h3>
+<section id="slide-org994f6e8">
+<h3 id="org994f6e8">Riemann-Lebesgue の補題</h3>
 <ul>
 <li><p>
 定理
@@ -579,369 +224,10 @@ Fourier 変換の存在 (各点)
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section>
-<ul>
-<li><p>
-略証
-</p>
-<blockquote>
-<div>
-\begin{align}
-  |\hat{f}(\omega)|
-  &=\left|\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-  &<\left|\left[\frac{f(x)}{\sqrt{2\pi}}\frac{e^{-i\omega x}}{-i\omega}\right]_{-\infty}^{\infty}\right|
-    +\left|\frac{1}{i\omega}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\right|\\
-  &<\frac{1}{|\omega|}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}\left|f'(x)\right|dx\\
-  &=\frac{1}{|\omega|}\frac{1}{\sqrt{2\pi}}\|f'\|_{L^{1}}
-\end{align}
-
-</div>
-
-<p>
-より明らか．
-</p>
-</blockquote></li>
-
-</ul>
-
-
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org9099e23" data-background="#fef4f4">
-<h2 id="org9099e23">演習</h2>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgca55e70" data-background="#fef4f4">
-<h3 id="orgca55e70">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f(x)\) の Fourier 変換と
-関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
-</p>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgc689407" data-background="#fef4f4">
-<h3 id="orgc689407">解答例</h3>
-<ul>
-<li><p>
-符号の反転
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[f](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-  &=\mathcal{F}[f](-\omega)
-  =\mathcal{F}^{-1}[f](\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-注意
-</p>
-<blockquote>
-<p>
-符号が反転しているだけなので，ほとんど対称だと思ってよい．
-すなわち，
-Fourier 変換 \(\mathcal{F}\) について成り立つことは
-逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-ただし符号の反転などには注意すること．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgb6481b6" data-background="#fef4f4">
-<h3 id="orgb6481b6">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f\) の Fourier 変換と
-関数 \(g=f'\) の Fourier 変換の関係を考えよ．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org07ed7ce" data-background="#fef4f4">
-<h3 id="org07ed7ce">解答例</h3>
-<ul>
-<li><p>
-微分
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-  &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-    +i\omega
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-  \mathcal{F}[f'](\omega)
-  &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-\end{align}
-
-</div>
-</blockquote>
-<ul>
-<li>Fourier 変換可能な関数は
-\(|x|\to\infty\) での値が 0 になるとしてよい．</li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgd592854" data-background="#fef4f4">
-<h3 id="orgd592854">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f\) の Fourier 変換と
-関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orga5c67b2" data-background="#fef4f4">
-<h3 id="orga5c67b2">解答例</h3>
-<ul>
-<li><p>
-高階微分
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-  &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-    +i\omega
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-  &=\text{(部分積分を繰り返す)}\\
-  \mathcal{F}[f^{(k)}](\omega)
-  &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org556e670" data-background="#fef4f4">
-<h3 id="org556e670">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f,g\) の Fourier 変換と
-関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
-</p>
-<div>
-\begin{equation}
-  h(x)
-  =
-  \int_{-\infty}^{\infty}f(x-y)g(y)dy
-  =
-  \int_{-\infty}^{\infty}f(y)g(x-y)dy
-  =
-  f{*}g(x)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org6e03b21" data-background="#fef4f4">
-<h3 id="org6e03b21">解答例</h3>
-<ul>
-<li><p>
-畳み込み
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[h](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-  &=\sqrt{2\pi}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-  &=\sqrt{2\pi}
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-    \frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-  \mathcal{F}[f{*}g](\omega)
-  &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-    =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org37537db" data-background="#fef4f4">
-<h3 id="org37537db">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f(x)\) の Fourier 変換と
-関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org1a98ada" data-background="#fef4f4">
-<h3 id="org1a98ada">解答例</h3>
-<ul>
-<li><p>
-移動
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-  &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-  \mathcal{F}[T_{a}[f]](\omega)
-  &=e^{-i\omega a}\mathcal{F}[f](\omega)
-    =e^{-i\omega a}\hat{f}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org956d93e" data-background="#fef4f4">
-<h3 id="org956d93e">練習問題</h3>
-<ul>
-<li><p>
-以下の問題に答えよ
-</p>
-<blockquote>
-<p>
-関数 \(f(x)\) の Fourier 変換と
-関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
-</p>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgbfb76f8" data-background="#fef4f4">
-<h3 id="orgbfb76f8">解答例</h3>
-<ul>
-<li><p>
-拡大縮小
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[g](\omega)
-  &=\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-  &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-    \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-  \mathcal{F}[D_{b}[f]](\omega)
-  &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-    =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
-</section>
-</section>
-<section>
-<section id="slide-org2d617c1">
-<h2 id="org2d617c1">演算との関係</h2>
-<div class="outline-text-2" id="text-org2d617c1">
-</div>
-<div class="slide-footer"><br></div>
-</section>
-<section id="slide-org305d0c7">
-<h3 id="org305d0c7">Fourier 変換で用いる基本演算</h3>
+<section id="slide-org64e7675">
+<h3 id="org64e7675">演算との関係</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -983,18 +269,18 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 </tr>
 </tbody>
 </table>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-orgaccd9de" data-background="#fef4f4">
-<h2 id="orgaccd9de">演習</h2>
+<section id="slide-org8355c0b" data-background="#fef4f4">
+<h2 id="org8355c0b">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org740dc55" data-background="#fef4f4">
-<h3 id="org740dc55">練習問題</h3>
+<section id="slide-org1f219e4" data-background="#fef4f4">
+<h3 id="org1f219e4">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -1011,113 +297,38 @@ Fourier 変換 \(\mathcal{F}\) について成り立つことは
 の Fourier 変換を求めよ．
 </p>
 <ul>
-<li>Fourier 変換と逆 Fourier 変換の関係を利用</li>
-<li><i><span style="color:gray;">複素積分を利用</span></i></li>
+<li><i><span style="color:gray;">Fourier 変換と逆 Fourier 変換の関係を利用</span></i></li>
+<li>複素積分を利用</li>
 
 </ul></li>
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org1fd07cc" data-background="#fef4f4">
-<h3 id="org1fd07cc">解答例</h3>
+<section id="slide-org6e0e795" data-background="#fef4f4">
+<h3 id="org6e0e795">練習問題</h3>
 <ul>
 <li><p>
-以下の Fourier 変換を利用
+以下の関数の Fourier 変換を求めよ．
 </p>
 <blockquote>
 <div>
 \begin{align}
-  g(x)
-  &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
-  \hat{g}(\omega)
-  &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
-  &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
-\end{align}
-
-</div>
-</blockquote></li>
-<li><p>
-関数 \(f\) は \(\hat{g}\) で表される
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  f(x)
-  =i\sqrt{2\pi}\hat{g}(x)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-Fourier 変換と逆 Fourier 変換の関係
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \mathcal{F}[f](-\omega)
-  =\mathcal{F}^{-1}[f](\omega)
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-整理すると
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[f](\omega)
-  &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
-  &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
-  &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
-  &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
+  &\frac{1}{x+ia}\;(a>0) \\       
+  &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
+  & \left(\frac{\sin(x)}{x}\right)^{2}
 \end{align}
 
 </div>
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-orgf9c3c05" data-background="#fef4f4">
-<h3 id="orgf9c3c05">Fourier 変換の代表的な例</h3>
-<ul>
-<li><p>
-定義関数
-</p>
-<blockquote>
-<p>
-関数 \(\Xi\) を以下で定義する．
-</p>
-<div>
-\begin{equation}
-  \Xi_{(a,b)}(x)
-  =
-  \begin{cases}
-    1,& x\in (a,b)\\
-    0,&\text{otherwise}
-  \end{cases}
-\end{equation}
 
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
 </section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-代表的な例
-</p>
+<section id="slide-orgbd1f7a7">
+<h3 id="orgbd1f7a7">Fourier 変換の例</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1158,29 +369,644 @@ Fourier 変換と逆 Fourier 変換の関係
 <td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
 </tr>
 </tbody>
-</table></li>
+</table>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga0864fd">
+<h2 id="orga0864fd">線形時不変フィルタ</h2>
+<div class="outline-text-2" id="text-orga0864fd">
+</div>
+</section>
+<section id="slide-org033ee40">
+<h3 id="org033ee40">注意</h3>
+<ul>
+<li>以降，音声や音楽などの時系列信号を扱う</li>
+<li><p>
+時間 \(t\) を明示的に表すために
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(t),\,g(t),\,h(t)
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+のように書く
+</p></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc58b81b">
+<h3 id="orgc58b81b">フィルタ</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
+</p>
+</blockquote></li>
 
 </ul>
 
 
+<div id="org6f533e7" class="figure">
+<p><img src="figs/filter1.png" alt="filter1.png" width="100%" />
+</p>
+</div>
 <div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgb1a61e1">
+<h3 id="orgb1a61e1">フィルタの例</h3>
+<ul>
+<li><span style="color:darkgreen;">エレキギターのエフェクター</span> (effects unit, pedal)
+<ul>
+<li>歪み: オーバードライブ / ディストーション / ファズ</li>
+<li>モジュレーション: コーラス / フランジャー / トレモロ</li>
+<li>空間系: リバーブ / ディレイ</li>
+<li>フィルタ: ワウ / ピッチシフター / ワーミー</li>
+<li>その他:  イコライザー / コンプレッサー / ノイズゲート</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf149bfb">
+<h3 id="orgf149bfb">フィルタ</h3>
+<ul>
+<li>関数 \(f(t)\) を関数 \(g(t)\) に変換する</li>
+<li>関数に作用する作用素(演算子)</li>
+<li>いろいろな機能が有り得る</li>
+<li>以降では理論的に扱い易い性質を想定</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org718945c">
+<h3 id="org718945c">線形性</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+2つの入出力関係を考えたとき，
+入力の線形結合がそのまま出力に反映される性質
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org2f1b146" class="figure">
+<p><img src="figs/filter2.png" alt="filter2.png" width="100%" />
+</p>
+</div>
+
+<div id="org72e7aaa" class="figure">
+<p><img src="figs/filter3.png" alt="filter3.png" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf573c5d">
+<h3 id="orgf573c5d">線形フィルタ</h3>
+<ul>
+<li>線形性を持つフィルタ</li>
+<li><p>
+入力の分解表現
+</p>
+<blockquote>
+<p>
+入力信号 \(f(t)\) を基底関数 \(\phi_{n}(t)\) を用いて分解
+</p>
+<div>
+\begin{equation}
+  f(t)=\sum_{n}a_{n}\phi_{n}(t)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>フィルタによる基底関数の変換</li>
+
+</ul>
+
+
+<div id="org7d86736" class="figure">
+<p><img src="figs/filter4.png" alt="filter4.png" width="100%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+出力の分解表現
+</p>
+<blockquote>
+<p>
+出力信号 \(g(t)\) は変換された基底関数 \(\psi_{n}(t)\) の合成
+</p>
+<div>
+\begin{equation}
+  g(t)=\sum_{n}a_{n}\psi_{n}(t)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>入出力の基底の変換にだけ着目すれば十分</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgcb6426b">
+<h3 id="orgcb6426b">非線形フィルタ</h3>
+<ul>
+<li>信号の変換において非線形作用を持つフィルタ</li>
+<li>多くのフィルタは線形性を持っている</li>
+<li><p>
+<span style="color:darkgreen;">線形でない例</span> (エフェクタ)
+</p>
+<ul>
+<li>ディストーション</li>
+<li>オーバードライブ</li>
+
+</ul>
+<p>
+入力信号の振幅の大きさによって歪みが生じる
+</p></li>
+<li>非線形フィルタでは出力から入力を再現することが難しい</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org117ef36">
+<h3 id="org117ef36">時不変性</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
+</p>
+</blockquote>
+<ul>
+<li>時間が経過してもフィルタの性質は変わらない</li>
+
+</ul></li>
+
+</ul>
+
+
+<div id="org8cb7978" class="figure">
+<p><img src="figs/filter5.png" alt="filter5.png" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-orga712199">
-<h2 id="orga712199">今回のまとめ</h2>
+<section id="slide-orgde2fd66">
+<h2 id="orgde2fd66">フィルタの数学的表現</h2>
+<div class="outline-text-2" id="text-orgde2fd66">
+</div>
+</section>
+<section id="slide-orgebe56f2">
+<h3 id="orgebe56f2">信号の近似</h3>
 <ul>
-<li>Fourier 変換の性質
+<li><p>
+信号 \(f(t)\) の階段関数近似
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f_{\tau}(t)=\sum_{n} a_{n}\Delta(t{-}t_{n})
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+階段関数の基底
+</p>
+<blockquote>
+<p>
+\(\Delta(t)\) は
+区間 \((0,\tau)\) で高さ1となる単一の矩形波で，
+時間 \(t_{n}=n\tau\) だけシフトした矩形波の集合
+</p>
+<div>
+\begin{equation}
+  \Delta(t{-}t_{n})=\Delta(t{-}n\tau),\quad
+  (n\text{ は整数})
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
 <ul>
-<li>Fourier 変換な可能な関数</li>
-<li>Fourier 変換の基本的な性質
+<li><p>
+矩形波(基底関数)の変換
+</p>
+<blockquote>
+<p>
+矩形波 \(\Delta(t)\) はフィルタによって
+\(H(t)\) に変換される．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org0860aeb" class="figure">
+<p><img src="figs/filter6.png" alt="filter6.png" width="100%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
 <ul>
-<li>Parseval の定理</li>
-<li>Plancherel の定理</li>
-<li>Riemann-Lebesgue の定理(補題)</li>
+<li><p>
+時不変性
+</p>
+<blockquote>
+<p>
+矩形波 \(\Delta\) を平行移動したものは
+フィルタの時不変性により \(H\) を平行移動したものとなる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org090c5e6" class="figure">
+<p><img src="figs/filter7.png" alt="filter7.png" width="100%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+線形性
+</p>
+<blockquote>
+<p>
+フィルタの線形性から入力を定数倍すると
+出力も定数倍される．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org413c073" class="figure">
+<p><img src="figs/filter8.png" alt="filter8.png" width="100%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+階段関数の変換
+</p>
+<blockquote>
+<p>
+階段関数 
+</p>
+<div>
+\begin{equation}
+  f_{\tau}(t)=\sum_{n}a_{n}\Delta(t{-}t_{n})
+\end{equation}
+
+</div>
+
+<p>
+はフィルタにより \(H\) の線形和である
+</p>
+<div>
+\begin{equation}
+  g_{\tau}(t)=\sum_{n}a_{n}H(t{-}t_{n})
+\end{equation}
+
+</div>
+
+<p>
+に変換される．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org92d82ae">
+<h3 id="org92d82ae">積分による表現</h3>
+<ul>
+<li><p>
+階段関数の係数
+</p>
+<blockquote>
+<p>
+信号 \(f(t)\) の階段関数近似の係数は
+\(a_{n}=f(t_{n})=f(n\tau)\) とすれば良い．
+</p>
+<div>
+\begin{align}
+  f_{\tau}(t)&=\sum_{n}f(t_{n})\Delta(t{-}t_{n})
+	       =\sum_{n}f(n\tau)\Delta(t{-}n\tau)\\
+  g_{\tau}(t)&=\sum_{n}f(t_{n})H(t{-}t_{n})
+	       =\sum_{n}f(n\tau)H(t{-}n\tau)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+矩形波の極限
+</p>
+<blockquote>
+<p>
+関数 \(\Delta(t)\) は
+区間 \((0,\tau)\) で高さ1となる単一の矩形波なので，
+極限は以下のようになる．
+</p>
+<div>
+\begin{equation}
+  \delta_{\tau}(t)=\Delta(t)/\tau
+  \xrightarrow{\tau\to0}\delta(t)\;(\text{デルタ関数})
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+階段関数の極限
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f_{\tau}(t)
+  &=\sum_{n}f(n\tau)\Delta(t{-}n\tau)/\tau\cdot\tau
+    \xrightarrow{\tau\to0}\int f(s)\delta(t{-}s)ds\\
+  g_{\tau}(t)
+  &=\sum_{n}f(n\tau)H(t{-}n\tau)/\tau\cdot\tau
+    \xrightarrow{\tau\to0}\int f(s)h(t{-}s)ds
+\end{align}
+
+</div>
+<div>
+\begin{equation}
+  H(t)/\tau
+  \xrightarrow{\tau\to0}h(t)
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>\(n\tau=s\) とおいて区分求積法の原理を用いればよい</li>
 
 </ul></li>
-<li>関数の演算とFourier 変換の関係</li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+フィルタの積分表現
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(t)&=\int f(s)\delta(t{-}s)ds\\
+  g(t)&=\int f(s)h(t{-}s)ds
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgdd2fd41">
+<h3 id="orgdd2fd41">インパルス応答</h3>
+<ul>
+<li><p>
+変換された信号の表現(畳み込み積分)
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  g(t)=\int_{-\infty}^{\infty}f(s)h(t-s)ds
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+入力の表現
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(t)=\int_{-\infty}^{\infty}f(s)\delta(t-s)ds
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>\(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+フィルタの表現
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(t)
+  =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+  =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>\(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある</li>
+<li>\(h(t)\) をフィルタの <b>インパルス応答</b> という</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf909801">
+<h3 id="orgf909801">因果的フィルタ</h3>
+<ul>
+<li><p>
+音響信号などのフィルタのインパルス応答
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(t)=0\;(t<0)
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>時刻0にインパルスが入力される前には何も出力がされない</li>
+<li><b>因果的</b> という</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+因果的フィルタの畳み込み
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(t-s)=0\;(t < s)
+\end{equation}
+
+</div>
+
+<p>
+時刻 \(t\) での出力は
+時刻 \(t\) 以前での入力のみにより定まる
+</p>
+<div>
+\begin{equation}
+  g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orga59680c">
+<h3 id="orga59680c">非因果的フィルタ</h3>
+<ul>
+<li>理想的なローパスフィルタ <br />
+(物理的な回路では作成することができない)</li>
+<li>画像処理に用いられるフィルタ <br />
+(画素の上下左右に因果律があるわけではない)</li>
+<li>オフラインの信号処理 <br />
+(時間遅れを許容するデジタル信号処理)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org583371c" data-background="#fef4f4">
+<h2 id="org583371c">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6cf45e4" data-background="#fef4f4">
+<h3 id="org6cf45e4">練習問題</h3>
+<ul>
+<li><p>
+線形時不変フィルタの機能は
+インパルス応答の畳み込み積分として表される．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  g(t)
+  =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+  = h{*}f(t)
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+これを Fourier 変換を用いて表せ．
+</p></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4d07979">
+<h2 id="org4d07979">今回のまとめ</h2>
+<ul>
+<li>線形時不変フィルタ
+<ul>
+<li>線形性</li>
+<li>時不変性</li>
+<li>因果的フィルタ</li>
+
+</ul></li>
+<li>フィルタの数学的表現
+<ul>
+<li>階段関数近似</li>
+<li>重ね合わせの原理</li>
+<li>畳み込み積分</li>
+<li>インパルス応答</li>
 
 </ul></li>
 
@@ -1211,7 +1037,6 @@ mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
-
 overview: true,
 
 transition: 'fade',

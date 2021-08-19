@@ -34,7 +34,7 @@
     <h1 class="no-toc-progress">正規直交基底</h1>
 </div>
 <div class="talk-subtitle">
-    <p>信号処理 - 講義3</p>
+    <p>信号処理 - 第3講</p>
 </div>
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
@@ -47,14 +47,13 @@
 </section>
 
 <section>
-<section id="slide-orgf3e4198">
-<h2 id="orgf3e4198">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgf3e4198">
+<section id="slide-org615e831">
+<h2 id="org615e831">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org615e831">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbcc46be">
-<h3 id="orgbcc46be">ベクトル空間</h3>
+<section id="slide-orgd9f19c6">
+<h3 id="orgd9f19c6">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
@@ -77,9 +76,10 @@
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org48f4115">
-<h3 id="org48f4115">内積空間</h3>
+<section id="slide-org6eff212">
+<h3 id="org6eff212">内積空間</h3>
 <ul>
 <li><p>
 内積の定義
@@ -98,7 +98,7 @@
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br />
 なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)</li>
 <li>\(\langle \alpha u+\beta u',v\rangle
-	=\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
 
 </ol>
 </blockquote></li>
@@ -114,11 +114,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org03f3034">
-<h3 id="org03f3034">Hilbert 空間</h3>
+<section id="slide-org149e367">
+<h3 id="org149e367">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
@@ -154,11 +154,11 @@
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org520bbe7">
-<h3 id="org520bbe7">Hilbert 空間の例</h3>
+<section id="slide-orgb8b5b56">
+<h3 id="orgb8b5b56">Hilbert 空間の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間 (無限次元数ベクトル空間)
@@ -189,6 +189,7 @@
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -222,18 +223,18 @@
 </blockquote></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-orgc2a3959" data-background="#fef4f4">
-<h2 id="orgc2a3959">演習</h2>
+<section id="slide-orgb84a04c" data-background="#fef4f4">
+<h2 id="orgb84a04c">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org13d10f9" data-background="#fef4f4">
-<h3 id="org13d10f9">練習問題</h3>
+<section id="slide-orge26da0a" data-background="#fef4f4">
+<h3 id="orge26da0a">練習問題</h3>
 <ul>
 <li>係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
 以下を展開せよ．
@@ -255,64 +256,18 @@
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org3214001" data-background="#fef4f4">
-<h3 id="org3214001">解答例</h3>
-<ul>
-<li><p>
-定義に則って計算すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-    \langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle
-    &=\alpha_1\langle u_1, v\rangle
-      +\alpha_2\langle u_2, v\rangle\\
-    \langle u, \beta_1 v_1+\beta_2 v_2\rangle
-    &=\overline{\langle\beta_1 v_1+\beta_2 v_2, u\rangle}\\
-    &=\overline{\beta_1}\cdot\overline{\langle v_1, u\rangle}
-      +\overline{\beta_2}\cdot\overline{\langle v_2, u\rangle}\\
-    &=\overline{\beta_1}\langle u, v_1\rangle
-      +\overline{\beta_2}\langle u, v_2\rangle\\
-    \langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle
-    &=\alpha_1\overline{\beta_1}\langle u_1, v_1\rangle
-      +\alpha_1\overline{\beta_2}\langle u_1, v_2\rangle\\
-    &\quad+\alpha_2\overline{\beta_1}\langle u_2, v_1\rangle
-      +\alpha_2\overline{\beta_2}\langle u_2, v_2\rangle
-\end{align}
 
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li>それぞれの空間でCauchy列を考えてみよ
-<ul>
-<li>不連続な関数の中に連続関数の極限として定義できるものがある</li>
-<li>ノルムの値である実数値のCauchy列を考えればよい</li>
-
-</ul></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org9732c7e">
-<h2 id="org9732c7e">正規直交系</h2>
-<div class="outline-text-2" id="text-org9732c7e">
+<section id="slide-orge910911">
+<h2 id="orge910911">正規直交系</h2>
+<div class="outline-text-2" id="text-orge910911">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org79e94a9">
-<h3 id="org79e94a9">正規直交系</h3>
+<section id="slide-org7bd7eac">
+<h3 id="org7bd7eac">正規直交系</h3>
 <ul>
 <li><p>
 定義
@@ -358,11 +313,11 @@ Hilbert空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org4994726">
-<h3 id="org4994726">正規直交系の例</h3>
+<section id="slide-org192bb4e">
+<h3 id="org192bb4e">正規直交系の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間
@@ -382,6 +337,7 @@ Hilbert空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -426,11 +382,11 @@ Hilbert空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org3710c79">
-<h3 id="org3710c79">Hilbert 空間の正規直交系</h3>
+<section id="slide-orgdbc6a7d">
+<h3 id="orgdbc6a7d">Hilbert 空間の正規直交系</h3>
 <ul>
 <li><p>
 稠密の定義
@@ -443,9 +399,7 @@ Hilbert空間 \(\mathcal{H}\) の
 もとの集合の任意の点に対して，
 いくらでも近い点をその部分集合の中から選ぶことができることをいう．
 </p>
-</blockquote></li>
-
-</ul>
+</blockquote>
 <ul>
 <li class="fragment appear">稠密な集合の例
 <ul>
@@ -454,7 +408,10 @@ Hilbert空間 \(\mathcal{H}\) の
 
 </ul></li>
 
+</ul></li>
+
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -468,9 +425,7 @@ Hilbert空間 \(\mathcal{H}\) の
 <b>可分</b>
 とはその集合の中に稠密な可算部分集合を取ることができることをいう．
 </p>
-</blockquote></li>
-
-</ul>
+</blockquote>
 <ul>
 <li class="fragment appear">可算(番号付けが可能)な集合の例
 <ul>
@@ -486,7 +441,10 @@ Hilbert空間 \(\mathcal{H}\) の
 
 </ul></li>
 
+</ul></li>
+
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -510,13 +468,12 @@ Hilbert空間 \(\mathcal{H}\) の
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
-<li>証明の概要</li>
-
-</ul>
+<li>証明の概要
 <ul>
 <li class="fragment appear"><p>
 その1
@@ -547,7 +504,10 @@ Hilbert空間 \(\mathcal{H}\) の
 </p>
 </blockquote></li>
 
+</ul></li>
+
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -592,6 +552,7 @@ Hilbert空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -627,11 +588,11 @@ Hilbert空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgc0187af">
-<h3 id="orgc0187af">正規直交系の存在</h3>
+<section id="slide-org815d1da">
+<h3 id="org815d1da">正規直交系の存在</h3>
 <ul>
 <li><p>
 定理
@@ -665,6 +626,7 @@ Hilbert 空間 \(\mathcal{H}\) の
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -689,11 +651,11 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org831ac31">
-<h3 id="org831ac31">正規直交系の構成例</h3>
+<section id="slide-org0d295f4">
+<h3 id="org0d295f4">正規直交系の構成例</h3>
 <ul>
 <li><p>
 問題
@@ -720,18 +682,18 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-org52c3b01" data-background="#fef4f4">
-<h2 id="org52c3b01">演習</h2>
+<section id="slide-orge5d24e6" data-background="#fef4f4">
+<h2 id="orge5d24e6">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7afac36" data-background="#fef4f4">
-<h3 id="org7afac36">練習問題</h3>
+<section id="slide-org4904bfc" data-background="#fef4f4">
+<h3 id="org4904bfc">練習問題</h3>
 <ul>
 <li>Gram-Schmidt の直交化法において
 \(\phi_{n}\)
@@ -761,65 +723,18 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org956988b" data-background="#fef4f4">
-<h3 id="org956988b">解答例</h3>
-<ul>
-<li><p>
-\(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\) が
-直交しているとして内積を計算すればよい(帰納法)．
-たとえば
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle\phi_{n},\phi_{1}\rangle
-  &=\frac{1}{\|\phi'_{n}\|}
-    \langle\psi_{n}-\sum_{k=1}^{n-1}\langle\psi_{n},\phi_{k}\rangle\phi_{k},\phi_{1}\rangle\\
-  &=\frac{1}{\|\phi'_{n}\|}
-    \left(\langle\psi_{n},\phi_{1}\rangle
-    -\langle\psi_{n},\phi_{1}\rangle\langle\phi_{1},\phi_{1}\rangle\right)
-\end{align}
 
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-定義に従って計算すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \phi'_{2}&=x^{2}-\frac{1}{3}\\
-  \|\phi'_{2}\|^{2}&=\int_{-1}^{1}\left(x^{2}-\frac{1}{3}\right)^{2}dx\\
-	   &=\frac{8}{45}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgf137115">
-<h2 id="orgf137115">完全正規直交系</h2>
-<div class="outline-text-2" id="text-orgf137115">
+<section id="slide-org98739c1">
+<h2 id="org98739c1">完全正規直交系</h2>
+<div class="outline-text-2" id="text-org98739c1">
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc27cd05">
-<h3 id="orgc27cd05">正規直交系の性質</h3>
+<section id="slide-org28d1ce8">
+<h3 id="org28d1ce8">正規直交系の性質</h3>
 <ul>
 <li><p>
 正規直交系 \(\{\phi_{k}\}_{k=1,2,\dotsc}\)
@@ -853,11 +768,11 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgf17c6d0">
-<h3 id="orgf17c6d0">Bessel の不等式</h3>
+<section id="slide-org52caa32">
+<h3 id="org52caa32">Bessel の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -880,6 +795,7 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -907,11 +823,11 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgfb507e1">
-<h3 id="orgfb507e1">完全性</h3>
+<section id="slide-org1cc15fb">
+<h3 id="org1cc15fb">完全性</h3>
 <ul>
 <li><p>
 定義
@@ -922,8 +838,8 @@ Gram-Schmidt の直交化法
 </p>
 <div>
 \begin{equation}
- \forall u\in\mathcal{H},\; 
- \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+  \forall u\in\mathcal{H},\; 
+  \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
 \end{equation}
 
 </div>
@@ -947,11 +863,11 @@ Gram-Schmidt の直交化法
 </ul></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org3687114">
-<h3 id="org3687114">完全性の同値な条件</h3>
+<section id="slide-org03a29bd">
+<h3 id="org03a29bd">完全性の同値な条件</h3>
 <ul>
 <li><p>
 定理
@@ -965,13 +881,13 @@ Gram-Schmidt の直交化法
 <ol>
 <li>\(\mathcal{H}=\mathcal{M}\)</li>
 <li>\(\forall u\in\mathcal{H}\;\Rightarrow\;
-        u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)</li>
+     u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)</li>
 <li>\(\forall u\in\mathcal{H}\;\Rightarrow\;
-        \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}\)
+     \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}\)
 (Parsevalの等式)</li>
 <li>\(\forall u,v\in\mathcal{H}\;\Rightarrow\;
-	\langle u,v\rangle
-	=\sum_{k}\langle u,\phi_{k}\rangle\overline{\langle v,\phi_{k}\rangle}\)</li>
+     \langle u,v\rangle
+     =\sum_{k}\langle u,\phi_{k}\rangle\overline{\langle v,\phi_{k}\rangle}\)</li>
 <li>\(\forall k,\, \langle u,\phi_{k}\rangle=0\;\Rightarrow\;u=0\)</li>
 
 </ol>
@@ -988,9 +904,10 @@ Gram-Schmidt の直交化法
 
 </ul>
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-org22d2e8a">
-<h3 id="org22d2e8a">完全正規直交系の性質</h3>
+<section id="slide-org89c23e1">
+<h3 id="org89c23e1">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
@@ -1011,11 +928,11 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
+
 </section>
-<section id="slide-orgde4af64">
-<h3 id="orgde4af64">完全正規直交系の例</h3>
+<section id="slide-orgff01353">
+<h3 id="orgff01353">完全正規直交系の例</h3>
 <ul>
 <li><p>
 \(l^{2}\) 空間
@@ -1026,13 +943,14 @@ Gram-Schmidt の直交化法
   \phi_{k}
   &=(0,\dotsc,0,\overbrace{1}^{k},0,\dotsc),\;k=1,2,\dotsc \\
   &\langle\phi_{j},\phi_{k}\rangle
-  =\delta_{jk}
+    =\delta_{jk}
 \end{align}
 
 </div>
 </blockquote></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -1052,82 +970,31 @@ Gram-Schmidt の直交化法
 </blockquote></li>
 
 </ul>
-
-
 <div class="slide-footer"><br></div>
+
+
 </section>
 </section>
 <section>
-<section id="slide-orgb10b2d9" data-background="#fef4f4">
-<h2 id="orgb10b2d9">演習</h2>
+<section id="slide-org5dffe37" data-background="#fef4f4">
+<h2 id="org5dffe37">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7b16a75" data-background="#fef4f4">
-<h3 id="org7b16a75">練習問題</h3>
+<section id="slide-org2074f6b" data-background="#fef4f4">
+<h3 id="org2074f6b">練習問題</h3>
 <ul>
 <li>\(L^{2}(-\pi,\pi)\) 空間において 
 \(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．</li>
 <li>\(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．</li>
 
 </ul>
-
 <div class="slide-footer"><br></div>
-</section>
-<section id="slide-org7b322d1" data-background="#fef4f4">
-<h3 id="org7b322d1">解答例</h3>
-<ul>
-<li><p>
-任意の \(j,k\) について内積を計算してみれば良い
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle\phi_{j},\phi_{k}\rangle
-  &=\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{ijx}\overline{e^{ikx}}dx
-  =\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{i(j-k)x}dx\\
-  &=
-    \begin{cases}
-      \frac{1}{2\pi i(j-k)} 
-      \left[e^{i(j-k)x}\right]_{-\pi}^{\pi},& j\not=k\\
-      \frac{1}{2\pi}\left[x\right]_{-\pi}^{\pi}, &j=k
-    \end{cases}\\
-  &=\delta_{jk}
-\end{align}
 
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-定義域が変わっただけなので，同じ関数形を拡大縮小すればよい
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \phi_{k}(x)
-  =a e^{ik\pi x},\;k=0,\pm1,\pm2,\dotsc
-\end{equation}
-
-</div>
-
-<p>
-正規性を満たすように係数 \(a\) を決めればよい．
-</p>
-</blockquote></li>
-
-</ul>
-
-
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgb7d9594">
-<h2 id="orgb7d9594">今回のまとめ</h2>
+<section id="slide-org40cbf62">
+<h2 id="org40cbf62">今回のまとめ</h2>
 <ul>
 <li>正規直交系
 <ul>
@@ -1141,6 +1008,7 @@ Gram-Schmidt の直交化法
 </ul></li>
 
 </ul>
+
 <div class="slide-footer"><br></div>
 </section>
 <section>
@@ -1193,7 +1061,6 @@ mouseWheel: false,
 fragmentInURL: true,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
-
 overview: true,
 
 transition: 'fade',
