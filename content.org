@@ -5,7 +5,7 @@
 #+LINK: github https://noboru-murata.github.io/signal-processing/
 #+STARTUP: hidestars content indent
 
-# Time-stamp: <2022-04-06 15:45:22 mura>
+# Time-stamp: <2022-04-06 15:49:34 mura>
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
@@ -193,7 +193,7 @@
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: ./post
 :EXPORT_FILE_NAME: post1
-:EXPORT_DATE: <2020-04-01 Wed>
+:EXPORT_DATE: <2022-04-06 Wed>
 :END:
 
 ** 講義ノート
