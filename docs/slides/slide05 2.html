@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fourier 級数の性質</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">Fourier 級数の性質</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第5講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-org178da1f">
+<h2 id="org178da1f">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org178da1f">
+</div>
+</section>
+<section id="slide-org6f9ce26">
+<h3 id="org6f9ce26">ベクトル空間・内積空間・Hilbert 空間</h3>
+<ul>
+<li><p>
+ベクトル空間
+</p>
+<blockquote>
+<p>
+線形演算について閉じた空間
+</p>
+</blockquote></li>
+<li><p>
+内積空間
+</p>
+<blockquote>
+<p>
+内積が定義されたベクトル空間
+</p>
+</blockquote></li>
+<li><p>
+Hilbert 空間
+</p>
+<blockquote>
+<p>
+ノルムに関して完備な内積空間
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org02d9472">
+<h3 id="org02d9472">Hilbert 空間の完全正規直交系</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元Hilbert空間には
+<b>可算個</b> の要素からなる完全正規直交系が存在する．
+</p>
+</blockquote></li>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
+</p>
+</blockquote></li>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
+以下が成り立つ．
+</p>
+<div>
+\begin{equation}
+  \forall u\in\mathcal{H}\;\Rightarrow\;
+  u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org2bc91ea">
+<h3 id="org2bc91ea">Fourier 級数展開</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(f\in L^{2}(-\pi,\pi)\) 
+は
+以下のように
+<b>Fourier 級数展開</b>
+される．
+</p>
+<div>
+\begin{align}
+  f(x)
+  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+\end{align}
+
+</div>
+
+<div>
+\begin{equation}
+  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \langle f,g\rangle
+  =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge1e0bce" data-background="#fef4f4">
+<h2 id="orge1e0bce">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org46f4a11" data-background="#fef4f4">
+<h3 id="org46f4a11">練習問題</h3>
+<ul>
+<li><p>
+以下の関数 \(f\) を Fourier 級数展開せよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=
+  \begin{cases}
+    0,&x\le 0\\
+    1,&x > 0
+  \end{cases}
+  \quad
+  \in L^{2}(-\pi,\pi)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org93d1ea0">
+<h2 id="org93d1ea0">不連続点の性質</h2>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org52f607f">
+<h3 id="org52f607f">片側極限</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+\(h>0\) として
+</p>
+<div>
+\begin{align}
+  f(x{-}0)&=\lim_{h\to0}f(x-h)\\
+  f(x{+}0)&=\lim_{h\to0}f(x+h)
+\end{align}
+
+</div>
+
+<p>
+と書く．
+これを片側極限という．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org08ebb4b">
+<h3 id="org08ebb4b">不連続点</h3>
+<ul>
+<li><p>
+不連続関数
+</p>
+<blockquote>
+<p>
+点 \(x\) において不連続な関数を考える
+</p>
+<div>
+\begin{equation}
+  f(x{-}0)\not=f(x{+}0)
+\end{equation}
+
+</div>
+
+<p>
+点 \(x\) 以外の近傍での有界性を仮定する
+</p>
+<div>
+\begin{align}
+  &\sup_{0 < h < \delta}|f(x-h)-f(x{-}0)| < \infty\\
+  &\sup_{0 < h < \delta}|f(x+h)-f(x{+}0)| < \infty
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org778174d">
+<h3 id="org778174d">不連続点での評価</h3>
+<ul>
+<li><p>
+定理で評価した式
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f_{r}(x)-f(x)
+  =\int_{-\pi}^{\pi}P_{r}(y)\{f(x-y)-f(x)\}dy
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  P_{r}(x)
+  =\frac{1}{2\pi}
+  \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+\(P_{r}\) の性質
+</p>
+<blockquote>
+<p>
+\(P_{r}\) の積分は偶関数であることから以下が成り立つ．
+</p>
+<div>
+\begin{align}
+  \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
+  \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+不連続点まわりでの評価
+</p>
+<blockquote>
+<div>
+\begin{align}
+  &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
+  &\le
+    \Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
+  &\quad+\Bigl|\int_{0}^{\delta}P_{r}(y)\{f(x-y)-f(x{-}0)\}dy\Bigr|\\
+  &\le
+    \frac{1}{2}\sup_{-\delta < y < 0}|f(x-y)-f(x{+}0)|\\
+  &\quad+\frac{1}{2}\sup_{0 < y < \delta}|f(x-y)-f(x{-}0)|\\
+  &\to^{\delta\to0}0
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+不連続点の Fourier 級数展開
+</p>
+<blockquote>
+<p>
+関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
+</p>
+<div>
+\begin{equation}
+  \tilde{f}(x)
+  =\lim_{r\to1}\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
+  =\frac{f(x{-}0)+f(x{+}0)}{2}
+\end{equation}
+
+</div>
+
+<p>
+が成り立つので，
+\(f\) の不連続点での Fourier 級数展開は
+両側からの極限の平均値となる．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge9435a4" data-background="#fef4f4">
+<h2 id="orge9435a4">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org7bf30d6" data-background="#fef4f4">
+<h3 id="org7bf30d6">練習問題</h3>
+<ul>
+<li><p>
+以下の関数 \(f\) は \(x=0\) で不連続となる．
+Fourier 級数での \(f(0)\) の値を求めよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=
+  \begin{cases}
+    0,&x\le 0\\
+    1,&x > 0
+  \end{cases}
+  \quad
+  \in L^{2}(-\pi,\pi)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb8eac8c">
+<h2 id="orgb8eac8c">Fourier 係数の性質</h2>
+<div class="outline-text-2" id="text-orgb8eac8c">
+</div>
+</section>
+<section id="slide-orge7d70df">
+<h3 id="orge7d70df">畳み込み</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
+<b>畳み込み</b> (合成積; convolution) \(h\)
+を以下で定義される．
+</p>
+<div>
+\begin{align}
+  h(x)
+  &=\int_{-\pi}^{\pi}f(x-y)g(y)dy \\
+  &=\int_{-\pi}^{\pi}f(y)g(x-y)dy \\
+  &= f*g(x)
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
+変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org09cadcc">
+<h3 id="org09cadcc">\(L^p\) ノルム</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \|f\|_{L^{p}}=\left(\int_{\Omega}|f(x)|^{p}dx\right)^{1/p}
+\end{equation}
+
+</div>
+
+<p>
+ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間．
+</p>
+</blockquote>
+<ul>
+<li>内積から自然に導かれたノルムは \(L^{2}\) ノルムである</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgccf805d">
+<h3 id="orgccf805d">\(L^{p}\) 空間</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<div>
+\begin{align}
+  L^{p}(\Omega)
+  &=\left\{f\;\Big|\int_{\Omega}|f(x)|^{p}dx < \infty\right\}\\
+  &=\left\{f\;\big|\|f\|_{L^{p}} < \infty\right\}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org167adec">
+<h3 id="org167adec">Riemann-Lebesgue の定理</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(f\in L^{1}(-\pi,\pi)\) の Fourier 係数 \(a_{n}=\langle f,\phi_{n}\rangle\) は
+</p>
+<div>
+\begin{equation}
+  \lim_{n\to\pm\infty}a_{n}=0
+\end{equation}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+証明
+</p>
+<blockquote>
+<p>
+\(f_r\) の Fourier 係数を \(a_{n}(r)\) と書くと
+</p>
+<div>
+\begin{align}
+  |a_{n}|
+  &\le|a_{n}-a_{n}(r)|+|a_{n}(r)|\\
+  &=|a_{n}-a_{n}(r)|+|a_{n}|r^{|n|}\\
+  &\le\frac{1}{\sqrt{2\pi}}\|f-P_{r}*f\|_{L^{1}}
+    +\frac{1}{\sqrt{2\pi}}r^{|n|}\|f\|_{L^{1}}
+\end{align}
+
+</div>
+
+<p>
+ただし \(*\) は畳み込みを表す．
+</p>
+
+<p>
+ここで \(r\) を1に近くとれば第1項はいくらでも小さくすることができる．
+また \(|n|\) を十分大きくとれば第2項はいくらでも小さくなるので，
+\(\lim_{n\to\pm\infty}a_{n}=0\) が示される．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+(証明のつづき)
+</p>
+<blockquote>
+<p>
+最後の不等号は以下を用いればよい．
+</p>
+<div>
+\begin{align}
+  |a_{n}|
+  &=\left|\int f(x)\frac{1}{\sqrt{2\pi}}e^{-inx}dx\right|\\
+  &\le\frac{1}{\sqrt{2\pi}}\int\left|f(x)e^{-inx}\right|dx\\
+  &=\frac{1}{\sqrt{2\pi}}\int\left|f(x)\right|dx
+    =\frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>\(L^{1}\) 関数であれば係数の存在が保証されることを示している</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgffeda5e">
+<h3 id="orgffeda5e">Riemann-Lebesgue の定理の応用</h3>
+<ul>
+<li><p>
+Fourier 級数の項別微分
+</p>
+<blockquote>
+<p>
+関数 \(f\) は区間 \([-\pi,\pi]\) で連続，
+\(f(-\pi)=f(\pi)\) ，
+ほとんどいたるところで \(f'\) が存在し，
+\(f'\in L^{2}\cap L^{1}\) であるとする．
+\(f,f'\) の Fourier 級数展開をそれぞれ
+以下で表す．
+</p>
+<div>
+\begin{align}
+  f(x)&=\sum_{n} a_{n}\phi_{n}(x)\\
+  f'(x)&=\sum_{n} b_{n}\phi_{n}(x)
+\end{align}
+
+</div>
+
+<p>
+\(f\) を項別に微分して
+\(a_{n}\) と \(b_{n}\) の間の以下の関係を得る．
+</p>
+<div>
+\begin{equation}
+  b_{n}=in\cdot a_{n}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+滑らかな関数の高周波成分
+</p>
+<blockquote>
+<p>
+Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
+\(a_{n}=o(1/n)\) (Landau の記号)となる．
+すなわち微分できるくらい滑らかな関数は
+\(n\to\infty\) において \(1/n\) より速く \(a_{n}\) が小さくなる
+(高周波成分が減衰する)．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd05d9aa">
+<h2 id="orgd05d9aa">関数の積とノルム</h2>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgcbe6807">
+<h3 id="orgcbe6807">Hölder の不等式</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(1/p+1/q=1,\,p,q>0\)
+とする．
+このとき
+</p>
+<div>
+\begin{equation}
+  \left|\int_{\Omega} u(x)v(x)dx\right|\leq\|u\|_{L^{p}}\|v\|_{L^{q}}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+証明
+</p>
+<blockquote>
+<p>
+対数関数の凸性と \(1/p+1/q=1\) から
+任意の \(a,b>0\) について
+</p>
+<div>
+\begin{equation}
+  \log\left(\frac{a^{p}}{p}+\frac{b^{q}}{q}\right)
+  \geq
+  \frac{1}{p}\log a^{p} + \frac{1}{q}\log b^{q}
+  = \log ab
+\end{equation}
+
+</div>
+
+<p>
+が成り立つ．
+</p>
+</blockquote>
+<ul>
+<li>凸性について曖昧な者は意味を確認せよ．</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+(証明のつづき)
+</p>
+<blockquote>
+<p>
+また対数関数の単調性から
+</p>
+<div>
+\begin{equation}
+  \frac{a^{p}}{p}+\frac{b^{q}}{q}
+  \ge
+  ab
+\end{equation}
+
+</div>
+
+<p>
+が成り立つ．したがって
+</p>
+<div>
+\begin{align}
+  &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
+    \left|\int u(x)v(x)dx\right|
+    \le
+    \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
+  &\quad\le
+    \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
+    + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
+  &\quad=\frac{1}{p}+\frac{1}{q}=1
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org39f7af3">
+<h3 id="org39f7af3">畳み込みのノルム</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(x)=\int_{-\pi}^{\pi}f(x-y)g(y)dy
+\end{equation}
+
+</div>
+
+<p>
+とするとき
+</p>
+<div>
+\begin{equation}
+  \|h\|_{L^{p}}\leq\|g\|_{L^{1}}\|f\|_{L^{p}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+証明
+</p>
+<blockquote>
+<p>
+\(1/p+1/q=1\) とする．
+</p>
+<div>
+\begin{align}
+  |h(x)|
+  &\le
+    \int|f(x-y)g(y)|dy\\
+  &=
+    \int|f(x-y)||g(y)|^{\frac{1}{p}}|g(y)|^{\frac{1}{q}}dy\\
+  &\le
+    \left(\int|f(x-y)|^{p}|g(y)|dy\right)^{\frac{1}{p}}
+    \left(\int|g(y)|dy\right)^{\frac{1}{q}}
+\end{align}
+
+</div>
+
+<p>
+が成り立つ．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+(証明のつづき)
+</p>
+<blockquote>
+<p>
+これより
+</p>
+<div>
+\begin{align}
+  \|h\|_{L^{p}}^{p}
+  &=\int|h(x)|^{p}dx\\
+  &\le
+    \|g\|_{L^{1}}^{\frac{p}{q}}
+    \int\int|f(x-y)|^{p}|g(y)|dydx\\
+  &=
+    \|g\|_{L^{1}}^{\frac{p}{q}}
+    \int|f(x-y)|^{p}dx\int|g(y)|dy\\
+  &=
+    \|g\|_{L^{1}}^{\frac{p}{q}+1}
+    \|f\|_{L^{p}}^{p}
+    =
+    \|g\|_{L^{1}}^{p}
+    \|f\|_{L^{p}}^{p}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc14c12d">
+<h3 id="orgc14c12d">畳み込みの Fourier 級数</h3>
+<ul>
+<li><p>
+係数の存在
+</p>
+<blockquote>
+<p>
+先の定理において \(p=1\) とすると
+</p>
+<div>
+\begin{equation}
+  \|h\|_{L^{1}}\le\|f\|_{L^{1}}\|g\|_{L^{1}}
+\end{equation}
+
+</div>
+
+<p>
+となり，
+\(f,g\in L^{1}(-\pi,\pi)\) なら
+\(h\in L^{1}(-\pi,\pi)\) となる．
+このことから
+畳み込み \(h\) の Fourier 係数が存在することが保証される．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+係数の関係
+</p>
+<blockquote>
+<p>
+\(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
+</p>
+<div>
+\begin{align}
+  c_{n}
+  &=\frac{1}{\sqrt{2\pi}}\int h(x) e^{-inx}dx\\
+  &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)g(y)dy\; e^{-inx}dx\\
+  &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)e^{-in(x-y)}g(y)e^{-iny}dxdy\\
+  &=\sqrt{2\pi}\cdot\frac{1}{\sqrt{2\pi}}\int f(z)e^{-inz}dz
+    \cdot\frac{1}{\sqrt{2\pi}}\int g(y)e^{-iny}dy\\
+  &=\sqrt{2\pi}a_{n}b_{n}
+\end{align}
+
+</div>
+
+<p>
+という関係が成り立つ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org58e1e95" data-background="#fef4f4">
+<h2 id="org58e1e95">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgf5968c0" data-background="#fef4f4">
+<h3 id="orgf5968c0">練習問題</h3>
+<ul>
+<li><p>
+関数 \(f\) を
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=
+  \begin{cases}
+    0,&x\le 0\\
+    1,&x > 0
+  \end{cases}
+  \quad
+  \in L^{2}(-\pi,\pi)
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+とするとき，畳み込み \(f*f\) を求めよ．
+</p></li>
+<li>関数 \(f*f\) を Fourier 級数展開せよ．</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org554b12a">
+<h2 id="org554b12a">今回のまとめ</h2>
+<ul>
+<li>Fourier 級数の性質
+<ul>
+<li><p>
+Fourier 級数展開:
+</p>
+<div>
+\begin{equation}
+  f(x)
+  =\sum_{-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div></li>
+
+<li>不連続点での Foureir 級数の値は平均値</li>
+<li>連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgue の定理)</li>
+<li>畳み込みの Fourier 係数は元の関数の係数の積に比例する</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>

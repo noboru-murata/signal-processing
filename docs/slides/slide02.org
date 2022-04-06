@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 12:02:50 mura>
-:reveal:
+# Time-stamp: <2022-04-06 15:42:24 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** ベクトル空間
@@ -29,9 +29,9 @@
   #+end_quote
 
 ** ベクトル空間の例
-- 幾何ベクトル
-- 数ベクトル
-- 関数空間 \(C^{m}[0,1]\)
+- [[color:green][幾何ベクトル]]
+- [[color:green][数ベクトル]]
+- [[color:green][関数空間 \(C^{m}[0,1]\)]]
   #+begin_quote
   区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
   和とスカラ倍は以下で定義される．
@@ -72,20 +72,20 @@
   #+end_quote
 
 ** 基底の重要性
-    - 定理
-      #+begin_quote
-      \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
-      \(\forall b\in V_{n}\) は \(B\) に線形従属で，
-      #+begin_src latex
-	\begin{equation}
-	  b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
-	\end{equation}
-      #+end_src
-      と一意に表される．
-      #+end_quote
-      - ベクトル \(b\) を数ベクトル
-	\((\lambda_{1},\dotsc,\lambda_{n})\)
-	で表すことができる
+- 定理
+  #+begin_quote
+  \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
+  \(\forall b\in V_{n}\) は \(B\) に線形従属で，
+  #+begin_src latex
+    \begin{equation}
+      b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
+    \end{equation}
+  #+end_src
+  と一意に表される．
+  #+end_quote
+  - ベクトル \(b\) を数ベクトル
+    \((\lambda_{1},\dotsc,\lambda_{n})\)
+    で表すことができる
 
 
 * 演習
@@ -110,27 +110,27 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- 条件の線形性として，\(h=f+g\)のとき
-  がどうなるか考えればよい
-  #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      &h^{(2)}+h^{(1)}+h\\
-      &\quad
-	=(f^{(2)}+f^{(1)}+f)
-	+(g^{(2)}+g^{(1)}+g)
-    \end{align}
-  #+end_src
-  #+end_quote
-- 適当な\(x\)を用いて連立方程式の解を考えればよい
-  #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-    \end{equation}
-  #+end_src
-  #+end_quote
-- 線形独立な要素がいくつ取れるかを考えればよい
+  - 条件の線形性として，\(h=f+g\)のとき
+    がどうなるか考えればよい
+    #+begin_quote
+    #+begin_src latex
+      \begin{align}
+        &h^{(2)}+h^{(1)}+h\\
+        &\quad
+          =(f^{(2)}+f^{(1)}+f)
+          +(g^{(2)}+g^{(1)}+g)
+      \end{align}
+    #+end_src
+    #+end_quote
+  - 適当な\(x\)を用いて連立方程式の解を考えればよい
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        \alpha f(x) + \beta g(x) + \gamma h(x) = 0
+      \end{equation}
+    #+end_src
+    #+end_quote
+  - 線形独立な要素がいくつ取れるかを考えればよい
 
 
 * 内積空間
@@ -166,12 +166,12 @@
   #+end_quote
 
 ** 内積空間の例
-- 幾何ベクトル空間
-- 数ベクトル空間
-- 関数空間
+- [[color:green][幾何ベクトル空間]]
+- [[color:green][数ベクトル空間]]
+- [[color:green][関数空間]]
 
 ** 内積の例
-- 幾何ベクトル空間
+- [[color:green][幾何ベクトル空間]]
   #+begin_quote
   2つの有効線分のなす角 \(\theta\) とそ
   れぞれの長さ \(|u|,|v|\) を用いて定義
@@ -183,25 +183,25 @@
   #+end_quote
 
 #+reveal: split
-  - 数ベクトル空間
-    #+begin_quote
-    2つの複素数値ベクトル 
-    \(u=(u_{1},u_{2},\dotsc,u_{n})\),
-    \(v=(v_{1},v_{2},\dotsc,v_{n})\)
-    に対して
-    #+begin_src latex
-      \begin{equation}
-	\langle u,v\rangle
-	= \sum_{i=1}^{n}u_{i}\bar{v}_{i}
-      \end{equation}
-    #+end_src
-    ただし
-    \(\bar{\cdot}\)
-    は複素共役
-    #+end_quote
+- [[color:green][数ベクトル空間]]
+  #+begin_quote
+  2つの複素数値ベクトル 
+  \(u=(u_{1},u_{2},\dotsc,u_{n})\),
+  \(v=(v_{1},v_{2},\dotsc,v_{n})\)
+  に対して
+  #+begin_src latex
+    \begin{equation}
+      \langle u,v\rangle
+      = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
+    \end{equation}
+  #+end_src
+  ただし
+  \(\bar{\cdot}\)
+  は複素共役
+  #+end_quote
 
 #+reveal: split
-- 関数空間
+- [[color:green][関数空間]]
   #+begin_quote
   2つの複素数値関数
   \(u,v\)
@@ -227,8 +227,9 @@
     \end{equation}
   #+end_src
   で定義する．
-
-  ノルムは以下の性質を満たす．
+  #+end_quote
+- ノルムの性質
+  #+begin_quote
   - \(\|u\|\ge0\)
     特に \(\|u\|=0\;\Rightarrow\;u=0\)
   - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\) \\
@@ -302,7 +303,7 @@
   #+end_quote
 
 ** 完備性の例
-- 有理数は完備でない
+- [[color:green][有理数は完備でない]]
   #+attr_reveal: :frag (appear)
   #+begin_quote
   点列 \(a_{n}\) を円周率の小数 \(n\) 桁以下を
@@ -310,7 +311,7 @@
   明らかに \(a_{n}\) は有限桁なので有理数であるが，
   \(\lim_{n\to\infty}a_{n}=\pi\) は無理数
   #+end_quote
-- 実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない
+- [[color:green][実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない]]
   #+attr_reveal: :frag (appear)
   #+begin_quote
   点列 \(1/n \in (0,1)\) であるが，
@@ -330,14 +331,14 @@
   - 完備の厳密な定義は解析学の本を参照
 
 ** Hilbert 空間の例
-- \(l^{2}\) 空間 (無限次元数ベクトル空間)
+- [[color:green][\(l^{2}\) 空間 (無限次元数ベクトル空間)]]
   #+begin_quote
   #+begin_src latex
     \begin{equation}
       l^{2}=
       \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
-	\|u\|<\infty
-	% \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
+        \|u\|<\infty
+        % \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
       \right\}
     \end{equation}
   #+end_src
@@ -360,14 +361,14 @@
     興味のあるものは成書を参照
 
 #+reveal: split
-- \(L^{2}\) 空間
+- [[color:green][\(L^{2}\) 空間]]
   #+begin_quote
   #+begin_src latex
     \begin{equation}
       L^{2}(\Omega)=
       \left\{
-	f\:\big|\:\|f\|<\infty
-	% f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+        f\:\big|\:\|f\|<\infty
+        % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
       \right\}
     \end{equation}
   #+end_src
@@ -419,9 +420,9 @@
       f_{n}(x)
       =
       \begin{cases}
-	-1, & (x<-1/n)\\
-	nx, & (-1/n\le x\le 1/n)\\
-	1,  & (x>1/n)
+        -1, & (x<-1/n)\\
+        nx, & (-1/n\le x\le 1/n)\\
+        1,  & (x>1/n)
       \end{cases}
     \end{equation}
   #+end_src
@@ -431,7 +432,7 @@
 
 
 * 今回のまとめ
-- 内積: 
+- 内積 : 
   ベクトル空間の2つの要素に対して定義され，
   以下の性質を持つ
   - \(\langle u,u\rangle\geq0\) 
@@ -441,7 +442,7 @@
     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
 
 #+reveal: split
-- ノルム:
+- ノルム :
   内積を用いて
   \(\|u\|=\sqrt{\langle u,u\rangle}\)
   で定義され，
@@ -455,9 +456,9 @@
     (三角不等式)
 
 #+reveal: split
-- 完備性: ある集合の点列の収束先がもとの集合に含まれること
-- 内積空間: 内積が定義されたベクトル空間
-- Hilbert 空間: 完備な内積空間
+- 完備性 : ある集合の点列の収束先がもとの集合に含まれること
+- 内積空間 : 内積が定義されたベクトル空間
+- Hilbert 空間 : 完備な内積空間
 
 
 * COMMENT ローカル変数

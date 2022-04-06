@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 11:56:05 mura>
-:reveal:
+# Time-stamp: <2022-04-06 15:40:57 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * COMMENT はじめに
 
@@ -50,7 +50,7 @@
   #+end_quote
 
 ** ベクトル空間の例
-- 幾何ベクトル
+- [[color:green][幾何ベクトル]]
   #+begin_quote
   平行移動で互いに移り合う有効線分．
   和は2つの有向線分で作られる平行四辺形の対角線で，
@@ -62,7 +62,7 @@
   #+end_src
   あるいはこの部分空間と同一視することができる．
   #+end_quote
-- 数ベクトル
+- [[color:green][数ベクトル]]
   #+begin_quote
   体 \(K\) の \(n\) 個の順序づけられた数の組．
   和は成分ごとの和で，
@@ -70,7 +70,7 @@
   #+end_quote
 
 #+reveal: split
-- 関数空間 \(C^{m}[0,1]\)
+- [[color:green][関数空間 \(C^{m}[0,1]\)]]
   #+begin_quote
   区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
   和とスカラ倍は以下で定義される．
@@ -178,7 +178,7 @@
   #    \(\{0,a_{1},\dotsc,a_{k}\}\)は常に線形従属となる．
 
 ** 線形従属・独立の例
-- 関数空間 \(C^{m}[0,1]\)
+- [[color:green][関数空間 \(C^{m}[0,1]\)]]
   #+begin_quote
   #+begin_src latex
     \begin{align}
@@ -228,7 +228,7 @@
   ベクトル空間 \(V\) の有限部分集合 \(S\) に対して，
   線形独立な部分集合 \(B\subset S\) を考える．
   \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
-  \(B\) は *極大独立集合* であるという．
+  \(B\) は \(S\) の *極大独立集合* であるという．
   #+end_quote
 
 ** 階数
@@ -379,10 +379,10 @@
 
 #+reveal: split
 - ベクトル空間の基底
-  - 極大独立集合: 何か1つでも要素を加えると従属になってしまう集合
+  - 極大独立集合 : 何か1つでも要素を加えると従属になってしまう集合
   - ベクトル空間 \(V\) の次元はどうやって決めるか？\\
     \(V\) の中の線形独立な集合の最大の要素数(基数，集合のとり方によらず要素数は一定)
-  - 基底: ベクトル空間 \(V\) の極大独立集合を \(V\) の基底という
+  - 基底 : ベクトル空間 \(V\) の極大独立集合を \(V\) の基底という
 
 
 * COMMENT ローカル変数

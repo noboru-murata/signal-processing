@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 信号処理</title>
+    <link>https://noboru-murata.github.io/signal-processing/post/</link>
+    <description>Recent content in Posts on 信号処理</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Aug 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/signal-processing/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>講義の進め方</title>
+      <link>https://noboru-murata.github.io/signal-processing/post/post1/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/post/post1/</guid>
+      <description>講義ノート Moodle に URL を掲載しました．
+過去の試験問題 Moodle に3年分を掲載しました．</description>
+    </item>
+    
+    <item>
+      <title>スライドの使い方</title>
+      <link>https://noboru-murata.github.io/signal-processing/post/post2/</link>
+      <pubDate>Thu, 27 Aug 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/post/post2/</guid>
+      <description>スライドは reveal.js を使って作っています．
+スライドを click して &amp;ldquo;?&amp;rdquo; を入力すると shortcut key が表示されますが，これ以外にも以下の key などが使えます．
+フルスクリーン  f フルスクリーン表示 esc 元に戻る  黒板  w スライドと黒板の切り替え (toggle) x/y チョークの色の切り替え (巡回) c 消去  メモ書き  e 編集モードの切り替え (toggle) x/y ペンの色の切り替え (巡回) c 消去  </description>
+    </item>
+    
+  </channel>
+</rss>

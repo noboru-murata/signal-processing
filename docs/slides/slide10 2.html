@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>標本化定理</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">標本化定理</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第10講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-orgbac706f">
+<h2 id="orgbac706f">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgbac706f">
+</div>
+</section>
+<section id="slide-org4eadf39">
+<h3 id="org4eadf39">フィルタ</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
+</p>
+</blockquote></li>
+<li><p>
+線形性 
+</p>
+<blockquote>
+<p>
+入力の線形結合がそのまま出力に反映される性質
+</p>
+</blockquote></li>
+<li><p>
+時不変性
+</p>
+<blockquote>
+<p>
+入力の時刻がずれた場合，出力も同じだけずれる性質
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org8bab07c">
+<h3 id="org8bab07c">線形時不変フィルタの数学的表現</h3>
+<ul>
+<li><p>
+フィルタの積分表現
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
+\end{equation}
+
+</div>
+
+<p>
+\(h\): インパルス応答 = フィルタの表現
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org01cc18e">
+<h3 id="org01cc18e">Fourier変換による表現</h3>
+<ul>
+<li><p>
+時間領域では畳み込み積分
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  g(t)
+  =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+  = h{*}f(t)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+周波数領域では関数の積
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \hat{g}(\omega)
+  =
+  \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf68e479">
+<h3 id="orgf68e479">インパルス応答</h3>
+<ul>
+<li><p>
+インパルス応答
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(t)
+  =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>\(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力</li>
+<li>物理的には
+面積1 (\(\Delta \times 1/\Delta\))
+の矩形波に対する出力を
+時間幅 \(\Delta\to0\) としたときの波形</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org0f301d1">
+<h3 id="org0f301d1">ローパスフィルタ(RC回路)</h3>
+
+<div id="org66068f2" class="figure">
+<p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5a6ce3d">
+<h3 id="org5a6ce3d">入出力の関係</h3>
+<ul>
+<li><p>
+時間領域
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  V_{in}(t)
+  =CR\frac{d}{dt}V_{out}(t)
+  +V_{out}(t)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+周波数領域
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \hat{V}_{in}(\omega)
+  =i\omega CR\hat{V}_{out}(\omega)
+  +\hat{V}_{out}(\omega)
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \hat{V}_{out}(\omega)
+  =
+  \frac{1}{i\omega CR+1}
+  \hat{V}_{in}(\omega)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgb6b15c9">
+<h3 id="orgb6b15c9">インパルス応答 (逆 Fourier 変換)</h3>
+<ul>
+<li><p>
+フィルタの Fourier 変換
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \hat{h}(\omega)
+  =\frac{1}{\sqrt{2\pi}i\omega CR+1}
+  =\frac{1}{\sqrt{2\pi}iCR}\frac{1}{\omega -i/CR}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+逆 Fourier 変換
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \mathcal{F}^{-1}[\hat{h}](t)
+  =
+  h(t)
+  =
+  \begin{cases}
+    0,&t<0\\
+    \frac{1}{CR}e^{-\frac{t}{CR}},&t>0
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org3b2e0a0">
+<h3 id="org3b2e0a0">インパルス応答 (矩形波の極限)</h3>
+<ul>
+<li><p>
+矩形波の出力
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  V_{out}(t)
+  =
+  \begin{cases}
+    0,&t \le 0\\
+    \frac{1}{\Delta}(1-e^{-\frac{t}{CR}}),&0 < t\le\Delta\\
+    \frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}},&\Delta< t
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+\(\Delta\to 0\)
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  h(t)
+  =
+  \lim_{\Delta\to0}V_{out}(t) 
+  =
+  \begin{cases}
+    0,&t\le0\\
+    \frac{1}{CR}e^{-\frac{t}{CR}},&t>0
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org36e084f">
+<h2 id="org36e084f">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-org36e084f">
+</div>
+</section>
+<section id="slide-orgc4c278d">
+<h3 id="orgc4c278d">デジタル信号処理</h3>
+<ul>
+<li>計算機で信号を扱うための方法論</li>
+<li>処理の流れ
+<ul>
+<li>アナログ信号をデジタル信号に変換 (A/D変換)</li>
+<li>計算機上でデジタル信号を処理</li>
+<li>デジタル信号をアナログ信号に変換 (D/A変換)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org825413a">
+<h3 id="org825413a">計算機によるデータ処理</h3>
+<ul>
+<li>アナログ信号は扱えない
+<ul>
+<li>連続時間に対応していない</li>
+<li>連続値を正確に記録できない</li>
+
+</ul></li>
+<li>信号の表現
+<ul>
+<li>離散時間(クロックがある)</li>
+<li>0-1ベクトル (有限個の値)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org8854c32">
+<h3 id="org8854c32">アナログとデジタル</h3>
+<ul>
+<li>アナログ
+<ul>
+<li>連続的な量 (時間，振幅)</li>
+<li>雑音の影響を受けやすい</li>
+<li>物理的な保存や複製において劣化が生じる</li>
+
+</ul></li>
+<li>デジタル
+<ul>
+<li>離散的な量 (時間，振幅)</li>
+<li>標本化と量子化による近似</li>
+<li>電子的に保存や複製が劣化なく行える</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org02c6888">
+<h3 id="org02c6888">標本化と量子化</h3>
+<ul>
+<li>デジタル信号に変換するための離散化 (discretization)
+<ul>
+<li>標本化 (sampling): 時間の離散化</li>
+<li>量子化 (quantization): 数値の離散化</li>
+
+</ul></li>
+<li>量子化は計算機で扱う数値の丸め誤差の問題 <br />
+(この講義では扱わない)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org6b3cc4c">
+<h3 id="org6b3cc4c">標本化における疑問</h3>
+<ul>
+<li>標本化: 明らかに情報は落ちている
+<ul>
+<li>離散データから連続データを再構成することはできるのか？</li>
+<li>再構成することができるのであれば，その条件は何か？</li>
+
+</ul></li>
+
+</ul>
+
+
+<div id="org64a2c42" class="figure">
+<p><img src="figs/信号処理 9.png" alt="信号処理 9.png" width="80%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org1f34061">
+<h2 id="org1f34061">標本化定理</h2>
+<div class="outline-text-2" id="text-org1f34061">
+</div>
+</section>
+<section id="slide-org5fdd157">
+<h3 id="org5fdd157">標本化定理</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
+\(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org7ea90cc" class="figure">
+<p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>定理の呼び名は色々ある
+<ul>
+<li>Shannon の標本化定理</li>
+<li>Nyquist-Shannon の標本化定理</li>
+<li>Nyquist-Shannon-Kotelnikov の標本化定理</li>
+<li>Whittaker-Shannon-Kotelnikov の標本化定理</li>
+<li>Whittaker-Nyquist-Shannon-Kotelnikov の標本化定理</li>
+<li>染谷の標本化定理</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>用語
+<ul>
+<li>1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): <br />
+<b>サンプリング周波数</b> (sampling frequency)</li>
+<li>再構成に必要なサンプリング周波数の下限 \(2B\,[\mathrm{Hz}]\): <br />
+<b>Nyquist レート</b> (Nyquist rate)</li>
+<li>信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): <br />
+<b>Nyquist 周波数</b> (Nyquist frequency)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd5ef25e" data-background="#fef4f4">
+<h2 id="orgd5ef25e">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org791c478" data-background="#fef4f4">
+<h3 id="org791c478">練習問題</h3>
+<ul>
+<li><p>
+周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+としたとき，
+周期 \(2\pi\cdot 2B\) の基底は
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \psi_{n}(\omega)
+  =
+  a\cdot \phi_{n}\left(b\omega\right)
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+で構成することができる．\(a\) と \(b\) を求めよ．
+</p></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgdbd6df7" data-background="#fef4f4">
+<h3 id="orgdbd6df7">練習問題</h3>
+<ul>
+<li><p>
+以下の積分
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
+  e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+を計算しなさい．
+</p></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgce040a3">
+<h2 id="orgce040a3">定理の証明と注意</h2>
+<div class="outline-text-2" id="text-orgce040a3">
+</div>
+</section>
+<section id="slide-org9e1265d">
+<h3 id="org9e1265d">標本化定理の証明</h3>
+<ul>
+<li><p>
+step 1
+</p>
+<blockquote>
+<p>
+定理の仮定より
+\(f(t)\)
+の Fourier 変換を
+\(\hat{f}(\omega)\)
+の台 (0でない \(\omega\) の領域) は
+\((-2\pi B, 2\pi B)\)
+である．
+</p>
+
+<p>
+(\(B\,[\mathrm{Hz}]=2\pi B\,[\mathrm{rad}]\))
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org7335526" class="figure">
+<p><img src="figs/信号処理 6.png" alt="信号処理 6.png" width="70%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 2
+</p>
+<blockquote>
+<p>
+\(\hat{f}\) を \(2\pi\cdot 2B\) ごとに繰り返したものを
+\(\tilde{f}\) とする．
+</p>
+
+<p>
+これは周期 \(2\pi\cdot 2B\) を持つ周期関数なので
+Fourier 級数展開が存在する．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="orgc57fc65" class="figure">
+<p><img src="figs/信号処理 7.png" alt="信号処理 7.png" width="70%" />
+</p>
+</div>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 3
+</p>
+<blockquote>
+<p>
+周期 \(2\pi\) の Fourier 級数展開の基底を
+</p>
+<div>
+\begin{equation}
+  \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
+\end{equation}
+
+</div>
+
+<p>
+とすると，
+周期 \(2\pi\cdot 2B\) の基底は
+</p>
+<div>
+\begin{equation}
+  \psi_{n}(\omega)=\phi_{n}\left(\frac{\omega}{2B}\right)\frac{1}{\sqrt{2B}}
+\end{equation}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 4
+</p>
+<blockquote>
+<p>
+\(\tilde{f}\) の Fourier 級数展開は
+</p>
+<div>
+\begin{equation}
+  \tilde{f}(\omega)
+  =
+  \sum_{n=-\infty}^{\infty}
+  \left\langle \tilde{f}, \psi_{n} \right\rangle
+  \psi_{n}(\omega)
+\end{equation}
+
+</div>
+
+<p>
+で与えられる．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 5
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \tilde{f}(\omega)
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    \int_{-2\pi B}^{2\pi B}\tilde{f}(\xi) 
+    e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    \int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
+    e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>1周期分の積分範囲に注意して
+\(\tilde{f}\)
+をもとの
+\(\hat{f}\)
+で置き換える</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 6
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \tilde{f}(\omega)
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    \int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
+    e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    \int_{-\infty}^{\infty}\hat{f}(\xi) 
+    e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>\(\hat{f}\) 
+は区間
+\((-2\pi B, 2\pi B)\)
+の外では0</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 7
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \tilde{f}(\omega)
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    \int_{-\infty}^{\infty}\hat{f}(\xi) 
+    e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+  &=\frac{1}{\sqrt{2\pi}\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    f\left(-\frac{n}{2B}\right)
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li><p>
+\(x=-n/2B\)
+における
+\(\hat{f}\)
+の Fourier 逆変換
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f\left(-\frac{n}{2B}\right)
+  =
+  \frac{1}{\sqrt{2\pi}}
+  \int_{-\infty}^{\infty}\hat{f}(\xi) 
+  e^{i\left(-\frac{n}{2B}\right)\xi}d\xi
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 8
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \hat{h}_{B}(\omega)
+  =
+  \Xi_{(-2\pi B,2\pi B)}(\omega)
+  =
+  \begin{cases}
+    1,&|\omega|<2\pi B\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+
+<p>
+とすると
+</p>
+<div>
+\begin{align}
+  f(t)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{f}(\omega)
+    e^{i\omega t}d\omega\\
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)\tilde{f}(\omega)
+    e^{i\omega t}d\omega
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>\(\hat{h}_{B}\) は
+\(\tilde{f}\)
+から
+\(\hat{f}\)
+を取り出す周波数フィルタ</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 9
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(t)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)
+    \frac{1}{\sqrt{2\pi}\cdot 2B}
+    \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+    f\left(-\frac{n}{2B}\right)
+    e^{i\omega t}d\omega\\
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} 
+    f\left(-\frac{n}{2B}\right)
+    \int_{-2\pi B}^{2\pi B}
+    e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>\(\hat{h}_{B}\)
+の定義に従って積分領域を書き換える</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 10
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(t)
+  &=\frac{1}{2\pi\cdot 2B}
+    \sum_{n=-\infty}^{\infty} 
+    f\left(-\frac{n}{2B}\right)
+    \int_{-2\pi B}^{2\pi B}
+    e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega\\
+  &=\sum_{n=-\infty}^{\infty} 
+    \frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
+    f\left(-\frac{n}{2B}\right)\\
+  &=\sum_{n=-\infty}^{\infty} 
+    \frac{\sin 2\pi B\left(t-\frac{n}{2B}\right)}{2\pi B\left(t-\frac{n}{2B}\right)}
+    f\left(\frac{n}{2B}\right)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 11
+</p>
+<blockquote>
+<p>
+以上から，
+\(f(t)\)
+は
+\(1/2B\)
+ごとのサンプル点
+\(f(n/2B)\)
+を用いて完全に再構成できる．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org9e77f47">
+<h3 id="org9e77f47">定理に関する注意</h3>
+<ul>
+<li><p>
+直感的な意味
+</p>
+<blockquote>
+<p>
+正弦波は山と谷の値が与えられれば補間できるので，
+一番高い周波数でも1周期の間に2点の標本があれば良い．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+Nyquist 周波数での挙動
+</p>
+<blockquote>
+<p>
+周波数 \(B\) で \(\theta\) の値によって位相と振幅が異なる
+次の波形を考える．
+</p>
+<div>
+\begin{equation*}
+  f(t)
+  =
+  \frac{\cos(2\pi Bt+\theta)}{\cos\theta}
+  =\cos(2\pi Bt)-\sin(2\pi Bt)\tan\theta
+\end{equation*}
+
+</div>
+
+<p>
+標本点を \({n}/{2B}\) とすると
+</p>
+<div>
+\begin{align*}
+  f\left(\frac{n}{2B}\right)
+  &=(-1)^{n}-0\cdot\tan\theta
+    =(-1)^{n}
+\end{align*}
+
+</div>
+
+<p>
+\(\theta\)
+によらないため，
+サンプリングンレート
+\(2B\)
+の標本点からは
+\(\theta\)
+の値を推定することはできない．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org3818606">
+<h3 id="org3818606">エイリアシング</h3>
+<ul>
+<li><p>
+定理の前提
+</p>
+<blockquote>
+<p>
+信号の Fourier 変換が
+\((-2\pi B,2\pi B)\)
+以外で0である．
+</p>
+</blockquote></li>
+<li>成立しない場合に生じる雑音
+<ul>
+<li>エイリアシング (aliasing)</li>
+<li>折り返し雑音 (folding noise)</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+雑音の原因
+</p>
+<blockquote>
+<p>
+\(4\pi B\)
+周期の関数
+\(\tilde{f}\)
+を構成する際に重なりが生じ，
+\((-2\pi B,2\pi B)\)
+領域を切り出しても
+元に戻すことができない．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="org5e6ca3d" class="figure">
+<p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgdad98cf">
+<h2 id="orgdad98cf">今回のまとめ</h2>
+<ul>
+<li>デジタル信号処理
+<ul>
+<li>アナログとデジタル</li>
+<li>標本化と量子化</li>
+
+</ul></li>
+<li>標本化定理
+<ul>
+<li>Nyquist 周波数</li>
+<li>サンプリング周波数</li>
+<li>エイリアシング</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>

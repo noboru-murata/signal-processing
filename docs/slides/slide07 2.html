@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fourier 変換の性質</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">Fourier 変換の性質</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第7講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-orge1ce2d4">
+<h2 id="orge1ce2d4">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orge1ce2d4">
+</div>
+</section>
+<section id="slide-org9232928">
+<h3 id="org9232928">Fourier 級数展開</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(f\in L^{2}(-\pi,\pi)\) 
+は
+以下のように
+Fourier級数展開
+される．
+</p>
+<div>
+\begin{align}
+  f(x)
+  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+\end{align}
+
+</div>
+
+<div>
+\begin{equation}
+  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \langle f,g\rangle
+  =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgbf4a717">
+<h3 id="orgbf4a717">Fourier 変換と反転公式</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+\(\mathbb{R}\)
+上の関数
+\(f\)
+に対して
+</p>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+  &\text{(Fourier変換)}\\
+  f(x)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+  &\text{(逆Fourier変換)}
+\end{align}
+
+</div>
+
+<p>
+で定義する．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgac64a13">
+<h3 id="orgac64a13">反転公式</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
+  =\lim_{\epsilon\to0}
+  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
+\end{equation}
+
+</div>
+
+<p>
+より正確には
+\(f\in L^{1}\cap L^{p}\)
+であれば，
+上の式は
+\(L^{p}\)
+の意味で成り立つと表現される．
+</p>
+<div>
+\begin{equation}
+  \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org46ed576" data-background="#fef4f4">
+<h2 id="org46ed576">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orga420716" data-background="#fef4f4">
+<h3 id="orga420716">練習問題</h3>
+<ul>
+<li><p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+以下の関数の Fourier 変換を求めよ．
+</p>
+<ul>
+<li>\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)</li>
+<li>\(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)</li>
+<li>\(h(x)=\Xi_{(-1,1)}(x)\)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6f2e683">
+<h2 id="org6f2e683">Fourier 変換の性質</h2>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org905b81c">
+<h3 id="org905b81c">記法</h3>
+<ul>
+<li>関数の対応
+<ul>
+<li>\(f\): もとの関数 (以下では Fourier 変換の存在を仮定)</li>
+<li>\(\hat{f}\): Fourier 変換</li>
+
+</ul></li>
+<li><p>
+変換の演算子
+</p>
+<ul>
+<li>\(\mathcal{F}\): Fourier 変換</li>
+<li>\(\mathcal{F}^{-1}\): 逆 Fourier 変換</li>
+
+</ul>
+<blockquote>
+<p>
+例えば以下のように使う.
+</p>
+<div>
+\begin{align}
+  \hat{f}&=\mathcal{F}[f],\quad
+  &f&=\mathcal{F}^{-1}[\hat{f}]\\
+  \hat{f}(\omega)&=\mathcal{F}[f](\omega),\quad
+  &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+引数に関する注意
+</p>
+<blockquote>
+<p>
+関数の引数(変数)は単なる名前なので何でも良い．
+</p>
+<div>
+\begin{align}
+  \mathcal{F}[f](\alpha)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
+  \mathcal{F}^{-1}[\hat{f}](\beta)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orga9cd751">
+<h3 id="orga9cd751">絶対可積分</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
+  f\in L^{1}(\mathbb{R})
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>以下ではこの条件を満たす関数を考える</li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+Fourier 変換の存在 (各点)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  |\hat{f}(\omega)|
+  &=
+    \left|\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
+  &<
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}|f(x)e^{-i\omega x}|dx
+    =
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}|f(x)|dx<\infty
+\end{align}
+
+</div>
+
+<div>
+\begin{equation}
+  \|\hat{f}\|_{L^{\infty}}
+  \left(=\sup_{\omega}|\hat{f}(\omega)|\right)
+  <
+  \frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+\(|x|\to\infty\) での挙動
+</p>
+<blockquote>
+<p>
+適当に大きな値 \(M>0\) に対して
+</p>
+<div>
+\begin{equation}
+  |f(x)|>\epsilon>0,\;|x|>M
+\end{equation}
+
+</div>
+
+<p>
+とすると，以下のように絶対可積分に矛盾する．
+</p>
+<div>
+\begin{equation}
+  \int_{-\infty}^{-M}|f(x)|dx+
+  \int_{M}^{\infty}|f(x)|dx
+  >\epsilon\times\text{(積分区間)}\to\infty
+\end{equation}
+
+</div>
+
+<p>
+したがって以下の性質が成り立つ．
+</p>
+<div>
+\begin{equation}
+  \lim_{|x|\to\infty}f(x)=0
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org57df795">
+<h3 id="org57df795">Parseval の定理</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+このとき以下の関係が成り立つ．
+</p>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
+  =
+  \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \langle f,g\rangle
+  =
+  \langle \hat{f},\hat{g}\rangle
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+略証
+</p>
+<blockquote>
+<p>
+反転公式と同様に収束因子を考える．
+</p>
+<div>
+\begin{align}
+  &\int_{-\infty}^{\infty}
+    \hat{f}(\omega)\overline{\hat{g}(\omega)}
+    e^{-\epsilon \omega^{2}}d\omega\\
+  &=
+    \int_{-\infty}^{\infty}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{i\omega x}dx\cdot
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\overline{g(y)e^{i\omega y}}dy\cdot
+    e^{-\epsilon \omega^{2}}d\omega\\
+  &=
+    \int_{-\infty}^{\infty}
+    \int_{-\infty}^{\infty}
+    f(x)\overline{g}(y)G_{\epsilon}(x-y)
+    dxdy\\
+  &=
+    \int_{-\infty}^{\infty}
+    f(x)\overline{g_{\epsilon}(x)}
+    dx
+\end{align}
+
+</div>
+
+<p>
+\(\epsilon\to0\) とすると定理の両辺が一致することがわかる．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org553c23f">
+<h3 id="org553c23f">Plancherel の定理</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+このとき以下の関係が成り立つ．
+</p>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}|f(x)|^{2}dx
+  =
+  \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \|f\|_{L^{2}}
+  =
+  \|\hat{f}\|_{L^{2}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgfbea4f3">
+<h3 id="orgfbea4f3">Riemann-Lebesgue の定理(補題)</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
+\(f'\in L^{1}(\mathbb{R})\) とする．
+このとき以下の性質をもつ．
+</p>
+<div>
+\begin{equation}
+  \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+略証
+</p>
+<blockquote>
+<div>
+\begin{align}
+  |\hat{f}(\omega)|
+  &=\left|\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
+  &<\left|\left[\frac{f(x)}{\sqrt{2\pi}}\frac{e^{-i\omega x}}{-i\omega}\right]_{-\infty}^{\infty}\right|
+    +\left|\frac{1}{i\omega}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\right|\\
+  &<\frac{1}{|\omega|}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\left|f'(x)\right|dx\\
+  &=\frac{1}{|\omega|}\frac{1}{\sqrt{2\pi}}\|f'\|_{L^{1}}
+\end{align}
+
+</div>
+
+<p>
+より明らか．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org28e43bc" data-background="#fef4f4">
+<h2 id="org28e43bc">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgffbc01b" data-background="#fef4f4">
+<h3 id="orgffbc01b">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f(x)\) の Fourier 変換と
+関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgb068862" data-background="#fef4f4">
+<h3 id="orgb068862">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f\) の Fourier 変換と
+関数 \(g=f'\) の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org1d4be9c" data-background="#fef4f4">
+<h3 id="org1d4be9c">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f\) の Fourier 変換と
+関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf8dddb0" data-background="#fef4f4">
+<h3 id="orgf8dddb0">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f,g\) の Fourier 変換と
+関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
+</p>
+<div>
+\begin{equation}
+  h(x)
+  =
+  \int_{-\infty}^{\infty}f(x-y)g(y)dy
+  =
+  \int_{-\infty}^{\infty}f(y)g(x-y)dy
+  =
+  f{*}g(x)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org2cf7b50" data-background="#fef4f4">
+<h3 id="org2cf7b50">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f(x)\) の Fourier 変換と
+関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orge508374" data-background="#fef4f4">
+<h3 id="orge508374">練習問題</h3>
+<ul>
+<li><p>
+以下の問題に答えよ
+</p>
+<blockquote>
+<p>
+関数 \(f(x)\) の Fourier 変換と
+関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6b5e9f3">
+<h2 id="org6b5e9f3">演算との関係</h2>
+<div class="outline-text-2" id="text-org6b5e9f3">
+</div>
+</section>
+<section id="slide-orgae189a9">
+<h3 id="orgae189a9">Fourier 変換で用いる基本演算</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(f'(x)\) (微分)</td>
+<td class="org-left">\(i\omega\hat{f}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f^{(k)}(x)\) (k階微分)</td>
+<td class="org-left">\((i\omega)^{k}\hat{f}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(f*g(x)\) (畳み込み)</td>
+<td class="org-left">\(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(T_{a}f(x)=f(x-a)\) (移動)</td>
+<td class="org-left">\(e^{-ia\omega}\hat{f}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(D_{b}f(x)=f(bx)\) (拡大縮小)</td>
+<td class="org-left">\({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\)</td>
+</tr>
+</tbody>
+</table>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org916e2fb" data-background="#fef4f4">
+<h2 id="org916e2fb">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgd014fac" data-background="#fef4f4">
+<h3 id="orgd014fac">練習問題</h3>
+<ul>
+<li><p>
+関数
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=\frac{1}{x-ia}\;(a>0)        
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+の Fourier 変換を求めよ．
+</p>
+<ul>
+<li>Fourier 変換と逆 Fourier 変換の関係を利用</li>
+<li><i><span style="color:gray;">複素積分を利用</span></i></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgdf51604" data-background="#fef4f4">
+<h3 id="orgdf51604">Fourier 変換の代表的な例</h3>
+<ul>
+<li><p>
+定義関数
+</p>
+<blockquote>
+<p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{otherwise}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+代表的な例
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org7715e69">
+<h2 id="org7715e69">今回のまとめ</h2>
+<ul>
+<li>Fourier 変換の性質
+<ul>
+<li>Fourier 変換な可能な関数</li>
+<li>Fourier 変換の基本的な性質
+<ul>
+<li>Parseval の定理</li>
+<li>Plancherel の定理</li>
+<li>Riemann-Lebesgue の定理(補題)</li>
+
+</ul></li>
+<li>関数の演算とFourier 変換の関係</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>

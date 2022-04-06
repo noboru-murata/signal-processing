@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 14:09:11 mura>
+# Time-stamp: <2022-04-06 15:26:34 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -397,7 +397,7 @@
 [[file:figs/filter1.png]]
 
 ** フィルタの例
-- [[color:darkgreen][エレキギターのエフェクター]] (effects unit, pedal)
+- [[color:green][エレキギターのエフェクター]] (effects unit, pedal)
   - 歪み: オーバードライブ / ディストーション / ファズ
   - モジュレーション: コーラス / フランジャー / トレモロ
   - 空間系: リバーブ / ディレイ
@@ -459,7 +459,7 @@
 ** 非線形フィルタ
 - 信号の変換において非線形作用を持つフィルタ
 - 多くのフィルタは線形性を持っている
-- [[color:darkgreen][線形でない例]] (エフェクタ)
+- [[color:green][線形でない例]] (エフェクタ)
   - ディストーション
   - オーバードライブ
   入力信号の振幅の大きさによって歪みが生じる
