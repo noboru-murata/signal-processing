@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 13:29:54 mura>
-:reveal:
+# Time-stamp: <2022-04-14 21:52:50 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** ベクトル空間
@@ -73,7 +73,7 @@
   #+end_quote
 
 ** Hilbert 空間の例
-- \(l^{2}\) 空間 (無限次元数ベクトル空間)
+- [[color:green][\(l^{2}\) 空間 (無限次元数ベクトル空間)]]
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -97,7 +97,7 @@
   #+end_quote
   
 #+reveal: split
-- \(L^{2}\) 空間 (これから扱う信号の空間)
+- [[color:green][\(L^{2}\) 空間 (これから扱う信号の空間)]]
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -206,7 +206,7 @@
   #+end_quote
 
 ** 正規直交系の例
-- \(l^{2}\) 空間
+- [[color:green][\(l^{2}\) 空間]]
   #+begin_quote
   無限次元数ベクトル空間 \(l^{2}\) を考える．
   #+begin_src latex
@@ -219,7 +219,7 @@
   #+end_quote
 
 #+reveal: split
-- \(l^{2}\) 空間の自然な系
+- [[color:green][\(l^{2}\) 空間の自然な系]]
   #+begin_quote
   \(\phi_{k}\) 
   を以下で定義する．
@@ -289,25 +289,25 @@
     定理の条件を満たす
 
 #+reveal: split
-    - 証明の概要
-      #+attr_reveal: :frag (appear)
-      - その1
-	#+begin_quote
-	\(\mathcal{H}\) は可分なので，
-	稠密な可算部分集合 \(\mathcal{D}\) をとることができる．
-	#+end_quote
-      - その2
-	#+begin_quote
-	正規直交系 \(\mathcal{A}\) において
-	\(\forall\phi,\psi\in\mathcal{A},\;\phi\not=\psi\) 
-	#+begin_src latex
-	  \begin{equation}
-	    \|\phi-\psi\|=\sqrt{2}
-	  \end{equation}
-	#+end_src
-	が成り立つ．
-	#+end_quote
-
+- 証明の概要
+  #+attr_reveal: :frag (appear)
+  - その1
+    #+begin_quote
+    \(\mathcal{H}\) は可分なので，
+    稠密な可算部分集合 \(\mathcal{D}\) をとることができる．
+    #+end_quote
+  - その2
+    #+begin_quote
+    正規直交系 \(\mathcal{A}\) において
+    \(\forall\phi,\psi\in\mathcal{A},\;\phi\not=\psi\) 
+    #+begin_src latex
+      \begin{equation}
+        \|\phi-\psi\|=\sqrt{2}
+      \end{equation}
+    #+end_src
+    が成り立つ．
+    #+end_quote
+    
 #+reveal: split
 #+attr_reveal: :frag (appear)
 - その3
