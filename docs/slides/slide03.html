@@ -47,25 +47,25 @@
 </section>
 
 <section>
-<section id="slide-org8204165">
-<h2 id="org8204165">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org8204165">
+<section id="slide-orga142992">
+<h2 id="orga142992">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orga142992">
 </div>
 </section>
-<section id="slide-org35aeca0">
-<h3 id="org35aeca0">ベクトル空間</h3>
+<section id="slide-org0a9f24b">
+<h3 id="org0a9f24b">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
 </p>
 <blockquote>
 <ol>
-<li>\(a,b\in V\;\Rightarrow\;a+b\in V\)</li>
+<li><b>\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)</b></li>
 <li>\(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)</li>
 <li>\(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)</li>
 <li>\(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)</li>
 <li>\(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)</li>
-<li>\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)</li>
+<li><b>\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)</b></li>
 <li>\(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)</li>
 <li>\(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)</li>
 <li>\(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)</li>
@@ -78,11 +78,11 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb0952c7">
-<h3 id="orgb0952c7">内積空間</h3>
+<section id="slide-org4824080">
+<h3 id="org4824080">内積空間</h3>
 <ul>
 <li><p>
-内積の定義
+内積
 </p>
 <blockquote>
 <p>
@@ -117,8 +117,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb09193c">
-<h3 id="orgb09193c">Hilbert 空間</h3>
+<section id="slide-orgce00e4c">
+<h3 id="orgce00e4c">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
@@ -130,7 +130,7 @@
 </p>
 <div>
 \begin{equation}
-  \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
+  \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy 列という)}
 \end{equation}
 
 </div>
@@ -147,7 +147,9 @@
 </p>
 <blockquote>
 <p>
-内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
+内積空間 \(\mathcal{H}\) が
+ノルム \(\|u\|=\sqrt{\langle u,u\rangle}\)
+に関して完備なとき 
 <b>Hilbert 空間</b>
 という．
 </p>
@@ -157,8 +159,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orge02c3b4">
-<h3 id="orge02c3b4">Hilbert 空間の例</h3>
+<section id="slide-org9a05fd0">
+<h3 id="org9a05fd0">Hilbert 空間の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">\(l^{2}\) 空間 (無限次元数ベクトル空間)</span>
@@ -186,7 +188,11 @@
 \end{equation}
 
 </div>
-</blockquote></li>
+</blockquote>
+<ul>
+<li><span style="color:orange;">ノルムが有界であることから内積が計算できる</span></li>
+
+</ul></li>
 
 </ul>
 
@@ -229,14 +235,14 @@
 </section>
 </section>
 <section>
-<section id="slide-org56db554" data-background="#fef4f4">
-<h2 id="org56db554">演習</h2>
+<section id="slide-org2b3cd89" data-background="#fef4f4">
+<h2 id="org2b3cd89">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgbc9c145" data-background="#fef4f4">
-<h3 id="orgbc9c145">練習問題</h3>
+<section id="slide-orgb661384" data-background="#fef4f4">
+<h3 id="orgb661384">練習問題</h3>
 <ul>
-<li>係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+<li>係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
 以下を展開せよ．
 <ul>
 <li>\(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)</li>
@@ -251,7 +257,7 @@
 とする．
 <ul>
 <li>区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\)</li>
-<li>区間 \([-1,1]\) 上のノルムが有限の複素数値関数の空間 \(L^{2}[-1,1]\)</li>
+<li>区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\)</li>
 
 </ul></li>
 
@@ -261,20 +267,20 @@
 </section>
 </section>
 <section>
-<section id="slide-org46f60bf">
-<h2 id="org46f60bf">正規直交系</h2>
-<div class="outline-text-2" id="text-org46f60bf">
+<section id="slide-orgdf63b69">
+<h2 id="orgdf63b69">正規直交系</h2>
+<div class="outline-text-2" id="text-orgdf63b69">
 </div>
 </section>
-<section id="slide-orgccfb545">
-<h3 id="orgccfb545">正規直交系</h3>
+<section id="slide-org8ce8da9">
+<h3 id="org8ce8da9">正規直交系</h3>
 <ul>
 <li><p>
 定義
 </p>
 <blockquote>
 <p>
-Hilbert空間 \(\mathcal{H}\) の
+Hilbert 空間 \(\mathcal{H}\) の
 部分集合 \(\mathcal{A}\) を考える．
 </p>
 <div>
@@ -316,8 +322,8 @@ Hilbert空間 \(\mathcal{H}\) の
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org52d2672">
-<h3 id="org52d2672">正規直交系の例</h3>
+<section id="slide-org6cb221d">
+<h3 id="org6cb221d">正規直交系の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">\(l^{2}\) 空間</span>
@@ -385,8 +391,8 @@ Hilbert空間 \(\mathcal{H}\) の
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org60bde09">
-<h3 id="org60bde09">Hilbert 空間の正規直交系</h3>
+<section id="slide-orgbd3c72f">
+<h3 id="orgbd3c72f">Hilbert 空間の正規直交系</h3>
 <ul>
 <li><p>
 稠密の定義
@@ -436,8 +442,8 @@ Hilbert空間 \(\mathcal{H}\) の
 </ul></li>
 <li class="fragment appear">可分な集合の例
 <ul>
-<li>実数 (稠密な集合: 有理数)</li>
-<li>複素数 (稠密な集合: 実部と虚部がそれぞれ有理数)</li>
+<li>実数 (稠密な集合 : 有理数)</li>
+<li>複素数 (稠密な集合 : 実部と虚部がそれぞれ有理数)</li>
 
 </ul></li>
 
@@ -473,7 +479,7 @@ Hilbert空間 \(\mathcal{H}\) の
 </section>
 <section>
 <ul>
-<li>証明の概要
+<li>定理の略証
 <ul>
 <li class="fragment appear"><p>
 その1
@@ -511,6 +517,8 @@ Hilbert空間 \(\mathcal{H}\) の
 <div class="slide-footer"><br></div>
 </section>
 <section>
+<ul>
+<li>定理の略証 (つづき)
 <ul>
 <li class="fragment appear"><p>
 その3
@@ -551,11 +559,15 @@ Hilbert空間 \(\mathcal{H}\) の
 </div>
 </blockquote></li>
 
+</ul></li>
+
 </ul>
 
 <div class="slide-footer"><br></div>
 </section>
 <section>
+<ul>
+<li>定理の略証 (つづき)
 <ul>
 <li class="fragment appear"><p>
 その5
@@ -587,12 +599,14 @@ Hilbert空間 \(\mathcal{H}\) の
 </p>
 </blockquote></li>
 
+</ul></li>
+
 </ul>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org6e6da74">
-<h3 id="org6e6da74">正規直交系の存在</h3>
+<section id="slide-orgb025ee9">
+<h3 id="orgb025ee9">正規直交系の存在</h3>
 <ul>
 <li><p>
 定理
@@ -654,8 +668,8 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org2cc7308">
-<h3 id="org2cc7308">正規直交系の構成例</h3>
+<section id="slide-org7e2ff3b">
+<h3 id="org7e2ff3b">正規直交系の構成例</h3>
 <ul>
 <li><p>
 問題
@@ -688,12 +702,12 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org853e36e" data-background="#fef4f4">
-<h2 id="org853e36e">演習</h2>
+<section id="slide-org48bb5c7" data-background="#fef4f4">
+<h2 id="org48bb5c7">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org734c9fb" data-background="#fef4f4">
-<h3 id="org734c9fb">練習問題</h3>
+<section id="slide-org7180459" data-background="#fef4f4">
+<h3 id="org7180459">練習問題</h3>
 <ul>
 <li>Gram-Schmidt の直交化法において
 \(\phi_{n}\)
@@ -728,13 +742,13 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-orgc1cd508">
-<h2 id="orgc1cd508">完全正規直交系</h2>
-<div class="outline-text-2" id="text-orgc1cd508">
+<section id="slide-org511c887">
+<h2 id="org511c887">完全正規直交系</h2>
+<div class="outline-text-2" id="text-org511c887">
 </div>
 </section>
-<section id="slide-org5a76afe">
-<h3 id="org5a76afe">正規直交系の性質</h3>
+<section id="slide-orgcf2bfb7">
+<h3 id="orgcf2bfb7">正規直交系の性質</h3>
 <ul>
 <li><p>
 正規直交系 \(\{\phi_{k}\}_{k=1,2,\dotsc}\)
@@ -771,8 +785,8 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgdb61590">
-<h3 id="orgdb61590">Bessel の不等式</h3>
+<section id="slide-org4f3b477">
+<h3 id="org4f3b477">Bessel の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -826,8 +840,8 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org66ce517">
-<h3 id="org66ce517">完全性</h3>
+<section id="slide-orge0139b1">
+<h3 id="orge0139b1">完全性</h3>
 <ul>
 <li><p>
 定義
@@ -866,8 +880,8 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org8cc82cc">
-<h3 id="org8cc82cc">完全性の同値な条件</h3>
+<section id="slide-org6c02e8a">
+<h3 id="org6c02e8a">完全性の同値な条件</h3>
 <ul>
 <li><p>
 定理
@@ -884,7 +898,7 @@ Gram-Schmidt の直交化法
      u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)</li>
 <li>\(\forall u\in\mathcal{H}\;\Rightarrow\;
      \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}\)
-(Parsevalの等式)</li>
+(Parseval の等式)</li>
 <li>\(\forall u,v\in\mathcal{H}\;\Rightarrow\;
      \langle u,v\rangle
      =\sum_{k}\langle u,\phi_{k}\rangle\overline{\langle v,\phi_{k}\rangle}\)</li>
@@ -895,8 +909,8 @@ Gram-Schmidt の直交化法
 <ul>
 <li>特に2と4の条件は重要
 <ul>
-<li>2: 線形結合の係数は正規直交系との内積で計算できる</li>
-<li>4: ベクトルの内積は係数の内積で計算できる</li>
+<li>2 : 線形結合の係数は正規直交系との内積で計算できる</li>
+<li>4 : ベクトルの内積は係数の内積で計算できる</li>
 
 </ul></li>
 
@@ -906,15 +920,15 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgaf1a543">
-<h3 id="orgaf1a543">完全正規直交系の性質</h3>
+<section id="slide-orga33086a">
+<h3 id="orga33086a">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
 </p>
 <blockquote>
 <p>
-可分な無限次元Hilbert空間には
+可分な無限次元 Hilbert 空間には
 可算個の要素からなる完全正規直交系が存在する．
 </p>
 </blockquote></li>
@@ -923,7 +937,7 @@ Gram-Schmidt の直交化法
 </p>
 <blockquote>
 <p>
-可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
+可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
 </p>
 </blockquote></li>
 
@@ -931,11 +945,11 @@ Gram-Schmidt の直交化法
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc92ef91">
-<h3 id="orgc92ef91">完全正規直交系の例</h3>
+<section id="slide-org1620aed">
+<h3 id="org1620aed">完全正規直交系の例</h3>
 <ul>
 <li><p>
-\(l^{2}\) 空間
+<span style="color:green;">\(l^{2}\) 空間</span>
 </p>
 <blockquote>
 <div>
@@ -956,7 +970,7 @@ Gram-Schmidt の直交化法
 <section>
 <ul>
 <li><p>
-\(L^{2}(-\pi,\pi)\) 空間  
+<span style="color:green;">\(L^{2}(-\pi,\pi)\) 空間</span>
 </p>
 <blockquote>
 <div>
@@ -976,15 +990,27 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org72cffb3" data-background="#fef4f4">
-<h2 id="org72cffb3">演習</h2>
+<section id="slide-orgfbbd5ef" data-background="#fef4f4">
+<h2 id="orgfbbd5ef">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfd5dd1d" data-background="#fef4f4">
-<h3 id="orgfd5dd1d">練習問題</h3>
+<section id="slide-orgff61111" data-background="#fef4f4">
+<h3 id="orgff61111">練習問題</h3>
 <ul>
-<li>\(L^{2}(-\pi,\pi)\) 空間において 
-\(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．</li>
+<li><p>
+\(L^{2}(-\pi,\pi)\) 空間において
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \frac{1}{\sqrt{2\pi}}e^{ikx},\;k=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+が正規直交系になることを確かめよ．
+</p></li>
 <li>\(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．</li>
 
 </ul>
@@ -993,16 +1019,16 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org4d41e04">
-<h2 id="org4d41e04">今回のまとめ</h2>
+<section id="slide-org591e647">
+<h2 id="org591e647">今回のまとめ</h2>
 <ul>
 <li>正規直交系
 <ul>
-<li>直交系: 任意の2つの要素の内積が0となる集合</li>
-<li>正規直交系: 要素のノルムが1である直交系</li>
-<li>正規直交系の可算性:
+<li>直交系 : 任意の2つの要素の内積が0となる集合</li>
+<li>正規直交系 : 要素のノルムが1である直交系</li>
+<li>正規直交系の可算性 :
 可分な Hilbert 空間の正規直交系は高々可算の集合である</li>
-<li>Gram-Schmidt の直交化法:
+<li>Gram-Schmidt の直交化法 :
 線形独立な集合から正規直交系を作る算法．</li>
 
 </ul></li>
@@ -1027,9 +1053,9 @@ Parseval の等式を満たす正規直交系
 
 </div>
 </blockquote></li>
-<li>完全正規直交系の存在: 
+<li>完全正規直交系の存在 : 
 可分な Hilbert 空間には完全正規直交系が存在する</li>
-<li>Hilbert 空間の表現:
+<li>Hilbert 空間の表現 :
 可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である</li>
 
 </ul></li>

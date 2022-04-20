@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-15 10:39:31 mura>
+# Time-stamp: <2022-04-20 12:54:10 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -16,12 +16,12 @@
 ** ベクトル空間
 - 以下の条件を満たす
   #+begin_quote
-  1. \(a,b\in V\;\Rightarrow\;a+b\in V\)
+  1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
   2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
   3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
   4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
   5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
-  6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
+  6. *\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)*
   7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
   8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
   9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)

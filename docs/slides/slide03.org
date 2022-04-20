@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-14 21:52:50 mura>
+# Time-stamp: <2022-04-20 14:09:38 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -16,12 +16,12 @@
 ** ベクトル空間
 - 満たすべき条件
   #+begin_quote
-  1. \(a,b\in V\;\Rightarrow\;a+b\in V\)
+  1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
   2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
   3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
   4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
   5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
-  6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
+  6. *\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)*
   7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
   8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
   9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
@@ -29,7 +29,7 @@
   #+end_quote
 
 ** 内積空間
-- 内積の定義
+- 内積
   #+begin_quote
   ベクトル空間の2つの要素
   \(u,v\in\mathcal{H}\) に対して，
@@ -57,7 +57,7 @@
   この点列がだんだん動かなくなる状況を考える．
   #+begin_src latex
     \begin{equation}
-      \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
+      \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy 列という)}
     \end{equation}
   #+end_src
   この点列の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
@@ -67,7 +67,9 @@
   #+end_quote
 - 定義
   #+begin_quote
-  内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
+  内積空間 \(\mathcal{H}\) が
+  ノルム \(\|u\|=\sqrt{\langle u,u\rangle}\)
+  に関して完備なとき 
   *Hilbert 空間*
   という．
   #+end_quote
@@ -95,7 +97,8 @@
     \end{equation}
   #+end_src
   #+end_quote
-  
+  - [[color:orange][ノルムが有界であることから内積が計算できる]]
+    
 #+reveal: split
 - [[color:green][\(L^{2}\) 空間 (これから扱う信号の空間)]]
   #+begin_quote
@@ -129,7 +132,7 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+- 係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
   以下を展開せよ．
   - \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
   - \(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)
@@ -140,7 +143,7 @@
   \(\langle f,g\rangle=\int_{-1}^{1}f(x)\overline{g(x)}dx\) 
   とする．
   - 区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\) 
-  - 区間 \([-1,1]\) 上のノルムが有限の複素数値関数の空間 \(L^{2}[-1,1]\) 
+  - 区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\) 
 
 ** COMMENT 解答例
 :PROPERTIES:
@@ -169,16 +172,16 @@
   #+end_quote
 
 #+reveal: split
-- それぞれの空間でCauchy列を考えてみよ
+- それぞれの空間で Cauchy 列を考えてみよ
   - 不連続な関数の中に連続関数の極限として定義できるものがある
-  - ノルムの値である実数値のCauchy列を考えればよい
+  - ノルムの値である実数値の Cauchy 列を考えればよい．
 
 
 * 正規直交系
 ** 正規直交系
 - 定義
   #+begin_quote
-  Hilbert空間 \(\mathcal{H}\) の
+  Hilbert 空間 \(\mathcal{H}\) の
   部分集合 \(\mathcal{A}\) を考える．
   #+begin_src latex
     \begin{equation}
@@ -273,8 +276,8 @@
     - 自然数の組 (2次元の表)
     - 有理数 (自然数/自然数)
   - 可分な集合の例
-    - 実数 (稠密な集合: 有理数)
-    - 複素数 (稠密な集合: 実部と虚部がそれぞれ有理数)
+    - 実数 (稠密な集合 : 有理数)
+    - 複素数 (稠密な集合 : 実部と虚部がそれぞれ有理数)
 
 #+reveal: split
 - 定理
@@ -289,7 +292,7 @@
     定理の条件を満たす
 
 #+reveal: split
-- 証明の概要
+- 定理の略証
   #+attr_reveal: :frag (appear)
   - その1
     #+begin_quote
@@ -309,52 +312,54 @@
     #+end_quote
     
 #+reveal: split
-#+attr_reveal: :frag (appear)
-- その3
-  #+begin_quote
-  \(\phi\in\mathcal{A}\subset\mathcal{H}\)
-  に対して
-  \(u_{\phi}\in\mathcal{D}\)
-  を
-  #+begin_src latex
-    \begin{equation}
-      \|\phi-u_{\phi}\|<\frac{1}{\sqrt{2}}
-    \end{equation}
-  #+end_src
-  となるようにとることができる(稠密なので必ずとれる)．
-  #+end_quote
-- その4
-  #+begin_quote
-  このとき三角不等式により以下が成り立つ．
-  #+begin_src latex
-    \begin{align}
-      \sqrt{2}
-      &=\|\phi-\psi\|\\
-      &\leq\|\phi-u_{\phi}\|+\|u_{\phi}-u_{\psi}\|+\|u_{\psi}-\psi\|\\
-      &<\sqrt{2}+\|u_{\phi}-u_{\psi}\|
-    \end{align}
-  #+end_src
-  #+end_quote
+- 定理の略証 (つづき)
+  #+attr_reveal: :frag (appear)
+  - その3
+    #+begin_quote
+    \(\phi\in\mathcal{A}\subset\mathcal{H}\)
+    に対して
+    \(u_{\phi}\in\mathcal{D}\)
+    を
+    #+begin_src latex
+      \begin{equation}
+        \|\phi-u_{\phi}\|<\frac{1}{\sqrt{2}}
+      \end{equation}
+    #+end_src
+    となるようにとることができる(稠密なので必ずとれる)．
+    #+end_quote
+  - その4
+    #+begin_quote
+    このとき三角不等式により以下が成り立つ．
+    #+begin_src latex
+      \begin{align}
+        \sqrt{2}
+        &=\|\phi-\psi\|\\
+        &\leq\|\phi-u_{\phi}\|+\|u_{\phi}-u_{\psi}\|+\|u_{\psi}-\psi\|\\
+        &<\sqrt{2}+\|u_{\phi}-u_{\psi}\|
+      \end{align}
+    #+end_src
+    #+end_quote
 
 #+reveal: split
-#+attr_reveal: :frag (appear)
-- その5
-  #+begin_quote
-  したがって
-  #+begin_src latex
-    \begin{equation}
-      \|u_{\phi}-u_{\psi}\|\not=0
-      \;\Rightarrow\;
-      u_{\phi}\not=u_{\psi}
-    \end{equation}
-  #+end_src
-  つまり \(\phi\to u_{\phi}\) は1対1対応にできる．
-  #+end_quote
-- その6
-  #+begin_quote
-  \(\mathcal{D}\) は可算なので，
-  \(\mathcal{A}\) は高々可算であることがわかる．
-  #+end_quote
+- 定理の略証 (つづき)
+  #+attr_reveal: :frag (appear)
+  - その5
+    #+begin_quote
+    したがって
+    #+begin_src latex
+      \begin{equation}
+        \|u_{\phi}-u_{\psi}\|\not=0
+        \;\Rightarrow\;
+        u_{\phi}\not=u_{\psi}
+      \end{equation}
+    #+end_src
+    つまり \(\phi\to u_{\phi}\) は1対1対応にできる．
+    #+end_quote
+  - その6
+    #+begin_quote
+    \(\mathcal{D}\) は可算なので，
+    \(\mathcal{A}\) は高々可算であることがわかる．
+    #+end_quote
 
 ** 正規直交系の存在
 - 定理
@@ -560,29 +565,29 @@
      u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)
   3. \(\forall u\in\mathcal{H}\;\Rightarrow\;
      \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}\)
-     (Parsevalの等式)
+     (Parseval の等式)
   4. \(\forall u,v\in\mathcal{H}\;\Rightarrow\;
      \langle u,v\rangle
      =\sum_{k}\langle u,\phi_{k}\rangle\overline{\langle v,\phi_{k}\rangle}\)
   5. \(\forall k,\, \langle u,\phi_{k}\rangle=0\;\Rightarrow\;u=0\)
   #+end_quote
   - 特に2と4の条件は重要
-    - 2: 線形結合の係数は正規直交系との内積で計算できる
-    - 4: ベクトルの内積は係数の内積で計算できる
+    - 2 : 線形結合の係数は正規直交系との内積で計算できる
+    - 4 : ベクトルの内積は係数の内積で計算できる
 
 ** 完全正規直交系の性質
 - 定理
   #+begin_quote
-  可分な無限次元Hilbert空間には
+  可分な無限次元 Hilbert 空間には
   可算個の要素からなる完全正規直交系が存在する．
   #+end_quote
 - 定理
   #+begin_quote
-  可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
+  可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
   #+end_quote
 
 ** 完全正規直交系の例
-- \(l^{2}\) 空間
+- [[color:green][\(l^{2}\) 空間]]
   #+begin_quote
   #+begin_src latex
     \begin{align}
@@ -595,7 +600,7 @@
   #+end_quote
 
 #+reveal: split
-- \(L^{2}(-\pi,\pi)\) 空間  
+- [[color:green][\(L^{2}(-\pi,\pi)\) 空間]]
   #+begin_quote
   #+begin_src latex
     \begin{align}
@@ -615,8 +620,15 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- \(L^{2}(-\pi,\pi)\) 空間において 
-  \(\{e^{ikx}/{\sqrt{2\pi}}\}\) が正規直交系になることを確かめよ．
+- \(L^{2}(-\pi,\pi)\) 空間において
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \frac{1}{\sqrt{2\pi}}e^{ikx},\;k=0,\pm1,\pm2,\dotsc
+    \end{equation}
+  #+end_src
+  #+end_quote
+  が正規直交系になることを確かめよ．
 - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
 ** COMMENT 解答例
@@ -656,11 +668,11 @@
 
 * 今回のまとめ
 - 正規直交系
-  - 直交系: 任意の2つの要素の内積が0となる集合
-  - 正規直交系: 要素のノルムが1である直交系
-  - 正規直交系の可算性:
+  - 直交系 : 任意の2つの要素の内積が0となる集合
+  - 正規直交系 : 要素のノルムが1である直交系
+  - 正規直交系の可算性 :
     可分な Hilbert 空間の正規直交系は高々可算の集合である
-  - Gram-Schmidt の直交化法:
+  - Gram-Schmidt の直交化法 :
     線形独立な集合から正規直交系を作る算法．
 
 #+reveal: split 
@@ -674,9 +686,9 @@
       \end{equation}
     #+end_src
     #+end_quote
-  - 完全正規直交系の存在: 
+  - 完全正規直交系の存在 : 
     可分な Hilbert 空間には完全正規直交系が存在する
-  - Hilbert 空間の表現:
+  - Hilbert 空間の表現 :
     可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である
 
 
