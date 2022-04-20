@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 13:42:02 mura>
+# Time-stamp: <2022-04-20 16:12:23 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -16,12 +16,12 @@
 ** ベクトル空間
 - 満たすべき条件
   #+begin_quote
-  1. \(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)
+  1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
   2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
   3. \(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)
   4. \(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)
   5. \(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)
-  6. \(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)
+  6. *\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)*
   7. \(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)
   8. \(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)
   9. \(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)
@@ -74,7 +74,7 @@
 ** 正規直交系
 - 定義
   #+begin_quote
-  Hilbert空間 \(\mathcal{H}\) の
+  Hilbert 空間 \(\mathcal{H}\) の
   部分集合 \(\mathcal{A}\) が
   #+begin_src latex
     \begin{equation}
@@ -121,12 +121,12 @@
 ** 完全正規直交系の性質
 - 定理
   #+begin_quote
-  可分な無限次元Hilbert空間には
+  可分な無限次元 Hilbert 空間には
   *可算個* の要素からなる完全正規直交系が存在する．
   #+end_quote
 - 定理
   #+begin_quote
-  可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
+  可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
   #+end_quote
 - 定理
   #+begin_quote
@@ -144,7 +144,7 @@
 * Fourier 級数
 # #+begin_notes
 # これまで
-# Hilbert空間の完全正規直交系を考察した．
+# Hilbert 空間の完全正規直交系を考察した．
 # 本章では，これらの結果を踏まえて，
 # 基底関数を用いた周期関数の具体的な展開法を議論する．
 # #+end_notes
@@ -153,7 +153,7 @@
 - 周期的な信号: 性質の良い(取り扱い易い)信号
 - \(2\pi\) 周期の信号を考えることにする
 - \(\mathbb{R}\) 上の関数 \(f(x)\) が
-  周期 \(2\pi\) を持つ:
+  周期 \(2\pi\) を持つ :
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -215,23 +215,23 @@
   #+end_src
   #+end_quote
 
-** 注意
-  - あとで示すように
-    #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-	\left\{
-	  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-	\right\}
-      \end{equation}
-    #+end_src
-    #+end_quote
-    は
-    \(L^{2}(-\pi,\pi)\)
-    上の *完全正規直交系* となる．
+#+reveal: split
+- あとで示すように
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \left\{
+        \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+      \right\}
+    \end{equation}
+  #+end_src
+  #+end_quote
+  は
+  \(L^{2}(-\pi,\pi)\)
+  上の *完全正規直交系* となる．
 
 #+reveal: split
-- *正規直交系* であることは容易に確かめられる．
+- *正規直交系* であること容易に確かめられる．
   #+begin_quote
   #+begin_src latex
     \begin{align}
@@ -250,10 +250,16 @@
   #+end_quote
 
 ** Fourier 級数展開の例
-- 区間 \((-\pi,\pi)\) 上の周期関数 \(f(x)=x\)
-  (\(\in L^{2}(-\pi,\pi)\)) 
-  Fourier 級数展開を求める
-- 係数は以下の式を計算すればよい．
+- [[color:green][区間 \((-\pi,\pi)\) 上の周期関数]]
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=x,\quad
+      f \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+- 係数は以下の式を計算すればよい
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -328,7 +334,7 @@
   - \(f(x)=|x|\)
   - \(f(x)=x^{2}\)
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -345,7 +351,7 @@
     \end{align}
   #+end_src
   #+end_quote
-- 偶関数なので余弦関数で書き直すことができる
+  - /[[color:orange][偶関数なので余弦関数で書き直すことができる]]/
   
 #+reveal: split
 - \(f(x)=x^{2}\)
@@ -360,12 +366,12 @@
     \end{align}
   #+end_src
   #+end_quote
-- \(f(x)=x\) の結果と比較してみよ
+  - /[[color:orange][\(f(x)=x\) の結果と比較してみよ]]/
 
 
 * Fourier 級数の応用
 ** 級数和の計算
-- 展開式から級数和に関していろいろな公式を得ることができる．
+- 展開式から級数和に関していろいろな公式を得ることができる
 - \(f(x)=|x|\) に対して \(x=0\) とすれば
   #+begin_quote
   #+begin_src latex
@@ -407,7 +413,7 @@
     \end{align}
   #+end_src
   #+end_quote
-  - 正弦関数と余弦関数で完全正規直交系を構成できる
+  - /[[color:orange][正弦関数と余弦関数で完全正規直交系を構成できる]]/
 
 #+reveal: split
 - 実数値関数の係数
@@ -419,7 +425,7 @@
       i\frac{a_{n}-a_{-n}}{\sqrt{2\pi}}
     \end{equation}
   #+end_src
-  は実数になることから
+  は実数になるので
   \(a_{n}\) と \(a_{-n}\) は複素共役の関係にある．
   #+end_quote
 
@@ -434,11 +440,11 @@
     \end{align}
   #+end_src
   がそれぞれ完全正規直交系となる．
-
-  これは \((0,\pi)\) で定義された関数をそれぞれ偶関数，奇関数として
-  \((-\pi,\pi)\) に拡張すれば，
-  余弦関数または正弦関数のみで展開できることを利用すればよい．
   #+end_quote
+  - \((0,\pi)\) で定義された関数をそれぞれ
+    偶関数，奇関数として
+    \((-\pi,\pi)\) に拡張すれば，
+    余弦関数または正弦関数のみで展開できることがわかる
 
 
 * 演習
@@ -454,12 +460,14 @@
   #+begin_src latex
     \begin{equation}
       \sum_{n=1}^{\infty}\frac{1}{n^{2}}
+      \quad
+      \text{(Basel problem)}
     \end{equation}
   #+end_src
   #+end_quote
 - 正弦関数と余弦関数で正規直交系を構成せよ．
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -510,7 +518,7 @@
 #+reveal: split
 - step 2
   #+begin_quote
-  Besselの不等式(の特殊な場合)から
+  Bessel の不等式(の特殊な場合)から
   #+begin_src latex
     \begin{equation}
       |a_{n}|<\|f\|
@@ -618,8 +626,7 @@
 #+reveal: split
 - step 9
   #+begin_quote
-  \(P_{r}(x)\) は
-  \(r\to1\) で \(P_{r}(x)\) は Dirac の\(\delta\)関数
+  \(r\to1\) とすると \(P_{r}(x)\) は Dirac の\(\delta\)関数
   となる．
   - \(P_{r}(x) > 0\) (3行目の表現より明らか)
   - \(P_{r}\) の一周期分の積分は
@@ -692,7 +699,7 @@
 
 
 * 今回のまとめ
-- Fourier 級数展開:
+- Fourier 級数展開 :
   - 周期関数 (\(\in L^{2}(-\pi,\pi)\)) の Fourier 級数展開:
     #+begin_quote
     #+begin_src latex
@@ -702,7 +709,7 @@
       \end{equation}
     #+end_src
     #+end_quote
-  - Fourier 基底の完全性:
+  - Fourier 基底の完全性 :
     #+begin_quote
     #+begin_src latex
       \begin{equation}
@@ -711,8 +718,9 @@
 	\right\}
       \end{equation}
     #+end_src
+    は完全正規直交系である．
     #+end_quote
-    は完全正規直交系である
+    
 
 ** COMMENT 注意
 - 確認テスト (講義4の中)
