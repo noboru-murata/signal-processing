@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-20 14:20:16 mura>
+# Time-stamp: <2022-04-22 10:02:41 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -145,7 +145,7 @@
   - 区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\) 
   - 区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\) 
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -395,12 +395,17 @@
   5. \(\phi'_{n}=\psi_{n}-\sum_{k=1}^{n-1}\langle\psi_{n},\phi_{k}\rangle\phi_{k}\) (直交化)
   6. \(\phi_{n}=\|\phi'_{n}\|^{-1}\phi'_{n}\) (正規化)
   #+end_quote
+  - 練習問題で直交性を確認する
 
 ** 正規直交系の構成例
 - 問題
   #+begin_quote
   \(L^{2}(-1,1)\) における独立なベクトルを
-  \(\psi_{0}=1,\,\psi_{1}=x,\,\psi_{2}=x^{2},\dotsc\)
+  #+begin_src latex
+    \begin{equation}
+      \psi_{0}=1,\,\psi_{1}=x,\,\psi_{2}=x^{2},\dotsc
+    \end{equation}
+  #+end_src
   とする．
   この集合から正規直交系を構成せよ．
   #+end_quote
@@ -431,7 +436,7 @@
   #+begin_quote
   #+begin_src latex
     \begin{equation}
-      \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}[0,1],
+      \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}(0,1),
     \end{equation}
     ただし内積は以下で定めるものとする
     \begin{equation}
@@ -440,7 +445,7 @@
   #+end_src
   #+end_quote
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -631,7 +636,7 @@
   が正規直交系になることを確かめよ．
 - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
