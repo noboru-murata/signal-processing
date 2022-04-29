@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-20 12:54:10 mura>
+# Time-stamp: <2022-04-29 14:21:17 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -134,9 +134,7 @@
 
 
 * 内積空間
-# #+begin_notes
 # ベクトル空間に少し条件を加えた空間 \(\mathcal{H}\) を考える．
-# #+end_notes
 
 ** 内積
 - 定義
@@ -292,10 +290,8 @@
 
 
 * Hilbert 空間
-# #+begin_notes
 # 点列の収束に関する強い条件を入れて
 # より扱い易い内積空間を定義する．
-# #+end_notes
 
 ** 完備性
 - 定義
@@ -471,7 +467,14 @@
 - 内積空間 : 内積が定義されたベクトル空間
 - Hilbert 空間 : 完備な内積空間
 
+** COMMENT 注意
+- 確認テスト (講義2の中)
+  - 試験の意味を考えて誠実な対応をすること
+  - ネットワーク環境等には自身で配慮すること
+  - 過去問などに取り組んでから受けることをお勧め
 
+
+* Footnotes
 * COMMENT ローカル変数
 # Local Variables:
 # org-latex-listings: minted

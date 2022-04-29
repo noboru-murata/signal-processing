@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-20 16:26:28 mura>
-:reveal:
+# Time-stamp: <2022-04-29 14:07:25 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** ベクトル空間
@@ -142,15 +142,13 @@
 
 
 * Fourier 級数
-# #+begin_notes
 # これまで
 # Hilbert 空間の完全正規直交系を考察した．
 # 本章では，これらの結果を踏まえて，
 # 基底関数を用いた周期関数の具体的な展開法を議論する．
-# #+end_notes
 
 ** 周期関数
-- 周期的な信号: 性質の良い(取り扱い易い)信号
+- 周期的な信号 : 性質の良い(取り扱い易い)信号
 - \(2\pi\) 周期の信号を考えることにする
 - \(\mathbb{R}\) 上の関数 \(f(x)\) が
   周期 \(2\pi\) を持つ :
@@ -164,9 +162,9 @@
 
 #+reveal: split
 - 1周期の範囲は
-  \([-\pi,\pi]\) ， \([0,2\pi]\) ，\([\pi,3\pi]\) など
+  \((-\pi,\pi)\) ， \((0,2\pi)\) ，\((\pi,3\pi)\) など
   自由に取ってよい
-- 計算上取り扱いが簡単なので \([-\pi,\pi]\) を用いる
+- 計算上取り扱いが簡単なので \((-\pi,\pi)\) を用いる
 - 対象とする関数は2乗可積分な複素数値関数とする
   #+begin_quote
   #+begin_src latex
@@ -178,25 +176,25 @@
   #+end_quote
 
 ** Fourier 級数展開
-  - 定理
-    #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-	\left\{
-	  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-	\right\}
-      \end{equation}
-    #+end_src
-    とし，
-    \(f,g\in L^{2}(-\pi,\pi)\) に対して内積を
-    #+begin_src latex
-      \begin{equation}
-	\langle f,g\rangle
-	=\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-      \end{equation}
-    #+end_src
-    で定義する．
-    #+end_quote
+- 定理
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \left\{
+        \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+      \right\}
+    \end{equation}
+  #+end_src
+  とし，
+  \(f,g\in L^{2}(-\pi,\pi)\) に対して内積を
+  #+begin_src latex
+    \begin{equation}
+      \langle f,g\rangle
+      =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+    \end{equation}
+  #+end_src
+  で定義する．
+  #+end_quote
 
 #+reveal: split
 - (定理のつづき)
@@ -250,7 +248,7 @@
   #+end_quote
 
 ** Fourier 級数展開の例
-- [[color:green][区間 \((-\pi,\pi)\) 上の周期関数]]
+- [[color:green][区間 \((-\pi,\pi)\) 上の周期関数 (鋸波)]]
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -391,7 +389,7 @@
   #+end_src
   #+end_quote
 
-** Fourier級数の性質
+** Fourier 級数の性質
 - 三角関数による展開
   #+begin_quote
   Eulerの公式により以下のように変形することができる
@@ -455,7 +453,7 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- 以下の級数和を求めよ
+- 以下の級数和を求めよ．
   #+begin_quote
   #+begin_src latex
     \begin{equation}
@@ -502,7 +500,8 @@
   #+end_quote
 
 
-* 完全性の証明
+* Fourier 基底の完全性
+** 完全性の証明
 - step 1
   #+begin_quote
   関数 \(f\) が
@@ -695,7 +694,7 @@
   #+end_src
   となることが示された．
   #+end_quote
-  - 前回の定理(完全性の同値な条件)の2を参照
+  - /[[color:orange][前回の定理(完全性の同値な条件)の2を参照]]/
 
 
 * 今回のまとめ
@@ -729,6 +728,7 @@
   - 過去問などに取り組んでから受けることをお勧め
 
 
+* Footnotes
 * COMMENT ローカル変数
 # Local Variables:
 # org-latex-listings: minted

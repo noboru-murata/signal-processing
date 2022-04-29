@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2021-08-19 13:48:28 mura>
-:reveal:
+# Time-stamp: <2022-04-29 14:51:45 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
@@ -77,7 +77,7 @@
     \end{equation}
   #+end_src
   #+end_quote
-
+  
 
 * 演習
 :PROPERTIES:
@@ -196,10 +196,8 @@
    
 
 * 不連続点の性質
-  # #+begin_notes
-  # これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
-  # \(f\) に不連続点がある場合には注意する必要がある．
-  # #+end_notes
+# これまでは暗黙の内に関数 \(f\) の連続性を仮定しているが，
+# \(f\) に不連続点がある場合には注意する必要がある．
 
 ** 片側極限
 - 定義
@@ -218,13 +216,13 @@
 ** 不連続点
 - 不連続関数
   #+begin_quote
-  点 \(x\) において不連続な関数を考える
+  点 \(x\) において不連続な関数を考える．
   #+begin_src latex
     \begin{equation}
       f(x{-}0)\not=f(x{+}0)
     \end{equation}
   #+end_src
-  点 \(x\) 以外の近傍での有界性を仮定する
+  点 \(x\) 以外の近傍での有界性を仮定する．
   #+begin_src latex
     \begin{align}
       &\sup_{0 < h < \delta}|f(x-h)-f(x{-}0)| < \infty\\
@@ -344,7 +342,7 @@
   #+begin_quote
   周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
   *畳み込み* (合成積; convolution) \(h\)
-  を以下で定義される．
+  は以下で定義される．
   #+begin_src latex
     \begin{align}
       h(x)
@@ -357,7 +355,7 @@
   - 関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
     変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ
 
-** \(L^p\) ノルム
+** @@latex:@@\(L^{p}\) ノルム
 - 定義
   #+begin_quote
   関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
@@ -368,9 +366,9 @@
   #+end_src
   ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間．
   #+end_quote
-  - 内積から自然に導かれたノルムは \(L^{2}\) ノルムである
+  - /[[color:orange][内積から自然に導かれたノルムは \(L^{2}\) ノルムである]]/
 
-** \(L^{p}\) 空間
+** @@latex:@@\(L^{p}\) 空間
 - 定義
   #+begin_quote
   #+begin_src latex
@@ -433,7 +431,7 @@
 ** Riemann-Lebesgue の定理の応用
 - Fourier 級数の項別微分
   #+begin_quote
-  関数 \(f\) は区間 \([-\pi,\pi]\) で連続，
+  関数 \(f\) は区間 \((-\pi,\pi)\) で連続，
   \(f(-\pi)=f(\pi)\) ，
   ほとんどいたるところで \(f'\) が存在し，
   \(f'\in L^{2}\cap L^{1}\) であるとする．
@@ -466,10 +464,8 @@
 
 
 * 関数の積とノルム
-  # #+begin_notes
-  # このとき関数の積のノルム
-  # 関数のノルムの間にはいくつかの関係が成り立つ．
-  # #+end_notes
+# このとき関数の積のノルム
+# 関数のノルムの間にはいくつかの関係が成り立つ．
 
 ** Hölder の不等式
 - 定理
@@ -483,7 +479,7 @@
     \end{equation}
   #+end_src
   #+end_quote
-  - Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である
+  - /[[color:orange][Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である]]/
     
 #+reveal: split
 - 証明
@@ -698,6 +694,7 @@
   - ネットワーク環境等には自身で配慮すること
 
 
+* Footnotes
 * COMMENT ローカル変数
 # Local Variables:
 # org-latex-listings: minted
