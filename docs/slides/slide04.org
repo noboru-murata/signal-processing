@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 14:07:25 mura>
+# Time-stamp: <2022-05-06 10:28:55 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -332,7 +332,7 @@
   - \(f(x)=|x|\)
   - \(f(x)=x^{2}\)
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -465,7 +465,7 @@
   #+end_quote
 - 正弦関数と余弦関数で正規直交系を構成せよ．
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -720,7 +720,6 @@
     は完全正規直交系である．
     #+end_quote
     
-
 ** COMMENT 注意
 - 確認テスト (講義4の中)
   - 試験の意味を考えて誠実な対応をすること
