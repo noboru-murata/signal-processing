@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-05-05 17:31:24 mura>
+# Time-stamp: <2022-05-12 18:41:13 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -79,11 +79,11 @@
   #+end_quote
   
 
-* COMMENT 演習
+* 演習
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-** 練習問題
+** COMMENT 練習問題
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -151,8 +151,9 @@
 
 #+reveal: split
 #+header: :width 960 :height 720 :res 100
-#+begin_src R :file figs/fourier_step.png :exports results :results graphics
+#+begin_src R :file figs/fourier_step1.png :exports results :results graphics
   def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
   lns <- function(x) lcm(x * par("csi") * 2.54)
   layout(rbind(c(1,1,1,1),
 	       c(2,3,4,5),
@@ -181,18 +182,135 @@
   y <- rep(an(0),length=length(x))
   for(k in 1:8){
     plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
-	 main=paste0("|n|<",k))
+	 main=paste0("|n|=",k-1,"まで"))
     axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
     y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
   }
   par(def.par)
   #+end_src
 
-# #+CAPTION: Fourier 級数
-#+NAME: fig:fourier_step
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_step1
 #+ATTR_HTML: :height 100%
 #+ATTR_LATEX: :width 0.6\linewidth
-[[file:figs/fourier_step.png]]
+[[file:figs/fourier_step1.png]]
+   
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の関数 \(f\) を Fourier 級数展開せよ．
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        1,&|x|\le\pi/2\\
+        0,&|x|>\pi/2
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
+  - \(n=0\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{align}
+        \langle f,\phi_{0}\rangle
+        &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}dx
+          =\frac{\pi}{\sqrt{2\pi}}
+      \end{align}
+    #+end_src
+    #+end_quote
+
+#+reveal: split
+- Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
+  - \(n\not=0\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{align}
+        \langle f,\phi_{n}\rangle
+        &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
+        &=\left[
+          \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
+          \right]_{-\pi/2}^{\pi/2}
+          =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-i\pi/2\cdot n}-e^{i\pi/2\cdot n})\\
+        &=\frac{i}{n\sqrt{2\pi}}((-i)^{n}-i^{n})
+         =\frac{i^{n+1}}{n\sqrt{2\pi}}((-1)^{n}-1)\\
+        &=\begin{cases}
+            \frac{2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り1}\\
+            \frac{-2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り3}\\
+            0,&\text{\(n\)が偶数}
+          \end{cases}
+      \end{align}
+    #+end_src
+    #+end_quote
+
+#+reveal: split
+- Fourier 級数展開
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      f(x)
+      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+      &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
+      &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i^{n+1}}{\pi(2m+1)}e^{i(2m+1)x}
+    \end{align}
+  #+end_src
+  #+end_quote
+  - 書き方はいろいろある
+
+#+reveal: split
+#+header: :width 960 :height 720 :res 100
+#+begin_src R :file figs/fourier_step2.png :exports results :results graphics
+  def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
+  lns <- function(x) lcm(x * par("csi") * 2.54)
+  layout(rbind(c(1,1,1,1),
+	       c(2,3,4,5),
+	       c(6,7,8,9)),
+	 height = c(1,1,1),
+	 width = c(1,1,1,1))
+  ## layout の確認
+  ## layout.show(3)
+  ## box("outer", lty = "dotted")
+  f <- function(x) {
+    if (all(Im(z <- zapsmall(x))==0)) as.numeric(z) else x
+  }
+  par(mar=c(2,1,2,.5))
+  an <- function(n){
+    ifelse(n!=0,
+    (1i)^(n+1)/(2*pi*n)*((-1)^n-1),
+    1/2)}
+  n <- -8:8
+  plot(n,Re(sapply(n,an)),type="h",ylim=c(-.5,.5),
+       col="red",lwd=2,
+       xlab="",ylab="",xaxt="n",yaxt="n")
+  axis(1,at=n,labels=n)
+  lines(n+0.1,Im(sapply(n,an)),type="h",
+	col="blue",lwd=2)
+  x <- seq(-1.5,1.5,length=20*6+1)
+  y <- rep(an(0),length=length(x))
+  for(k in 1:8){
+    plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
+	 main=paste0("|n|=",k-1,"まで"))
+    axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
+    y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
+  }
+  par(def.par)
+  #+end_src
+
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_step2
+#+ATTR_HTML: :height 100%
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figs/fourier_step2.png]]
    
 
 * 不連続点の性質
@@ -297,7 +415,7 @@
   :PROPERTIES:
   :reveal_background: #fef4f4
   :END:
-** 練習問題
+** COMMENT 練習問題
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -331,6 +449,43 @@
 	\left\{\frac{i\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i\{(-1)^{n}-1\}}{2\pi n}\right\}\\
       &=\frac{1}{2}
 	=\frac{f(0{-}0)+f(0{+}0)}{2}
+    \end{align}
+  #+end_src
+  #+end_quote
+
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
+  Fourier 級数での \(f(\pi/2)\) の値を求めよ．
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        1,&|x|\le\pi/2\\
+        0,&|x|>\pi/2
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- Fourier 級数展開に代入すればよい
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      f(\pi/2)
+      &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{i\pi/2\cdot n}\\
+      &=\frac{1}{2}+\sum_{n=1}^{\infty}
+        \left\{\frac{i^{-2n+1}\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i^{2n+1}\{(-1)^{n}-1\}}{2\pi n}\right\}\\
+      &=\frac{1}{2}
+        =\frac{f(\pi/2{-}0)+f(\pi/2{+}0)}{2}
     \end{align}
   #+end_src
   #+end_quote
@@ -496,7 +651,7 @@
   #+end_src
   が成り立つ．
   #+end_quote
-  - 凸性について曖昧な者は意味を確認せよ．
+  - 凸性について曖昧な者は意味を確認せよ
 
 #+reveal: split
 - (証明のつづき)
@@ -619,10 +774,10 @@
 
 
 * 演習
-  :PROPERTIES:
-  :reveal_background: #fef4f4
-  :END:
-** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+** COMMENT 練習問題
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -632,8 +787,8 @@
     \begin{equation}
       f(x)=
       \begin{cases}
-	0,&x\le 0\\
-	1,&x > 0
+        0,&x\le 0\\
+        1,&x > 0
       \end{cases}
       \quad
       \in L^{2}(-\pi,\pi)
@@ -669,7 +824,55 @@
   #+end_quote
   - 図を描いて確認せよ．
 
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数 \(f\) を
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        1,&|x|\le\pi/2\\
+        0,&|x|>\pi/2
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  とするとき，畳み込み \(f*f\) を求めよ．
+- 関数 \(f*f\) を Fourier 級数展開せよ．
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 周期関数であることに注意して定義に従って計算する．
+  #+begin_quote
+  #+begin_src latex
+    \begin{align}
+      f(x-y)
+      &=
+        \begin{cases}
+          1,&-\pi/2\le x-y\le\pi/2\\
+          0,&|x-y|>\pi/2
+        \end{cases}\\
+      f*f(x)
+      &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
+      &=
+        \begin{cases}
+          \pi-x, &x \ge 0\\
+          \pi+x, &x < 0 
+        \end{cases}
+       = \pi-|x|
+    \end{align}
+  #+end_src
+  #+end_quote
+  - \(f(x-y),f(y)\)ともに1となる範囲を考えれば良い
+  - \(|x|\in L^{2}(-\pi,\pi)\) の Fourier 級数展開と比較せよ
 
+    
 * 今回のまとめ
 - Fourier 級数の性質
   - Fourier 級数展開:
