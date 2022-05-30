@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-orgb68c32b">
-<h2 id="orgb68c32b">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgb68c32b">
+<section id="slide-org123b11e">
+<h2 id="org123b11e">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org123b11e">
 </div>
 </section>
-<section id="slide-org7715471">
-<h3 id="org7715471">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-org34b4f23">
+<h3 id="org34b4f23">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -84,8 +84,8 @@ Hilbert 空間
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org8f01880">
-<h3 id="org8f01880">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-orgc7f25f3">
+<h3 id="orgc7f25f3">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -125,8 +125,8 @@ Hilbert 空間
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0e27374">
-<h3 id="org0e27374">Fourier 級数展開</h3>
+<section id="slide-org06c8978">
+<h3 id="org06c8978">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -174,13 +174,113 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org8a82d9e">
-<h2 id="org8a82d9e">Fourier 変換</h2>
-<div class="outline-text-2" id="text-org8a82d9e">
+<section id="slide-org2b0af81" data-background="#fef4f4">
+<h2 id="org2b0af81">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org043ae29" data-background="#fef4f4">
+<h3 id="org043ae29">練習問題</h3>
+<ul>
+<li><p>
+以下が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \{e^{\alpha inx},\;
+  n=0,\pm1,\pm2,\dotsc\}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+以下を内積とするとき前問の直交系を正規化せよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc5de00a">
+<h3 id="orgc5de00a">解答例</h3>
+<ul>
+<li><p>
+周期
+</p>
+<blockquote>
+<p>
+区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
+</p>
+<div>
+\begin{equation}
+  \alpha=\frac{2\pi}{T}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+正規化
+</p>
+<blockquote>
+<p>
+正規化定数を
+\(c_{n}(> 0)\) とするとき，
+内積の定義より
+</p>
+<div>
+\begin{equation}
+  |c_{n}|^{2}\int_{-\frac{T}{2}}^{\frac{T}{2}}|e^{\frac{2\pi inx}{T}}|^{2}dx
+  =|c_{n}|^{2}T
+\end{equation}
+
+</div>
+
+<p>
+であるから
+</p>
+<div>
+\begin{equation}
+  \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
+  x\in\left[-\frac{T}{2},\frac{T}{2}\right],\;
+  n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgbc04f30">
+<h2 id="orgbc04f30">Fourier 変換</h2>
+<div class="outline-text-2" id="text-orgbc04f30">
 </div>
 </section>
-<section id="slide-org1037d0d">
-<h3 id="org1037d0d">Fourier 級数の一般化</h3>
+<section id="slide-orgcd280b2">
+<h3 id="orgcd280b2">Fourier 級数の一般化</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の場合 (\(x\in[-\pi,\pi]\) で考えよ)
@@ -349,8 +449,8 @@ Riemann 和は
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org184e7b6">
-<h3 id="org184e7b6">Fourier 変換と反転公式</h3>
+<section id="slide-org88be467">
+<h3 id="org88be467">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -385,8 +485,8 @@ Riemann 和は
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org80afad5">
-<h3 id="org80afad5">多次元 Fourier 変換</h3>
+<section id="slide-org80c8a99">
+<h3 id="org80c8a99">多次元 Fourier 変換</h3>
 <ul>
 <li><p>
 d次元の場合
@@ -431,12 +531,12 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-org0edb03a" data-background="#fef4f4">
-<h2 id="org0edb03a">演習</h2>
+<section id="slide-orge0e315c" data-background="#fef4f4">
+<h2 id="orge0e315c">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd9c56db" data-background="#fef4f4">
-<h3 id="orgd9c56db">練習問題</h3>
+<section id="slide-org2492052" data-background="#fef4f4">
+<h3 id="org2492052">練習問題</h3>
 <ul>
 <li><p>
 以下の積分値を求めよ．
@@ -454,8 +554,59 @@ d次元の場合
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org7d063b2" data-background="#fef4f4">
-<h3 id="org7d063b2">練習問題</h3>
+<section id="slide-orgaa20c0d">
+<h3 id="orgaa20c0d">解答例</h3>
+<ul>
+<li><p>
+2重積分を利用する
+</p>
+<blockquote>
+<div>
+\begin{align}
+  &\int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+    \int_{-\infty}^{\infty}e^{-\epsilon y^{2}}dy\\
+  &=
+    \int_{-\infty}^{\infty}
+    \int_{-\infty}^{\infty}e^{-\epsilon(x^{2}+y^{2})}dxdy\\
+  &=
+    \int_{0}^{2\pi}
+    \int_{0}^{\infty}e^{-\epsilon r^{2}}rdrd\theta
+  &&(\text{極座標変換})\\
+  &=
+    2\pi\int_{0}^{\infty}e^{-\epsilon r^{2}}rdr
+  &&(\text{変数変換}z=r^{2})\\
+  &=
+    \pi\int_{0}^{\infty}e^{-\epsilon z}dz
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+解答
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+  =\sqrt{\frac{\pi}{\epsilon}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org54ec6f5" data-background="#fef4f4">
+<h3 id="org54ec6f5">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -467,7 +618,7 @@ d次元の場合
   =
   \begin{cases}
     1,& x\in (a,b)\\
-    0,&\text{otherwise}
+    0,&\text{それ以外}
   \end{cases}
 \end{equation}
 
@@ -487,15 +638,89 @@ d次元の場合
 <div class="slide-footer"><br></div>
 
 </section>
+<section id="slide-org1dd42c9" data-background="#fef4f4">
+<h3 id="org1dd42c9">解答例</h3>
+<ul>
+<li><p>
+\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(g(x)=e^{-\beta x^{2}}\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(h(x)=\Xi_{(-1,1)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{h}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-1}^{1}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+  &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+  &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
 </section>
 <section>
-<section id="slide-orgd62ae45">
-<h2 id="orgd62ae45">Fourier 変換の例</h2>
-<div class="outline-text-2" id="text-orgd62ae45">
+<section id="slide-org5c81c5b">
+<h2 id="org5c81c5b">Fourier 変換の例</h2>
+<div class="outline-text-2" id="text-org5c81c5b">
 </div>
 </section>
-<section id="slide-org83a56cc">
-<h3 id="org83a56cc">応用上重要な関数の例</h3>
+<section id="slide-org40ed837">
+<h3 id="org40ed837">応用上重要な関数の例</h3>
 <ul>
 <li><p>
 定義関数
@@ -510,7 +735,7 @@ d次元の場合
   =
   \begin{cases}
     1,& x\in (a,b)\\
-    0,&\text{otherwise}
+    0,&\text{それ以外}
   \end{cases}
 \end{equation}
 
@@ -563,7 +788,7 @@ d次元の場合
 
 <tr>
 <td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
-<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\omega  }\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
 </tr>
 </tbody>
 </table></li>
@@ -575,13 +800,13 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-orgb975e8f">
-<h2 id="orgb975e8f">反転公式の証明</h2>
+<section id="slide-org49b5e17">
+<h2 id="org49b5e17">反転公式の証明</h2>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orge07c396">
-<h3 id="orge07c396">証明</h3>
+<section id="slide-org4a88744">
+<h3 id="org4a88744">証明</h3>
 <ul>
 <li><p>
 step 1
@@ -756,7 +981,7 @@ Dirac の\(\delta\)関数になる．
 </p>
 </blockquote>
 <ul>
-<li>Fourier 級数展開の証明で出た Poisson 核と同様な性質</li>
+<li><i><span style="color:orange;">Fourier 級数展開の証明で出た Poisson 核と同様な性質</span></i></li>
 
 </ul></li>
 
@@ -764,8 +989,8 @@ Dirac の\(\delta\)関数になる．
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc40a06d">
-<h3 id="orgc40a06d">反転公式</h3>
+<section id="slide-orgae88aa3">
+<h3 id="orgae88aa3">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -804,8 +1029,8 @@ Dirac の\(\delta\)関数になる．
 </section>
 </section>
 <section>
-<section id="slide-orgd75858a">
-<h2 id="orgd75858a">今回のまとめ</h2>
+<section id="slide-org268ed3b">
+<h2 id="org268ed3b">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換
 <ul>

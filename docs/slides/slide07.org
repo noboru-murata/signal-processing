@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 14:58:10 mura>
+# Time-stamp: <2022-05-26 16:31:00 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -164,7 +164,7 @@
       =
       \begin{cases}
 	1,& x\in (a,b)\\
-	0,&\text{otherwise}
+	0,&\text{それ以外}
       \end{cases}
     \end{equation}
   #+end_src
@@ -890,7 +890,7 @@
   #+end_quote
   の Fourier 変換を求めよ．
   - Fourier 変換と逆 Fourier 変換の関係を利用
-  - /[[color:gray][複素積分を利用]]/
+  - /[[color:orange][複素積分を利用]]/
 
 ** COMMENT 解答例
 :PROPERTIES:
@@ -954,7 +954,7 @@
       =
       \begin{cases}
 	1,& x\in (a,b)\\
-	0,&\text{otherwise}
+	0,&\text{それ以外}
       \end{cases}
     \end{equation}
   #+end_src

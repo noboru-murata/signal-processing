@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-05-13 08:51:08 mura>
+# Time-stamp: <2022-05-30 10:30:26 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -311,6 +311,357 @@
 #+ATTR_HTML: :height 100%
 #+ATTR_LATEX: :width 0.6\linewidth
 [[file:figs/fourier_step2.png]]
+   
+** COMMENT 例題 \(\sin(x),x>0\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        \sin x,&x\ge0\\
+        0,&x<0
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- Fourier 係数
+  - \(n\not=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{n}
+        =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
+      \end{equation}
+    #+end_src
+    #+end_quote
+  - \(n=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{-1}
+        =\frac{i}{4},\quad
+        C_{1}
+        =\frac{-i}{4}
+      \end{equation}
+    #+end_src
+    #+end_quote
+
+#+reveal: split
+#+header: :width 960 :height 720 :res 100
+#+begin_src R :file figs/fourier_sin_plus.png :exports results :results graphics
+  def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
+  lns <- function(x) lcm(x * par("csi") * 2.54)
+  layout(rbind(c(1,1,1,1),
+	       c(2,3,4,5),
+	       c(6,7,8,9)),
+	 height = c(1,1,1),
+	 width = c(1,1,1,1))
+  ## layout の確認
+  ## layout.show(3)
+  ## box("outer", lty = "dotted")
+  f <- function(x) {
+    if (all(Im(z <- zapsmall(x))==0)) as.numeric(z) else x
+  }
+  par(mar=c(2,1,2,.5))
+  an <- function(n){
+    ifelse(n^2!=1,
+    ((-1)^n+1)/((2*pi)*(1-n^2)),
+    -1i*n/4)}
+  n <- -8:8
+  plot(n,Re(sapply(n,an)),type="h",ylim=c(-.5,.5),
+       col="red",lwd=2,
+       xlab="",ylab="",xaxt="n",yaxt="n")
+  axis(1,at=n,labels=n)
+  abline(h=seq(-.5,.5,by=.1),col="gray")
+  lines(n+0.1,Im(sapply(n,an)),type="h",
+	col="blue",lwd=2)
+  x <- seq(-1.5,1.5,length=20*6+1)
+  y <- rep(an(0),length=length(x))
+  for(k in 1:8){
+    plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
+	 main=paste0("|n|=",k-1,"まで"))
+    axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
+    y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
+  }
+  par(def.par)
+  #+end_src
+
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_sin_plus
+#+ATTR_HTML: :height 100%
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figs/fourier_sin_plus.png]]
+   
+** COMMENT 例題 \(-\sin(x),x<0\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        0,&x>0\\
+        -\sin(x),&x\le0
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- Fourier 係数
+  - \(n\not=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{n}
+        =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
+      \end{equation}
+    #+end_src
+    #+end_quote
+  - \(n=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{-1}
+        =\frac{-i}{4},\quad
+        C_{1}
+        =\frac{i}{4}
+      \end{equation}
+    #+end_src
+    #+end_quote
+
+#+reveal: split
+#+header: :width 960 :height 720 :res 100
+#+begin_src R :file figs/fourier_sin_minus.png :exports results :results graphics
+  def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
+  lns <- function(x) lcm(x * par("csi") * 2.54)
+  layout(rbind(c(1,1,1,1),
+               c(2,3,4,5),
+               c(6,7,8,9)),
+         height = c(1,1,1),
+         width = c(1,1,1,1))
+  ## layout の確認
+  ## layout.show(3)
+  ## box("outer", lty = "dotted")
+  f <- function(x) {
+    if (all(Im(z <- zapsmall(x))==0)) as.numeric(z) else x
+  }
+  par(mar=c(2,1,2,.5))
+  an <- function(n){
+    ifelse(n^2!=1,
+    ((-1)^n+1)/((2*pi)*(1-n^2)),
+    1i*n/4)}
+  n <- -8:8
+  plot(n,Re(sapply(n,an)),type="h",ylim=c(-.4,.4),
+       col="red",lwd=2,
+       xlab="",ylab="",xaxt="n",yaxt="n")
+  axis(1,at=n,labels=n)
+  abline(h=seq(-.5,.5,by=.1),col="gray")
+  lines(n+0.1,Im(sapply(n,an)),type="h",
+        col="blue",lwd=2)
+  x <- seq(-1.5,1.5,length=20*6+1)
+  y <- rep(an(0),length=length(x))
+  for(k in 1:8){
+    plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
+         ylim=c(-0.1,1.1),
+         main=paste0("|n|=",k-1,"まで"))
+    abline(h=-1:1)
+    axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
+    y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
+  }
+  par(def.par)
+  #+end_src
+
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_sin_minus
+#+ATTR_HTML: :height 100%
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figs/fourier_sin_minus.png]]
+   
+** COMMENT 例題 \(|\sin(x)|\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=|\sin x|
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- Fourier 係数
+  - \(n\not=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{n}
+        =\frac{(-1)^{n}+1}{\pi(1-n^{2})}
+      \end{equation}
+    #+end_src
+    #+end_quote
+  - \(n=\pm1\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{-1}=C_{1}=0
+      \end{equation}
+    #+end_src
+    #+end_quote
+
+#+reveal: split
+#+header: :width 960 :height 720 :res 100
+#+begin_src R :file figs/fourier_sin_abs.png :exports results :results graphics
+  def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
+  lns <- function(x) lcm(x * par("csi") * 2.54)
+  layout(rbind(c(1,1,1,1),
+	       c(2,3,4,5),
+	       c(6,7,8,9)),
+	 height = c(1,1,1),
+	 width = c(1,1,1,1))
+  ## layout の確認
+  ## layout.show(3)
+  ## box("outer", lty = "dotted")
+  f <- function(x) {
+    if (all(Im(z <- zapsmall(x))==0)) as.numeric(z) else x
+  }
+  par(mar=c(2,1,2,.5))
+  an <- function(n){
+    ifelse(n^2!=1,
+    ((-1)^n+1)/((pi)*(1-n^2)),
+    0)}
+  n <- -8:8
+  plot(n,Re(sapply(n,an)),type="h",ylim=c(-.7,.7),
+       col="red",lwd=2,
+       xlab="",ylab="",xaxt="n",yaxt="n")
+  axis(1,at=n,labels=n)
+  abline(h=seq(-.7,.7,by=.1),col="gray")
+  lines(n+0.1,Im(sapply(n,an)),type="h",
+	col="blue",lwd=2)
+  x <- seq(-1.5,1.5,length=20*6+1)
+  y <- rep(an(0),length=length(x))
+  for(k in 1:8){
+    plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
+	 main=paste0("|n|=",k-1,"まで"))
+    axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
+    y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
+  }
+  par(def.par)
+  #+end_src
+
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_sin_abs
+#+ATTR_HTML: :height 100%
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figs/fourier_sin_abs.png]]
+   
+** COMMENT 例題 \(sgn\)
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 関数
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      f(x)=
+      \begin{cases}
+        1,&x>0\\
+        -1,&x\le0
+      \end{cases}
+      \quad
+      \in L^{2}(-\pi,\pi)
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+#+reveal: split
+- Fourier 係数
+  - \(n=0\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{0}
+        =0
+      \end{equation}
+    #+end_src
+    #+end_quote
+  - \(n\not=0\) のとき
+    #+begin_quote
+    #+begin_src latex
+      \begin{equation}
+        C_{n}
+        =\frac{i}{\pi n}((-1)^{n}-1)
+      \end{equation}
+    #+end_src
+    #+end_quote
+
+
+#+reveal: split
+#+header: :width 960 :height 720 :res 100
+#+begin_src R :file figs/fourier_sgn.png :exports results :results graphics
+  def.par <- par(no.readonly = TRUE) # layout前の環境を保存
+  if(Sys.info()["sysname"]=="Darwin"){par(family="HiraginoSans-W4")}
+  lns <- function(x) lcm(x * par("csi") * 2.54)
+  layout(rbind(c(1,1,1,1),
+               c(2,3,4,5),
+               c(6,7,8,9)),
+         height = c(1,1,1),
+         width = c(1,1,1,1))
+  ## layout の確認
+  ## layout.show(3)
+  ## box("outer", lty = "dotted")
+  f <- function(x) {
+    if (all(Im(z <- zapsmall(x))==0)) as.numeric(z) else x
+  }
+  par(mar=c(2,1,2,.5))
+  an <- function(n){
+    ifelse(n!=0,
+    (1i)*((-1)^n-1)/((pi)*n),
+    0)}
+  n <- -8:8
+  plot(n,Re(sapply(n,an)),type="h",ylim=c(-.7,.7),
+       col="red",lwd=2,
+       xlab="",ylab="",xaxt="n",yaxt="n")
+  axis(1,at=n,labels=n)
+  abline(h=seq(-.7,.7,by=.1),col="gray")
+  lines(n+0.1,Im(sapply(n,an)),type="h",
+        col="blue",lwd=2)
+  x <- seq(-1.5,1.5,length=20*6+1)
+  y <- rep(an(0),length=length(x))
+  for(k in 1:8){
+    plot(x,y,type="l",lwd=2,col="orange",xlab="",ylab="",xaxt="n",yaxt="n",
+         ylim=c(-1.2,1.2),
+         main=paste0("|n|=",k-1,"まで"))
+    axis(1,at=-1:1,labels=c(expression(-pi),0,expression(pi)))
+    abline(h=-1:1,col="gray")
+    y <- f(y + an(k)*exp(pi*k*1i*x) + an(-k)*exp(-pi*k*1i*x))
+  }
+  par(def.par)
+  #+end_src
+
+#+CAPTION: Fourier 係数と有限項での展開
+#+NAME: fig:fourier_sgn
+#+ATTR_HTML: :height 100%
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figs/fourier_sgn.png]]
    
 
 * 不連続点の性質
