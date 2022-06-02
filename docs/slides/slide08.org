@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 13:44:44 mura>
+# Time-stamp: <2022-06-02 18:47:46 mura>
 :reveal:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -146,8 +146,8 @@
   #+end_src
   #+end_quote
   の Fourier 変換を求めよ．
-  - /[[color:gray][Fourier 変換と逆 Fourier 変換の関係を利用]]/
-  - 複素積分を利用
+  - Fourier 変換と逆 Fourier 変換の関係を利用
+  - /[[color:orange][複素積分を利用 (Cauchy の積分定理・留数定理)]]/
 
 ** COMMENT 解答例
 :PROPERTIES:
@@ -311,13 +311,35 @@
 - 以下の関数の Fourier 変換を求めよ．
   #+begin_quote
   #+begin_src latex
-    \begin{align}
-      &\frac{1}{x+ia}\;(a>0) \\       
-      &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
-      & \left(\frac{\sin(x)}{x}\right)^{2}
-    \end{align}
+    \begin{equation}
+      \frac{1}{x+ia}\;(a>0)
+    \end{equation}
   #+end_src
   #+end_quote
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \frac{a}{x^{2}+a^{2}}\;(a>0)
+    \end{equation}
+  #+end_src
+  #+end_quote
+  #+begin_quote
+  #+begin_src latex
+    \begin{equation}
+      \left(\frac{\sin(x)}{x}\right)^{2}
+    \end{equation}
+  #+end_src
+  #+end_quote
+
+  # #+begin_quote
+  # #+begin_src latex
+  #   \begin{align}
+  #     &\frac{1}{x+ia}\;(a>0) \\       
+  #     &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
+  #     & \left(\frac{\sin(x)}{x}\right)^{2}
+  #   \end{align}
+  # #+end_src
+  # #+end_quote
 
 ** COMMENT 解答例
 :PROPERTIES:
@@ -658,7 +680,7 @@
   #+end_src
   #+end_quote
   - 時刻0にインパルスが入力される前には何も出力がされない
-  - *因果的* という
+  - 時間を遡ることがないという意味で *因果的* という
 
 #+reveal: split
 - 因果的フィルタの畳み込み
@@ -705,7 +727,7 @@
     \end{equation}
   #+end_src
   #+end_quote
-  これを Fourier 変換を用いて表せ．
+  この関係を Fourier 変換を用いて表せ．
 
 ** COMMENT 解答例
 - 入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換

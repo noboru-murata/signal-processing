@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-05-26 16:31:00 mura>
+# Time-stamp: <2022-06-02 17:54:26 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -264,7 +264,7 @@
   #+end_src
   #+end_quote
 
-** 絶対可積分 
+** 絶対可積分 (\(L^{1}(-\infty,\infty)\))
 - 定義
   #+begin_quote
   #+begin_src latex
@@ -368,7 +368,7 @@
       &=
 	\int_{-\infty}^{\infty}
 	\int_{-\infty}^{\infty}
-	f(x)\overline{g}(y)G_{\epsilon}(x-y)
+	f(x)\overline{g(y)}G_{\epsilon}(x-y)
 	dxdy\\
       &=
 	\int_{-\infty}^{\infty}
@@ -889,8 +889,8 @@
   #+end_src
   #+end_quote
   の Fourier 変換を求めよ．
-  - Fourier 変換と逆 Fourier 変換の関係を利用
-  - /[[color:orange][複素積分を利用]]/
+  - /[[color:orange][Fourier 変換と逆 Fourier 変換の関係を利用]]/
+  - 複素積分を利用 (Cauchy の積分定理・留数定理)
 
 ** COMMENT 解答例
 :PROPERTIES:
