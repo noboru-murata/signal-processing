@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-02 18:47:46 mura>
-:reveal:
+# Time-stamp: <2022-06-08 14:32:55 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** Fourier 級数展開
@@ -24,13 +24,9 @@
   #+begin_src latex
     \begin{align}
       f(x)
-      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+      &\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
     \end{align}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-    \end{equation}
   #+end_src
   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
   以下で定義する．
@@ -420,11 +416,11 @@
 
 ** フィルタの例
 - [[color:green][エレキギターのエフェクター]] (effects unit, pedal)
-  - 歪み: オーバードライブ / ディストーション / ファズ
-  - モジュレーション: コーラス / フランジャー / トレモロ
-  - 空間系: リバーブ / ディレイ
-  - フィルタ: ワウ / ピッチシフター / ワーミー
-  - その他:  イコライザー / コンプレッサー / ノイズゲート
+  - 歪み : オーバードライブ / ディストーション / ファズ
+  - モジュレーション : コーラス / フランジャー / トレモロ
+  - 空間系 : リバーブ / ディレイ
+  - フィルタ : ワウ / ピッチシフター / ワーミー
+  - その他 :  イコライザー / コンプレッサー / ノイズゲート
 
 ** フィルタ
 - 関数 \(f(t)\) を関数 \(g(t)\) に変換する

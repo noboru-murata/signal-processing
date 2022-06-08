@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-05-30 10:30:26 mura>
+# Time-stamp: <2022-06-08 14:31:27 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -1242,7 +1242,7 @@
   - 連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgue の定理)
   - 畳み込みの Fourier 係数は元の関数の係数の積に比例する
 
-** 注意
+** COMMENT 注意
 - 確認テスト (講義5の中)
   - Fourier 級数の基本的な問題の復習
     - 手を動かしてしっかり計算

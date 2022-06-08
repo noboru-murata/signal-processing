@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 13:44:51 mura>
-:reveal:
+# Time-stamp: <2022-06-08 14:30:26 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** フィルタ
@@ -220,8 +220,8 @@
 [[file:figs/信号処理 1.png]]
 
 ** 例題
-- 以下の回路の時間領域での入出力関係を求めよ
-- 同じく周波数領域での入出力関係を求めよ
+- 以下の回路の時間領域での入出力関係を求めよ．
+- 同じく周波数領域での入出力関係を求めよ．
 
 #+NAME: fig:draw2
 #+ATTR_HTML: :width 90%
@@ -258,8 +258,8 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- 以下の回路の時間領域での入出力関係を求めよ
-- 同じく周波数領域での入出力関係を求めよ
+- 以下の回路の時間領域での入出力関係を求めよ．
+- 同じく周波数領域での入出力関係を求めよ．
 
 #+NAME: fig:draw3
 #+ATTR_HTML: :width 90%
@@ -513,10 +513,9 @@
 
 ** COMMENT 注意
 - 確認テスト (講義10の中)
-  - 期間: 7/10講義終了-7/16 13:00
-  - 時間制限: 1時間
-  - 5問 (計算問題) (Fourier 変換の選択問題)
-  - 試験であることを念頭に誠実な対応をすること
+  - Fourier 変換の基本的な問題
+    - 手を動かしてしっかり計算すること
+  - 試験の意味を考えて誠実な対応をすること
   - ネットワーク環境等には自身で配慮すること
 
 
