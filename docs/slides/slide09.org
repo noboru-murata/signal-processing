@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-08 14:30:26 mura>
+# Time-stamp: <2022-06-16 21:30:05 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -131,7 +131,7 @@
   - 関数 \(\Xi_{(-1,1)}(t)\) を Fourier 変換せよ
   - 関数 \((\sin(\omega)/\omega)^{2}\) を 逆 Fourier 変換せよ
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -266,7 +266,7 @@
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figs/信号処理 3.png]]
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -339,7 +339,7 @@
   - 周波数依存性について考察せよ
 
 
-* 逆 Fourier 変換による解析
+* 逆 Fourier 変換を用いた解析
 ** インパルス応答
 - 逆 Fourier 変換
   #+begin_quote
@@ -407,7 +407,7 @@
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figs/信号処理 5.png]]
 
-** COMMENT 解答例
+** 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -511,10 +511,11 @@
   - フィルタの周波数特性
   - インパルス応答の求め方
 
-** COMMENT 注意
+** 注意
 - 確認テスト (講義10の中)
   - Fourier 変換の基本的な問題
     - 手を動かしてしっかり計算すること
+    - 順逆の関係を上手く利用すること
   - 試験の意味を考えて誠実な対応をすること
   - ネットワーク環境等には自身で配慮すること
 

@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-orgbac706f">
-<h2 id="orgbac706f">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgbac706f">
+<section id="slide-org136938f">
+<h2 id="org136938f">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org136938f">
 </div>
 </section>
-<section id="slide-org4eadf39">
-<h3 id="org4eadf39">フィルタ</h3>
+<section id="slide-orgc0af072">
+<h3 id="orgc0af072">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -84,8 +84,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org8bab07c">
-<h3 id="org8bab07c">線形時不変フィルタの数学的表現</h3>
+<section id="slide-org8dd897b">
+<h3 id="org8dd897b">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
@@ -99,7 +99,7 @@
 </div>
 
 <p>
-\(h\): インパルス応答 = フィルタの表現
+\(h\) : インパルス応答 = フィルタの表現
 </p>
 </blockquote></li>
 
@@ -107,8 +107,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org01cc18e">
-<h3 id="org01cc18e">Fourier変換による表現</h3>
+<section id="slide-org25e2899">
+<h3 id="org25e2899">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -141,8 +141,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgf68e479">
-<h3 id="orgf68e479">インパルス応答</h3>
+<section id="slide-orgeb60001">
+<h3 id="orgeb60001">インパルス応答</h3>
 <ul>
 <li><p>
 インパルス応答
@@ -166,18 +166,18 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0f301d1">
-<h3 id="org0f301d1">ローパスフィルタ(RC回路)</h3>
+<section id="slide-org4fd0974">
+<h3 id="org4fd0974">ローパスフィルタ(RC回路)</h3>
 
-<div id="org66068f2" class="figure">
+<div id="org6b55496" class="figure">
 <p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org5a6ce3d">
-<h3 id="org5a6ce3d">入出力の関係</h3>
+<section id="slide-orgb031d32">
+<h3 id="orgb031d32">入出力の関係</h3>
 <ul>
 <li><p>
 時間領域
@@ -220,8 +220,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb6b15c9">
-<h3 id="orgb6b15c9">インパルス応答 (逆 Fourier 変換)</h3>
+<section id="slide-org310541d">
+<h3 id="org310541d">インパルス応答 (逆 Fourier 変換)</h3>
 <ul>
 <li><p>
 フィルタの Fourier 変換
@@ -259,8 +259,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org3b2e0a0">
-<h3 id="org3b2e0a0">インパルス応答 (矩形波の極限)</h3>
+<section id="slide-org6fc9b94">
+<h3 id="org6fc9b94">インパルス応答 (矩形波の極限)</h3>
 <ul>
 <li><p>
 矩形波の出力
@@ -305,13 +305,78 @@
 </section>
 </section>
 <section>
-<section id="slide-org36e084f">
-<h2 id="org36e084f">デジタル信号処理</h2>
-<div class="outline-text-2" id="text-org36e084f">
+<section id="slide-orgb9e57f1" data-background="#fef4f4">
+<h2 id="orgb9e57f1">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org42675eb" data-background="#fef4f4">
+<h3 id="org42675eb">練習問題</h3>
+<ul>
+<li><p>
+周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \phi_{n}(t)=\frac{1}{\sqrt{2\pi}}e^{int}
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+としたとき，
+周期 \(2\pi\cdot 2B\) の基底は
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \psi_{n}(t)
+  =
+  a\cdot \phi_{n}\left(b t\right)
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+で構成することができる．\(a\) と \(b\) を求めよ．
+</p></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orga34eaac" data-background="#fef4f4">
+<h3 id="orga34eaac">解答例</h3>
+<ul>
+<li><p>
+\(t\)軸の拡大縮小を考え，正規化項を計算すればよい
+</p>
+<blockquote>
+<div>
+\begin{align}
+  a
+  &=\frac{1}{\sqrt{2B}}\\
+  b
+  &=\frac{1}{2B}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org854d514">
+<h2 id="org854d514">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-org854d514">
 </div>
 </section>
-<section id="slide-orgc4c278d">
-<h3 id="orgc4c278d">デジタル信号処理</h3>
+<section id="slide-orgce53571">
+<h3 id="orgce53571">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -326,8 +391,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org825413a">
-<h3 id="org825413a">計算機によるデータ処理</h3>
+<section id="slide-org329d74d">
+<h3 id="org329d74d">計算機によるデータ処理</h3>
 <ul>
 <li>アナログ信号は扱えない
 <ul>
@@ -346,8 +411,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org8854c32">
-<h3 id="org8854c32">アナログとデジタル</h3>
+<section id="slide-org2586385">
+<h3 id="org2586385">アナログとデジタル</h3>
 <ul>
 <li>アナログ
 <ul>
@@ -368,13 +433,13 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org02c6888">
-<h3 id="org02c6888">標本化と量子化</h3>
+<section id="slide-orgd27de5e">
+<h3 id="orgd27de5e">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化 (discretization)
 <ul>
-<li>標本化 (sampling): 時間の離散化</li>
-<li>量子化 (quantization): 数値の離散化</li>
+<li>標本化 (sampling) : 時間の離散化</li>
+<li>量子化 (quantization) : 数値の離散化</li>
 
 </ul></li>
 <li>量子化は計算機で扱う数値の丸め誤差の問題 <br />
@@ -384,10 +449,10 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org6b3cc4c">
-<h3 id="org6b3cc4c">標本化における疑問</h3>
+<section id="slide-orgf66c2db">
+<h3 id="orgf66c2db">標本化における疑問</h3>
 <ul>
-<li>標本化: 明らかに情報は落ちている
+<li>標本化 : 明らかに情報は落ちている
 <ul>
 <li>離散データから連続データを再構成することはできるのか？</li>
 <li>再構成することができるのであれば，その条件は何か？</li>
@@ -397,7 +462,7 @@
 </ul>
 
 
-<div id="org64a2c42" class="figure">
+<div id="org68552f0" class="figure">
 <p><img src="figs/信号処理 9.png" alt="信号処理 9.png" width="80%" />
 </p>
 </div>
@@ -407,13 +472,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org1f34061">
-<h2 id="org1f34061">標本化定理</h2>
-<div class="outline-text-2" id="text-org1f34061">
+<section id="slide-org5055f12">
+<h2 id="org5055f12">標本化定理</h2>
+<div class="outline-text-2" id="text-org5055f12">
 </div>
 </section>
-<section id="slide-org5fdd157">
-<h3 id="org5fdd157">標本化定理</h3>
+<section id="slide-org933a6b8">
+<h3 id="org933a6b8">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -428,7 +493,7 @@
 </ul>
 
 
-<div id="org7ea90cc" class="figure">
+<div id="org1cb4789" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div>
@@ -437,7 +502,7 @@
 </section>
 <section>
 <ul>
-<li>定理の呼び名は色々ある
+<li>定理の呼び名は色々ある (同時期に独立に発見)
 <ul>
 <li>Shannon の標本化定理</li>
 <li>Nyquist-Shannon の標本化定理</li>
@@ -472,48 +537,12 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd5ef25e" data-background="#fef4f4">
-<h2 id="orgd5ef25e">演習</h2>
+<section id="slide-org0c2d464" data-background="#fef4f4">
+<h2 id="org0c2d464">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org791c478" data-background="#fef4f4">
-<h3 id="org791c478">練習問題</h3>
-<ul>
-<li><p>
-周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
-\end{equation}
-
-</div>
-</blockquote>
-<p>
-としたとき，
-周期 \(2\pi\cdot 2B\) の基底は
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \psi_{n}(\omega)
-  =
-  a\cdot \phi_{n}\left(b\omega\right)
-\end{equation}
-
-</div>
-</blockquote>
-<p>
-で構成することができる．\(a\) と \(b\) を求めよ．
-</p></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-</section>
-<section id="slide-orgdbd6df7" data-background="#fef4f4">
-<h3 id="orgdbd6df7">練習問題</h3>
+<section id="slide-org84fe339" data-background="#fef4f4">
+<h3 id="org84fe339">練習問題</h3>
 <ul>
 <li><p>
 以下の積分
@@ -535,15 +564,42 @@
 <div class="slide-footer"><br></div>
 
 </section>
+<section id="slide-orga55d63e" data-background="#fef4f4">
+<h3 id="orga55d63e">解答例</h3>
+<ul>
+<li><p>
+定義に従って計算する
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
+  e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+  =
+  \frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>矩形波の Fourier 変換で出てきた sinc 関数</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
 </section>
 <section>
-<section id="slide-orgce040a3">
-<h2 id="orgce040a3">定理の証明と注意</h2>
-<div class="outline-text-2" id="text-orgce040a3">
+<section id="slide-orgc9afffa">
+<h2 id="orgc9afffa">定理の証明と注意</h2>
+<div class="outline-text-2" id="text-orgc9afffa">
 </div>
 </section>
-<section id="slide-org9e1265d">
-<h3 id="org9e1265d">標本化定理の証明</h3>
+<section id="slide-org62fe9ca">
+<h3 id="org62fe9ca">標本化定理の証明</h3>
 <ul>
 <li><p>
 step 1
@@ -567,7 +623,7 @@ step 1
 </ul>
 
 
-<div id="org7335526" class="figure">
+<div id="org6372b89" class="figure">
 <p><img src="figs/信号処理 6.png" alt="信号処理 6.png" width="70%" />
 </p>
 </div>
@@ -594,7 +650,7 @@ Fourier 級数展開が存在する．
 </ul>
 
 
-<div id="orgc57fc65" class="figure">
+<div id="orgdd79982" class="figure">
 <p><img src="figs/信号処理 7.png" alt="信号処理 7.png" width="70%" />
 </p>
 </div>
@@ -909,8 +965,8 @@ step 11
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org9e77f47">
-<h3 id="org9e77f47">定理に関する注意</h3>
+<section id="slide-org0a7b93e">
+<h3 id="org0a7b93e">定理に関する注意</h3>
 <ul>
 <li><p>
 直感的な意味
@@ -973,8 +1029,8 @@ Nyquist 周波数での挙動
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org3818606">
-<h3 id="org3818606">エイリアシング</h3>
+<section id="slide-org8c6a783">
+<h3 id="org8c6a783">エイリアシング</h3>
 <ul>
 <li><p>
 定理の前提
@@ -1017,7 +1073,7 @@ Nyquist 周波数での挙動
 </ul>
 
 
-<div id="org5e6ca3d" class="figure">
+<div id="org1a7e393" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
@@ -1027,8 +1083,8 @@ Nyquist 周波数での挙動
 </section>
 </section>
 <section>
-<section id="slide-orgdad98cf">
-<h2 id="orgdad98cf">今回のまとめ</h2>
+<section id="slide-org9a91c71">
+<h2 id="org9a91c71">今回のまとめ</h2>
 <ul>
 <li>デジタル信号処理
 <ul>
@@ -1046,8 +1102,6 @@ Nyquist 周波数での挙動
 
 </ul>
 <div class="slide-footer"><br></div>
-</section>
-</section>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
