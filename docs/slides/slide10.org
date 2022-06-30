@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-30 10:29:21 mura>
+# Time-stamp: <2022-06-30 16:23:20 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -641,8 +641,11 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
+- サンプリング周波数
+  #+begin_quote
+  CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
   CD で完全に再現される周波数はどのような範囲にあると考えられるか?
+  #+end_quote
 
 ** COMMENT 解答例
 :PROPERTIES:

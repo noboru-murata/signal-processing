@@ -3,14 +3,14 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 13:45:06 mura>
-:reveal:
+# Time-stamp: <2022-06-30 16:23:01 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
 
 * 前回のおさらい
 ** デジタル信号処理
@@ -22,8 +22,8 @@
 
 ** 標本化と量子化
 - デジタル信号に変換するための離散化
-  - 標本化 (sampling): 時間の離散化
-  - 量子化 (quantization): 数値の離散化
+  - 標本化 (sampling) : 時間の離散化
+  - 量子化 (quantization) : 数値の離散化
 
 ** 標本化定理
 - 定理
@@ -44,7 +44,7 @@
   *Nyquist レート*
 - 信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): \\
   *Nyquist 周波数*
-- [[color:gray][角周波数と周波数の関係に注意]]
+- /[[color:orange][角周波数と周波数の関係に注意]]/
 
 ** エイリアシング
 - 折り返しによる雑音
@@ -73,14 +73,17 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
-  CD で完全に再現される周波数はどのような範囲にあると考えられるか?
+- サンプリング周波数
+  #+begin_quote
+  会話に必要な周波数帯域は \(300\,[\mathrm{Hz}]\) 以上 \(7\,[\mathrm{kHz}]\) 未満と言われている．
+  テレビ会議などでこの帯域を十分に伝達するために必要なサンプリング周波数はどのようになるか答えよ．
+  #+end_quote
 
 ** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- 標本化定理によれば 22.05 [kHz] 未満となる
+- 標本化定理によれば \(14\,[\mathrm{kHz}]\) 以上となる．
 
 
 * 離散 Fourier 変換
@@ -105,10 +108,10 @@
   #+end_src
   #+end_quote
   - 慣習的に周波数 \(n\) や時間 \(t\) は1ではなく0から始まる整数
-  - 時間 [s] や周波数 [Hz] とは異なることに注意
+  - 時間 \(\mathrm{[s]}\) や周波数 \(\mathrm{[Hz]}\) とは異なることに注意
 
 #+reveal: split
-- 逆変換の定義
+- 逆変換
   #+begin_quote
   逆変換は以下で定義される．
   #+begin_src latex
@@ -134,7 +137,7 @@
 :END:
 - サンプリング周波数と基本周波数
   #+begin_quote
-  サンプリング周波数 \(f_{s}\) [Hz] のデジタル信号から
+  サンプリング周波数 \(f_{s}\,\mathrm{[Hz]}\) のデジタル信号から
   長さ \(N\) のベクトルを切り出し
   離散 Fourier 変換を考えたとき，   
   基本周波数はいくつになるか?
@@ -439,8 +442,8 @@
     \end{equation}
   #+end_src
   #+end_quote
-  - \(f,g\): 周期 \(N\) の入力・出力信号
-  - \(h\): 長さ \(N\) のインパルス応答
+  - \(f,g\) : 周期 \(N\) の入力・出力信号
+  - \(h\) : 長さ \(N\) のインパルス応答
 
 #+reveal: split
 - 周期関数の畳み込みによる表現
@@ -455,7 +458,7 @@
     \end{align}
   #+end_src
   #+end_quote
-  - \(f,g,h\): 周期 \(N\) の関数
+  - \(f,g,h\) : 周期 \(N\) の関数
 
 
 * 演習

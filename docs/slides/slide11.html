@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org004515a">
-<h2 id="org004515a">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org004515a">
+<section id="slide-orgf1f5211">
+<h2 id="orgf1f5211">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgf1f5211">
 </div>
 </section>
-<section id="slide-orgee5a4ba">
-<h3 id="orgee5a4ba">デジタル信号処理</h3>
+<section id="slide-orgc99b6bb">
+<h3 id="orgc99b6bb">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -68,13 +68,13 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org28a1ec2">
-<h3 id="org28a1ec2">標本化と量子化</h3>
+<section id="slide-org9b8095d">
+<h3 id="org9b8095d">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化
 <ul>
-<li>標本化 (sampling): 時間の離散化</li>
-<li>量子化 (quantization): 数値の離散化</li>
+<li>標本化 (sampling) : 時間の離散化</li>
+<li>量子化 (quantization) : 数値の離散化</li>
 
 </ul></li>
 
@@ -82,8 +82,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orga81016f">
-<h3 id="orga81016f">標本化定理</h3>
+<section id="slide-org2f45212">
+<h3 id="org2f45212">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -98,15 +98,15 @@
 </ul>
 
 
-<div id="org397a716" class="figure">
+<div id="orgf770c8f" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0499697">
-<h3 id="org0499697">標本化における用語</h3>
+<section id="slide-orgfce3ab6">
+<h3 id="orgfce3ab6">標本化における用語</h3>
 <ul>
 <li>1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): <br />
 <b>サンプリング周波数</b></li>
@@ -114,14 +114,14 @@
 <b>Nyquist レート</b></li>
 <li>信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): <br />
 <b>Nyquist 周波数</b></li>
-<li><span style="color:gray;">角周波数と周波数の関係に注意</span></li>
+<li><i><span style="color:orange;">角周波数と周波数の関係に注意</span></i></li>
 
 </ul>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgad8a32b">
-<h3 id="orgad8a32b">エイリアシング</h3>
+<section id="slide-orgb6f1dae">
+<h3 id="orgb6f1dae">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -142,7 +142,7 @@
 </ul>
 
 
-<div id="org954959a" class="figure">
+<div id="orge652ab0" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
@@ -152,15 +152,22 @@
 </section>
 </section>
 <section>
-<section id="slide-orgbb9e8bf" data-background="#fef4f4">
-<h2 id="orgbb9e8bf">演習</h2>
+<section id="slide-org4078770" data-background="#fef4f4">
+<h2 id="org4078770">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgc75cd78" data-background="#fef4f4">
-<h3 id="orgc75cd78">練習問題</h3>
+<section id="slide-org677d776" data-background="#fef4f4">
+<h3 id="org677d776">練習問題</h3>
 <ul>
-<li>CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
-CD で完全に再現される周波数はどのような範囲にあると考えられるか?</li>
+<li><p>
+サンプリング周波数
+</p>
+<blockquote>
+<p>
+会話に必要な周波数帯域は \(300\,[\mathrm{Hz}]\) 以上 \(7\,[\mathrm{kHz}]\) 未満と言われている．
+テレビ会議などでこの帯域を十分に伝達するために必要なサンプリング周波数はどのようになるか答えよ．
+</p>
+</blockquote></li>
 
 </ul>
 <div class="slide-footer"><br></div>
@@ -168,13 +175,13 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-orgac3c729">
-<h2 id="orgac3c729">離散 Fourier 変換</h2>
-<div class="outline-text-2" id="text-orgac3c729">
+<section id="slide-orgff0b7e7">
+<h2 id="orgff0b7e7">離散 Fourier 変換</h2>
+<div class="outline-text-2" id="text-orgff0b7e7">
 </div>
 </section>
-<section id="slide-org75aa3d1">
-<h3 id="org75aa3d1">計算機による信号処理</h3>
+<section id="slide-org8b0d252">
+<h3 id="org8b0d252">計算機による信号処理</h3>
 <ul>
 <li>連続時間では扱えない
 <ul>
@@ -193,8 +200,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org16fd913">
-<h3 id="org16fd913">離散 Fourier 変換</h3>
+<section id="slide-orgd3f9fe8">
+<h3 id="orgd3f9fe8">離散 Fourier 変換</h3>
 <ul>
 <li><p>
 定義
@@ -214,7 +221,7 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </blockquote>
 <ul>
 <li>慣習的に周波数 \(n\) や時間 \(t\) は1ではなく0から始まる整数</li>
-<li>時間 [s] や周波数 [Hz] とは異なることに注意</li>
+<li>時間 \(\mathrm{[s]}\) や周波数 \(\mathrm{[Hz]}\) とは異なることに注意</li>
 
 </ul></li>
 
@@ -225,7 +232,7 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <section>
 <ul>
 <li><p>
-逆変換の定義
+逆変換
 </p>
 <blockquote>
 <p>
@@ -254,19 +261,19 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-orga5d9998" data-background="#fef4f4">
-<h2 id="orga5d9998">演習</h2>
+<section id="slide-org38edb36" data-background="#fef4f4">
+<h2 id="org38edb36">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org828d5ab" data-background="#fef4f4">
-<h3 id="org828d5ab">練習問題</h3>
+<section id="slide-org4072213" data-background="#fef4f4">
+<h3 id="org4072213">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数と基本周波数
 </p>
 <blockquote>
 <p>
-サンプリング周波数 \(f_{s}\) [Hz] のデジタル信号から
+サンプリング周波数 \(f_{s}\,\mathrm{[Hz]}\) のデジタル信号から
 長さ \(N\) のベクトルを切り出し
 離散 Fourier 変換を考えたとき，   
 基本周波数はいくつになるか?
@@ -287,8 +294,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc00dccb" data-background="#fef4f4">
-<h3 id="orgc00dccb">練習問題</h3>
+<section id="slide-orgfece5a2" data-background="#fef4f4">
+<h3 id="orgfece5a2">練習問題</h3>
 <ul>
 <li><p>
 基本周波数の性質
@@ -329,13 +336,13 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-org47e830f">
-<h2 id="org47e830f">離散 Fourier 変換の行列表現</h2>
-<div class="outline-text-2" id="text-org47e830f">
+<section id="slide-org5fc62a0">
+<h2 id="org5fc62a0">離散 Fourier 変換の行列表現</h2>
+<div class="outline-text-2" id="text-org5fc62a0">
 </div>
 </section>
-<section id="slide-org51e2767">
-<h3 id="org51e2767">行列による表現</h3>
+<section id="slide-org35f729e">
+<h3 id="org35f729e">行列による表現</h3>
 <ul>
 <li><p>
 \(N\) 乗根を用いた展開
@@ -474,8 +481,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc5a4d85">
-<h3 id="orgc5a4d85">変換と逆変換の関係</h3>
+<section id="slide-org58e30a7">
+<h3 id="org58e30a7">変換と逆変換の関係</h3>
 <ul>
 <li><p>
 行列 \(F,F^{*}\) の積
@@ -598,13 +605,13 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-org56ce063">
-<h2 id="org56ce063">フィルタの表現</h2>
-<div class="outline-text-2" id="text-org56ce063">
+<section id="slide-org1ce7b97">
+<h2 id="org1ce7b97">フィルタの表現</h2>
+<div class="outline-text-2" id="text-org1ce7b97">
 </div>
 </section>
-<section id="slide-org37a345d">
-<h3 id="org37a345d">フィルタ</h3>
+<section id="slide-org114d7e1">
+<h3 id="org114d7e1">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -635,8 +642,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org3a5eab3">
-<h3 id="org3a5eab3">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-org77223c0">
+<h3 id="org77223c0">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現
@@ -650,8 +657,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </div>
 </blockquote>
 <ul>
-<li>\(f,g\): 周期 \(N\) の入力・出力信号</li>
-<li>\(h\): 長さ \(N\) のインパルス応答</li>
+<li>\(f,g\) : 周期 \(N\) の入力・出力信号</li>
+<li>\(h\) : 長さ \(N\) のインパルス応答</li>
 
 </ul></li>
 
@@ -677,7 +684,7 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </div>
 </blockquote>
 <ul>
-<li>\(f,g,h\): 周期 \(N\) の関数</li>
+<li>\(f,g,h\) : 周期 \(N\) の関数</li>
 
 </ul></li>
 
@@ -688,12 +695,12 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-org11c15e4" data-background="#fef4f4">
-<h2 id="org11c15e4">演習</h2>
+<section id="slide-orgaaa6e41" data-background="#fef4f4">
+<h2 id="orgaaa6e41">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9823e9c" data-background="#fef4f4">
-<h3 id="org9823e9c">練習問題</h3>
+<section id="slide-org96c8b73" data-background="#fef4f4">
+<h3 id="org96c8b73">練習問題</h3>
 <ul>
 <li><p>
 離散 Fourier 変換によるフィルタの表現
@@ -719,13 +726,13 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-org9a3208a">
-<h2 id="org9a3208a">窓関数</h2>
-<div class="outline-text-2" id="text-org9a3208a">
+<section id="slide-orga6e1419">
+<h2 id="orga6e1419">窓関数</h2>
+<div class="outline-text-2" id="text-orga6e1419">
 </div>
 </section>
-<section id="slide-org8ca954a">
-<h3 id="org8ca954a">有限長のデータ</h3>
+<section id="slide-org515f8aa">
+<h3 id="org515f8aa">有限長のデータ</h3>
 <ul>
 <li>信号の一部を切り出す必要がある
 <ul>
@@ -744,8 +751,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orga18540c">
-<h3 id="orga18540c">窓関数</h3>
+<section id="slide-orgba92f5a">
+<h3 id="orgba92f5a">窓関数</h3>
 <ul>
 <li><p>
 信号の切り出し
@@ -772,8 +779,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org9deec5b">
-<h3 id="org9deec5b">矩形窓</h3>
+<section id="slide-org517a244">
+<h3 id="org517a244">矩形窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -782,18 +789,18 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 
 </div>
 </blockquote>
-<div class="leftcol" id="org38c527d">
+<div class="leftcol" id="orge60fab4">
 
-<div id="org4356bd2" class="figure">
+<div id="orgb676592" class="figure">
 <p><img src="figs/rect.png" alt="rect.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 1: </span>矩形窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="org2ae8fbd">
+<div class="rightcol" id="org1fb1770">
 
-<div id="org222b277" class="figure">
+<div id="orge76eba7" class="figure">
 <p><img src="figs/rect_freq.png" alt="rect_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 2: </span>周波数特性</p>
@@ -803,8 +810,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org591306b">
-<h3 id="org591306b">gauss 窓</h3>
+<section id="slide-orgec239bb">
+<h3 id="orgec239bb">gauss 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -813,18 +820,18 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 
 </div>
 </blockquote>
-<div class="leftcol" id="org49280b3">
+<div class="leftcol" id="org214c4b7">
 
-<div id="orgc05ca54" class="figure">
+<div id="org0b63f99" class="figure">
 <p><img src="figs/gauss.png" alt="gauss.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 3: </span>gauss 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="org5eb6c28">
+<div class="rightcol" id="orgf1243c7">
 
-<div id="org0f6c960" class="figure">
+<div id="orgb5e4ab3" class="figure">
 <p><img src="figs/gauss_freq.png" alt="gauss_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 4: </span>周波数特性</p>
@@ -834,8 +841,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org405d0d0">
-<h3 id="org405d0d0">hann 窓</h3>
+<section id="slide-orga25c9d7">
+<h3 id="orga25c9d7">hann 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -844,18 +851,18 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 
 </div>
 </blockquote>
-<div class="leftcol" id="orgd7d1067">
+<div class="leftcol" id="org3758a3c">
 
-<div id="org557e740" class="figure">
+<div id="orga640fce" class="figure">
 <p><img src="figs/hann.png" alt="hann.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 5: </span>hann 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="orgb8879d3">
+<div class="rightcol" id="org6cfcead">
 
-<div id="orgecd00fd" class="figure">
+<div id="org9b69051" class="figure">
 <p><img src="figs/hann_freq.png" alt="hann_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 6: </span>周波数特性</p>
@@ -865,8 +872,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgbf3ba96">
-<h3 id="orgbf3ba96">hamming 窓</h3>
+<section id="slide-orgf4c2ea6">
+<h3 id="orgf4c2ea6">hamming 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -875,18 +882,18 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 
 </div>
 </blockquote>
-<div class="leftcol" id="orgdb74b58">
+<div class="leftcol" id="org84d0240">
 
-<div id="orgf88db39" class="figure">
+<div id="org841beae" class="figure">
 <p><img src="figs/hamm.png" alt="hamm.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 7: </span>hamming 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="orgfd94a5d">
+<div class="rightcol" id="org800e45f">
 
-<div id="orgf34ea05" class="figure">
+<div id="org2e5b553" class="figure">
 <p><img src="figs/hamm_freq.png" alt="hamm_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 8: </span>周波数特性</p>
@@ -896,8 +903,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org9783a93">
-<h3 id="org9783a93">窓関数を用いたデジタル信号処理</h3>
+<section id="slide-orgcdaaaca">
+<h3 id="orgcdaaaca">窓関数を用いたデジタル信号処理</h3>
 <ul>
 <li>処理の流れ
 <ul>
@@ -910,7 +917,7 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </ul>
 
 
-<div id="org08a29c1" class="figure">
+<div id="org0ec02f8" class="figure">
 <p><img src="figs/信号処理 11.png" alt="信号処理 11.png" width="80%" />
 </p>
 </div>
@@ -920,8 +927,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-org5cc9bb7">
-<h2 id="org5cc9bb7">今回のまとめ</h2>
+<section id="slide-org7b8abd5">
+<h2 id="org7b8abd5">今回のまとめ</h2>
 <ul>
 <li>離散 Fourier 変換
 <ul>
@@ -938,8 +945,6 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 
 </ul>
 <div class="slide-footer"><br></div>
-</section>
-</section>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
