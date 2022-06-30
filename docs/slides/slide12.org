@@ -3,14 +3,17 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 13:45:13 mura>
-:reveal:
+# Time-stamp: <2022-06-30 16:36:02 mura>
+:REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
-:end:
+:END:
+
+* COMMENT メモ
+- 校正に関して記述
 
 * 前回のおさらい
 ** デジタル信号処理
@@ -19,7 +22,7 @@
   - 有限長のデータしか扱えない
 - 処理の流れ
   - アナログ信号をデジタル信号に変換 (A/D変換)
-    - 標本化 (sampling): 時間の離散化
+    - 標本化 (sampling) : 時間の離散化
   - 計算機上でデジタル信号を処理
   - デジタル信号をアナログ信号に変換 (D/A変換)
 
@@ -154,7 +157,7 @@
       &\quad t=0,1,\dotsc,N{-}1
     \end{align}
   #+end_src
-  - \(f,g,h\): 周期 \(N\) の関数
+  - \(f,g,h\) : 周期 \(N\) の関数
   #+end_quote
 
 ** 有限長のデータ
@@ -519,6 +522,7 @@
   #+end_src
   #+end_quote
 
+
 * 今回のまとめ
 - デジタル信号処理の例
   - スペクトログラム
@@ -527,13 +531,14 @@
 - 高速 Fourier 変換
   - 計算の分解表現
   - 計算量の評価
-
-* COMMENT 課題の説明
-
 ** COMMENT 注意
-- 提出するのは解答用紙1枚のみ
-- 形式はPDFまたは画像
-- 提出物が可読でない場合は評価できない
+- 確認テスト (講義14の中)
+  - 離散 Fourier 変換の基本的な問題
+    - 手を動かしてしっかり計算すること
+    - 実際の時間・周波数との対応を考えること
+  - 試験の意味を考えて誠実な対応をすること
+  - ネットワーク環境等には自身で配慮すること
+
 
 
 * Footnotes
