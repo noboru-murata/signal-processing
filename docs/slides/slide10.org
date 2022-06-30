@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-28 14:00:21 mura>
+# Time-stamp: <2022-06-30 10:29:21 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -203,7 +203,7 @@
   #+end_quote
   で構成することができる．\(a\) と \(b\) を求めよ．
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -315,7 +315,7 @@
   #+end_quote
   を計算しなさい．
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -631,6 +631,24 @@
 #+ATTR_HTML: :width 80%
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figs/信号処理 8.png]]
+
+
+* 演習
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+** 練習問題
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
+  CD で完全に再現される周波数はどのような範囲にあると考えられるか?
+
+** COMMENT 解答例
+:PROPERTIES:
+:reveal_background: #fef4f4
+:END:
+- 標本化定理によれば 22.05 [kHz] 未満となる
 
 
 * 今回のまとめ
