@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>デジタル信号処理</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">デジタル信号処理</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第12講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-org9cb263d">
+<h2 id="org9cb263d">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org9cb263d">
+</div>
+</section>
+<section id="slide-org485e920">
+<h3 id="org485e920">デジタル信号処理</h3>
+<ul>
+<li>計算機で信号を扱うための方法論
+<ul>
+<li>連続時間では扱えない</li>
+<li>有限長のデータしか扱えない</li>
+
+</ul></li>
+<li>処理の流れ
+<ul>
+<li>アナログ信号をデジタル信号に変換 (A/D変換)
+<ul>
+<li>標本化 (sampling) : 時間の離散化</li>
+
+</ul></li>
+<li>計算機上でデジタル信号を処理</li>
+<li>デジタル信号をアナログ信号に変換 (D/A変換)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org084906d">
+<h3 id="org084906d">標本化定理</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数 (Nyquist周波数)しか含んでいないなら，
+サンプリング周波数 \(2B\,[\mathrm{Hz}]\) を用いて元の信号は完全に求められる．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="orgaa43ec7" class="figure">
+<p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="60%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org2f521a5">
+<h3 id="org2f521a5">エイリアシング</h3>
+<ul>
+<li><p>
+折り返しによる雑音
+</p>
+<blockquote>
+<p>
+\(4\pi B\)
+周期の関数
+\(\tilde{f}\)
+を構成する際に重なりが生じ，
+\((-2\pi B,2\pi B)\)
+領域を切り出しても
+元に戻すことができない．
+</p>
+</blockquote></li>
+
+</ul>
+
+
+<div id="orgbc81a71" class="figure">
+<p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="60%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org05c6a0a">
+<h3 id="org05c6a0a">離散 Fourier 変換と逆変換</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+長さ \(N\) の信号 \(f(t),\;t=0,1,\dotsc,N{-}1\) の離散 Fourier 変換を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \hat{f}(n)
+  =\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+  f(t)e^{-i\frac{2\pi}{N}nt}, \quad (n=0,1,2,\dotsc,N{-}1)
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  f(t)
+  =\frac{1}{\sqrt{N}}\sum_{n=0}^{N{-}1}
+  \hat{f}(n)e^{i\frac{2\pi}{N}nt}, \quad (t=0,1,2,\dotsc,N{-}1)
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>時間も周波数も有限であることに注意</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org389326c">
+<h3 id="org389326c">行列による表現</h3>
+<ul>
+<li><p>
+変換行列
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  F
+  =
+  \frac{1}{\sqrt{N}}
+  \begin{pmatrix}
+    1&1&1&\dots&1\\
+    1&\alpha^{-1}&\alpha^{-2}&\dots&\alpha^{-(N{-}1)}\\
+    \vdots&&&\ddots&\vdots\\
+    1&\alpha^{-(N{-}1)}&\alpha^{-2(N{-}1)}&\dots&\alpha^{-(N{-}1)(N{-}1)}
+  \end{pmatrix}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \alpha=e^{i\frac{2\pi}{N}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+逆変換行列
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  F^{*}
+  =\frac{1}{\sqrt{N}}
+  \begin{pmatrix}
+    1&1&1&\dots&1\\
+    1&\alpha^{1}&\alpha^{2}&\dots&\alpha^{(N{-}1)}\\
+    \vdots&&&\ddots&\vdots\\
+    1&\alpha^{(N{-}1)}&\alpha^{2(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
+  \end{pmatrix}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+行列表現
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \begin{pmatrix}
+    \hat{f}(0)\\
+    \hat{f}(1)\\
+    \vdots\\
+    \hat{f}(N{-}1)
+  \end{pmatrix}
+  =
+  F
+  \begin{pmatrix}
+    f(0)\\
+    f(1)\\
+    \vdots\\
+    f(N{-}1)
+  \end{pmatrix}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \hat{\boldsymbol{f}}
+  =F
+  \boldsymbol{f}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \boldsymbol{f}
+  =F^{*}
+  \hat{\boldsymbol{f}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgdce3ad1">
+<h3 id="orgdce3ad1">デジタル信号におけるフィルタの表現</h3>
+<ul>
+<li><p>
+標本化されたフィルタの表現 (周期関数の畳み込み)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  g(t)
+  &=f{*}h(t)\\
+  &=\sum_{s=0}^{N{-}1}f(s)h(t{-}s)
+    =\sum_{s=0}^{N{-}1}f(t{-}s)h(s),\\
+  &\quad t=0,1,\dotsc,N{-}1
+\end{align}
+
+</div>
+
+<ul>
+<li>\(f,g,h\) : 周期 \(N\) の関数</li>
+
+</ul>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgafe4987">
+<h3 id="orgafe4987">有限長のデータ</h3>
+<ul>
+<li><p>
+信号の一部の切り出し
+</p>
+<ul>
+<li>周期的な信号として扱う</li>
+<li>有界な台を持つ信号として扱う</li>
+
+</ul>
+<blockquote>
+<div>
+\begin{equation}
+  f(t)=w(t)\tilde{f}(t)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>端点での不連続性を軽減するために窓関数を導入
+<ul>
+<li>矩形窓 (単純な切り出し)</li>
+<li>gauss 窓</li>
+<li>hann 窓</li>
+<li>hamming 窓</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org3fc1c29">
+<h2 id="org3fc1c29">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-org3fc1c29">
+</div>
+</section>
+<section id="slide-orgd9d033c">
+<h3 id="orgd9d033c">デジタル信号処理の流れ</h3>
+<ul>
+<li>データの取得 (アナログ信号)</li>
+<li>ローパスフィルタリング (標本化のため)</li>
+<li>A/D変換 (標本化; デジタル信号)</li>
+<li>窓関数による切り出し (有限長の時間表現)</li>
+<li>離散 Fourier 変換 (有限長の周波数表現; 複素数)</li>
+<li>デジタルフィルタリング (有限個の周波数の操作)</li>
+<li>逆変換 (有限長の時間表現; デジタル信号)</li>
+<li>窓関数の影響を考慮して合成</li>
+<li>D/A変換 (アナログ信号)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5005c82">
+<h3 id="org5005c82">デジタルフィルタ</h3>
+<ul>
+<li>音声信号</li>
+
+</ul>
+
+
+<div id="org05df4b4" class="figure">
+<p><img src="figs/filter.001.jpeg" alt="filter.001.jpeg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org865cd95">
+<h4 id="org865cd95">スペクトログラム</h4>
+<div class="leftcol" id="orgd79995d">
+
+<div id="org1b77841" class="figure">
+<p><img src="figs/filter4.jpg" alt="filter4.jpg" width="100%" />
+</p>
+</div>
+<audio controls src="figs/sig1.wav"></audi>
+
+</div>
+<div class="rightcol" id="org9133c0a">
+
+<div id="orge771f75" class="figure">
+<p><img src="figs/filter5.jpg" alt="filter5.jpg" width="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2.wav"></audi>
+
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org6da71e3">
+<h4 id="org6da71e3">ローパスフィルタ</h4>
+
+<div id="orgbc1f141" class="figure">
+<p><img src="figs/filter7.jpg" alt="filter7.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2_low.wav"></audi>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org99b3abb">
+<h4 id="org99b3abb">ハイパスフィルタ</h4>
+
+<div id="orgd25f1b7" class="figure">
+<p><img src="figs/filter9.jpg" alt="filter9.jpg" hight="100%" />
+</p>
+</div>
+<audio controls src="figs/sig2_high.wav"></audi>
+<div class="slide-footer"><br></div>
+
+
+</section>
+<section id="slide-org5977cfa">
+<h3 id="org5977cfa">音の合成</h3>
+<ul>
+<li>正弦波の重ね合わせでさまざまな音色を合成</li>
+<li>Fourier 級数展開で求めた係数を利用 <br />
+(離散 Fourier 変換では周波数に上限がある)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgcbdf033">
+<h4 id="orgcbdf033">矩形波の合成 (1)</h4>
+
+<div id="orge237f62" class="figure">
+<p><img src="figs/square1.jpg" alt="square1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org79317ab">
+<h4 id="org79317ab">矩形波の合成 (2)</h4>
+
+<div id="org64b564f" class="figure">
+<p><img src="figs/square2.jpg" alt="square2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org26b6ced">
+<h4 id="org26b6ced">矩形波の合成 (3)</h4>
+
+<div id="org9b0eef2" class="figure">
+<p><img src="figs/square3.jpg" alt="square3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2c64c90">
+<h4 id="org2c64c90">矩形波の合成 (4)</h4>
+
+<div id="orgadee9f2" class="figure">
+<p><img src="figs/square4.jpg" alt="square4.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/square.wav"></audi>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org98894b8">
+<h4 id="org98894b8">三角波の合成 (1)</h4>
+
+<div id="orgffe7395" class="figure">
+<p><img src="figs/triangle1.jpg" alt="triangle1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgcaabdf8">
+<h4 id="orgcaabdf8">三角波の合成 (2)</h4>
+
+<div id="orga882246" class="figure">
+<p><img src="figs/triangle2.jpg" alt="triangle2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org599ef23">
+<h4 id="org599ef23">三角波の合成 (3)</h4>
+
+<div id="orge42edcf" class="figure">
+<p><img src="figs/triangle3.jpg" alt="triangle3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org215a19b">
+<h4 id="org215a19b">三角波の合成 (4)</h4>
+
+<div id="org66a913b" class="figure">
+<p><img src="figs/triangle4.jpg" alt="triangle4.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/triangle.wav"></audi>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org02f6342">
+<h4 id="org02f6342">鋸波の合成 (1)</h4>
+
+<div id="org74213fb" class="figure">
+<p><img src="figs/sawtooth1.jpg" alt="sawtooth1.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org5fb6f11">
+<h4 id="org5fb6f11">鋸波の合成 (2)</h4>
+
+<div id="org5316682" class="figure">
+<p><img src="figs/sawtooth2.jpg" alt="sawtooth2.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org747ff65">
+<h4 id="org747ff65">鋸波の合成 (3)</h4>
+
+<div id="orgfa46c4b" class="figure">
+<p><img src="figs/sawtooth3.jpg" alt="sawtooth3.jpg" height="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org875d7f3">
+<h4 id="org875d7f3">鋸波の合成 (4)</h4>
+
+<div id="orgd0029a0" class="figure">
+<p><img src="figs/sawtooth6.jpg" alt="sawtooth6.jpg" height="100%" />
+</p>
+</div>
+<audio controls src="figs/sawtooth.wav"></audi>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orgac3f636">
+<h4 id="orgac3f636">時間・周波数表現の比較</h4>
+
+<div id="orgfd91d9a" class="figure">
+<p><img src="figs/waves.001.jpeg" alt="waves.001.jpeg" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge8700f3">
+<h4 id="orge8700f3">スペクトログラムの比較</h4>
+
+<div id="org5843d20" class="figure">
+<p><img src="figs/waves.002.jpeg" alt="waves.002.jpeg" width="100%" />
+</p>
+</div>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd376cea">
+<h2 id="orgd376cea">高速 Fourier 変換</h2>
+<div class="outline-text-2" id="text-orgd376cea">
+</div>
+</section>
+<section id="slide-org8b2be3f">
+<h3 id="org8b2be3f">離散 Fourier 変換の計算量</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(n)
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    f(t)e^{-i\frac{2\pi}{N}nt}, \quad (n=0,1,2,\dotsc,N{-}1)\\
+  &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    f(t)\alpha^{-nt}, \quad \alpha=e^{i\frac{2\pi}{N}}
+\end{align}
+
+</div>
+</blockquote></li>
+<li>定義に従うと離散フーリエ変換の計算量は \(O(N^2)\) <br />
+(\(N^2\)回程度の乗算が必要)</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org01dd9d9">
+<h3 id="org01dd9d9">離散 Fourier 変換行列の性質</h3>
+<ul>
+<li><p>
+\(N=4\) で考える
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&\alpha^{-1}&\alpha^{-2}&\alpha^{-3}\\
+    1&\alpha^{-2}&\alpha^{-4}&\alpha^{-6}\\
+    1&\alpha^{-3}&\alpha^{-6}&\alpha^{-9}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&\alpha^{-1}&-1&\alpha^{-3}\\
+    1&-1&1&-1\\
+    1&\alpha^{-3}&-1&\alpha^{-1}
+  \end{pmatrix}
+\end{equation}
+
+</div>
+<div>
+\begin{equation}
+  \alpha=e^{i\frac{2\pi}{4}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+2列目と3列目を入れ換える
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \begin{pmatrix}
+    1&1&1&1\\
+    1&-1&\alpha^{-1}&\alpha^{-3}\\
+    1&1&-1&-1\\
+    1&-1&\alpha^{-3}&\alpha^{-1}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&0&1&0\\
+    0&1&0&\alpha^{-1}\\
+    1&0&-1&0\\
+    0&1&0&\alpha^{-3}
+  \end{pmatrix}
+  \begin{pmatrix}
+    1&1&0&0\\
+    1&-1&0&0\\
+    0&0&1&1\\
+    0&0&1&-1
+  \end{pmatrix}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>疎な行列の積になっている</li>
+<li>\(N\not=4\)でも同様に議論できる</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org6e40f38">
+<h3 id="org6e40f38">係数の分解</h3>
+<ul>
+<li>\(N\)は二つの整数の積\(N=N_{1}N_{2}\)とする</li>
+<li><p>
+\(t\),\(n\)をそれぞれ\(N_{1}\),\(N_{2}\)で割った商と余りで表す
+</p>
+<blockquote>
+<div>
+\begin{align}
+  t&=t_{1}+t_{2}N_{1},&&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
+  n&=n_{1}N_{2}+n_{2},&&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
+\end{align}
+
+</div>
+</blockquote></li>
+<li><p>
+1の\(N_{1},N_{2}\)乗根を\(\beta,\gamma\)とする
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \beta=e^{i\frac{2\pi}{N_{1}}},\quad
+  \gamma=e^{i\frac{2\pi}{N_{2}}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+係数は以下のように分解される
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \alpha^{-nt}
+  &=\alpha^{-(n_{1}N_{2}+n_{2})(t_{1}+t_{2}N_{1})}\\
+  &=\alpha^{-n_{1}t_{2}N_{2}N_{1}}
+    \alpha^{-n_{1}t_{1}N_{2}}
+    \alpha^{-n_{2}t_{2}N_{1}}
+    \alpha^{-n_{2}t_{1}}\\
+  &=\beta^{-n_{1}t_{1}}\gamma^{-n_{2}t_{2}}\alpha^{-n_{2}t_{1}}\\
+\end{align}
+
+</div>
+<div>
+\begin{equation}
+  \alpha=e^{i\frac{2\pi}{N}},\quad
+  \beta=e^{i\frac{2\pi}{N_{1}}},\quad
+  \gamma=e^{i\frac{2\pi}{N_{2}}}
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li>\(n_{1}t_{2}\)の項は1になるので消えることに注意</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org04c8945">
+<h3 id="org04c8945">計算の分解</h3>
+<ul>
+<li><p>
+記法
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(t)&=f(t_{1},t_{2}),
+  &&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\
+  \hat{f}(n)&=\hat{f}(n_{1},n_{2})
+  &&n_{1}=0,\dotsc,N_{1}{-}1,n_{2}=0,\dotsc,N_{2}{-}1
+\end{align}
+
+</div>
+</blockquote></li>
+<li><p>
+定義
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \sqrt{N}\hat{f}(n_{1},n_{2})
+  &=\sum_{t=0}^{N{-}1}f(t)\alpha^{-nt}\\
+  &=\sum_{t_{1}=0}^{N_{1}{-}1}\sum_{t_{2}=0}^{N_{2}{-}1}
+    f(t_{1},t_{2})
+    \beta^{-n_{1}t_{1}}\gamma^{-n_{2}t_{2}}\alpha^{-n_{2}t_{1}}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+計算は以下のように分解される
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \bar{f}(t_{1},n_{2})
+  &=\sum_{t_{2}=0}^{N_{2}{-}1}f(t_{1},t_{2})\gamma^{-n_{2}t_{2}}
+  &&\forall t_{1},n_{2}\\
+  \tilde{f}(t_{1},n_{2})
+  &=\bar{f}(t_{1},n_{2})\alpha^{-n_{2}t_{1}}
+  &&\forall t_{1},n_{2}\\
+  \sqrt{N}\hat{f}(n_{1},n_{2})
+  &=\sum_{t_{1}=0}^{N_{1}{-}1}\tilde{f}(t_{1},n_{2})\beta^{-n_{1}t_{1}}
+  &&\forall n_{1},n_{2}\\
+\end{align}
+
+</div>
+</blockquote>
+<ul>
+<li>1行目は長さ\(N_{2}\)の離散 Fourier 変換を\(N_{1}\)回</li>
+<li>3行目は長さ\(N_{1}\)の離散 Fourier 変換を\(N_{2}\)回</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org7cd3c9e">
+<h3 id="org7cd3c9e">計算量の漸化式</h3>
+<ul>
+<li>長さ \(N_{i}\) の系列の計算量(乗算回数)を\(T(N_i)\)</li>
+<li><p>
+長さ \(N=N_{1}N_{2}\)の系列の計算量\(T(N)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  T(N)
+  &=N_{1}T(N_{2})+N+N_{2}T(N_{1})\\
+  &=N\left(\frac{T(N_{1})}{N_{1}}+\frac{T(N_{2})}{N_{2}}+1\right)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+一般に \(N=N_{1}N_{2}\dots N_{P}\) のとき
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  T(N)
+  =N\left(\sum_{i=1}^{P}\frac{T(N_i)}{N_i}+P-1\right)
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+特に \(N=2^P,\;(P=\log_{2}N)\) のとき 
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  T(N)
+  =N\log_{2}N\left(\frac{T(2)}{2}+1\right)-N
+  \quad\ll N^{2}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf0bbe86">
+<h2 id="orgf0bbe86">今回のまとめ</h2>
+<ul>
+<li>デジタル信号処理の例
+<ul>
+<li>スペクトログラム</li>
+<li>デジタルフィルタ</li>
+<li>音の合成</li>
+
+</ul></li>
+<li>高速 Fourier 変換
+<ul>
+<li>計算の分解表現</li>
+<li>計算量の評価</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>

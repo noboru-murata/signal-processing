@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fourier 変換</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">Fourier 変換</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第6講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-org123b11e">
+<h2 id="org123b11e">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org123b11e">
+</div>
+</section>
+<section id="slide-org34b4f23">
+<h3 id="org34b4f23">ベクトル空間・内積空間・Hilbert 空間</h3>
+<ul>
+<li><p>
+ベクトル空間
+</p>
+<blockquote>
+<p>
+線形演算について閉じた空間
+</p>
+</blockquote></li>
+<li><p>
+内積空間
+</p>
+<blockquote>
+<p>
+内積が定義されたベクトル空間
+</p>
+</blockquote></li>
+<li><p>
+Hilbert 空間
+</p>
+<blockquote>
+<p>
+ノルムに関して完備な内積空間
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc7f25f3">
+<h3 id="orgc7f25f3">Hilbert 空間の完全正規直交系</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元Hilbert空間には
+可算個の要素からなる完全正規直交系が存在する．
+</p>
+</blockquote></li>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
+</p>
+</blockquote></li>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
+以下が成り立つ．
+</p>
+<div>
+\begin{equation}
+  \forall u\in\mathcal{H}\;\Rightarrow\;
+  u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org06c8978">
+<h3 id="org06c8978">Fourier 級数展開</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(f\in L^{2}(-\pi,\pi)\) 
+は
+以下のように
+Fourier 級数展開
+される．
+</p>
+<div>
+\begin{align}
+  f(x)
+  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+\end{align}
+
+</div>
+
+<div>
+\begin{equation}
+  \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \langle f,g\rangle
+  =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org2b0af81" data-background="#fef4f4">
+<h2 id="org2b0af81">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org043ae29" data-background="#fef4f4">
+<h3 id="org043ae29">練習問題</h3>
+<ul>
+<li><p>
+以下が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \{e^{\alpha inx},\;
+  n=0,\pm1,\pm2,\dotsc\}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+以下を内積とするとき前問の直交系を正規化せよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \langle f,g\rangle=\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgc5de00a">
+<h3 id="orgc5de00a">解答例</h3>
+<ul>
+<li><p>
+周期
+</p>
+<blockquote>
+<p>
+区間 \([-\pi,\pi]\) と区間 \([-T/2,T/2]\) の関係を考えればよい．
+</p>
+<div>
+\begin{equation}
+  \alpha=\frac{2\pi}{T}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+正規化
+</p>
+<blockquote>
+<p>
+正規化定数を
+\(c_{n}(> 0)\) とするとき，
+内積の定義より
+</p>
+<div>
+\begin{equation}
+  |c_{n}|^{2}\int_{-\frac{T}{2}}^{\frac{T}{2}}|e^{\frac{2\pi inx}{T}}|^{2}dx
+  =|c_{n}|^{2}T
+\end{equation}
+
+</div>
+
+<p>
+であるから
+</p>
+<div>
+\begin{equation}
+  \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
+  x\in\left[-\frac{T}{2},\frac{T}{2}\right],\;
+  n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+となる．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgbc04f30">
+<h2 id="orgbc04f30">Fourier 変換</h2>
+<div class="outline-text-2" id="text-orgbc04f30">
+</div>
+</section>
+<section id="slide-orgcd280b2">
+<h3 id="orgcd280b2">Fourier 級数の一般化</h3>
+<ul>
+<li><p>
+周期 \(2\pi\) の場合 (\(x\in[-\pi,\pi]\) で考えよ)
+</p>
+<blockquote>
+<p>
+正規直交系 : 
+</p>
+<div>
+\begin{equation}
+  \phi_{n}=\frac{1}{\sqrt{2\pi}}e^{inx},\;
+  n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+周期 \(T\) の場合 (\(x\in\left[-\frac{T}{2},\frac{T}{2}\right]\) で考えよ)
+</p>
+<blockquote>
+<p>
+正規直交系 : 
+</p>
+<div>
+\begin{equation}
+  \psi_{n}=\frac{1}{\sqrt{T}}e^{\frac{2\pi inx}{T}},\;
+  n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+周期 \(T\) の場合
+</p>
+<blockquote>
+<p>
+Fourier 級数展開は以下で与えられる．
+</p>
+<div>
+\begin{align}
+  f(x)
+  &=\sum_{n=-\infty}^{\infty}\langle f,\psi_{n}\rangle\psi_{n}(x)\\
+  &=\frac{1}{T}\sum_{n=-\infty}^{\infty}e^{\frac{2\pi inx}{T}}
+    \int_{-\frac{T}{2}}^{\frac{T}{2}}f(y)e^{-\frac{2\pi iny}{T}}dy
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+極限操作のための書き換え
+</p>
+<blockquote>
+<p>
+ここで \(\frac{2\pi}{T}=\Delta\) とする．
+</p>
+<div>
+\begin{equation}
+  f(x)=
+  \frac{\Delta}{2\pi}\sum_{n=-\infty}^{\infty}e^{in\Delta x}
+  \int_{-\frac{\pi}{\Delta}}^{\frac{\pi}{\Delta}}f(y)e^{-in\Delta y}dy
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+周期無限大における積分
+</p>
+<blockquote>
+<p>
+\(T\) が十分大きい(\(\Delta\) が十分小さい)極限を考えるために，
+以下の積分を定義する．
+</p>
+<div>
+\begin{equation}
+  \hat{f}(\omega)=
+  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(y)e^{-i\omega y}dy
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+級数和の近似
+</p>
+<blockquote>
+<p>
+Fourier 展開の積分部分は
+\(\sqrt{2\pi}\hat{f}(n\Delta)\)
+で十分良く近似できると考え
+Riemann 和の形で書く．
+</p>
+<div>
+\begin{equation}
+  f(x)\simeq
+  \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty}
+  e^{in\Delta x}\hat{f}(n\Delta)\Delta
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+区分求積法
+</p>
+<blockquote>
+<p>
+Riemann 和は
+\(n\Delta\to\omega\),
+\(\Delta\to d\omega\)
+として積分で表される．
+</p>
+<div>
+\begin{equation}
+  \sum_{n=-\infty}^{\infty}g(n\Delta)\cdot\Delta
+  \xrightarrow{\Delta\to0}
+  \int_{-\infty}^{\infty}g(\omega)d\omega
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+周期無限大における表現
+</p>
+<blockquote>
+<div>
+\begin{align}
+  f(x)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+  &\text{(反転公式)}\\
+  &=\frac{1}{2\pi}
+    \int_{-\infty}^{\infty}
+    \int_{-\infty}^{\infty}f(y)e^{i\omega(x-y)}dy d\omega
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org88be467">
+<h3 id="org88be467">Fourier 変換と反転公式</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+\(\mathbb{R}\)
+上の関数
+\(f\)
+に対して
+</p>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+  &\text{(Fourier 変換)}\\
+  f(x)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+  &\text{(逆 Fourier 変換)}
+\end{align}
+
+</div>
+
+<p>
+で定義する．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org80c8a99">
+<h3 id="org80c8a99">多次元 Fourier 変換</h3>
+<ul>
+<li><p>
+d次元の場合
+</p>
+<blockquote>
+<p>
+\(\mathbb{R}^{d}\)
+上の関数
+\(f\)
+について
+</p>
+<div>
+\begin{align}
+  \hat{f}(\boldsymbol{\omega})
+  &=\frac{1}{\sqrt{2\pi}^{d}}
+    \int_{-\infty}^{\infty}f(x)e^{-i\boldsymbol{\omega}\cdot\boldsymbol{x}}dx
+  &\text{(Fourier 変換)}\\
+  f(x)
+  &=\frac{1}{\sqrt{2\pi}^{d}}
+    \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\boldsymbol{\omega}\cdot\boldsymbol{x}}d\omega
+  &\text{(逆 Fourier 変換)}
+\end{align}
+
+</div>
+
+<p>
+で定義する．
+なお
+\(\boldsymbol{\omega}\cdot\boldsymbol{x}\)
+はベクトル
+\(\boldsymbol{\omega}\in\mathbb{R}^{d}\)
+とベクトル
+\(\boldsymbol{x}\in\mathbb{R}^{d}\)
+の通常の内積である．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge0e315c" data-background="#fef4f4">
+<h2 id="orge0e315c">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org2492052" data-background="#fef4f4">
+<h3 id="org2492052">練習問題</h3>
+<ul>
+<li><p>
+以下の積分値を求めよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgaa20c0d">
+<h3 id="orgaa20c0d">解答例</h3>
+<ul>
+<li><p>
+2重積分を利用する
+</p>
+<blockquote>
+<div>
+\begin{align}
+  &\int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+    \int_{-\infty}^{\infty}e^{-\epsilon y^{2}}dy\\
+  &=
+    \int_{-\infty}^{\infty}
+    \int_{-\infty}^{\infty}e^{-\epsilon(x^{2}+y^{2})}dxdy\\
+  &=
+    \int_{0}^{2\pi}
+    \int_{0}^{\infty}e^{-\epsilon r^{2}}rdrd\theta
+  &&(\text{極座標変換})\\
+  &=
+    2\pi\int_{0}^{\infty}e^{-\epsilon r^{2}}rdr
+  &&(\text{変数変換}z=r^{2})\\
+  &=
+    \pi\int_{0}^{\infty}e^{-\epsilon z}dz
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+解答
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \int_{-\infty}^{\infty}e^{-\epsilon x^{2}}dx
+  =\sqrt{\frac{\pi}{\epsilon}}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org54ec6f5" data-background="#fef4f4">
+<h3 id="org54ec6f5">練習問題</h3>
+<ul>
+<li><p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{それ以外}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+以下の関数の Fourier 変換を求めよ．
+</p>
+<ul>
+<li>\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)</li>
+<li>\(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)</li>
+<li>\(h(x)=\Xi_{(-1,1)}(x)\)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org1dd42c9" data-background="#fef4f4">
+<h3 id="org1dd42c9">解答例</h3>
+<ul>
+<li><p>
+\(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{f}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+  &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(g(x)=e^{-\beta x^{2}}\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{g}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}
+    \frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+  &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+  &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+\(h(x)=\Xi_{(-1,1)}(x)\)
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \hat{h}(\omega)
+  &=\frac{1}{\sqrt{2\pi}}
+    \int_{-1}^{1}e^{-i\omega x}dx\\
+  &=\frac{1}{\sqrt{2\pi}}
+    \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+  &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+  &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5c81c5b">
+<h2 id="org5c81c5b">Fourier 変換の例</h2>
+<div class="outline-text-2" id="text-org5c81c5b">
+</div>
+</section>
+<section id="slide-org40ed837">
+<h3 id="org40ed837">応用上重要な関数の例</h3>
+<ul>
+<li><p>
+定義関数
+</p>
+<blockquote>
+<p>
+関数 \(\Xi\) を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \Xi_{(a,b)}(x)
+  =
+  \begin{cases}
+    1,& x\in (a,b)\\
+    0,&\text{それ以外}
+  \end{cases}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+<span style="color:green;">代表的な例</span>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">関数</th>
+<th scope="col" class="org-left">Fourier 変換</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(e^{-ax^{2}},\;x\in\mathbb{R}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\)</td>
+<td class="org-left">\(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org49b5e17">
+<h2 id="org49b5e17">反転公式の証明</h2>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org4a88744">
+<h3 id="org4a88744">証明</h3>
+<ul>
+<li><p>
+step 1
+</p>
+<blockquote>
+<p>
+関数 \(\hat{f}\) は各点で値が決まるが，
+積分
+</p>
+<div>
+\begin{equation}
+  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  \hat{f}(\omega)e^{i\omega x}d\omega
+\end{equation}
+
+</div>
+
+<p>
+の値が存在するかどうかはわからない．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 2
+</p>
+<blockquote>
+<p>
+収束因子
+\(e^{-\epsilon\omega^{2}}\)
+を用いて以下の積分を定義する．
+</p>
+<div>
+\begin{align}
+  f_{\epsilon}(x)
+  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+    \hat{f}(\omega)e^{-\epsilon\omega^{2}}e^{i\omega x}d\omega\\
+  &=\frac{1}{2\pi}\int_{-\infty}^{\infty}
+    e^{-\epsilon\omega^{2}+i\omega x}d\omega
+    \int_{-\infty}^{\infty}
+    f(y)e^{-i\omega y}dy\\
+  &=\frac{1}{2\pi}\int_{-\infty}^{\infty}
+    f(y)dy
+    \int_{-\infty}^{\infty}
+    e^{-\epsilon\omega^{2}-i\omega(y-x)}d\omega
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 3
+</p>
+<blockquote>
+<p>
+指数の肩を整理する．
+</p>
+<div>
+\begin{equation}
+  -\epsilon\omega^{2}-i\omega(y-x)
+  =
+  -\epsilon\left(\omega+\frac{i(y-x)}{2\epsilon}\right)^{2}
+  -\frac{(y-x)^{2}}{4\epsilon}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+step 4
+</p>
+<blockquote>
+<p>
+\(\omega\) の積分を行い
+\(f_{\epsilon}\)
+を整理する．
+</p>
+<div>
+\begin{equation}
+  f_{\epsilon}(x)
+  =\frac{1}{\sqrt{4\pi\epsilon}}
+  \int_{-\infty}^{\infty}
+  e^{-\frac{(x-y)^{2}}{4\epsilon}}f(y)dy
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 5
+</p>
+<blockquote>
+<p>
+関数
+\(G_{\epsilon}\)
+(Gauss 核と呼ばれる)を
+</p>
+<div>
+\begin{equation}
+  G_{\epsilon}(x)
+  =\frac{1}{\sqrt{4\pi\epsilon}}
+  e^{-\frac{x^{2}}{4\epsilon}}
+\end{equation}
+
+</div>
+
+<p>
+と定義し，
+\(f_{\epsilon}\)
+を畳み込みで書き直す．
+</p>
+<div>
+\begin{equation}
+  f_{\epsilon}(x)
+  =
+  \int_{-\infty}^{\infty}
+  G_{\epsilon}(x-y)f(y)dy
+  =
+  G_{\epsilon}*f(x)
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+step 6
+</p>
+<blockquote>
+<p>
+関数
+\(G_{\epsilon}\)
+は以下の性質を持つことが
+確かめられる．
+</p>
+
+<ol>
+<li>\(G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}\)</li>
+<li>\(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)</li>
+<li>\(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)</li>
+
+</ol>
+
+<p>
+したがって
+\(G_{\epsilon}\)
+は
+\(\epsilon\to0\)
+において
+Dirac の\(\delta\)関数になる．
+</p>
+</blockquote>
+<ul>
+<li><i><span style="color:orange;">Fourier 級数展開の証明で出た Poisson 核と同様な性質</span></i></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgae88aa3">
+<h3 id="orgae88aa3">反転公式</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
+  =\lim_{\epsilon\to0}
+  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+  \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
+\end{equation}
+
+</div>
+
+<p>
+より正確には
+\(f\in L^{1}\cap L^{p}\)
+であれば，
+上の式は
+\(L^{p}\)
+の意味で成り立つと表現される．
+</p>
+<div>
+\begin{equation}
+  \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org268ed3b">
+<h2 id="org268ed3b">今回のまとめ</h2>
+<ul>
+<li>Fourier 変換
+<ul>
+<li>Fourier 級数の周期の一般化</li>
+<li>周期無限大の極限の表現</li>
+<li>Fourier 変換と反転公式</li>
+<li>Gauss 核による反転公式の証明</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>

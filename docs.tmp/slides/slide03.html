@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>正規直交基底</title>
+<meta name="author" content="村田 昇"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">正規直交基底</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第3講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
+</section>
+
+<section>
+<section id="slide-orgd0a951e">
+<h2 id="orgd0a951e">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgd0a951e">
+</div>
+</section>
+<section id="slide-org9612f7e">
+<h3 id="org9612f7e">ベクトル空間</h3>
+<ul>
+<li><p>
+満たすべき条件
+</p>
+<blockquote>
+<ol>
+<li><b>\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)</b></li>
+<li>\(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)</li>
+<li>\(a,b\in V\;\Rightarrow\;a+b=b+a\) (交換則)</li>
+<li>\(\exists0\in V\;\text{s.t.}\;\forall a\in V,\;a+0=a\) (零元)</li>
+<li>\(\forall a\in V\;\Rightarrow\;\exists -a\in V\;\text{s.t.}\;a+(-a)=0\) (逆元)</li>
+<li><b>\(\forall \lambda\in K,\forall a\in V\;\Rightarrow\;\lambda a\in V\) (スカラ倍)</b></li>
+<li>\(\forall \lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda\mu)a=\lambda(\mu a)\) (結合則)</li>
+<li>\(\exists 1\in K\;\text{s.t.}\forall a\in V,\;1a=a\) (\(K\) の単位元)</li>
+<li>\(\forall\lambda\in K,\forall a,b\in V\;\Rightarrow\;\lambda(a+b)=\lambda a+\lambda b\) (分配則)</li>
+<li>\(\forall\lambda,\mu\in K,\forall a\in V\;\Rightarrow\;(\lambda+\mu)a=\lambda a+\mu a\) (分配則)</li>
+
+</ol>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org3ec6a9f">
+<h3 id="org3ec6a9f">内積空間</h3>
+<ul>
+<li><p>
+内積
+</p>
+<blockquote>
+<p>
+ベクトル空間の2つの要素
+\(u,v\in\mathcal{H}\) に対して，
+次の性質を持つ2変数関数を
+<b>内積</b>
+という．
+</p>
+<ol>
+<li>\(\langle u,u\rangle\geq0\) 
+特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)</li>
+<li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br />
+なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)</li>
+<li>\(\langle \alpha u+\beta u',v\rangle
+     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+
+</ol>
+</blockquote></li>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+内積が定義されたベクトル空間を
+<b>内積空間</b> 
+という．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgba4339c">
+<h3 id="orgba4339c">Hilbert 空間</h3>
+<ul>
+<li><p>
+完備性の定義
+</p>
+<blockquote>
+<p>
+ある集合の中で無限に続く点列 \(u_{n}\) を考え，
+この点列がだんだん動かなくなる状況を考える．
+</p>
+<div>
+\begin{equation}
+  \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy 列という)}
+\end{equation}
+
+</div>
+
+<p>
+この点列の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
+その集合は
+<b>完備</b>
+であるという．
+</p>
+</blockquote></li>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+内積空間 \(\mathcal{H}\) が
+ノルム \(\|u\|=\sqrt{\langle u,u\rangle}\)
+に関して完備なとき 
+<b>Hilbert 空間</b>
+という．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgddd0412">
+<h3 id="orgddd0412">Hilbert 空間の例</h3>
+<ul>
+<li><p>
+<span style="color:green;">\(l^{2}\) 空間 (無限次元数ベクトル空間)</span>
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  l^{2}=
+  \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\; 
+    \|u\|<\infty
+  \right\},
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \langle u,v\rangle
+  =
+  \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
+  \quad
+  \|u\|^{2}
+  =
+  \sum_{i=1}^{\infty}|u_{i}|^{2}.
+\end{equation}
+
+</div>
+</blockquote>
+<ul>
+<li><span style="color:orange;">ノルムが有界であることから内積が計算できる</span></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+<span style="color:green;">\(L^{2}\) 空間 (これから扱う信号の空間)</span>
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  L^{2}(\Omega)=
+  \left\{
+    f\:\Big|\:\|f\|<\infty
+  \right\},
+\end{equation}
+
+</div>
+
+<div>
+\begin{equation}
+  \langle f,g\rangle
+  =
+  \int_{\Omega}f(x)\overline{g(x)}dx,
+  \quad
+  \|f\|^{2}
+  =
+  \int_{\Omega}|f(x)|^{2}dx.
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0f734bd" data-background="#fef4f4">
+<h2 id="org0f734bd">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-orge8afb41" data-background="#fef4f4">
+<h3 id="orge8afb41">練習問題</h3>
+<ul>
+<li>係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
+以下を展開せよ．
+<ul>
+<li>\(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)</li>
+<li>\(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)</li>
+<li>\(\langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle\)</li>
+
+</ul></li>
+<li>複素数 \(\mathbb{C}\) を係数体とする
+以下の内積空間で Hilbert 空間となるものはどれか?
+なお，内積は 
+\(\langle f,g\rangle=\int_{-1}^{1}f(x)\overline{g(x)}dx\) 
+とする．
+<ul>
+<li>区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\)</li>
+<li>区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5890bbf" data-background="#fef4f4">
+<h3 id="org5890bbf">解答例</h3>
+<ul>
+<li><p>
+定義に則って計算すればよい
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle
+  &=\alpha_1\langle u_1, v\rangle
+    +\alpha_2\langle u_2, v\rangle\\
+  \langle u, \beta_1 v_1+\beta_2 v_2\rangle
+  &=\overline{\langle\beta_1 v_1+\beta_2 v_2, u\rangle}\\
+  &=\overline{\beta_1}\cdot\overline{\langle v_1, u\rangle}
+    +\overline{\beta_2}\cdot\overline{\langle v_2, u\rangle}\\
+  &=\overline{\beta_1}\langle u, v_1\rangle
+    +\overline{\beta_2}\langle u, v_2\rangle\\
+  \langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle
+  &=\alpha_1\overline{\beta_1}\langle u_1, v_1\rangle
+    +\alpha_1\overline{\beta_2}\langle u_1, v_2\rangle\\
+  &\quad+\alpha_2\overline{\beta_1}\langle u_2, v_1\rangle
+    +\alpha_2\overline{\beta_2}\langle u_2, v_2\rangle
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li>それぞれの空間で Cauchy 列を考えてみよ
+<ul>
+<li>不連続な関数の中に連続関数の極限として定義できるものがある</li>
+<li>ノルムの値である実数値の Cauchy 列を考えればよい．</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org871a8e2">
+<h2 id="org871a8e2">正規直交系</h2>
+<div class="outline-text-2" id="text-org871a8e2">
+</div>
+</section>
+<section id="slide-org2e69bf1">
+<h3 id="org2e69bf1">正規直交系</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+Hilbert 空間 \(\mathcal{H}\) の
+部分集合 \(\mathcal{A}\) を考える．
+</p>
+<div>
+\begin{equation}
+  \forall\phi,\psi\in\mathcal{A},\,\phi\not=\psi\;
+  \Rightarrow\;
+  \langle \phi,\psi\rangle=0
+\end{equation}
+
+</div>
+
+<p>
+となるとき，
+\(\mathcal{A}\) を
+<b>直交系</b> 
+という．
+</p>
+
+<p>
+さらに
+</p>
+<div>
+\begin{equation}
+  \forall\phi\in\mathcal{A}\;\Rightarrow\;
+  \|\phi\|=\sqrt{\langle\phi,\phi\rangle}=1
+\end{equation}
+
+</div>
+
+<p>
+となるとき，
+\(\mathcal{A}\) を
+<b>正規直交系</b>
+という．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org1694fdc">
+<h3 id="org1694fdc">正規直交系の例</h3>
+<ul>
+<li><p>
+<span style="color:green;">\(l^{2}\) 空間</span>
+</p>
+<blockquote>
+<p>
+無限次元数ベクトル空間 \(l^{2}\) を考える．
+</p>
+<div>
+\begin{align}
+  u=
+  &(u_{1},u_{2},\dotsc,u_{k},\dotsc),\\
+  &\|u\|^{2}=\sum_{k=1}^{\infty}|u_{k}|^{2}<\infty
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+<span style="color:green;">\(l^{2}\) 空間の自然な系</span>
+</p>
+<blockquote>
+<p>
+\(\phi_{k}\) 
+を以下で定義する．
+</p>
+<div>
+\begin{equation}
+  \phi_{k}=(0,\dotsc,0,\overbrace{1}^{k\text{番目}},0,\dotsc)
+  \in l^{2},\;k=1,2,\dotsc 
+\end{equation}
+
+</div>
+
+<p>
+このとき，
+</p>
+<div>
+\begin{align}
+  \langle \phi_{k},\phi_{h}\rangle
+  &=
+    \begin{cases}
+      0,&k\not=h\\
+      1,&k=h
+    \end{cases}\\
+  &=\delta_{kh}\;\text{(Kronecker's delta)}
+\end{align}
+
+</div>
+
+<p>
+なので，
+\(\mathcal{A}=\{\phi_{k}\}_{k=1}^{\infty}\)
+は正規直交系である．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org078199e">
+<h3 id="org078199e">Hilbert 空間の正規直交系</h3>
+<ul>
+<li><p>
+稠密の定義
+</p>
+<blockquote>
+<p>
+ある集合の部分集合が 
+<b>稠密</b> 
+とは，
+もとの集合の任意の点に対して，
+いくらでも近い点をその部分集合の中から選ぶことができることをいう．
+</p>
+</blockquote>
+<ul>
+<li class="fragment appear">稠密な集合の例
+<ul>
+<li>実数の中の有理数</li>
+<li>実数の中の無理数</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+可分の定義
+</p>
+<blockquote>
+<p>
+ある集合が
+<b>可分</b>
+とはその集合の中に稠密な可算部分集合を取ることができることをいう．
+</p>
+</blockquote>
+<ul>
+<li class="fragment appear">可算(番号付けが可能)な集合の例
+<ul>
+<li>自然数 (番号そのもの)</li>
+<li>自然数の組 (2次元の表)</li>
+<li>有理数 (自然数/自然数)</li>
+
+</ul></li>
+<li class="fragment appear">可分な集合の例
+<ul>
+<li>実数 (稠密な集合 : 有理数)</li>
+<li>複素数 (稠密な集合 : 実部と虚部がそれぞれ有理数)</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な Hilbert 空間 \(\mathcal{H}\) の正規直交系は
+<b>高々可算</b> 
+な集合である．
+</p>
+</blockquote></li>
+<li>注意
+<ul>
+<li><b>可算</b> とは自然数で番号付けできること</li>
+<li>実数や複素数を係数体として考える応用上重要な Hilbert 空間は
+定理の条件を満たす</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>定理の略証
+<ul>
+<li class="fragment appear"><p>
+その1
+</p>
+<blockquote>
+<p>
+\(\mathcal{H}\) は可分なので，
+稠密な可算部分集合 \(\mathcal{D}\) をとることができる．
+</p>
+</blockquote></li>
+<li class="fragment appear"><p>
+その2
+</p>
+<blockquote>
+<p>
+正規直交系 \(\mathcal{A}\) において
+\(\forall\phi,\psi\in\mathcal{A},\;\phi\not=\psi\) 
+</p>
+<div>
+\begin{equation}
+  \|\phi-\psi\|=\sqrt{2}
+\end{equation}
+
+</div>
+
+<p>
+が成り立つ．
+</p>
+</blockquote></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>(証明のつづき)
+<ul>
+<li class="fragment appear"><p>
+その3
+</p>
+<blockquote>
+<p>
+\(\phi\in\mathcal{A}\subset\mathcal{H}\)
+に対して
+\(u_{\phi}\in\mathcal{D}\)
+を
+</p>
+<div>
+\begin{equation}
+  \|\phi-u_{\phi}\|<\frac{1}{\sqrt{2}}
+\end{equation}
+
+</div>
+
+<p>
+となるようにとることができる(稠密なので必ずとれる)．
+</p>
+</blockquote></li>
+<li class="fragment appear"><p>
+その4
+</p>
+<blockquote>
+<p>
+このとき三角不等式により以下が成り立つ．
+</p>
+<div>
+\begin{align}
+  \sqrt{2}
+  &=\|\phi-\psi\|\\
+  &\leq\|\phi-u_{\phi}\|+\|u_{\phi}-u_{\psi}\|+\|u_{\psi}-\psi\|\\
+  &<\sqrt{2}+\|u_{\phi}-u_{\psi}\|
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>(証明のつづき)
+<ul>
+<li class="fragment appear"><p>
+その5
+</p>
+<blockquote>
+<p>
+したがって
+</p>
+<div>
+\begin{equation}
+  \|u_{\phi}-u_{\psi}\|\not=0
+  \;\Rightarrow\;
+  u_{\phi}\not=u_{\psi}
+\end{equation}
+
+</div>
+
+<p>
+つまり \(\phi\to u_{\phi}\) は1対1対応にできる．
+</p>
+</blockquote></li>
+<li class="fragment appear"><p>
+その6
+</p>
+<blockquote>
+<p>
+\(\mathcal{D}\) は可算なので，
+\(\mathcal{A}\) は高々可算であることがわかる．
+</p>
+</blockquote></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org6aab80c">
+<h3 id="org6aab80c">正規直交系の存在</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+Hilbert 空間 \(\mathcal{H}\) の
+点 \(\psi_{k}\in\mathcal{H}\) の集合
+\(\{\psi_{k}\}_{k=1,2,\dotsc}\) を考える．
+\(\forall n\) に対して 
+\(\psi_{1},\dotsc,\psi_{n}\) が線形独立であるとする．
+このとき，次の性質を満たす \(\mathcal{H}\) の
+正規直交系 \(\{\phi_{k}\}\) が存在する．
+</p>
+<ul>
+<li>\(\phi_{n}\) は \(\psi_{1},\dotsc,\psi_{n}\) の線形結合，</li>
+<li>\(\psi_{n}\) は \(\phi_{1},\dotsc,\phi_{n}\) の線形結合．</li>
+
+</ul>
+</blockquote></li>
+<li><p>
+式による表記
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \mathrm{span}\{\psi_{k}\}_{k=1,\dotsc,n}=\mathrm{span}\{\phi_{k}\}_{k=1,\dotsc,n}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+証明
+</p>
+<blockquote>
+<p>
+Gram-Schmidt の直交化法
+を用いて具体的に構成する．
+</p>
+<ol>
+<li>\(\phi_{1}=\|\psi_{1}\|^{-1}\psi_{1}\) (正規化)</li>
+<li>\(\phi'_{2}=\psi_{2}-\langle\psi_{2},\phi_{1}\rangle\phi_{1}\) (直交化)</li>
+<li>\(\phi_{2}=\|\phi'_{2}\|^{-1}\phi'_{2}\) (正規化)</li>
+<li>\(\cdots\) (同様に繰り返す)</li>
+<li>\(\phi'_{n}=\psi_{n}-\sum_{k=1}^{n-1}\langle\psi_{n},\phi_{k}\rangle\phi_{k}\) (直交化)</li>
+<li>\(\phi_{n}=\|\phi'_{n}\|^{-1}\phi'_{n}\) (正規化)</li>
+
+</ol>
+</blockquote>
+<ul>
+<li>練習問題で直交性を確認する</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgd2c8612">
+<h3 id="orgd2c8612">正規直交系の構成例</h3>
+<ul>
+<li><p>
+問題
+</p>
+<blockquote>
+<p>
+\(L^{2}(-1,1)\) における独立なベクトルを
+</p>
+<div>
+\begin{equation}
+  \psi_{0}=1,\,\psi_{1}=x,\,\psi_{2}=x^{2},\dotsc
+\end{equation}
+
+</div>
+
+<p>
+とする．
+この集合から正規直交系を構成せよ．
+</p>
+</blockquote></li>
+<li><p>
+解答
+</p>
+<blockquote>
+<ol>
+<li>\(\phi_{0}=1/\|\psi_{0}\|=1/\sqrt{2}\)</li>
+<li>\(\phi'_{1}=x-\int_{-1}^{1}(x/2)dx=x\),</li>
+<li>\(\phi_{1}=x/\|\phi'_{1}\|=\sqrt{3}/\sqrt{2}x\)</li>
+<li>(練習問題)</li>
+
+</ol>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orge3ee10c" data-background="#fef4f4">
+<h2 id="orge3ee10c">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org190740d" data-background="#fef4f4">
+<h3 id="org190740d">練習問題</h3>
+<ul>
+<li>Gram-Schmidt の直交化法において
+\(\phi_{n}\)
+が
+\(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\)
+と直交することを示せ．</li>
+<li>前の例の \(\phi_{2}\) (2次関数から作られる) を求めよ．</li>
+<li><p>
+以下の集合から正規直交系を構成せよ．
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \{1,\sin(2\pi x),\cos(2\pi x)\}\in L^{2}(0,1),
+\end{equation}
+
+</div>
+<p>
+ただし内積は以下で定めるものとする．
+</p>
+<div>
+\begin{equation}
+  \langle f,g \rangle =\int_{0}^{1}f(x)\overline{g(x)}dx
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgbacb6ad" data-background="#fef4f4">
+<h3 id="orgbacb6ad">解答例</h3>
+<ul>
+<li><p>
+\(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\) が
+直交しているとして内積を計算すればよい(帰納法)．
+たとえば
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \langle\phi_{n},\phi_{1}\rangle
+  &=\frac{1}{\|\phi'_{n}\|}
+    \langle\psi_{n}-\sum_{k=1}^{n-1}\langle\psi_{n},\phi_{k}\rangle\phi_{k},\phi_{1}\rangle\\
+  &=\frac{1}{\|\phi'_{n}\|}
+    \left(\langle\psi_{n},\phi_{1}\rangle
+    -\langle\psi_{n},\phi_{1}\rangle\langle\phi_{1},\phi_{1}\rangle\right)
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+定義に従って計算すればよい
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \phi'_{2}&=x^{2}-\frac{1}{3}\\
+  \|\phi'_{2}\|^{2}&=\int_{-1}^{1}\left(x^{2}-\frac{1}{3}\right)^{2}dx\\
+	   &=\frac{8}{45}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgc870ee8">
+<h2 id="orgc870ee8">完全正規直交系</h2>
+<div class="outline-text-2" id="text-orgc870ee8">
+</div>
+</section>
+<section id="slide-org719aedc">
+<h3 id="org719aedc">正規直交系の性質</h3>
+<ul>
+<li><p>
+正規直交系 \(\{\phi_{k}\}_{k=1,2,\dotsc}\)
+の性質として以下は重要
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \forall n,\;
+  \langle\sum_{j=1}^{n}c_{j}\phi_{j},\sum_{k=1}^{n}d_{k}\phi_{k}\rangle
+  =\sum_{k=1}^{n}c_{k}\bar{d}_{k},\;
+  c_{j},d_{k}\in\mathbb{C}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li><p>
+証明
+</p>
+<blockquote>
+<p>
+正規直交性より明らか
+</p>
+<div>
+\begin{equation}
+  \langle\phi_{j},\phi_{k}\rangle
+  =\delta_{jk}
+\end{equation}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgeb41db7">
+<h3 id="orgeb41db7">Bessel の不等式</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(\{\phi_{k}\}\) が \(\mathcal{H}\) の正規直交系ならば，
+</p>
+<div>
+\begin{equation}
+  \forall u\in\mathcal{H},\; 
+  \sum_{k}|\langle u,\phi_{k}\rangle|^{2}\leq\|u\|^{2}
+\end{equation}
+
+</div>
+
+<p>
+が成り立つ．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+証明
+</p>
+<blockquote>
+<div>
+\begin{align}
+  0
+  &\leq\|u-\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\|^{2}\\
+  &=\langle u-\sum_{j}\langle u,\phi_{j}\rangle\phi_{j},
+    u-\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\rangle\\
+  &=\|u\|^{2}
+    -\sum_{k}\overline{\langle u,\phi_{k}\rangle}\langle u,\phi_{k}\rangle\\
+  &\qquad
+    -\sum_{j}\langle u,\phi_{j}\rangle\overline{\langle u,\phi_{j}\rangle}
+    +\sum_{j,k}\langle u,\phi_{j}\rangle
+    \overline{\langle u,\phi_{k}\rangle}\delta_{jk}\\
+  &=\|u\|^{2}-\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgbb7efd5">
+<h3 id="orgbb7efd5">完全性</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+\(\{\phi_{k}\}\) が \(\mathcal{H}\) の正規直交系とする．
+</p>
+<div>
+\begin{equation}
+  \forall u\in\mathcal{H},\; 
+  \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+\end{equation}
+
+</div>
+
+<p>
+が成り立つとき，
+\(\{\phi_{k}\}\) を
+<b>完全正規直交系</b>
+という．
+</p>
+</blockquote>
+<ul>
+<li>Bessel の不等式の特殊な場合
+(<b>Parseval の等式</b>)
+を完全性の定義として用いる</li>
+<li>直感的には \(\mathcal{H}\) の任意の要素は
+\(\{\phi_{k}\}\) の線形結合で表される
+(これを &ldquo;\(\{\phi_{k}\}\) で生成される&rdquo; という)
+ことを意味している</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5c47f58">
+<h3 id="org5c47f58">完全性の同値な条件</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+\(\{\phi_{k}\}\) が \(\mathcal{H}\) の正規直交系，
+\(\mathcal{M}\) を \(\{\phi_{k}\}\) が生成する閉部分空間とする．
+以下の条件は同値である．
+</p>
+<ol>
+<li>\(\mathcal{H}=\mathcal{M}\)</li>
+<li>\(\forall u\in\mathcal{H}\;\Rightarrow\;
+     u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)</li>
+<li>\(\forall u\in\mathcal{H}\;\Rightarrow\;
+     \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}\)
+(Parseval の等式)</li>
+<li>\(\forall u,v\in\mathcal{H}\;\Rightarrow\;
+     \langle u,v\rangle
+     =\sum_{k}\langle u,\phi_{k}\rangle\overline{\langle v,\phi_{k}\rangle}\)</li>
+<li>\(\forall k,\, \langle u,\phi_{k}\rangle=0\;\Rightarrow\;u=0\)</li>
+
+</ol>
+</blockquote>
+<ul>
+<li>特に2と4の条件は重要
+<ul>
+<li>2 : 線形結合の係数は正規直交系との内積で計算できる</li>
+<li>4 : ベクトルの内積は係数の内積で計算できる</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org5608ef6">
+<h3 id="org5608ef6">完全正規直交系の性質</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元 Hilbert 空間には
+可算個の要素からなる完全正規直交系が存在する．
+</p>
+</blockquote></li>
+<li><p>
+定理
+</p>
+<blockquote>
+<p>
+可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-org17437ce">
+<h3 id="org17437ce">完全正規直交系の例</h3>
+<ul>
+<li><p>
+<span style="color:green;">\(l^{2}\) 空間</span>
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \phi_{k}
+  &=(0,\dotsc,0,\overbrace{1}^{k},0,\dotsc),\;k=1,2,\dotsc \\
+  &\langle\phi_{j},\phi_{k}\rangle
+    =\delta_{jk}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+<span style="color:green;">\(L^{2}(-\pi,\pi)\) 空間</span>
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \phi_{k}(x)
+  &=\frac{1}{\sqrt{2\pi}}e^{ikx},\;k=0,\pm1,\pm2,\dotsc\\
+  &\langle\phi_{j},\phi_{k}\rangle=\delta_{jk}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org7392779" data-background="#fef4f4">
+<h2 id="org7392779">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org27547e8" data-background="#fef4f4">
+<h3 id="org27547e8">練習問題</h3>
+<ul>
+<li><p>
+\(L^{2}(-\pi,\pi)\) 空間において
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+</blockquote>
+<p>
+が正規直交系になることを確かめよ．
+</p></li>
+<li>\(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．</li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgbac4a77" data-background="#fef4f4">
+<h3 id="orgbac4a77">解答例</h3>
+<ul>
+<li><p>
+任意の \(j,k\) について内積を計算してみれば良い
+</p>
+<blockquote>
+<div>
+\begin{align}
+  \langle\phi_{j},\phi_{k}\rangle
+  &=\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{ijx}\overline{e^{ikx}}dx
+    =\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{i(j-k)x}dx\\
+  &=
+    \begin{cases}
+      \frac{1}{2\pi i(j-k)} 
+      \left[e^{i(j-k)x}\right]_{-\pi}^{\pi},& j\not=k\\
+      \frac{1}{2\pi}\left[x\right]_{-\pi}^{\pi}, &j=k
+    \end{cases}\\
+  &=\delta_{jk}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section data-background="#fef4f4">
+<ul>
+<li><p>
+定義域が変わっただけなので，同じ関数形を拡大縮小すればよい
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \phi_{k}(x)
+  =a e^{ik\pi x},\;k=0,\pm1,\pm2,\dotsc
+\end{equation}
+
+</div>
+
+<p>
+正規性を満たすように係数 \(a\) を決めればよい．
+</p>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgc1ff785">
+<h2 id="orgc1ff785">今回のまとめ</h2>
+<ul>
+<li>正規直交系
+<ul>
+<li>直交系 : 任意の2つの要素の内積が0となる集合</li>
+<li>正規直交系 : 要素のノルムが1である直交系</li>
+<li>正規直交系の可算性 :
+可分な Hilbert 空間の正規直交系は高々可算の集合である</li>
+<li>Gram-Schmidt の直交化法 :
+線形独立な集合から正規直交系を作る算法．</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>完全正規直交系
+<ul>
+<li><p>
+Parseval の等式を満たす正規直交系
+</p>
+<blockquote>
+<div>
+\begin{equation}
+  \forall u\in\mathcal{H}\;\Rightarrow\;
+  \|u\|^{2}=\sum_{k}|\langle u,\phi_{k}\rangle|^{2}
+\end{equation}
+
+</div>
+</blockquote></li>
+<li>完全正規直交系の存在 : 
+可分な Hilbert 空間には完全正規直交系が存在する</li>
+<li>Hilbert 空間の表現 :
+可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/search/search.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: false,
+overview: true,
+
+transition: 'fade',
+transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+
+});
+</script>
+</body>
+</html>
