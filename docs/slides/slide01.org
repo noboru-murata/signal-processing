@@ -1,9 +1,9 @@
 #+TITLE: ベクトル空間
 #+SUBTITLE: 信号処理 - 第1講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2022-04-29 15:09:29 mura>
+# Time-stamp: <2023-04-13 22:24:39 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,29 +12,31 @@
 # C-c '
 :END:
 
-* COMMENT はじめに
-
 * COMMENT メモ
 - 校正に関して記述
   
+* COMMENT はじめに
+
 
 * ベクトル空間
 ** 重ね合わせの原理
 - 「複雑な波(信号)も単純な波(信号)の重ね合わせで表現できる」
   という現象を一般化した原理
-- 数学・物理・工学分野でのモデル化や解析:
+- 数学・物理・工学分野でのモデル化や解析に用いる
   - 線形方程式・Fourier解析
   - 量子力学
   - 電気回路
-- *(線形)ベクトル空間 (vector space)*\\
-  数学的に取り扱うための道具立て
+  - *信号処理*
+- 重ね合わせの原理を数学的に取り扱うための道具立て\\
+  *(線形)ベクトル空間 (vector space)*
+  
 
 ** ベクトル空間
 - 定義
   #+begin_quote
-  以下の性質をもつ集合を体 \(K\) (四則演算が定義された集合)上の
-  *ベクトル空間 \(V\)* という．\\
-  (体 \(K\) はベクトル空間 \(V\) の *係数体* と呼ぶ．)
+  次の性質をもつ集合を体 \(K\) 上の *ベクトル空間* \(V\) という．\\
+  体とは四則演算が定義された集合のことで，
+  \(K\) をベクトル空間 \(V\) の *係数体* と呼ぶ．
   #+end_quote
 
 #+reveal: split
@@ -56,6 +58,7 @@
 - [[color:green][幾何ベクトル]]
   #+begin_quote
   平行移動で互いに移り合う有効線分．
+
   和は2つの有向線分で作られる平行四辺形の対角線で，
   スカラ倍は有向線分のスカラ倍で定義される．
   #+begin_src latex
@@ -105,7 +108,7 @@
     (\((-\pi,\pi)\) 上で定義された3階微分可能な関数の集合)
   - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\)
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -185,8 +188,8 @@
   #+begin_quote
   #+begin_src latex
     \begin{align}
-      &f(x)=x,\;g(x)=2x &&\text{(線形従属)}\\
-      &f(x)=x,\;h(x)=x^{2} &&\text{(線形独立)}
+      &\{f(x)=x,\;g(x)=2x\} &&\text{(線形従属)}\\
+      &\{f(x)=x,\;h(x)=x^{2}\} &&\text{(線形独立)}
     \end{align}
   #+end_src
   #+end_quote
@@ -207,7 +210,7 @@
   - \(\{1,\;\log(x),\;\log(2x)\}\quad(x>0)\)
   - \(\{\exp(ix),\exp(3ix),\exp(5ix)\}\quad(x\in\mathbb{R})\)
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -230,6 +233,7 @@
   #+begin_quote
   ベクトル空間 \(V\) の有限部分集合 \(S\) に対して，
   線形独立な部分集合 \(B\subset S\) を考える．
+
   \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
   \(B\) は \(S\) の *極大独立集合* であるという．
   #+end_quote
@@ -238,7 +242,7 @@
 - 定義
   #+begin_quote
   有限部分集合 \(S\) の極大独立集合 \(B\) はいろいろあるが，
-  \(|B|\) (基数; cardinality) は一定となる．
+  \(|B|\) (基数 ; cardinality) は一定となる．
 
   \(|B|\) を \(S\) の *階数 (rank)* といい，
   \(\mathrm{rank} S\) で表す．
@@ -312,10 +316,13 @@
 #+reveal: split
 - 定理
   #+begin_quote
-  \(B=\{u_{1},\dotsc,u_{n}\}\), \(u_{i}\in V_{n}\) とする．
+  \(B=\{u_{1},\dotsc,u_{m}\}\) を
+  ベクトル空間 \(V_{n}\) の \(m(\le n)\) 個の
+  ベクトルの集合とする．
 
-  \(\forall b\in V_{n}\), \(\{b\}\cup B\) が線形従属ならば
+  \(\forall b\in V_{n}\) が \(B\) に線形従属ならば
   \(B\) は \(V_{n}\) の基底となる．
+  したがって \(m=n\) である．
   #+end_quote
 
 
@@ -332,7 +339,7 @@
   - 数ベクトル空間 \(K^{n}\) (\(K\) は体)
   - 関数空間 \(C^{m}[0,1]\)
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -371,14 +378,14 @@
     - 閉区間上の関数
   - これから取り扱う信号の数学的性質
 - 独立と従属
-  - 線形独立(一次独立): \(\{\phi_{i}\}_{i=1,\dotsc,n}\)
+  - 線形独立(一次独立) : \(\{\phi_{i}\}_{i=1,\dotsc,n}\)
     #+begin_src latex
       \begin{equation}
 	\alpha_{1}\phi_{1}+\dotsb+\alpha_{n}\phi_{n}=0
 	\Leftrightarrow \alpha_{1}=\dotsb=\alpha_{n}=0
       \end{equation}
     #+end_src
-  - 線形従属(一次従属): 線形独立でないこと
+  - 線形従属(一次従属) : 線形独立でないこと
 
 #+reveal: split
 - ベクトル空間の基底

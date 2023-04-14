@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 14:21:17 mura>
+# Time-stamp: <2022-09-19 15:33:18 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,6 +12,9 @@
 # C-c '
 :END:
 
+* COMMENT メモ
+- 校正に関して記述
+  
 * 前回のおさらい
 ** ベクトル空間
 - 以下の条件を満たす
@@ -106,7 +109,7 @@
   - \(C^{m}[0,1]\)
   - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
 
-** ヒント
+** COMMENT ヒント
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -277,7 +280,7 @@
   - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
   - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
 
-** ヒント
+** COMMENT ヒント
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -414,7 +417,7 @@
   - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
     (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\)．不連続な点がない関数．微分できなくても良い)
 
-** ヒント
+** COMMENT ヒント
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:

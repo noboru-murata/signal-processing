@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-30 16:27:46 mura>
+# Time-stamp: <2022-09-19 15:41:25 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -549,6 +549,16 @@
   - hann 窓
   - hamming 窓
 
+** 窓関数を用いたデジタル信号処理
+- 処理の流れ
+  - 不連続性を緩和した系列の断片化 (窓関数)
+  - デジタル信号処理 (フィルタ処理)
+  - 切り出された断片を再構成 (重なりを考慮した合成処理)
+
+#+NAME: fig:draw11
+#+ATTR_HTML: :width 80%
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figs/信号処理 11.png]]
 ** 矩形窓
 #+begin_quote
 #+begin_src latex
@@ -718,16 +728,6 @@
 [[file:figs/hamm_freq.png]]
 #+end_rightcol  
      
-** 窓関数を用いたデジタル信号処理
-- 処理の流れ
-  - 不連続性を緩和した系列の断片化 (窓関数)
-  - デジタル信号処理 (フィルタ処理)
-  - 切り出された断片を再構成 (重なりを考慮した合成処理)
-
-#+NAME: fig:draw11
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 11.png]]
 
 
 * 今回のまとめ

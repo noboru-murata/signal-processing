@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org2e2107d">
-<h2 id="org2e2107d">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org2e2107d">
+<section id="slide-org1e4fe94">
+<h2 id="org1e4fe94">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org1e4fe94">
 </div>
 </section>
-<section id="slide-org9ecfc77">
-<h3 id="org9ecfc77">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-orgee2f0b9">
+<h3 id="orgee2f0b9">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -84,8 +84,8 @@ Hilbert 空間
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgeb64a52">
-<h3 id="orgeb64a52">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-org6cebaa8">
+<h3 id="org6cebaa8">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -125,8 +125,8 @@ Hilbert 空間
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0ab8946">
-<h3 id="org0ab8946">Fourier 級数展開</h3>
+<section id="slide-orgd65aa6e">
+<h3 id="orgd65aa6e">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -174,12 +174,12 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-org5aaf892" data-background="#fef4f4">
-<h2 id="org5aaf892">演習</h2>
+<section id="slide-org9f5dcab" data-background="#fef4f4">
+<h2 id="org9f5dcab">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb3544d9" data-background="#fef4f4">
-<h3 id="orgb3544d9">練習問題</h3>
+<section id="slide-org8eb4ebd" data-background="#fef4f4">
+<h3 id="org8eb4ebd">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) を Fourier 級数展開せよ．
@@ -202,109 +202,15 @@ Hilbert 空間
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd03bfd1" data-background="#fef4f4">
-<h3 id="orgd03bfd1">解答例</h3>
-<ul>
-<li>Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
-<ul>
-<li><p>
-\(n=0\) のとき
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle f,\phi_{0}\rangle
-  &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}dx
-    =\frac{\pi}{\sqrt{2\pi}}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li>Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
-<ul>
-<li><p>
-\(n\not=0\) のとき
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \langle f,\phi_{n}\rangle
-  &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
-  &=\left[
-    \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
-    \right]_{-\pi/2}^{\pi/2}
-    =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-i\pi/2\cdot n}-e^{i\pi/2\cdot n})\\
-  &=\frac{i}{n\sqrt{2\pi}}((-i)^{n}-i^{n})
-   =\frac{i^{n+1}}{n\sqrt{2\pi}}((-1)^{n}-1)\\
-  &=\begin{cases}
-      \frac{2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り1}\\
-      \frac{-2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り3}\\
-      0,&\text{\(n\)が偶数}
-    \end{cases}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-Fourier 級数展開
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x)
-  &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
-  &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
-  &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i^{n+1}}{\pi(2m+1)}e^{i(2m+1)x}
-\end{align}
-
-</div>
-</blockquote>
-<ul>
-<li>書き方はいろいろある</li>
-
-</ul></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-
-<div id="org17a59f5" class="figure">
-<p><img src="figs/fourier_step2.png" alt="fourier_step2.png" height="100%" />
-</p>
-<p><span class="figure-number">Figure 1: </span>Fourier 係数と有限項での展開</p>
-</div>
-<div class="slide-footer"><br></div>
-
-</section>
 </section>
 <section>
-<section id="slide-orge3bca31">
-<h2 id="orge3bca31">不連続点の性質</h2>
+<section id="slide-org6f6c016">
+<h2 id="org6f6c016">不連続点の性質</h2>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org981318d">
-<h3 id="org981318d">片側極限</h3>
+<section id="slide-org2a4f66b">
+<h3 id="org2a4f66b">片側極限</h3>
 <ul>
 <li><p>
 定義
@@ -331,8 +237,8 @@ Fourier 級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc6fe445">
-<h3 id="orgc6fe445">不連続点</h3>
+<section id="slide-org0d2c609">
+<h3 id="org0d2c609">不連続点</h3>
 <ul>
 <li><p>
 不連続関数
@@ -364,8 +270,8 @@ Fourier 級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org7d93cb9">
-<h3 id="org7d93cb9">不連続点での評価</h3>
+<section id="slide-orgbf51fb7">
+<h3 id="orgbf51fb7">不連続点での評価</h3>
 <ul>
 <li><p>
 定理で評価した式
@@ -471,12 +377,12 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org8a3e461" data-background="#fef4f4">
-<h2 id="org8a3e461">演習</h2>
+<section id="slide-org8b79800" data-background="#fef4f4">
+<h2 id="org8b79800">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org13b14c5" data-background="#fef4f4">
-<h3 id="org13b14c5">練習問題</h3>
+<section id="slide-orge1ca1ef" data-background="#fef4f4">
+<h3 id="orge1ca1ef">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
@@ -500,40 +406,15 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org03bd494" data-background="#fef4f4">
-<h3 id="org03bd494">解答例</h3>
-<ul>
-<li><p>
-Fourier 級数展開に代入すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(\pi/2)
-  &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{i\pi/2\cdot n}\\
-  &=\frac{1}{2}+\sum_{n=1}^{\infty}
-    \left\{\frac{i^{-2n+1}\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i^{2n+1}\{(-1)^{n}-1\}}{2\pi n}\right\}\\
-  &=\frac{1}{2}
-    =\frac{f(\pi/2{-}0)+f(\pi/2{+}0)}{2}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
 </section>
 <section>
-<section id="slide-org14d20b9">
-<h2 id="org14d20b9">Fourier 係数の性質</h2>
-<div class="outline-text-2" id="text-org14d20b9">
+<section id="slide-org065ab4a">
+<h2 id="org065ab4a">Fourier 係数の性質</h2>
+<div class="outline-text-2" id="text-org065ab4a">
 </div>
 </section>
-<section id="slide-org6112e6c">
-<h3 id="org6112e6c">畳み込み</h3>
+<section id="slide-orgcc5f104">
+<h3 id="orgcc5f104">畳み込み</h3>
 <ul>
 <li><p>
 定義
@@ -564,8 +445,8 @@ Fourier 級数展開に代入すればよい
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc49520b">
-<h3 id="orgc49520b">\(L^{p}\) ノルム</h3>
+<section id="slide-org033711d">
+<h3 id="org033711d">\(L^{p}\) ノルム</h3>
 <ul>
 <li><p>
 定義
@@ -594,8 +475,8 @@ Fourier 級数展開に代入すればよい
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0ab912d">
-<h3 id="org0ab912d">\(L^{p}\) 空間</h3>
+<section id="slide-org010b865">
+<h3 id="org010b865">\(L^{p}\) 空間</h3>
 <ul>
 <li><p>
 定義
@@ -615,8 +496,8 @@ Fourier 級数展開に代入すればよい
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0fe67e2">
-<h3 id="org0fe67e2">Riemann-Lebesgue の定理</h3>
+<section id="slide-orgc316e96">
+<h3 id="orgc316e96">Riemann-Lebesgue の定理</h3>
 <ul>
 <li><p>
 定理
@@ -705,8 +586,8 @@ Fourier 級数展開に代入すればよい
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org8ea47e3">
-<h3 id="org8ea47e3">Riemann-Lebesgue の定理の応用</h3>
+<section id="slide-org5072f43">
+<h3 id="org5072f43">Riemann-Lebesgue の定理の応用</h3>
 <ul>
 <li><p>
 Fourier 級数の項別微分
@@ -766,13 +647,13 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-org6f821a6">
-<h2 id="org6f821a6">関数の積とノルム</h2>
+<section id="slide-orgd54ab7e">
+<h2 id="orgd54ab7e">関数の積とノルム</h2>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org5c59603">
-<h3 id="org5c59603">Hölder の不等式</h3>
+<section id="slide-org559885b">
+<h3 id="org559885b">Hölder の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -872,8 +753,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org7fc2be1">
-<h3 id="org7fc2be1">畳み込みのノルム</h3>
+<section id="slide-org771f396">
+<h3 id="org771f396">畳み込みのノルム</h3>
 <ul>
 <li><p>
 定理
@@ -967,8 +848,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgea1029b">
-<h3 id="orgea1029b">畳み込みの Fourier 級数</h3>
+<section id="slide-orgb88333d">
+<h3 id="orgb88333d">畳み込みの Fourier 級数</h3>
 <ul>
 <li><p>
 係数の存在
@@ -1031,12 +912,12 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-org0563c04" data-background="#fef4f4">
-<h2 id="org0563c04">演習</h2>
+<section id="slide-org83d66ed" data-background="#fef4f4">
+<h2 id="org83d66ed">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgafcbc41" data-background="#fef4f4">
-<h3 id="orgafcbc41">練習問題</h3>
+<section id="slide-orgff9de99" data-background="#fef4f4">
+<h3 id="orgff9de99">練習問題</h3>
 <ul>
 <li><p>
 関数 \(f\) を
@@ -1063,48 +944,10 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </ul>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgea8b95f" data-background="#fef4f4">
-<h3 id="orgea8b95f">解答例</h3>
-<ul>
-<li><p>
-周期関数であることに注意して定義に従って計算する．
-</p>
-<blockquote>
-<div>
-\begin{align}
-  f(x-y)
-  &=
-    \begin{cases}
-      1,&-\pi/2\le x-y\le\pi/2\\
-      0,&|x-y|>\pi/2
-    \end{cases}\\
-  f*f(x)
-  &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
-  &=
-    \begin{cases}
-      \pi-x, &x \ge 0\\
-      \pi+x, &x < 0 
-    \end{cases}
-   = \pi-|x|
-\end{align}
-
-</div>
-</blockquote>
-<ul>
-<li>\(f(x-y),f(y)\)ともに1となる範囲を考えれば良い</li>
-<li>\(|x|\in L^{2}(-\pi,\pi)\) の Fourier 級数展開と比較せよ</li>
-
-</ul></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
 </section>
 <section>
-<section id="slide-orgf14702d">
-<h2 id="orgf14702d">今回のまとめ</h2>
+<section id="slide-orge84442e">
+<h2 id="orge84442e">今回のまとめ</h2>
 <ul>
 <li>Fourier 級数の性質
 <ul>

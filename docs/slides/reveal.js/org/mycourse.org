@@ -161,5 +161,6 @@
 #+OPTIONS: skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+PROPERTY: header-args:R :session *R* :cache yes 
 #+PROPERTY: header-args:R+ :exports both :results output
+#+PROPERTY: header-args:R+ :width 800 :height 800 :res 100
 #+PROPERTY: header-args:R+ :tangle no
 #+PROPERTY: header-args:latex :exports results :results raw

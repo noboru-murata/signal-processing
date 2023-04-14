@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org8b1651c">
-<h2 id="org8b1651c">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org8b1651c">
+<section id="slide-orga997b50">
+<h2 id="orga997b50">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orga997b50">
 </div>
 </section>
-<section id="slide-org949c94e">
-<h3 id="org949c94e">Fourier 級数展開</h3>
+<section id="slide-org268bcf2">
+<h3 id="org268bcf2">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -92,8 +92,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org2f8efaa">
-<h3 id="org2f8efaa">Fourier 変換と反転公式</h3>
+<section id="slide-org7383d4d">
+<h3 id="org7383d4d">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -128,8 +128,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0f6bc70">
-<h3 id="org0f6bc70">Parseval の定理</h3>
+<section id="slide-org1dd77fe">
+<h3 id="org1dd77fe">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -162,8 +162,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org7c550e9">
-<h3 id="org7c550e9">Plancherel の定理</h3>
+<section id="slide-org8adb4de">
+<h3 id="org8adb4de">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -196,8 +196,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgac8ccbd">
-<h3 id="orgac8ccbd">Riemann-Lebesgue の補題</h3>
+<section id="slide-org0d96e36">
+<h3 id="org0d96e36">Riemann-Lebesgue の補題</h3>
 <ul>
 <li><p>
 定理
@@ -220,8 +220,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org5afe7f3">
-<h3 id="org5afe7f3">演算との関係</h3>
+<section id="slide-orgc420bf3">
+<h3 id="orgc420bf3">演算との関係</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -269,12 +269,12 @@ Fourier級数展開
 </section>
 </section>
 <section>
-<section id="slide-org737ef39" data-background="#fef4f4">
-<h2 id="org737ef39">演習</h2>
+<section id="slide-orgcf1e9b4" data-background="#fef4f4">
+<h2 id="orgcf1e9b4">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga4a0ffb" data-background="#fef4f4">
-<h3 id="orga4a0ffb">練習問題</h3>
+<section id="slide-org7f585cc" data-background="#fef4f4">
+<h3 id="org7f585cc">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -300,184 +300,8 @@ Fourier級数展開
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org5d1dc55" data-background="#fef4f4">
-<h3 id="org5d1dc55">解答例</h3>
-<ul>
-<li><p>
-Cauchy の積分定理
-</p>
-<blockquote>
-<p>
-\(f\) を正則関数とするとき以下が成り立つ
-</p>
-<div>
-\begin{equation}
-  \oint f(z)dz = 0
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-Cauchy の積分公式 (第2定理)
-</p>
-<blockquote>
-<p>
-\(f\) を正則関数とするとき以下が成り立つ
-</p>
-<div>
-\begin{equation}
-  f(c)
-  =\frac{1}{2\pi i}\oint \frac{f(z)}{z-c}dz
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-留数定理 
-</p>
-<blockquote>
-<p>
-積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
-</p>
-<div>
-\begin{equation}
-  \mathrm{Res}_{z=c}f(z)
-  =\frac{1}{2\pi i}\oint f(z)dz
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-留数計算
-</p>
-<blockquote>
-<p>
-孤立特異点が1位の極なら以下で計算できる
-</p>
-<div>
-\begin{equation}
-  \mathrm{Res}_{z=c}f(z)
-  =
-  \lim_{z\to c}(z-c)f(z)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-以下の Fourier 変換を求める
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \mathcal{F}[f](\omega)
-  =\frac{1}{\sqrt{2\pi}}\int\frac{1}{x-ia}e^{-i\omega x}dx
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-被積分関数を以下で定義
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  g(z)=\frac{e^{-i\omega z}}{\sqrt{2\pi}(z-ia)}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-積分路
-</p>
-<blockquote>
-<p>
-\(\omega<0\) のとき積分路を \(ia\) を含む \(x\) 軸と上半平面で考える
-</p>
-
-<p>
-\(\omega>0\) のとき積分路は \(x\) 軸と下半平面で考える
-</p>
-</blockquote>
-<ul>
-<li>\(e^{-i\omega z},\;(\omega<0)\) が上半平面でどうなるか考えよ</li>
-<li>\(e^{-i\omega z},\;(\omega>0)\) が下半平面でどうなるか考えよ</li>
-
-</ul>
-<blockquote>
-<div>
-\begin{equation}
-  \oint g(z)dz
-  =
-  \int_{-\infty}^{\infty} g(x)dx +\text{(積分に寄与しない)}
-  =\mathcal{F}[f](\omega)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-留数
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  Res_{z=ia}g(z)
-  =\lim_{z=ia}(z-ia)g(z)=\frac{e^{a\omega}}{\sqrt{2\pi}}
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-整理すると
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \mathcal{F}[f](\omega)
-  &= 2\pi i Res_{z=ia}g(z)\\
-  &=
-    \begin{cases}
-      i\sqrt{2\pi}e^{a\omega}, & \omega<0\\
-      0, & \omega>0
-    \end{cases}
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-</section>
-<section id="slide-org35a1620" data-background="#fef4f4">
-<h3 id="org35a1620">練習問題</h3>
+<section id="slide-org21278ee" data-background="#fef4f4">
+<h3 id="org21278ee">練習問題</h3>
 <ul>
 <li><p>
 以下の関数の Fourier 変換を求めよ．
@@ -511,71 +335,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org21256b7" data-background="#fef4f4">
-<h3 id="org21256b7">解答例</h3>
-<ul>
-<li><p>
-以下の関係を利用すればよい
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \frac{1}{x+ia}
-  &=-i\sqrt{2\pi}\hat{g}(-x)\\
-  \frac{a}{x^{2}+a^{2}}
-  &=\frac{a}{(x-ia)(x+ia)}\\
-  &=\frac{1}{2i}\left(\frac{1}{x-ia}-\frac{1}{x+ia}\right)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-積の Fourier 変換は畳み込みを利用すればよい
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \mathcal{F}[f{*}f](\alpha)
-  =\sqrt{2\pi}\cdot\hat{f}(\alpha)^{2}
-\end{equation}
-
-</div>
-<div>
-\begin{equation}
-  \mathcal{F}[\Xi_{(-1,1)}](\alpha)
-  =
-  \sqrt{\frac{2}{\pi}}\frac{\sin(\alpha)}{\alpha}
-  =\sqrt{\frac{2}{\pi}}\hat{f}(\alpha)
-\end{equation}
-
-</div>
-<div>
-\begin{align}
-  \mathcal{F}[\hat{f}^{2}](\omega)
-  &=
-    \mathcal{F}^{-1}[\hat{f}^{2}](-\omega)
-    =\frac{1}{\sqrt{2\pi}}f{*}f(-\omega)\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(-\omega)\\
-  &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(\omega)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-</section>
-<section id="slide-orgfa48abb">
-<h3 id="orgfa48abb">Fourier 変換の例</h3>
+<section id="slide-orgf8eecfd">
+<h3 id="orgf8eecfd">Fourier 変換の例</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -623,13 +384,13 @@ Cauchy の積分公式 (第2定理)
 </section>
 </section>
 <section>
-<section id="slide-org02d7f7b">
-<h2 id="org02d7f7b">線形時不変フィルタ</h2>
-<div class="outline-text-2" id="text-org02d7f7b">
+<section id="slide-org83acee0">
+<h2 id="org83acee0">線形時不変フィルタ</h2>
+<div class="outline-text-2" id="text-org83acee0">
 </div>
 </section>
-<section id="slide-org883e2dc">
-<h3 id="org883e2dc">注意</h3>
+<section id="slide-org421e896">
+<h3 id="org421e896">注意</h3>
 <ul>
 <li>以降，音声や音楽などの時系列信号を扱う</li>
 <li><p>
@@ -651,8 +412,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb15b4d8">
-<h3 id="orgb15b4d8">フィルタ</h3>
+<section id="slide-org6236ae8">
+<h3 id="org6236ae8">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -666,15 +427,15 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="orgabb868f" class="figure">
+<div id="orgb397c73" class="figure">
 <p><img src="figs/filter1.png" alt="filter1.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org14af66c">
-<h3 id="org14af66c">フィルタの例</h3>
+<section id="slide-org29e9d72">
+<h3 id="org29e9d72">フィルタの例</h3>
 <ul>
 <li><span style="color:green;">エレキギターのエフェクター</span> (effects unit, pedal)
 <ul>
@@ -690,8 +451,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orge92ad9c">
-<h3 id="orge92ad9c">フィルタ</h3>
+<section id="slide-org3ff0997">
+<h3 id="org3ff0997">フィルタ</h3>
 <ul>
 <li>関数 \(f(t)\) を関数 \(g(t)\) に変換する</li>
 <li>関数に作用する作用素(演算子)</li>
@@ -702,8 +463,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org30cb273">
-<h3 id="org30cb273">線形性</h3>
+<section id="slide-orgf511b0f">
+<h3 id="orgf511b0f">線形性</h3>
 <ul>
 <li><p>
 定義
@@ -718,20 +479,20 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="orgbdfb04a" class="figure">
+<div id="org8b9e05d" class="figure">
 <p><img src="figs/filter2.png" alt="filter2.png" width="100%" />
 </p>
 </div>
 
-<div id="orgd161799" class="figure">
+<div id="orgace19bc" class="figure">
 <p><img src="figs/filter3.png" alt="filter3.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org6e99e5e">
-<h3 id="org6e99e5e">線形フィルタ</h3>
+<section id="slide-org4bd2064">
+<h3 id="org4bd2064">線形フィルタ</h3>
 <ul>
 <li>線形性を持つフィルタ</li>
 <li><p>
@@ -753,7 +514,7 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="org2a1b41a" class="figure">
+<div id="org34b2ef5" class="figure">
 <p><img src="figs/filter4.png" alt="filter4.png" width="100%" />
 </p>
 </div>
@@ -782,8 +543,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb5e9768">
-<h3 id="orgb5e9768">非線形フィルタ</h3>
+<section id="slide-orgf6cabd5">
+<h3 id="orgf6cabd5">非線形フィルタ</h3>
 <ul>
 <li>信号の変換において非線形作用を持つフィルタ</li>
 <li>多くのフィルタは線形性を持っている</li>
@@ -804,8 +565,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org43e8801">
-<h3 id="org43e8801">時不変性</h3>
+<section id="slide-orgae874ca">
+<h3 id="orgae874ca">時不変性</h3>
 <ul>
 <li><p>
 定義
@@ -823,7 +584,7 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="orgc6e9ea4" class="figure">
+<div id="org6319002" class="figure">
 <p><img src="figs/filter5.png" alt="filter5.png" width="100%" />
 </p>
 </div>
@@ -833,13 +594,13 @@ Cauchy の積分公式 (第2定理)
 </section>
 </section>
 <section>
-<section id="slide-orga4b7572">
-<h2 id="orga4b7572">フィルタの数学的表現</h2>
-<div class="outline-text-2" id="text-orga4b7572">
+<section id="slide-org3012253">
+<h2 id="org3012253">フィルタの数学的表現</h2>
+<div class="outline-text-2" id="text-org3012253">
 </div>
 </section>
-<section id="slide-org0cbec15">
-<h3 id="org0cbec15">信号の近似</h3>
+<section id="slide-orgd1f2f52">
+<h3 id="orgd1f2f52">信号の近似</h3>
 <ul>
 <li><p>
 信号 \(f(t)\) の階段関数近似
@@ -889,7 +650,7 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="orgdfb66e7" class="figure">
+<div id="orgcc6f72b" class="figure">
 <p><img src="figs/filter6.png" alt="filter6.png" width="100%" />
 </p>
 </div>
@@ -911,7 +672,7 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="org2f12fde" class="figure">
+<div id="org1436114" class="figure">
 <p><img src="figs/filter7.png" alt="filter7.png" width="100%" />
 </p>
 </div>
@@ -933,7 +694,7 @@ Cauchy の積分公式 (第2定理)
 </ul>
 
 
-<div id="org6cf0c0b" class="figure">
+<div id="orgef68898" class="figure">
 <p><img src="figs/filter8.png" alt="filter8.png" width="100%" />
 </p>
 </div>
@@ -975,8 +736,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgdb6ae2d">
-<h3 id="orgdb6ae2d">積分による表現</h3>
+<section id="slide-org4702ff5">
+<h3 id="org4702ff5">積分による表現</h3>
 <ul>
 <li><p>
 階段関数の係数
@@ -1078,8 +839,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orge9383d3">
-<h3 id="orge9383d3">インパルス応答</h3>
+<section id="slide-org368da9f">
+<h3 id="org368da9f">インパルス応答</h3>
 <ul>
 <li><p>
 変換された信号の表現(畳み込み積分)
@@ -1137,8 +898,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org6175dfe">
-<h3 id="org6175dfe">因果的フィルタ</h3>
+<section id="slide-org0204745">
+<h3 id="org0204745">因果的フィルタ</h3>
 <ul>
 <li><p>
 音響信号などのフィルタのインパルス応答
@@ -1190,8 +951,8 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc4c10fd">
-<h3 id="orgc4c10fd">非因果的フィルタ</h3>
+<section id="slide-org3ba6178">
+<h3 id="org3ba6178">非因果的フィルタ</h3>
 <ul>
 <li>理想的なローパスフィルタ <br />
 (物理的な回路では作成することができない)</li>
@@ -1207,12 +968,12 @@ Cauchy の積分公式 (第2定理)
 </section>
 </section>
 <section>
-<section id="slide-org3d229c6" data-background="#fef4f4">
-<h2 id="org3d229c6">演習</h2>
+<section id="slide-org69d350c" data-background="#fef4f4">
+<h2 id="org69d350c">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org787613e" data-background="#fef4f4">
-<h3 id="org787613e">練習問題</h3>
+<section id="slide-orgeda80e2" data-background="#fef4f4">
+<h3 id="orgeda80e2">練習問題</h3>
 <ul>
 <li><p>
 線形時不変フィルタの機能は
@@ -1236,88 +997,10 @@ Cauchy の積分公式 (第2定理)
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgb4d8912">
-<h3 id="orgb4d8912">解答例</h3>
-<ul>
-<li><p>
-入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{f}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt\\
-  \hat{h}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t)e^{-i\omega t}dt
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
 </section>
 <section>
-<ul>
-<li><p>
-出力信号 \(g\) のFourier 変換
-</p>
-<blockquote>
-<div>
-\begin{align}
-  \hat{g}(\omega)
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)e^{-i\omega t}dt\\
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
-    \left(\int_{-\infty}^{\infty}h(t-s)f(s)ds\right) e^{-i\omega t}dt\\
-  &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
-    h(t-s)f(s)e^{-i\omega(t-s)}e^{-i\omega s}dtds\\
-  &=\sqrt{2\pi}
-    \cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t-s)e^{-i\omega(t-s)}dt\\
-  &\qquad\times\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}ds
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section>
-<ul>
-<li><p>
-整理すると
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \hat{g}(\omega)
-  =
-  \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-\end{equation}
-
-</div>
-</blockquote></li>
-<li><p>
-時間 \(t\) に対して \(\omega\) は周波数に対応
-</p>
-<blockquote>
-<p>
-Fourier 変換した周波数領域で見ると
-フィルタの機能は周波数毎の振幅と位相の変換として理解できる．
-</p>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
-</section>
-<section>
-<section id="slide-orgc886a82">
-<h2 id="orgc886a82">今回のまとめ</h2>
+<section id="slide-orgad3716b">
+<h2 id="orgad3716b">今回のまとめ</h2>
 <ul>
 <li>線形時不変フィルタ
 <ul>

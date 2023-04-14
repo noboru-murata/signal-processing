@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-30 16:29:27 mura>
+# Time-stamp: <2022-09-19 15:39:50 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -134,7 +134,7 @@
   - 関数 \(\Xi_{(-1,1)}(t)\) を Fourier 変換せよ
   - 関数 \((\sin(\omega)/\omega)^{2}\) を 逆 Fourier 変換せよ
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -269,7 +269,7 @@
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figs/信号処理 3.png]]
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -410,7 +410,7 @@
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figs/信号処理 5.png]]
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:

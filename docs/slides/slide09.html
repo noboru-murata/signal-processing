@@ -47,13 +47,13 @@
 </section>
 
 <section>
-<section id="slide-org94fea64">
-<h2 id="org94fea64">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org94fea64">
+<section id="slide-org4849423">
+<h2 id="org4849423">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org4849423">
 </div>
 </section>
-<section id="slide-orgb661af8">
-<h3 id="orgb661af8">フィルタ</h3>
+<section id="slide-org34810d5">
+<h3 id="org34810d5">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -67,15 +67,15 @@
 </ul>
 
 
-<div id="org7d7854c" class="figure">
+<div id="orgccbb32b" class="figure">
 <p><img src="figs/filter1.png" alt="filter1.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org933fd82">
-<h3 id="org933fd82">線形性</h3>
+<section id="slide-orgaef95ad">
+<h3 id="orgaef95ad">線形性</h3>
 <ul>
 <li><p>
 定義
@@ -90,20 +90,20 @@
 </ul>
 
 
-<div id="org0408ab8" class="figure">
+<div id="org4acfd97" class="figure">
 <p><img src="figs/filter2.png" alt="filter2.png" width="100%" />
 </p>
 </div>
 
-<div id="orgf07c7d7" class="figure">
+<div id="org533d0de" class="figure">
 <p><img src="figs/filter3.png" alt="filter3.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org1811e8f">
-<h3 id="org1811e8f">時不変性</h3>
+<section id="slide-org2a5b161">
+<h3 id="org2a5b161">時不変性</h3>
 <ul>
 <li><p>
 定義
@@ -121,15 +121,15 @@
 </ul>
 
 
-<div id="org8f0b3a8" class="figure">
+<div id="org20bfb44" class="figure">
 <p><img src="figs/filter5.png" alt="filter5.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orga123d37">
-<h3 id="orga123d37">線形時不変フィルタの数学的表現</h3>
+<section id="slide-orgf044513">
+<h3 id="orgf044513">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
@@ -164,8 +164,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org3095a7c">
-<h3 id="org3095a7c">Fourier変換による表現</h3>
+<section id="slide-orgc1acf58">
+<h3 id="orgc1acf58">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -202,8 +202,8 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgcca4d93">
-<h3 id="orgcca4d93">因果的フィルタ</h3>
+<section id="slide-orgc25680a">
+<h3 id="orgc25680a">因果的フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -243,12 +243,12 @@
 </section>
 </section>
 <section>
-<section id="slide-org3c315ad" data-background="#fef4f4">
-<h2 id="org3c315ad">演習</h2>
+<section id="slide-org4d5afad" data-background="#fef4f4">
+<h2 id="org4d5afad">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgf3909e9" data-background="#fef4f4">
-<h3 id="orgf3909e9">練習問題</h3>
+<section id="slide-org3a325f4" data-background="#fef4f4">
+<h3 id="org3a325f4">練習問題</h3>
 <ul>
 <li>以下の問に答えよ
 <ul>
@@ -262,115 +262,15 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgd628e27" data-background="#fef4f4">
-<h3 id="orgd628e27">解答例</h3>
-<ul>
-<li><p>
-関数 \(t e^{-\frac{t^2}{2}}\) の Fourier 変換
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \mathcal{F}[f'](\omega)
-  =i\omega\hat{f}(\omega),\quad
-  \mathcal{F}^{-1}[\hat{f}'](t)
-  =-itf(t)
-\end{equation}
-
-</div>
-
-<p>
-を利用すればよい
-</p>
-<div>
-\begin{equation}
-  t e^{-\frac{t^2}{2}}
-  =
-  (-e^{-\frac{t^2}{2}})'
-\end{equation}
-
-</div>
-
-<p>
-であるから
-</p>
-<div>
-\begin{equation}
-  \mathcal{F}[t e^{-\frac{t^2}{2}}](\omega)
-  =-i\omega \mathcal{F}[e^{-\frac{t^2}{2}}](\omega)
-  =-i\omega e^{-\frac{\omega^{2}}{2}}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-関数 \(\Xi_{(-1,1)}(t)\) の Fourier 変換
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \mathcal{F}[\Xi_{(-1,1)}](\omega)
-  =
-  \sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-関数 \((\sin(\omega)/\omega)^{2}\) の 逆 Fourier 変換
-</p>
-<blockquote>
-<p>
-畳み込みを利用
-</p>
-<div>
-\begin{equation}
-  \mathcal{F}[h{*}f](\omega)
-  =\sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-\end{equation}
-
-</div>
-
-<div>
-\begin{align}
-  \mathcal{F}^{-1}[\hat{f}^{2}](t)
-  &=\frac{1}{\sqrt{2\pi}}f{*}f(t)\\
-  &=\frac{1}{\sqrt{2\pi}}
-    \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)\\
-  &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)
-\end{align}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
 </section>
 <section>
-<section id="slide-org38bd205">
-<h2 id="org38bd205">フィルタ回路</h2>
-<div class="outline-text-2" id="text-org38bd205">
+<section id="slide-orga61c517">
+<h2 id="orga61c517">フィルタ回路</h2>
+<div class="outline-text-2" id="text-orga61c517">
 </div>
 </section>
-<section id="slide-org5edf1c9">
-<h3 id="org5edf1c9">インパルス応答とは</h3>
+<section id="slide-orgdbd8be1">
+<h3 id="orgdbd8be1">インパルス応答とは</h3>
 <ul>
 <li><p>
 \(\delta(t)\) を入力した時のフィルタ出力
@@ -393,18 +293,18 @@
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org0b88a08">
-<h3 id="org0b88a08">2端子対回路</h3>
+<section id="slide-org8a78573">
+<h3 id="org8a78573">2端子対回路</h3>
 
-<div id="org25e2869" class="figure">
+<div id="org7b46f90" class="figure">
 <p><img src="figs/信号処理 1.png" alt="信号処理 1.png" width="100%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org9a36de8">
-<h3 id="org9a36de8">例題</h3>
+<section id="slide-org62477b1">
+<h3 id="org62477b1">例題</h3>
 <ul>
 <li>以下の回路の時間領域での入出力関係を求めよ．</li>
 <li>同じく周波数領域での入出力関係を求めよ．</li>
@@ -412,15 +312,15 @@
 </ul>
 
 
-<div id="org2b1d371" class="figure">
+<div id="org1acf3ae" class="figure">
 <p><img src="figs/信号処理 2.png" alt="信号処理 2.png" width="90%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgc247d74">
-<h3 id="orgc247d74">解答</h3>
+<section id="slide-orgadb5f0f">
+<h3 id="orgadb5f0f">解答</h3>
 <ul>
 <li><p>
 時間領域
@@ -455,12 +355,12 @@
 </section>
 </section>
 <section>
-<section id="slide-org2d9e75b" data-background="#fef4f4">
-<h2 id="org2d9e75b">演習</h2>
+<section id="slide-org65644ba" data-background="#fef4f4">
+<h2 id="org65644ba">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9740ea5" data-background="#fef4f4">
-<h3 id="org9740ea5">練習問題</h3>
+<section id="slide-orgf773198" data-background="#fef4f4">
+<h3 id="orgf773198">練習問題</h3>
 <ul>
 <li>以下の回路の時間領域での入出力関係を求めよ．</li>
 <li>同じく周波数領域での入出力関係を求めよ．</li>
@@ -468,136 +368,22 @@
 </ul>
 
 
-<div id="org458f0ef" class="figure">
+<div id="orgc05b25b" class="figure">
 <p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-orgba814c8" data-background="#fef4f4">
-<h3 id="orgba814c8">解答例</h3>
-<ul>
-<li><p>
-時間領域
-</p>
-<blockquote>
-<p>
-以下の微分方程式が成り立つ
-</p>
-<div>
-\begin{align}
-  V_{in}(t)
-  &=RI(t)+V_{out}(t)\\
-  I(t)
-  &=C\frac{d}{dt}V_{out}(t)
-\end{align}
-
-</div>
-
-<p>
-整理して
-</p>
-<div>
-\begin{equation}
-  V_{in}(t)
-  =CR\frac{d}{dt}V_{out}(t)
-  +V_{out}(t)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-周波数領域
-</p>
-<blockquote>
-<p>
-時間領域の結果を Fourier 変換して
-</p>
-<div>
-\begin{equation}
-  \hat{V}_{in}(\omega)
-  =i\omega CR\hat{V}_{out}(\omega)
-  +\hat{V}_{out}(\omega)
-\end{equation}
-
-</div>
-
-<p>
-入出力の関係を見直して
-</p>
-<div>
-\begin{equation}
-  \hat{V}_{out}(\omega)
-  =
-  \frac{1}{i\omega CR+1}
-  \hat{V}_{in}(\omega)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-フィルタとしての関係
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \hat{g}(\omega)
-  =
-  \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-\end{equation}
-
-</div>
-
-<p>
-と比較して
-</p>
-<div>
-\begin{align}
-  \hat{f}(\omega)
-  &=\hat{V}_{in}(\omega)\\
-  \hat{g}(\omega)
-  &=\hat{V}_{out}(\omega)\\
-  \sqrt{2\pi}\cdot\hat{h}(\omega)
-  &=\frac{1}{i\omega CR+1}
-    =\frac{1}{iCR}\frac{1}{\omega -i/CR}
-\end{align}
-
-</div>
-</blockquote>
-<ul>
-<li>周波数依存性について考察せよ</li>
-
-</ul></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
 </section>
 <section>
-<section id="slide-orgc987d72">
-<h2 id="orgc987d72">逆 Fourier 変換を用いた解析</h2>
-<div class="outline-text-2" id="text-orgc987d72">
+<section id="slide-org1020211">
+<h2 id="org1020211">逆 Fourier 変換を用いた解析</h2>
+<div class="outline-text-2" id="text-org1020211">
 </div>
 </section>
-<section id="slide-org972f8a5">
-<h3 id="org972f8a5">インパルス応答</h3>
+<section id="slide-orgefda338">
+<h3 id="orgefda338">インパルス応答</h3>
 <ul>
 <li><p>
 逆 Fourier 変換
@@ -633,7 +419,7 @@
 </ul>
 
 
-<div id="orgc999e94" class="figure">
+<div id="orgf0a73f2" class="figure">
 <p><img src="figs/信号処理 4.png" alt="信号処理 4.png" width="90%" />
 </p>
 </div>
@@ -682,12 +468,12 @@
 </section>
 </section>
 <section>
-<section id="slide-org6a55027" data-background="#fef4f4">
-<h2 id="org6a55027">演習</h2>
+<section id="slide-org81c91ee" data-background="#fef4f4">
+<h2 id="org81c91ee">演習</h2>
 <div class="slide-footer"><br></div>
 </section>
-<section id="slide-org783170f" data-background="#fef4f4">
-<h3 id="org783170f">練習問題</h3>
+<section id="slide-org2ef2eb6" data-background="#fef4f4">
+<h3 id="org2ef2eb6">練習問題</h3>
 <ul>
 <li>矩形波の入力に対して微分方程式を直接解き，
 その極限からインパルス応答を求めよ．</li>
@@ -695,176 +481,17 @@
 </ul>
 
 
-<div id="org00dd590" class="figure">
+<div id="org51ce837" class="figure">
 <p><img src="figs/信号処理 5.png" alt="信号処理 5.png" width="90%" />
 </p>
 </div>
 <div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-org27bfc45" data-background="#fef4f4">
-<h3 id="org27bfc45">解答例</h3>
-<ul>
-<li><p>
-\(0 < t \le \Delta\)
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \frac{1}{\Delta}
-  =CR\frac{d}{dt}V_{out}(t)
-  +V_{out}(t)
-\end{equation}
-
-</div>
-
-<p>
-\(U(t)=V_{out}(t)-1/\Delta\) と置くと
-</p>
-<div>
-\begin{equation}
-  \frac{d}{dt}U(t)=-\frac{1}{CR}U(t)
-\end{equation}
-
-</div>
-
-<p>
-よって
-</p>
-<div>
-\begin{equation}
-  V_{out}(t)=a e^{-\frac{t}{CR}}+\frac{1}{\Delta}         
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-初期条件 \(V_{out}(0)=0\)
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  0=a+\frac{1}{\Delta}
-\end{equation}
-
-</div>
-
-<p>
-よって
-</p>
-<div>
-\begin{equation}
-  V_{out}(t)=\frac{1}{\Delta}(1-e^{-\frac{t}{CR}})
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(\Delta < t\)
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  0
-  =CR\frac{d}{dt}V_{out}(t)
-  +V_{out}(t)
-\end{equation}
-
-</div>
-
-<p>
-よって
-</p>
-<div>
-\begin{equation}
-  V_{out}(t)=a e^{-\frac{1}{CR}}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-初期条件 \(V_{out}(\Delta)=1/\Delta\cdot(1-e^{-\frac{\Delta}{CR}})\)
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \frac{1}{\Delta}(1-e^{-\frac{\Delta}{CR}})
-  =a e^{-\frac{\Delta}{CR}}
-\end{equation}
-
-</div>
-
-<p>
-よって
-</p>
-<div>
-\begin{equation}
-  V_{out}(t)=\frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}}
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-
-<div class="slide-footer"><br></div>
-</section>
-<section data-background="#fef4f4">
-<ul>
-<li><p>
-\(\Delta\to 0\)
-</p>
-<blockquote>
-<div>
-\begin{equation}
-  \lim_{\Delta\to0}
-  \frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)
-  =\frac{1}{CR}
-\end{equation}
-
-</div>
-
-<p>
-よって
-</p>
-<div>
-\begin{equation}
-  V_{out}(t)=\frac{1}{CR}e^{-\frac{t}{CR}}\quad(t>0)
-\end{equation}
-
-</div>
-</blockquote></li>
-
-</ul>
-<div class="slide-footer"><br></div>
-
-
-</section>
 </section>
 <section>
-<section id="slide-orgc754c65">
-<h2 id="orgc754c65">今回のまとめ</h2>
+<section id="slide-orgb5f6677">
+<h2 id="orgb5f6677">今回のまとめ</h2>
 <ul>
 <li>線形フィルタ回路
 <ul>

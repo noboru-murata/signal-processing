@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-04-29 14:23:43 mura>
+# Time-stamp: <2022-09-19 15:34:18 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,6 +12,9 @@
 # C-c '
 :END:
 
+* COMMENT メモ
+- 校正に関して記述
+  
 * 前回のおさらい
 ** ベクトル空間
 - 満たすべき条件
@@ -145,7 +148,7 @@
   - 区間 \([-1,1]\) 上の複素数値連続関数の空間 \(C[-1,1]\) 
   - 区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\) 
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -445,7 +448,7 @@
   #+end_src
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -636,7 +639,7 @@
   が正規直交系になることを確かめよ．
 - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:

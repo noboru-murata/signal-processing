@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-08 14:31:27 mura>
+# Time-stamp: <2022-09-19 15:36:06 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,6 +12,9 @@
 # C-c '
 :END:
 
+* COMMENT メモ
+- 校正に関して記述
+  
 * 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
 - ベクトル空間
@@ -213,7 +216,7 @@
     \end{equation}
   #+end_src
   #+end_quote
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -823,7 +826,7 @@
     \end{equation}
   #+end_src
   #+end_quote
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -1195,7 +1198,7 @@
   #+end_quote
   とするとき，畳み込み \(f*f\) を求めよ．
 - 関数 \(f*f\) を Fourier 級数展開せよ．
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:

@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-03 08:51:01 mura>
+# Time-stamp: <2022-09-19 15:38:00 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,6 +12,9 @@
 # C-c '
 :END:
 
+* COMMENT メモ
+- 校正に関して記述
+  
 * 前回のおさらい
 ** Fourier 級数展開
 - 定理
@@ -449,7 +452,7 @@
   関数 \(g(x)=f(-x)\) の Fourier 変換の関係を考えよ．
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -493,7 +496,7 @@
   関数 \(g=f'\) の Fourier 変換の関係を考えよ．
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -526,7 +529,7 @@
   関数 \(g=f^{(k)}\) (k階微分)の Fourier 変換の関係を考えよ．
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -569,7 +572,7 @@
   #+end_src
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -609,7 +612,7 @@
   関数 \(g(x)=f(x-a)\) の Fourier 変換の関係を考えよ．
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -641,7 +644,7 @@
   関数 \(g(x)=f(bx)\) (\(b>0\)) の Fourier 変換の関係を考えよ．
   #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -892,7 +895,7 @@
   - /[[color:orange][Fourier 変換と逆 Fourier 変換の関係を利用]]/
   - 複素積分を利用 (Cauchy の積分定理・留数定理)
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -985,6 +988,7 @@
 - 第10回の確認テストでまとめて行います
   - Fourier 変換
   - 線形フィルタ
+
 
 * Footnotes
 * COMMENT ローカル変数

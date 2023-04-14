@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-06-10 08:46:59 mura>
+# Time-stamp: <2022-09-19 15:38:51 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -12,6 +12,9 @@
 # C-c '
 :END:
 
+* COMMENT メモ
+- 校正に関して記述
+  
 * 前回のおさらい
 ** Fourier 級数展開
 - 定理
@@ -145,7 +148,7 @@
   - Fourier 変換と逆 Fourier 変換の関係を利用
   - /[[color:orange][複素積分を利用 (Cauchy の積分定理・留数定理)]]/
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -337,7 +340,7 @@
   # #+end_src
   # #+end_quote
 
-** 解答例
+** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
@@ -725,7 +728,7 @@
   #+end_quote
   この関係を Fourier 変換を用いて表せ．
 
-** 解答例
+** COMMENT 解答例
 - 入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換
   #+begin_quote
   #+begin_src latex
