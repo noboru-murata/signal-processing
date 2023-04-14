@@ -9,63 +9,214 @@
 </style>
 <link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"/>
+<link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide">
-<h1 class="title">ベクトル空間</h1><h2 class="author">村田 昇</h2><p class="date">Created: 2023-04-14 Fri 10:41</p>
+<section id="sec-title-slide" data-state="no-toc-progress">
+<!-- This is an HTML template for the title slide. -->
+<!-- Embed logos as necessary. -->
+<!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
+<div class="talk-title">
+    <h1 class="no-toc-progress">ベクトル空間</h1>
+</div>
+<div class="talk-subtitle">
+    <p>信号処理 - 第1講</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+  <p>村田 昇<br />
+  </p>
+</div>
+
 </section>
-<section id="table-of-contents-section">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#/slide-1">1. 線形独立性</a>
-<ul>
-<li><a href="#/slide-1-1">1.1. 線形結合</a></li>
-<li><a href="#/slide-1-2">1.2. 線形従属</a></li>
-<li><a href="#/slide-1-3">1.3. 線形独立</a></li>
-<li><a href="#/slide-1-4">1.4. 線形従属・独立の例</a></li>
-</ul>
-</li>
-<li><a href="#/slide-2">2. 演習</a>
-<ul>
-<li><a href="#/slide-2-1">2.1. 練習問題</a></li>
-</ul>
-</li>
-<li><a href="#/slide-3">3. 階数</a>
-<ul>
-<li><a href="#/slide-3-1">3.1. 極大独立集合</a></li>
-<li><a href="#/slide-3-2">3.2. 階数</a></li>
-<li><a href="#/slide-3-3">3.3. 階数の性質</a></li>
-</ul>
-</li>
-<li><a href="#/slide-4">4. ベクトル空間の基底</a>
-<ul>
-<li><a href="#/slide-4-1">4.1. 基底</a></li>
-<li><a href="#/slide-4-2">4.2. 基底の性質</a></li>
-</ul>
-</li>
-<li><a href="#/slide-5">5. 演習</a>
-<ul>
-<li><a href="#/slide-5-1">5.1. 練習問題</a></li>
-</ul>
-</li>
-</ul>
+
+<section>
+<section id="slide-org83675d0">
+<h2 id="org83675d0">ベクトル空間</h2>
+<div class="outline-text-2" id="text-org83675d0">
 </div>
-</div>
+</section>
+<section id="slide-orgf381983">
+<h3 id="orgf381983">重ね合わせの原理</h3>
+<ul>
+<li>「複雑な波(信号)も単純な波(信号)の重ね合わせで表現できる」
+という現象を一般化した原理</li>
+<li>数学・物理・工学分野でのモデル化や解析に用いる
+<ul>
+<li>線形方程式・Fourier解析</li>
+<li>量子力学</li>
+<li>電気回路</li>
+<li><b>信号処理</b></li>
+
+</ul></li>
+<li>重ね合わせの原理を数学的に取り扱うための道具立て<br />
+<b>(線形)ベクトル空間 (vector space)</b></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+<section id="slide-org41acbf8">
+<h3 id="org41acbf8">ベクトル空間</h3>
+<ul>
+<li><p>
+定義
+</p>
+<blockquote>
+<p>
+次の性質をもつ集合を体 \(K\) 上の <b>ベクトル空間</b> \(V\) という．<br />
+体とは四則演算が定義された集合のことで，
+\(K\) をベクトル空間 \(V\) の <b>係数体</b> と呼ぶ．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
 </section>
 <section>
-<section id="slide-1">
-<h2 id="1"><span class="section-number-2">1.</span> 線形独立性</h2>
-<div class="outline-text-2" id="text-1">
+<ul>
+<li><p>
+ベクトル空間の満たすべき性質
+</p>
+<blockquote>
+<ol>
+<li>\(a,b\in V\,\Rightarrow\,a+b\in V\)</li>
+<li>\(a,b,c\in V\,\Rightarrow\,(a+b)+c=a+(b+c)\) (結合則)</li>
+<li>\(a,b\in V\,\Rightarrow\,a+b=b+a\) (交換則)</li>
+<li>\(\exists0\in V\,\text{s.t.}\,\forall a\in V,\,a+0=a\) (零元)</li>
+<li>\(\forall a\in V\,\Rightarrow\,\exists -a\in V\,\text{s.t.}\,a+(-a)=0\) (逆元)</li>
+<li>\(\forall \lambda\in K,\forall a\in V\,\Rightarrow\,\lambda a\in V\) (スカラ倍)</li>
+<li>\(\forall \lambda,\mu\in K,\forall a\in V\,\Rightarrow\,(\lambda\mu)a=\lambda(\mu a)\) (結合則)</li>
+<li>\(\exists 1\in K\,\text{s.t.}\forall a\in V,\,1a=a\) (\(K\) の単位元)</li>
+<li>\(\forall\lambda\in K,\forall a,b\in V\,\Rightarrow\,\lambda(a+b)=\lambda a+\lambda b\) (分配則)</li>
+<li>\(\forall\lambda,\mu\in K,\forall a\in V\,\Rightarrow\,(\lambda+\mu)a=\lambda a+\mu a\) (分配則)</li>
+
+</ol>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+<section id="slide-orgf0f615d">
+<h3 id="orgf0f615d">ベクトル空間の例</h3>
+<ul>
+<li><p>
+<span style="color:green;">幾何ベクトル</span>
+</p>
+<blockquote>
+<p>
+平行移動で互いに移り合う有効線分．
+</p>
+
+<p>
+和は2つの有向線分で作られる平行四辺形の対角線で，
+スカラ倍は有向線分のスカラ倍で定義される．
+</p>
+<div>
+\begin{equation}
+  K=\mathbb{R},\;V=\mathbb{E}^{n}
+\end{equation}
+
+</div>
+
+<p>
+あるいはこの部分空間と同一視することができる．
+</p>
+</blockquote></li>
+<li><p>
+<span style="color:green;">数ベクトル</span>
+</p>
+<blockquote>
+<p>
+体 \(K\) の \(n\) 個の順序づけられた数の組．
+和は成分ごとの和で，
+スカラ倍は各成分のスカラ倍で定義される．
+</p>
+</blockquote></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li><p>
+<span style="color:green;">関数空間 \(C^{m}[0,1]\)</span>
+</p>
+<blockquote>
+<p>
+区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
+和とスカラ倍は以下で定義される．
+</p>
+<div>
+\begin{align}
+  &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
+  &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
+\end{align}
+
+</div>
+</blockquote></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf10373b" data-background="#fef4f4">
+<h2 id="orgf10373b">演習</h2>
+<div class="slide-footer"><br></div>
+</section>
+<section id="slide-org498519e" data-background="#fef4f4">
+<h3 id="org498519e">練習問題</h3>
+<ul>
+<li>以下の集合 \(V\) のうち，
+係数体を実数 \(\mathbb{R}\) としてベクトル空間となるものはどれか？<br />
+ただし \(f^{(k)}\) は \(f\) の \(k\) 階微分を表す．
+<ul>
+<li>\(V=\{(x_{1},x_{2},\dotsc,x_{n})\in\mathbb{R}^{n}\}\)
+(\(n\) 次元数ベクトルの集合)</li>
+<li>\(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) <br />
+(原点を通る2次関数の集合)</li>
+<li>\(V=\{f\in C^{3}(-\pi,\pi)\}\) <br />
+(\((-\pi,\pi)\) 上で定義された3階微分可能な関数の集合)</li>
+<li>\(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\)</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
+
+</section>
+</section>
+<section>
+<section id="slide-org83d09dd">
+<h2 id="org83d09dd">線形独立性</h2>
+<div class="outline-text-2" id="text-org83d09dd">
 </div>
 </section>
-<section id="slide-1-1">
-<h3 id="1-1"><span class="section-number-3">1.1.</span> 線形結合</h3>
+<section id="slide-orgae34cd1">
+<h3 id="orgae34cd1">線形結合</h3>
 <ul>
 <li><p>
 定義
@@ -76,25 +227,40 @@
 \(a_{1},\dotsc,a_{k}\in V\)
 の重み付き線形和によって作られるベクトル
 </p>
+<div>
+\begin{equation}
+  \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}\in V
+\end{equation}
+
+</div>
+
 <p>
 を \(a_{1},\dotsc,a_{k}\) の <b>線形結合</b> という．
 </p>
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-1-2">
-<h3 id="1-2"><span class="section-number-3">1.2.</span> 線形従属</h3>
+<section id="slide-org650ac79">
+<h3 id="org650ac79">線形従属</h3>
 <ul>
 <li><p>
 定義
 </p>
 <blockquote>
 <p>
-"全てが \(0\)" ではないある係数の組
+&ldquo;全てが \(0\)&rdquo; ではないある係数の組
 \(\lambda_{1},\dotsc,\lambda_{k}\) に対して
 </p>
+<div>
+\begin{equation}
+  \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+\end{equation}
+
+</div>
+
 <p>
 となるとき，
 \(\{a_{1},\dotsc,a_{k}\}\) は <b>線形従属</b> であるという．
@@ -103,6 +269,13 @@
 <p>
 また
 </p>
+<div>
+\begin{equation}
+  b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
+\end{equation}
+
+</div>
+
 <p>
 となるとき，
 \(b\) は \(\{a_{1},\dotsc,a_{k}\}\) に <b>線形従属</b> であるという．
@@ -110,15 +283,23 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-1-3">
-<h3 id="1-3"><span class="section-number-3">1.3.</span> 線形独立</h3>
+<section id="slide-org00f4d0b">
+<h3 id="org00f4d0b">線形独立</h3>
 <ul>
 <li><p>
 定義
 </p>
 <blockquote>
+<div>
+\begin{equation}
+  \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+\end{equation}
+
+</div>
+
 <p>
 となるのが
 \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
@@ -128,28 +309,38 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-1-4">
-<h3 id="1-4"><span class="section-number-3">1.4.</span> 線形従属・独立の例</h3>
+<section id="slide-orgf8fb285">
+<h3 id="orgf8fb285">線形従属・独立の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">関数空間 \(C^{m}[0,1]\)</span>
 </p>
 <blockquote>
+<div>
+\begin{align}
+  &\{f(x)=x,\;g(x)=2x\} &&\text{(線形従属)}\\
+  &\{f(x)=x,\;h(x)=x^{2}\} &&\text{(線形独立)}
+\end{align}
+
+</div>
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 
 </section>
 </section>
 <section>
-<section id="slide-2" data-background="#fef4f4">
-<h2 id="2"><span class="section-number-2">2.</span> 演習</h2>
+<section id="slide-org4ef4268" data-background="#fef4f4">
+<h2 id="org4ef4268">演習</h2>
+<div class="slide-footer"><br></div>
 </section>
-<section id="slide-2-1" data-background="#fef4f4">
-<h3 id="2-1"><span class="section-number-3">2.1.</span> 練習問題</h3>
+<section id="slide-org4f9165a" data-background="#fef4f4">
+<h3 id="org4f9165a">練習問題</h3>
 <ul>
 <li>以下の集合のうち線形独立なものはどれか？<br />
 ただし \(i\) は虚数単位で，係数体は \(\mathbb{C}\) とする．
@@ -162,17 +353,18 @@
 </ul></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
 </section>
 <section>
-<section id="slide-3">
-<h2 id="3"><span class="section-number-2">3.</span> 階数</h2>
-<div class="outline-text-2" id="text-3">
+<section id="slide-orgf6b585f">
+<h2 id="orgf6b585f">階数</h2>
+<div class="outline-text-2" id="text-orgf6b585f">
 </div>
 </section>
-<section id="slide-3-1">
-<h3 id="3-1"><span class="section-number-3">3.1.</span> 極大独立集合</h3>
+<section id="slide-orgd1efa75">
+<h3 id="orgd1efa75">極大独立集合</h3>
 <ul>
 <li><p>
 定義
@@ -190,10 +382,11 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-3-2">
-<h3 id="3-2"><span class="section-number-3">3.2.</span> 階数</h3>
+<section id="slide-orgc2e18ae">
+<h3 id="orgc2e18ae">階数</h3>
 <ul>
 <li><p>
 定義
@@ -211,10 +404,11 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-3-3">
-<h3 id="3-3"><span class="section-number-3">3.3.</span> 階数の性質</h3>
+<section id="slide-orgc705b7b">
+<h3 id="orgc705b7b">階数の性質</h3>
 <ul>
 <li><p>
 定理
@@ -228,24 +422,33 @@
 <li>\(\mathrm{rank}(S\cup\{b\})=\mathrm{rank}S\) または \(\mathrm{rank}S+1\)</li>
 <li><p>
 \(\forall b_{1},b_{2}\) に対して
-</p></li>
+</p>
+<div>
+\begin{multline}
+  \mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})=\mathrm{rank}S\\
+  \;\Rightarrow\;
+  \mathrm{rank}(S\cup\{b_{1},b_{2}\})=\mathrm{rank}S
+\end{multline}
+
+</div></li>
 
 </ul>
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 
 </section>
 </section>
 <section>
-<section id="slide-4">
-<h2 id="4"><span class="section-number-2">4.</span> ベクトル空間の基底</h2>
-<div class="outline-text-2" id="text-4">
+<section id="slide-orgdb3700c">
+<h2 id="orgdb3700c">ベクトル空間の基底</h2>
+<div class="outline-text-2" id="text-orgdb3700c">
 </div>
 </section>
-<section id="slide-4-1">
-<h3 id="4-1"><span class="section-number-3">4.1.</span> 基底</h3>
+<section id="slide-org8260e27">
+<h3 id="org8260e27">基底</h3>
 <ul>
 <li><p>
 定義
@@ -262,10 +465,11 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 </section>
-<section id="slide-4-2">
-<h3 id="4-2"><span class="section-number-3">4.2.</span> 基底の性質</h3>
+<section id="slide-org2424cf5">
+<h3 id="org2424cf5">基底の性質</h3>
 <ul>
 <li><p>
 定理
@@ -274,10 +478,20 @@
 <p>
 集合 \(B\) を \(n\) 次元ベクトル空間 \(V_{n}\) の基底とする．
 </p>
+<div>
+\begin{align}
+  &\dim V_{n}&&(\text{ベクトル空間の次元})\\
+  &=\mathrm{rank} V_{n}&&(\text{ベクトル空間の階数})\\
+  &=|B|&&(\text{基底の基数})\\
+  &=n
+\end{align}
+
+</div>
 </blockquote></li>
 
 </ul>
 
+<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -289,6 +503,13 @@
 \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
 \(\forall b\in V_{n}\) は \(B\) に線形従属で，
 </p>
+<div>
+\begin{equation}
+  b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
+\end{equation}
+
+</div>
+
 <p>
 と一意に表される．
 </p>
@@ -300,6 +521,13 @@
 <p>
 2つの異なる表現があっても
 </p>
+<div>
+\begin{equation}
+  (\lambda_{1}-\mu_{1})u_{1}+\dotsb+(\lambda_{n}-\mu_{n})u_{n}=0
+\end{equation}
+
+</div>
+
 <p>
 となることより，
 \(\lambda_{i}=\mu_{i}\) となることがわかる．
@@ -308,6 +536,7 @@
 
 </ul>
 
+<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -329,16 +558,18 @@
 </blockquote></li>
 
 </ul>
+<div class="slide-footer"><br></div>
 
 
 </section>
 </section>
 <section>
-<section id="slide-5" data-background="#fef4f4">
-<h2 id="5"><span class="section-number-2">5.</span> 演習</h2>
+<section id="slide-orgf8f12be" data-background="#fef4f4">
+<h2 id="orgf8f12be">演習</h2>
+<div class="slide-footer"><br></div>
 </section>
-<section id="slide-5-1" data-background="#fef4f4">
-<h3 id="5-1"><span class="section-number-3">5.1.</span> 練習問題</h3>
+<section id="slide-org2f2dcb0" data-background="#fef4f4">
+<h3 id="org2f2dcb0">練習問題</h3>
 <ul>
 <li>以下のベクトル空間の適当な基底を考え，
 空間の次元を求めなさい．
@@ -349,15 +580,67 @@
 </ul></li>
 
 </ul>
+<div class="slide-footer"><br></div>
+
 </section>
 </section>
+<section>
+<section id="slide-org1e6efa2">
+<h2 id="org1e6efa2">今回のまとめ</h2>
+<ul>
+<li>体 \(K\) 上のベクトル空間
+<ul>
+<li>線形性の条件を満たす集合のこと
+<ul>
+<li>幾何ベクトル</li>
+<li>数ベクトル</li>
+<li>閉区間上の関数</li>
+
+</ul></li>
+<li>これから取り扱う信号の数学的性質</li>
+
+</ul></li>
+<li>独立と従属
+<ul>
+<li><p>
+線形独立(一次独立) : \(\{\phi_{i}\}_{i=1,\dotsc,n}\)
+</p>
+<div>
+\begin{equation}
+  \alpha_{1}\phi_{1}+\dotsb+\alpha_{n}\phi_{n}=0
+  \Leftrightarrow \alpha_{1}=\dotsb=\alpha_{n}=0
+\end{equation}
+
+</div></li>
+
+<li>線形従属(一次従属) : 線形独立でないこと</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer"><br></div>
+</section>
+<section>
+<ul>
+<li>ベクトル空間の基底
+<ul>
+<li>極大独立集合 : 何か1つでも要素を加えると従属になってしまう集合</li>
+<li>ベクトル空間 \(V\) の次元はどうやって決めるか？<br />
+\(V\) の中の線形独立な集合の最大の要素数(基数，集合のとり方によらず要素数は一定)</li>
+<li>基底 : ベクトル空間 \(V\) の極大独立集合を \(V\) の基底という</li>
+
+</ul></li>
+
+</ul>
+<div class="slide-footer"><br></div>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
-<script src="./reveal.js/plugin/markdown/markdown.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -365,26 +648,29 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: false,
+history: true,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: false,
+fragmentInURL: true,
 hashOneBasedIndex: false,
-pdfSeparateFragments: true,
+pdfSeparateFragments: false,
 overview: true,
 
-transition: 'convex',
+transition: 'fade',
 transitionSpeed: 'default',
+spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
-]
+{ src: './reveal.js/plugin/menu/menu.js'},
+{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
+{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
 
 });
 </script>
