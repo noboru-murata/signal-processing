@@ -6,14 +6,14 @@
     <description>Recent content in Pages on 信号処理</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/signal-processing/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/signal-processing/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第1講</title>
       <link>https://noboru-murata.github.io/signal-processing/page/lecture01/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture01/</guid>
-      <description>&amp;lt;2023-04-14 Fri&amp;gt; 更新
+      <description>&amp;lt;2023-04-19 Wed&amp;gt; 更新
 スライド full size ハンドアウト PDF file </description>
     </item>
     
@@ -23,7 +23,7 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture02/</guid>
-      <description>&amp;lt;2022-09-19 Mon&amp;gt; 更新
+      <description>&amp;lt;2023-04-19 Wed&amp;gt; 更新
 スライド full size ハンドアウト PDF file </description>
     </item>
     
@@ -125,6 +125,17 @@
       <guid>https://noboru-murata.github.io/signal-processing/page/lecture12/</guid>
       <description>&amp;lt;2022-09-19 Mon&amp;gt; 更新
 スライド full size ハンドアウト PDF file </description>
+    </item>
+    
+    <item>
+      <title>講義資料</title>
+      <link>https://noboru-murata.github.io/signal-processing/page/notes/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/signal-processing/page/notes/</guid>
+      <description>&amp;lt;2023-04-01 Sat&amp;gt; 更新
+以下は信号処理の講義資料(随時更新)です．
+信号処理 必要な参考書については適宜講義中に指示します．</description>
     </item>
     
   </channel>

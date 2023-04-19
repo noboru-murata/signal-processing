@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-04-13 22:24:39 mura>
+# Time-stamp: <2023-04-19 16:51:04 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -104,9 +104,9 @@
     (\(n\) 次元数ベクトルの集合)
   - \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
     (原点を通る2次関数の集合)
-  - \(V=\{f\in C^{3}(-\pi,\pi)\}\) \\
+  - \(V=\{f\in C^{3}[-\pi,\pi]\}\) \\
     (\((-\pi,\pi)\) 上で定義された3階微分可能な関数の集合)
-  - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\)
+  - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}=-f\}\)
 
 ** COMMENT 解答例
 :PROPERTIES:

@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2022-09-19 15:33:18 mura>
+# Time-stamp: <2023-04-19 16:54:28 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -100,8 +100,8 @@
 :reveal_background: #fef4f4
 :END:
 - 以下の集合 \(V\) のうちベクトル空間はどれか？
-  - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
-  - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
+  - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
+  - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
 - 以下の集合のうち線形独立なものはどれか？
   - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
   - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)

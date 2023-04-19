@@ -3,7 +3,7 @@ title = "スライドの使い方"
 author = ["Noboru Murata"]
 date = 2020-08-27T00:00:00+09:00
 draft = false
-weight = 1026
+weight = 1019
 +++
 
 スライドは
