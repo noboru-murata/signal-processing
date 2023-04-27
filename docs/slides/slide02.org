@@ -1,9 +1,9 @@
 #+TITLE: Hilbert 空間
 #+SUBTITLE: 信号処理 - 第2講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-04-19 16:54:28 mura>
+# Time-stamp: <2023-04-27 18:07:41 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
