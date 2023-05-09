@@ -1,9 +1,9 @@
 #+TITLE: Fourier 級数
 #+SUBTITLE: 信号処理 - 第4講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2022-09-19 15:35:05 mura>
+# Time-stamp: <2023-05-09 14:53:23 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -702,7 +702,7 @@
 
 * 今回のまとめ
 - Fourier 級数展開 :
-  - 周期関数 (\(\in L^{2}(-\pi,\pi)\)) の Fourier 級数展開:
+  - 周期関数 (\(\in L^{2}(-\pi,\pi)\)) の Fourier 級数展開 :
     #+begin_quote
     #+begin_src latex
       \begin{equation}
