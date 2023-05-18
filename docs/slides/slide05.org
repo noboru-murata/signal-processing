@@ -1,9 +1,9 @@
 #+TITLE: Fourier 級数の性質
 #+SUBTITLE: 信号処理 - 第5講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2022-09-19 15:36:06 mura>
+# Time-stamp: <2023-05-17 19:42:56 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -861,8 +861,8 @@
     \end{align}
   #+end_src
   #+end_quote
-  - 関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
-    変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ
+  - /[[color:orange][関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
+    変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ]]/
 
 ** @@latex:@@\(L^{p}\) ノルム
 - 定義
@@ -1005,7 +1005,7 @@
   #+end_src
   が成り立つ．
   #+end_quote
-  - 凸性について曖昧な者は意味を確認せよ
+  - /[[color:orange][凸性について曖昧な者は意味を確認せよ]]/
 
 #+reveal: split
 - (証明のつづき)
