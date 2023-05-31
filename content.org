@@ -5,7 +5,7 @@
 #+LINK: github https://noboru-murata.github.io/signal-processing/
 #+STARTUP: hidestars content indent
 
-# Time-stamp: <2023-05-18 15:43:39 mura>
+# Time-stamp: <2023-05-31 17:40:43 mura>
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
@@ -85,7 +85,7 @@
 :EXPORT_FILE_NAME: lecture06
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2022-09-19 Mon> 更新
+<2023-05-31 Wed> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide06" >}}
 ** ハンドアウト
@@ -96,7 +96,7 @@
 :EXPORT_FILE_NAME: lecture07
 :EXPORT_DATE: <2021-04-01 Thu>
 :END:
-<2022-09-19 Mon> 更新
+<2023-05-31 Wed> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide07" >}}
 ** ハンドアウト

@@ -1,9 +1,9 @@
 #+TITLE: Fourier 変換の性質
 #+SUBTITLE: 信号処理 - 第7講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2022-09-19 15:38:00 mura>
+# Time-stamp: <2023-05-31 17:34:17 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -982,7 +982,7 @@
     - Plancherel の定理
     - Riemann-Lebesgue の定理(補題)
   - 関数の演算と Fourier 変換の関係
-** 注意
+** COMMENT 注意
 - 確認テストはありません
   - 複素積分の説明を来週するため
 - 第10回の確認テストでまとめて行います
