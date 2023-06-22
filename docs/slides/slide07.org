@@ -3,7 +3,7 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-05-31 17:34:17 mura>
+# Time-stamp: <2023-06-09 10:38:36 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
@@ -364,9 +364,9 @@
       &=
 	\int_{-\infty}^{\infty}
 	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{i\omega x}dx\cdot
+	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\cdot
 	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\overline{g(y)e^{i\omega y}}dy\cdot
+	\int_{-\infty}^{\infty}\overline{g(y)e^{-i\omega y}}dy\cdot
 	e^{-\epsilon \omega^{2}}d\omega\\
       &=
 	\int_{-\infty}^{\infty}

@@ -1,9 +1,9 @@
 #+TITLE: 線形フィルタ
 #+SUBTITLE: 信号処理 - 第8講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2022-09-19 15:38:51 mura>
+# Time-stamp: <2023-06-22 15:46:34 mura>
 :REVEAL:
 #+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
