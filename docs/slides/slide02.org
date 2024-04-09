@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-04-27 18:07:41 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-04-09 18:10:20 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -38,22 +38,18 @@
   #+begin_quote
   区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
   和とスカラ倍は以下で定義される．
-  #+begin_src latex
-    \begin{align}
-      &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
-      &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
+    &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
+  \end{align}
   #+end_quote
 
 ** 線形独立
 - 定義
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+  \end{equation}
   となるのが
   \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
   に限られるとき，
@@ -79,11 +75,9 @@
   #+begin_quote
   \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
   \(\forall b\in V_{n}\) は \(B\) に線形従属で，
-  #+begin_src latex
-    \begin{equation}
-      b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
+  \end{equation}
   と一意に表される．
   #+end_quote
   - ベクトル \(b\) を数ベクトル
@@ -116,22 +110,18 @@
 - 条件の線形性として，\(h=f+g\)のとき
   がどうなるか考えればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      &h^{(2)}+h^{(1)}+h\\
-      &\quad
-        =(f^{(2)}+f^{(1)}+f)
-        +(g^{(2)}+g^{(1)}+g)
-    \end{align}
-  #+end_src
+  \begin{align}
+    &h^{(2)}+h^{(1)}+h\\
+    &\quad
+      =(f^{(2)}+f^{(1)}+f)
+      +(g^{(2)}+g^{(1)}+g)
+  \end{align}
   #+end_quote
 - 適当な\(x\)を用いて連立方程式の解を考えればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \alpha f(x) + \beta g(x) + \gamma h(x) = 0
+  \end{equation}
   #+end_quote
 - 線形独立な要素がいくつ取れるかを考えればよい
 
@@ -176,11 +166,9 @@
   #+begin_quote
   2つの有効線分のなす角 \(\theta\) とそ
   れぞれの長さ \(|u|,|v|\) を用いて定義
-  #+begin_src latex
-    \begin{equation}
-      \langle u,v\rangle = |u||v|\cos\theta
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \langle u,v\rangle = |u||v|\cos\theta
+  \end{equation}
   #+end_quote
 
 #+reveal: split
@@ -190,12 +178,10 @@
   \(u=(u_{1},u_{2},\dotsc,u_{n})\),
   \(v=(v_{1},v_{2},\dotsc,v_{n})\)
   に対して
-  #+begin_src latex
-    \begin{equation}
-      \langle u,v\rangle
-      = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \langle u,v\rangle
+    = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
+  \end{equation}
   ただし
   \(\bar{\cdot}\)
   は複素共役
@@ -208,21 +194,17 @@
   2つの複素数値関数
   \(u,v\)
   に対して
-  #+begin_src latex
-    \begin{equation}
-      \langle u,v\rangle
-      = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \langle u,v\rangle
+    = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
+  \end{equation}
   #+end_quote
   - 定義域が \(\Omega\) で表される場合に
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        \langle u,v\rangle
-        = \int_{\Omega}u(x)\overline{v(x)}dx
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      \langle u,v\rangle
+      = \int_{\Omega}u(x)\overline{v(x)}dx
+    \end{equation}
     #+end_quote
     のように書くこともある
 
@@ -233,11 +215,9 @@
   その
   *ノルム* 
   を
-  #+begin_src latex
-    \begin{equation}
-      \|u\|=\sqrt{\langle u,u\rangle}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \|u\|=\sqrt{\langle u,u\rangle}
+  \end{equation}
   で定義する．
   #+end_quote
 - ノルムの性質
@@ -301,11 +281,9 @@
   #+begin_quote
   ある集合の中で無限に続く点列 \(u_{n}\) を考え，
   この点列がだんだん動かなくなる状況を考える．
-  #+begin_src latex
-    \begin{equation}
-      \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{n,m\to\infty}d(u_{n},u_{m})=0.\;\text{(Cauchy列という)}
+  \end{equation}
   この点列の収束先 \(\lim_{n\to\infty}u_{n}\) がもとの集合に含まれるとき，
   その集合は
   *完備*
@@ -343,26 +321,22 @@
 ** Hilbert 空間の例
 - [[color:green][\(l^{2}\) 空間 (無限次元数ベクトル空間)]]
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      l^{2}=
-      \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
-        \|u\|<\infty
-        % \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
-      \right\}
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \langle u,v\rangle
-      =
-      \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
-      \quad
-      \|u\|^{2}
-      =
-      \sum_{i=1}^{\infty}|u_{i}|^{2}.
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    l^{2}=
+    \left\{u=(u_{1},u_{2},\dotsc),\;u_{i}\in K,\;
+      \|u\|<\infty
+      % \sum_{i=1}^{\infty}|u_{i}|^{2}<\infty
+    \right\}
+  \end{equation}
+  \begin{equation}
+    \langle u,v\rangle
+    =
+    \sum_{i=1}^{\infty}u_{i}\overline{v_{i}},
+    \quad
+    \|u\|^{2}
+    =
+    \sum_{i=1}^{\infty}|u_{i}|^{2}.
+  \end{equation}
   #+end_quote
   - Cauchy-Schwarzの不等式
     \(\langle u,v\rangle\leq\|u\|\cdot\|v\|\)
@@ -373,26 +347,22 @@
 #+reveal: split
 - [[color:green][\(L^{2}\) 空間]]
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      L^{2}(\Omega)=
-      \left\{
-        f\:\big|\:\|f\|<\infty
-        % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
-      \right\}
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \langle f,g\rangle
-      =
-      \int_{\Omega}f(x)\overline{g(x)}dx,
-      \quad
-      \|f\|^{2}
-      =
-      \int_{\Omega}|f(x)|^{2}dx
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    L^{2}(\Omega)=
+    \left\{
+      f\:\big|\:\|f\|<\infty
+      % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+    \right\}
+  \end{equation}
+  \begin{equation}
+    \langle f,g\rangle
+    =
+    \int_{\Omega}f(x)\overline{g(x)}dx,
+    \quad
+    \|f\|^{2}
+    =
+    \int_{\Omega}|f(x)|^{2}dx
+  \end{equation}
   #+end_quote
   - 今後扱う信号の空間に対応する
   - ノルムが有界であることは信号の物理的な性質と関係する
@@ -425,17 +395,15 @@
 - \(C[-1,1]\) は Hilbert 空間にならない．
   #+begin_quote
   関数列 \(f_{n}\) として例えば次のようなものを考える．
-  #+begin_src latex
-    \begin{equation}
-      f_{n}(x)
-      =
-      \begin{cases}
-        -1, & (x<-1/n)\\
-        nx, & (-1/n\le x\le 1/n)\\
-        1,  & (x>1/n)
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f_{n}(x)
+    =
+    \begin{cases}
+      -1, & (x<-1/n)\\
+      nx, & (-1/n\le x\le 1/n)\\
+      1,  & (x>1/n)
+    \end{cases}
+  \end{equation}
   \(f_{n}\) は連続関数であるが，
   \(\lim_{n\to\infty}f_{n}\) は不連続になる．
   #+end_quote

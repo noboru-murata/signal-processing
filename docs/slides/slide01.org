@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-04-27 18:05:51 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-04-09 17:54:40 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -27,9 +27,8 @@
   - 量子力学
   - 電気回路
   - *信号処理*
-- 重ね合わせの原理を数学的に取り扱うための道具立て\\
+- 数学的に取り扱うための道具立て \\
   *(線形)ベクトル空間 (vector space)*
-  
 
 ** ベクトル空間
 - 定義
@@ -61,11 +60,9 @@
 
   和は2つの有向線分で作られる平行四辺形の対角線で，
   スカラ倍は有向線分のスカラ倍で定義される．
-  #+begin_src latex
-    \begin{equation}
-      K=\mathbb{R},\;V=\mathbb{E}^{n}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    K=\mathbb{R},\;V=\mathbb{E}^{n}
+  \end{equation}
   あるいはこの部分空間と同一視することができる．
   #+end_quote
 - [[color:green][数ベクトル]]
@@ -80,12 +77,10 @@
   #+begin_quote
   区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
   和とスカラ倍は以下で定義される．
-  #+begin_src latex
-    \begin{align}
-      &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
-      &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    &(f+g)(x)=f(x)+g(x)&&\text{(和)}\\
+    &(\lambda f)(x)=\lambda f(x)&&\text{(スカラ倍)}
+  \end{align}
   #+end_quote
 
 
@@ -127,11 +122,9 @@
   \(\lambda_{1},\dotsc,\lambda_{k}\in K\),
   \(a_{1},\dotsc,a_{k}\in V\)
   の重み付き線形和によって作られるベクトル
-  #+begin_src latex
-    \begin{equation}
-      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}\in V
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}\in V
+  \end{equation}
   を \(a_{1},\dotsc,a_{k}\) の *線形結合* という．
   #+end_quote
 
@@ -140,20 +133,16 @@
   #+begin_quote
   "全てが \(0\)" ではないある係数の組
   \(\lambda_{1},\dotsc,\lambda_{k}\) に対して
-  #+begin_src latex
-    \begin{equation}
-      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+  \end{equation}
   となるとき，
   \(\{a_{1},\dotsc,a_{k}\}\) は *線形従属* であるという．
 
   また
-  #+begin_src latex
-    \begin{equation}
-      b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
+  \end{equation}
   となるとき，
   \(b\) は \(\{a_{1},\dotsc,a_{k}\}\) に *線形従属* であるという．
   #+end_quote
@@ -161,11 +150,9 @@
 ** 線形独立
 - 定義
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
+  \end{equation}
   となるのが
   \(\lambda_{1}=\dotsb=\lambda_{k}=0\)
   に限られるとき，
@@ -174,11 +161,9 @@
 
   # ** 注意
   #    - 線形従属なベクトル\(b\)
-  #      #+begin_src latex
   #        \begin{equation}
   # 	 b=\lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}
   #        \end{equation}
-  #      #+end_src
   #    を考えたとき，特殊な例は\(b=0\)の場合で，
   #    \(k+1\)個のベクトル
   #    \(\{0,a_{1},\dotsc,a_{k}\}\)は常に線形従属となる．
@@ -186,12 +171,10 @@
 ** 線形従属・独立の例
 - [[color:green][関数空間 \(C^{m}[0,1]\)]]
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      &\{f(x)=x,\;g(x)=2x\} &&\text{(線形従属)}\\
-      &\{f(x)=x,\;h(x)=x^{2}\} &&\text{(線形独立)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\{f(x)=x,\;g(x)=2x\} &&\text{(線形従属)}\\
+    &\{f(x)=x,\;h(x)=x^{2}\} &&\text{(線形独立)}
+  \end{align}
   #+end_quote
 
 
@@ -217,11 +200,9 @@
 - 線形結合を考え，
   適当な\(x\)の値で \(\alpha,\beta,\gamma\) を解いてみればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \alpha f(x) + \beta g(x) + \gamma h(x) = 0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \alpha f(x) + \beta g(x) + \gamma h(x) = 0
+  \end{equation}
   #+end_quote
   - \(\{1,\;\log(x),\;\log(2x)\}=\{1,\;\log(x),\;\log(2)+\log(x)\}\)
     なので，独立ではない
@@ -255,13 +236,11 @@
   - \(\mathrm{rank}\emptyset=0\)
   - \(\mathrm{rank}(S\cup\{b\})=\mathrm{rank}S\) または \(\mathrm{rank}S+1\)
   - \(\forall b_{1},b_{2}\) に対して
-    #+begin_src latex
-      \begin{multline}
-	\mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})=\mathrm{rank}S\\
-	\;\Rightarrow\;
-	\mathrm{rank}(S\cup\{b_{1},b_{2}\})=\mathrm{rank}S
-      \end{multline}
-    #+end_src
+    \begin{multline}
+      \mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})=\mathrm{rank}S\\
+      \;\Rightarrow\;
+      \mathrm{rank}(S\cup\{b_{1},b_{2}\})=\mathrm{rank}S
+    \end{multline}
   #+end_quote
 
 
@@ -279,14 +258,12 @@
 - 定理
   #+begin_quote
   集合 \(B\) を \(n\) 次元ベクトル空間 \(V_{n}\) の基底とする．
-  #+begin_src latex
-    \begin{align}
-      &\dim V_{n}&&(\text{ベクトル空間の次元})\\
-      &=\mathrm{rank} V_{n}&&(\text{ベクトル空間の階数})\\
-      &=|B|&&(\text{基底の基数})\\
-      &=n
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\dim V_{n}&&(\text{ベクトル空間の次元})\\
+    &=\mathrm{rank} V_{n}&&(\text{ベクトル空間の階数})\\
+    &=|B|&&(\text{基底の基数})\\
+    &=n
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -294,21 +271,17 @@
   #+begin_quote
   \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
   \(\forall b\in V_{n}\) は \(B\) に線形従属で，
-  #+begin_src latex
-    \begin{equation}
-      b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    b=\lambda_{1}u_{1}+\dotsb+\lambda_{n}u_{n}
+  \end{equation}
   と一意に表される．
   #+end_quote
 - 証明
   #+begin_quote
   2つの異なる表現があっても
-  #+begin_src latex
-    \begin{equation}
-      (\lambda_{1}-\mu_{1})u_{1}+\dotsb+(\lambda_{n}-\mu_{n})u_{n}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    (\lambda_{1}-\mu_{1})u_{1}+\dotsb+(\lambda_{n}-\mu_{n})u_{n}=0
+  \end{equation}
   となることより，
   \(\lambda_{i}=\mu_{i}\) となることがわかる．
   #+end_quote
@@ -346,11 +319,9 @@
 - 数ベクトル
   #+begin_quote
   \(K^{n}\) において
-  #+begin_src latex
-    \begin{equation}
-      e_{k}=(0,\dotsc,\overbrace{1}^{k},\dotsc,0)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    e_{k}=(0,\dotsc,\overbrace{1}^{k},\dotsc,0)
+  \end{equation}
   と書くことにする．
   \(\{e_{1},\dotsc,e_{n}\}\) は \(K^{n}\) の基底であり，
   \(\dim K^{n}=n\) となる．\\
@@ -379,12 +350,10 @@
   - これから取り扱う信号の数学的性質
 - 独立と従属
   - 線形独立(一次独立) : \(\{\phi_{i}\}_{i=1,\dotsc,n}\)
-    #+begin_src latex
-      \begin{equation}
-	\alpha_{1}\phi_{1}+\dotsb+\alpha_{n}\phi_{n}=0
-	\Leftrightarrow \alpha_{1}=\dotsb=\alpha_{n}=0
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      \alpha_{1}\phi_{1}+\dotsb+\alpha_{n}\phi_{n}=0
+      \Leftrightarrow \alpha_{1}=\dotsb=\alpha_{n}=0
+    \end{equation}
   - 線形従属(一次従属) : 線形独立でないこと
 
 #+reveal: split
