@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-05-31 17:07:01 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-04-10 12:06:09 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -44,12 +44,10 @@
   #+begin_quote
   \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
   以下が成り立つ．
-  #+begin_src latex
-    \begin{equation}
-      \forall u\in\mathcal{H}\;\Rightarrow\;
-      u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \forall u\in\mathcal{H}\;\Rightarrow\;
+    u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
+  \end{equation}
   #+end_quote
 
 ** Fourier 級数展開
@@ -60,25 +58,19 @@
   以下のように
   *Fourier 級数展開*
   される．
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-    \end{align}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-    \end{equation}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+  \end{align}
+  \begin{equation}
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \end{equation}
   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
   以下で定義する．
-  #+begin_src latex
-    \begin{equation}
-      \langle f,g\rangle
-      =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \langle f,g\rangle
+    =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+  \end{equation}
   #+end_quote
   
 
@@ -92,17 +84,15 @@
 :END:
 - 以下の関数 \(f\) を Fourier 級数展開せよ．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-	0,&x\le 0\\
-	1,&x > 0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      0,&x\le 0\\
+      1,&x > 0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -112,44 +102,38 @@
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
   - \(n=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{align}
-	\langle f,\phi_{0}\rangle
-	&=\int_{0}^{\pi}\frac{1}{\sqrt{2\pi}}dx
-   =\frac{\pi}{\sqrt{2\pi}}
-      \end{align}
-    #+end_src
+    \begin{align}
+      \langle f,\phi_{0}\rangle
+      &=\int_{0}^{\pi}\frac{1}{\sqrt{2\pi}}dx
+      =\frac{\pi}{\sqrt{2\pi}}
+    \end{align}
     #+end_quote
   - \(n\not=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{align}
-	\langle f,\phi_{n}\rangle
-	&=\int_{0}^{\pi}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
-	&=\left[
-   \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
-   \right]_{0}^{\pi}
-   =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-in\pi}-1)\\
-	&=\frac{i}{n\sqrt{2\pi}}((-1)^{n}-1)
-   =\begin{cases}
-     \frac{-2i}{n\sqrt{2\pi}},&\text{\(n\)が奇数}\\
-     0,&\text{\(n\)が偶数}
-   \end{cases}
-      \end{align}
-    #+end_src
+    \begin{align}
+      \langle f,\phi_{n}\rangle
+      &=\int_{0}^{\pi}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
+      &=\left[
+        \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
+        \right]_{0}^{\pi}
+      =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-in\pi}-1)\\
+      &=\frac{i}{n\sqrt{2\pi}}((-1)^{n}-1)
+      =\begin{cases}
+      \frac{-2i}{n\sqrt{2\pi}},&\text{\(n\)が奇数}\\
+      0,&\text{\(n\)が偶数}
+      \end{cases}
+    \end{align}
     #+end_quote
 
 #+reveal: split
 - Fourier 級数展開
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
-      &=\frac{1}{2}+\sum_{n\not=0}\frac{i\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
-      &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i}{\pi(2m+1)}e^{i(2m+1)x}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+    &=\frac{1}{2}+\sum_{n\not=0}\frac{i\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
+    &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i}{\pi(2m+1)}e^{i(2m+1)x}
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -204,17 +188,15 @@
 :END:
 - 以下の関数 \(f\) を Fourier 級数展開せよ．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        1,&|x|\le\pi/2\\
-        0,&|x|>\pi/2
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      1,&|x|\le\pi/2\\
+      0,&|x|>\pi/2
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 ** COMMENT 解答例
 :PROPERTIES:
@@ -223,49 +205,43 @@
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
   - \(n=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{align}
-        \langle f,\phi_{0}\rangle
-        &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}dx
-          =\frac{\pi}{\sqrt{2\pi}}
-      \end{align}
-    #+end_src
+    \begin{align}
+      \langle f,\phi_{0}\rangle
+      &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}dx
+        =\frac{\pi}{\sqrt{2\pi}}
+    \end{align}
     #+end_quote
 
 #+reveal: split
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
   - \(n\not=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{align}
-        \langle f,\phi_{n}\rangle
-        &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
-        &=\left[
-          \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
-          \right]_{-\pi/2}^{\pi/2}
-          =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-i\pi/2\cdot n}-e^{i\pi/2\cdot n})\\
-        &=\frac{i}{n\sqrt{2\pi}}((-i)^{n}-i^{n})
-         =\frac{i^{n+1}}{n\sqrt{2\pi}}((-1)^{n}-1)\\
-        &=\begin{cases}
-            \frac{2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り1}\\
-            \frac{-2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り3}\\
-            0,&\text{\(n\)が偶数}
-          \end{cases}
-      \end{align}
-    #+end_src
+    \begin{align}
+      \langle f,\phi_{n}\rangle
+      &=\int_{-\pi/2}^{\pi/2}\frac{1}{\sqrt{2\pi}}e^{-inx}dx\\
+      &=\left[
+        \frac{1}{-in}\cdot\frac{1}{\sqrt{2\pi}}e^{-inx}
+        \right]_{-\pi/2}^{\pi/2}
+        =\frac{i}{n}\cdot\frac{1}{\sqrt{2\pi}}(e^{-i\pi/2\cdot n}-e^{i\pi/2\cdot n})\\
+      &=\frac{i}{n\sqrt{2\pi}}((-i)^{n}-i^{n})
+       =\frac{i^{n+1}}{n\sqrt{2\pi}}((-1)^{n}-1)\\
+      &=\begin{cases}
+          \frac{2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り1}\\
+          \frac{-2}{n\sqrt{2\pi}},&\text{\(n\)が4で割ると余り3}\\
+          0,&\text{\(n\)が偶数}
+        \end{cases}
+    \end{align}
     #+end_quote
 
 #+reveal: split
 - Fourier 級数展開
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
-      &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
-      &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i^{n+1}}{\pi(2m+1)}e^{i(2m+1)x}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+    &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{inx}\\
+    &=\frac{1}{2}+\sum_{m=-\infty}^{\infty}\frac{-i^{n+1}}{\pi(2m+1)}e^{i(2m+1)x}
+  \end{align}
   #+end_quote
   - 書き方はいろいろある
 
@@ -321,40 +297,34 @@
 :END:
 - 関数
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        \sin x,&x\ge0\\
-        0,&x<0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      \sin x,&x\ge0\\
+      0,&x<0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - Fourier 係数
   - \(n\not=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{n}
-        =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{n}
+      =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
+    \end{equation}
     #+end_quote
   - \(n=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{-1}
-        =\frac{i}{4},\quad
-        C_{1}
-        =\frac{-i}{4}
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{-1}
+      =\frac{i}{4},\quad
+      C_{1}
+      =\frac{-i}{4}
+    \end{equation}
     #+end_quote
 
 #+reveal: split
@@ -410,40 +380,34 @@
 :END:
 - 関数
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        0,&x>0\\
-        -\sin(x),&x\le0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      0,&x>0\\
+      -\sin(x),&x\le0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - Fourier 係数
   - \(n\not=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{n}
-        =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{n}
+      =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
+    \end{equation}
     #+end_quote
   - \(n=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{-1}
-        =\frac{-i}{4},\quad
-        C_{1}
-        =\frac{i}{4}
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{-1}
+      =\frac{-i}{4},\quad
+      C_{1}
+      =\frac{i}{4}
+    \end{equation}
     #+end_quote
 
 #+reveal: split
@@ -501,32 +465,26 @@
 :END:
 - 関数
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=|\sin x|
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=|\sin x|
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - Fourier 係数
   - \(n\not=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{n}
-        =\frac{(-1)^{n}+1}{\pi(1-n^{2})}
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{n}
+      =\frac{(-1)^{n}+1}{\pi(1-n^{2})}
+    \end{equation}
     #+end_quote
   - \(n=\pm1\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{-1}=C_{1}=0
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{-1}=C_{1}=0
+    \end{equation}
     #+end_quote
 
 #+reveal: split
@@ -582,38 +540,32 @@
 :END:
 - 関数
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        1,&x>0\\
-        -1,&x\le0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      1,&x>0\\
+      -1,&x\le0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - Fourier 係数
   - \(n=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{0}
-        =0
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{0}
+      =0
+    \end{equation}
     #+end_quote
   - \(n\not=0\) のとき
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-        C_{n}
-        =\frac{i}{\pi n}((-1)^{n}-1)
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      C_{n}
+      =\frac{i}{\pi n}((-1)^{n}-1)
+    \end{equation}
     #+end_quote
 
 
@@ -675,12 +627,10 @@
 - 定義
   #+begin_quote
   \(h>0\) として
-  #+begin_src latex
-    \begin{align}
-      f(x{-}0)&=\lim_{h\to0}f(x-h)\\
-      f(x{+}0)&=\lim_{h\to0}f(x+h)
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x{-}0)&=\lim_{h\to0}f(x-h)\\
+    f(x{+}0)&=\lim_{h\to0}f(x+h)
+  \end{align}
   と書く．
   これを片側極限という．
   #+end_quote
@@ -689,76 +639,64 @@
 - 不連続関数
   #+begin_quote
   点 \(x\) において不連続な関数を考える．
-  #+begin_src latex
-    \begin{equation}
-      f(x{-}0)\not=f(x{+}0)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x{-}0)\not=f(x{+}0)
+  \end{equation}
   点 \(x\) 以外の近傍での有界性を仮定する．
-  #+begin_src latex
-    \begin{align}
-      &\sup_{0 < h < \delta}|f(x-h)-f(x{-}0)| < \infty\\
-      &\sup_{0 < h < \delta}|f(x+h)-f(x{+}0)| < \infty
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\sup_{0 < h < \delta}|f(x-h)-f(x{-}0)| < \infty\\
+    &\sup_{0 < h < \delta}|f(x+h)-f(x{+}0)| < \infty
+  \end{align}
   #+end_quote
 
 ** 不連続点での評価
 - 定理で評価した式
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f_{r}(x)-f(x)
-      =\int_{-\pi}^{\pi}P_{r}(y)\{f(x-y)-f(x)\}dy
-    \end{equation}
-    \begin{equation}
-      P_{r}(x)
-      =\frac{1}{2\pi}
-      \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f_{r}(x)-f(x)
+    =\int_{-\pi}^{\pi}P_{r}(y)\{f(x-y)-f(x)\}dy
+  \end{equation}
+  \begin{equation}
+    P_{r}(x)
+    =\frac{1}{2\pi}
+    \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - \(P_{r}\) の性質
   #+begin_quote
   \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
-  #+begin_src latex
-    \begin{align}
-      \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
-      \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
+    \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - 不連続点まわりでの評価
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
-      &\le
-	\Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
-      &\quad+\Bigl|\int_{0}^{\delta}P_{r}(y)\{f(x-y)-f(x{-}0)\}dy\Bigr|\\
-      &\le
-	\frac{1}{2}\sup_{-\delta < y < 0}|f(x-y)-f(x{+}0)|\\
-      &\quad+\frac{1}{2}\sup_{0 < y < \delta}|f(x-y)-f(x{-}0)|\\
-      &\to^{\delta\to0}0
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
+    &\le
+      \Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
+    &\quad+\Bigl|\int_{0}^{\delta}P_{r}(y)\{f(x-y)-f(x{-}0)\}dy\Bigr|\\
+    &\le
+      \frac{1}{2}\sup_{-\delta < y < 0}|f(x-y)-f(x{+}0)|\\
+    &\quad+\frac{1}{2}\sup_{0 < y < \delta}|f(x-y)-f(x{-}0)|\\
+    &\to^{\delta\to0}0
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - 不連続点の Fourier 級数展開
   #+begin_quote
   関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
-  #+begin_src latex
-    \begin{equation}
-      \tilde{f}(x)
-      =\lim_{r\to1}\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
-      =\frac{f(x{-}0)+f(x{+}0)}{2}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \tilde{f}(x)
+    =\lim_{r\to1}\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
+    =\frac{f(x{-}0)+f(x{+}0)}{2}
+  \end{equation}
   が成り立つので，
   \(f\) の不連続点での Fourier 級数展開は
   両側からの極限の平均値となる．
@@ -776,17 +714,15 @@
 - 以下の関数 \(f\) は \(x=0\) で不連続となる．
   Fourier 級数での \(f(0)\) の値を求めよ．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-	0,&x\le 0\\
-	1,&x > 0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      0,&x\le 0\\
+      1,&x > 0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -795,16 +731,14 @@
 :END:
 - Fourier 級数展開に代入すればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(0)
-      &=\frac{1}{2}+\sum_{n\not=0}\frac{i\{(-1)^{n}-1\}}{2\pi n}\\
-      &=\frac{1}{2}+\sum_{n=1}^{\infty}
-	\left\{\frac{i\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i\{(-1)^{n}-1\}}{2\pi n}\right\}\\
-      &=\frac{1}{2}
-	=\frac{f(0{-}0)+f(0{+}0)}{2}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(0)
+    &=\frac{1}{2}+\sum_{n\not=0}\frac{i\{(-1)^{n}-1\}}{2\pi n}\\
+    &=\frac{1}{2}+\sum_{n=1}^{\infty}
+      \left\{\frac{i\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i\{(-1)^{n}-1\}}{2\pi n}\right\}\\
+    &=\frac{1}{2}
+      =\frac{f(0{-}0)+f(0{+}0)}{2}
+  \end{align}
   #+end_quote
 
 ** 練習問題
@@ -814,17 +748,15 @@
 - 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
   Fourier 級数での \(f(\pi/2)\) の値を求めよ．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        1,&|x|\le\pi/2\\
-        0,&|x|>\pi/2
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      1,&|x|\le\pi/2\\
+      0,&|x|>\pi/2
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
 ** COMMENT 解答例
 :PROPERTIES:
@@ -832,16 +764,14 @@
 :END:
 - Fourier 級数展開に代入すればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(\pi/2)
-      &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{i\pi/2\cdot n}\\
-      &=\frac{1}{2}+\sum_{n=1}^{\infty}
-        \left\{\frac{i^{-2n+1}\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i^{2n+1}\{(-1)^{n}-1\}}{2\pi n}\right\}\\
-      &=\frac{1}{2}
-        =\frac{f(\pi/2{-}0)+f(\pi/2{+}0)}{2}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(\pi/2)
+    &=\frac{1}{2}+\sum_{n\not=0}\frac{i^{n+1}\{(-1)^{n}-1\}}{2\pi n}e^{i\pi/2\cdot n}\\
+    &=\frac{1}{2}+\sum_{n=1}^{\infty}
+      \left\{\frac{i^{-2n+1}\{(-1)^{-n}-1\}}{-2\pi n}+\frac{i^{2n+1}\{(-1)^{n}-1\}}{2\pi n}\right\}\\
+    &=\frac{1}{2}
+      =\frac{f(\pi/2{-}0)+f(\pi/2{+}0)}{2}
+  \end{align}
   #+end_quote
 
 
@@ -852,14 +782,12 @@
   周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
   *畳み込み* (合成積; convolution) \(h\)
   は以下で定義される．
-  #+begin_src latex
-    \begin{align}
-      h(x)
-      &=\int_{-\pi}^{\pi}f(x-y)g(y)dy \\
-      &=\int_{-\pi}^{\pi}f(y)g(x-y)dy \\
-      &= f*g(x)
-    \end{align}
-  #+end_src
+  \begin{align}
+    h(x)
+    &=\int_{-\pi}^{\pi}f(x-y)g(y)dy \\
+    &=\int_{-\pi}^{\pi}f(y)g(x-y)dy \\
+    &= f*g(x)
+  \end{align}
   #+end_quote
   - /[[color:orange][関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
     変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ]]/
@@ -868,11 +796,9 @@
 - 定義
   #+begin_quote
   関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
-  #+begin_src latex
-    \begin{equation}
-      \|f\|_{L^{p}}=\left(\int_{\Omega}|f(x)|^{p}dx\right)^{1/p}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \|f\|_{L^{p}}=\left(\int_{\Omega}|f(x)|^{p}dx\right)^{1/p}
+  \end{equation}
   ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間．
   #+end_quote
   - /[[color:orange][内積から自然に導かれたノルムは \(L^{2}\) ノルムである]]/
@@ -880,24 +806,20 @@
 ** @@latex:@@\(L^{p}\) 空間
 - 定義
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      L^{p}(\Omega)
-      &=\left\{f\;\Big|\int_{\Omega}|f(x)|^{p}dx < \infty\right\}\\
-      &=\left\{f\;\big|\|f\|_{L^{p}} < \infty\right\}
-    \end{align}
-  #+end_src
+  \begin{align}
+    L^{p}(\Omega)
+    &=\left\{f\;\Big|\int_{\Omega}|f(x)|^{p}dx < \infty\right\}\\
+    &=\left\{f\;\big|\|f\|_{L^{p}} < \infty\right\}
+  \end{align}
   #+end_quote
 
 ** Riemann-Lebesgue の定理
 - 定理
   #+begin_quote
   \(f\in L^{1}(-\pi,\pi)\) の Fourier 係数 \(a_{n}=\langle f,\phi_{n}\rangle\) は
-  #+begin_src latex
-    \begin{equation}
-      \lim_{n\to\pm\infty}a_{n}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{n\to\pm\infty}a_{n}=0
+  \end{equation}
   となる．
   #+end_quote
 
@@ -905,15 +827,13 @@
 - 証明
   #+begin_quote
   \(f_r\) の Fourier 係数を \(a_{n}(r)\) と書くと
-  #+begin_src latex
-    \begin{align}
-      |a_{n}|
-      &\le|a_{n}-a_{n}(r)|+|a_{n}(r)|\\
-      &=|a_{n}-a_{n}(r)|+|a_{n}|r^{|n|}\\
-      &\le\frac{1}{\sqrt{2\pi}}\|f-P_{r}*f\|_{L^{1}}
-	+\frac{1}{\sqrt{2\pi}}r^{|n|}\|f\|_{L^{1}}
-    \end{align}
-  #+end_src
+  \begin{align}
+    |a_{n}|
+    &\le|a_{n}-a_{n}(r)|+|a_{n}(r)|\\
+    &=|a_{n}-a_{n}(r)|+|a_{n}|r^{|n|}\\
+    &\le\frac{1}{\sqrt{2\pi}}\|f-P_{r}*f\|_{L^{1}}
+      +\frac{1}{\sqrt{2\pi}}r^{|n|}\|f\|_{L^{1}}
+  \end{align}
   ただし \(*\) は畳み込みを表す．
 
   ここで \(r\) を1に近くとれば第1項はいくらでも小さくすることができる．
@@ -925,15 +845,13 @@
 - (証明のつづき)
   #+begin_quote
   最後の不等号は以下を用いればよい．
-  #+begin_src latex
-    \begin{align}
-      |a_{n}|
-      &=\left|\int f(x)\frac{1}{\sqrt{2\pi}}e^{-inx}dx\right|\\
-      &\le\frac{1}{\sqrt{2\pi}}\int\left|f(x)e^{-inx}\right|dx\\
-      &=\frac{1}{\sqrt{2\pi}}\int\left|f(x)\right|dx
-	=\frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
-    \end{align}
-  #+end_src
+  \begin{align}
+    |a_{n}|
+    &=\left|\int f(x)\frac{1}{\sqrt{2\pi}}e^{-inx}dx\right|\\
+    &\le\frac{1}{\sqrt{2\pi}}\int\left|f(x)e^{-inx}\right|dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int\left|f(x)\right|dx
+      =\frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
+  \end{align}
   #+end_quote
   - \(L^{1}\) 関数であれば係数の存在が保証されることを示している
 
@@ -946,19 +864,15 @@
   \(f'\in L^{2}\cap L^{1}\) であるとする．
   \(f,f'\) の Fourier 級数展開をそれぞれ
   以下で表す．
-  #+begin_src latex
-    \begin{align}
-      f(x)&=\sum_{n} a_{n}\phi_{n}(x)\\
-      f'(x)&=\sum_{n} b_{n}\phi_{n}(x)
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x)&=\sum_{n} a_{n}\phi_{n}(x)\\
+    f'(x)&=\sum_{n} b_{n}\phi_{n}(x)
+  \end{align}
   \(f\) を項別に微分して
   \(a_{n}\) と \(b_{n}\) の間の以下の関係を得る．
-  #+begin_src latex
-    \begin{equation}
-      b_{n}=in\cdot a_{n}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    b_{n}=in\cdot a_{n}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
@@ -982,11 +896,9 @@
   \(1/p+1/q=1,\,p,q>0\)
   とする．
   このとき
-  #+begin_src latex
-    \begin{equation}
-      \left|\int_{\Omega} u(x)v(x)dx\right|\leq\|u\|_{L^{p}}\|v\|_{L^{q}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \left|\int_{\Omega} u(x)v(x)dx\right|\leq\|u\|_{L^{p}}\|v\|_{L^{q}}
+  \end{equation}
   #+end_quote
   - /[[color:orange][Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である]]/
     
@@ -995,14 +907,12 @@
   #+begin_quote
   対数関数の凸性と \(1/p+1/q=1\) から
   任意の \(a,b>0\) について
-  #+begin_src latex
-    \begin{equation}
-      \log\left(\frac{a^{p}}{p}+\frac{b^{q}}{q}\right)
-      \geq
-      \frac{1}{p}\log a^{p} + \frac{1}{q}\log b^{q}
-      = \log ab
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \log\left(\frac{a^{p}}{p}+\frac{b^{q}}{q}\right)
+    \geq
+    \frac{1}{p}\log a^{p} + \frac{1}{q}\log b^{q}
+    = \log ab
+  \end{equation}
   が成り立つ．
   #+end_quote
   - /[[color:orange][凸性について曖昧な者は意味を確認せよ]]/
@@ -1011,60 +921,50 @@
 - (証明のつづき)
   #+begin_quote
   また対数関数の単調性から
-  #+begin_src latex
-    \begin{equation}
-      \frac{a^{p}}{p}+\frac{b^{q}}{q}
-      \ge
-      ab
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{a^{p}}{p}+\frac{b^{q}}{q}
+    \ge
+    ab
+  \end{equation}
   が成り立つ．したがって
-  #+begin_src latex
-    \begin{align}
-      &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
-        \left|\int u(x)v(x)dx\right|
-        \le
-	\int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
-      &\quad\le
-	\frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
-	+ \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
-      &\quad=\frac{1}{p}+\frac{1}{q}=1
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
+      \left|\int u(x)v(x)dx\right|
+      \le
+      \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
+    &\quad\le
+      \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
+      + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
+    &\quad=\frac{1}{p}+\frac{1}{q}=1
+  \end{align}
   #+end_quote
 
 ** 畳み込みのノルム
 - 定理
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(x)=\int_{-\pi}^{\pi}f(x-y)g(y)dy
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(x)=\int_{-\pi}^{\pi}f(x-y)g(y)dy
+  \end{equation}
   とするとき
-  #+begin_src latex
-    \begin{equation}
-      \|h\|_{L^{p}}\leq\|g\|_{L^{1}}\|f\|_{L^{p}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \|h\|_{L^{p}}\leq\|g\|_{L^{1}}\|f\|_{L^{p}}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 証明
   #+begin_quote
   \(1/p+1/q=1\) とする．
-  #+begin_src latex
-    \begin{align}
-      |h(x)|
-      &\le
-	\int|f(x-y)g(y)|dy\\
-      &=
-	\int|f(x-y)||g(y)|^{\frac{1}{p}}|g(y)|^{\frac{1}{q}}dy\\
-      &\le
-	\left(\int|f(x-y)|^{p}|g(y)|dy\right)^{\frac{1}{p}}
-	\left(\int|g(y)|dy\right)^{\frac{1}{q}}
-    \end{align}
-  #+end_src
+  \begin{align}
+    |h(x)|
+    &\le
+      \int|f(x-y)g(y)|dy\\
+    &=
+      \int|f(x-y)||g(y)|^{\frac{1}{p}}|g(y)|^{\frac{1}{q}}dy\\
+    &\le
+      \left(\int|f(x-y)|^{p}|g(y)|dy\right)^{\frac{1}{p}}
+      \left(\int|g(y)|dy\right)^{\frac{1}{q}}
+  \end{align}
   が成り立つ．
   #+end_quote
 
@@ -1072,35 +972,31 @@
 - (証明のつづき)
   #+begin_quote
   これより
-  #+begin_src latex
-    \begin{align}
-      \|h\|_{L^{p}}^{p}
-      &=\int|h(x)|^{p}dx\\
-      &\le
-	\|g\|_{L^{1}}^{\frac{p}{q}}
-	\int\int|f(x-y)|^{p}|g(y)|dydx\\
-      &=
-	\|g\|_{L^{1}}^{\frac{p}{q}}
-	\int|f(x-y)|^{p}dx\int|g(y)|dy\\
-      &=
-	\|g\|_{L^{1}}^{\frac{p}{q}+1}
-	\|f\|_{L^{p}}^{p}
-	=
-	\|g\|_{L^{1}}^{p}
-	\|f\|_{L^{p}}^{p}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \|h\|_{L^{p}}^{p}
+    &=\int|h(x)|^{p}dx\\
+    &\le
+      \|g\|_{L^{1}}^{\frac{p}{q}}
+      \int\int|f(x-y)|^{p}|g(y)|dydx\\
+    &=
+      \|g\|_{L^{1}}^{\frac{p}{q}}
+      \int|f(x-y)|^{p}dx\int|g(y)|dy\\
+    &=
+      \|g\|_{L^{1}}^{\frac{p}{q}+1}
+      \|f\|_{L^{p}}^{p}
+      =
+      \|g\|_{L^{1}}^{p}
+      \|f\|_{L^{p}}^{p}
+  \end{align}
   #+end_quote
 
 ** 畳み込みの Fourier 級数
 - 係数の存在
   #+begin_quote
   先の定理において \(p=1\) とすると
-  #+begin_src latex
-    \begin{equation}
-      \|h\|_{L^{1}}\le\|f\|_{L^{1}}\|g\|_{L^{1}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \|h\|_{L^{1}}\le\|f\|_{L^{1}}\|g\|_{L^{1}}
+  \end{equation}
   となり，
   \(f,g\in L^{1}(-\pi,\pi)\) なら
   \(h\in L^{1}(-\pi,\pi)\) となる．
@@ -1112,17 +1008,15 @@
 - 係数の関係
   #+begin_quote
   \(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
-  #+begin_src latex
-    \begin{align}
-      c_{n}
-      &=\frac{1}{\sqrt{2\pi}}\int h(x) e^{-inx}dx\\
-      &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)g(y)dy\; e^{-inx}dx\\
-      &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)e^{-in(x-y)}g(y)e^{-iny}dxdy\\
-      &=\sqrt{2\pi}\cdot\frac{1}{\sqrt{2\pi}}\int f(z)e^{-inz}dz
-	\cdot\frac{1}{\sqrt{2\pi}}\int g(y)e^{-iny}dy\\
-      &=\sqrt{2\pi}a_{n}b_{n}
-    \end{align}
-  #+end_src
+  \begin{align}
+    c_{n}
+    &=\frac{1}{\sqrt{2\pi}}\int h(x) e^{-inx}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)g(y)dy\; e^{-inx}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int\int f(x-y)e^{-in(x-y)}g(y)e^{-iny}dxdy\\
+    &=\sqrt{2\pi}\cdot\frac{1}{\sqrt{2\pi}}\int f(z)e^{-inz}dz
+      \cdot\frac{1}{\sqrt{2\pi}}\int g(y)e^{-iny}dy\\
+    &=\sqrt{2\pi}a_{n}b_{n}
+  \end{align}
   という関係が成り立つ．
   #+end_quote
 
@@ -1137,17 +1031,15 @@
 :END:
 - 関数 \(f\) を
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        0,&x\le 0\\
-        1,&x > 0
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      0,&x\le 0\\
+      1,&x > 0
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
   とするとき，畳み込み \(f*f\) を求めよ．
 - 関数 \(f*f\) を Fourier 級数展開せよ．
@@ -1158,23 +1050,21 @@
 :END:
 - 周期関数であることに注意して定義に従って計算する．
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x-y)
-      &=
-	\begin{cases}
-	  0,&x\le y\\
-	  1,&x > y
-	\end{cases}\\
-      f*f(x)
-      &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
-      &=
-	\begin{cases}
-	  x, &x \ge 0\\
-	  -x, &x < 0 
-	\end{cases}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x-y)
+    &=
+      \begin{cases}
+        0,&x\le y\\
+        1,&x > y
+      \end{cases}\\
+    f*f(x)
+    &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
+    &=
+      \begin{cases}
+        x, &x \ge 0\\
+        -x, &x < 0 
+      \end{cases}
+  \end{align}
   #+end_quote
   - 図を描いて確認せよ．
 
@@ -1184,17 +1074,15 @@
 :END:
 - 関数 \(f\) を
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=
-      \begin{cases}
-        1,&|x|\le\pi/2\\
-        0,&|x|>\pi/2
-      \end{cases}
-      \quad
-      \in L^{2}(-\pi,\pi)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=
+    \begin{cases}
+      1,&|x|\le\pi/2\\
+      0,&|x|>\pi/2
+    \end{cases}
+    \quad
+    \in L^{2}(-\pi,\pi)
+  \end{equation}
   #+end_quote
   とするとき，畳み込み \(f*f\) を求めよ．
 - 関数 \(f*f\) を Fourier 級数展開せよ．
@@ -1204,24 +1092,22 @@
 :END:
 - 周期関数であることに注意して定義に従って計算する．
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x-y)
-      &=
-        \begin{cases}
-          1,&-\pi/2\le x-y\le\pi/2\\
-          0,&|x-y|>\pi/2
-        \end{cases}\\
-      f*f(x)
-      &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
-      &=
-        \begin{cases}
-          \pi-x, &x \ge 0\\
-          \pi+x, &x < 0 
-        \end{cases}
-       = \pi-|x|
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x-y)
+    &=
+      \begin{cases}
+        1,&-\pi/2\le x-y\le\pi/2\\
+        0,&|x-y|>\pi/2
+      \end{cases}\\
+    f*f(x)
+    &=\int_{-\pi}^{\pi}f(x-y)f(y)dy \\
+    &=
+      \begin{cases}
+        \pi-x, &x \ge 0\\
+        \pi+x, &x < 0 
+      \end{cases}
+     = \pi-|x|
+  \end{align}
   #+end_quote
   - \(f(x-y),f(y)\)ともに1となる範囲を考えれば良い
   - \(|x|\in L^{2}(-\pi,\pi)\) の Fourier 級数展開と比較せよ
@@ -1230,17 +1116,13 @@
 * 今回のまとめ
 - Fourier 級数の性質
   - Fourier 級数展開:
-    #+begin_src latex
-      \begin{equation}
-	f(x)
-	=\sum_{-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-      \end{equation}
-    #+end_src
-    #+begin_src latex
-      \begin{equation}
-	\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      f(x)
+      =\sum_{-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+    \end{equation}
+    \begin{equation}
+      \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+    \end{equation}
   - 不連続点での Foureir 級数の値は平均値
   - 連続(滑らか)な関数に高い周波数は含まれない(Riemann-Lebesgue の定理)
   - 畳み込みの Fourier 係数は元の関数の係数の積に比例する
