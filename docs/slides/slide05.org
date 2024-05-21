@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2024-04-10 12:06:09 mura>
+# Time-stamp: <2024-05-21 18:01:14 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
@@ -668,8 +668,8 @@
   #+begin_quote
   \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
   \begin{align}
-    \int_{-\infty}^{0}P_{r}(y)dy&=\frac{1}{2}\\
-    \int_{0}^{\infty}P_{r}(y)dy&=\frac{1}{2}
+    \int_{-\pi}^{0}P_{r}(y)dy&=\frac{1}{2}\\
+    \int_{0}^{\pi}P_{r}(y)dy&=\frac{1}{2}
   \end{align}
   #+end_quote
 
@@ -677,9 +677,9 @@
 - 不連続点まわりでの評価
   #+begin_quote
   \begin{align}
-    &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
-    &\le
-      \Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
+    % &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
+    % &\le
+    &\Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
     &\quad+\Bigl|\int_{0}^{\delta}P_{r}(y)\{f(x-y)-f(x{-}0)\}dy\Bigr|\\
     &\le
       \frac{1}{2}\sup_{-\delta < y < 0}|f(x-y)-f(x{+}0)|\\
