@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
-# Time-stamp: <2023-06-09 10:38:36 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-05-28 13:05:53 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -24,25 +24,19 @@
   以下のように
   Fourier 級数展開
   される．
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-    \end{align}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-    \end{equation}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+  \end{align}
+  \begin{equation}
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \end{equation}
   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
   以下で定義する．
-  #+begin_src latex
-    \begin{equation}
-      \langle f,g\rangle
-      =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \langle f,g\rangle
+    =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+  \end{equation}
   #+end_quote
 
 ** Fourier 変換と反転公式
@@ -52,43 +46,37 @@
   上の関数
   \(f\)
   に対して
-  #+begin_src latex
-    \begin{align}
-      \hat{f}(\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
-      &\text{(Fourier 変換)}\\
-      f(x)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
-      &\text{(逆 Fourier 変換)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{f}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+    &\text{(Fourier 変換)}\\
+    f(x)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+    &\text{(逆 Fourier 変換)}
+  \end{align}
   で定義する．
   #+end_quote
 
 ** 反転公式
 - 定理
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
-      =\lim_{\epsilon\to0}
-      \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
-      \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
+    =\lim_{\epsilon\to0}
+    \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+    \hat{f}(\omega)e^{-\epsilon\omega^{2}+i\omega x}d\omega
+  \end{equation}
   より正確には
   \(f\in L^{1}\cap L^{p}\)
   であれば，
   上の式は
   \(L^{p}\)
   の意味で成り立つと表現される．
-  #+begin_src latex
-    \begin{equation}
-      \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{\epsilon\to0}\|G_{\epsilon}*f-f\|_{L^{p}}=0
+  \end{equation}
   #+end_quote
 
 
@@ -103,11 +91,9 @@
 - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
   Fourier 級数展開せよ．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=|\sin(x)|
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=|\sin(x)|
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -120,39 +106,35 @@
 #+reveal: split
 - 関数 \(f\) は別の表現も可能
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=|\sin(x)|\\
-      &=
-	\begin{cases}
-	  -\sin(x),&x\le0\\
-	  \sin(x),&x>0
-	\end{cases}\\
-      &=
-	\begin{cases}
-	  \cos(x+\pi/2),&x\le0\\
-	  \cos(x-\pi/2),&x>0
-	\end{cases}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=|\sin(x)|\\
+    &=
+      \begin{cases}
+        -\sin(x),&x\le0\\
+        \sin(x),&x>0
+      \end{cases}\\
+    &=
+      \begin{cases}
+        \cos(x+\pi/2),&x\le0\\
+        \cos(x-\pi/2),&x>0
+      \end{cases}
+  \end{align}
   #+end_quote
   - 前回の計算結果を利用できる．
 
 #+reveal: split  
 - Fourier 級数展開
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(x)
-      &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
-	+\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
-      &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
-	+\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
-      &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
-      &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(x)
+    &=\frac{1}{4}e^{-i(x+\pi/2)}+\frac{1}{4}e^{i(x+\pi/2)}
+      +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x+\pi/2)}\\
+    &\quad+\frac{1}{4}e^{-i(x-\pi/2)}+\frac{1}{4}e^{i(x-\pi/2)}
+      +\sum_{n\not=\pm1}\frac{i^{n}}{2\pi}\frac{(-1)^{n}+1}{1-n^{2}}e^{in(x-\pi/2)}\\
+    &=\sum_{n\not=\pm1}\frac{(-1)^{n}+1}{\pi(1-n^{2})}e^{inx}\\
+    &=\sum_{m=-\infty}^{\infty}\frac{2}{\pi(1-4m^{2})}e^{2imx}
+  \end{align}
   #+end_quote
 
 ** 練習問題 (再掲)
@@ -161,16 +143,14 @@
 :END:
 - 関数 \(\Xi\) を以下で定義する．
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \Xi_{(a,b)}(x)
-      =
-      \begin{cases}
-	1,& x\in (a,b)\\
-	0,&\text{それ以外}
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \Xi_{(a,b)}(x)
+    =
+    \begin{cases}
+      1,& x\in (a,b)\\
+      0,&\text{それ以外}
+    \end{cases}
+  \end{equation}
   #+end_quote
   以下の関数の Fourier 変換を求めよ．
   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
@@ -183,49 +163,43 @@
 :END:
 - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \hat{f}(\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
-      &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{f}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{0}^{\infty}e^{-\alpha x}e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \left[\frac{e^{(-\alpha-i\omega)x}}{-\alpha-i\omega}\right]_{0}^{\infty}\\
+    &=\frac{1}{\sqrt{2\pi}(\alpha+i\omega)}
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - \(g(x)=e^{-\beta x^{2}}\)
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \hat{g}(\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
-      &=e^{-\frac{\omega^{2}}{4\beta}}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
-      &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
-      &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{g}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}e^{-\beta x^{2}}e^{-i\omega x}dx\\
+    &=e^{-\frac{\omega^{2}}{4\beta}}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}e^{-\beta (x+i\omega/2\beta)^{2}}dx\\
+    &=e^{-\frac{\omega^{2}}{4\beta}}\frac{1}{\sqrt{2\pi}}\sqrt{\frac{\pi}{\beta}}\\
+    &=\frac{1}{\sqrt{2\beta}}e^{-\frac{\omega^{2}}{4\beta}}
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - \(h(x)=\Xi_{(-1,1)}(x)\)
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \hat{h}(\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-1}^{1}e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
-      &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
-      &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{h}(\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-1}^{1}e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \left[\frac{e^{-i\omega x}}{-i\omega}\right]_{-1}^{1}\\
+    &=\frac{1}{i\sqrt{2\pi}\omega}(e^{i\omega}-e^{-i\omega})\\
+    &=\sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+  \end{align}
   #+end_quote
 
 
@@ -241,94 +215,78 @@
   - \(\mathcal{F}^{-1}\): 逆 Fourier 変換
   #+begin_quote
   例えば以下のように使う.
-  #+begin_src latex
-    \begin{align}
-      \hat{f}&=\mathcal{F}[f],\quad
-      &f&=\mathcal{F}^{-1}[\hat{f}]\\
-      \hat{f}(\omega)&=\mathcal{F}[f](\omega),\quad
-      &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{f}&=\mathcal{F}[f],\quad
+    &f&=\mathcal{F}^{-1}[\hat{f}]\\
+    \hat{f}(\omega)&=\mathcal{F}[f](\omega),\quad
+    &f(x)&=\mathcal{F}^{-1}[\hat{f}](x)
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - 引数に関する注意
   #+begin_quote
   関数の引数(変数)は単なる名前なので何でも良い．
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[f](\alpha)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
-      \mathcal{F}^{-1}[\hat{f}](\beta)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[f](\alpha)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
+    \mathcal{F}^{-1}[\hat{f}](\beta)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
+  \end{align}
   #+end_quote
 
 ** 絶対可積分 (\(L^{1}(-\infty,\infty)\))
 - 定義
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
-      f\in L^{1}(\mathbb{R})
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
+    f\in L^{1}(\mathbb{R})
+  \end{equation}
   #+end_quote
 - 以下ではこの条件を満たす関数を考える
 
 #+reveal: split
 - Fourier 変換の存在 (各点)
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      |\hat{f}(\omega)|
-      &=
-	\left|\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-      &<
-        \frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}|f(x)e^{-i\omega x}|dx
-	=
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}|f(x)|dx<\infty
-    \end{align}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \|\hat{f}\|_{L^{\infty}}
-      \left(=\sup_{\omega}|\hat{f}(\omega)|\right)
-      <
-      \frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
-    \end{equation}
-  #+end_src
+  \begin{align}
+    |\hat{f}(\omega)|
+    &=
+      \left|\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
+    &<
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}|f(x)e^{-i\omega x}|dx
+      =
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}|f(x)|dx<\infty
+  \end{align}
+  \begin{equation}
+    \|\hat{f}\|_{L^{\infty}}
+    \left(=\sup_{\omega}|\hat{f}(\omega)|\right)
+    <
+    \frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - \(|x|\to\infty\) での挙動
   #+begin_quote
   適当に大きな値 \(M>0\) に対して
-  #+begin_src latex
-    \begin{equation}
-      |f(x)|>\epsilon>0,\;|x|>M
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    |f(x)|>\epsilon>0,\;|x|>M
+  \end{equation}
   とすると，以下のように絶対可積分に矛盾する．
-  #+begin_src latex
-    \begin{equation}
-      \int_{-\infty}^{-M}|f(x)|dx+
-      \int_{M}^{\infty}|f(x)|dx
-      >\epsilon\times\text{(積分区間)}\to\infty
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \int_{-\infty}^{-M}|f(x)|dx+
+    \int_{M}^{\infty}|f(x)|dx
+    >\epsilon\times\text{(積分区間)}\to\infty
+  \end{equation}
   したがって以下の性質が成り立つ．
-  #+begin_src latex
-    \begin{equation}
-      \lim_{|x|\to\infty}f(x)=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{|x|\to\infty}f(x)=0
+  \end{equation}
   #+end_quote
 
 ** Parseval の定理
@@ -336,49 +294,43 @@
   #+begin_quote
   関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
   このとき以下の関係が成り立つ．
-  #+begin_src latex
-    \begin{equation}
-      \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
-      =
-      \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \langle f,g\rangle
-      =
-      \langle \hat{f},\hat{g}\rangle
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
+    =
+    \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
+  \end{equation}
+  \begin{equation}
+    \langle f,g\rangle
+    =
+    \langle \hat{f},\hat{g}\rangle
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 略証
   #+begin_quote
   反転公式と同様に収束因子を考える．
-  #+begin_src latex
-    \begin{align}
-      &\int_{-\infty}^{\infty}
-	\hat{f}(\omega)\overline{\hat{g}(\omega)}
-	e^{-\epsilon \omega^{2}}d\omega\\
-      &=
-	\int_{-\infty}^{\infty}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\cdot
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\overline{g(y)e^{-i\omega y}}dy\cdot
-	e^{-\epsilon \omega^{2}}d\omega\\
-      &=
-	\int_{-\infty}^{\infty}
-	\int_{-\infty}^{\infty}
-	f(x)\overline{g(y)}G_{\epsilon}(x-y)
-	dxdy\\
-      &=
-	\int_{-\infty}^{\infty}
-	f(x)\overline{g_{\epsilon}(x)}
-	dx
-    \end{align}
-  #+end_src
+  \begin{align}
+    &\int_{-\infty}^{\infty}
+      \hat{f}(\omega)\overline{\hat{g}(\omega)}
+      e^{-\epsilon \omega^{2}}d\omega\\
+    &=
+      \int_{-\infty}^{\infty}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\cdot
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\overline{g(y)e^{-i\omega y}}dy\cdot
+      e^{-\epsilon \omega^{2}}d\omega\\
+    &=
+      \int_{-\infty}^{\infty}
+      \int_{-\infty}^{\infty}
+      f(x)\overline{g(y)}G_{\epsilon}(x-y)
+      dxdy\\
+    &=
+      \int_{-\infty}^{\infty}
+      f(x)\overline{g_{\epsilon}(x)}
+      dx
+  \end{align}
   \(\epsilon\to0\) とすると定理の両辺が一致することがわかる．
   #+end_quote
 
@@ -387,20 +339,16 @@
   #+begin_quote
   関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
   このとき以下の関係が成り立つ．
-  #+begin_src latex
-    \begin{equation}
-      \int_{-\infty}^{\infty}|f(x)|^{2}dx
-      =
-      \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \|f\|_{L^{2}}
-      =
-      \|\hat{f}\|_{L^{2}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \int_{-\infty}^{\infty}|f(x)|^{2}dx
+    =
+    \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
+  \end{equation}
+  \begin{equation}
+    \|f\|_{L^{2}}
+    =
+    \|\hat{f}\|_{L^{2}}
+  \end{equation}
   #+end_quote
 
 ** Riemann-Lebesgue の定理(補題)
@@ -409,31 +357,27 @@
   関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
   \(f'\in L^{1}(\mathbb{R})\) とする．
   このとき以下の性質をもつ．
-  #+begin_src latex
-    \begin{equation}
-      \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
+  \end{equation}
   #+end_quote
   
 #+reveal: split
 - 略証
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      |\hat{f}(\omega)|
-      &=\left|\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
-      &<\left|\left[\frac{f(x)}{\sqrt{2\pi}}\frac{e^{-i\omega x}}{-i\omega}\right]_{-\infty}^{\infty}\right|
-	+\left|\frac{1}{i\omega}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\right|\\
-      &<\frac{1}{|\omega|}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\left|f'(x)\right|dx\\
-      &=\frac{1}{|\omega|}\frac{1}{\sqrt{2\pi}}\|f'\|_{L^{1}}
-    \end{align}
-  #+end_src
+  \begin{align}
+    |\hat{f}(\omega)|
+    &=\left|\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right|\\
+    &<\left|\left[\frac{f(x)}{\sqrt{2\pi}}\frac{e^{-i\omega x}}{-i\omega}\right]_{-\infty}^{\infty}\right|
+      +\left|\frac{1}{i\omega}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\right|\\
+    &<\frac{1}{|\omega|}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\left|f'(x)\right|dx\\
+    &=\frac{1}{|\omega|}\frac{1}{\sqrt{2\pi}}\|f'\|_{L^{1}}
+  \end{align}
   より明らか．
   #+end_quote
 
@@ -458,22 +402,20 @@
 :END:
 - 符号の反転
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[f](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-      &=\mathcal{F}[f](-\omega)
-        =\mathcal{F}^{-1}[f](\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[f](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
+    &=\mathcal{F}[f](-\omega)
+      =\mathcal{F}^{-1}[f](\omega)
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -502,19 +444,17 @@
 :END:
 - 微分
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-      &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-	+i\omega
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-      \mathcal{F}[f'](\omega)
-      &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
+    &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+      +i\omega
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+    \mathcal{F}[f'](\omega)
+    &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
+  \end{align}
   #+end_quote
   - Fourier 変換可能な関数は
     \(|x|\to\infty\) での値が 0 になるとしてよい．
@@ -535,20 +475,18 @@
 :END:
 - 高階微分
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-      &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-	+i\omega
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-      &=\text{(部分積分を繰り返す)}\\
-      \mathcal{F}[f^{(k)}](\omega)
-      &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
+    &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+      +i\omega
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
+    &=\text{(部分積分を繰り返す)}\\
+    \mathcal{F}[f^{(k)}](\omega)
+    &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
+  \end{align}
   #+end_quote
 
 ** 練習問題
@@ -559,17 +497,15 @@
   #+begin_quote
   関数 \(f,g\) の Fourier 変換と
   関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
-  #+begin_src latex
-    \begin{equation}
-      h(x)
-      =
-      \int_{-\infty}^{\infty}f(x-y)g(y)dy
-      =
-      \int_{-\infty}^{\infty}f(y)g(x-y)dy
-      =
-      f{*}g(x)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(x)
+    =
+    \int_{-\infty}^{\infty}f(x-y)g(y)dy
+    =
+    \int_{-\infty}^{\infty}f(y)g(x-y)dy
+    =
+    f{*}g(x)
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -578,28 +514,26 @@
 :END:
 - 畳み込み
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[h](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-      &=\sqrt{2\pi}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-      &=\sqrt{2\pi}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-      \mathcal{F}[f{*}g](\omega)
-      &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-	=\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[h](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
+    &=\sqrt{2\pi}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+    &=\sqrt{2\pi}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+    \mathcal{F}[f{*}g](\omega)
+    &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
+      =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
+  \end{align}
   #+end_quote
 
 ** 練習問題
@@ -618,20 +552,18 @@
 :END:
 - 移動
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-      &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-      &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-      \mathcal{F}[T_{a}[f]](\omega)
-      &=e^{-i\omega a}\mathcal{F}[f](\omega)
-	=e^{-i\omega a}\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
+    &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
+    &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
+    \mathcal{F}[T_{a}[f]](\omega)
+    &=e^{-i\omega a}\mathcal{F}[f](\omega)
+      =e^{-i\omega a}\hat{f}(\omega)
+  \end{align}
   #+end_quote
 
 ** 練習問題
@@ -650,18 +582,16 @@
 :END:
 - 拡大縮小
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-      &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-      \mathcal{F}[D_{b}[f]](\omega)
-      &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-	=\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
+    &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
+    \mathcal{F}[D_{b}[f]](\omega)
+    &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
+      =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
+  \end{align}
   #+end_quote
 
 
@@ -678,22 +608,20 @@
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[f](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
-      &=\mathcal{F}[f](-\omega)
-        =\mathcal{F}^{-1}[f](\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[f](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(-x)e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{\infty}^{-\infty}f(z)e^{i\omega z}(-dz)\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{i\omega z}dz\\
+    &=\mathcal{F}[f](-\omega)
+      =\mathcal{F}^{-1}[f](\omega)
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -716,19 +644,17 @@
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
-      &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-	+i\omega
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
-      \mathcal{F}[f'](\omega)
-      &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f'(x)e^{-i\omega x}dx\\
+    &=\left[\frac{f(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+      +i\omega
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\\
+    \mathcal{F}[f'](\omega)
+    &=i\omega\mathcal{F}[f](\omega)=i\omega\hat{f}(\omega)
+  \end{align}
   - Fourier 変換可能な関数は
     \(|x|\to\infty\) での値が 0 になるとしてよい．
   #+end_quote
@@ -743,20 +669,18 @@
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
-      &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
-	+i\omega
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
-      &=\text{(部分積分を繰り返す)}\\
-      \mathcal{F}[f^{(k)}](\omega)
-      &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f^{(k)}(x)e^{-i\omega x}dx\\
+    &=\left[\frac{f^{(k-1)}(x)e^{-i\omega x}}{\sqrt{2\pi}}\right]_{-\infty}^{\infty}
+      +i\omega
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f^{(k-1)}(x)e^{-i\omega x}dx\\
+    &=\text{(部分積分を繰り返す)}\\
+    \mathcal{F}[f^{(k)}](\omega)
+    &=(i\omega)^{k}\mathcal{F}[f](\omega)=(i\omega)^{k}\hat{f}(\omega)
+  \end{align}
   #+end_quote
 
 ** 畳み込み
@@ -764,44 +688,40 @@
   #+begin_quote
   関数 \(f,g\) の Fourier 変換と
   関数 \(h=f{*}g\) の Fourier 変換の関係を考えよ．
-  #+begin_src latex
-    \begin{equation}
-      h(x)
-      =
-      \int_{-\infty}^{\infty}f(x-y)g(y)dy
-      =
-      \int_{-\infty}^{\infty}f(y)g(x-y)dy
-      =
-      f{*}g(x)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(x)
+    =
+    \int_{-\infty}^{\infty}f(x-y)g(y)dy
+    =
+    \int_{-\infty}^{\infty}f(y)g(x-y)dy
+    =
+    f{*}g(x)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[h](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
-      &=\sqrt{2\pi}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-      &=\sqrt{2\pi}
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
-      \mathcal{F}[f{*}g](\omega)
-      &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
-	=\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[h](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f{*}g(x)e^{-i\omega x}dx\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(x-y)g(y)dy e^{-i\omega x}dx\\
+    &=\sqrt{2\pi}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-y)e^{-i\omega(x-y)}dx\cdot
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+    &=\sqrt{2\pi}
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\cdot
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}g(y)e^{-i\omega y}dy\\
+    \mathcal{F}[f{*}g](\omega)
+    &=\sqrt{2\pi}\mathcal{F}[f](\omega)\mathcal{F}[g](\omega)
+      =\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)
+  \end{align}
   #+end_quote
 
 ** 移動
@@ -814,20 +734,18 @@
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
-      &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
-      &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
-      \mathcal{F}[T_{a}[f]](\omega)
-      &=e^{-i\omega a}\mathcal{F}[f](\omega)
-	=e^{-i\omega a}\hat{f}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-a)e^{-i\omega x}dx\\
+    &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(x-a)e^{-i\omega (x-a)}dx\\
+    &=e^{-i\omega a}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega z}dz\\
+    \mathcal{F}[T_{a}[f]](\omega)
+    &=e^{-i\omega a}\mathcal{F}[f](\omega)
+      =e^{-i\omega a}\hat{f}(\omega)
+  \end{align}
   #+end_quote
 
 ** 拡大縮小
@@ -840,18 +758,16 @@
 #+reveal: split
 - 解答例
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[g](\omega)
-      &=\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
-      &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
-      \mathcal{F}[D_{b}[f]](\omega)
-      &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
-	=\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[g](\omega)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(bx)e^{-i\omega x}dx\\
+    &=\frac{1}{b}\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(z)e^{-i\omega/b\cdot z}dz\\
+    \mathcal{F}[D_{b}[f]](\omega)
+    &=\frac{1}{b}\mathcal{F}[f]\left(\frac{\omega}{b}\right)
+      =\frac{1}{b}\hat{f}\left(\frac{\omega}{b}\right)
+  \end{align}
   #+end_quote
 
 ** 演算との関係(まとめ)
@@ -885,11 +801,9 @@
 :END:
 - 関数
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)=\frac{1}{x-ia}\;(a>0)        
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)=\frac{1}{x-ia}\;(a>0)        
+  \end{equation}
   #+end_quote
   の Fourier 変換を求めよ．
   - /[[color:orange][Fourier 変換と逆 Fourier 変換の関係を利用]]/
@@ -901,47 +815,39 @@
 :END:
 - 以下の Fourier 変換を利用
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      g(x)
-      &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
-      \hat{g}(\omega)
-      &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
-      &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    g(x)
+    &=e^{- a x}\Xi_{(0,\infty)}(x)\;(a>0)\\
+    \hat{g}(\omega)
+    &=\frac{1}{\sqrt{2\pi}(a+i\omega)}\\
+    &=\frac{-i}{\sqrt{2\pi}(\omega-ia)}
+  \end{align}
   #+end_quote
 - 関数 \(f\) は \(\hat{g}\) で表される
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(x)
-      =i\sqrt{2\pi}\hat{g}(x)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(x)
+    =i\sqrt{2\pi}\hat{g}(x)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - Fourier 変換と逆 Fourier 変換の関係
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}[f](-\omega)
-      =\mathcal{F}^{-1}[f](\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}[f](-\omega)
+    =\mathcal{F}^{-1}[f](\omega)
+  \end{equation}
   #+end_quote
 - 整理すると
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}[f](\omega)
-      &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
-      &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
-      &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
-      &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \mathcal{F}[f](\omega)
+    &=i\sqrt{2\pi}\mathcal{F}[\hat{g}](\omega)\\
+    &=i\sqrt{2\pi}\mathcal{F}^{-1}[\hat{g}](-\omega)\\
+    &=i\sqrt{2\pi}e^{-a (-\omega)}\Xi_{(0,\infty)}(-\omega)\\
+    &=i\sqrt{2\pi}e^{a\omega}\Xi_{(-\infty,0)}(\omega)
+  \end{align}
   #+end_quote
 
 ** Fourier 変換の代表的な例
@@ -951,16 +857,14 @@
 - 定義関数
   #+begin_quote
   関数 \(\Xi\) を以下で定義する．
-  #+begin_src latex
-    \begin{equation}
-      \Xi_{(a,b)}(x)
-      =
-      \begin{cases}
-	1,& x\in (a,b)\\
-	0,&\text{それ以外}
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \Xi_{(a,b)}(x)
+    =
+    \begin{cases}
+      1,& x\in (a,b)\\
+      0,&\text{それ以外}
+    \end{cases}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
