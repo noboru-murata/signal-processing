@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2023-06-29 15:03:12 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-06-19 17:10:01 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -34,45 +34,37 @@
 ** 線形時不変フィルタの数学的表現
 - フィルタの積分表現
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
+  \end{equation}
   \(h\) : インパルス応答 = フィルタの表現
   #+end_quote
 
 ** Fourier変換による表現
 - 時間領域では畳み込み積分
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      g(t)
-      =\int_{-\infty}^{\infty}h(t-s)f(s)ds
-      = h{*}f(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)
+    =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+    = h{*}f(t)
+  \end{equation}
   #+end_quote
 - 周波数領域では関数の積
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{g}(\omega)
-      =
-      \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{g}(\omega)
+    =
+    \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+  \end{equation}
   #+end_quote
 
 ** インパルス応答
 - インパルス応答
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)
-      =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)
+    =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+  \end{equation}
   #+end_quote
 - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力
 - 物理的には
@@ -89,89 +81,75 @@
 ** 入出力の関係
 - 時間領域
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      V_{in}(t)
-      =CR\frac{d}{dt}V_{out}(t)
-      +V_{out}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{in}(t)
+    =CR\frac{d}{dt}V_{out}(t)
+    +V_{out}(t)
+  \end{equation}
   #+end_quote
 - 周波数領域
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{V}_{in}(\omega)
-      =i\omega CR\hat{V}_{out}(\omega)
-      +\hat{V}_{out}(\omega)
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      \hat{V}_{out}(\omega)
-      =
-      \frac{1}{i\omega CR+1}
-      \hat{V}_{in}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{V}_{in}(\omega)
+    =i\omega CR\hat{V}_{out}(\omega)
+    +\hat{V}_{out}(\omega)
+  \end{equation}
+  \begin{equation}
+    \hat{V}_{out}(\omega)
+    =
+    \frac{1}{i\omega CR+1}
+    \hat{V}_{in}(\omega)
+  \end{equation}
   #+end_quote
 
 ** インパルス応答 (逆 Fourier 変換)
 - フィルタの Fourier 変換
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{h}(\omega)
-      =\frac{1}{\sqrt{2\pi}i\omega CR+1}
-      =\frac{1}{\sqrt{2\pi}iCR}\frac{1}{\omega -i/CR}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{h}(\omega)
+    =\frac{1}{\sqrt{2\pi}i\omega CR+1}
+    =\frac{1}{\sqrt{2\pi}iCR}\frac{1}{\omega -i/CR}
+  \end{equation}
   #+end_quote
 - 逆 Fourier 変換
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}^{-1}[\hat{h}](t)
-      =
-      h(t)
-      =
-      \begin{cases}
-	0,&t<0\\
-	\frac{1}{CR}e^{-\frac{t}{CR}},&t>0
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}^{-1}[\hat{h}](t)
+    =
+    h(t)
+    =
+    \begin{cases}
+      0,&t<0\\
+      \frac{1}{CR}e^{-\frac{t}{CR}},&t>0
+    \end{cases}
+  \end{equation}
   #+end_quote
 
 ** インパルス応答 (矩形波の極限)
 - 矩形波の出力
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)
-      =
-      \begin{cases}
-	0,&t \le 0\\
-	\frac{1}{\Delta}(1-e^{-\frac{t}{CR}}),&0 < t\le\Delta\\
-	\frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}},&\Delta< t
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)
+    =
+    \begin{cases}
+      0,&t \le 0\\
+      \frac{1}{\Delta}(1-e^{-\frac{t}{CR}}),&0 < t\le\Delta\\
+      \frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}},&\Delta< t
+    \end{cases}
+  \end{equation}
   #+end_quote
 - \(\Delta\to 0\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)
-      =
-      \lim_{\Delta\to0}V_{out}(t) 
-      =
-      \begin{cases}
-	0,&t\le0\\
-	\frac{1}{CR}e^{-\frac{t}{CR}},&t>0
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)
+    =
+    \lim_{\Delta\to0}V_{out}(t) 
+    =
+    \begin{cases}
+      0,&t\le0\\
+      \frac{1}{CR}e^{-\frac{t}{CR}},&t>0
+    \end{cases}
+  \end{equation}
   #+end_quote
 
 
@@ -185,22 +163,18 @@
 :END:
 - 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \phi_{n}(t)=\frac{1}{\sqrt{2\pi}}e^{int}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \phi_{n}(t)=\frac{1}{\sqrt{2\pi}}e^{int}
+  \end{equation}
   #+end_quote
   としたとき，
   周期 \(2\pi\cdot 2B\) の基底は
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \psi_{n}(t)
-      =
-      a\cdot \phi_{n}\left(b t\right)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \psi_{n}(t)
+    =
+    a\cdot \phi_{n}\left(b t\right)
+  \end{equation}
   #+end_quote
   で構成することができる．\(a\) と \(b\) を求めよ．
 
@@ -210,14 +184,12 @@
 :END:
 - \(t\)軸の拡大縮小を考え，正規化項を計算すればよい
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      a
-      &=\frac{1}{\sqrt{2B}}\\
-      b
-      &=\frac{1}{2B}
-    \end{align}
-  #+end_src
+  \begin{align}
+    a
+    &=\frac{1}{\sqrt{2B}}\\
+    b
+    &=\frac{1}{2B}
+  \end{align}
   #+end_quote
 
 
@@ -307,12 +279,10 @@
 :END:
 - 以下の積分
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
-      e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
+    e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+  \end{equation}
   #+end_quote
   を計算しなさい．
 
@@ -322,14 +292,12 @@
 :END:
 - 定義に従って計算する
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
-      e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
-      =
-      \frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{1}{2\pi\cdot 2B}\int_{-2\pi B}^{2\pi B}
+    e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+    =
+    \frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
+  \end{equation}
   #+end_quote
   - 矩形波の Fourier 変換で出てきた sinc 関数
 
@@ -373,18 +341,14 @@
 - step 3
   #+begin_quote
   周期 \(2\pi\) の Fourier 級数展開の基底を
-  #+begin_src latex
-    \begin{equation}
-      \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \phi_{n}(\omega)=\frac{1}{\sqrt{2\pi}}e^{in\omega}
+  \end{equation}
   とすると，
   周期 \(2\pi\cdot 2B\) の基底は
-  #+begin_src latex
-    \begin{equation}
-      \psi_{n}(\omega)=\phi_{n}\left(\frac{\omega}{2B}\right)\frac{1}{\sqrt{2B}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \psi_{n}(\omega)=\phi_{n}\left(\frac{\omega}{2B}\right)\frac{1}{\sqrt{2B}}
+  \end{equation}
   となる．
   #+end_quote
 
@@ -392,34 +356,30 @@
 - step 4
   #+begin_quote
   \(\tilde{f}\) の Fourier 級数展開は
-  #+begin_src latex
-    \begin{equation}
-      \tilde{f}(\omega)
-      =
-      \sum_{n=-\infty}^{\infty}
-      \left\langle \tilde{f}, \psi_{n} \right\rangle
-      \psi_{n}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \tilde{f}(\omega)
+    =
+    \sum_{n=-\infty}^{\infty}
+    \left\langle \tilde{f}, \psi_{n} \right\rangle
+    \psi_{n}(\omega)
+  \end{equation}
   で与えられる．
   #+end_quote
 
 #+reveal: split
 - step 5
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \tilde{f}(\omega)
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	\int_{-2\pi B}^{2\pi B}\tilde{f}(\xi) 
-	e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	\int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
-	e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
-    \end{align}
-  #+end_src
+  \begin{align}
+    \tilde{f}(\omega)
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      \int_{-2\pi B}^{2\pi B}\tilde{f}(\xi) 
+      e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      \int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
+      e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
+  \end{align}
   #+end_quote
   - 1周期分の積分範囲に注意して
     \(\tilde{f}\)
@@ -430,19 +390,17 @@
 #+reveal: split
 - step 6
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \tilde{f}(\omega)
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	\int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
-	e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	\int_{-\infty}^{\infty}\hat{f}(\xi) 
-	e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
-    \end{align}
-  #+end_src
+  \begin{align}
+    \tilde{f}(\omega)
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      \int_{-2\pi B}^{2\pi B}\hat{f}(\xi) 
+      e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      \int_{-\infty}^{\infty}\hat{f}(\xi) 
+      e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
+  \end{align}
   #+end_quote
   - \(\hat{f}\) 
     は区間
@@ -452,60 +410,52 @@
 #+reveal: split
 - step 7
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \tilde{f}(\omega)
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	\int_{-\infty}^{\infty}\hat{f}(\xi) 
-	e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
-      &=\frac{1}{\sqrt{2\pi}\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	f\left(-\frac{n}{2B}\right)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \tilde{f}(\omega)
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      \int_{-\infty}^{\infty}\hat{f}(\xi) 
+      e^{-i\left(\frac{n}{2B}\right)\xi}d\xi\\
+    &=\frac{1}{\sqrt{2\pi}\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      f\left(-\frac{n}{2B}\right)
+  \end{align}
   #+end_quote
   - \(x=-n/2B\)
     における
     \(\hat{f}\)
     の Fourier 逆変換
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-	f\left(-\frac{n}{2B}\right)
-	=
-	\frac{1}{\sqrt{2\pi}}
-	\int_{-\infty}^{\infty}\hat{f}(\xi) 
-	e^{i\left(-\frac{n}{2B}\right)\xi}d\xi
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      f\left(-\frac{n}{2B}\right)
+      =
+      \frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\hat{f}(\xi) 
+      e^{i\left(-\frac{n}{2B}\right)\xi}d\xi
+    \end{equation}
     #+end_quote
 
 #+reveal: split
 - step 8
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{h}_{B}(\omega)
-      =
-      \Xi_{(-2\pi B,2\pi B)}(\omega)
-      =
-      \begin{cases}
-	1,&|\omega|<2\pi B\\
-	0,&\text{otherwise}
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{h}_{B}(\omega)
+    =
+    \Xi_{(-2\pi B,2\pi B)}(\omega)
+    =
+    \begin{cases}
+      1,&|\omega|<2\pi B\\
+      0,&\text{otherwise}
+    \end{cases}
+  \end{equation}
   とすると
-  #+begin_src latex
-    \begin{align}
-      f(t)
-      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{f}(\omega)
-	e^{i\omega t}d\omega\\
-      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)\tilde{f}(\omega)
-	e^{i\omega t}d\omega
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(t)
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{f}(\omega)
+      e^{i\omega t}d\omega\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)\tilde{f}(\omega)
+      e^{i\omega t}d\omega
+  \end{align}
   #+end_quote
   - \(\hat{h}_{B}\) は
     \(\tilde{f}\)
@@ -516,21 +466,19 @@
 #+reveal: split
 - step 9
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(t)
-      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)
-	\frac{1}{\sqrt{2\pi}\cdot 2B}
-	\sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
-	f\left(-\frac{n}{2B}\right)
-	e^{i\omega t}d\omega\\
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} 
-	f\left(-\frac{n}{2B}\right)
-	\int_{-2\pi B}^{2\pi B}
-	e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(t)
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\hat{h}_{B}(\omega)
+      \frac{1}{\sqrt{2\pi}\cdot 2B}
+      \sum_{n=-\infty}^{\infty} e^{i\left(\frac{n}{2B}\right)\omega}
+      f\left(-\frac{n}{2B}\right)
+      e^{i\omega t}d\omega\\
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} 
+      f\left(-\frac{n}{2B}\right)
+      \int_{-2\pi B}^{2\pi B}
+      e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
+  \end{align}
   #+end_quote
   - \(\hat{h}_{B}\)
     の定義に従って積分領域を書き換える
@@ -538,22 +486,20 @@
 #+reveal: split
 - step 10
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      f(t)
-      &=\frac{1}{2\pi\cdot 2B}
-	\sum_{n=-\infty}^{\infty} 
-	f\left(-\frac{n}{2B}\right)
-	\int_{-2\pi B}^{2\pi B}
-	e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega\\
-      &=\sum_{n=-\infty}^{\infty} 
-	\frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
-	f\left(-\frac{n}{2B}\right)\\
-      &=\sum_{n=-\infty}^{\infty} 
-	\frac{\sin 2\pi B\left(t-\frac{n}{2B}\right)}{2\pi B\left(t-\frac{n}{2B}\right)}
-	f\left(\frac{n}{2B}\right)
-    \end{align}
-  #+end_src
+  \begin{align}
+    f(t)
+    &=\frac{1}{2\pi\cdot 2B}
+      \sum_{n=-\infty}^{\infty} 
+      f\left(-\frac{n}{2B}\right)
+      \int_{-2\pi B}^{2\pi B}
+      e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega\\
+    &=\sum_{n=-\infty}^{\infty} 
+      \frac{\sin 2\pi B\left(t+\frac{n}{2B}\right)}{2\pi B\left(t+\frac{n}{2B}\right)}
+      f\left(-\frac{n}{2B}\right)\\
+    &=\sum_{n=-\infty}^{\infty} 
+      \frac{\sin 2\pi B\left(t-\frac{n}{2B}\right)}{2\pi B\left(t-\frac{n}{2B}\right)}
+      f\left(\frac{n}{2B}\right)
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -580,22 +526,18 @@
   #+begin_quote
   周波数 \(B\) で \(\theta\) の値によって位相と振幅が異なる
   次の波形を考える．
-  #+begin_src latex
-    \begin{equation*}
-      f(t)
-      =
-      \frac{\cos(2\pi Bt+\theta)}{\cos\theta}
-      =\cos(2\pi Bt)-\sin(2\pi Bt)\tan\theta
-    \end{equation*}
-  #+end_src
+  \begin{equation*}
+    f(t)
+    =
+    \frac{\cos(2\pi Bt+\theta)}{\cos\theta}
+    =\cos(2\pi Bt)-\sin(2\pi Bt)\tan\theta
+  \end{equation*}
   標本点を \({n}/{2B}\) とすると
-  #+begin_src latex
-    \begin{align*}
-      f\left(\frac{n}{2B}\right)
-      &=(-1)^{n}-0\cdot\tan\theta
-	=(-1)^{n}
-    \end{align*}
-  #+end_src
+  \begin{align*}
+    f\left(\frac{n}{2B}\right)
+    &=(-1)^{n}-0\cdot\tan\theta
+      =(-1)^{n}
+  \end{align*}
   \(\theta\)
   によらないため，
   サンプリングンレート

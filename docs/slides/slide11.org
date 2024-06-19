@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2023-07-06 22:13:48 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-06-19 17:15:38 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -119,13 +119,11 @@
 - 定義
   #+begin_quote
   長さ \(N\) の信号 \(f(t),\;t=0,1,\dotsc,N{-}1\) の離散 Fourier 変換を以下で定義する．
-  #+begin_src latex
-    \begin{equation}
-      \hat{f}(n)
-      =\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
-      f(t)e^{-i\frac{2\pi}{N}nt}, \quad (n=0,1,2,\dotsc,N{-}1)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{f}(n)
+    =\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+    f(t)e^{-i\frac{2\pi}{N}nt}, \quad (n=0,1,2,\dotsc,N{-}1)
+  \end{equation}
   #+end_quote
   - 慣習的に周波数 \(n\) や時間 \(t\) は1ではなく0から始まる整数
   - 時間 \(\mathrm{[s]}\) や周波数 \(\mathrm{[Hz]}\) とは異なることに注意
@@ -134,13 +132,11 @@
 - 逆変換
   #+begin_quote
   逆変換は以下で定義される．
-  #+begin_src latex
-    \begin{equation}
-      f(t)
-      =\frac{1}{\sqrt{N}}\sum_{n=0}^{N{-}1}
-      \hat{f}(n)e^{i\frac{2\pi}{N}nt}, \quad (t=0,1,2,\dotsc,N{-}1)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(t)
+    =\frac{1}{\sqrt{N}}\sum_{n=0}^{N{-}1}
+    \hat{f}(n)e^{i\frac{2\pi}{N}nt}, \quad (t=0,1,2,\dotsc,N{-}1)
+  \end{equation}
   #+end_quote
   - 信号 \(f\) は周期信号(基底) \(e^{i\frac{2\pi}{N}nt}\) の重ね合わせで表現される
   - 基底は \(e^{i\frac{2\pi}{N}t}\) の高調波(基本周波数の整数倍)になる
@@ -185,13 +181,11 @@
 - 周波数の正負の関係
   #+begin_quote
   \(t\) を整数とすると \(e^{2\pi i t}=1\) であるから
-  #+begin_src latex
-    \begin{equation}
-      e^{-i\frac{2\pi}{N}t}
-      =e^{-i\frac{2\pi}{N}t}e^{2\pi i t}
-      =e^{i\frac{2\pi}{N}(N{-}1)t}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    e^{-i\frac{2\pi}{N}t}
+    =e^{-i\frac{2\pi}{N}t}e^{2\pi i t}
+    =e^{i\frac{2\pi}{N}(N{-}1)t}
+  \end{equation}
   となり \(k=N{-}1\) である．
   #+end_quote
   - これは標本点のみでは周波数が \(-1\) なのか \(N{-}1\)
@@ -206,24 +200,18 @@
 :END:
 - 基本周波数の性質
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \alpha=e^{i\frac{2\pi}{N}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \alpha=e^{i\frac{2\pi}{N}}
+  \end{equation}
   と置くと，
-  #+begin_src latex
-    \begin{equation}
-      \alpha^{N}=e^{2\pi i}=1 \quad(\text{1の\(N\)乗根の一つ})
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \alpha^{N}=e^{2\pi i}=1 \quad(\text{1の\(N\)乗根の一つ})
+  \end{equation}
   となる．
   \(m\) を整数とするとき以下の値を求めよ．
-  #+begin_src latex
-    \begin{equation}
-      1+\alpha^{m}+\alpha^{2m}+\dotsb+\alpha^{(N{-}1)m}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    1+\alpha^{m}+\alpha^{2m}+\dotsb+\alpha^{(N{-}1)m}
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -233,21 +221,17 @@
 - 基本周波数の性質
   #+begin_quote
   \(k\) を整数として \(m=kN\) のとき (\(m\) が \(N\) の倍数)
-  #+begin_src latex
-    \begin{equation}
-      \alpha^{m}=(\alpha^{N})^{k}=1
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \alpha^{m}=(\alpha^{N})^{k}=1
+  \end{equation}
   であるから，与式はNとなる．
 
   それ以外のとき，等比数列の和から
-  #+begin_src latex
-    \begin{align}
-      \text{(与式)}
-      &=\frac{1-\alpha^{mN}}{1-\alpha^{m}}
-	=\frac{1-(\alpha^{N})^{m}}{1-\alpha^{m}}=0
-    \end{align}
-  #+end_src
+  \begin{align}
+    \text{(与式)}
+    &=\frac{1-\alpha^{mN}}{1-\alpha^{m}}
+      =\frac{1-(\alpha^{N})^{m}}{1-\alpha^{m}}=0
+  \end{align}
   となる．
   #+end_quote
 
@@ -257,36 +241,32 @@
 - \(N\) 乗根を用いた展開
   #+begin_quote
   \(\alpha\) を用いて定義式を書き下すと
-  #+begin_src latex
-    \begin{align}
-      \hat{f}(n)
-      &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}f(t)\alpha^{-nt}\\
-      &=\frac{1}{\sqrt{N}}
-	\left(
-	f(0)\alpha^{-n\cdot0}+f(1)\alpha^{-n\cdot1}+
-	f(2)\alpha^{-n\cdot2}+\right.\\
-      &\qquad\qquad\left.\dotsb+f(N{-}1)\alpha^{-n\cdot(N{-}1)}\right)
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{f}(n)
+    &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}f(t)\alpha^{-nt}\\
+    &=\frac{1}{\sqrt{N}}
+      \left(
+      f(0)\alpha^{-n\cdot0}+f(1)\alpha^{-n\cdot1}+
+      f(2)\alpha^{-n\cdot2}+\right.\\
+    &\qquad\qquad\left.\dotsb+f(N{-}1)\alpha^{-n\cdot(N{-}1)}\right)
+  \end{align}
   となる．
   #+end_quote
 
 #+reveal: split
 - 変換行列
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      F
-      =
-      \frac{1}{\sqrt{N}}
-      \begin{pmatrix}
-	1&1&1&\dots&1\\
-	1&\alpha^{-1}&\alpha^{-2}&\dots&\alpha^{-(N{-}1)}\\
-	\vdots&&&\ddots&\vdots\\
-	1&\alpha^{-(N{-}1)}&\alpha^{-2(N{-}1)}&\dots&\alpha^{-(N{-}1)(N{-}1)}
-      \end{pmatrix}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    F
+    =
+    \frac{1}{\sqrt{N}}
+    \begin{pmatrix}
+      1&1&1&\dots&1\\
+      1&\alpha^{-1}&\alpha^{-2}&\dots&\alpha^{-(N{-}1)}\\
+      \vdots&&&\ddots&\vdots\\
+      1&\alpha^{-(N{-}1)}&\alpha^{-2(N{-}1)}&\dots&\alpha^{-(N{-}1)(N{-}1)}
+    \end{pmatrix}
+  \end{equation}
   #+end_quote
   - 行列 \(F\) は \(N\times N\) の要素からなるが，
     \(\alpha\) の性質から値としては(1を含めて) \(N\) 種類しかない．
@@ -294,147 +274,131 @@
 #+reveal: split
 - 行列表現
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \begin{pmatrix}
-	\hat{f}(0)\\
-	\hat{f}(1)\\
-	\vdots\\
-	\hat{f}(N{-}1)
-      \end{pmatrix}
-      =
-      F
-      \begin{pmatrix}
-	f(0)\\
-	f(1)\\
-	\vdots\\
-	f(N{-}1)
-      \end{pmatrix}
-    \end{equation}
-    \begin{equation}
-      \hat{\boldsymbol{f}}
-      =F
-      \boldsymbol{f}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \begin{pmatrix}
+      \hat{f}(0)\\
+      \hat{f}(1)\\
+      \vdots\\
+      \hat{f}(N{-}1)
+    \end{pmatrix}
+    =
+    F
+    \begin{pmatrix}
+      f(0)\\
+      f(1)\\
+      \vdots\\
+      f(N{-}1)
+    \end{pmatrix}
+  \end{equation}
+  \begin{equation}
+    \hat{\boldsymbol{f}}
+    =F
+    \boldsymbol{f}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 逆変換行列
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      F^{*}
-      =\frac{1}{\sqrt{N}}
-      \begin{pmatrix}
-	1&1&1&\dots&1\\
-	1&\alpha^{1}&\alpha^{2}&\dots&\alpha^{(N{-}1)}\\
-	\vdots&&&\ddots&\vdots\\
-	1&\alpha^{(N{-}1)}&\alpha^{2(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
-      \end{pmatrix}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    F^{*}
+    =\frac{1}{\sqrt{N}}
+    \begin{pmatrix}
+      1&1&1&\dots&1\\
+      1&\alpha^{1}&\alpha^{2}&\dots&\alpha^{(N{-}1)}\\
+      \vdots&&&\ddots&\vdots\\
+      1&\alpha^{(N{-}1)}&\alpha^{2(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
+    \end{pmatrix}
+  \end{equation}
   #+end_quote
 - 行列表現
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \boldsymbol{f}
-      =F^{*}
-      \hat{\boldsymbol{f}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \boldsymbol{f}
+    =F^{*}
+    \hat{\boldsymbol{f}}
+  \end{equation}
   #+end_quote
 
 ** 変換と逆変換の関係
 - 行列 \(F,F^{*}\) の積
   #+begin_quote
-  #+begin_src latex
-    \begin{multline}
-      F^{*}F\\
-      =\frac{1}{N}
-      \begin{pmatrix}
-	1&1&\dots&1\\
-	1&\alpha^{1}&\dots&\alpha^{(N{-}1)}\\
-	\vdots&&\ddots&\vdots\\
-	1&\alpha^{(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
-      \end{pmatrix}
-      \begin{pmatrix}
-	1&1&\dots&1\\
-	1&\alpha^{-1}&\dots&\alpha^{-(N{-}1)}\\
-	\vdots&&\ddots&\vdots\\
-	1&\alpha^{-(N{-}1)}&\dots&\alpha^{-(N{-}1)(N{-}1)}
-      \end{pmatrix}
-    \end{multline}
-  #+end_src
+  \begin{multline}
+    F^{*}F\\
+    =\frac{1}{N}
+    \begin{pmatrix}
+      1&1&\dots&1\\
+      1&\alpha^{1}&\dots&\alpha^{(N{-}1)}\\
+      \vdots&&\ddots&\vdots\\
+      1&\alpha^{(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&1&\dots&1\\
+      1&\alpha^{-1}&\dots&\alpha^{-(N{-}1)}\\
+      \vdots&&\ddots&\vdots\\
+      1&\alpha^{-(N{-}1)}&\dots&\alpha^{-(N{-}1)(N{-}1)}
+    \end{pmatrix}
+  \end{multline}
   #+end_quote
 
 #+reveal: split
 - \(i\) 行 \(j\) 列成分
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      (F^{*}F)_{ij}
-      &=\frac{1}{N}
-	\begin{pmatrix}
-	  1&\alpha^{(i-1)}&\dots&\alpha^{(N{-}1)(i-1)}
-	\end{pmatrix}
-				  \begin{pmatrix}
-				    1\\
-				    \alpha^{-(j-1)}\\
-				    \vdots\\
-				    \alpha^{-(N{-}1)(j-1)}
-				  \end{pmatrix}\\
-      &=\frac{1}{N}
-	\left(
-	1+\alpha^{(i-j)}+\alpha^{2(i-j)}+
-	\dots+\alpha^{(N{-}1)(i-j)}
-	\right)\\
-      &=
-	\begin{cases}
-	  1,&i=j\\
-	  \frac{1}{N}\frac{1-\alpha^{N(i-j)}}{1-\alpha^{(i-j)}},&i\not=j
-	\end{cases}
-								  =
-								  \begin{cases}
-								    1,&i=j\\
-								    0,&i\not=j
-								  \end{cases}
-    \end{align}
-  #+end_src
+  \begin{align}
+    (F^{*}F)_{ij}
+    &=\frac{1}{N}
+      \begin{pmatrix}
+        1&\alpha^{(i-1)}&\dots&\alpha^{(N{-}1)(i-1)}
+      \end{pmatrix}
+                                \begin{pmatrix}
+                                  1\\
+                                  \alpha^{-(j-1)}\\
+                                  \vdots\\
+                                  \alpha^{-(N{-}1)(j-1)}
+                                \end{pmatrix}\\
+    &=\frac{1}{N}
+      \left(
+      1+\alpha^{(i-j)}+\alpha^{2(i-j)}+
+      \dots+\alpha^{(N{-}1)(i-j)}
+      \right)\\
+    &=
+      \begin{cases}
+        1,&i=j\\
+        \frac{1}{N}\frac{1-\alpha^{N(i-j)}}{1-\alpha^{(i-j)}},&i\not=j
+      \end{cases}
+                                                                =
+                                                                \begin{cases}
+                                                                  1,&i=j\\
+                                                                  0,&i\not=j
+                                                                \end{cases}
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - 逆も同様
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      (FF^{*})_{ij}
-      =\begin{cases}
-	1,&i=j\\
-	0,&i\not=j
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    (FF^{*})_{ij}
+    =\begin{cases}
+      1,&i=j\\
+      0,&i\not=j
+    \end{cases}
+  \end{equation}
   #+end_quote
 - 変換は可逆となる
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      F^{*}\boldsymbol{\hat{f}}
-      =
-      F^{*}F\boldsymbol{f}
-      =\boldsymbol{f}
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{equation}
-      F\boldsymbol{f}
-      =
-      FF^{*}\boldsymbol{\hat{f}}
-      =\boldsymbol{\hat{f}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    F^{*}\boldsymbol{\hat{f}}
+    =
+    F^{*}F\boldsymbol{f}
+    =\boldsymbol{f}
+  \end{equation}
+  \begin{equation}
+    F\boldsymbol{f}
+    =
+    FF^{*}\boldsymbol{\hat{f}}
+    =\boldsymbol{\hat{f}}
+  \end{equation}
   #+end_quote
 
 
@@ -456,11 +420,9 @@
 ** デジタル信号におけるフィルタの表現
 - 標本化されたフィルタの表現
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      g(t)=\sum_{s=t-N+1}^{t}f(s)h(t{-}s)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)=\sum_{s=t-N+1}^{t}f(s)h(t{-}s)
+  \end{equation}
   #+end_quote
   - \(f,g\) : 周期 \(N\) の入力・出力信号
   - \(h\) : 長さ \(N\) のインパルス応答
@@ -468,15 +430,13 @@
 #+reveal: split
 - 周期関数の畳み込みによる表現
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      g(t)
-      &=f{*}h(t)\\
-      &=\sum_{s=0}^{N-1}f(s)h(t{-}s)
-	=\sum_{s=0}^{N-1}f(t{-}s)h(s),\\
-      &\quad t=0,1,\dotsc,N-1
-    \end{align}
-  #+end_src
+  \begin{align}
+    g(t)
+    &=f{*}h(t)\\
+    &=\sum_{s=0}^{N-1}f(s)h(t{-}s)
+      =\sum_{s=0}^{N-1}f(t{-}s)h(s),\\
+    &\quad t=0,1,\dotsc,N-1
+  \end{align}
   #+end_quote
   - \(f,g,h\) : 周期 \(N\) の関数
 
@@ -494,12 +454,10 @@
   \(f,g,h\) を長さ \(N\) のベクトルと考え，
   \(g\) の離散 Fourier 変換を
   \(f,h\) の離散 Fourier 変換で表しなさい．
-  #+begin_src latex
-    \begin{equation}
-      g(t)=\sum_{s=0}^{N-1}f(s)h(t{-}s),
-      \quad t=0,1,\dotsc,N-1
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)=\sum_{s=0}^{N-1}f(s)h(t{-}s),
+    \quad t=0,1,\dotsc,N-1
+  \end{equation}
   #+end_quote
 
 ** COMMENT 解答例
@@ -508,36 +466,32 @@
 :END:
 - 定義どおり展開していく
   #+begin_quote
-  #+begin_src latex
-    \begin{align}
-      \hat{g}(n)
-      &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}g(t)\alpha^{-nt}\\
-      &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
-	\sum_{s=0}^{N-1}f(s)h(t{-}s)\alpha^{-n(t-s+s)}\\
-      &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
-	\sum_{s=0}^{N-1}f(s)\alpha^{-ns}h(t{-}s)\alpha^{-n(t-s)}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{g}(n)
+    &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}g(t)\alpha^{-nt}\\
+    &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+      \sum_{s=0}^{N-1}f(s)h(t{-}s)\alpha^{-n(t-s+s)}\\
+    &=\frac{1}{\sqrt{N}}\sum_{t=0}^{N{-}1}
+      \sum_{s=0}^{N-1}f(s)\alpha^{-ns}h(t{-}s)\alpha^{-n(t-s)}
+  \end{align}
   #+end_quote
 
 #+reveal: split
 - 周期 \(N\) の関数であることに注意する
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \sum_{t=0}^{N-1}h(t{-}s)\alpha^{-n(t-s)}
-      =\sum_{t=0}^{N-1}h(t)\alpha^{-nt}
-      =\sqrt{N}\hat{h}(n)
-    \end{equation}
-    \begin{equation}
-      \sum_{s=0}^{N-1}f(s)\alpha^{-ns}
-      =\sqrt{N}\hat{f}(n)
-    \end{equation}
-    \begin{equation}
-      \hat{g}(n)
-      =\sqrt{N}\hat{f}(n)\hat{h}(n)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \sum_{t=0}^{N-1}h(t{-}s)\alpha^{-n(t-s)}
+    =\sum_{t=0}^{N-1}h(t)\alpha^{-nt}
+    =\sqrt{N}\hat{h}(n)
+  \end{equation}
+  \begin{equation}
+    \sum_{s=0}^{N-1}f(s)\alpha^{-ns}
+    =\sqrt{N}\hat{f}(n)
+  \end{equation}
+  \begin{equation}
+    \hat{g}(n)
+    =\sqrt{N}\hat{f}(n)\hat{h}(n)
+  \end{equation}
   #+end_quote
 
 
@@ -553,11 +507,9 @@
 ** 窓関数
 - 信号の切り出し
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      f(t)=w(t)\tilde{f}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    f(t)=w(t)\tilde{f}(t)
+  \end{equation}
   #+end_quote
 - 端点での不連続性を軽減するために導入
 - 周波数特性の一部を改変することに注意
@@ -578,11 +530,9 @@
 [[file:figs/信号処理 11.png]]
 ** 矩形窓
 #+begin_quote
-#+begin_src latex
-  \begin{equation}
-    w(\tau)=\Xi_{(0,1)}(\tau)
-  \end{equation}
-#+end_src
+\begin{equation}
+  w(\tau)=\Xi_{(0,1)}(\tau)
+\end{equation}
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/rect.png :exports results :results graphics
@@ -620,11 +570,9 @@
 
 ** gauss 窓
 #+begin_quote
-#+begin_src latex
-  \begin{equation}
-    w(\tau)=e^{-\frac{(\tau-0.5)^{2}}{\sigma^{2}}}
-  \end{equation}
-#+end_src
+\begin{equation}
+  w(\tau)=e^{-\frac{(\tau-0.5)^{2}}{\sigma^{2}}}
+\end{equation}
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/gauss.png :exports results :results graphics
@@ -662,11 +610,9 @@
      
 ** hann 窓
 #+begin_quote
-#+begin_src latex
-  \begin{equation}
-    w(\tau)=0.5-0.5\cos(2\pi\tau)
-  \end{equation}
-#+end_src
+\begin{equation}
+  w(\tau)=0.5-0.5\cos(2\pi\tau)
+\end{equation}
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/hann.png :exports results :results graphics
@@ -705,11 +651,9 @@
      
 ** hamming 窓
 #+begin_quote
-#+begin_src latex
-  \begin{equation}
-    w(\tau)=0.54-0.46\cos(2\pi\tau)
-  \end{equation}
-#+end_src
+\begin{equation}
+  w(\tau)=0.54-0.46\cos(2\pi\tau)
+\end{equation}
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/hamm.png :exports results :results graphics

@@ -3,10 +3,10 @@
 #+AUTHOR: 村田 昇
 #+EMAIL: noboru.murata@eb.waseda.ac.jp
 #+DATE:
-# Time-stamp: <2023-06-22 15:45:07 mura>
-:REVEAL:
-#+INCLUDE: "./reveal.js/org/mycourse.org"
 #+STARTUP: hidestars content indent
+# Time-stamp: <2024-06-19 17:03:51 mura>
+:REVEAL:
+#+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -58,66 +58,54 @@
 ** 線形時不変フィルタの数学的表現
 - フィルタの積分表現
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
+  \end{equation}
   #+end_quote
 - インパルス応答
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)
-      =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
-      =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)
+    =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+    =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
+  \end{equation}
   #+end_quote
   - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある
 
 ** Fourier変換による表現
 - 時間領域では畳み込み積分
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      g(t)
-      =\int_{-\infty}^{\infty}h(t-s)f(s)ds
-      = h{*}f(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)
+    =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+    = h{*}f(t)
+  \end{equation}
   #+end_quote
   - 周波数領域では関数の積
     #+begin_quote
-    #+begin_src latex
-      \begin{equation}
-	\hat{g}(\omega)
-	=
-	\sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-      \end{equation}
-    #+end_src
+    \begin{equation}
+      \hat{g}(\omega)
+      =
+      \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+    \end{equation}
     #+end_quote
   - フィルタの機能は周波数毎の振幅と位相の変換
 
 ** 因果的フィルタ
 - 定義
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)=0\;(t<0)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)=0\;(t<0)
+  \end{equation}
   #+end_quote
   - 時刻0にインパルスが入力される前には何も出力がされない
 - 因果的フィルタの畳み込み
   #+begin_quote
   時刻 \(t\) での出力は
   時刻 \(t\) 以前での入力のみにより定まる
-  #+begin_src latex
-    \begin{equation}
-      g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
+  \end{equation}
   #+end_quote
 
 
@@ -140,63 +128,51 @@
 :END:
 - 関数 \(t e^{-\frac{t^2}{2}}\) の Fourier 変換
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}[f'](\omega)
-      =i\omega\hat{f}(\omega),\quad
-      \mathcal{F}^{-1}[\hat{f}'](t)
-      =-itf(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}[f'](\omega)
+    =i\omega\hat{f}(\omega),\quad
+    \mathcal{F}^{-1}[\hat{f}'](t)
+    =-itf(t)
+  \end{equation}
   を利用すればよい
-  #+begin_src latex
-    \begin{equation}
-      t e^{-\frac{t^2}{2}}
-      =
-      (-e^{-\frac{t^2}{2}})'
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    t e^{-\frac{t^2}{2}}
+    =
+    (-e^{-\frac{t^2}{2}})'
+  \end{equation}
   であるから
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}[t e^{-\frac{t^2}{2}}](\omega)
-      =-i\omega \mathcal{F}[e^{-\frac{t^2}{2}}](\omega)
-      =-i\omega e^{-\frac{\omega^{2}}{2}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}[t e^{-\frac{t^2}{2}}](\omega)
+    =-i\omega \mathcal{F}[e^{-\frac{t^2}{2}}](\omega)
+    =-i\omega e^{-\frac{\omega^{2}}{2}}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 関数 \(\Xi_{(-1,1)}(t)\) の Fourier 変換
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}[\Xi_{(-1,1)}](\omega)
-      =
-      \sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}[\Xi_{(-1,1)}](\omega)
+    =
+    \sqrt{\frac{2}{\pi}}\frac{\sin(\omega)}{\omega}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 関数 \((\sin(\omega)/\omega)^{2}\) の 逆 Fourier 変換
   #+begin_quote
   畳み込みを利用
-  #+begin_src latex
-    \begin{equation}
-      \mathcal{F}[h{*}f](\omega)
-      =\sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-    \end{equation}
-  #+end_src
-  #+begin_src latex
-    \begin{align}
-      \mathcal{F}^{-1}[\hat{f}^{2}](t)
-      &=\frac{1}{\sqrt{2\pi}}f{*}f(t)\\
-      &=\frac{1}{\sqrt{2\pi}}
-	\sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)\\
-      &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)
-    \end{align}
-  #+end_src
+  \begin{equation}
+    \mathcal{F}[h{*}f](\omega)
+    =\sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+  \end{equation}
+  \begin{align}
+    \mathcal{F}^{-1}[\hat{f}^{2}](t)
+    &=\frac{1}{\sqrt{2\pi}}f{*}f(t)\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)\\
+    &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(t)
+  \end{align}
   #+end_quote
 
 
@@ -204,12 +180,10 @@
 ** インパルス応答とは
 - \(\delta(t)\) を入力した時のフィルタ出力
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)
-      =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)
+    =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+  \end{equation}
   #+end_quote
 - 物理的には
   面積1 (\(\Delta \times 1/\Delta\))
@@ -234,21 +208,17 @@
 ** 解答
 - 時間領域
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)
-      =\frac{R_{2}}{R_{1}+R_{2}}V_{in}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)
+    =\frac{R_{2}}{R_{1}+R_{2}}V_{in}(t)
+  \end{equation}
   #+end_quote
 - 周波数領域
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{V}_{out}(\omega)
-      =\frac{R_{2}}{R_{1}+R_{2}}\hat{V}_{in}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{V}_{out}(\omega)
+    =\frac{R_{2}}{R_{1}+R_{2}}\hat{V}_{in}(\omega)
+  \end{equation}
   #+end_quote
 - 同じ形になることに注意
 
@@ -276,68 +246,56 @@
 - 時間領域
   #+begin_quote
   以下の微分方程式が成り立つ
-  #+begin_src latex
-    \begin{align}
-      V_{in}(t)
-      &=RI(t)+V_{out}(t)\\
-      I(t)
-      &=C\frac{d}{dt}V_{out}(t)
-    \end{align}
-  #+end_src
+  \begin{align}
+    V_{in}(t)
+    &=RI(t)+V_{out}(t)\\
+    I(t)
+    &=C\frac{d}{dt}V_{out}(t)
+  \end{align}
   整理して
-  #+begin_src latex
-    \begin{equation}
-      V_{in}(t)
-      =CR\frac{d}{dt}V_{out}(t)
-      +V_{out}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{in}(t)
+    =CR\frac{d}{dt}V_{out}(t)
+    +V_{out}(t)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 周波数領域
   #+begin_quote
   時間領域の結果を Fourier 変換して
-  #+begin_src latex
-    \begin{equation}
-      \hat{V}_{in}(\omega)
-      =i\omega CR\hat{V}_{out}(\omega)
-      +\hat{V}_{out}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{V}_{in}(\omega)
+    =i\omega CR\hat{V}_{out}(\omega)
+    +\hat{V}_{out}(\omega)
+  \end{equation}
   入出力の関係を見直して
-  #+begin_src latex
-    \begin{equation}
-      \hat{V}_{out}(\omega)
-      =
-      \frac{1}{i\omega CR+1}
-      \hat{V}_{in}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{V}_{out}(\omega)
+    =
+    \frac{1}{i\omega CR+1}
+    \hat{V}_{in}(\omega)
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - フィルタとしての関係
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \hat{g}(\omega)
-      =
-      \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \hat{g}(\omega)
+    =
+    \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+  \end{equation}
   と比較して
-  #+begin_src latex
-    \begin{align}
-      \hat{f}(\omega)
-      &=\hat{V}_{in}(\omega)\\
-      \hat{g}(\omega)
-      &=\hat{V}_{out}(\omega)\\
-      \sqrt{2\pi}\cdot\hat{h}(\omega)
-      &=\frac{1}{i\omega CR+1}
-	=\frac{1}{iCR}\frac{1}{\omega -i/CR}
-    \end{align}
-  #+end_src
+  \begin{align}
+    \hat{f}(\omega)
+    &=\hat{V}_{in}(\omega)\\
+    \hat{g}(\omega)
+    &=\hat{V}_{out}(\omega)\\
+    \sqrt{2\pi}\cdot\hat{h}(\omega)
+    &=\frac{1}{i\omega CR+1}
+      =\frac{1}{iCR}\frac{1}{\omega -i/CR}
+  \end{align}
   #+end_quote
   - 周波数依存性について考察せよ
 
@@ -347,14 +305,12 @@
 - 逆 Fourier 変換
   #+begin_quote
   式を見易くするため \(a=1/CR\) とおく
-  #+begin_src latex
-    \begin{align}
-      h(t)
-      &=\mathcal{F}^{-1}[\hat{h}](t)\\
-      &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \hat{h}(\omega)e^{i\omega t}d\omega\\
-      &=\frac{a}{2\pi i}\int_{-\infty}^{\infty} \frac{e^{i\omega t}}{\omega-ia}d\omega
-    \end{align}
-  #+end_src
+  \begin{align}
+    h(t)
+    &=\mathcal{F}^{-1}[\hat{h}](t)\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \hat{h}(\omega)e^{i\omega t}d\omega\\
+    &=\frac{a}{2\pi i}\int_{-\infty}^{\infty} \frac{e^{i\omega t}}{\omega-ia}d\omega
+  \end{align}
   #+end_quote
 
 #+reveal: split
@@ -371,26 +327,22 @@
 - 留数定理
   #+begin_quote
   積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
-  #+begin_src latex
-    \begin{equation}
-      \frac{1}{2\pi i}\oint f(z)dz
-      =\mathrm{Res}_{z=c}f(z)
-      =\lim_{z\to c}(z-c)f(z)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{1}{2\pi i}\oint f(z)dz
+    =\mathrm{Res}_{z=c}f(z)
+    =\lim_{z\to c}(z-c)f(z)
+  \end{equation}
   #+end_quote
 - 計算結果
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      h(t)
-      =
-      \begin{cases}
-	a e^{-at}=\frac{1}{CR}e^{-\frac{t}{CR}},&t>0\\
-	0,&t<0
-      \end{cases}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    h(t)
+    =
+    \begin{cases}
+      a e^{-at}=\frac{1}{CR}e^{-\frac{t}{CR}},&t>0\\
+      0,&t<0
+    \end{cases}
+  \end{equation}
   #+end_quote
 
 
@@ -416,94 +368,72 @@
 :END:
 - \(0 < t \le \Delta\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \frac{1}{\Delta}
-      =CR\frac{d}{dt}V_{out}(t)
-      +V_{out}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{1}{\Delta}
+    =CR\frac{d}{dt}V_{out}(t)
+    +V_{out}(t)
+  \end{equation}
   \(U(t)=V_{out}(t)-1/\Delta\) と置くと
-  #+begin_src latex
-    \begin{equation}
-      \frac{d}{dt}U(t)=-\frac{1}{CR}U(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{d}{dt}U(t)=-\frac{1}{CR}U(t)
+  \end{equation}
   よって
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)=a e^{-\frac{t}{CR}}+\frac{1}{\Delta}         
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)=a e^{-\frac{t}{CR}}+\frac{1}{\Delta}         
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 初期条件 \(V_{out}(0)=0\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      0=a+\frac{1}{\Delta}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    0=a+\frac{1}{\Delta}
+  \end{equation}
   よって
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)=\frac{1}{\Delta}(1-e^{-\frac{t}{CR}})
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)=\frac{1}{\Delta}(1-e^{-\frac{t}{CR}})
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - \(\Delta < t\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      0
-      =CR\frac{d}{dt}V_{out}(t)
-      +V_{out}(t)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    0
+    =CR\frac{d}{dt}V_{out}(t)
+    +V_{out}(t)
+  \end{equation}
   よって
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)=a e^{-\frac{1}{CR}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)=a e^{-\frac{1}{CR}}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - 初期条件 \(V_{out}(\Delta)=1/\Delta\cdot(1-e^{-\frac{\Delta}{CR}})\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \frac{1}{\Delta}(1-e^{-\frac{\Delta}{CR}})
-      =a e^{-\frac{\Delta}{CR}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \frac{1}{\Delta}(1-e^{-\frac{\Delta}{CR}})
+    =a e^{-\frac{\Delta}{CR}}
+  \end{equation}
   よって
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)=\frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)=\frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)e^{-\frac{t}{CR}}
+  \end{equation}
   #+end_quote
 
 #+reveal: split
 - \(\Delta\to 0\)
   #+begin_quote
-  #+begin_src latex
-    \begin{equation}
-      \lim_{\Delta\to0}
-      \frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)
-      =\frac{1}{CR}
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    \lim_{\Delta\to0}
+    \frac{1}{\Delta}(e^{\frac{\Delta}{CR}}-1)
+    =\frac{1}{CR}
+  \end{equation}
   よって
-  #+begin_src latex
-    \begin{equation}
-      V_{out}(t)=\frac{1}{CR}e^{-\frac{t}{CR}}\quad(t>0)
-    \end{equation}
-  #+end_src
+  \begin{equation}
+    V_{out}(t)=\frac{1}{CR}e^{-\frac{t}{CR}}\quad(t>0)
+  \end{equation}
   #+end_quote
 
 
