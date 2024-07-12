@@ -1,10 +1,10 @@
 #+TITLE: 線形フィルタ回路
 #+SUBTITLE: 信号処理 - 第9講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2024-06-19 17:03:51 mura>
+# Time-stamp: <2024-07-04 18:30:19 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え

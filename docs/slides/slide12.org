@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2024-06-19 17:19:10 mura>
+# Time-stamp: <2024-07-12 10:57:42 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
@@ -455,11 +455,11 @@
     &&\forall n_{1},n_{2}\\
   \end{align}
   #+end_quote
-  - 1行目は長さ\(N_{2}\)の離散 Fourier 変換を\(N_{1}\)回
-  - 3行目は長さ\(N_{1}\)の離散 Fourier 変換を\(N_{2}\)回
+  - 1行目は長さ\(N_{2}\)の離散 Fourier 変換(\(t_{2}\)から\(n_{2}\)への変換)を\(N_{1}\)回(各\(t_{1}\)ごと)
+  - 3行目は長さ\(N_{1}\)の離散 Fourier 変換(\(t_{1}\)から\(n_{1}\)への変換)を\(N_{2}\)回(各\(n_{2}\)ごと)
 
 ** 計算量の漸化式
-- 長さ \(N_{i}\) の系列の計算量(乗算回数)を\(T(N_i)\)
+- 長さ \(N_{i}\) の系列の離散 Fourier 変換の計算量(乗算回数)を\(T(N_i)\)
 - 長さ \(N=N_{1}N_{2}\)の系列の計算量\(T(N)\)
   #+begin_quote
   \begin{align}

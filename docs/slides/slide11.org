@@ -1,10 +1,10 @@
 #+TITLE: 離散 Fourier 変換
 #+SUBTITLE: 信号処理 - 第11講
 #+AUTHOR: 村田 昇
-#+EMAIL: noboru.murata@eb.waseda.ac.jp
+#+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2024-07-04 18:12:41 mura>
+# Time-stamp: <2024-07-04 18:29:24 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/org/mycourse.org"
 # C-c C-x C-v でinlineを切り替え
