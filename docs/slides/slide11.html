@@ -11,22 +11,21 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
-
-<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
-
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
-<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-state="no-toc-progress">
+<section id="sec-title-slide">
 <!-- This is an HTML template for the title slide. -->
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
@@ -46,13 +45,13 @@
 
 </section>
 <section>
-<section id="slide-orgadaf8f7">
-<h2 id="orgadaf8f7">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgadaf8f7">
+<section id="slide-org4393698">
+<h2 id="org4393698">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org4393698">
 </div>
 </section>
-<section id="slide-org6757fbd">
-<h3 id="org6757fbd">デジタル信号処理</h3>
+<section id="slide-org62132a0">
+<h3 id="org62132a0">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -64,10 +63,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgca24be0">
-<h3 id="orgca24be0">標本化と量子化</h3>
+<section id="slide-org87aec3f">
+<h3 id="org87aec3f">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化
 <ul>
@@ -77,10 +75,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga27f3ad">
-<h3 id="orga27f3ad">標本化定理</h3>
+<section id="slide-org781600e">
+<h3 id="org781600e">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -95,14 +92,13 @@
 </ul>
 
 
-<div id="org4fe4bdd" class="figure">
+<div id="org061e968" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgcf54421">
-<h3 id="orgcf54421">標本化における用語</h3>
+<section id="slide-org2542800">
+<h3 id="org2542800">標本化における用語</h3>
 <ul>
 <li>1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): <br />
 <b>サンプリング周波数</b></li>
@@ -113,10 +109,9 @@
 <li><i><span style="color:orange;">角周波数と周波数の関係に注意</span></i></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org23cecc2">
-<h3 id="org23cecc2">エイリアシング</h3>
+<section id="slide-org2aa9713">
+<h3 id="org2aa9713">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -137,20 +132,18 @@
 </ul>
 
 
-<div id="org65339b9" class="figure">
+<div id="org7d00340" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgee8bf38" data-background="#fef4f4">
-<h2 id="orgee8bf38">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-org5068344" data-background="#fef4f4">
+<h2 id="org5068344">演習</h2>
 </section>
-<section id="slide-orgb78aef0" data-background="#fef4f4">
-<h3 id="orgb78aef0">練習問題</h3>
+<section id="slide-org98efa74" data-background="#fef4f4">
+<h3 id="org98efa74">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数
@@ -165,17 +158,16 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgb6466dd">
-<h2 id="orgb6466dd">離散 Fourier 変換</h2>
-<div class="outline-text-2" id="text-orgb6466dd">
+<section id="slide-org8c96e39">
+<h2 id="org8c96e39">離散 Fourier 変換</h2>
+<div class="outline-text-2" id="text-org8c96e39">
 </div>
 </section>
-<section id="slide-orgca5450b">
-<h3 id="orgca5450b">計算機による信号処理</h3>
+<section id="slide-orga9fda77">
+<h3 id="orga9fda77">計算機による信号処理</h3>
 <ul>
 <li>連続時間では扱えない
 <ul>
@@ -191,10 +183,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org24fb475">
-<h3 id="org24fb475">離散 Fourier 変換</h3>
+<section id="slide-org52bdf53">
+<h3 id="org52bdf53">離散 Fourier 変換</h3>
 <ul>
 <li><p>
 定義
@@ -220,7 +211,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -248,16 +238,14 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org6770dd1" data-background="#fef4f4">
-<h2 id="org6770dd1">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-orgbc0359d" data-background="#fef4f4">
+<h2 id="orgbc0359d">演習</h2>
 </section>
-<section id="slide-org81ef34f" data-background="#fef4f4">
-<h3 id="org81ef34f">練習問題</h3>
+<section id="slide-orgcf2515c" data-background="#fef4f4">
+<h3 id="orgcf2515c">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数と基本周波数
@@ -282,10 +270,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7e7ba54" data-background="#fef4f4">
-<h3 id="org7e7ba54">練習問題</h3>
+<section id="slide-org6d579d7" data-background="#fef4f4">
+<h3 id="org6d579d7">練習問題</h3>
 <ul>
 <li><p>
 基本周波数の性質
@@ -319,17 +306,16 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orga00b344">
-<h2 id="orga00b344">離散 Fourier 変換の行列表現</h2>
-<div class="outline-text-2" id="text-orga00b344">
+<section id="slide-org23a0949">
+<h2 id="org23a0949">離散 Fourier 変換の行列表現</h2>
+<div class="outline-text-2" id="text-org23a0949">
 </div>
 </section>
-<section id="slide-org43e6a3d">
-<h3 id="org43e6a3d">行列による表現</h3>
+<section id="slide-org279eb12">
+<h3 id="org279eb12">行列による表現</h3>
 <ul>
 <li><p>
 \(N\) 乗根を用いた展開
@@ -357,7 +343,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -388,7 +373,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -427,7 +411,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -464,10 +447,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb749b70">
-<h3 id="orgb749b70">変換と逆変換の関係</h3>
+<section id="slide-org7b19da3">
+<h3 id="org7b19da3">変換と逆変換の関係</h3>
 <ul>
 <li><p>
 行列 \(F,F^{*}\) の積
@@ -496,7 +478,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -539,7 +520,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -583,17 +563,16 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org670b840">
-<h2 id="org670b840">フィルタの表現</h2>
-<div class="outline-text-2" id="text-org670b840">
+<section id="slide-orgb87cad6">
+<h2 id="orgb87cad6">フィルタの表現</h2>
+<div class="outline-text-2" id="text-orgb87cad6">
 </div>
 </section>
-<section id="slide-org2fb828e">
-<h3 id="org2fb828e">フィルタ</h3>
+<section id="slide-orgef4cb6f">
+<h3 id="orgef4cb6f">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -621,10 +600,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org625114e">
-<h3 id="org625114e">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-orgdc3b4ef">
+<h3 id="orgdc3b4ef">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現
@@ -645,7 +623,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -670,16 +647,14 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org14e9b71" data-background="#fef4f4">
-<h2 id="org14e9b71">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-org8262f4d" data-background="#fef4f4">
+<h2 id="org8262f4d">演習</h2>
 </section>
-<section id="slide-orgf56d7b5" data-background="#fef4f4">
-<h3 id="orgf56d7b5">練習問題</h3>
+<section id="slide-org266a6f5" data-background="#fef4f4">
+<h3 id="org266a6f5">練習問題</h3>
 <ul>
 <li><p>
 離散 Fourier 変換によるフィルタの表現
@@ -700,17 +675,16 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org2e3e9a4">
-<h2 id="org2e3e9a4">窓関数</h2>
-<div class="outline-text-2" id="text-org2e3e9a4">
+<section id="slide-org8d4ae30">
+<h2 id="org8d4ae30">窓関数</h2>
+<div class="outline-text-2" id="text-org8d4ae30">
 </div>
 </section>
-<section id="slide-org84d9217">
-<h3 id="org84d9217">有限長のデータ</h3>
+<section id="slide-org353a33c">
+<h3 id="org353a33c">有限長のデータ</h3>
 <ul>
 <li>信号の一部を切り出す必要がある
 <ul>
@@ -726,10 +700,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org306fdc2">
-<h3 id="org306fdc2">窓関数</h3>
+<section id="slide-org70f8453">
+<h3 id="org70f8453">窓関数</h3>
 <ul>
 <li><p>
 信号の切り出し
@@ -753,10 +726,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org9015fd6">
-<h3 id="org9015fd6">窓関数を用いたデジタル信号処理</h3>
+<section id="slide-orgf9c7644">
+<h3 id="orgf9c7644">窓関数を用いたデジタル信号処理</h3>
 <ul>
 <li>処理の流れ
 <ul>
@@ -769,14 +741,13 @@
 </ul>
 
 
-<div id="orgeb7487a" class="figure">
+<div id="orgc894efc" class="figure">
 <p><img src="figs/信号処理 11.png" alt="信号処理 11.png" width="80%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org01db40f">
-<h3 id="org01db40f">矩形窓</h3>
+<section id="slide-orga07d200">
+<h3 id="orga07d200">矩形窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -785,28 +756,27 @@
 
 </div>
 </blockquote>
-<div class="leftcol" id="org0255309">
+<div class="leftcol" id="org15d0504">
 
-<div id="orgeee5df4" class="figure">
+<div id="orgad83303" class="figure">
 <p><img src="figs/rect.png" alt="rect.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 1: </span>矩形窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="org7721508">
+<div class="rightcol" id="orgf03f01c">
 
-<div id="org6a2a723" class="figure">
+<div id="org6612370" class="figure">
 <p><img src="figs/rect_freq.png" alt="rect_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 2: </span>周波数特性</p>
 </div>
 
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgaeaeebd">
-<h3 id="orgaeaeebd">gauss 窓</h3>
+<section id="slide-org64c123c">
+<h3 id="org64c123c">gauss 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -815,28 +785,27 @@
 
 </div>
 </blockquote>
-<div class="leftcol" id="org548bd0c">
+<div class="leftcol" id="org761e74b">
 
-<div id="org720f563" class="figure">
+<div id="orgad25c0a" class="figure">
 <p><img src="figs/gauss.png" alt="gauss.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 3: </span>gauss 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="orgac60e75">
+<div class="rightcol" id="org33fc814">
 
-<div id="org84203e4" class="figure">
+<div id="org4d5bdf0" class="figure">
 <p><img src="figs/gauss_freq.png" alt="gauss_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 4: </span>周波数特性</p>
 </div>
 
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org56f927f">
-<h3 id="org56f927f">hann 窓</h3>
+<section id="slide-org66c83bc">
+<h3 id="org66c83bc">hann 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -845,28 +814,27 @@
 
 </div>
 </blockquote>
-<div class="leftcol" id="org9910d9a">
+<div class="leftcol" id="org4d3e508">
 
-<div id="orge747a79" class="figure">
+<div id="org9f71ea5" class="figure">
 <p><img src="figs/hann.png" alt="hann.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 5: </span>hann 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="orge3cd6e1">
+<div class="rightcol" id="org7196aaa">
 
-<div id="org0df64da" class="figure">
+<div id="org306e652" class="figure">
 <p><img src="figs/hann_freq.png" alt="hann_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 6: </span>周波数特性</p>
 </div>
 
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org57c9904">
-<h3 id="org57c9904">hamming 窓</h3>
+<section id="slide-orgae55b56">
+<h3 id="orgae55b56">hamming 窓</h3>
 <blockquote>
 <div>
 \begin{equation}
@@ -875,30 +843,29 @@
 
 </div>
 </blockquote>
-<div class="leftcol" id="orgc1d5b43">
+<div class="leftcol" id="org486fca5">
 
-<div id="org7340b42" class="figure">
+<div id="org557e560" class="figure">
 <p><img src="figs/hamm.png" alt="hamm.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 7: </span>hamming 窓</p>
 </div>
 
 </div>
-<div class="rightcol" id="orgfb1750f">
+<div class="rightcol" id="org5812f31">
 
-<div id="org0738aed" class="figure">
+<div id="org44a8538" class="figure">
 <p><img src="figs/hamm_freq.png" alt="hamm_freq.png" width="100%" />
 </p>
 <p><span class="figure-number">Figure 8: </span>周波数特性</p>
 </div>
 
 </div>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org4c639d4">
-<h2 id="org4c639d4">今回のまとめ</h2>
+<section id="slide-org5acbca8">
+<h2 id="org5acbca8">今回のまとめ</h2>
 <ul>
 <li>離散 Fourier 変換
 <ul>
@@ -914,14 +881,16 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -942,16 +911,15 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
+spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
-{ src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
-{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+]
 
 });
 </script>

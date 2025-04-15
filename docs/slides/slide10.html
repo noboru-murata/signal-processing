@@ -11,22 +11,21 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
-
-<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
-
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
-<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-state="no-toc-progress">
+<section id="sec-title-slide">
 <!-- This is an HTML template for the title slide. -->
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
@@ -46,13 +45,13 @@
 
 </section>
 <section>
-<section id="slide-org73d6266">
-<h2 id="org73d6266">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org73d6266">
+<section id="slide-org0a32b39">
+<h2 id="org0a32b39">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org0a32b39">
 </div>
 </section>
-<section id="slide-org6ae5547">
-<h3 id="org6ae5547">フィルタ</h3>
+<section id="slide-org4465784">
+<h3 id="org4465784">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -80,10 +79,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgab1fa55">
-<h3 id="orgab1fa55">線形時不変フィルタの数学的表現</h3>
+<section id="slide-org2436248">
+<h3 id="org2436248">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
@@ -101,10 +99,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2992b96">
-<h3 id="org2992b96">Fourier変換による表現</h3>
+<section id="slide-org8526dc9">
+<h3 id="org8526dc9">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -134,10 +131,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2b94e10">
-<h3 id="org2b94e10">インパルス応答</h3>
+<section id="slide-orga939adb">
+<h3 id="orga939adb">インパルス応答</h3>
 <ul>
 <li><p>
 インパルス応答
@@ -158,19 +154,17 @@
 時間幅 \(\Delta\to0\) としたときの波形</li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org96df24a">
-<h3 id="org96df24a">ローパスフィルタ(RC回路)</h3>
+<section id="slide-org373d2ab">
+<h3 id="org373d2ab">ローパスフィルタ(RC回路)</h3>
 
-<div id="org035c98d" class="figure">
+<div id="org7de8a88" class="figure">
 <p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org839884b">
-<h3 id="org839884b">入出力の関係</h3>
+<section id="slide-org18dc324">
+<h3 id="org18dc324">入出力の関係</h3>
 <ul>
 <li><p>
 時間領域
@@ -209,10 +203,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge5117cb">
-<h3 id="orge5117cb">インパルス応答 (逆 Fourier 変換)</h3>
+<section id="slide-org398601f">
+<h3 id="org398601f">インパルス応答 (逆 Fourier 変換)</h3>
 <ul>
 <li><p>
 フィルタの Fourier 変換
@@ -247,10 +240,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2f69f9a">
-<h3 id="org2f69f9a">インパルス応答 (矩形波の極限)</h3>
+<section id="slide-org6458b15">
+<h3 id="org6458b15">インパルス応答 (矩形波の極限)</h3>
 <ul>
 <li><p>
 矩形波の出力
@@ -289,16 +281,14 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org47a36b6" data-background="#fef4f4">
-<h2 id="org47a36b6">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-org2d8b62b" data-background="#fef4f4">
+<h2 id="org2d8b62b">演習</h2>
 </section>
-<section id="slide-org48dcbaf" data-background="#fef4f4">
-<h3 id="org48dcbaf">練習問題</h3>
+<section id="slide-org9056355" data-background="#fef4f4">
+<h3 id="org9056355">練習問題</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
@@ -330,17 +320,16 @@
 </p></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgdcc1950">
-<h2 id="orgdcc1950">デジタル信号処理</h2>
-<div class="outline-text-2" id="text-orgdcc1950">
+<section id="slide-org8d3f7e1">
+<h2 id="org8d3f7e1">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-org8d3f7e1">
 </div>
 </section>
-<section id="slide-org93c5666">
-<h3 id="org93c5666">デジタル信号処理</h3>
+<section id="slide-orgab8eb8c">
+<h3 id="orgab8eb8c">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -352,10 +341,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgd8d87b9">
-<h3 id="orgd8d87b9">計算機によるデータ処理</h3>
+<section id="slide-org90dade3">
+<h3 id="org90dade3">計算機によるデータ処理</h3>
 <ul>
 <li>アナログ信号は扱えない
 <ul>
@@ -371,10 +359,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org41a0b29">
-<h3 id="org41a0b29">アナログとデジタル</h3>
+<section id="slide-org6ed23a0">
+<h3 id="org6ed23a0">アナログとデジタル</h3>
 <ul>
 <li>アナログ
 <ul>
@@ -392,10 +379,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org765f700">
-<h3 id="org765f700">標本化と量子化</h3>
+<section id="slide-org34b4f3a">
+<h3 id="org34b4f3a">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化 (discretization)
 <ul>
@@ -407,10 +393,9 @@
 (この講義では扱わない)</li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org09a52dc">
-<h3 id="org09a52dc">標本化における疑問</h3>
+<section id="slide-orgd3dd56e">
+<h3 id="orgd3dd56e">標本化における疑問</h3>
 <ul>
 <li>標本化 : 明らかに情報は落ちている
 <ul>
@@ -422,21 +407,20 @@
 </ul>
 
 
-<div id="org9f60287" class="figure">
+<div id="org716b532" class="figure">
 <p><img src="figs/信号処理 9.png" alt="信号処理 9.png" width="80%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org59fdccb">
-<h2 id="org59fdccb">標本化定理</h2>
-<div class="outline-text-2" id="text-org59fdccb">
+<section id="slide-orgf3b0036">
+<h2 id="orgf3b0036">標本化定理</h2>
+<div class="outline-text-2" id="text-orgf3b0036">
 </div>
 </section>
-<section id="slide-orgb72f72c">
-<h3 id="orgb72f72c">標本化定理</h3>
+<section id="slide-org2ce6ace">
+<h3 id="org2ce6ace">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -451,12 +435,11 @@
 </ul>
 
 
-<div id="org5aaa9f7" class="figure">
+<div id="org8e36cf9" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -473,7 +456,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -489,16 +471,14 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org55d52ac" data-background="#fef4f4">
-<h2 id="org55d52ac">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-org2a07837" data-background="#fef4f4">
+<h2 id="org2a07837">演習</h2>
 </section>
-<section id="slide-org5cdc892" data-background="#fef4f4">
-<h3 id="org5cdc892">練習問題</h3>
+<section id="slide-org13083b4" data-background="#fef4f4">
+<h3 id="org13083b4">練習問題</h3>
 <ul>
 <li><p>
 以下の積分
@@ -517,17 +497,16 @@
 </p></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org8984c40">
-<h2 id="org8984c40">定理の証明と注意</h2>
-<div class="outline-text-2" id="text-org8984c40">
+<section id="slide-org7f80d4e">
+<h2 id="org7f80d4e">定理の証明と注意</h2>
+<div class="outline-text-2" id="text-org7f80d4e">
 </div>
 </section>
-<section id="slide-orga65d3e7">
-<h3 id="orga65d3e7">標本化定理の証明</h3>
+<section id="slide-orgfb4b29d">
+<h3 id="orgfb4b29d">標本化定理の証明</h3>
 <ul>
 <li><p>
 step 1
@@ -551,12 +530,11 @@ step 1
 </ul>
 
 
-<div id="orgafa5e0d" class="figure">
+<div id="org3ff8b90" class="figure">
 <p><img src="figs/信号処理 6.png" alt="信号処理 6.png" width="70%" />
 </p>
 </div>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -578,12 +556,11 @@ Fourier 級数展開が存在する．
 </ul>
 
 
-<div id="org08f692c" class="figure">
+<div id="orga51f381" class="figure">
 <p><img src="figs/信号処理 7.png" alt="信号処理 7.png" width="70%" />
 </p>
 </div>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -617,7 +594,6 @@ step 3
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -645,7 +621,6 @@ step 4
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -679,7 +654,6 @@ step 5
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -712,7 +686,6 @@ step 6
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -758,7 +731,6 @@ step 7
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -804,7 +776,6 @@ step 8
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -837,7 +808,6 @@ step 9
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -866,7 +836,6 @@ step 10
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -886,10 +855,9 @@ step 11
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7afda32">
-<h3 id="org7afda32">定理に関する注意</h3>
+<section id="slide-org6836047">
+<h3 id="org6836047">定理に関する注意</h3>
 <ul>
 <li><p>
 直感的な意味
@@ -903,7 +871,6 @@ step 11
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -947,10 +914,9 @@ Nyquist 周波数での挙動
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgdcb9a06">
-<h3 id="orgdcb9a06">エイリアシング</h3>
+<section id="slide-orgb34396b">
+<h3 id="orgb34396b">エイリアシング</h3>
 <ul>
 <li><p>
 定理の前提
@@ -971,7 +937,6 @@ Nyquist 周波数での挙動
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -993,20 +958,18 @@ Nyquist 周波数での挙動
 </ul>
 
 
-<div id="org608217f" class="figure">
+<div id="org031f8cf" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org7210e52" data-background="#fef4f4">
-<h2 id="org7210e52">演習</h2>
-<div class="slide-footer"><br></div>
+<section id="slide-org5e1d16b" data-background="#fef4f4">
+<h2 id="org5e1d16b">演習</h2>
 </section>
-<section id="slide-orgcba2149" data-background="#fef4f4">
-<h3 id="orgcba2149">練習問題</h3>
+<section id="slide-org8381c08" data-background="#fef4f4">
+<h3 id="org8381c08">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数
@@ -1019,12 +982,11 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orga05be44">
-<h2 id="orga05be44">今回のまとめ</h2>
+<section id="slide-orgb87ecb8">
+<h2 id="orgb87ecb8">今回のまとめ</h2>
 <ul>
 <li>デジタル信号処理
 <ul>
@@ -1041,14 +1003,16 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -1069,16 +1033,15 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
+spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
-{ src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
-{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+]
 
 });
 </script>

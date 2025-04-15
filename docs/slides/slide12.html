@@ -11,22 +11,21 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/oer-reveal.css" id="theme"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/toc-progress/toc-progress.css"/>
-
-<link rel="stylesheet" href="./reveal.js/dist/theme/toc-style.css"/>
-
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/accessibility/helper.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/theme/mycourse.css"/>
-<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+
+<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-state="no-toc-progress">
+<section id="sec-title-slide">
 <!-- This is an HTML template for the title slide. -->
 <!-- Embed logos as necessary. -->
 <!-- <a class="nooutlink" href="url"><img class="state-background your-logo-class" src="whatever.png" alt="Whatever" /></a> -->
@@ -46,13 +45,13 @@
 
 </section>
 <section>
-<section id="slide-org4f6fd14">
-<h2 id="org4f6fd14">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org4f6fd14">
+<section id="slide-org5eb39db">
+<h2 id="org5eb39db">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org5eb39db">
 </div>
 </section>
-<section id="slide-org2778484">
-<h3 id="org2778484">デジタル信号処理</h3>
+<section id="slide-orgc1076a6">
+<h3 id="orgc1076a6">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論
 <ul>
@@ -73,10 +72,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org51290e5">
-<h3 id="org51290e5">標本化定理</h3>
+<section id="slide-org91c5ca2">
+<h3 id="org91c5ca2">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -91,14 +89,13 @@
 </ul>
 
 
-<div id="orgb9a3347" class="figure">
+<div id="org1791320" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="60%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orga050549">
-<h3 id="orga050549">エイリアシング</h3>
+<section id="slide-orge888973">
+<h3 id="orge888973">エイリアシング</h3>
 <ul>
 <li><p>
 折り返しによる雑音
@@ -118,14 +115,13 @@
 </ul>
 
 
-<div id="org159a736" class="figure">
+<div id="org2777ce1" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="60%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org193ffdd">
-<h3 id="org193ffdd">離散 Fourier 変換と逆変換</h3>
+<section id="slide-org5c81026">
+<h3 id="org5c81026">離散 Fourier 変換と逆変換</h3>
 <ul>
 <li><p>
 定義
@@ -157,10 +153,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2098f65">
-<h3 id="org2098f65">行列による表現</h3>
+<section id="slide-org6f9df0f">
+<h3 id="org6f9df0f">行列による表現</h3>
 <ul>
 <li><p>
 変換行列
@@ -190,7 +185,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -215,7 +209,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -261,10 +254,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4291557">
-<h3 id="org4291557">デジタル信号におけるフィルタの表現</h3>
+<section id="slide-org8ddcee3">
+<h3 id="org8ddcee3">デジタル信号におけるフィルタの表現</h3>
 <ul>
 <li><p>
 標本化されたフィルタの表現 (周期関数の畳み込み)
@@ -287,10 +279,9 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org10d3438">
-<h3 id="org10d3438">有限長のデータ</h3>
+<section id="slide-org07a3f52">
+<h3 id="org07a3f52">有限長のデータ</h3>
 <ul>
 <li><p>
 信号の一部の切り出し
@@ -318,17 +309,16 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-org7b9621a">
-<h2 id="org7b9621a">デジタル信号処理</h2>
-<div class="outline-text-2" id="text-org7b9621a">
+<section id="slide-orgb563550">
+<h2 id="orgb563550">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-orgb563550">
 </div>
 </section>
-<section id="slide-org21b76c0">
-<h3 id="org21b76c0">デジタル信号処理の流れ</h3>
+<section id="slide-orgdc0b4f4">
+<h3 id="orgdc0b4f4">デジタル信号処理の流れ</h3>
 <ul>
 <li>データの取得 (アナログ信号)</li>
 <li>ローパスフィルタリング (標本化のための前処理)</li>
@@ -341,212 +331,192 @@
 <li>D/A変換 (アナログ信号)</li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org763ce01">
-<h3 id="org763ce01">デジタルフィルタ</h3>
+<section id="slide-org6fbd938">
+<h3 id="org6fbd938">デジタルフィルタ</h3>
 <ul>
 <li>音声信号</li>
 
 </ul>
 
 
-<div id="org0749daf" class="figure">
+<div id="org8adabec" class="figure">
 <p><img src="figs/filter.001.jpeg" alt="filter.001.jpeg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3dcb826">
-<h4 id="org3dcb826">スペクトログラム</h4>
-<div class="leftcol" id="org6622fa2">
+<section id="slide-org9db13c0">
+<h4 id="org9db13c0">スペクトログラム</h4>
+<div class="leftcol" id="orga651d73">
 
-<div id="org07d0b2a" class="figure">
+<div id="orgbd8efdd" class="figure">
 <p><img src="figs/filter4.jpg" alt="filter4.jpg" width="100%" />
 </p>
 </div>
 <audio controls src="figs/sig1.wav"></audi>
 
 </div>
-<div class="rightcol" id="org09e82f8">
+<div class="rightcol" id="org5e25777">
 
-<div id="org5ffdd26" class="figure">
+<div id="org488a254" class="figure">
 <p><img src="figs/filter5.jpg" alt="filter5.jpg" width="100%" />
 </p>
 </div>
 <audio controls src="figs/sig2.wav"></audi>
 
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org49a7e90">
-<h4 id="org49a7e90">ローパスフィルタ</h4>
+<section id="slide-org494851c">
+<h4 id="org494851c">ローパスフィルタ</h4>
 
-<div id="org7945b15" class="figure">
+<div id="org3ca3d8b" class="figure">
 <p><img src="figs/filter7.jpg" alt="filter7.jpg" height="100%" />
 </p>
 </div>
 <audio controls src="figs/sig2_low.wav"></audi>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfefd99c">
-<h4 id="orgfefd99c">ハイパスフィルタ</h4>
+<section id="slide-org8ef4df6">
+<h4 id="org8ef4df6">ハイパスフィルタ</h4>
 
-<div id="orgff56a77" class="figure">
+<div id="orgdedfe52" class="figure">
 <p><img src="figs/filter9.jpg" alt="filter9.jpg" hight="100%" />
 </p>
 </div>
 <audio controls src="figs/sig2_high.wav"></audi>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgda48256">
-<h3 id="orgda48256">音の合成</h3>
+<section id="slide-org6056211">
+<h3 id="org6056211">音の合成</h3>
 <ul>
 <li>正弦波の重ね合わせでさまざまな音色を合成</li>
 <li>Fourier 級数展開で求めた係数を利用 <br />
 (離散 Fourier 変換では周波数に上限がある)</li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgeb4b33e">
-<h4 id="orgeb4b33e">矩形波の合成 (1)</h4>
+<section id="slide-org8985ba1">
+<h4 id="org8985ba1">矩形波の合成 (1)</h4>
 
-<div id="org9af223a" class="figure">
+<div id="org473c042" class="figure">
 <p><img src="figs/square1.jpg" alt="square1.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org64d745e">
-<h4 id="org64d745e">矩形波の合成 (2)</h4>
+<section id="slide-org5172a61">
+<h4 id="org5172a61">矩形波の合成 (2)</h4>
 
-<div id="orgbfa6957" class="figure">
+<div id="org6e3faaf" class="figure">
 <p><img src="figs/square2.jpg" alt="square2.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgddb61af">
-<h4 id="orgddb61af">矩形波の合成 (3)</h4>
+<section id="slide-orga9148d5">
+<h4 id="orga9148d5">矩形波の合成 (3)</h4>
 
-<div id="org1bc0739" class="figure">
+<div id="org0f48750" class="figure">
 <p><img src="figs/square3.jpg" alt="square3.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org3326b09">
-<h4 id="org3326b09">矩形波の合成 (4)</h4>
+<section id="slide-org9c15350">
+<h4 id="org9c15350">矩形波の合成 (4)</h4>
 
-<div id="org8e0769d" class="figure">
+<div id="orgce10186" class="figure">
 <p><img src="figs/square4.jpg" alt="square4.jpg" height="100%" />
 </p>
 </div>
 <audio controls src="figs/square.wav"></audi>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org07e2d57">
-<h4 id="org07e2d57">三角波の合成 (1)</h4>
+<section id="slide-org2a0d049">
+<h4 id="org2a0d049">三角波の合成 (1)</h4>
 
-<div id="org46e345b" class="figure">
+<div id="org6bb5fde" class="figure">
 <p><img src="figs/triangle1.jpg" alt="triangle1.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6dd158e">
-<h4 id="org6dd158e">三角波の合成 (2)</h4>
+<section id="slide-org3e0c791">
+<h4 id="org3e0c791">三角波の合成 (2)</h4>
 
-<div id="org981ad97" class="figure">
+<div id="org37dc48a" class="figure">
 <p><img src="figs/triangle2.jpg" alt="triangle2.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org6764b39">
-<h4 id="org6764b39">三角波の合成 (3)</h4>
+<section id="slide-org4767940">
+<h4 id="org4767940">三角波の合成 (3)</h4>
 
-<div id="orgecf3ce7" class="figure">
+<div id="org9c12fa8" class="figure">
 <p><img src="figs/triangle3.jpg" alt="triangle3.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org2105be3">
-<h4 id="org2105be3">三角波の合成 (4)</h4>
+<section id="slide-org4a53210">
+<h4 id="org4a53210">三角波の合成 (4)</h4>
 
-<div id="orgc993901" class="figure">
+<div id="org9f511cb" class="figure">
 <p><img src="figs/triangle4.jpg" alt="triangle4.jpg" height="100%" />
 </p>
 </div>
 <audio controls src="figs/triangle.wav"></audi>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orge6c90cd">
-<h4 id="orge6c90cd">鋸波の合成 (1)</h4>
+<section id="slide-org056db3b">
+<h4 id="org056db3b">鋸波の合成 (1)</h4>
 
-<div id="org114c0ec" class="figure">
+<div id="org25c951e" class="figure">
 <p><img src="figs/sawtooth1.jpg" alt="sawtooth1.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org425646e">
-<h4 id="org425646e">鋸波の合成 (2)</h4>
+<section id="slide-org9c0162c">
+<h4 id="org9c0162c">鋸波の合成 (2)</h4>
 
-<div id="org655e8d1" class="figure">
+<div id="org81ea99e" class="figure">
 <p><img src="figs/sawtooth2.jpg" alt="sawtooth2.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgba3da69">
-<h4 id="orgba3da69">鋸波の合成 (3)</h4>
+<section id="slide-org21c12e0">
+<h4 id="org21c12e0">鋸波の合成 (3)</h4>
 
-<div id="orgf16b538" class="figure">
+<div id="org6269ebd" class="figure">
 <p><img src="figs/sawtooth3.jpg" alt="sawtooth3.jpg" height="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb012519">
-<h4 id="orgb012519">鋸波の合成 (4)</h4>
+<section id="slide-org8317755">
+<h4 id="org8317755">鋸波の合成 (4)</h4>
 
-<div id="org6ef964d" class="figure">
+<div id="orgd8498a8" class="figure">
 <p><img src="figs/sawtooth6.jpg" alt="sawtooth6.jpg" height="100%" />
 </p>
 </div>
 <audio controls src="figs/sawtooth.wav"></audi>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgfc2bb7d">
-<h4 id="orgfc2bb7d">時間・周波数表現の比較</h4>
+<section id="slide-org92afd05">
+<h4 id="org92afd05">時間・周波数表現の比較</h4>
 
-<div id="org9598304" class="figure">
+<div id="orgf3ce3fa" class="figure">
 <p><img src="figs/waves.001.jpeg" alt="waves.001.jpeg" width="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org44258d3">
-<h4 id="org44258d3">スペクトログラムの比較</h4>
+<section id="slide-orga5325ba">
+<h4 id="orga5325ba">スペクトログラムの比較</h4>
 
-<div id="org06925e0" class="figure">
+<div id="orgeda9133" class="figure">
 <p><img src="figs/waves.002.jpeg" alt="waves.002.jpeg" width="100%" />
 </p>
 </div>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgb5147f0">
-<h2 id="orgb5147f0">高速 Fourier 変換</h2>
-<div class="outline-text-2" id="text-orgb5147f0">
+<section id="slide-orgdc5be8c">
+<h2 id="orgdc5be8c">高速 Fourier 変換</h2>
+<div class="outline-text-2" id="text-orgdc5be8c">
 </div>
 </section>
-<section id="slide-org6c515e3">
-<h3 id="org6c515e3">離散 Fourier 変換の計算量</h3>
+<section id="slide-orgfab0dfe">
+<h3 id="orgfab0dfe">離散 Fourier 変換の計算量</h3>
 <ul>
 <li><p>
 定義
@@ -567,10 +537,9 @@
 (\(N^2\)回程度の乗算が必要)</li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org4e42e19">
-<h3 id="org4e42e19">離散 Fourier 変換行列の性質</h3>
+<section id="slide-org5fb46cf">
+<h3 id="org5fb46cf">離散 Fourier 変換行列の性質</h3>
 <ul>
 <li><p>
 \(N=4\) で考える
@@ -604,7 +573,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -644,10 +612,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org84479fd">
-<h3 id="org84479fd">係数の分解</h3>
+<section id="slide-org6b409d1">
+<h3 id="org6b409d1">係数の分解</h3>
 <ul>
 <li>\(N\)は二つの整数の積\(N=N_{1}N_{2}\)とする</li>
 <li><p>
@@ -677,7 +644,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -712,10 +678,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-org7adfd35">
-<h3 id="org7adfd35">計算の分解</h3>
+<section id="slide-org202bd8e">
+<h3 id="org202bd8e">計算の分解</h3>
 <ul>
 <li><p>
 記法
@@ -749,7 +714,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -779,10 +743,9 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
-<section id="slide-orgb5a7d58">
-<h3 id="orgb5a7d58">計算量の漸化式</h3>
+<section id="slide-orga46460f">
+<h3 id="orga46460f">計算量の漸化式</h3>
 <ul>
 <li>長さ \(N_{i}\) の系列の離散 Fourier 変換の計算量(乗算回数)を\(T(N_i)\)</li>
 <li><p>
@@ -801,7 +764,6 @@
 
 </ul>
 
-<div class="slide-footer"><br></div>
 </section>
 <section>
 <ul>
@@ -832,12 +794,11 @@
 </blockquote></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </section>
 </section>
 <section>
-<section id="slide-orgdbc6744">
-<h2 id="orgdbc6744">今回のまとめ</h2>
+<section id="slide-org8131ba9">
+<h2 id="org8131ba9">今回のまとめ</h2>
 <ul>
 <li>デジタル信号処理の例
 <ul>
@@ -854,14 +815,16 @@
 </ul></li>
 
 </ul>
-<div class="slide-footer"><br></div>
 </div>
 </div>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
@@ -882,16 +845,15 @@ overview: true,
 
 transition: 'fade',
 transitionSpeed: 'default',
-spotlight: { size: 90, initialPresentationMode: false }, chalkboard: { toggleChalkboardButton: { left: '80px' }, toggleNotesButton: { left: '130px'}}, keyboard: { 69: function() { RevealChalkboard.toggleNotesCanvas() }, 87: function() { RevealChalkboard.toggleChalkboard() }, 67: function() { RevealChalkboard.clear() }, 82: function() { RevealChalkboard.reset() }, 68: function() { RevealChalkboard.download() }, 88: function() { RevealChalkboard.colorNext() }, 89: function() { RevealChalkboard.colorPrev() }, 84: function() { RevealSpotlight.toggleSpotlight() }, 81: function() { RevealSpotlight.togglePresentationMode()}},
+showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
+spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
-{ src: './reveal.js/plugin/menu/menu.js'},
-{ src: './reveal.js/plugin/chalkboard/chalkboard.js'},
-{ src: './reveal.js/plugin/spotlight/spotlight.js'}]
+]
 
 });
 </script>
