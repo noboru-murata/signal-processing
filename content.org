@@ -5,7 +5,7 @@
 #+LINK: github https://noboru-murata.github.io/signal-processing/
 #+STARTUP: hidestars content indent
 
-# Time-stamp: <2024-06-19 17:20:49 mura>
+# Time-stamp: <2026-04-06 13:20:12 mura>
 # C-c C-e H A (generate MDs for all subtrees)
 
 * 概要
@@ -30,7 +30,7 @@
 :EXPORT_FILE_NAME: lecture01
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-04-09 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide01" >}}
 ** ハンドアウト
@@ -41,7 +41,7 @@
 :EXPORT_FILE_NAME: lecture02
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-04-09 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide02" >}}
 ** ハンドアウト
@@ -52,7 +52,7 @@
 :EXPORT_FILE_NAME: lecture03
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-04-09 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide03" >}}
 ** ハンドアウト
@@ -63,7 +63,7 @@
 :EXPORT_FILE_NAME: lecture04
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-04-10 Wed> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide04" >}}
 ** ハンドアウト
@@ -74,7 +74,7 @@
 :EXPORT_FILE_NAME: lecture05
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-05-21 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide05" >}}
 ** ハンドアウト
@@ -85,7 +85,7 @@
 :EXPORT_FILE_NAME: lecture06
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-05-28 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide06" >}}
 ** ハンドアウト
@@ -96,7 +96,7 @@
 :EXPORT_FILE_NAME: lecture07
 :EXPORT_DATE: <2021-04-01 Thu>
 :END:
-<2024-05-28 Tue> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide07" >}}
 ** ハンドアウト
@@ -107,7 +107,7 @@
 :EXPORT_FILE_NAME: lecture08
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-06-13 Thu> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide08" >}}
 ** ハンドアウト
@@ -118,7 +118,7 @@
 :EXPORT_FILE_NAME: lecture09
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-06-19 Wed> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide09" >}}
 ** ハンドアウト
@@ -129,7 +129,7 @@
 :EXPORT_FILE_NAME: lecture10
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-06-19 Wed> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide10" >}}
 ** ハンドアウト
@@ -140,7 +140,7 @@
 :EXPORT_FILE_NAME: lecture11
 :EXPORT_DATE: <2021-04-01 Thu>
 :END:
-<2024-06-19 Wed> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide11" >}}
 ** ハンドアウト
@@ -151,7 +151,7 @@
 :EXPORT_FILE_NAME: lecture12
 :EXPORT_DATE: <2020-04-01 Wed>
 :END:
-<2024-06-19 Wed> 更新
+<2026-04-06 Mon> 更新
 ** スライド
 #+hugo: {{< myslide base="signal-processing" name="slide12" >}}
 ** ハンドアウト
@@ -232,15 +232,17 @@ shortcut key が表示されますが，
 ** フルスクリーン
 - f フルスクリーン表示
 - esc 元に戻る
-** 黒板
+** COMMENT 黒板
 - w スライドと黒板の切り替え (toggle)
 - x/y チョークの色の切り替え (巡回)
 - c 消去
-** メモ書き
+** COMMENT メモ書き
 - e 編集モードの切り替え (toggle)
 - x/y ペンの色の切り替え (巡回)
 - c 消去
 
+** 印刷
+- e 印刷用の表示との切り替え (toggle)
 
 * COMMENT ローカル変数
 # Local Variables:
