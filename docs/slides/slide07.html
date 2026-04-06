@@ -13,13 +13,40 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/font-awesome/css/all.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="./reveal.js/local/lecture.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/menu.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
-
-<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
+<link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
+<style>
+/* Position computations of klipse get confused by reveal.js's scaling.
+   Hence, scaling should be disabled with this code.  Fix height of code area
+   with scrollbar (use overflow instead of overflow-y to restore CodeMirror
+   setting afterwards): */
+.reveal section pre { max-height: 70vh; height: auto; overflow: auto; }
+/* Reset some reveal.js and oer-reveal settings: */
+.reveal section pre .CodeMirror pre { font-size: 2em; box-shadow: none; width: auto; padding: 0.4em; display: block; overflow: visible; }
+/* Enlarge cursor: */
+.CodeMirror-cursor { border-left: 3px solid black; }
+</style>
+<script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_eval_html: '.language-klipse-html',
+        selector_eval_js: '.language-klipse-javascript',
+        selector_eval_js: '.language-klipse-js',
+        selector_eval_php: '.language-klipse-php',
+        selector_eval_python_client: '.language-klipse-python',
+        selector_eval_ruby: '.language-klipse-ruby',
+        selector_eval_scheme: '.language-klipse-scheme',
+        selector_sql: '.language-klipse-sql'
+    };
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -36,7 +63,7 @@
     <p>信号処理 - 第7講</p>
 </div>
 <div class="keyboard-usage">
-    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+    <p></p>
 </div>
 <div class="talk-author">
   <p>村田 昇<br />
@@ -45,13 +72,13 @@
 
 </section>
 <section>
-<section id="slide-orgae77d94">
-<h2 id="orgae77d94">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgae77d94">
+<section id="slide-org583322c">
+<h2 id="org583322c">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org583322c">
 </div>
 </section>
-<section id="slide-org1148937">
-<h3 id="org1148937">Fourier 級数展開</h3>
+<section id="slide-orge99e1c8">
+<h3 id="orge99e1c8">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -92,8 +119,8 @@ Fourier 級数展開
 
 </ul>
 </section>
-<section id="slide-org12a6f4b">
-<h3 id="org12a6f4b">Fourier 変換と反転公式</h3>
+<section id="slide-orgcca3cf5">
+<h3 id="orgcca3cf5">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
@@ -125,8 +152,8 @@ Fourier 級数展開
 
 </ul>
 </section>
-<section id="slide-org7c8252b">
-<h3 id="org7c8252b">反転公式</h3>
+<section id="slide-org261bbc4">
+<h3 id="org261bbc4">反転公式</h3>
 <ul>
 <li><p>
 定理
@@ -161,11 +188,11 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-orgdf50cdb" data-background="#fef4f4">
-<h2 id="orgdf50cdb">演習</h2>
+<section id="slide-orge584997" data-background="#fef4f4">
+<h2 id="orge584997">演習</h2>
 </section>
-<section id="slide-orgdaf7efc" data-background="#fef4f4">
-<h3 id="orgdaf7efc">練習問題 (再掲)</h3>
+<section id="slide-orgd38bfd8" data-background="#fef4f4">
+<h3 id="orgd38bfd8">練習問題 (再掲)</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -197,11 +224,11 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org51a4bd9">
-<h2 id="org51a4bd9">Fourier 変換の性質</h2>
+<section id="slide-org3457e79">
+<h2 id="org3457e79">Fourier 変換の性質</h2>
 </section>
-<section id="slide-org8062f83">
-<h3 id="org8062f83">記法</h3>
+<section id="slide-org191fba7">
+<h3 id="org191fba7">記法</h3>
 <ul>
 <li>関数の対応
 <ul>
@@ -259,8 +286,8 @@ Fourier 級数展開
 
 </ul>
 </section>
-<section id="slide-orga6bbd8d">
-<h3 id="orga6bbd8d">絶対可積分 (\(L^{1}(-\infty,\infty)\))</h3>
+<section id="slide-org0c31c28">
+<h3 id="org0c31c28">絶対可積分 (\(L^{1}(-\infty,\infty)\))</h3>
 <ul>
 <li><p>
 定義
@@ -353,8 +380,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org42ee89e">
-<h3 id="org42ee89e">Parseval の定理</h3>
+<section id="slide-orgd05d024">
+<h3 id="orgd05d024">Parseval の定理</h3>
 <ul>
 <li><p>
 定理
@@ -425,8 +452,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org67be2b7">
-<h3 id="org67be2b7">Plancherel の定理</h3>
+<section id="slide-org8b05b10">
+<h3 id="org8b05b10">Plancherel の定理</h3>
 <ul>
 <li><p>
 定理
@@ -456,8 +483,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-orgae97c73">
-<h3 id="orgae97c73">Riemann-Lebesgue の定理(補題)</h3>
+<section id="slide-org4af51a7">
+<h3 id="org4af51a7">Riemann-Lebesgue の定理(補題)</h3>
 <ul>
 <li><p>
 定理
@@ -510,11 +537,11 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-org5a4af09" data-background="#fef4f4">
-<h2 id="org5a4af09">演習</h2>
+<section id="slide-org1b108e0" data-background="#fef4f4">
+<h2 id="org1b108e0">演習</h2>
 </section>
-<section id="slide-orgd529b2e" data-background="#fef4f4">
-<h3 id="orgd529b2e">練習問題</h3>
+<section id="slide-orgf541b9b" data-background="#fef4f4">
+<h3 id="orgf541b9b">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -528,8 +555,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-orge42bde7" data-background="#fef4f4">
-<h3 id="orge42bde7">練習問題</h3>
+<section id="slide-orgad094bc" data-background="#fef4f4">
+<h3 id="orgad094bc">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -543,8 +570,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org8ef36be" data-background="#fef4f4">
-<h3 id="org8ef36be">練習問題</h3>
+<section id="slide-orgcb7b901" data-background="#fef4f4">
+<h3 id="orgcb7b901">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -558,8 +585,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org7bf3617" data-background="#fef4f4">
-<h3 id="org7bf3617">練習問題</h3>
+<section id="slide-org281a45d" data-background="#fef4f4">
+<h3 id="org281a45d">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -585,8 +612,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org779428c" data-background="#fef4f4">
-<h3 id="org779428c">練習問題</h3>
+<section id="slide-orge3dda72" data-background="#fef4f4">
+<h3 id="orge3dda72">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -600,8 +627,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org4d79211" data-background="#fef4f4">
-<h3 id="org4d79211">練習問題</h3>
+<section id="slide-org54d6fef" data-background="#fef4f4">
+<h3 id="org54d6fef">練習問題</h3>
 <ul>
 <li><p>
 以下の問題に答えよ
@@ -617,13 +644,13 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-org6b7cdaf">
-<h2 id="org6b7cdaf">演算との関係</h2>
-<div class="outline-text-2" id="text-org6b7cdaf">
+<section id="slide-orgd32d9fd">
+<h2 id="orgd32d9fd">演算との関係</h2>
+<div class="outline-text-2" id="text-orgd32d9fd">
 </div>
 </section>
-<section id="slide-orgfa1d241">
-<h3 id="orgfa1d241">Fourier 変換で用いる基本演算</h3>
+<section id="slide-orgd4e8cd9">
+<h3 id="orgd4e8cd9">Fourier 変換で用いる基本演算</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -668,11 +695,11 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-org510532a" data-background="#fef4f4">
-<h2 id="org510532a">演習</h2>
+<section id="slide-org1a478df" data-background="#fef4f4">
+<h2 id="org1a478df">演習</h2>
 </section>
-<section id="slide-org52742ef" data-background="#fef4f4">
-<h3 id="org52742ef">練習問題</h3>
+<section id="slide-org54f91db" data-background="#fef4f4">
+<h3 id="org54f91db">練習問題</h3>
 <ul>
 <li><p>
 関数
@@ -696,8 +723,8 @@ Fourier 変換の存在 (各点)
 
 </ul>
 </section>
-<section id="slide-org55ca188" data-background="#fef4f4">
-<h3 id="org55ca188">Fourier 変換の代表的な例</h3>
+<section id="slide-orga030701" data-background="#fef4f4">
+<h3 id="orga030701">Fourier 変換の代表的な例</h3>
 <ul>
 <li><p>
 定義関数
@@ -773,8 +800,8 @@ Fourier 変換の存在 (各点)
 </section>
 </section>
 <section>
-<section id="slide-orgeb3d275">
-<h2 id="orgeb3d275">今回のまとめ</h2>
+<section id="slide-org69152bc">
+<h2 id="org69152bc">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換の性質
 <ul>
@@ -791,15 +818,19 @@ Fourier 変換の存在 (各点)
 </ul></li>
 
 </ul>
+</section>
+</section>
 </div>
 </div>
+<p> Created by Noboru Murata | Licensed under CC BY-NC 4.0 </p>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/menu/menu.js"></script>
-<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
 <script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -811,27 +842,41 @@ progress: true,
 history: true,
 center: true,
 slideNumber: 'c',
-rollingLinks: false,
+rollingLinks: true,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: true,
+fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
 overview: true,
+width: 1050,
+height: 700,
+margin: 0.10,
+minScale: 0.75,
+maxScale: 1.25,
 
 transition: 'fade',
 transitionSpeed: 'default',
 showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
-spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
+'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
 });
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>
+/* Recompute layout upon changes by klipse.  Code fragment from
+   asciidoctor-revealjs-klipse by Timothy Pratley under GPLv3:
+   https://github.com/timothypratley/asciidoctor-revealjs-klipse/blob/master/docs/docinfo-footer.html */
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    window.dispatchEvent( new Event('resize') );
+} );
 </script>
 </body>
 </html>

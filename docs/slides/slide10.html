@@ -13,13 +13,40 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/font-awesome/css/all.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="./reveal.js/local/lecture.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/menu.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
-
-<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
+<link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
+<style>
+/* Position computations of klipse get confused by reveal.js's scaling.
+   Hence, scaling should be disabled with this code.  Fix height of code area
+   with scrollbar (use overflow instead of overflow-y to restore CodeMirror
+   setting afterwards): */
+.reveal section pre { max-height: 70vh; height: auto; overflow: auto; }
+/* Reset some reveal.js and oer-reveal settings: */
+.reveal section pre .CodeMirror pre { font-size: 2em; box-shadow: none; width: auto; padding: 0.4em; display: block; overflow: visible; }
+/* Enlarge cursor: */
+.CodeMirror-cursor { border-left: 3px solid black; }
+</style>
+<script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_eval_html: '.language-klipse-html',
+        selector_eval_js: '.language-klipse-javascript',
+        selector_eval_js: '.language-klipse-js',
+        selector_eval_php: '.language-klipse-php',
+        selector_eval_python_client: '.language-klipse-python',
+        selector_eval_ruby: '.language-klipse-ruby',
+        selector_eval_scheme: '.language-klipse-scheme',
+        selector_sql: '.language-klipse-sql'
+    };
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -36,7 +63,7 @@
     <p>信号処理 - 第10講</p>
 </div>
 <div class="keyboard-usage">
-    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+    <p></p>
 </div>
 <div class="talk-author">
   <p>村田 昇<br />
@@ -45,13 +72,13 @@
 
 </section>
 <section>
-<section id="slide-org0a32b39">
-<h2 id="org0a32b39">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org0a32b39">
+<section id="slide-orgf97004a">
+<h2 id="orgf97004a">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgf97004a">
 </div>
 </section>
-<section id="slide-org4465784">
-<h3 id="org4465784">フィルタ</h3>
+<section id="slide-orgfd48e83">
+<h3 id="orgfd48e83">フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -80,8 +107,8 @@
 
 </ul>
 </section>
-<section id="slide-org2436248">
-<h3 id="org2436248">線形時不変フィルタの数学的表現</h3>
+<section id="slide-org9db9c94">
+<h3 id="org9db9c94">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
@@ -100,8 +127,8 @@
 
 </ul>
 </section>
-<section id="slide-org8526dc9">
-<h3 id="org8526dc9">Fourier変換による表現</h3>
+<section id="slide-orged39df2">
+<h3 id="orged39df2">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -132,8 +159,8 @@
 
 </ul>
 </section>
-<section id="slide-orga939adb">
-<h3 id="orga939adb">インパルス応答</h3>
+<section id="slide-org7ebb0ca">
+<h3 id="org7ebb0ca">インパルス応答</h3>
 <ul>
 <li><p>
 インパルス応答
@@ -155,16 +182,16 @@
 
 </ul>
 </section>
-<section id="slide-org373d2ab">
-<h3 id="org373d2ab">ローパスフィルタ(RC回路)</h3>
+<section id="slide-org840074d">
+<h3 id="org840074d">ローパスフィルタ(RC回路)</h3>
 
-<div id="org7de8a88" class="figure">
+<div id="orgd040985" class="figure">
 <p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
 </p>
 </div>
 </section>
-<section id="slide-org18dc324">
-<h3 id="org18dc324">入出力の関係</h3>
+<section id="slide-org8f33545">
+<h3 id="org8f33545">入出力の関係</h3>
 <ul>
 <li><p>
 時間領域
@@ -204,8 +231,8 @@
 
 </ul>
 </section>
-<section id="slide-org398601f">
-<h3 id="org398601f">インパルス応答 (逆 Fourier 変換)</h3>
+<section id="slide-org8cf0f03">
+<h3 id="org8cf0f03">インパルス応答 (逆 Fourier 変換)</h3>
 <ul>
 <li><p>
 フィルタの Fourier 変換
@@ -241,8 +268,8 @@
 
 </ul>
 </section>
-<section id="slide-org6458b15">
-<h3 id="org6458b15">インパルス応答 (矩形波の極限)</h3>
+<section id="slide-orge26a786">
+<h3 id="orge26a786">インパルス応答 (矩形波の極限)</h3>
 <ul>
 <li><p>
 矩形波の出力
@@ -284,11 +311,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org2d8b62b" data-background="#fef4f4">
-<h2 id="org2d8b62b">演習</h2>
+<section id="slide-org589ff2c" data-background="#fef4f4">
+<h2 id="org589ff2c">演習</h2>
 </section>
-<section id="slide-org9056355" data-background="#fef4f4">
-<h3 id="org9056355">練習問題</h3>
+<section id="slide-orgf3f07d8" data-background="#fef4f4">
+<h3 id="orgf3f07d8">練習問題</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
@@ -323,13 +350,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org8d3f7e1">
-<h2 id="org8d3f7e1">デジタル信号処理</h2>
-<div class="outline-text-2" id="text-org8d3f7e1">
+<section id="slide-orgd5fa26c">
+<h2 id="orgd5fa26c">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-orgd5fa26c">
 </div>
 </section>
-<section id="slide-orgab8eb8c">
-<h3 id="orgab8eb8c">デジタル信号処理</h3>
+<section id="slide-orgc391abf">
+<h3 id="orgc391abf">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -342,8 +369,8 @@
 
 </ul>
 </section>
-<section id="slide-org90dade3">
-<h3 id="org90dade3">計算機によるデータ処理</h3>
+<section id="slide-org389e60f">
+<h3 id="org389e60f">計算機によるデータ処理</h3>
 <ul>
 <li>アナログ信号は扱えない
 <ul>
@@ -360,8 +387,8 @@
 
 </ul>
 </section>
-<section id="slide-org6ed23a0">
-<h3 id="org6ed23a0">アナログとデジタル</h3>
+<section id="slide-org5fc0d7a">
+<h3 id="org5fc0d7a">アナログとデジタル</h3>
 <ul>
 <li>アナログ
 <ul>
@@ -380,8 +407,8 @@
 
 </ul>
 </section>
-<section id="slide-org34b4f3a">
-<h3 id="org34b4f3a">標本化と量子化</h3>
+<section id="slide-org5ca88b8">
+<h3 id="org5ca88b8">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化 (discretization)
 <ul>
@@ -394,8 +421,8 @@
 
 </ul>
 </section>
-<section id="slide-orgd3dd56e">
-<h3 id="orgd3dd56e">標本化における疑問</h3>
+<section id="slide-orgd381039">
+<h3 id="orgd381039">標本化における疑問</h3>
 <ul>
 <li>標本化 : 明らかに情報は落ちている
 <ul>
@@ -407,20 +434,20 @@
 </ul>
 
 
-<div id="org716b532" class="figure">
+<div id="org8d15f5d" class="figure">
 <p><img src="figs/信号処理 9.png" alt="信号処理 9.png" width="80%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgf3b0036">
-<h2 id="orgf3b0036">標本化定理</h2>
-<div class="outline-text-2" id="text-orgf3b0036">
+<section id="slide-orgc47b72e">
+<h2 id="orgc47b72e">標本化定理</h2>
+<div class="outline-text-2" id="text-orgc47b72e">
 </div>
 </section>
-<section id="slide-org2ce6ace">
-<h3 id="org2ce6ace">標本化定理</h3>
+<section id="slide-org970b34c">
+<h3 id="org970b34c">標本化定理</h3>
 <ul>
 <li><p>
 定理
@@ -435,7 +462,7 @@
 </ul>
 
 
-<div id="org8e36cf9" class="figure">
+<div id="org1f30ceb" class="figure">
 <p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
 </p>
 </div>
@@ -474,11 +501,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org2a07837" data-background="#fef4f4">
-<h2 id="org2a07837">演習</h2>
+<section id="slide-org1f9e0df" data-background="#fef4f4">
+<h2 id="org1f9e0df">演習</h2>
 </section>
-<section id="slide-org13083b4" data-background="#fef4f4">
-<h3 id="org13083b4">練習問題</h3>
+<section id="slide-org6495da9" data-background="#fef4f4">
+<h3 id="org6495da9">練習問題</h3>
 <ul>
 <li><p>
 以下の積分
@@ -500,13 +527,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org7f80d4e">
-<h2 id="org7f80d4e">定理の証明と注意</h2>
-<div class="outline-text-2" id="text-org7f80d4e">
+<section id="slide-orgd2870d1">
+<h2 id="orgd2870d1">定理の証明と注意</h2>
+<div class="outline-text-2" id="text-orgd2870d1">
 </div>
 </section>
-<section id="slide-orgfb4b29d">
-<h3 id="orgfb4b29d">標本化定理の証明</h3>
+<section id="slide-orge58f8b5">
+<h3 id="orge58f8b5">標本化定理の証明</h3>
 <ul>
 <li><p>
 step 1
@@ -530,7 +557,7 @@ step 1
 </ul>
 
 
-<div id="org3ff8b90" class="figure">
+<div id="org5bad295" class="figure">
 <p><img src="figs/信号処理 6.png" alt="信号処理 6.png" width="70%" />
 </p>
 </div>
@@ -556,7 +583,7 @@ Fourier 級数展開が存在する．
 </ul>
 
 
-<div id="orga51f381" class="figure">
+<div id="orgad6fd4b" class="figure">
 <p><img src="figs/信号処理 7.png" alt="信号処理 7.png" width="70%" />
 </p>
 </div>
@@ -856,8 +883,8 @@ step 11
 
 </ul>
 </section>
-<section id="slide-org6836047">
-<h3 id="org6836047">定理に関する注意</h3>
+<section id="slide-org3348c09">
+<h3 id="org3348c09">定理に関する注意</h3>
 <ul>
 <li><p>
 直感的な意味
@@ -915,8 +942,8 @@ Nyquist 周波数での挙動
 
 </ul>
 </section>
-<section id="slide-orgb34396b">
-<h3 id="orgb34396b">エイリアシング</h3>
+<section id="slide-org1a74450">
+<h3 id="org1a74450">エイリアシング</h3>
 <ul>
 <li><p>
 定理の前提
@@ -958,18 +985,18 @@ Nyquist 周波数での挙動
 </ul>
 
 
-<div id="org031f8cf" class="figure">
+<div id="org969b87a" class="figure">
 <p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org5e1d16b" data-background="#fef4f4">
-<h2 id="org5e1d16b">演習</h2>
+<section id="slide-org3a56356" data-background="#fef4f4">
+<h2 id="org3a56356">演習</h2>
 </section>
-<section id="slide-org8381c08" data-background="#fef4f4">
-<h3 id="org8381c08">練習問題</h3>
+<section id="slide-org9c32c1a" data-background="#fef4f4">
+<h3 id="org9c32c1a">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数
@@ -985,8 +1012,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-orgb87ecb8">
-<h2 id="orgb87ecb8">今回のまとめ</h2>
+<section id="slide-orgcfa71d9">
+<h2 id="orgcfa71d9">今回のまとめ</h2>
 <ul>
 <li>デジタル信号処理
 <ul>
@@ -1003,15 +1030,19 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </ul></li>
 
 </ul>
+</section>
+</section>
 </div>
 </div>
+<p> Created by Noboru Murata | Licensed under CC BY-NC 4.0 </p>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/menu/menu.js"></script>
-<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
 <script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -1023,27 +1054,41 @@ progress: true,
 history: true,
 center: true,
 slideNumber: 'c',
-rollingLinks: false,
+rollingLinks: true,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: true,
+fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
 overview: true,
+width: 1050,
+height: 700,
+margin: 0.10,
+minScale: 0.75,
+maxScale: 1.25,
 
 transition: 'fade',
 transitionSpeed: 'default',
 showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
-spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
+'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
 });
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>
+/* Recompute layout upon changes by klipse.  Code fragment from
+   asciidoctor-revealjs-klipse by Timothy Pratley under GPLv3:
+   https://github.com/timothypratley/asciidoctor-revealjs-klipse/blob/master/docs/docinfo-footer.html */
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    window.dispatchEvent( new Event('resize') );
+} );
 </script>
 </body>
 </html>

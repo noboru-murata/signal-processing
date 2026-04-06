@@ -13,13 +13,40 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/font-awesome/css/all.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="./reveal.js/local/lecture.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/menu.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
-
-<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
+<link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
+<style>
+/* Position computations of klipse get confused by reveal.js's scaling.
+   Hence, scaling should be disabled with this code.  Fix height of code area
+   with scrollbar (use overflow instead of overflow-y to restore CodeMirror
+   setting afterwards): */
+.reveal section pre { max-height: 70vh; height: auto; overflow: auto; }
+/* Reset some reveal.js and oer-reveal settings: */
+.reveal section pre .CodeMirror pre { font-size: 2em; box-shadow: none; width: auto; padding: 0.4em; display: block; overflow: visible; }
+/* Enlarge cursor: */
+.CodeMirror-cursor { border-left: 3px solid black; }
+</style>
+<script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_eval_html: '.language-klipse-html',
+        selector_eval_js: '.language-klipse-javascript',
+        selector_eval_js: '.language-klipse-js',
+        selector_eval_php: '.language-klipse-php',
+        selector_eval_python_client: '.language-klipse-python',
+        selector_eval_ruby: '.language-klipse-ruby',
+        selector_eval_scheme: '.language-klipse-scheme',
+        selector_sql: '.language-klipse-sql'
+    };
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -36,7 +63,7 @@
     <p>信号処理 - 第5講</p>
 </div>
 <div class="keyboard-usage">
-    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+    <p></p>
 </div>
 <div class="talk-author">
   <p>村田 昇<br />
@@ -45,13 +72,13 @@
 
 </section>
 <section>
-<section id="slide-org295f186">
-<h2 id="org295f186">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org295f186">
+<section id="slide-org2fc1f50">
+<h2 id="org2fc1f50">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org2fc1f50">
 </div>
 </section>
-<section id="slide-org58deb5f">
-<h3 id="org58deb5f">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-org4db4808">
+<h3 id="org4db4808">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
@@ -80,8 +107,8 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org2989bb6">
-<h3 id="org2989bb6">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-org82e94c5">
+<h3 id="org82e94c5">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
@@ -119,8 +146,8 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-orga8b272a">
-<h3 id="orga8b272a">Fourier 級数展開</h3>
+<section id="slide-org0fc9724">
+<h3 id="org0fc9724">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
@@ -163,11 +190,11 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-orgd645ac2" data-background="#fef4f4">
-<h2 id="orgd645ac2">演習</h2>
+<section id="slide-org9035a59" data-background="#fef4f4">
+<h2 id="org9035a59">演習</h2>
 </section>
-<section id="slide-orgdf558ab" data-background="#fef4f4">
-<h3 id="orgdf558ab">練習問題</h3>
+<section id="slide-orge9e0caf" data-background="#fef4f4">
+<h3 id="orge9e0caf">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) を Fourier 級数展開せよ．
@@ -191,11 +218,11 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-org2d7f745">
-<h2 id="org2d7f745">不連続点の性質</h2>
+<section id="slide-orgf34be79">
+<h2 id="orgf34be79">不連続点の性質</h2>
 </section>
-<section id="slide-org4f7b2a8">
-<h3 id="org4f7b2a8">片側極限</h3>
+<section id="slide-orge393b9a">
+<h3 id="orge393b9a">片側極限</h3>
 <ul>
 <li><p>
 定義
@@ -219,8 +246,8 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org237359a">
-<h3 id="org237359a">不連続点</h3>
+<section id="slide-org5a6ddb0">
+<h3 id="org5a6ddb0">不連続点</h3>
 <ul>
 <li><p>
 不連続関数
@@ -249,8 +276,8 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org8984c9f">
-<h3 id="org8984c9f">不連続点での評価</h3>
+<section id="slide-orgf71b533">
+<h3 id="orgf71b533">不連続点での評価</h3>
 <ul>
 <li><p>
 定理で評価した式
@@ -305,13 +332,13 @@ Hilbert 空間
 <blockquote>
 <div>
 \begin{align}
-  % &\Bigl|\int_{-\delta}^{\delta}P_{r}(y)\{f(x-y)-f(x)\}dy\Bigr|\\
-  % &\le
-  &\Bigl|\int_{-\delta}^{0}P_{r}(y)\{f(x-y)-f(x{+}0)\}dy\Bigr|\\
-  &\quad+\Bigl|\int_{0}^{\delta}P_{r}(y)\{f(x-y)-f(x{-}0)\}dy\Bigr|\\
+  &\Biggl|\int_{-\delta}^{\delta}P_{r}(y)f(x{-}y)-\frac{f(x{-}0)+f(x{+}0)}{2}dy\Biggr|\\
   &\le
-    \frac{1}{2}\sup_{-\delta < y < 0}|f(x-y)-f(x{+}0)|\\
-  &\quad+\frac{1}{2}\sup_{0 < y < \delta}|f(x-y)-f(x{-}0)|\\
+  \Biggl|\int_{-\delta}^{0}P_{r}(y)\{f(x{-}y)-f(x{+}0)\}dy\Biggr|\\
+  &\quad+\Biggl|\int_{0}^{\delta}P_{r}(y)\{f(x{-}y)-f(x{-}0)\}dy\Biggr|\\
+  &\le
+    \frac{1}{2}\sup_{-\delta < y < 0}|f(x{-}y)-f(x{+}0)|\\
+  &\quad+\frac{1}{2}\sup_{0 < y < \delta}|f(x{-}y)-f(x{-}0)|\\
   &\to^{\delta\to0}0
 \end{align}
 
@@ -349,11 +376,11 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-orgdfee4db" data-background="#fef4f4">
-<h2 id="orgdfee4db">演習</h2>
+<section id="slide-orgaab5081" data-background="#fef4f4">
+<h2 id="orgaab5081">演習</h2>
 </section>
-<section id="slide-org6acd7d3" data-background="#fef4f4">
-<h3 id="org6acd7d3">練習問題</h3>
+<section id="slide-orgdc73750" data-background="#fef4f4">
+<h3 id="orgdc73750">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
@@ -378,13 +405,13 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 </section>
 </section>
 <section>
-<section id="slide-org1987e1c">
-<h2 id="org1987e1c">Fourier 係数の性質</h2>
-<div class="outline-text-2" id="text-org1987e1c">
+<section id="slide-orgc128b1a">
+<h2 id="orgc128b1a">Fourier 係数の性質</h2>
+<div class="outline-text-2" id="text-orgc128b1a">
 </div>
 </section>
-<section id="slide-org75024a1">
-<h3 id="org75024a1">畳み込み</h3>
+<section id="slide-orgbbb742b">
+<h3 id="orgbbb742b">畳み込み</h3>
 <ul>
 <li><p>
 定義
@@ -413,8 +440,8 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-org5e4170d">
-<h3 id="org5e4170d">\(L^{p}\) ノルム</h3>
+<section id="slide-org2fcaf54">
+<h3 id="org2fcaf54">\(L^{p}\) ノルム</h3>
 <ul>
 <li><p>
 定義
@@ -440,8 +467,8 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-org8e15426">
-<h3 id="org8e15426">\(L^{p}\) 空間</h3>
+<section id="slide-orga498694">
+<h3 id="orga498694">\(L^{p}\) 空間</h3>
 <ul>
 <li><p>
 定義
@@ -459,8 +486,8 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-org2a68cd1">
-<h3 id="org2a68cd1">Riemann-Lebesgue の定理</h3>
+<section id="slide-org2fdbc04">
+<h3 id="org2fdbc04">Riemann-Lebesgue の定理</h3>
 <ul>
 <li><p>
 定理
@@ -543,8 +570,8 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-org3bf62c8">
-<h3 id="org3bf62c8">Riemann-Lebesgue の定理の応用</h3>
+<section id="slide-orgead37d4">
+<h3 id="orgead37d4">Riemann-Lebesgue の定理の応用</h3>
 <ul>
 <li><p>
 Fourier 級数の項別微分
@@ -599,11 +626,11 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-org1a7c1ad">
-<h2 id="org1a7c1ad">関数の積とノルム</h2>
+<section id="slide-orgca14aa3">
+<h2 id="orgca14aa3">関数の積とノルム</h2>
 </section>
-<section id="slide-orgb64677b">
-<h3 id="orgb64677b">Hölder の不等式</h3>
+<section id="slide-orga19edf0">
+<h3 id="orga19edf0">Hölder の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -697,8 +724,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 </ul>
 </section>
-<section id="slide-org482f6ff">
-<h3 id="org482f6ff">畳み込みのノルム</h3>
+<section id="slide-org10b2aa0">
+<h3 id="org10b2aa0">畳み込みのノルム</h3>
 <ul>
 <li><p>
 定理
@@ -786,8 +813,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 </ul>
 </section>
-<section id="slide-orgbed5755">
-<h3 id="orgbed5755">畳み込みの Fourier 級数</h3>
+<section id="slide-org4c92c6f">
+<h3 id="org4c92c6f">畳み込みの Fourier 級数</h3>
 <ul>
 <li><p>
 係数の存在
@@ -844,11 +871,11 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgecd6433" data-background="#fef4f4">
-<h2 id="orgecd6433">演習</h2>
+<section id="slide-org56bc36a" data-background="#fef4f4">
+<h2 id="org56bc36a">演習</h2>
 </section>
-<section id="slide-orgfae844a" data-background="#fef4f4">
-<h3 id="orgfae844a">練習問題</h3>
+<section id="slide-org9bdfe36" data-background="#fef4f4">
+<h3 id="org9bdfe36">練習問題</h3>
 <ul>
 <li><p>
 関数 \(f\) を
@@ -876,8 +903,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgb572ab7">
-<h2 id="orgb572ab7">今回のまとめ</h2>
+<section id="slide-orgf466397">
+<h2 id="orgf466397">今回のまとめ</h2>
 <ul>
 <li>Fourier 級数の性質
 <ul>
@@ -904,15 +931,19 @@ Fourier 級数展開:
 </ul></li>
 
 </ul>
+</section>
+</section>
 </div>
 </div>
+<p> Created by Noboru Murata | Licensed under CC BY-NC 4.0 </p>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/menu/menu.js"></script>
-<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
 <script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -924,27 +955,41 @@ progress: true,
 history: true,
 center: true,
 slideNumber: 'c',
-rollingLinks: false,
+rollingLinks: true,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: true,
+fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
 overview: true,
+width: 1050,
+height: 700,
+margin: 0.10,
+minScale: 0.75,
+maxScale: 1.25,
 
 transition: 'fade',
 transitionSpeed: 'default',
 showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
-spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
+'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
 });
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>
+/* Recompute layout upon changes by klipse.  Code fragment from
+   asciidoctor-revealjs-klipse by Timothy Pratley under GPLv3:
+   https://github.com/timothypratley/asciidoctor-revealjs-klipse/blob/master/docs/docinfo-footer.html */
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    window.dispatchEvent( new Event('resize') );
+} );
 </script>
 </body>
 </html>

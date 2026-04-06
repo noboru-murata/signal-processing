@@ -13,13 +13,40 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/font-awesome/css/all.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="./reveal.js/local/lecture.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/menu.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
-
-<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
+<link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
+<style>
+/* Position computations of klipse get confused by reveal.js's scaling.
+   Hence, scaling should be disabled with this code.  Fix height of code area
+   with scrollbar (use overflow instead of overflow-y to restore CodeMirror
+   setting afterwards): */
+.reveal section pre { max-height: 70vh; height: auto; overflow: auto; }
+/* Reset some reveal.js and oer-reveal settings: */
+.reveal section pre .CodeMirror pre { font-size: 2em; box-shadow: none; width: auto; padding: 0.4em; display: block; overflow: visible; }
+/* Enlarge cursor: */
+.CodeMirror-cursor { border-left: 3px solid black; }
+</style>
+<script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_eval_html: '.language-klipse-html',
+        selector_eval_js: '.language-klipse-javascript',
+        selector_eval_js: '.language-klipse-js',
+        selector_eval_php: '.language-klipse-php',
+        selector_eval_python_client: '.language-klipse-python',
+        selector_eval_ruby: '.language-klipse-ruby',
+        selector_eval_scheme: '.language-klipse-scheme',
+        selector_sql: '.language-klipse-sql'
+    };
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -36,7 +63,7 @@
     <p>信号処理 - 第2講</p>
 </div>
 <div class="keyboard-usage">
-    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+    <p></p>
 </div>
 <div class="talk-author">
   <p>村田 昇<br />
@@ -45,13 +72,13 @@
 
 </section>
 <section>
-<section id="slide-org1fb55bc">
-<h2 id="org1fb55bc">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org1fb55bc">
+<section id="slide-org5e6e199">
+<h2 id="org5e6e199">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org5e6e199">
 </div>
 </section>
-<section id="slide-org809bf9d">
-<h3 id="org809bf9d">ベクトル空間</h3>
+<section id="slide-orgd35ec07">
+<h3 id="orgd35ec07">ベクトル空間</h3>
 <ul>
 <li><p>
 以下の条件を満たす
@@ -74,8 +101,8 @@
 
 </ul>
 </section>
-<section id="slide-org4b9491c">
-<h3 id="org4b9491c">ベクトル空間の例</h3>
+<section id="slide-org3aa0b77">
+<h3 id="org3aa0b77">ベクトル空間の例</h3>
 <ul>
 <li><span style="color:green;">幾何ベクトル</span></li>
 <li><span style="color:green;">数ベクトル</span></li>
@@ -98,8 +125,8 @@
 
 </ul>
 </section>
-<section id="slide-orged9fc11">
-<h3 id="orged9fc11">線形独立</h3>
+<section id="slide-orge23e792">
+<h3 id="orge23e792">線形独立</h3>
 <ul>
 <li><p>
 定義
@@ -121,8 +148,8 @@
 
 </ul>
 </section>
-<section id="slide-org9fd2e6a">
-<h3 id="org9fd2e6a">基底</h3>
+<section id="slide-org8f95318">
+<h3 id="org8f95318">基底</h3>
 <ul>
 <li><p>
 定義
@@ -147,8 +174,8 @@
 
 </ul>
 </section>
-<section id="slide-orgfabea29">
-<h3 id="orgfabea29">基底の重要性</h3>
+<section id="slide-orgf2da0d0">
+<h3 id="orgf2da0d0">基底の重要性</h3>
 <ul>
 <li><p>
 定理
@@ -179,11 +206,11 @@
 </section>
 </section>
 <section>
-<section id="slide-orgc8d9e8b" data-background="#fef4f4">
-<h2 id="orgc8d9e8b">演習</h2>
+<section id="slide-org1f4bbbc" data-background="#fef4f4">
+<h2 id="org1f4bbbc">演習</h2>
 </section>
-<section id="slide-orgb2a9633" data-background="#fef4f4">
-<h3 id="orgb2a9633">練習問題</h3>
+<section id="slide-orgadd63eb" data-background="#fef4f4">
+<h3 id="orgadd63eb">練習問題</h3>
 <ul>
 <li>以下の集合 \(V\) のうちベクトル空間はどれか？
 <ul>
@@ -208,11 +235,11 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb518706">
-<h2 id="orgb518706">内積空間</h2>
+<section id="slide-orgceff0ee">
+<h2 id="orgceff0ee">内積空間</h2>
 </section>
-<section id="slide-orgf44f249">
-<h3 id="orgf44f249">内積</h3>
+<section id="slide-orgf74183e">
+<h3 id="orgf74183e">内積</h3>
 <ul>
 <li><p>
 定義
@@ -231,7 +258,7 @@
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br />
 なお，体 \(K\) が実数の場合は \(\langle u,v\rangle = \langle v,u\rangle\)</li>
 <li>\(\langle \alpha u+\beta u',v\rangle
-     =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+      =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
 
 </ol>
 </blockquote>
@@ -244,8 +271,8 @@
 
 </ul>
 </section>
-<section id="slide-org2e3da21">
-<h3 id="org2e3da21">内積空間</h3>
+<section id="slide-org99552a3">
+<h3 id="org99552a3">内積空間</h3>
 <ul>
 <li><p>
 定義
@@ -260,8 +287,8 @@
 
 </ul>
 </section>
-<section id="slide-org79a0987">
-<h3 id="org79a0987">内積空間の例</h3>
+<section id="slide-orgf042416">
+<h3 id="orgf042416">内積空間の例</h3>
 <ul>
 <li><span style="color:green;">幾何ベクトル空間</span></li>
 <li><span style="color:green;">数ベクトル空間</span></li>
@@ -269,8 +296,8 @@
 
 </ul>
 </section>
-<section id="slide-org7ef6f87">
-<h3 id="org7ef6f87">内積の例</h3>
+<section id="slide-org0eb3445">
+<h3 id="org0eb3445">内積の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">幾何ベクトル空間</span>
@@ -361,8 +388,8 @@
 
 </ul>
 </section>
-<section id="slide-orgf1e8a25">
-<h3 id="orgf1e8a25">ノルム</h3>
+<section id="slide-orgbb86698">
+<h3 id="orgbb86698">ノルム</h3>
 <ul>
 <li><p>
 定義
@@ -404,8 +431,8 @@
 
 </ul>
 </section>
-<section id="slide-orgd8eec65">
-<h3 id="orgd8eec65">距離</h3>
+<section id="slide-org9ad5fea">
+<h3 id="org9ad5fea">距離</h3>
 <ul>
 <li><p>
 内積空間では自然に距離が導入される
@@ -421,11 +448,11 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd6f76e7" data-background="#fef4f4">
-<h2 id="orgd6f76e7">演習</h2>
+<section id="slide-orga5622eb" data-background="#fef4f4">
+<h2 id="orga5622eb">演習</h2>
 </section>
-<section id="slide-org23bf69f" data-background="#fef4f4">
-<h3 id="org23bf69f">練習問題</h3>
+<section id="slide-org1504c52" data-background="#fef4f4">
+<h3 id="org1504c52">練習問題</h3>
 <ul>
 <li>距離の定義を述べよ．</li>
 <li>2つのベクトルの差のノルムが距離となることを確かめよ．</li>
@@ -444,11 +471,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org10a79a2">
-<h2 id="org10a79a2">Hilbert 空間</h2>
+<section id="slide-org57ee704">
+<h2 id="org57ee704">Hilbert 空間</h2>
 </section>
-<section id="slide-org5b5e0fe">
-<h3 id="org5b5e0fe">完備性</h3>
+<section id="slide-orge94b7e3">
+<h3 id="orge94b7e3">完備性</h3>
 <ul>
 <li><p>
 定義
@@ -474,8 +501,8 @@
 
 </ul>
 </section>
-<section id="slide-orgea52c9f">
-<h3 id="orgea52c9f">完備性の例</h3>
+<section id="slide-orgc2bc601">
+<h3 id="orgc2bc601">完備性の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">有理数は完備でない</span>
@@ -500,8 +527,8 @@
 
 </ul>
 </section>
-<section id="slide-org2552418">
-<h3 id="org2552418">Hilbert 空間</h3>
+<section id="slide-orgddb481d">
+<h3 id="orgddb481d">Hilbert 空間</h3>
 <ul>
 <li><p>
 定義
@@ -523,8 +550,8 @@ Cauchy 列を考えるということ</li>
 
 </ul>
 </section>
-<section id="slide-orgaea102d">
-<h3 id="orgaea102d">Hilbert 空間の例</h3>
+<section id="slide-org3f21a67">
+<h3 id="org3f21a67">Hilbert 空間の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">\(l^{2}\) 空間 (無限次元数ベクトル空間)</span>
@@ -604,11 +631,11 @@ Cauchy 列を考えるということ</li>
 </section>
 </section>
 <section>
-<section id="slide-org1679dbc" data-background="#fef4f4">
-<h2 id="org1679dbc">演習</h2>
+<section id="slide-org2aae6f3" data-background="#fef4f4">
+<h2 id="org2aae6f3">演習</h2>
 </section>
-<section id="slide-orge81ff73" data-background="#fef4f4">
-<h3 id="orge81ff73">練習問題</h3>
+<section id="slide-orga12ac8c" data-background="#fef4f4">
+<h3 id="orga12ac8c">練習問題</h3>
 <ul>
 <li>以下の集合の中で完備なものはどれか?
 <ul>
@@ -631,8 +658,8 @@ Cauchy 列を考えるということ</li>
 </section>
 </section>
 <section>
-<section id="slide-org6a4e9be">
-<h2 id="org6a4e9be">今回のまとめ</h2>
+<section id="slide-org870b061">
+<h2 id="org870b061">今回のまとめ</h2>
 <ul>
 <li>内積 : 
 ベクトル空間の2つの要素に対して定義され，
@@ -642,7 +669,7 @@ Cauchy 列を考えるということ</li>
 特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)</li>
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br /></li>
 <li>\(\langle \alpha u+\beta u',v\rangle
-    =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
+      =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)</li>
 
 </ul></li>
 
@@ -677,15 +704,32 @@ Cauchy 列を考えるということ</li>
 <li>Hilbert 空間 : 完備な内積空間</li>
 
 </ul>
+</section>
+<section id="slide-orge97b73d">
+<h3 id="orge97b73d">注意</h3>
+<ul>
+<li>確認テスト (講義2の中)
+<ul>
+<li>試験の意味を考えて誠実な対応をすること</li>
+<li>ネットワーク環境等には自身で配慮すること</li>
+<li>過去問などに取り組んでから受けることをお勧め</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
 </div>
 </div>
+<p> Created by Noboru Murata | Licensed under CC BY-NC 4.0 </p>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/menu/menu.js"></script>
-<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
 <script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -697,27 +741,41 @@ progress: true,
 history: true,
 center: true,
 slideNumber: 'c',
-rollingLinks: false,
+rollingLinks: true,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: true,
+fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
 overview: true,
+width: 1050,
+height: 700,
+margin: 0.10,
+minScale: 0.75,
+maxScale: 1.25,
 
 transition: 'fade',
 transitionSpeed: 'default',
 showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
-spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
+'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
 });
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>
+/* Recompute layout upon changes by klipse.  Code fragment from
+   asciidoctor-revealjs-klipse by Timothy Pratley under GPLv3:
+   https://github.com/timothypratley/asciidoctor-revealjs-klipse/blob/master/docs/docinfo-footer.html */
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    window.dispatchEvent( new Event('resize') );
+} );
 </script>
 </body>
 </html>

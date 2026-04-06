@@ -4,9 +4,9 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2025-04-15 17:41:03 mura>
+# Time-stamp: <2026-04-06 11:33:32 mura>
 :REVEAL:
-#+SETUPFILE: "./reveal.js/local/mycourse.org"
+#+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
 # <m C-i でlatex block (math env用)
 # C-c '
@@ -15,92 +15,93 @@
 * COMMENT メモ
 - 校正に関して記述
   
+
 * 前回のおさらい
 ** Fourier 級数展開
 - 定理
-  #+begin_quote
-  \(f\in L^{2}(-\pi,\pi)\) 
-  は
-  以下のように
-  Fourier級数展開
-  される．
-  \begin{align}
-    f(x)
-    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
-    &\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-  \end{align}
-  内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
-  以下で定義する．
-  \begin{equation}
-    \langle f,g\rangle
-    =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(f\in L^{2}(-\pi,\pi)\) 
+   は
+   以下のように
+   Fourier級数展開
+   される．
+   \begin{align}
+     f(x)
+     &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)\\
+     &\phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+   \end{align}
+   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+   以下で定義する．
+   \begin{equation}
+     \langle f,g\rangle
+     =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+   \end{equation}
+   #+end_quote
 
 ** Fourier 変換と反転公式
 - 定義
-  #+begin_quote
-  \(\mathbb{R}\)
-  上の関数
-  \(f\)
-  に対して
-  \begin{align}
-    \hat{f}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
-    &\text{(Fourier変換)}\\
-    f(x)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
-    &\text{(逆Fourier変換)}
-  \end{align}
-  で定義する．
-  #+end_quote
+   #+begin_quote
+   \(\mathbb{R}\)
+   上の関数
+   \(f\)
+   に対して
+   \begin{align}
+     \hat{f}(\omega)
+     &=\frac{1}{\sqrt{2\pi}}
+       \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+     &\text{(Fourier変換)}\\
+     f(x)
+     &=\frac{1}{\sqrt{2\pi}}
+       \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+     &\text{(逆Fourier変換)}
+   \end{align}
+   で定義する．
+   #+end_quote
 
 ** Parseval の定理
 - 定理
-  #+begin_quote
-  関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
-  このとき以下の関係が成り立つ．
-  \begin{equation}
-    \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
-    =
-    \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
-  \end{equation}
-  \begin{equation}
-    \langle f,g\rangle
-    =
-    \langle \hat{f},\hat{g}\rangle
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+   このとき以下の関係が成り立つ．
+   \begin{equation}
+     \int_{-\infty}^{\infty}f(x)\overline{g(x)}dx
+     =
+     \int_{-\infty}^{\infty}\hat{f}(\omega)\overline{\hat{g}(\omega)}d\omega
+   \end{equation}
+   \begin{equation}
+     \langle f,g\rangle
+     =
+     \langle \hat{f},\hat{g}\rangle
+   \end{equation}
+   #+end_quote
 
 ** Plancherel の定理
 - 定理
-  #+begin_quote
-  関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
-  このとき以下の関係が成り立つ．
-  \begin{equation}
-    \int_{-\infty}^{\infty}|f(x)|^{2}dx
-    =
-    \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
-  \end{equation}
-  \begin{equation}
-    \|f\|_{L^{2}}
-    =
-    \|\hat{f}\|_{L^{2}}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
+   このとき以下の関係が成り立つ．
+   \begin{equation}
+     \int_{-\infty}^{\infty}|f(x)|^{2}dx
+     =
+     \int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2}d\omega
+   \end{equation}
+   \begin{equation}
+     \|f\|_{L^{2}}
+     =
+     \|\hat{f}\|_{L^{2}}
+   \end{equation}
+   #+end_quote
 
 ** Riemann-Lebesgue の補題
 - 定理
-  #+begin_quote
-  関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
-  \(f'\in L^{1}(\mathbb{R})\) とする．
-  このとき以下の性質をもつ．
-  \begin{equation}
-    \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
+   \(f'\in L^{1}(\mathbb{R})\) とする．
+   このとき以下の性質をもつ．
+   \begin{equation}
+     \lim_{|\omega|\to\infty}\hat{f}(\omega)=0
+   \end{equation}
+   #+end_quote
 
 ** 演算との関係
 | 関数                           | Fourier変換                                      |
@@ -121,14 +122,14 @@
 :reveal_background: #fef4f4
 :END:
 - 関数
-  #+begin_quote
-  \begin{equation}
-    f(x)=\frac{1}{x-ia}\;(a>0)        
-  \end{equation}
-  #+end_quote
-  の Fourier 変換を求めよ．
-  - Fourier 変換と逆 Fourier 変換の関係を利用
-  - /[[color:orange][複素積分を利用 (Cauchy の積分定理・留数定理)]]/
+   #+begin_quote
+   \begin{equation}
+     f(x)=\frac{1}{x-ia}\;(a>0)        
+   \end{equation}
+   #+end_quote
+   の Fourier 変換を求めよ．
+   - Fourier 変換と逆 Fourier 変換の関係を利用
+   - /[[color:orange][複素積分を利用 (Cauchy の積分定理・留数定理)]]/
 
 ** COMMENT 解答例
 :PROPERTIES:
@@ -172,30 +173,30 @@
 #   #+end_quote
 # #+reveal: split
 - Cauchy の積分定理
-  #+begin_quote
-  \(f\) を正則関数とするとき以下が成り立つ
-  \begin{equation}
-    \oint f(z)dz = 0
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(f\) を正則関数とするとき以下が成り立つ
+   \begin{equation}
+     \oint f(z)dz = 0
+   \end{equation}
+   #+end_quote
 - Cauchy の積分公式 (第2定理)
-  #+begin_quote
-  \(f\) を正則関数とするとき以下が成り立つ
-  \begin{equation}
-    f(c)
-    =\frac{1}{2\pi i}\oint \frac{f(z)}{z-c}dz
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(f\) を正則関数とするとき以下が成り立つ
+   \begin{equation}
+     f(c)
+     =\frac{1}{2\pi i}\oint \frac{f(z)}{z-c}dz
+   \end{equation}
+   #+end_quote
 
 #+reveal: split     
 - 留数定理 
-  #+begin_quote
-  積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
-  \begin{equation}
-    \mathrm{Res}_{z=c}f(z)
-    =\frac{1}{2\pi i}\oint f(z)dz
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   積分路が孤立特異点 \(c\) を含むとき以下が成り立つ
+   \begin{equation}
+     \mathrm{Res}_{z=c}f(z)
+     =\frac{1}{2\pi i}\oint f(z)dz
+   \end{equation}
+   #+end_quote
 - 留数計算
   #+begin_quote
   孤立特異点が1位の極なら以下で計算できる
@@ -265,68 +266,68 @@
 :reveal_background: #fef4f4
 :END:
 - 以下の関数の Fourier 変換を求めよ．
-  #+begin_quote
-  \begin{equation}
-    \frac{1}{x+ia}\;(a>0)
-  \end{equation}
-  #+end_quote
-  #+begin_quote
-  \begin{equation}
-    \frac{a}{x^{2}+a^{2}}\;(a>0)
-  \end{equation}
-  #+end_quote
-  #+begin_quote
-  \begin{equation}
-    \left(\frac{\sin(x)}{x}\right)^{2}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \frac{1}{x+ia}\;(a>0)
+   \end{equation}
+   #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \frac{a}{x^{2}+a^{2}}\;(a>0)
+   \end{equation}
+   #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \left(\frac{\sin(x)}{x}\right)^{2}
+   \end{equation}
+   #+end_quote
 
-  # #+begin_quote
-  #   \begin{align}
-  #     &\frac{1}{x+ia}\;(a>0) \\       
-  #     &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
-  #     & \left(\frac{\sin(x)}{x}\right)^{2}
-  #   \end{align}
-  # #+end_quote
+   # #+begin_quote
+   #   \begin{align}
+   #     &\frac{1}{x+ia}\;(a>0) \\       
+   #     &\frac{a}{x^{2}+a^{2}}\;(a>0) \\
+   #     & \left(\frac{\sin(x)}{x}\right)^{2}
+   #   \end{align}
+   # #+end_quote
 
 ** COMMENT 解答例
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
 - 以下の関係を利用すればよい
-  #+begin_quote
-  \begin{align}
-    \frac{1}{x+ia}
-    &=-i\sqrt{2\pi}\hat{g}(-x)\\
-    \frac{a}{x^{2}+a^{2}}
-    &=\frac{a}{(x-ia)(x+ia)}\\
-    &=\frac{1}{2i}\left(\frac{1}{x-ia}-\frac{1}{x+ia}\right)
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   \begin{align}
+     \frac{1}{x+ia}
+     &=-i\sqrt{2\pi}\hat{g}(-x)\\
+     \frac{a}{x^{2}+a^{2}}
+     &=\frac{a}{(x-ia)(x+ia)}\\
+     &=\frac{1}{2i}\left(\frac{1}{x-ia}-\frac{1}{x+ia}\right)
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - 積の Fourier 変換は畳み込みを利用すればよい
-  #+begin_quote
-  \begin{equation}
-    \mathcal{F}[f{*}f](\alpha)
-    =\sqrt{2\pi}\cdot\hat{f}(\alpha)^{2}
-  \end{equation}
-  \begin{equation}
-    \mathcal{F}[\Xi_{(-1,1)}](\alpha)
-    =
-    \sqrt{\frac{2}{\pi}}\frac{\sin(\alpha)}{\alpha}
-    =\sqrt{\frac{2}{\pi}}\hat{f}(\alpha)
-  \end{equation}
-  \begin{align}
-    \mathcal{F}[\hat{f}^{2}](\omega)
-    &=
-      \mathcal{F}^{-1}[\hat{f}^{2}](-\omega)
-      =\frac{1}{\sqrt{2\pi}}f{*}f(-\omega)\\
-    &=\frac{1}{\sqrt{2\pi}}
-      \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(-\omega)\\
-    &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(\omega)
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \mathcal{F}[f{*}f](\alpha)
+     =\sqrt{2\pi}\cdot\hat{f}(\alpha)^{2}
+   \end{equation}
+   \begin{equation}
+     \mathcal{F}[\Xi_{(-1,1)}](\alpha)
+     =
+     \sqrt{\frac{2}{\pi}}\frac{\sin(\alpha)}{\alpha}
+     =\sqrt{\frac{2}{\pi}}\hat{f}(\alpha)
+   \end{equation}
+   \begin{align}
+     \mathcal{F}[\hat{f}^{2}](\omega)
+     &=
+       \mathcal{F}^{-1}[\hat{f}^{2}](-\omega)
+       =\frac{1}{\sqrt{2\pi}}f{*}f(-\omega)\\
+     &=\frac{1}{\sqrt{2\pi}}
+       \sqrt{\frac{\pi}{2}}^{2}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(-\omega)\\
+     &=\sqrt{\frac{\pi}{8}}\Xi_{(-1,1)}{*}\Xi_{(-1,1)}(\omega)
+   \end{align}
+   #+end_quote
 
 ** Fourier 変換の例
 | 関数                                         | Fourier変換                                         |
@@ -342,18 +343,18 @@
 ** 注意
 - 以降，音声や音楽などの時系列信号を扱う
 - 時間 \(t\) を明示的に表すために
-  #+begin_quote
-  \begin{equation}
-    f(t),\,g(t),\,h(t)
-  \end{equation}
-  #+end_quote
-  のように書く
+   #+begin_quote
+   \begin{equation}
+     f(t),\,g(t),\,h(t)
+   \end{equation}
+   #+end_quote
+   のように書く
 
 ** フィルタ
 - 定義
-  #+begin_quote
-  入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
-  #+end_quote
+   #+begin_quote
+   入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
+   #+end_quote
 
 #+NAME: fig:filter1
 #+ATTR_HTML: :width 100%
@@ -362,11 +363,11 @@
 
 ** フィルタの例
 - [[color:green][エレキギターのエフェクター]] (effects unit, pedal)
-  - 歪み : オーバードライブ / ディストーション / ファズ
-  - モジュレーション : コーラス / フランジャー / トレモロ
-  - 空間系 : リバーブ / ディレイ
-  - フィルタ : ワウ / ピッチシフター / ワーミー
-  - その他 :  イコライザー / コンプレッサー / ノイズゲート
+   - 歪み : オーバードライブ / ディストーション / ファズ
+   - モジュレーション : コーラス / フランジャー / トレモロ
+   - 空間系 : リバーブ / ディレイ
+   - フィルタ : ワウ / ピッチシフター / ワーミー
+   - その他 :  イコライザー / コンプレッサー / ノイズゲート
 
 ** フィルタ
 - 関数 \(f(t)\) を関数 \(g(t)\) に変換する
@@ -376,10 +377,10 @@
 
 ** 線形性
 - 定義
-  #+begin_quote
-  2つの入出力関係を考えたとき，
-  入力の線形結合がそのまま出力に反映される性質
-  #+end_quote
+   #+begin_quote
+   2つの入出力関係を考えたとき，
+   入力の線形結合がそのまま出力に反映される性質
+   #+end_quote
 
 #+NAME: fig:filter2
 #+ATTR_HTML: :width 100%
@@ -393,12 +394,12 @@
 ** 線形フィルタ
 - 線形性を持つフィルタ
 - 入力の分解表現
-  #+begin_quote
-  入力信号 \(f(t)\) を基底関数 \(\phi_{n}(t)\) を用いて分解
-  \begin{equation}
-    f(t)=\sum_{n}a_{n}\phi_{n}(t)
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   入力信号 \(f(t)\) を基底関数 \(\phi_{n}(t)\) を用いて分解
+   \begin{equation}
+     f(t)=\sum_{n}a_{n}\phi_{n}(t)
+   \end{equation}
+   #+end_quote
 - フィルタによる基底関数の変換
 
 #+NAME: fig:filter4
@@ -408,29 +409,29 @@
 
 #+reveal: split
 - 出力の分解表現
-  #+begin_quote
-  出力信号 \(g(t)\) は変換された基底関数 \(\psi_{n}(t)\) の合成
-  \begin{equation}
-    g(t)=\sum_{n}a_{n}\psi_{n}(t)
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   出力信号 \(g(t)\) は変換された基底関数 \(\psi_{n}(t)\) の合成
+   \begin{equation}
+     g(t)=\sum_{n}a_{n}\psi_{n}(t)
+   \end{equation}
+   #+end_quote
 - 入出力の基底の変換にだけ着目すれば十分
 
 ** 非線形フィルタ
 - 信号の変換において非線形作用を持つフィルタ
 - 多くのフィルタは線形性を持っている
 - [[color:green][線形でない例]] (エフェクタ)
-  - ディストーション
-  - オーバードライブ
-  入力信号の振幅の大きさによって歪みが生じる
+   - ディストーション
+   - オーバードライブ
+   入力信号の振幅の大きさによって歪みが生じる
 - 非線形フィルタでは出力から入力を再現することが難しい
 
 ** 時不変性
 - 定義
-  #+begin_quote
-  入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
-  #+end_quote
-  - 時間が経過してもフィルタの性質は変わらない
+   #+begin_quote
+   入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
+   #+end_quote
+   - 時間が経過してもフィルタの性質は変わらない
 
 #+NAME: fig:filter5
 #+ATTR_HTML: :width 100%
@@ -441,28 +442,28 @@
 * フィルタの数学的表現
 ** 信号の近似
 - 信号 \(f(t)\) の階段関数近似
-  #+begin_quote
-  \begin{equation}
-    f_{\tau}(t)=\sum_{n} a_{n}\Delta(t{-}t_{n})
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     f_{\tau}(t)=\sum_{n} a_{n}\Delta(t{-}t_{n})
+   \end{equation}
+   #+end_quote
 - 階段関数の基底
-  #+begin_quote
-  \(\Delta(t)\) は
-  区間 \((0,\tau)\) で高さ1となる単一の矩形波で，
-  時間 \(t_{n}=n\tau\) だけシフトした矩形波の集合
-  \begin{equation}
-    \Delta(t{-}t_{n})=\Delta(t{-}n\tau),\quad
-    (n\text{ は整数})
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(\Delta(t)\) は
+   区間 \((0,\tau)\) で高さ1となる単一の矩形波で，
+   時間 \(t_{n}=n\tau\) だけシフトした矩形波の集合
+   \begin{equation}
+     \Delta(t{-}t_{n})=\Delta(t{-}n\tau),\quad
+     (n\text{ は整数})
+   \end{equation}
+   #+end_quote
 
 #+reveal: split
 - 矩形波(基底関数)の変換
-  #+begin_quote
-  矩形波 \(\Delta(t)\) はフィルタによって
-  \(H(t)\) に変換される．
-  #+end_quote
+   #+begin_quote
+   矩形波 \(\Delta(t)\) はフィルタによって
+   \(H(t)\) に変換される．
+   #+end_quote
 
 #+NAME: fig:filter6
 #+ATTR_HTML: :width 100%
@@ -509,70 +510,70 @@
 
 ** 積分による表現
 - 階段関数の係数
-  #+begin_quote
-  信号 \(f(t)\) の階段関数近似の係数は
-  \(a_{n}=f(t_{n})=f(n\tau)\) とすれば良い．
-  \begin{align}
-    f_{\tau}(t)&=\sum_{n}f(t_{n})\Delta(t{-}t_{n})
-                 =\sum_{n}f(n\tau)\Delta(t{-}n\tau)\\
-    g_{\tau}(t)&=\sum_{n}f(t_{n})H(t{-}t_{n})
-                 =\sum_{n}f(n\tau)H(t{-}n\tau)
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   信号 \(f(t)\) の階段関数近似の係数は
+   \(a_{n}=f(t_{n})=f(n\tau)\) とすれば良い．
+   \begin{align}
+     f_{\tau}(t)&=\sum_{n}f(t_{n})\Delta(t{-}t_{n})
+                  =\sum_{n}f(n\tau)\Delta(t{-}n\tau)\\
+     g_{\tau}(t)&=\sum_{n}f(t_{n})H(t{-}t_{n})
+                  =\sum_{n}f(n\tau)H(t{-}n\tau)
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - 矩形波の極限
-  #+begin_quote
-  関数 \(\Delta(t)\) は
-  区間 \((0,\tau)\) で高さ1となる単一の矩形波なので，
-  極限は以下のようになる．
-  \begin{equation}
-    \delta_{\tau}(t)=\Delta(t)/\tau
-    \xrightarrow{\tau\to0}\delta(t)\;(\text{デルタ関数})
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   関数 \(\Delta(t)\) は
+   区間 \((0,\tau)\) で高さ1となる単一の矩形波なので，
+   極限は以下のようになる．
+   \begin{equation}
+     \delta_{\tau}(t)=\Delta(t)/\tau
+     \xrightarrow{\tau\to0}\delta(t)\;(\text{デルタ関数})
+   \end{equation}
+   #+end_quote
 
 #+reveal: split
 - 階段関数の極限
-  #+begin_quote
-  \begin{align}
-    f_{\tau}(t)
-    &=\sum_{n}f(n\tau)\Delta(t{-}n\tau)/\tau\cdot\tau
-      \xrightarrow{\tau\to0}\int f(s)\delta(t{-}s)ds\\
-    g_{\tau}(t)
-    &=\sum_{n}f(n\tau)H(t{-}n\tau)/\tau\cdot\tau
-      \xrightarrow{\tau\to0}\int f(s)h(t{-}s)ds
-  \end{align}
-  \begin{equation}
-    H(t)/\tau
-    \xrightarrow{\tau\to0}h(t)
-  \end{equation}
-  #+end_quote
-  - \(n\tau=s\) とおいて区分求積法の原理を用いればよい
+   #+begin_quote
+   \begin{align}
+     f_{\tau}(t)
+     &=\sum_{n}f(n\tau)\Delta(t{-}n\tau)/\tau\cdot\tau
+       \xrightarrow{\tau\to0}\int f(s)\delta(t{-}s)ds\\
+     g_{\tau}(t)
+     &=\sum_{n}f(n\tau)H(t{-}n\tau)/\tau\cdot\tau
+       \xrightarrow{\tau\to0}\int f(s)h(t{-}s)ds
+   \end{align}
+   \begin{equation}
+     H(t)/\tau
+     \xrightarrow{\tau\to0}h(t)
+   \end{equation}
+   #+end_quote
+   - \(n\tau=s\) とおいて区分求積法の原理を用いればよい
 
 #+reveal: split
 - フィルタの積分表現
-  #+begin_quote
-  \begin{align}
-    f(t)&=\int f(s)\delta(t{-}s)ds\\
-    g(t)&=\int f(s)h(t{-}s)ds
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   \begin{align}
+     f(t)&=\int f(s)\delta(t{-}s)ds\\
+     g(t)&=\int f(s)h(t{-}s)ds
+   \end{align}
+   #+end_quote
 
 ** インパルス応答
 - 変換された信号の表現(畳み込み積分)
-  #+begin_quote
-  \begin{equation}
-    g(t)=\int_{-\infty}^{\infty}f(s)h(t-s)ds
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     g(t)=\int_{-\infty}^{\infty}f(s)h(t-s)ds
+   \end{equation}
+   #+end_quote
 - 入力の表現
-  #+begin_quote
-  \begin{equation}
-    f(t)=\int_{-\infty}^{\infty}f(s)\delta(t-s)ds
-  \end{equation}
-  #+end_quote
-  - \(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ
+   #+begin_quote
+   \begin{equation}
+     f(t)=\int_{-\infty}^{\infty}f(s)\delta(t-s)ds
+   \end{equation}
+   #+end_quote
+   - \(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ
 
 #+reveal: split
 - フィルタの表現
@@ -588,34 +589,34 @@
 
 ** 因果的フィルタ
 - 音響信号などのフィルタのインパルス応答
-  #+begin_quote
-  \begin{equation}
-    h(t)=0\;(t<0)
-  \end{equation}
-  #+end_quote
-  - 時刻0にインパルスが入力される前には何も出力がされない
-  - 時間を遡ることがないという意味で *因果的* という
+   #+begin_quote
+   \begin{equation}
+     h(t)=0\;(t<0)
+   \end{equation}
+   #+end_quote
+   - 時刻0にインパルスが入力される前には何も出力がされない
+   - 時間を遡ることがないという意味で *因果的* という
 
 #+reveal: split
 - 因果的フィルタの畳み込み
-  #+begin_quote
-  \begin{equation}
-    h(t-s)=0\;(t < s)
-  \end{equation}
-  時刻 \(t\) での出力は
-  時刻 \(t\) 以前での入力のみにより定まる
-  \begin{equation}
-    g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     h(t-s)=0\;(t < s)
+   \end{equation}
+   時刻 \(t\) での出力は
+   時刻 \(t\) 以前での入力のみにより定まる
+   \begin{equation}
+     g(t)=\int_{-\infty}^{t}f(s)h(t-s)ds
+   \end{equation}
+   #+end_quote
 
 ** 非因果的フィルタ
 - 理想的なローパスフィルタ \\
-  (物理的な回路では作成することができない)
+   (物理的な回路では作成することができない)
 - 画像処理に用いられるフィルタ \\
-  (画素の上下左右に因果律があるわけではない)
+   (画素の上下左右に因果律があるわけではない)
 - オフラインの信号処理 \\
-  (時間遅れを許容するデジタル信号処理)
+   (時間遅れを許容するデジタル信号処理)
 
 
 * 演習
@@ -627,75 +628,73 @@
 :reveal_background: #fef4f4
 :END:
 - 線形時不変フィルタの機能は
-  インパルス応答の畳み込み積分として表される．
-  #+begin_quote
-  \begin{equation}
-    g(t)
-    =\int_{-\infty}^{\infty}h(t-s)f(s)ds
-    = h{*}f(t)
-  \end{equation}
-  #+end_quote
-  この関係を Fourier 変換を用いて表せ．
+   インパルス応答の畳み込み積分として表される．
+   #+begin_quote
+   \begin{equation}
+     g(t)
+     =\int_{-\infty}^{\infty}h(t-s)f(s)ds
+     = h{*}f(t)
+   \end{equation}
+   #+end_quote
+   この関係を Fourier 変換を用いて表せ．
 
 ** COMMENT 解答例
 - 入力信号 \(f\) とインパルス応答 \(h\) のFourier 変換
-  #+begin_quote
-  \begin{align}
-    \hat{f}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt\\
-    \hat{h}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t)e^{-i\omega t}dt
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   \begin{align}
+     \hat{f}(\omega)
+     &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt\\
+     \hat{h}(\omega)
+     &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t)e^{-i\omega t}dt
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - 出力信号 \(g\) のFourier 変換
-  #+begin_quote
-  \begin{align}
-    \hat{g}(\omega)
-    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)e^{-i\omega t}dt\\
-    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
-      \left(\int_{-\infty}^{\infty}h(t-s)f(s)ds\right) e^{-i\omega t}dt\\
-    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
-      h(t-s)f(s)e^{-i\omega(t-s)}e^{-i\omega s}dtds\\
-    &=\sqrt{2\pi}
-      \cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t-s)e^{-i\omega(t-s)}dt\\
-    &\qquad\times\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}ds
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   \begin{align}
+     \hat{g}(\omega)
+     &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(t)e^{-i\omega t}dt\\
+     &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+       \left(\int_{-\infty}^{\infty}h(t-s)f(s)ds\right) e^{-i\omega t}dt\\
+     &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+       h(t-s)f(s)e^{-i\omega(t-s)}e^{-i\omega s}dtds\\
+     &=\sqrt{2\pi}
+       \cdot\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}h(t-s)e^{-i\omega(t-s)}dt\\
+     &\qquad\times\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(s)e^{-i\omega s}ds
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - 整理すると
-  #+begin_quote
-  \begin{equation}
-    \hat{g}(\omega)
-    =
-    \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \hat{g}(\omega)
+     =
+     \sqrt{2\pi}\cdot\hat{h}(\omega)\cdot\hat{f}(\omega)
+   \end{equation}
+   #+end_quote
 - 時間 \(t\) に対して \(\omega\) は周波数に対応
-  #+begin_quote
-  Fourier 変換した周波数領域で見ると
-  フィルタの機能は周波数毎の振幅と位相の変換として理解できる．
-  #+end_quote
+   #+begin_quote
+   Fourier 変換した周波数領域で見ると
+   フィルタの機能は周波数毎の振幅と位相の変換として理解できる．
+   #+end_quote
 
 
 * 今回のまとめ
 - 線形時不変フィルタ
-  - 線形性
-  - 時不変性
-  - 因果的フィルタ
+   - 線形性
+   - 時不変性
+   - 因果的フィルタ
 - フィルタの数学的表現
-  - 階段関数近似
-  - 重ね合わせの原理
-  - 畳み込み積分
-  - インパルス応答
+   - 階段関数近似
+   - 重ね合わせの原理
+   - 畳み込み積分
+   - インパルス応答
 
 
-* Footnotes
+* Footnotes                                                          :ignore:
 * COMMENT ローカル変数
 # Local Variables:
 # org-latex-listings: minted
 # End:
-      
-  

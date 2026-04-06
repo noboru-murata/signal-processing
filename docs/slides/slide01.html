@@ -13,13 +13,40 @@
 
 <link rel="stylesheet" href="./reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/menu.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/font-awesome/css/all.css"/>
 
-<link rel="stylesheet" href="./reveal.js/plugin/menu/font-awesome/css/fontawesome.css"/>
+<link rel="stylesheet" href="./reveal.js/local/lecture.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/menu.css"/>
+
+<link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
-
-<link rel="stylesheet" href="./reveal.js/local/mycourse.css"/>
+<link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
+<style>
+/* Position computations of klipse get confused by reveal.js's scaling.
+   Hence, scaling should be disabled with this code.  Fix height of code area
+   with scrollbar (use overflow instead of overflow-y to restore CodeMirror
+   setting afterwards): */
+.reveal section pre { max-height: 70vh; height: auto; overflow: auto; }
+/* Reset some reveal.js and oer-reveal settings: */
+.reveal section pre .CodeMirror pre { font-size: 2em; box-shadow: none; width: auto; padding: 0.4em; display: block; overflow: visible; }
+/* Enlarge cursor: */
+.CodeMirror-cursor { border-left: 3px solid black; }
+</style>
+<script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_eval_html: '.language-klipse-html',
+        selector_eval_js: '.language-klipse-javascript',
+        selector_eval_js: '.language-klipse-js',
+        selector_eval_php: '.language-klipse-php',
+        selector_eval_python_client: '.language-klipse-python',
+        selector_eval_ruby: '.language-klipse-ruby',
+        selector_eval_scheme: '.language-klipse-scheme',
+        selector_sql: '.language-klipse-sql'
+    };
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -36,7 +63,7 @@
     <p>信号処理 - 第1講</p>
 </div>
 <div class="keyboard-usage">
-    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+    <p></p>
 </div>
 <div class="talk-author">
   <p>村田 昇<br />
@@ -45,13 +72,13 @@
 
 </section>
 <section>
-<section id="slide-org78554d0">
-<h2 id="org78554d0">ベクトル空間</h2>
-<div class="outline-text-2" id="text-org78554d0">
+<section id="slide-orgf9f3cab">
+<h2 id="orgf9f3cab">ベクトル空間</h2>
+<div class="outline-text-2" id="text-orgf9f3cab">
 </div>
 </section>
-<section id="slide-orgf3e6aaa">
-<h3 id="orgf3e6aaa">重ね合わせの原理</h3>
+<section id="slide-org82b342e">
+<h3 id="org82b342e">重ね合わせの原理</h3>
 <ul>
 <li>「複雑な波(信号)も単純な波(信号)の重ね合わせで表現できる」
 という現象を一般化した原理</li>
@@ -68,8 +95,8 @@
 
 </ul>
 </section>
-<section id="slide-orgb340167">
-<h3 id="orgb340167">ベクトル空間</h3>
+<section id="slide-orgfe43889">
+<h3 id="orgfe43889">ベクトル空間</h3>
 <ul>
 <li><p>
 定義
@@ -108,8 +135,8 @@
 
 </ul>
 </section>
-<section id="slide-org74a8b32">
-<h3 id="org74a8b32">ベクトル空間の例</h3>
+<section id="slide-org09785b4">
+<h3 id="org09785b4">ベクトル空間の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">幾何ベクトル</span>
@@ -170,11 +197,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org4f094a2" data-background="#fef4f4">
-<h2 id="org4f094a2">演習</h2>
+<section id="slide-orgd1e6816" data-background="#fef4f4">
+<h2 id="orgd1e6816">演習</h2>
 </section>
-<section id="slide-org152a272" data-background="#fef4f4">
-<h3 id="org152a272">練習問題</h3>
+<section id="slide-org6cb8ff9" data-background="#fef4f4">
+<h3 id="org6cb8ff9">練習問題</h3>
 <ul>
 <li>以下の集合 \(V\) のうち，
 係数体を実数 \(\mathbb{R}\) としてベクトル空間となるものはどれか？<br />
@@ -194,13 +221,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org3ea524b">
-<h2 id="org3ea524b">線形独立性</h2>
-<div class="outline-text-2" id="text-org3ea524b">
+<section id="slide-org3d1596b">
+<h2 id="org3d1596b">線形独立性</h2>
+<div class="outline-text-2" id="text-org3d1596b">
 </div>
 </section>
-<section id="slide-org9ea65f5">
-<h3 id="org9ea65f5">線形結合</h3>
+<section id="slide-org0a16946">
+<h3 id="org0a16946">線形結合</h3>
 <ul>
 <li><p>
 定義
@@ -224,8 +251,8 @@
 
 </ul>
 </section>
-<section id="slide-org5a41a04">
-<h3 id="org5a41a04">線形従属</h3>
+<section id="slide-org039b0ef">
+<h3 id="org039b0ef">線形従属</h3>
 <ul>
 <li><p>
 定義
@@ -263,8 +290,8 @@
 
 </ul>
 </section>
-<section id="slide-org4488782">
-<h3 id="org4488782">線形独立</h3>
+<section id="slide-org30c3154">
+<h3 id="org30c3154">線形独立</h3>
 <ul>
 <li><p>
 定義
@@ -286,8 +313,8 @@
 
 </ul>
 </section>
-<section id="slide-org33183f9">
-<h3 id="org33183f9">線形従属・独立の例</h3>
+<section id="slide-org9983f5f">
+<h3 id="org9983f5f">線形従属・独立の例</h3>
 <ul>
 <li><p>
 <span style="color:green;">関数空間 \(C^{m}[0,1]\)</span>
@@ -306,11 +333,11 @@
 </section>
 </section>
 <section>
-<section id="slide-orgdf1fd4d" data-background="#fef4f4">
-<h2 id="orgdf1fd4d">演習</h2>
+<section id="slide-orgcbbddfd" data-background="#fef4f4">
+<h2 id="orgcbbddfd">演習</h2>
 </section>
-<section id="slide-org20f56a8" data-background="#fef4f4">
-<h3 id="org20f56a8">練習問題</h3>
+<section id="slide-org4ef88a3" data-background="#fef4f4">
+<h3 id="org4ef88a3">練習問題</h3>
 <ul>
 <li>以下の集合のうち線形独立なものはどれか？<br />
 ただし \(i\) は虚数単位で，係数体は \(\mathbb{C}\) とする．
@@ -326,13 +353,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org1243a2d">
-<h2 id="org1243a2d">階数</h2>
-<div class="outline-text-2" id="text-org1243a2d">
+<section id="slide-org965f8e7">
+<h2 id="org965f8e7">階数</h2>
+<div class="outline-text-2" id="text-org965f8e7">
 </div>
 </section>
-<section id="slide-orgab8fff4">
-<h3 id="orgab8fff4">極大独立集合</h3>
+<section id="slide-org46968ba">
+<h3 id="org46968ba">極大独立集合</h3>
 <ul>
 <li><p>
 定義
@@ -351,8 +378,8 @@
 
 </ul>
 </section>
-<section id="slide-org8005ede">
-<h3 id="org8005ede">階数</h3>
+<section id="slide-org1f16194">
+<h3 id="org1f16194">階数</h3>
 <ul>
 <li><p>
 定義
@@ -371,8 +398,8 @@
 
 </ul>
 </section>
-<section id="slide-org1f9943f">
-<h3 id="org1f9943f">階数の性質</h3>
+<section id="slide-orgf08b5f5">
+<h3 id="orgf08b5f5">階数の性質</h3>
 <ul>
 <li><p>
 定理
@@ -403,13 +430,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orge1489ad">
-<h2 id="orge1489ad">ベクトル空間の基底</h2>
-<div class="outline-text-2" id="text-orge1489ad">
+<section id="slide-org14d7bdf">
+<h2 id="org14d7bdf">ベクトル空間の基底</h2>
+<div class="outline-text-2" id="text-org14d7bdf">
 </div>
 </section>
-<section id="slide-org5c53770">
-<h3 id="org5c53770">基底</h3>
+<section id="slide-org876cd76">
+<h3 id="org876cd76">基底</h3>
 <ul>
 <li><p>
 定義
@@ -427,8 +454,8 @@
 
 </ul>
 </section>
-<section id="slide-orgc1de964">
-<h3 id="orgc1de964">基底の性質</h3>
+<section id="slide-orgd2acf48">
+<h3 id="orgd2acf48">基底の性質</h3>
 <ul>
 <li><p>
 定理
@@ -516,11 +543,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org31c05db" data-background="#fef4f4">
-<h2 id="org31c05db">演習</h2>
+<section id="slide-org2cdc92f" data-background="#fef4f4">
+<h2 id="org2cdc92f">演習</h2>
 </section>
-<section id="slide-orgc6650ee" data-background="#fef4f4">
-<h3 id="orgc6650ee">練習問題</h3>
+<section id="slide-org13b46b1" data-background="#fef4f4">
+<h3 id="org13b46b1">練習問題</h3>
 <ul>
 <li>以下のベクトル空間の適当な基底を考え，
 空間の次元を求めなさい．
@@ -534,8 +561,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org70678a1">
-<h2 id="org70678a1">今回のまとめ</h2>
+<section id="slide-orgd6f0eea">
+<h2 id="orgd6f0eea">今回のまとめ</h2>
 <ul>
 <li>体 \(K\) 上のベクトル空間
 <ul>
@@ -580,15 +607,19 @@
 </ul></li>
 
 </ul>
+</section>
+</section>
 </div>
 </div>
+<p> Created by Noboru Murata | Licensed under CC BY-NC 4.0 </p>
 <script src="./reveal.js/dist/reveal.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
-<script src="./reveal.js/plugin/menu/menu.js"></script>
-<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
+<script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
+<script src="./reveal.js/plugin/spotlight/spotlight.js"></script>
 <script src="./reveal.js/dist/theme/hidelinks.js"></script>
 <script>
 // Full list of configuration options available here:
@@ -600,27 +631,41 @@ progress: true,
 history: true,
 center: true,
 slideNumber: 'c',
-rollingLinks: false,
+rollingLinks: true,
 keyboard: true,
 mouseWheel: false,
-fragmentInURL: true,
+fragmentInURL: false,
 hashOneBasedIndex: false,
 pdfSeparateFragments: false,
 overview: true,
+width: 1050,
+height: 700,
+margin: 0.10,
+minScale: 0.75,
+maxScale: 1.25,
 
 transition: 'fade',
 transitionSpeed: 'default',
 showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : false,
-spotlight: { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 87: function() { RevealSpotlight.togglePresentationMode();}, },
+'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealSpotlight, RevealChalkboard ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
 ]
 
 });
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>
+/* Recompute layout upon changes by klipse.  Code fragment from
+   asciidoctor-revealjs-klipse by Timothy Pratley under GPLv3:
+   https://github.com/timothypratley/asciidoctor-revealjs-klipse/blob/master/docs/docinfo-footer.html */
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    window.dispatchEvent( new Event('resize') );
+} );
 </script>
 </body>
 </html>
