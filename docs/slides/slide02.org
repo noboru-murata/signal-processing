@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:25:09 mura>
+# Time-stamp: <2026-04-21 11:30:36 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,6 +19,8 @@
 * 前回のおさらい
 ** ベクトル空間
 - 以下の条件を満たす
+   #+attr_html: :class callout-important :style font-size: 1em!important;
+   #+attr_latex: :environment callout-important
    #+begin_quote
    1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
    2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
@@ -33,9 +35,11 @@
    #+end_quote
 
 ** ベクトル空間の例
-- [[color:green][幾何ベクトル]]
-- [[color:green][数ベクトル]]
-- [[color:green][関数空間 \(C^{m}[0,1]\)]]
+- 幾何ベクトル
+- 数ベクトル
+- 関数空間 \(C^{m}[0,1]\)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    区間 \([0,1]\) 上の実数値関数で， \(m\) 階微分可能な関数の集合．
    和とスカラ倍は以下で定義される．
@@ -47,6 +51,8 @@
 
 ** 線形独立
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{equation}
      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
@@ -59,12 +65,16 @@
 
 ** 基底
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
    \(V\) の階数，すなわち極大独立集合の基数を
    \(V\) の *次元 (dimension)* という．
    #+end_quote
 - 極大独立集合
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ある集合 \(S\) の線形独立な部分集合 \(B\subset S\) を考える．
    \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
@@ -73,6 +83,8 @@
 
 ** 基底の重要性
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(B=\{u_{1},\dotsc,u_{n}\}\) を \(V_{n}\) の基底とする．
    \(\forall b\in V_{n}\) は \(B\) に線形従属で，
@@ -132,12 +144,15 @@
 
 ** 内積
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ベクトル空間の2つの要素
    \(u,v\in\mathcal{H}\) に対して，
    次の性質を持つ2変数関数を
    *内積*
    という．
+   #+attr_html: :style font-size: 1em!important;   
    1. \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
    2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
@@ -151,6 +166,8 @@
 
 ** 内積空間
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    内積が定義されたベクトル空間を
    *内積空間* 
@@ -158,12 +175,14 @@
    #+end_quote
 
 ** 内積空間の例
-- [[color:green][幾何ベクトル空間]]
-- [[color:green][数ベクトル空間]]
-- [[color:green][関数空間]]
+- 幾何ベクトル空間
+- 数ベクトル空間
+- 関数空間
 
 ** 内積の例
-- [[color:green][幾何ベクトル空間]]
+- 幾何ベクトル空間
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    2つの有効線分のなす角 \(\theta\) とそ
    れぞれの長さ \(|u|,|v|\) を用いて定義
@@ -173,7 +192,9 @@
    #+end_quote
 
 #+reveal: split
-- [[color:green][数ベクトル空間]]
+- 数ベクトル空間
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    2つの複素数値ベクトル 
    \(u=(u_{1},u_{2},\dotsc,u_{n})\),
@@ -189,7 +210,9 @@
    #+end_quote
 
 #+reveal: split
-- [[color:green][関数空間]]
+- 関数空間
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    \(\mathbb{R}\) 上で定義された
    2つの複素数値関数
@@ -201,16 +224,18 @@
    \end{equation}
    #+end_quote
    - 定義域が \(\Omega\) で表される場合に
-     #+begin_quote
-     \begin{equation}
-       \langle u,v\rangle
-       = \int_{\Omega}u(x)\overline{v(x)}dx
-     \end{equation}
-     #+end_quote
-     のように書くこともある
+      #+begin_quote
+      \begin{equation}
+        \langle u,v\rangle
+        = \int_{\Omega}u(x)\overline{v(x)}dx
+      \end{equation}
+      #+end_quote
+      のように書くこともある
 
 ** ノルム
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(u\in\mathcal{H}\) に対して，
    その
@@ -221,7 +246,11 @@
    \end{equation}
    で定義する．
    #+end_quote
+
+#+reveal: split
 - ノルムの性質
+   #+attr_html: :class callout-important :style font-size: 1em!important;
+   #+attr_latex: :environment callout-important
    #+begin_quote
    - \(\|u\|\ge0\)
       特に \(\|u\|=0\;\Rightarrow\;u=0\)
@@ -236,6 +265,8 @@
 
 ** 距離
 - 内積空間では自然に距離が導入される
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(d(u,v)=\|u-v\|\) を考えると \(d\) は
    *距離* になっている．
@@ -279,6 +310,8 @@
 
 ** 完備性
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ある集合の中で無限に続く点列 \(u_{n}\) を考え，
    この点列がだんだん動かなくなる状況を考える．
@@ -292,16 +325,20 @@
    #+end_quote
 
 ** 完備性の例
-- [[color:green][有理数は完備でない]]
+- 有理数は完備でない
    #+attr_reveal: :frag (appear)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    点列 \(a_{n}\) を円周率の小数 \(n\) 桁以下を
    切り捨てた数と定義する．
    明らかに \(a_{n}\) は有限桁なので有理数であるが，
    \(\lim_{n\to\infty}a_{n}=\pi\) は無理数
    #+end_quote
-- [[color:green][実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない]]
+- 実数の区間 \([0,1]\) は完備だが，\((0,1)\) は完備でない
    #+attr_reveal: :frag (appear)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    点列 \(1/2n \in (0,1)\) であるが，
    \(\lim_{n\to\infty}1/2n=0\not\in (0,1)\)
@@ -309,6 +346,8 @@
 
 ** Hilbert 空間
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
    *Hilbert 空間*
@@ -320,7 +359,9 @@
    - 完備の厳密な定義は解析学の本を参照
 
 ** Hilbert 空間の例
-- [[color:green][\(l^{2}\) 空間 (無限次元数ベクトル空間)]]
+-   \(l^{2}\) 空間 (無限次元数ベクトル空間)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    \begin{equation}
      l^{2}=
@@ -346,7 +387,9 @@
       興味のあるものは成書を参照
 
 #+reveal: split
-- [[color:green][\(L^{2}\) 空間]]
+-   \(L^{2}\) 空間
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    \begin{equation}
      L^{2}(\Omega)=
@@ -439,8 +482,8 @@
 - 内積空間 : 内積が定義されたベクトル空間
 - Hilbert 空間 : 完備な内積空間
 
-** 注意
-- 確認テスト (講義2の中)
+** COMMENT 注意
+- 確認テスト (Moodleの講義2の中)
    - 試験の意味を考えて誠実な対応をすること
    - ネットワーク環境等には自身で配慮すること
    - 過去問などに取り組んでから受けることをお勧め
