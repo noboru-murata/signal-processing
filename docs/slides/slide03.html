@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,13 +73,13 @@
 
 </section>
 <section>
-<section id="slide-org8493ed7">
-<h2 id="org8493ed7">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org8493ed7">
+<section id="slide-orged8a463">
+<h2 id="orged8a463">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orged8a463">
 </div>
 </section>
-<section id="slide-org38880fb">
-<h3 id="org38880fb">ベクトル空間</h3>
+<section id="slide-org410118d">
+<h3 id="org410118d">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
@@ -101,8 +102,8 @@
 
 </ul>
 </section>
-<section id="slide-org2745ab7">
-<h3 id="org2745ab7">内積空間</h3>
+<section id="slide-orgd3c4322">
+<h3 id="orgd3c4322">内積空間</h3>
 <ul>
 <li><p>
 内積
@@ -138,8 +139,8 @@
 
 </ul>
 </section>
-<section id="slide-org9a96ba9">
-<h3 id="org9a96ba9">Hilbert 空間</h3>
+<section id="slide-org6de1397">
+<h3 id="org6de1397">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
@@ -177,8 +178,8 @@
 
 </ul>
 </section>
-<section id="slide-orgf616b0b">
-<h3 id="orgf616b0b">Hilbert 空間の例</h3>
+<section id="slide-org8c6b700">
+<h3 id="org8c6b700">Hilbert 空間の例</h3>
 <ul>
 <li><p>
   \(l^{2}\) 空間 (無限次元数ベクトル空間)
@@ -247,11 +248,11 @@
 </section>
 </section>
 <section>
-<section id="slide-orge9715dc" data-background="#fef4f4">
-<h2 id="orge9715dc">演習</h2>
+<section id="slide-org4a8e124" data-background="#fef4f4">
+<h2 id="org4a8e124">演習</h2>
 </section>
-<section id="slide-orgd4b5a6e" data-background="#fef4f4">
-<h3 id="orgd4b5a6e">練習問題</h3>
+<section id="slide-org827d85b">
+<h3 id="org827d85b">練習問題</h3>
 <ul>
 <li>係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
 以下を展開せよ．
@@ -276,13 +277,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org2ca5864">
-<h2 id="org2ca5864">正規直交系</h2>
-<div class="outline-text-2" id="text-org2ca5864">
+<section id="slide-orge57b631">
+<h2 id="orge57b631">正規直交系</h2>
+<div class="outline-text-2" id="text-orge57b631">
 </div>
 </section>
-<section id="slide-org0781b13">
-<h3 id="org0781b13">正規直交系</h3>
+<section id="slide-org7824e93">
+<h3 id="org7824e93">正規直交系</h3>
 <ul>
 <li><p>
 定義
@@ -327,8 +328,8 @@ Hilbert 空間 \(\mathcal{H}\) の
 
 </ul>
 </section>
-<section id="slide-orgc2febe6">
-<h3 id="orgc2febe6">正規直交系の例</h3>
+<section id="slide-org1391050">
+<h3 id="org1391050">正規直交系の例</h3>
 <ul>
 <li><p>
   \(l^{2}\) 空間
@@ -391,8 +392,8 @@ Hilbert 空間 \(\mathcal{H}\) の
 
 </ul>
 </section>
-<section id="slide-orga291a7a">
-<h3 id="orga291a7a">Hilbert 空間の正規直交系</h3>
+<section id="slide-orgb9c8bd3">
+<h3 id="orgb9c8bd3">Hilbert 空間の正規直交系</h3>
 <ul>
 <li><p>
 稠密の定義
@@ -436,7 +437,8 @@ Hilbert 空間 \(\mathcal{H}\) の
 <ul>
 <li>自然数 (番号そのもの)</li>
 <li>自然数の組 (2次元の表)</li>
-<li>有理数 (自然数/自然数)</li>
+<li>整数 (例えば偶数番を正，奇数番を負に割り当てる)</li>
+<li>有理数 (整数/整数)</li>
 
 </ul></li>
 <li class="fragment appear">可分な集合の例
@@ -595,8 +597,8 @@ Hilbert 空間 \(\mathcal{H}\) の
 
 </ul>
 </section>
-<section id="slide-org8d1c15b">
-<h3 id="org8d1c15b">正規直交系の存在</h3>
+<section id="slide-orgc6cae69">
+<h3 id="orgc6cae69">正規直交系の存在</h3>
 <ul>
 <li><p>
 定理
@@ -659,8 +661,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-orgee196d0">
-<h3 id="orgee196d0">正規直交系の構成例</h3>
+<section id="slide-org77fae52">
+<h3 id="org77fae52">正規直交系の構成例</h3>
 <ul>
 <li><p>
 問題
@@ -697,11 +699,11 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-orgdd2b3fc" data-background="#fef4f4">
-<h2 id="orgdd2b3fc">演習</h2>
+<section id="slide-orgce7eec2" data-background="#fef4f4">
+<h2 id="orgce7eec2">演習</h2>
 </section>
-<section id="slide-org1233498" data-background="#fef4f4">
-<h3 id="org1233498">練習問題</h3>
+<section id="slide-orgfccbabb">
+<h3 id="orgfccbabb">練習問題</h3>
 <ul>
 <li>Gram-Schmidt の直交化法において
 \(\phi_{n}\)
@@ -734,13 +736,13 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org576d6b2">
-<h2 id="org576d6b2">完全正規直交系</h2>
-<div class="outline-text-2" id="text-org576d6b2">
+<section id="slide-org60bedaf">
+<h2 id="org60bedaf">完全正規直交系</h2>
+<div class="outline-text-2" id="text-org60bedaf">
 </div>
 </section>
-<section id="slide-orgbb80000">
-<h3 id="orgbb80000">正規直交系の性質</h3>
+<section id="slide-orgbb6f531">
+<h3 id="orgbb6f531">正規直交系の性質</h3>
 <ul>
 <li><p>
 正規直交系 \(\{\phi_{k}\}_{k=1,2,\dotsc}\)
@@ -775,8 +777,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-org64ed2ef">
-<h3 id="org64ed2ef">Bessel の不等式</h3>
+<section id="slide-orgf2377c1">
+<h3 id="orgf2377c1">Bessel の不等式</h3>
 <ul>
 <li><p>
 定理
@@ -826,8 +828,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-org40ede57">
-<h3 id="org40ede57">完全性</h3>
+<section id="slide-org2f6de52">
+<h3 id="org2f6de52">完全性</h3>
 <ul>
 <li><p>
 定義
@@ -863,8 +865,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-orgf788374">
-<h3 id="orgf788374">完全性の同値な条件</h3>
+<section id="slide-org206a483">
+<h3 id="org206a483">完全性の同値な条件</h3>
 <ul>
 <li><p>
 定理
@@ -901,8 +903,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-org4988ccd">
-<h3 id="org4988ccd">完全正規直交系の性質</h3>
+<section id="slide-orgf80727b">
+<h3 id="orgf80727b">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
@@ -924,8 +926,8 @@ Gram-Schmidt の直交化法
 
 </ul>
 </section>
-<section id="slide-orgbeeffd5">
-<h3 id="orgbeeffd5">完全正規直交系の例</h3>
+<section id="slide-org99615dc">
+<h3 id="org99615dc">完全正規直交系の例</h3>
 <ul>
 <li><p>
   \(l^{2}\) 空間
@@ -965,11 +967,11 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org74877af" data-background="#fef4f4">
-<h2 id="org74877af">演習</h2>
+<section id="slide-org18510ed" data-background="#fef4f4">
+<h2 id="org18510ed">演習</h2>
 </section>
-<section id="slide-org0217ae6" data-background="#fef4f4">
-<h3 id="org0217ae6">練習問題</h3>
+<section id="slide-org6b493a2">
+<h3 id="org6b493a2">練習問題</h3>
 <ul>
 <li><p>
   \(L^{2}(-\pi,\pi)\) 空間において
@@ -991,8 +993,8 @@ Gram-Schmidt の直交化法
 </section>
 </section>
 <section>
-<section id="slide-org61fe748">
-<h2 id="org61fe748">今回のまとめ</h2>
+<section id="slide-org0c0228f">
+<h2 id="org0c0228f">今回のまとめ</h2>
 <ul>
 <li>正規直交系
 <ul>
@@ -1041,6 +1043,7 @@ Parseval の等式を満たす正規直交系
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -1075,7 +1078,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

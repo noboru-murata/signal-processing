@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 11:18:38 mura>
+# Time-stamp: <2026-05-07 13:42:39 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -319,20 +319,14 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 -  \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
    Fourier 級数展開せよ．
    - \(f(x)=|x|\)
    - \(f(x)=x^{2}\)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 定義に則って計算すればよい
-- \(f(x)=|x|\)
+-  \(f(x)=|x|\)
    #+begin_quote
    \begin{align}
      |x|
@@ -342,10 +336,10 @@
        -\frac{4}{\pi}\sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}}\cos{(2m+1)x}
    \end{align}
    #+end_quote
-   - /[[color:orange][偶関数なので余弦関数で書き直すことができる]]/
+   - /偶関数なので余弦関数で書き直すことができる/
   
 #+reveal: split
-- \(f(x)=x^{2}\)
+-  \(f(x)=x^{2}\)
    #+begin_quote
    \begin{align}
      x^{2}
@@ -355,7 +349,7 @@
        +4\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{2}}\cos{nx}
    \end{align}
    #+end_quote
-   - /[[color:orange][\(f(x)=x\) の結果と比較してみよ]]/
+   - /\(f(x)=x\) の結果と比較してみよ/
 
 
 * Fourier 級数の応用
@@ -406,7 +400,7 @@
        \right)
    \end{align}
    #+end_quote
-   - /[[color:orange][正弦関数と余弦関数で完全正規直交系を構成できる]]/
+   - /正弦関数と余弦関数で完全正規直交系を構成できる/
 
 #+reveal: split
 - 実数値関数の係数
@@ -445,9 +439,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の級数和を求めよ．
    #+begin_quote
    \begin{equation}
@@ -459,10 +450,7 @@
 - 正弦関数と余弦関数で正規直交系を構成せよ．
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
-- \(f(x)=x^{2}\) の Fourier 級数展開において \(x=\pm\pi\) とすればよい
+-  \(f(x)=x^{2}\) の Fourier 級数展開において \(x=\pm\pi\) とすればよい
    #+begin_quote
    \begin{equation}
      \sum_{n=1}^{\infty}\frac{1}{n^{2}} = \frac{\pi^{2}}{6}
@@ -665,7 +653,7 @@
    \end{equation}
    となることが示された．
    #+end_quote
-   - /[[color:orange][前回の定理(完全性の同値な条件)の2を参照]]/
+   - /前回の定理(完全性の同値な条件)の2を参照/
 
 
 * 今回のまとめ
@@ -687,7 +675,7 @@
       は完全正規直交系である．
       #+end_quote
     
-** COMMENT 注意
+** 注意
 - 確認テスト (講義4の中)
    - 試験の意味を考えて誠実な対応をすること
    - ネットワーク環境等には自身で配慮すること

@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:16:38 mura>
+# Time-stamp: <2026-05-07 13:49:42 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,6 +19,8 @@
 * 前回のおさらい
 ** Fourier 級数展開
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(f\in L^{2}(-\pi,\pi)\) 
    は
@@ -42,6 +44,8 @@
 
 ** Fourier 変換と反転公式
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(\mathbb{R}\)
    上の関数
@@ -62,6 +66,8 @@
 
 ** 反転公式
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{equation}
      f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
@@ -86,9 +92,6 @@
 :reveal_background: #fef4f4
 :END:
 ** COMMENT 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 次の関数 \(f\in L^{2}(-\pi,\pi)\) を
    Fourier 級数展開せよ．
    #+begin_quote
@@ -98,9 +101,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数 \(\sin(x)\) は \(\exp(ix)\) と \(\exp(-ix)\) で表せる．
 - 積分計算は \(n=\pm1\) で場合分けが必要となる．
   
@@ -139,9 +139,6 @@
    #+end_quote
 
 ** 練習問題 (再掲)
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数 \(\Xi\) を以下で定義する．
    #+begin_quote
    \begin{equation}
@@ -159,9 +156,6 @@
    - \(h(x)=\Xi_{(-1,1)}(x)\)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
    #+begin_quote
    \begin{align}
@@ -226,20 +220,22 @@
 
 #+reveal: split
 - 引数に関する注意
-   #+begin_quote
-   関数の引数(変数)は単なる名前なので何でも良い．
-   \begin{align}
-     \mathcal{F}[f](\alpha)
-     &=\frac{1}{\sqrt{2\pi}}
-       \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
-     \mathcal{F}^{-1}[\hat{f}](\beta)
-     &=\frac{1}{\sqrt{2\pi}}
-       \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
-   \end{align}
-   #+end_quote
+  #+begin_quote
+  関数の引数(変数)は単なる名前なので何でも良い．
+  \begin{align}
+    \mathcal{F}[f](\alpha)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
+    \mathcal{F}^{-1}[\hat{f}](\beta)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
+  \end{align}
+  #+end_quote
 
 ** 絶対可積分 (\(L^{1}(-\infty,\infty)\))
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{equation}
      \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
@@ -250,6 +246,8 @@
 
 #+reveal: split
 - Fourier 変換の存在 (各点)
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{align}
      |\hat{f}(\omega)|
@@ -273,6 +271,8 @@
 
 #+reveal: split
 - \(|x|\to\infty\) での挙動
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    適当に大きな値 \(M>0\) に対して
    \begin{equation}
@@ -292,6 +292,8 @@
 
 ** Parseval の定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
    このとき以下の関係が成り立つ．
@@ -337,6 +339,8 @@
 
 ** Plancherel の定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
    このとき以下の関係が成り立つ．
@@ -354,6 +358,8 @@
 
 ** Riemann-Lebesgue の定理(補題)
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
    \(f'\in L^{1}(\mathbb{R})\) とする．
@@ -388,9 +394,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f(x)\) の Fourier 変換と
@@ -398,9 +401,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 符号の反転
    #+begin_quote
    \begin{align}
@@ -421,18 +421,15 @@
 
 #+reveal: split
 - 注意
-   #+begin_quote
-   符号が反転しているだけなので，ほとんど対称だと思ってよい．
-   すなわち，
-   Fourier 変換 \(\mathcal{F}\) について成り立つことは
-   逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-   ただし符号の反転などには注意すること．
-   #+end_quote
+  #+begin_quote
+  符号が反転しているだけなので，ほとんど対称だと思ってよい．
+  すなわち，
+  Fourier 変換 \(\mathcal{F}\) について成り立つことは
+  逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+  ただし符号の反転などには注意すること．
+  #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f\) の Fourier 変換と
@@ -440,9 +437,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 微分
    #+begin_quote
    \begin{align}
@@ -461,9 +455,6 @@
       \(|x|\to\infty\) での値が 0 になるとしてよい．
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f\) の Fourier 変換と
@@ -471,9 +462,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 高階微分
    #+begin_quote
    \begin{align}
@@ -491,9 +479,6 @@
    #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f,g\) の Fourier 変換と
@@ -510,9 +495,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 畳み込み
    #+begin_quote
    \begin{align}
@@ -538,9 +520,6 @@
    #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f(x)\) の Fourier 変換と
@@ -548,9 +527,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 移動
    #+begin_quote
    \begin{align}
@@ -568,9 +544,6 @@
    #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の問題に答えよ
    #+begin_quote
    関数 \(f(x)\) の Fourier 変換と
@@ -578,9 +551,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 拡大縮小
    #+begin_quote
    \begin{align}
@@ -627,13 +597,13 @@
 
 #+reveal: split
 - 注意
-   #+begin_quote
-   符号が反転しているだけなので，ほとんど対称だと思ってよい．
-   すなわち，
-   Fourier 変換 \(\mathcal{F}\) について成り立つことは
-   逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-   ただし符号の反転などには注意すること．
-   #+end_quote
+  #+begin_quote
+  符号が反転しているだけなので，ほとんど対称だと思ってよい．
+  すなわち，
+  Fourier 変換 \(\mathcal{F}\) について成り立つことは
+  逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+  ただし符号の反転などには注意すること．
+  #+end_quote
 
 ** 微分
 - 練習問題
@@ -783,12 +753,12 @@
    
 * 演算との関係
 ** Fourier 変換で用いる基本演算
-| 関数                           | Fourier 変換                                     |
-|--------------------------------+--------------------------------------------------|
-| \(f'(x)\) (微分)               | \(i\omega\hat{f}(\omega)\)                       |
+| 関数                          | Fourier 変換                                     |
+|-------------------------------+--------------------------------------------------|
+| \(f'(x)\) (微分)              | \(i\omega\hat{f}(\omega)\)                       |
 | \(f^{(k)}(x)\) (k階微分)       | \((i\omega)^{k}\hat{f}(\omega)\)                 |
 | \(f*g(x)\) (畳み込み)          | \(\sqrt{2\pi}\hat{f}(\omega)\hat{g}(\omega)\)    |
-| \(T_{a}f(x)=f(x-a)\) (移動)    | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
+| \(T_{a}f(x)=f(x-a)\) (移動)   | \(e^{-ia\omega}\hat{f}(\omega)\)                 |
 | \(D_{b}f(x)=f(bx)\) (拡大縮小) | \({1}/{b}\cdot\hat{f}\left({\omega}/{b}\right)\) |
 
 
@@ -797,9 +767,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -807,13 +774,10 @@
    \end{equation}
    #+end_quote
    の Fourier 変換を求めよ．
-   - /[[color:orange][Fourier 変換と逆 Fourier 変換の関係を利用]]/
+   - /Fourier 変換と逆 Fourier 変換の関係を利用/
    - 複素積分を利用 (Cauchy の積分定理・留数定理)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の Fourier 変換を利用
    #+begin_quote
    \begin{align}
@@ -852,10 +816,9 @@
    #+end_quote
 
 ** Fourier 変換の代表的な例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 定義関数
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    関数 \(\Xi\) を以下で定義する．
    \begin{equation}
@@ -869,14 +832,14 @@
    #+end_quote
 
 #+reveal: split
-- [[color:green][代表的な例]]
-   | 関数                                         | Fourier 変換                                         |
-   |----------------------------------------------+-----------------------------------------------------|
+- 代表的な例
+   | 関数                                           | Fourier 変換                                          |
+   |------------------------------------------------+-------------------------------------------------------|
    | \(\Xi_{(-1,1)}(x),\;x\in\mathbb{R}\)           | \(\sqrt{\frac{2}{\pi}}\frac{\sin\omega}{\omega}\)     |
    | \(e^{-ax^{2}},\;x\in\mathbb{R}\)               | \(\frac{1}{\sqrt{2a}}e^{-\omega^{2}/4a}\)             |
    | \(\frac{1}{x-ia},\;x\in\mathbb{R},a>0\)        | \(\sqrt{2\pi}ie^{a\omega}\Xi_{(-\infty,0)}(\omega)\)  |
    | \(\frac{1}{x+ia},\;x\in\mathbb{R},a>0\)        | \(-\sqrt{2\pi}ie^{-a\omega}\Xi_{(0,\infty)}(\omega)\) |
-   | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)                   |
+   | \(\frac{a}{x^{2}+a^{2}},\;x\in\mathbb{R},a>0\) | \(\sqrt{\frac{\pi}{2}}e^{-a\vert\omega\vert}\)        |
 
 
 * 今回のまとめ

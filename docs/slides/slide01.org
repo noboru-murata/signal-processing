@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-21 11:12:44 mura>
+# Time-stamp: <2026-05-07 13:26:46 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -101,9 +101,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の集合 \(V\) のうち，
    係数体を実数 \(\mathbb{R}\) としてベクトル空間となるものはどれか？\\
    ただし \(f^{(k)}\) は \(f\) の \(k\) 階微分を表す．
@@ -116,9 +113,6 @@
    - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}=-f\}\)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の点に注意すること
    - \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
       \(V'=\{(a,b)\in\mathbb{R}^{2}\}\) と同一視できる
@@ -203,9 +197,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の集合のうち線形独立なものはどれか？\\
    ただし \(i\) は虚数単位で，係数体は \(\mathbb{C}\) とする．
    - \(\{1,\;1+x,\;1+x+x^{2}\}\quad(x\in\mathbb{R})\)
@@ -214,9 +205,6 @@
    - \(\{\exp(ix),\exp(3ix),\exp(5ix)\}\quad(x\in\mathbb{R})\)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 線形結合を考え，
    適当な\(x\)の値で \(\alpha,\beta,\gamma\) を解いてみればよい
    #+begin_quote
@@ -340,18 +328,12 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下のベクトル空間の適当な基底を考え，
    空間の次元を求めなさい．
    - 数ベクトル空間 \(K^{n}\) (\(K\) は体)
    - 関数空間 \(C^{m}[0,1]\)
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 数ベクトル
    #+begin_quote
    \(K^{n}\) において

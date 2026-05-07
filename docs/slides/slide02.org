@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-21 11:30:36 mura>
+# Time-stamp: <2026-05-07 13:28:55 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -103,9 +103,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の集合 \(V\) のうちベクトル空間はどれか？
    - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
    - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
@@ -117,9 +114,6 @@
    - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
 
 ** COMMENT ヒント
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 条件の線形性として，\(h=f+g\)のとき
    がどうなるか考えればよい
    #+begin_quote
@@ -278,9 +272,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 距離の定義を述べよ．
 - 2つのベクトルの差のノルムが距離となることを確かめよ．
 - 係数体を \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
@@ -293,9 +284,6 @@
    - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
 
 ** COMMENT ヒント
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 距離は以下の4つの条件を満たす
    - \(d(x,y)\ge0\) (非負性)
    - \(d(x,y)=0\Leftrightarrow x=y\) (非退化性)
@@ -417,9 +405,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の集合の中で完備なものはどれか?
    - 実数全体 \((-\infty,\infty)\)
    - 0以外の実数
@@ -432,9 +417,6 @@
       (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\)．不連続な点がない関数．微分できなくても良い)
 
 ** COMMENT ヒント
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 点列の収束先に含まれない要素の有無を考える．
 - \(C[-1,1]\) は Hilbert 空間にならない．
    #+begin_quote

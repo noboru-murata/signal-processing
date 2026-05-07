@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-21 11:37:34 mura>
+# Time-stamp: <2026-05-07 13:29:41 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -138,9 +138,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
    以下を展開せよ．
    - \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
@@ -155,9 +152,6 @@
    - 区間 \((-1,1)\) 上のノルムが有界の複素数値関数の空間 \(L^{2}(-1,1)\) 
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 定義に則って計算すればよい
    #+begin_quote
    \begin{align}
@@ -281,7 +275,8 @@
    - 可算(番号付けが可能)な集合の例
       - 自然数 (番号そのもの)
       - 自然数の組 (2次元の表)
-      - 有理数 (自然数/自然数)
+      - 整数 (例えば偶数番を正，奇数番を負に割り当てる)
+      - 有理数 (整数/整数)
    - 可分な集合の例
       - 実数 (稠密な集合 : 有理数)
       - 複素数 (稠密な集合 : 実部と虚部がそれぞれ有理数)
@@ -425,9 +420,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - Gram-Schmidt の直交化法において
    \(\phi_{n}\)
    が
@@ -446,10 +438,7 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
-- \(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\) が
+-  \(\phi_{1},\phi_{2},\dotsc,\phi_{n-1}\) が
    直交しているとして内積を計算すればよい(帰納法)．
    たとえば
    #+begin_quote
@@ -621,9 +610,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 -   \(L^{2}(-\pi,\pi)\) 空間において
    #+begin_quote
    \begin{equation}
@@ -634,9 +620,6 @@
 - \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 任意の \(j,k\) について内積を計算してみれば良い
    #+begin_quote
    \begin{align}

@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,18 +73,18 @@
 
 </section>
 <section>
-<section id="slide-org202bda1">
-<h2 id="org202bda1">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org202bda1">
+<section id="slide-orgece0163">
+<h2 id="orgece0163">前回のおさらい</h2>
+<div class="outline-text-2" id="text-orgece0163">
 </div>
 </section>
-<section id="slide-org398df49">
-<h3 id="org398df49">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-org72f2c44">
+<h3 id="org72f2c44">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 線形演算について閉じた空間
 </p>
@@ -91,7 +92,7 @@
 <li><p>
 内積空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 内積が定義されたベクトル空間
 </p>
@@ -99,7 +100,7 @@
 <li><p>
 Hilbert 空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 ノルムに関して完備な内積空間
 </p>
@@ -107,13 +108,13 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org4a85788">
-<h3 id="org4a85788">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-org4a1300d">
+<h3 id="org4a1300d">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元Hilbert空間には
 可算個の要素からなる完全正規直交系が存在する．
@@ -122,7 +123,7 @@ Hilbert 空間
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
 </p>
@@ -130,7 +131,7 @@ Hilbert 空間
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
 以下が成り立つ．
@@ -146,13 +147,13 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org03604a0">
-<h3 id="org03604a0">Fourier 級数展開</h3>
+<section id="slide-org2116846">
+<h3 id="org2116846">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(f\in L^{2}(-\pi,\pi)\) 
 は
@@ -190,11 +191,11 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org64747fc" data-background="#fef4f4">
-<h2 id="org64747fc">演習</h2>
+<section id="slide-org73216bc" data-background="#fef4f4">
+<h2 id="org73216bc">演習</h2>
 </section>
-<section id="slide-org4ad2590" data-background="#fef4f4">
-<h3 id="org4ad2590">練習問題</h3>
+<section id="slide-org02c5d14">
+<h3 id="org02c5d14">練習問題</h3>
 <ul>
 <li><p>
 以下が周期 \(T\) の直交系となるように \(\alpha\) を定めよ．
@@ -224,13 +225,13 @@ Fourier 級数展開
 </section>
 </section>
 <section>
-<section id="slide-org3bc83af">
-<h2 id="org3bc83af">Fourier 変換</h2>
-<div class="outline-text-2" id="text-org3bc83af">
+<section id="slide-org450f919">
+<h2 id="org450f919">Fourier 変換</h2>
+<div class="outline-text-2" id="text-org450f919">
 </div>
 </section>
-<section id="slide-orgee275e9">
-<h3 id="orgee275e9">Fourier 級数の一般化</h3>
+<section id="slide-orga329c97">
+<h3 id="orga329c97">Fourier 級数の一般化</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の場合 (\(x\in[-\pi,\pi]\) で考えよ)
@@ -393,13 +394,13 @@ Riemann 和は
 
 </ul>
 </section>
-<section id="slide-org7565f14">
-<h3 id="org7565f14">Fourier 変換と反転公式</h3>
+<section id="slide-orgbfa94b9">
+<h3 id="orgbfa94b9">Fourier 変換と反転公式</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(\mathbb{R}\)
 上の関数
@@ -426,13 +427,13 @@ Riemann 和は
 
 </ul>
 </section>
-<section id="slide-org7ee90d0">
-<h3 id="org7ee90d0">多次元 Fourier 変換</h3>
+<section id="slide-org841fee3">
+<h3 id="org841fee3">多次元 Fourier 変換</h3>
 <ul>
 <li><p>
 d次元の場合
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(\mathbb{R}^{d}\)
 上の関数
@@ -468,11 +469,11 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-orgd0eaba1" data-background="#fef4f4">
-<h2 id="orgd0eaba1">演習</h2>
+<section id="slide-org60a109d" data-background="#fef4f4">
+<h2 id="org60a109d">演習</h2>
 </section>
-<section id="slide-orgb9fb8fc" data-background="#fef4f4">
-<h3 id="orgb9fb8fc">練習問題</h3>
+<section id="slide-org36f7483">
+<h3 id="org36f7483">練習問題</h3>
 <ul>
 <li><p>
 以下の積分値を求めよ．
@@ -488,8 +489,8 @@ d次元の場合
 
 </ul>
 </section>
-<section id="slide-org8b34069" data-background="#fef4f4">
-<h3 id="org8b34069">練習問題</h3>
+<section id="slide-orge075414">
+<h3 id="orge075414">練習問題</h3>
 <ul>
 <li><p>
 関数 \(\Xi\) を以下で定義する．
@@ -521,18 +522,18 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-orge6b6e20">
-<h2 id="orge6b6e20">Fourier 変換の例</h2>
-<div class="outline-text-2" id="text-orge6b6e20">
+<section id="slide-org3516a4d">
+<h2 id="org3516a4d">Fourier 変換の例</h2>
+<div class="outline-text-2" id="text-org3516a4d">
 </div>
 </section>
-<section id="slide-orgc31b99f">
-<h3 id="orgc31b99f">応用上重要な関数の例</h3>
+<section id="slide-orgf9b2535">
+<h3 id="orgf9b2535">応用上重要な関数の例</h3>
 <ul>
 <li><p>
 定義関数
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 関数 \(\Xi\) を以下で定義する．
 </p>
@@ -555,7 +556,7 @@ d次元の場合
 <section>
 <ul>
 <li><p>
-<span style="color:green;">代表的な例</span>
+代表的な例
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -603,11 +604,11 @@ d次元の場合
 </section>
 </section>
 <section>
-<section id="slide-orga1e1f23">
-<h2 id="orga1e1f23">反転公式の証明</h2>
+<section id="slide-org3a05bed">
+<h2 id="org3a05bed">反転公式の証明</h2>
 </section>
-<section id="slide-orgb193e49">
-<h3 id="orgb193e49">証明</h3>
+<section id="slide-org472bae8">
+<h3 id="org472bae8">証明</h3>
 <ul>
 <li><p>
 step 1
@@ -776,19 +777,19 @@ Dirac の\(\delta\)関数になる．
 </p>
 </blockquote>
 <ul>
-<li><i><span style="color:orange;">Fourier 級数展開の証明で出た Poisson 核と同様な性質</span></i></li>
+<li><i>Fourier 級数展開の証明で出た Poisson 核と同様な性質</i></li>
 
 </ul></li>
 
 </ul>
 </section>
-<section id="slide-org26ad236">
-<h3 id="org26ad236">反転公式</h3>
+<section id="slide-orgb91ee14">
+<h3 id="orgb91ee14">反転公式</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <div>
 \begin{equation}
   f(x)=\lim_{\epsilon\to0}f_{\epsilon}(x)
@@ -818,8 +819,8 @@ Dirac の\(\delta\)関数になる．
 </section>
 </section>
 <section>
-<section id="slide-orga287a33">
-<h2 id="orga287a33">今回のまとめ</h2>
+<section id="slide-org84b178f">
+<h2 id="org84b178f">今回のまとめ</h2>
 <ul>
 <li>Fourier 変換
 <ul>
@@ -840,6 +841,7 @@ Dirac の\(\delta\)関数になる．
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -852,7 +854,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
@@ -874,7 +876,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

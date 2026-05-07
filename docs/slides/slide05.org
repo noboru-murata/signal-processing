@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:25:38 mura>
+# Time-stamp: <2026-05-07 13:46:53 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,29 +19,41 @@
 * 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
 - ベクトル空間
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    線形演算について閉じた空間
    #+end_quote
 - 内積空間
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    内積が定義されたベクトル空間
    #+end_quote
 - Hilbert 空間
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ノルムに関して完備な内積空間
    #+end_quote
 
 ** Hilbert 空間の完全正規直交系
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    可分な無限次元Hilbert空間には
    *可算個* の要素からなる完全正規直交系が存在する．
    #+end_quote
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
    #+end_quote
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
    以下が成り立つ．
@@ -53,26 +65,28 @@
 
 ** Fourier 級数展開
 - 定理
-   #+begin_quote
-   \(f\in L^{2}(-\pi,\pi)\) 
-   は
-   以下のように
-   *Fourier 級数展開*
-   される．
-   \begin{align}
-     f(x)
-     &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-   \end{align}
-   \begin{equation}
-     \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-   \end{equation}
-   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
-   以下で定義する．
-   \begin{equation}
-     \langle f,g\rangle
-     =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-   \end{equation}
-   #+end_quote
+  #+attr_html: :class callout-important
+  #+attr_latex: :environment callout-important
+  #+begin_quote
+  \(f\in L^{2}(-\pi,\pi)\) 
+  は
+  以下のように
+  *Fourier 級数展開*
+  される．
+  \begin{align}
+    f(x)
+    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+  \end{align}
+  \begin{equation}
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \end{equation}
+  内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+  以下で定義する．
+  \begin{equation}
+    \langle f,g\rangle
+    =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+  \end{equation}
+  #+end_quote
   
 
 * 演習
@@ -80,9 +94,6 @@
 :reveal_background: #fef4f4
 :END:
 ** COMMENT 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関数 \(f\) を Fourier 級数展開せよ．
    #+begin_quote
    \begin{equation}
@@ -97,9 +108,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
    - \(n=0\) のとき
       #+begin_quote
@@ -184,9 +192,6 @@
 [[file:figs/fourier_step1.png]]
    
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関数 \(f\) を Fourier 級数展開せよ．
    #+begin_quote
    \begin{equation}
@@ -200,9 +205,6 @@
    \end{equation}
    #+end_quote
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
    - \(n=0\) のとき
       #+begin_quote
@@ -293,9 +295,6 @@
 [[file:figs/fourier_step2.png]]
    
 ** COMMENT 例題 \(\sin(x),x>0\)
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -376,9 +375,6 @@
 [[file:figs/fourier_sin_plus.png]]
    
 ** COMMENT 例題 \(-\sin(x),x<0\)
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -461,9 +457,6 @@
 [[file:figs/fourier_sin_minus.png]]
    
 ** COMMENT 例題 \(|\sin(x)|\)
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -536,9 +529,6 @@
 [[file:figs/fourier_sin_abs.png]]
    
 ** COMMENT 例題 \(sgn\)
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -626,6 +616,8 @@
 
 ** 片側極限
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(h>0\) として
    \begin{align}
@@ -636,7 +628,7 @@
    これを片側極限という．
    #+end_quote
 
-** 不連続点
+** 不連続点での評価
 - 不連続関数
    #+begin_quote
    点 \(x\) において不連続な関数を考える．
@@ -650,7 +642,7 @@
    \end{align}
    #+end_quote
 
-** 不連続点での評価
+#+reveal: split
 - 定理で評価した式
    #+begin_quote
    \begin{equation}
@@ -665,7 +657,7 @@
    #+end_quote
 
 #+reveal: split
-- \(P_{r}\) の性質
+-  \(P_{r}\) の性質
    #+begin_quote
    \(P_{r}\) の積分は偶関数であることから以下が成り立つ．
    \begin{align}
@@ -691,6 +683,8 @@
 
 #+reveal: split
 - 不連続点の Fourier 級数展開
+  #+attr_html: :class callout-note
+  #+attr_latex: :environment callout-note
   #+begin_quote
   関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
   \begin{equation}
@@ -709,9 +703,6 @@
 :reveal_background: #fef4f4
 :END:
 ** COMMENT 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関数 \(f\) は \(x=0\) で不連続となる．
    Fourier 級数での \(f(0)\) の値を求めよ．
    #+begin_quote
@@ -727,9 +718,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - Fourier 級数展開に代入すればよい
    #+begin_quote
    \begin{align}
@@ -743,9 +731,6 @@
    #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
    Fourier 級数での \(f(\pi/2)\) の値を求めよ．
    #+begin_quote
@@ -760,9 +745,6 @@
    \end{equation}
    #+end_quote
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - Fourier 級数展開に代入すればよい
    #+begin_quote
    \begin{align}
@@ -779,6 +761,8 @@
 * Fourier 係数の性質
 ** 畳み込み
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
    *畳み込み* (合成積; convolution) \(h\)
@@ -790,11 +774,13 @@
      &= f*g(x)
    \end{align}
    #+end_quote
-   - /[[color:orange][関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
-      変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ]]/
+   - /関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
+      変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ/
 
-** @@latex:@@\(L^{p}\) ノルム
+** \(L^{p}\) ノルム
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
    \begin{equation}
@@ -802,10 +788,12 @@
    \end{equation}
    ただし \(\Omega\) は定義域で，一般には \(\mathbb{R}\) 上の適当な区間．
    #+end_quote
-   - /[[color:orange][内積から自然に導かれたノルムは \(L^{2}\) ノルムである]]/
+   - /内積から自然に導かれたノルムは \(L^{2}\) ノルムである/
 
-** @@latex:@@\(L^{p}\) 空間
+** \(L^{p}\) 空間
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{align}
      L^{p}(\Omega)
@@ -816,6 +804,8 @@
 
 ** Riemann-Lebesgue の定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(f\in L^{1}(-\pi,\pi)\) の Fourier 係数 \(a_{n}=\langle f,\phi_{n}\rangle\) は
    \begin{equation}
@@ -858,6 +848,8 @@
 
 ** Riemann-Lebesgue の定理の応用
 - Fourier 級数の項別微分
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    関数 \(f\) は区間 \((-\pi,\pi)\) で連続，
    \(f(-\pi)=f(\pi)\) ，
@@ -878,6 +870,8 @@
 
 #+reveal: split
 - 滑らかな関数の高周波成分
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
    \(a_{n}=o(1/n)\) (Landau の記号)となる．
@@ -893,6 +887,8 @@
 
 ** Hölder の不等式
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(1/p+1/q=1,\,p,q>0\)
    とする．
@@ -901,7 +897,7 @@
      \left|\int_{\Omega} u(x)v(x)dx\right|\leq\|u\|_{L^{p}}\|v\|_{L^{q}}
    \end{equation}
    #+end_quote
-   - /[[color:orange][Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である]]/
+   - /Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である/
     
 #+reveal: split
 - 証明
@@ -916,32 +912,34 @@
    \end{equation}
    が成り立つ．
    #+end_quote
-   - /[[color:orange][凸性について曖昧な者は意味を確認せよ]]/
+   - /凸性について曖昧な者は意味を確認せよ/
 
 #+reveal: split
 - (証明のつづき)
-   #+begin_quote
-   また対数関数の単調性から
-   \begin{equation}
-     \frac{a^{p}}{p}+\frac{b^{q}}{q}
-     \ge
-     ab
-   \end{equation}
-   が成り立つ．したがって
-   \begin{align}
-     &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
-       \left|\int u(x)v(x)dx\right|
-       \le
-       \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
-     &\quad\le
-       \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
-       + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
-     &\quad=\frac{1}{p}+\frac{1}{q}=1
-   \end{align}
-   #+end_quote
+  #+begin_quote
+  また対数関数の単調性から
+  \begin{equation}
+    \frac{a^{p}}{p}+\frac{b^{q}}{q}
+    \ge
+    ab
+  \end{equation}
+  が成り立つ．したがって
+  \begin{align}
+    &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
+      \left|\int u(x)v(x)dx\right|
+      \le
+      \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
+    &\quad\le
+      \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
+      + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
+    &\quad=\frac{1}{p}+\frac{1}{q}=1
+  \end{align}
+  #+end_quote
 
 ** 畳み込みのノルム
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{equation}
      h(x)=\int_{-\pi}^{\pi}f(x-y)g(y)dy
@@ -993,6 +991,8 @@
 
 ** 畳み込みの Fourier 級数
 - 係数の存在
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    先の定理において \(p=1\) とすると
    \begin{equation}
@@ -1007,6 +1007,8 @@
 
 #+reveal: split
 - 係数の関係
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
    \begin{align}
@@ -1027,9 +1029,6 @@
 :reveal_background: #fef4f4
 :END:
 ** COMMENT 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数 \(f\) を
    #+begin_quote
    \begin{equation}
@@ -1046,9 +1045,6 @@
 - 関数 \(f*f\) を Fourier 級数展開せよ．
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 周期関数であることに注意して定義に従って計算する．
    #+begin_quote
    \begin{align}
@@ -1070,9 +1066,6 @@
    - 図を描いて確認せよ．
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数 \(f\) を
    #+begin_quote
    \begin{equation}
@@ -1088,9 +1081,6 @@
    とするとき，畳み込み \(f*f\) を求めよ．
 - 関数 \(f*f\) を Fourier 級数展開せよ．
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 周期関数であることに注意して定義に従って計算する．
    #+begin_quote
    \begin{align}

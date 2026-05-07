@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,18 +73,18 @@
 
 </section>
 <section>
-<section id="slide-org2fc1f50">
-<h2 id="org2fc1f50">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org2fc1f50">
+<section id="slide-org41dafb2">
+<h2 id="org41dafb2">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org41dafb2">
 </div>
 </section>
-<section id="slide-org4db4808">
-<h3 id="org4db4808">ベクトル空間・内積空間・Hilbert 空間</h3>
+<section id="slide-org9e2bdd0">
+<h3 id="org9e2bdd0">ベクトル空間・内積空間・Hilbert 空間</h3>
 <ul>
 <li><p>
 ベクトル空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 線形演算について閉じた空間
 </p>
@@ -91,7 +92,7 @@
 <li><p>
 内積空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 内積が定義されたベクトル空間
 </p>
@@ -99,7 +100,7 @@
 <li><p>
 Hilbert 空間
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 ノルムに関して完備な内積空間
 </p>
@@ -107,13 +108,13 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org82e94c5">
-<h3 id="org82e94c5">Hilbert 空間の完全正規直交系</h3>
+<section id="slide-orgde3a305">
+<h3 id="orgde3a305">Hilbert 空間の完全正規直交系</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元Hilbert空間には
 <b>可算個</b> の要素からなる完全正規直交系が存在する．
@@ -122,7 +123,7 @@ Hilbert 空間
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元Hilbert空間は \(l^{2}\) 空間と同型である．
 </p>
@@ -130,7 +131,7 @@ Hilbert 空間
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
 以下が成り立つ．
@@ -146,13 +147,13 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org0fc9724">
-<h3 id="org0fc9724">Fourier 級数展開</h3>
+<section id="slide-org4403fac">
+<h3 id="org4403fac">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(f\in L^{2}(-\pi,\pi)\) 
 は
@@ -190,11 +191,11 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-org9035a59" data-background="#fef4f4">
-<h2 id="org9035a59">演習</h2>
+<section id="slide-org7473a14" data-background="#fef4f4">
+<h2 id="org7473a14">演習</h2>
 </section>
-<section id="slide-orge9e0caf" data-background="#fef4f4">
-<h3 id="orge9e0caf">練習問題</h3>
+<section id="slide-orge15c89b">
+<h3 id="orge15c89b">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) を Fourier 級数展開せよ．
@@ -218,16 +219,16 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-orgf34be79">
-<h2 id="orgf34be79">不連続点の性質</h2>
+<section id="slide-orge70bb1c">
+<h2 id="orge70bb1c">不連続点の性質</h2>
 </section>
-<section id="slide-orge393b9a">
-<h3 id="orge393b9a">片側極限</h3>
+<section id="slide-org59a4c6a">
+<h3 id="org59a4c6a">片側極限</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(h>0\) として
 </p>
@@ -246,8 +247,8 @@ Hilbert 空間
 
 </ul>
 </section>
-<section id="slide-org5a6ddb0">
-<h3 id="org5a6ddb0">不連続点</h3>
+<section id="slide-org7acc740">
+<h3 id="org7acc740">不連続点での評価</h3>
 <ul>
 <li><p>
 不連続関数
@@ -275,9 +276,9 @@ Hilbert 空間
 </blockquote></li>
 
 </ul>
+
 </section>
-<section id="slide-orgf71b533">
-<h3 id="orgf71b533">不連続点での評価</h3>
+<section>
 <ul>
 <li><p>
 定理で評価した式
@@ -306,7 +307,7 @@ Hilbert 空間
 <section>
 <ul>
 <li><p>
-\(P_{r}\) の性質
+ \(P_{r}\) の性質
 </p>
 <blockquote>
 <p>
@@ -353,7 +354,7 @@ Hilbert 空間
 <li><p>
 不連続点の Fourier 級数展開
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
 </p>
@@ -376,11 +377,11 @@ Hilbert 空間
 </section>
 </section>
 <section>
-<section id="slide-orgaab5081" data-background="#fef4f4">
-<h2 id="orgaab5081">演習</h2>
+<section id="slide-orge8d2e71" data-background="#fef4f4">
+<h2 id="orge8d2e71">演習</h2>
 </section>
-<section id="slide-orgdc73750" data-background="#fef4f4">
-<h3 id="orgdc73750">練習問題</h3>
+<section id="slide-orgb8b1060">
+<h3 id="orgb8b1060">練習問題</h3>
 <ul>
 <li><p>
 以下の関数 \(f\) は \(x=\pi/2\) で不連続となる．
@@ -405,18 +406,18 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 </section>
 </section>
 <section>
-<section id="slide-orgc128b1a">
-<h2 id="orgc128b1a">Fourier 係数の性質</h2>
-<div class="outline-text-2" id="text-orgc128b1a">
+<section id="slide-orga3da099">
+<h2 id="orga3da099">Fourier 係数の性質</h2>
+<div class="outline-text-2" id="text-orga3da099">
 </div>
 </section>
-<section id="slide-orgbbb742b">
-<h3 id="orgbbb742b">畳み込み</h3>
+<section id="slide-org9622557">
+<h3 id="org9622557">畳み込み</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
 <b>畳み込み</b> (合成積; convolution) \(h\)
@@ -433,20 +434,20 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 </div>
 </blockquote>
 <ul>
-<li><i><span style="color:orange;">関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
-変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ</span></i></li>
+<li><i>関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
+変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ</i></li>
 
 </ul></li>
 
 </ul>
 </section>
-<section id="slide-org2fcaf54">
-<h3 id="org2fcaf54">\(L^{p}\) ノルム</h3>
+<section id="slide-orgf4cf5ee">
+<h3 id="orgf4cf5ee">\(L^{p}\) ノルム</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
 </p>
@@ -461,19 +462,19 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 </p>
 </blockquote>
 <ul>
-<li><i><span style="color:orange;">内積から自然に導かれたノルムは \(L^{2}\) ノルムである</span></i></li>
+<li><i>内積から自然に導かれたノルムは \(L^{2}\) ノルムである</i></li>
 
 </ul></li>
 
 </ul>
 </section>
-<section id="slide-orga498694">
-<h3 id="orga498694">\(L^{p}\) 空間</h3>
+<section id="slide-orgeb1dde3">
+<h3 id="orgeb1dde3">\(L^{p}\) 空間</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <div>
 \begin{align}
   L^{p}(\Omega)
@@ -486,13 +487,13 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-org2fdbc04">
-<h3 id="org2fdbc04">Riemann-Lebesgue の定理</h3>
+<section id="slide-org67f8ba3">
+<h3 id="org67f8ba3">Riemann-Lebesgue の定理</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(f\in L^{1}(-\pi,\pi)\) の Fourier 係数 \(a_{n}=\langle f,\phi_{n}\rangle\) は
 </p>
@@ -570,13 +571,13 @@ Fourier 級数での \(f(\pi/2)\) の値を求めよ．
 
 </ul>
 </section>
-<section id="slide-orgead37d4">
-<h3 id="orgead37d4">Riemann-Lebesgue の定理の応用</h3>
+<section id="slide-org64dc8d8">
+<h3 id="org64dc8d8">Riemann-Lebesgue の定理の応用</h3>
 <ul>
 <li><p>
 Fourier 級数の項別微分
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 関数 \(f\) は区間 \((-\pi,\pi)\) で連続，
 \(f(-\pi)=f(\pi)\) ，
@@ -612,7 +613,7 @@ Fourier 級数の項別微分
 <li><p>
 滑らかな関数の高周波成分
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 \(a_{n}=o(1/n)\) (Landau の記号)となる．
@@ -626,16 +627,16 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgca14aa3">
-<h2 id="orgca14aa3">関数の積とノルム</h2>
+<section id="slide-org3d7450d">
+<h2 id="org3d7450d">関数の積とノルム</h2>
 </section>
-<section id="slide-orga19edf0">
-<h3 id="orga19edf0">Hölder の不等式</h3>
+<section id="slide-org26a721f">
+<h3 id="org26a721f">Hölder の不等式</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(1/p+1/q=1,\,p,q>0\)
 とする．
@@ -649,7 +650,7 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </div>
 </blockquote>
 <ul>
-<li><i><span style="color:orange;">Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である</span></i></li>
+<li><i>Cauchy-Schwarz の不等式 (\(p=q=2\)) の一般化である</i></li>
 
 </ul></li>
 
@@ -680,7 +681,7 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </p>
 </blockquote>
 <ul>
-<li><i><span style="color:orange;">凸性について曖昧な者は意味を確認せよ</span></i></li>
+<li><i>凸性について曖昧な者は意味を確認せよ</i></li>
 
 </ul></li>
 
@@ -724,13 +725,13 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 </ul>
 </section>
-<section id="slide-org10b2aa0">
-<h3 id="org10b2aa0">畳み込みのノルム</h3>
+<section id="slide-orgb9edce8">
+<h3 id="orgb9edce8">畳み込みのノルム</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <div>
 \begin{equation}
   h(x)=\int_{-\pi}^{\pi}f(x-y)g(y)dy
@@ -813,13 +814,13 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 
 </ul>
 </section>
-<section id="slide-org4c92c6f">
-<h3 id="org4c92c6f">畳み込みの Fourier 級数</h3>
+<section id="slide-orgd470e8f">
+<h3 id="orgd470e8f">畳み込みの Fourier 級数</h3>
 <ul>
 <li><p>
 係数の存在
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 先の定理において \(p=1\) とすると
 </p>
@@ -846,7 +847,7 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 <li><p>
 係数の関係
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 \(f,g,h\) の Fourier 係数をそれぞれ \(a_{n},b_{n},c_{n}\) とすると
 </p>
@@ -871,11 +872,11 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-org56bc36a" data-background="#fef4f4">
-<h2 id="org56bc36a">演習</h2>
+<section id="slide-orgeee0e3b" data-background="#fef4f4">
+<h2 id="orgeee0e3b">演習</h2>
 </section>
-<section id="slide-org9bdfe36" data-background="#fef4f4">
-<h3 id="org9bdfe36">練習問題</h3>
+<section id="slide-orge2bcf12">
+<h3 id="orge2bcf12">練習問題</h3>
 <ul>
 <li><p>
 関数 \(f\) を
@@ -903,8 +904,8 @@ Riemann-Lebesgue の定理より \(b_{n}\to0\;(n\to\infty)\) なので，
 </section>
 </section>
 <section>
-<section id="slide-orgf466397">
-<h2 id="orgf466397">今回のまとめ</h2>
+<section id="slide-orgf407db0">
+<h2 id="orgf407db0">今回のまとめ</h2>
 <ul>
 <li>Fourier 級数の性質
 <ul>
@@ -940,6 +941,7 @@ Fourier 級数展開:
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -952,7 +954,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
@@ -974,7 +976,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
