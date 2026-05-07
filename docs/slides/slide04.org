@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:17:12 mura>
+# Time-stamp: <2026-05-07 11:18:38 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,6 +19,8 @@
 * 前回のおさらい
 ** ベクトル空間
 - 満たすべき条件
+   #+attr_html: :class callout-important :style font-size: 1em!important;
+   #+attr_latex: :environment callout-important
    #+begin_quote
    1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
    2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
@@ -34,12 +36,15 @@
 
 ** 内積空間
 - 内積の定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ベクトル空間の2つの要素
    \(u,v\in\mathcal{H}\) に対して，
    次の性質を持つ2変数関数を
    *内積*
    という．
+   #+attr_html: :style font-size: 1em!important;   
    1. \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
    2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
@@ -48,6 +53,8 @@
       =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
    #+end_quote
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    内積が定義されたベクトル空間を
    *内積空間* 
@@ -56,6 +63,8 @@
 
 ** Hilbert 空間
 - 完備性の定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ある集合の中のCauchy列
    \begin{equation}
@@ -67,6 +76,8 @@
    であるという．
    #+end_quote
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    ノルムに関して完備な内積空間を
    *Hilbert 空間*
@@ -75,6 +86,8 @@
 
 ** 正規直交系
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    Hilbert 空間 \(\mathcal{H}\) の
    部分集合 \(\mathcal{A}\) が
@@ -101,6 +114,8 @@
 
 ** 完全正規直交系
 - 定義
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が 
    *Parseval の等式*
@@ -116,15 +131,21 @@
 
 ** 完全正規直交系の性質
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    可分な無限次元 Hilbert 空間には
    *可算個* の要素からなる完全正規直交系が存在する．
    #+end_quote
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
    #+end_quote
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
    以下が成り立つ．
@@ -143,8 +164,8 @@
 
 ** 周期関数
 - 周期的な信号 : 性質の良い(取り扱い易い)信号
-- \(2\pi\) 周期の信号を考えることにする
-- \(\mathbb{R}\) 上の関数 \(f(x)\) が
+-  \(2\pi\) 周期の信号を考えることにする
+-  \(\mathbb{R}\) 上の関数 \(f(x)\) が
    周期 \(2\pi\) を持つ :
    #+begin_quote
    \begin{equation}
@@ -167,6 +188,8 @@
 
 ** Fourier 級数展開
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \begin{equation}
      \left\{
@@ -184,6 +207,8 @@
 
 #+reveal: split
 - (定理のつづき)
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(f\in L^{2}(-\pi,\pi)\) 
    は以下のように
@@ -212,27 +237,31 @@
 
 #+reveal: split
 - *正規直交系* であることは容易に確かめられる．
-  #+begin_quote
-  \begin{align}
-    \langle\phi_{m},\phi_{n}\rangle
-    &=\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{imx}e^{-inx}dx\\
-    &=\frac{1}{2\pi}\left[\frac{e^{i(m-n)x}}{i(m-n)}\right]_{-\pi}^{\pi}
-      =0\;(m\not=n),
-  \end{align}
-  \begin{equation}
-    \langle\phi_{n},\phi_{n}\rangle
-    =\frac{1}{2\pi}\int_{-\pi}^{\pi}1dx=1
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{align}
+     \langle\phi_{m},\phi_{n}\rangle
+     &=\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{imx}e^{-inx}dx\\
+     &=\frac{1}{2\pi}\left[\frac{e^{i(m-n)x}}{i(m-n)}\right]_{-\pi}^{\pi}
+       =0\;(m\not=n),
+   \end{align}
+   \begin{equation}
+     \langle\phi_{n},\phi_{n}\rangle
+     =\frac{1}{2\pi}\int_{-\pi}^{\pi}1dx=1
+   \end{equation}
+   #+end_quote
 
 ** Fourier 級数展開の例
-- [[color:green][区間 \((-\pi,\pi)\) 上の周期関数 (鋸波)]]
+- 区間 \((-\pi,\pi)\) 上の周期関数 (鋸波)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
    \begin{equation}
      f(x)=x,\quad
      f \in L^{2}(-\pi,\pi)
    \end{equation}
    #+end_quote
+
+#+reveal: split
 - 係数は以下の式を計算すればよい
    #+begin_quote
    \begin{equation}
@@ -261,7 +290,7 @@
    #+end_quote
 
 #+reveal: split
-- \(n=0\) も計算してまとめると以下のようになる
+-  \(n=0\) も計算してまとめると以下のようになる
    #+begin_quote
    \begin{equation}
      x
@@ -293,7 +322,7 @@
 :PROPERTIES:
 :reveal_background: #fef4f4
 :END:
-- \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
+-  \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
    Fourier 級数展開せよ．
    - \(f(x)=|x|\)
    - \(f(x)=x^{2}\)
@@ -332,16 +361,24 @@
 * Fourier 級数の応用
 ** 級数和の計算
 - 展開式から級数和に関していろいろな公式を得ることができる
-- \(f(x)=|x|\) に対して \(x=0\) とすれば
+
+#+reveal: split
+- 例1
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
+   \(f(x)=|x|\) に対して \(x=0\) とすれば
    \begin{equation}
      \sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}} = \frac{\pi^{2}}{8}
    \end{equation}
    #+end_quote
 
 #+reveal: split
-- \(f(x)=x^{2}\) に対して \(x=0\) とすれば
+- 例2
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
    #+begin_quote
+   \(f(x)=x^{2}\) に対して \(x=0\) とすれば
    \begin{equation}
      \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^{2}} = \frac{\pi^{2}}{12}
    \end{equation}
@@ -349,6 +386,8 @@
 
 ** Fourier 級数の性質
 - 三角関数による展開
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    Eulerの公式により以下のように変形することができる
    \begin{align}
@@ -371,30 +410,34 @@
 
 #+reveal: split
 - 実数値関数の係数
-  #+begin_quote
-  関数 \(f(x)\) が実数値の場合
-  \begin{equation}
-    \frac{a_{n}+a_{-n}}{\sqrt{2\pi}},\;
-    i\frac{a_{n}-a_{-n}}{\sqrt{2\pi}}
-  \end{equation}
-  は実数になるので
-  \(a_{n}\) と \(a_{-n}\) は複素共役の関係にある．
-  #+end_quote
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
+   #+begin_quote
+   関数 \(f(x)\) が実数値の場合
+   \begin{equation}
+     \frac{a_{n}+a_{-n}}{\sqrt{2\pi}},\;
+     i\frac{a_{n}-a_{-n}}{\sqrt{2\pi}}
+   \end{equation}
+   は実数になるので
+   \(a_{n}\) と \(a_{-n}\) は複素共役の関係にある．
+   #+end_quote
 
 #+reveal: split
 - 定義域の異なる基底
-  #+begin_quote
-  \(L^{2}(0,\pi)\) においては
-  \begin{align}
-    &\left\{\sqrt{\frac{1}{\pi}},\sqrt{\frac{2}{\pi}}\cos nx;\;n=1,2,\dotsc\right\}\\
-    &\left\{\sqrt{\frac{2}{\pi}}\sin nx;\;n=1,2,\dotsc\right\}
-  \end{align}
-  がそれぞれ完全正規直交系となる．
-  #+end_quote
-  - \((0,\pi)\) で定義された関数をそれぞれ
-    偶関数，奇関数として
-    \((-\pi,\pi)\) に拡張すれば，
-    余弦関数または正弦関数のみで展開できることがわかる
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
+   #+begin_quote
+   \(L^{2}(0,\pi)\) においては
+   \begin{align}
+     &\left\{\sqrt{\frac{1}{\pi}},\sqrt{\frac{2}{\pi}}\cos nx;\;n=1,2,\dotsc\right\}\\
+     &\left\{\sqrt{\frac{2}{\pi}}\sin nx;\;n=1,2,\dotsc\right\}
+   \end{align}
+   がそれぞれ完全正規直交系となる．
+   #+end_quote
+   - \((0,\pi)\) で定義された関数をそれぞれ
+      偶関数，奇関数として
+      \((-\pi,\pi)\) に拡張すれば，
+      余弦関数または正弦関数のみで展開できることがわかる
 
 
 * 演習
@@ -446,6 +489,21 @@
 
 * Fourier 基底の完全性
 ** 完全性の証明
+- 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
+   #+begin_quote
+   \begin{equation}
+     \left\{
+       \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+     \right\}
+   \end{equation}
+   は
+   \(L^{2}(-\pi,\pi)\)
+   上の完全正規直交系となる．
+   #+end_quote
+
+#+reveal: split
 - step 1
    #+begin_quote
    関数 \(f\) が
@@ -482,54 +540,54 @@
 
 #+reveal: split
 - step 4
-  #+begin_quote
-  級数和が収束するので積分と和を交換してもよい．
-  \begin{align}
-    f_{r}(x)
-    &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
-      \int_{-\pi}^{\pi}f(y)e^{-iny}dy\\
-    &=\frac{1}{2\pi}\int_{-\pi}^{\pi}
-      \sum_{n=-\infty}^{\infty}r^{|n|}e^{in(x-y)}f(y)dy
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   級数和が収束するので積分と和を交換してもよい．
+   \begin{align}
+     f_{r}(x)
+     &=\frac{1}{2\pi}\sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
+       \int_{-\pi}^{\pi}f(y)e^{-iny}dy\\
+     &=\frac{1}{2\pi}\int_{-\pi}^{\pi}
+       \sum_{n=-\infty}^{\infty}r^{|n|}e^{in(x-y)}f(y)dy
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - step 5
-  #+begin_quote
-  積分の中の級数和に着目して
-  \begin{equation}
-    P_{r}(x)
-    =\frac{1}{2\pi}
-    \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
-  \end{equation}
-  とおく(Poisson 核という)．
-  #+end_quote
+   #+begin_quote
+   積分の中の級数和に着目して
+   \begin{equation}
+     P_{r}(x)
+     =\frac{1}{2\pi}
+     \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
+   \end{equation}
+   とおく(Poisson 核という)．
+   #+end_quote
 
 #+reveal: split
 - step 6
-  #+begin_quote
-  関数
-  \begin{equation}
-    P_{r}(x)
-    =\frac{1}{2\pi}
-    \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
-  \end{equation}
-  の右辺の和の各項は \((-\pi,\pi)\) の周期関数なので，
-  \((-\infty,\infty)\) に拡大可能である．
-  #+end_quote
+   #+begin_quote
+   関数
+   \begin{equation}
+     P_{r}(x)
+     =\frac{1}{2\pi}
+     \sum_{n=-\infty}^{\infty}r^{|n|}e^{inx}
+   \end{equation}
+   の右辺の和の各項は \((-\pi,\pi)\) の周期関数なので，
+   \((-\infty,\infty)\) に拡大可能である．
+   #+end_quote
 
 #+reveal: split
 - step 7
-  #+begin_quote
-  周期関数 \(f\) も同様に \((-\infty,\infty)\) に拡大可能であるので，
-  一周期分の積分区間を適切に取り直して
-  \begin{equation}
-    f_{r}(x)
-    =\int_{-\pi}^{\pi}P_{r}(x-y)f(y)dy
-    =\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
-  \end{equation}
-  と書き変えることができる．
-  #+end_quote
+   #+begin_quote
+   周期関数 \(f\) も同様に \((-\infty,\infty)\) に拡大可能であるので，
+   一周期分の積分区間を適切に取り直して
+   \begin{equation}
+     f_{r}(x)
+     =\int_{-\pi}^{\pi}P_{r}(x-y)f(y)dy
+     =\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
+   \end{equation}
+   と書き変えることができる．
+   #+end_quote
 
 #+reveal: split
 - step 8
@@ -550,65 +608,64 @@
 
 #+reveal: split
 - step 9
-  #+begin_quote
-  \(r\to1\) とすると \(P_{r}(x)\) は Dirac の\(\delta\)関数
-  となる．
-  - \(P_{r}(x) > 0\) (3行目の表現より明らか)
-  - \(P_{r}\) の一周期分の積分は
-    \begin{equation}
-      \int_{-\pi}^{\pi}P_{r}(x)dx
-      =\int_{-\pi}^{\pi}\frac{1}{2\pi}\sum_{n}r^{|n|}e^{inx}dx=1
-    \end{equation}
-  - \(\forall\delta\;(0<\delta<\pi)\) に対して
-    \begin{equation}
-      \lim_{r\to1}\sup_{\delta\leq|x|\leq\pi}P_{r}(x)=0
-    \end{equation}
-    \(\cos x\) は上記の範囲では \(\cos\delta\) で最大となることから
-    \begin{equation}
-      \frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
-      \leq\frac{1-r^{2}}{1+r^{2}-2r\cos{\delta}}\xrightarrow{r\to1}0
-    \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(r\to1\) とすると \(P_{r}(x)\) は Dirac の\(\delta\)関数
+   となる．
+   - \(P_{r}(x) > 0\) (3行目の表現より明らか)
+   - \(P_{r}\) の一周期分の積分は
+      \begin{equation}
+        \int_{-\pi}^{\pi}P_{r}(x)dx
+        =\int_{-\pi}^{\pi}\frac{1}{2\pi}\sum_{n}r^{|n|}e^{inx}dx=1
+      \end{equation}
+   - \(\forall\delta\;(0<\delta<\pi)\) に対して
+      \begin{equation}
+        \lim_{r\to1}\sup_{\delta\leq|x|\leq\pi}P_{r}(x)=0
+      \end{equation}
+      \(\cos x\) は上記の範囲では \(\cos\delta\) で最大となることから
+      \begin{equation}
+        \frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
+        \leq\frac{1-r^{2}}{1+r^{2}-2r\cos{\delta}}\xrightarrow{r\to1}0
+      \end{equation}
+   #+end_quote
 
 #+reveal: split
 - step 10
-  #+begin_quote
-  \(f_{r}\) と \(f\) の差
-  \begin{equation}
-    f_{r}(x)-f(x)
-    =\int_{-\pi}^{\pi}P_{r}(y)\{f(x-y)-f(x)\}dy
-  \end{equation}
-  の積分を3つに分解して考える．
-  \begin{equation}
-    \int_{-\pi}^{\pi}
-    =\int_{-\pi}^{-\delta}
-    +\int_{-\delta}^{\delta}+\int_{\delta}^{\pi}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \(f_{r}\) と \(f\) の差
+   \begin{equation}
+     f_{r}(x)-f(x)
+     =\int_{-\pi}^{\pi}P_{r}(y)\{f(x-y)-f(x)\}dy
+   \end{equation}
+   の積分を3つに分解して考える．
+   \begin{equation}
+     \int_{-\pi}^{\pi}
+     =\int_{-\pi}^{-\delta}
+     +\int_{-\delta}^{\delta}+\int_{\delta}^{\pi}
+   \end{equation}
+   #+end_quote
 
 #+reveal: split
 - step 11
-  #+begin_quote
-  \(\delta\) と \(r\) は適当に選ぶことができることに注意する．
-  - 積分の第1,3項では \(P_{r}\) をいくらでも小さくすることができる
-  - 第2項では \(f(x-y)-f(x)\) をいくらでも小さくすることできる
-    この結果，
-    \(\delta\) と \(r\) とを適当に選ぶことによって
-    3つの積分の和はいくらでも小さくなる．
-  #+end_quote
+   #+begin_quote
+   \(\delta\) と \(r\) は適当に選ぶことができることに注意する．
+   - 積分の第1,3項では \(P_{r}\) をいくらでも小さくすることができる
+   - 第2項では \(f(x-y)-f(x)\) をいくらでも小さくすることができる
+   この結果，\(\delta\) と \(r\) とを適当に選ぶことによって
+   3つの積分の和はいくらでも小さくなる．
+   #+end_quote
 
 #+reveal: split
 - step 12
-  #+begin_quote
-  以上より，各点 \(x\) において
-  \begin{equation}
-    \lim_{r\to1}f_{r}(x)
-    =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-    =f(x)
-  \end{equation}
-  となることが示された．
-  #+end_quote
-  - /[[color:orange][前回の定理(完全性の同値な条件)の2を参照]]/
+   #+begin_quote
+   以上より，各点 \(x\) において
+   \begin{equation}
+     \lim_{r\to1}f_{r}(x)
+     =\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+     =f(x)
+   \end{equation}
+   となることが示された．
+   #+end_quote
+   - /[[color:orange][前回の定理(完全性の同値な条件)の2を参照]]/
 
 
 * 今回のまとめ

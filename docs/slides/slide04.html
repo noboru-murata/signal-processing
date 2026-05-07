@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,18 +73,18 @@
 
 </section>
 <section>
-<section id="slide-org446ad53">
-<h2 id="org446ad53">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org446ad53">
+<section id="slide-org0935172">
+<h2 id="org0935172">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org0935172">
 </div>
 </section>
-<section id="slide-orgc7474bd">
-<h3 id="orgc7474bd">ベクトル空間</h3>
+<section id="slide-orgfecc417">
+<h3 id="orgfecc417">ベクトル空間</h3>
 <ul>
 <li><p>
 満たすべき条件
 </p>
-<blockquote>
+<blockquote class="callout-important" style="font-size: 1em!important;">
 <ol>
 <li><b>\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)</b></li>
 <li>\(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)</li>
@@ -101,13 +102,13 @@
 
 </ul>
 </section>
-<section id="slide-org594f2f2">
-<h3 id="org594f2f2">内積空間</h3>
+<section id="slide-org5657be2">
+<h3 id="org5657be2">内積空間</h3>
 <ul>
 <li><p>
 内積の定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 ベクトル空間の2つの要素
 \(u,v\in\mathcal{H}\) に対して，
@@ -115,7 +116,7 @@
 <b>内積</b>
 という．
 </p>
-<ol>
+<ol style="font-size: 1em!important;">
 <li>\(\langle u,u\rangle\geq0\) 
 特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)</li>
 <li>\(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)<br />
@@ -128,7 +129,7 @@
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 内積が定義されたベクトル空間を
 <b>内積空間</b> 
@@ -138,13 +139,13 @@
 
 </ul>
 </section>
-<section id="slide-orgdcc516e">
-<h3 id="orgdcc516e">Hilbert 空間</h3>
+<section id="slide-orga116420">
+<h3 id="orga116420">Hilbert 空間</h3>
 <ul>
 <li><p>
 完備性の定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 ある集合の中のCauchy列
 </p>
@@ -164,7 +165,7 @@
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 ノルムに関して完備な内積空間を
 <b>Hilbert 空間</b>
@@ -174,13 +175,13 @@
 
 </ul>
 </section>
-<section id="slide-org9f8d825">
-<h3 id="org9f8d825">正規直交系</h3>
+<section id="slide-org4ba883c">
+<h3 id="org4ba883c">正規直交系</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 Hilbert 空間 \(\mathcal{H}\) の
 部分集合 \(\mathcal{A}\) が
@@ -220,13 +221,13 @@ Hilbert 空間 \(\mathcal{H}\) の
 
 </ul>
 </section>
-<section id="slide-orgc5b79ca">
-<h3 id="orgc5b79ca">完全正規直交系</h3>
+<section id="slide-org627057a">
+<h3 id="org627057a">完全正規直交系</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が 
 <b>Parseval の等式</b>
@@ -248,13 +249,13 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 
 </ul>
 </section>
-<section id="slide-orgbf7adea">
-<h3 id="orgbf7adea">完全正規直交系の性質</h3>
+<section id="slide-org4c86529">
+<h3 id="org4c86529">完全正規直交系の性質</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元 Hilbert 空間には
 <b>可算個</b> の要素からなる完全正規直交系が存在する．
@@ -263,7 +264,7 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
 </p>
@@ -271,7 +272,7 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
 以下が成り立つ．
@@ -289,16 +290,16 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 </section>
 </section>
 <section>
-<section id="slide-org34711bd">
-<h2 id="org34711bd">Fourier 級数</h2>
+<section id="slide-orgc01c2f9">
+<h2 id="orgc01c2f9">Fourier 級数</h2>
 </section>
-<section id="slide-orgf73fd34">
-<h3 id="orgf73fd34">周期関数</h3>
+<section id="slide-org88c8989">
+<h3 id="org88c8989">周期関数</h3>
 <ul>
 <li>周期的な信号 : 性質の良い(取り扱い易い)信号</li>
-<li>\(2\pi\) 周期の信号を考えることにする</li>
+<li> \(2\pi\) 周期の信号を考えることにする</li>
 <li><p>
-\(\mathbb{R}\) 上の関数 \(f(x)\) が
+ \(\mathbb{R}\) 上の関数 \(f(x)\) が
 周期 \(2\pi\) を持つ :
 </p>
 <blockquote>
@@ -334,13 +335,13 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 
 </ul>
 </section>
-<section id="slide-org64505ce">
-<h3 id="org64505ce">Fourier 級数展開</h3>
+<section id="slide-org0d3ba44">
+<h3 id="org0d3ba44">Fourier 級数展開</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <div>
 \begin{equation}
   \left\{
@@ -373,7 +374,7 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 <li><p>
 (定理のつづき)
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 \(f\in L^{2}(-\pi,\pi)\) 
 は以下のように
@@ -444,13 +445,13 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 
 </ul>
 </section>
-<section id="slide-org11e7d12">
-<h3 id="org11e7d12">Fourier 級数展開の例</h3>
+<section id="slide-orgbd33d4f">
+<h3 id="orgbd33d4f">Fourier 級数展開の例</h3>
 <ul>
 <li><p>
-<span style="color:green;">区間 \((-\pi,\pi)\) 上の周期関数 (鋸波)</span>
+区間 \((-\pi,\pi)\) 上の周期関数 (鋸波)
 </p>
-<blockquote>
+<blockquote class="callout-tip">
 <div>
 \begin{equation}
   f(x)=x,\quad
@@ -459,6 +460,12 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 
 </div>
 </blockquote></li>
+
+</ul>
+
+</section>
+<section>
+<ul>
 <li><p>
 係数は以下の式を計算すればよい
 </p>
@@ -506,7 +513,7 @@ Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が
 <section>
 <ul>
 <li><p>
-\(n=0\) も計算してまとめると以下のようになる
+ \(n=0\) も計算してまとめると以下のようになる
 </p>
 <blockquote>
 <div>
@@ -551,13 +558,13 @@ Euler の公式
 </section>
 </section>
 <section>
-<section id="slide-org8ddae84" data-background="#fef4f4">
-<h2 id="org8ddae84">演習</h2>
+<section id="slide-org40c772c" data-background="#fef4f4">
+<h2 id="org40c772c">演習</h2>
 </section>
-<section id="slide-org9c0d645" data-background="#fef4f4">
-<h3 id="org9c0d645">練習問題</h3>
+<section id="slide-org3bdb1f7" data-background="#fef4f4">
+<h3 id="org3bdb1f7">練習問題</h3>
 <ul>
-<li>\(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
+<li> \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
 Fourier 級数展開せよ．
 <ul>
 <li>\(f(x)=|x|\)</li>
@@ -569,19 +576,28 @@ Fourier 級数展開せよ．
 </section>
 </section>
 <section>
-<section id="slide-org156e389">
-<h2 id="org156e389">Fourier 級数の応用</h2>
-<div class="outline-text-2" id="text-org156e389">
+<section id="slide-orgdc06e6c">
+<h2 id="orgdc06e6c">Fourier 級数の応用</h2>
+<div class="outline-text-2" id="text-orgdc06e6c">
 </div>
 </section>
-<section id="slide-org1db109c">
-<h3 id="org1db109c">級数和の計算</h3>
+<section id="slide-org4520e8e">
+<h3 id="org4520e8e">級数和の計算</h3>
 <ul>
 <li>展開式から級数和に関していろいろな公式を得ることができる</li>
+
+</ul>
+
+</section>
+<section>
+<ul>
 <li><p>
+例1
+</p>
+<blockquote class="callout-tip">
+<p>
 \(f(x)=|x|\) に対して \(x=0\) とすれば
 </p>
-<blockquote>
 <div>
 \begin{equation}
   \sum_{m=0}^{\infty}\frac{1}{(2m+1)^{2}} = \frac{\pi^{2}}{8}
@@ -596,9 +612,12 @@ Fourier 級数展開せよ．
 <section>
 <ul>
 <li><p>
+例2
+</p>
+<blockquote class="callout-tip">
+<p>
 \(f(x)=x^{2}\) に対して \(x=0\) とすれば
 </p>
-<blockquote>
 <div>
 \begin{equation}
   \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^{2}} = \frac{\pi^{2}}{12}
@@ -609,13 +628,13 @@ Fourier 級数展開せよ．
 
 </ul>
 </section>
-<section id="slide-org02c001d">
-<h3 id="org02c001d">Fourier 級数の性質</h3>
+<section id="slide-org0293484">
+<h3 id="org0293484">Fourier 級数の性質</h3>
 <ul>
 <li><p>
 三角関数による展開
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 Eulerの公式により以下のように変形することができる
 </p>
@@ -651,7 +670,7 @@ Eulerの公式により以下のように変形することができる
 <li><p>
 実数値関数の係数
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 関数 \(f(x)\) が実数値の場合
 </p>
@@ -676,7 +695,7 @@ Eulerの公式により以下のように変形することができる
 <li><p>
 定義域の異なる基底
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 \(L^{2}(0,\pi)\) においては
 </p>
@@ -703,11 +722,11 @@ Eulerの公式により以下のように変形することができる
 </section>
 </section>
 <section>
-<section id="slide-org3c8d33f" data-background="#fef4f4">
-<h2 id="org3c8d33f">演習</h2>
+<section id="slide-orgfb51840" data-background="#fef4f4">
+<h2 id="orgfb51840">演習</h2>
 </section>
-<section id="slide-org0b6311b" data-background="#fef4f4">
-<h3 id="org0b6311b">練習問題</h3>
+<section id="slide-orgf2cf1a5" data-background="#fef4f4">
+<h3 id="orgf2cf1a5">練習問題</h3>
 <ul>
 <li><p>
 以下の級数和を求めよ．
@@ -728,13 +747,37 @@ Eulerの公式により以下のように変形することができる
 </section>
 </section>
 <section>
-<section id="slide-org335ae8b">
-<h2 id="org335ae8b">Fourier 基底の完全性</h2>
-<div class="outline-text-2" id="text-org335ae8b">
+<section id="slide-org6406709">
+<h2 id="org6406709">Fourier 基底の完全性</h2>
+<div class="outline-text-2" id="text-org6406709">
 </div>
 </section>
-<section id="slide-orge211971">
-<h3 id="orge211971">完全性の証明</h3>
+<section id="slide-orgf945d6e">
+<h3 id="orgf945d6e">完全性の証明</h3>
+<ul>
+<li><p>
+定理
+</p>
+<blockquote class="callout-important">
+<div>
+\begin{equation}
+  \left\{
+    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+  \right\}
+\end{equation}
+
+</div>
+<p>
+は
+\(L^{2}(-\pi,\pi)\)
+上の完全正規直交系となる．
+</p>
+</blockquote></li>
+
+</ul>
+
+</section>
+<section>
 <ul>
 <li><p>
 step 1
@@ -1033,12 +1076,13 @@ step 11
 </p>
 <ul>
 <li>積分の第1,3項では \(P_{r}\) をいくらでも小さくすることができる</li>
-<li>第2項では \(f(x-y)-f(x)\) をいくらでも小さくすることできる
-この結果，
-\(\delta\) と \(r\) とを適当に選ぶことによって
-3つの積分の和はいくらでも小さくなる．</li>
+<li>第2項では \(f(x-y)-f(x)\) をいくらでも小さくすることができる</li>
 
 </ul>
+<p>
+この結果，\(\delta\) と \(r\) とを適当に選ぶことによって
+3つの積分の和はいくらでも小さくなる．
+</p>
 </blockquote></li>
 
 </ul>
@@ -1074,8 +1118,8 @@ step 12
 </section>
 </section>
 <section>
-<section id="slide-org7f7dab5">
-<h2 id="org7f7dab5">今回のまとめ</h2>
+<section id="slide-orgd76a8a6">
+<h2 id="orgd76a8a6">今回のまとめ</h2>
 <ul>
 <li>Fourier 級数展開 :
 <ul>
@@ -1120,6 +1164,7 @@ Fourier 基底の完全性 :
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -1132,7 +1177,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
@@ -1154,7 +1199,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
