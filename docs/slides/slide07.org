@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:49:42 mura>
+# Time-stamp: <2026-06-19 10:41:55 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -44,8 +44,8 @@
 
 ** Fourier 変換と反転公式
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\mathbb{R}\)
    上の関数
@@ -151,12 +151,12 @@
    \end{equation}
    #+end_quote
    以下の関数の Fourier 変換を求めよ．
-   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
-   - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
-   - \(h(x)=\Xi_{(-1,1)}(x)\)
+   -  \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
+   -  \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
+   -  \(h(x)=\Xi_{(-1,1)}(x)\)
 
 ** COMMENT 解答例
-- \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+-  \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
    #+begin_quote
    \begin{align}
      \hat{f}(\omega)
@@ -169,7 +169,7 @@
    #+end_quote
 
 #+reveal: split
-- \(g(x)=e^{-\beta x^{2}}\)
+-  \(g(x)=e^{-\beta x^{2}}\)
    #+begin_quote
    \begin{align}
      \hat{g}(\omega)
@@ -184,7 +184,7 @@
    #+end_quote
 
 #+reveal: split
-- \(h(x)=\Xi_{(-1,1)}(x)\)
+-  \(h(x)=\Xi_{(-1,1)}(x)\)
    #+begin_quote
    \begin{align}
      \hat{h}(\omega)
@@ -203,11 +203,11 @@
 
 ** 記法
 - 関数の対応
-   - \(f\): もとの関数 (以下では Fourier 変換の存在を仮定)
-   - \(\hat{f}\): Fourier 変換
+   -  \(f\): もとの関数 (以下では Fourier 変換の存在を仮定)
+   -  \(\hat{f}\): Fourier 変換
 - 変換の演算子
-   - \(\mathcal{F}\): Fourier 変換
-   - \(\mathcal{F}^{-1}\): 逆 Fourier 変換
+   -  \(\mathcal{F}\): Fourier 変換
+   -  \(\mathcal{F}^{-1}\): 逆 Fourier 変換
    #+begin_quote
    例えば以下のように使う.
    \begin{align}
@@ -220,29 +220,29 @@
 
 #+reveal: split
 - 引数に関する注意
-  #+begin_quote
-  関数の引数(変数)は単なる名前なので何でも良い．
-  \begin{align}
-    \mathcal{F}[f](\alpha)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
-    \mathcal{F}^{-1}[\hat{f}](\beta)
-    &=\frac{1}{\sqrt{2\pi}}
-      \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   関数の引数(変数)は単なる名前なので何でも良い．
+   \begin{align}
+     \mathcal{F}[f](\alpha)
+     &=\frac{1}{\sqrt{2\pi}}
+       \int_{-\infty}^{\infty}f(\beta)e^{-i\alpha\beta}d\beta\\
+     \mathcal{F}^{-1}[\hat{f}](\beta)
+     &=\frac{1}{\sqrt{2\pi}}
+       \int_{-\infty}^{\infty}\hat{f}(\alpha)e^{i\alpha\beta}d\alpha
+   \end{align}
+   #+end_quote
 
 ** 絶対可積分 (\(L^{1}(-\infty,\infty)\))
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{equation}
      \|f\|_{L^{1}}=\int_{-\infty}^{\infty}|f(x)|dx<\infty,\quad
      f\in L^{1}(\mathbb{R})
    \end{equation}
    #+end_quote
-- 以下ではこの条件を満たす関数を考える
+   - /以下ではこの条件を満たす関数を考える/
 
 #+reveal: split
 - Fourier 変換の存在 (各点)
@@ -270,7 +270,7 @@
    #+end_quote
 
 #+reveal: split
-- \(|x|\to\infty\) での挙動
+-  \(|x|\to\infty\) での挙動
    #+attr_html: :class callout-note
    #+attr_latex: :environment callout-note
    #+begin_quote
@@ -421,13 +421,13 @@
 
 #+reveal: split
 - 注意
-  #+begin_quote
-  符号が反転しているだけなので，ほとんど対称だと思ってよい．
-  すなわち，
-  Fourier 変換 \(\mathcal{F}\) について成り立つことは
-  逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-  ただし符号の反転などには注意すること．
-  #+end_quote
+   #+begin_quote
+   符号が反転しているだけなので，ほとんど対称だと思ってよい．
+   すなわち，
+   Fourier 変換 \(\mathcal{F}\) について成り立つことは
+   逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+   ただし符号の反転などには注意すること．
+   #+end_quote
 
 ** 練習問題
 - 以下の問題に答えよ
@@ -597,13 +597,13 @@
 
 #+reveal: split
 - 注意
-  #+begin_quote
-  符号が反転しているだけなので，ほとんど対称だと思ってよい．
-  すなわち，
-  Fourier 変換 \(\mathcal{F}\) について成り立つことは
-  逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
-  ただし符号の反転などには注意すること．
-  #+end_quote
+   #+begin_quote
+   符号が反転しているだけなので，ほとんど対称だと思ってよい．
+   すなわち，
+   Fourier 変換 \(\mathcal{F}\) について成り立つことは
+   逆 Fourier 変換 \(\mathcal{F}^{-1}\) でも成り立つ．
+   ただし符号の反転などには注意すること．
+   #+end_quote
 
 ** 微分
 - 練習問題
@@ -767,14 +767,13 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-- 関数
+- 以下の関数の Fourier 変換を求めよ．
    #+begin_quote
    \begin{equation}
      f(x)=\frac{1}{x-ia}\;(a>0)        
    \end{equation}
    #+end_quote
-   の Fourier 変換を求めよ．
-   - /Fourier 変換と逆 Fourier 変換の関係を利用/
+   - *Fourier 変換と逆 Fourier 変換の関係を利用*
    - 複素積分を利用 (Cauchy の積分定理・留数定理)
 
 ** COMMENT 解答例
@@ -850,12 +849,10 @@
       - Plancherel の定理
       - Riemann-Lebesgue の定理(補題)
    - 関数の演算と Fourier 変換の関係
-** COMMENT 注意
-- 確認テストはありません
-   - 複素積分の説明を来週するため
-- 第10回の確認テストでまとめて行います
-   - Fourier 変換
-   - 線形フィルタ
+** 注意
+- 確認テスト (講義8の中)
+   - Fourier 変換の基本的な計算問題
+   - 手を動かしてしっかり計算
 
 
 * Footnotes                                                          :ignore:

@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:28:55 mura>
+# Time-stamp: <2026-06-09 21:32:07 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,8 +19,8 @@
 * 前回のおさらい
 ** ベクトル空間
 - 以下の条件を満たす
-   #+attr_html: :class callout-important :style font-size: 1em!important;
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
    2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
@@ -51,8 +51,8 @@
 
 ** 線形独立
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{equation}
      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
@@ -65,16 +65,16 @@
 
 ** 基底
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
    \(V\) の階数，すなわち極大独立集合の基数を
    \(V\) の *次元 (dimension)* という．
    #+end_quote
 - 極大独立集合
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合 \(S\) の線形独立な部分集合 \(B\subset S\) を考える．
    \(\forall b\in S-B\) において \(B\cup\{b\}\) が線形従属のとき，
@@ -104,14 +104,14 @@
 :END:
 ** 練習問題
 - 以下の集合 \(V\) のうちベクトル空間はどれか？
-   - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
-   - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
+   -  \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=0\}\)
+   -  \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}+f^{(1)}+f=1\}\)
 - 以下の集合のうち線形独立なものはどれか？
-   - \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
-   - \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
+   -  \(\{1,\;x,\;x^{2}\}\quad(x\in\mathbb{R})\)
+   -  \(\{1-x,\;1+x,\;1-x^{2}\}\quad(x\in\mathbb{R})\)
 - 以下のベクトル空間の空間の次元は?
-   - \(C^{m}[0,1]\)
-   - \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
+  -  \(C^{m}[0,1]\)
+  -  \(V=\{f(x)=a+bx+cx^{2},\;(a,b,c)\in\mathbb{R}^{3}\}\)
 
 ** COMMENT ヒント
 - 条件の線形性として，\(h=f+g\)のとき
@@ -138,15 +138,14 @@
 
 ** 内積
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ベクトル空間の2つの要素
    \(u,v\in\mathcal{H}\) に対して，
    次の性質を持つ2変数関数を
    *内積*
    という．
-   #+attr_html: :style font-size: 1em!important;   
    1. \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
    2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
@@ -154,14 +153,14 @@
    3. \(\langle \alpha u+\beta u',v\rangle
       =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
    #+end_quote
-   - \(\langle u,v\rangle\), \((u,v)\), \(u\cdot v\) 
+   -  \(\langle u,v\rangle\), \((u,v)\), \(u\cdot v\) 
       などいろいろな書き方があるが，
       講義では \(\langle u,v\rangle\) を用いる
 
 ** 内積空間
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    内積が定義されたベクトル空間を
    *内積空間* 
@@ -187,49 +186,49 @@
 
 #+reveal: split
 - 数ベクトル空間
-   #+attr_html: :class callout-tip
-   #+attr_latex: :environment callout-tip
-   #+begin_quote
-   2つの複素数値ベクトル 
-   \(u=(u_{1},u_{2},\dotsc,u_{n})\),
-   \(v=(v_{1},v_{2},\dotsc,v_{n})\)
-   に対して
-   \begin{equation}
-     \langle u,v\rangle
-     = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
-   \end{equation}
-   ただし
-   \(\bar{\cdot}\)
-   は複素共役
-   #+end_quote
+  #+attr_html: :class callout-tip
+  #+attr_latex: :environment callout-tip
+  #+begin_quote
+  2つの複素数値ベクトル 
+  \(u=(u_{1},u_{2},\dotsc,u_{n})\),
+  \(v=(v_{1},v_{2},\dotsc,v_{n})\)
+  に対して
+  \begin{equation}
+    \langle u,v\rangle
+    = \sum_{i=1}^{n}u_{i}\bar{v}_{i}
+  \end{equation}
+  ただし
+  \(\bar{\cdot}\)
+  は複素共役
+  #+end_quote
 
 #+reveal: split
 - 関数空間
-   #+attr_html: :class callout-tip
-   #+attr_latex: :environment callout-tip
-   #+begin_quote
-   \(\mathbb{R}\) 上で定義された
-   2つの複素数値関数
-   \(u,v\)
-   に対して
-   \begin{equation}
-     \langle u,v\rangle
-     = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
-   \end{equation}
-   #+end_quote
-   - 定義域が \(\Omega\) で表される場合に
-      #+begin_quote
-      \begin{equation}
-        \langle u,v\rangle
-        = \int_{\Omega}u(x)\overline{v(x)}dx
-      \end{equation}
-      #+end_quote
-      のように書くこともある
+  #+attr_html: :class callout-tip
+  #+attr_latex: :environment callout-tip
+  #+begin_quote
+  \(\mathbb{R}\) 上で定義された
+  2つの複素数値関数
+  \(u,v\)
+  に対して
+  \begin{equation}
+    \langle u,v\rangle
+    = \int_{-\infty}^{\infty}u(x)\overline{v(x)}dx
+  \end{equation}
+  #+end_quote
+  - 定義域が \(\Omega\) で表される場合に
+    #+begin_quote
+    \begin{equation}
+      \langle u,v\rangle
+      = \int_{\Omega}u(x)\overline{v(x)}dx
+    \end{equation}
+    #+end_quote
+    のように書くこともある
 
 ** ノルム
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(u\in\mathcal{H}\) に対して，
    その
@@ -243,24 +242,24 @@
 
 #+reveal: split
 - ノルムの性質
-   #+attr_html: :class callout-important :style font-size: 1em!important;
+   #+attr_html: :class callout-important
    #+attr_latex: :environment callout-important
    #+begin_quote
-   - \(\|u\|\ge0\)
+   -  \(\|u\|\ge0\)
       特に \(\|u\|=0\;\Rightarrow\;u=0\)
-   - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\) \\
+   -  \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\) \\
       (係数体 \(K\) としては \(\mathbb{R}\) か \(\mathbb{C}\) を考え，
       \(|\cdot|\) は \(K\) 上の絶対値を表す)
-   - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
+   -  \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
       (Cauchy-Schwarzの不等式)
-   - \(\|u+v\|\leq\|u\|+\|v\|\) 
+   -  \(\|u+v\|\leq\|u\|+\|v\|\) 
       (三角不等式)
    #+end_quote
 
 ** 距離
 - 内積空間では自然に距離が導入される
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(d(u,v)=\|u-v\|\) を考えると \(d\) は
    *距離* になっている．
@@ -278,17 +277,17 @@
    内積およびノルムの性質として正しいものはどれか？
    # ベクトル \(u,v\in\mathcal{H}\) の内積を \(\langle u,v\rangle\)， 
    # ベクトル \(u\in\mathcal{H}\) のノルムを \(\|u\|\) と書く．
-   - \(\langle u,v\rangle = \langle v,u\rangle\)
-   - \(\|u\|=0\) ならば \(u=0\)
-   - \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
-   - \(|\langle u,v\rangle|>\|u\|+\|v\|\)
+   -  \(\langle u,v\rangle = \langle v,u\rangle\)
+   -  \(\|u\|=0\) ならば \(u=0\)
+   -  \(\forall\alpha\in\mathbb{C},\;\|\alpha u\|=\alpha\|u\|\)
+   -  \(|\langle u,v\rangle|>\|u\|+\|v\|\)
 
 ** COMMENT ヒント
 - 距離は以下の4つの条件を満たす
-   - \(d(x,y)\ge0\) (非負性)
-   - \(d(x,y)=0\Leftrightarrow x=y\) (非退化性)
-   - \(d(x,y)=d(y,x)\) (対称性)
-   - \(d(x,y)+d(y,z)\ge d(x,z)\) (三角不等式)
+   -  \(d(x,y)\ge0\) (非負性)
+   -  \(d(x,y)=0\Leftrightarrow x=y\) (非退化性)
+   -  \(d(x,y)=d(y,x)\) (対称性)
+   -  \(d(x,y)+d(y,z)\ge d(x,z)\) (三角不等式)
 - 内積，ノルムの定義を確認せよ
 
 
@@ -298,8 +297,8 @@
 
 ** 完備性
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合の中で無限に続く点列 \(u_{n}\) を考え，
    この点列がだんだん動かなくなる状況を考える．
@@ -334,8 +333,8 @@
 
 ** Hilbert 空間
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    内積空間 \(\mathcal{H}\) がノルムに関して完備なとき，
    *Hilbert 空間*
@@ -347,7 +346,7 @@
    - 完備の厳密な定義は解析学の本を参照
 
 ** Hilbert 空間の例
--   \(l^{2}\) 空間 (無限次元数ベクトル空間)
+-  \(l^{2}\) 空間 (無限次元数ベクトル空間)
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -369,35 +368,35 @@
    \end{equation}
    #+end_quote
    - Cauchy-Schwarzの不等式
-      \(\langle u,v\rangle\leq\|u\|\cdot\|v\|\)
-      により，条件(ノルムが有限の値を持つ)から必ず内積の値は存在
+     \(\langle u,v\rangle\leq\|u\|\cdot\|v\|\)
+     により，条件(ノルムが有限の値を持つ)から必ず内積の値は存在
    - 完備性の証明はかなり面倒．
-      興味のあるものは成書を参照
+     興味のあるものは成書を参照
 
 #+reveal: split
--   \(L^{2}\) 空間
-   #+attr_html: :class callout-tip
-   #+attr_latex: :environment callout-tip
-   #+begin_quote
-   \begin{equation}
-     L^{2}(\Omega)=
-     \left\{
-       f\:\big|\:\|f\|<\infty
-       % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
-     \right\}
-   \end{equation}
-   \begin{equation}
-     \langle f,g\rangle
-     =
-     \int_{\Omega}f(x)\overline{g(x)}dx,
-     \quad
-     \|f\|^{2}
-     =
-     \int_{\Omega}|f(x)|^{2}dx
-   \end{equation}
-   #+end_quote
-   - 今後扱う信号の空間に対応する
-   - ノルムが有界であることは信号の物理的な性質と関係する
+-  \(L^{2}\) 空間
+  #+attr_html: :class callout-tip
+  #+attr_latex: :environment callout-tip
+  #+begin_quote
+  \begin{equation}
+    L^{2}(\Omega)=
+    \left\{
+      f\:\big|\:\|f\|<\infty
+      % f\:\Big|\:\int_{\Omega}|f(x)|^{2}dx<\infty
+    \right\}
+  \end{equation}
+  \begin{equation}
+    \langle f,g\rangle
+    =
+    \int_{\Omega}f(x)\overline{g(x)}dx,
+    \quad
+    \|f\|^{2}
+    =
+    \int_{\Omega}|f(x)|^{2}dx
+  \end{equation}
+  #+end_quote
+  - 今後扱う信号の空間に対応する
+  - ノルムが有界であることは信号の物理的な性質と関係する
 
 
 * 演習
@@ -411,14 +410,14 @@
    - 区間 \([0,1]\) の無理数
 - 実数 \(\mathbb{R}\) を係数体とする
    以下の内積空間で Hilbert 空間となるものはどれか?
-   - \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
+   -  \((u_{1},u_{2},u_{3})\in\mathbb{R}^{3}\) 
       (内積は \(\langle u,v\rangle=\sum_{i=1}^{3}u_{i}v_{i}\))
    - 区間 \([-1,1]\) 上の実数値連続関数の空間 \(C[-1,1]\) 
       (内積は \(\langle f,g\rangle=\int_{-1}^{1}f(x)g(x)dx\)．不連続な点がない関数．微分できなくても良い)
 
 ** COMMENT ヒント
 - 点列の収束先に含まれない要素の有無を考える．
-- \(C[-1,1]\) は Hilbert 空間にならない．
+-  \(C[-1,1]\) は Hilbert 空間にならない．
    #+begin_quote
    関数列 \(f_{n}\) として例えば次のようなものを考える．
    \begin{equation}
@@ -439,10 +438,10 @@
 - 内積 : 
    ベクトル空間の2つの要素に対して定義され，
    以下の性質を持つ
-   - \(\langle u,u\rangle\geq0\) 
+   -  \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
-   - \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
-   - \(\langle \alpha u+\beta u',v\rangle
+   -  \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
+   -  \(\langle \alpha u+\beta u',v\rangle
       =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
 
 #+reveal: split
@@ -451,12 +450,12 @@
    \(\|u\|=\sqrt{\langle u,u\rangle}\)
    で定義され，
    以下の性質を持つ
-   - \(\|u\|\geq0\)
+   -  \(\|u\|\geq0\)
       特に \(\|u\|=0\;\Rightarrow\;u=0\)
-   - \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\)
-   - \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
+   -  \(\|\alpha u\|=|\alpha|\|u\|,\;\forall\alpha\in K\)
+   -  \(|\langle u,v\rangle|\leq\|u\|\cdot\|v\|\) 
       (Cauchy-Schwarzの不等式)
-   - \(\|u+v\|\leq\|u\|+\|v\|\) 
+   -  \(\|u+v\|\leq\|u\|+\|v\|\) 
       (三角不等式)
 
 #+reveal: split

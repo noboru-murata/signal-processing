@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:26:46 mura>
+# Time-stamp: <2026-06-10 09:24:39 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -32,8 +32,8 @@
 
 ** ベクトル空間
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    次の性質をもつ集合を体 \(K\) 上の *ベクトル空間* \(V\) という．\\
    体とは四則演算が定義された集合のことで，
@@ -42,8 +42,8 @@
 
 #+reveal: split
 - ベクトル空間の満たすべき性質
-   #+attr_html: :class callout-important :style font-size: 1em!important;
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    1. \(a,b\in V\,\Rightarrow\,a+b\in V\)
    2. \(a,b,c\in V\,\Rightarrow\,(a+b)+c=a+(b+c)\) (結合則)
@@ -104,28 +104,28 @@
 - 以下の集合 \(V\) のうち，
    係数体を実数 \(\mathbb{R}\) としてベクトル空間となるものはどれか？\\
    ただし \(f^{(k)}\) は \(f\) の \(k\) 階微分を表す．
-   - \(V=\{(x_{1},x_{2},\dotsc,x_{n})\in\mathbb{R}^{n}\}\)
+   -  \(V=\{(x_{1},x_{2},\dotsc,x_{n})\in\mathbb{R}^{n}\}\)
       (\(n\) 次元数ベクトルの集合)
-   - \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
+   -  \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
       (原点を通る2次関数の集合)
-   - \(V=\{f\in C^{3}[-\pi,\pi]\}\) \\
+   -  \(V=\{f\in C^{3}[-\pi,\pi]\}\) \\
       (\((-\pi,\pi)\) 上で定義された3階微分可能な関数の集合)
-   - \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}=-f\}\)
+   -  \(V=\{f\in C^{3}[-\pi,\pi]\) かつ \(f^{(2)}=-f\}\)
 
 ** COMMENT 解答例
 - 以下の点に注意すること
-   - \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
+   -  \(V=\{f(x)=ax+bx^{2},\;(a,b)\in\mathbb{R}^{2}\}\) \\
       \(V'=\{(a,b)\in\mathbb{R}^{2}\}\) と同一視できる
-   - \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\) \\
-     微分に関する条件は線形性が成り立つ \\
-     \(f^{(2)}+g^{(2)}=-f-g\) 
+   -  \(V=\{f\in C^{3}(-\pi,\pi)\) かつ \(f^{(2)}=-f\}\) \\
+      微分に関する条件は線形性が成り立つ \\
+      \(f^{(2)}+g^{(2)}=-f-g\) 
 
 
 * 線形独立性
 ** 線形結合
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\lambda_{1},\dotsc,\lambda_{k}\in K\),
    \(a_{1},\dotsc,a_{k}\in V\)
@@ -138,8 +138,8 @@
 
 ** 線形従属
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    "全てが \(0\)" ではないある係数の組
    \(\lambda_{1},\dotsc,\lambda_{k}\) に対して
@@ -159,8 +159,8 @@
 
 ** 線形独立
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{equation}
      \lambda_{1}a_{1}+\dotsb+\lambda_{k}a_{k}=0
@@ -199,10 +199,10 @@
 ** 練習問題
 - 以下の集合のうち線形独立なものはどれか？\\
    ただし \(i\) は虚数単位で，係数体は \(\mathbb{C}\) とする．
-   - \(\{1,\;1+x,\;1+x+x^{2}\}\quad(x\in\mathbb{R})\)
-   - \(\{1,\;\sin(x),\;\sin^{2}(x)\}\quad(x\in\mathbb{R})\)
-   - \(\{1,\;\log(x),\;\log(2x)\}\quad(x>0)\)
-   - \(\{\exp(ix),\exp(3ix),\exp(5ix)\}\quad(x\in\mathbb{R})\)
+   -  \(\{1,\;1+x,\;1+x+x^{2}\}\quad(x\in\mathbb{R})\)
+   -  \(\{1,\;\sin(x),\;\sin^{2}(x)\}\quad(x\in\mathbb{R})\)
+   -  \(\{1,\;\log(x),\;\log(2x)\}\quad(x>0)\)
+   -  \(\{\exp(ix),\exp(3ix),\exp(5ix)\}\quad(x\in\mathbb{R})\)
 
 ** COMMENT 解答例
 - 線形結合を考え，
@@ -212,15 +212,15 @@
      \alpha f(x) + \beta g(x) + \gamma h(x) = 0
    \end{equation}
    #+end_quote
-   - \(\{1,\;\log(x),\;\log(2x)\}=\{1,\;\log(x),\;\log(2)+\log(x)\}\)
+   -  \(\{1,\;\log(x),\;\log(2x)\}=\{1,\;\log(x),\;\log(2)+\log(x)\}\)
       なので，独立ではない
 
 
 * 階数
 ** 極大独立集合
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ベクトル空間 \(V\) の有限部分集合 \(S\) に対して，
    線形独立な部分集合 \(B\subset S\) を考える．
@@ -231,8 +231,8 @@
 
 ** 階数
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    有限部分集合 \(S\) の極大独立集合 \(B\) はいろいろあるが，
    \(|B|\) (基数 ; cardinality) は一定となる．
@@ -240,7 +240,7 @@
    \(|B|\) を \(S\) の *階数 (rank)* といい，
    \(\mathrm{rank}\,S\) で表す．
    #+end_quote
-   - \(S\) が無限集合であっても特殊な場合を除けば，
+   -  \(S\) が無限集合であっても特殊な場合を除けば，
       \(S\) の極大独立集合の基数はすべて等しくなる
 ** 階数の性質
 - 定理
@@ -248,10 +248,9 @@
    #+attr_latex: :environment callout-important
    #+begin_quote
    階数については以下が成り立つ．
-   #+attr_html: :style font-size: 1em!important;
-   - \(\mathrm{rank}\,\emptyset=0\)
-   - \(\mathrm{rank}(S\cup\{b\})=\mathrm{rank}\,S\) または \(\mathrm{rank}\,S+1\)
-   - \(\forall b_{1},b_{2}\) に対して
+   -  \(\mathrm{rank}\,\emptyset=0\)
+   -  \(\mathrm{rank}(S\cup\{b\})=\mathrm{rank}\,S\) または \(\mathrm{rank}\,S+1\)
+   -  \(\forall b_{1},b_{2}\) に対して
      \begin{multline}
        \mathrm{rank}(S\cup\{b_{1}\})=\mathrm{rank}(S\cup\{b_{2}\})=\mathrm{rank}\,S\\
        \,\Rightarrow\,
@@ -263,8 +262,8 @@
 * ベクトル空間の基底
 ** 基底
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(V\) の極大独立集合を \(V\) の基底と呼ぶ．
 

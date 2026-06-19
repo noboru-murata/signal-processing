@@ -1,0 +1,280 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    \node [block] (box) {2端子対回路 \\[\baselineskip] （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+    % --- 3. 右側（出力側）の回路 ---
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass{ltjsarticle} % オプションは渡さず、シンプルに宣言
+\usepackage{luatexja-fontspec}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+% --- ヒラギノ丸ゴシックの正確な名前を指定 ---
+\setmainjfont{HiraMaruProN-W4}
+
+% --- standaloneのように図の周りを自動トリミングする設定 ---
+\usepackage[active, tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt} % 周囲の余白（border）を指定
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    \node [block] (box) {2端子対回路 \\[\baselineskip] （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+    % --- 3. 右側（出力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass[tikz, border=10pt]{standalone}
+% \documentclass[tikz, border=10pt]{ltjsarticle} % ltjsarticle クラスを使用
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\usepackage{luatexja-fontspec}
+% 和文の標準（sans/gothic）フォントをヒラギノ丸ゴシック W4 に固定します
+\setmainjfont{HiraMaruProN-W4}
+% \setmainjfont{Hiragino Maru Gothic ProN W4}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    \node [block] (box) {2端子対回路 \\[\baselineskip] （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+    % --- 3. 右側（出力側）の回路 ---
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage[hiragino-pron]{luatexja-preset}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    \node [block] (box) {2端子対回路 \\[\baselineskip] （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    
+    % 端子からブロックへ伸びる横線
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    
+    % 電圧の矢印（端子の少し右側、上下の線の間に配置）
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    
+    % 「入力電圧」のテキスト（矢印や端子のさらに左側）
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+    % --- 3. 右側（出力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    
+    % ブロックから端子へ伸びる横線
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    
+    % 電圧の矢印（端子の少し左側、上下の線の間に配置）
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    
+    % 「出力電圧」のテキスト（矢印や端子のさらに右側）
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass[tikz, border=10pt]{standalone}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    % --- 共通のベストプラクティス設定 ---
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    % --- 個別スタイル設定 ---
+    % 中央の青いボックス
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    % 端子の丸
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    % エラー対策のため、テキスト内の改行コード部分を {\\[\baselineskip]} と中括弧で囲みました
+    \node [block] (box) {2端子対回路 {\\[\baselineskip]} （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    
+    % 端子からブロックへ伸びる横線
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    
+    % 電圧の矢印
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    
+    % 「入力電圧」のテキスト
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+
+    % --- 3. 右側（出力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    
+    % ブロックから端子へ伸びる横線
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    
+    % 電圧の矢印
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    
+    % 「出力電圧」のテキスト
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass[tikz, border=10pt]{standalone}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    % --- 共通のベストプラクティス設定 ---
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    
+    % --- 個別スタイル設定 ---
+    % 中央の青いボックス（手書きに合わせて青色にしています）
+    block/.style={draw=blue!80!black, rectangle, minimum width=4.5cm, minimum height=3.5cm, align=center, line width=1.5pt},
+    % 端子の丸（白抜きの小さな円）
+    terminal/.style={draw, circle, minimum size=5pt, inner sep=0pt, fill=white}
+]
+
+    % --- 1. 中央のブロック ---
+    \node [block] (box) {2端子対回路 \\[\baselineskip] （4端子回路）};
+
+    % --- 2. 左側（入力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (in_t) at ($(box.west)+(-2.2cm,  0.8cm)$) {};
+    \node [terminal] (in_b) at ($(box.west)+(-2.2cm, -0.8cm)$) {};
+    
+    % 端子からブロックへ伸びる横線
+    \draw (in_t) -- ($(box.west)+(0,  0.8cm)$);
+    \draw (in_b) -- ($(box.west)+(0, -0.8cm)$);
+    
+    % 電圧の矢印（端子の少し右側、上下の線の間に配置）
+    \draw [->] ($(in_b)+(0.3cm, 0.1cm)$) -- ($(in_t)+(0.3cm, -0.1cm)$);
+    
+    % 「入力電圧」のテキスト（矢印や端子のさらに左側）
+    \node [left=0.2cm of in_b, yshift=0.8cm] {入力電圧};
+
+
+    % --- 3. 右側（出力側）の回路 ---
+    % 上下の端子（丸）を配置
+    \node [terminal] (out_t) at ($(box.east)+(2.2cm,  0.8cm)$) {};
+    \node [terminal] (out_b) at ($(box.east)+(2.2cm, -0.8cm)$) {};
+    
+    % ブロックから端子へ伸びる横線
+    \draw ($(box.east)+(0,  0.8cm)$) -- (out_t);
+    \draw ($(box.east)+(0, -0.8cm)$) -- (out_b);
+    
+    % 電圧の矢印（端子の少し左側、上下の線の間に配置）
+    \draw [->] ($(out_b)+(-0.3cm, 0.1cm)$) -- ($(out_t)+(-0.3cm, -0.1cm)$);
+    
+    % 「出力電圧」のテキスト（矢印や端子のさらに右側）
+    \node [right=0.2cm of out_b, yshift=0.8cm] {出力電圧};
+
+\end{tikzpicture}
+\end{document}
+

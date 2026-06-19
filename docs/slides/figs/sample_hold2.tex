@@ -1,0 +1,132 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    % 標本化を表す白抜きの赤丸スタイル
+    sample_dot/.style={draw=red!80!black, circle, minimum size=5pt, inner sep=0pt, fill=white, line width=1.2pt},
+    % 追加された青い注釈用のスタイル
+    text_blue/.style={text=cyan!80!black, align=center},
+    line_blue/.style={draw=cyan!80!black, line width=1.0pt}
+]
+
+    % --- 1. 軸の描画 ---
+    \draw [->] (-0.5, 0) -- (11.0, 0) node[right] {$t$};
+
+    % --- 2. 連続信号の描画（黒い滑らかな曲線） ---
+    \draw [black, line width=1.0pt, smooth, tension=0.6] plot coordinates {
+        (-0.5, -0.4)
+        (0.5, -0.9) (1.0, 0.4) (1.5, -0.3) (2.0, -0.2) (2.5, -0.8) (3.0, -0.4) 
+        (3.5, 0.4) (4.0, 1.6) (4.5, 2.5) (5.0, 2.3) (5.5, 1.3) (6.0, 0.0) 
+        (6.5, -0.6) (7.0, -1.0) (7.5, -0.5) (8.0, 0.4) (8.5, 0.1) (9.0, -0.4) 
+        (9.5, 0.5) (10.0, -0.2)
+        (10.5, -0.1)
+    };
+
+    % --- 3. 標本化パルス（赤い縦棒と丸）の描画 ---
+    \foreach \x/\y in {
+        0.5/-0.9, 1.0/0.4, 1.5/-0.3, 2.0/-0.2, 2.5/-0.8, 3.0/-0.4, 
+        3.5/0.4, 4.0/1.6, 4.5/2.5, 5.0/2.3, 5.5/1.3, 6.0/0.0, 
+        6.5/-0.6, 7.0/-1.0, 7.5/-0.5, 8.0/0.4, 8.5/0.1, 9.0/-0.4, 
+        9.5/0.5, 10.0/-0.2
+    } {
+        \draw [red!80!black, line width=1.0pt] (\x, 0) -- (\x, \y);
+        \node [sample_dot] at (\x, \y) {};
+    }
+
+    % --- 4. 凡例（右上のテキスト） ---
+    \node [sample_dot] (legend_dot) at (8.0, 2.3) {};
+    \node [red!80!black, right=0.15cm of legend_dot] {標本化};
+
+
+    % --- 5. 手書きの青い注釈部分 ---
+    % 【調整】重なりを回避するため、テキスト位置を (3.2, 3.2) から (2.3, 3.4) へ移動し、左上に逃がしました
+    \node [text_blue, font=\normalsize] (info_text) at (2.3, 3.4) {最大の周波数が \\ $B$ [Hz] 未満};
+    
+    % 【調整】出発角度(out)と進入角度(in)を最適化し、黒い曲線の上空を綺麗にまたぐ軌道に変更しました
+    \draw [line_blue, ->] (info_text.south east) to[out=-25, in=125] (4.0, 1.6);
+
+    % サンプリング間隔を示す補助線
+    \draw [line_blue, |-|] (4.0, -0.3) -- (4.5, -0.3);
+    
+    % 間隔の数式ラベル「1 / 2B [s]」
+    \node [text_blue, below=0.1cm of {4.25, -0.3}, font=\normalsize] {$\displaystyle\frac{1}{2B}$ [s]};
+
+\end{tikzpicture}
+\end{document}
+
+\documentclass[border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,                  % 全体の線を太めにする
+    >=Stealth,              % 綺麗な矢じりを使用
+    font=\large,            % フォントサイズを一括で大きくする
+    % 標本化を表す白抜きの赤丸スタイル
+    sample_dot/.style={draw=red!80!black, circle, minimum size=5pt, inner sep=0pt, fill=white, line width=1.2pt},
+    % 追加された青い注釈用のスタイル
+    text_blue/.style={text=cyan!80!black, align=center},
+    line_blue/.style={draw=cyan!80!black, line width=1.0pt}
+]
+
+    % --- 1. 軸の描画 ---
+    \draw [->] (-0.5, 0) -- (11.0, 0) node[right] {$t$};
+
+    % --- 2. 連続信号の描画（黒い滑らかな曲線） ---
+    \draw [black, line width=1.0pt, smooth, tension=0.6] plot coordinates {
+        (-0.5, -0.4)
+        (0.5, -0.9) (1.0, 0.4) (1.5, -0.3) (2.0, -0.2) (2.5, -0.8) (3.0, -0.4) 
+        (3.5, 0.4) (4.0, 1.6) (4.5, 2.5) (5.0, 2.3) (5.5, 1.3) (6.0, 0.0) 
+        (6.5, -0.6) (7.0, -1.0) (7.5, -0.5) (8.0, 0.4) (8.5, 0.1) (9.0, -0.4) 
+        (9.5, 0.5) (10.0, -0.2)
+        (10.5, -0.1)
+    };
+
+    % --- 3. 標本化パルス（赤い縦棒と丸）の描画 ---
+    \foreach \x/\y in {
+        0.5/-0.9, 1.0/0.4, 1.5/-0.3, 2.0/-0.2, 2.5/-0.8, 3.0/-0.4, 
+        3.5/0.4, 4.0/1.6, 4.5/2.5, 5.0/2.3, 5.5/1.3, 6.0/0.0, 
+        6.5/-0.6, 7.0/-1.0, 7.5/-0.5, 8.0/0.4, 8.5/0.1, 9.0/-0.4, 
+        9.5/0.5, 10.0/-0.2
+    } {
+        \draw [red!80!black, line width=1.0pt] (\x, 0) -- (\x, \y);
+        \node [sample_dot] at (\x, \y) {};
+    }
+
+    % --- 4. 凡例（右上のテキスト） ---
+    \node [sample_dot] (legend_dot) at (8.0, 2.3) {};
+    \node [red!80!black, right=0.15cm of legend_dot] {標本化};
+
+
+    % --- 5. 【追加】手書きの青い注釈部分 ---
+    
+    % 「最大の周波数が B [Hz] 未満」のテキスト
+    \node [text_blue, font=\normalsize] (info_text) at (3.2, 3.2) {最大の周波数が \\ $B$ [Hz] 未満};
+    
+    % テキストからサンプリング点（x=4.0の赤丸）へ向かう青い矢印
+    \draw [line_blue, ->] (info_text.south east) to[out=-20, in=140] (4.0, 1.6);
+
+    % サンプリング間隔を示す補助線（x=4.0 から x=4.5 の間）
+    % |-| スタイルを使うことで、手書きの「H」のような両端の区切り線を表現できます
+    \draw [line_blue, |-|] (4.0, -0.3) -- (4.5, -0.3);
+    
+    % 間隔の数式ラベル「1 / 2B [s]」
+    \node [text_blue, below=0.1cm of {4.25, -0.3}, font=\normalsize] {$\displaystyle\frac{1}{2B}$ [s]};
+
+\end{tikzpicture}
+\end{document}
+

@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:45:23 mura>
+# Time-stamp: <2026-06-04 21:45:36 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -29,35 +29,42 @@
 
 ** 標本化定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
-   信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数 (Nyquist周波数)しか含んでいないなら，
-   サンプリング周波数 \(2B\,[\mathrm{Hz}]\) を用いて元の信号は完全に求められる．
+   信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
+   \(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
    #+end_quote
 
-#+NAME: fig:draw10
-#+ATTR_HTML: :width 60%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 10.png]]
+#+name: fig:sample_hold2
+#+attr_html: :class r-stretch :width 105% 
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/sample_hold2.png]]
 
 ** エイリアシング
 - 折り返しによる雑音
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    \(4\pi B\)
    周期の関数
    \(\tilde{f}\)
    を構成する際に重なりが生じ，
+   切り出した
    \((-2\pi B,2\pi B)\)
-   領域を切り出しても
+   領域を
    元に戻すことができない．
    #+end_quote
 
-#+NAME: fig:draw8
-#+ATTR_HTML: :width 60%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 8.png]]
+#+name: fig:aliasing
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/aliasing.png]]
 
 ** 離散 Fourier 変換と逆変換
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    長さ \(N\) の信号 \(f(t),\;t=0,1,\dotsc,N{-}1\) の離散 Fourier 変換を以下で定義する．
    \begin{equation}
@@ -140,6 +147,8 @@
 
 ** デジタル信号におけるフィルタの表現
 - 標本化されたフィルタの表現 (周期関数の畳み込み)
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{align}
      g(t)
@@ -148,7 +157,7 @@
        =\sum_{s=0}^{N{-}1}f(t{-}s)h(s),\\
      &\quad t=0,1,\dotsc,N{-}1
    \end{align}
-   - \(f,g,h\) : 周期 \(N\) の関数
+   -  \(f,g,h\) : 周期 \(N\) の関数
    #+end_quote
 
 ** 有限長のデータ
@@ -182,10 +191,10 @@
 ** デジタルフィルタ
 - 音声信号
 
-#+NAME: fig:sig2_time
-#+ATTR_HTML: :height 100%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/filter.001.jpeg]]
+#+name: fig:audio_signal
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.8\linewidth
+[[file:figs/audio_signal.png]]
 
 *** スペクトログラム
 #+begin_leftcol
@@ -320,6 +329,8 @@
 * 高速 Fourier 変換
 ** 離散 Fourier 変換の計算量
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{align}
      \hat{f}(n)
@@ -333,7 +344,7 @@
   (\(N^2\)回程度の乗算が必要)
 
 ** 離散 Fourier 変換行列の性質
-- \(N=4\) で考える
+-  \(N=4\) で考える
    #+begin_quote
    \begin{equation}
      \begin{pmatrix}
@@ -381,11 +392,11 @@
    \end{equation}
    #+end_quote
    - 疎な行列の積になっている
-   - \(N\not=4\)でも同様に議論できる
+   -  \(N\not=4\)でも同様に議論できる
 
 ** 係数の分解
-- \(N\)は二つの整数の積\(N=N_{1}N_{2}\)とする
-- \(t\),\(n\)をそれぞれ\(N_{1}\),\(N_{2}\)で割った商と余りで表す
+-  \(N\)は二つの整数の積\(N=N_{1}N_{2}\)とする
+-  \(t\),\(n\)をそれぞれ\(N_{1}\),\(N_{2}\)で割った商と余りで表す
    #+begin_quote
    \begin{align}
      t&=t_{1}+t_{2}N_{1},&&t_{1}=0,\dotsc,N_{1}{-}1,t_{2}=0,\dotsc,N_{2}{-}1\\

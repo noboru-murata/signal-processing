@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:37:15 mura>
+# Time-stamp: <2026-06-03 16:12:14 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,20 +19,20 @@
 * 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
 - ベクトル空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    線形演算について閉じた空間
    #+end_quote
 - 内積空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    内積が定義されたベクトル空間
    #+end_quote
 - Hilbert 空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ノルムに関して完備な内積空間
    #+end_quote
@@ -290,36 +290,36 @@
    \end{equation}
    #+end_quote
 - 区分求積法
-   #+begin_quote
-   Riemann 和は
-   \(n\Delta\to\omega\),
-   \(\Delta\to d\omega\)
-   として積分で表される．
-   \begin{equation}
-     \sum_{n=-\infty}^{\infty}g(n\Delta)\cdot\Delta
-     \xrightarrow{\Delta\to0}
-     \int_{-\infty}^{\infty}g(\omega)d\omega
-   \end{equation}
-   #+end_quote
+  #+begin_quote
+  Riemann 和は
+  \(n\Delta\to\omega\),
+  \(\Delta\to d\omega\)
+  として積分で表される．
+  \begin{equation}
+    \sum_{n=-\infty}^{\infty}g(n\Delta)\cdot\Delta
+    \xrightarrow{\Delta\to0}
+    \int_{-\infty}^{\infty}g(\omega)d\omega
+  \end{equation}
+  #+end_quote
 
 #+reveal: split
 - 周期無限大における表現
-   #+begin_quote
-   \begin{align}
-     f(x)
-     &=\frac{1}{\sqrt{2\pi}}
-       \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
-     &\text{(反転公式)}\\
-     &=\frac{1}{2\pi}
-       \int_{-\infty}^{\infty}
-       \int_{-\infty}^{\infty}f(y)e^{i\omega(x-y)}dy d\omega
-   \end{align}
-   #+end_quote
+  #+begin_quote
+  \begin{align}
+    f(x)
+    &=\frac{1}{\sqrt{2\pi}}
+      \int_{-\infty}^{\infty}\hat{f}(\omega)e^{i\omega x}d\omega
+    &\text{(反転公式)}\\
+    &=\frac{1}{2\pi}
+      \int_{-\infty}^{\infty}
+      \int_{-\infty}^{\infty}f(y)e^{i\omega(x-y)}dy d\omega
+  \end{align}
+  #+end_quote
 
 ** Fourier 変換と反転公式
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\mathbb{R}\)
    上の関数
@@ -339,9 +339,9 @@
    #+end_quote
 
 ** 多次元 Fourier 変換
-- d次元の場合
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+- 多次元の場合
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\mathbb{R}^{d}\)
    上の関数
@@ -423,12 +423,12 @@
    \end{equation}
    #+end_quote
    以下の関数の Fourier 変換を求めよ．
-   - \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
-   - \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
-   - \(h(x)=\Xi_{(-1,1)}(x)\)
+   -  \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\;(\alpha>0)\)
+   -  \(g(x)=e^{-\beta x^{2}}\;(\beta>0)\)
+   -  \(h(x)=\Xi_{(-1,1)}(x)\)
 
 ** COMMENT 解答例
-- \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
+-  \(f(x)=e^{-\alpha x}\Xi_{(0,\infty)}(x)\)
    #+begin_quote
    \begin{align}
      \hat{f}(\omega)
@@ -441,7 +441,7 @@
    #+end_quote
 
 #+reveal: split
-- \(g(x)=e^{-\beta x^{2}}\)
+-  \(g(x)=e^{-\beta x^{2}}\)
    #+begin_quote
    \begin{align}
      \hat{g}(\omega)
@@ -456,7 +456,7 @@
    #+end_quote
 
 #+reveal: split
-- \(h(x)=\Xi_{(-1,1)}(x)\)
+-  \(h(x)=\Xi_{(-1,1)}(x)\)
    #+begin_quote
    \begin{align}
      \hat{h}(\omega)
@@ -585,24 +585,24 @@
 
 #+reveal: split
 - step 6
-   #+begin_quote
-   関数
-   \(G_{\epsilon}\)
-   は以下の性質を持つことが
-   確かめられる．
+  #+begin_quote
+  関数
+  \(G_{\epsilon}\)
+  は以下の性質を持つことが
+  確かめられる．
 
-   1. \(G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}\)
-   2. \(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)
-   3. \(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)
+  1. \(G_{\epsilon}(x)>0,\;\forall x\in\mathbb{R}\)
+  2. \(\int_{-\infty}^{\infty}G_{\epsilon}(x)dx =1\)
+  3. \(\forall\delta>0\) \(\lim_{\epsilon\to0}\int_{|x|>\delta}G_{\epsilon}(x)dx =0\)
 
-   したがって
-   \(G_{\epsilon}\)
-   は
-   \(\epsilon\to0\)
-   において
-   Dirac の\(\delta\)関数になる．
-   #+end_quote
-   - /Fourier 級数展開の証明で出た Poisson 核と同様な性質/
+     したがって
+     \(G_{\epsilon}\)
+     は
+     \(\epsilon\to0\)
+     において
+     Dirac の\(\delta\)関数になる．
+  #+end_quote
+  - /Fourier 級数展開の証明で出た Poisson 核と同様な性質/
 
 ** 反転公式
 - 定理

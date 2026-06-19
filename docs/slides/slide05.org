@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:46:53 mura>
+# Time-stamp: <2026-06-04 21:44:19 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,20 +19,20 @@
 * 前回のおさらい
 ** ベクトル空間・内積空間・Hilbert 空間
 - ベクトル空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    線形演算について閉じた空間
    #+end_quote
 - 内積空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    内積が定義されたベクトル空間
    #+end_quote
 - Hilbert 空間
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ノルムに関して完備な内積空間
    #+end_quote
@@ -65,28 +65,28 @@
 
 ** Fourier 級数展開
 - 定理
-  #+attr_html: :class callout-important
-  #+attr_latex: :environment callout-important
-  #+begin_quote
-  \(f\in L^{2}(-\pi,\pi)\) 
-  は
-  以下のように
-  *Fourier 級数展開*
-  される．
-  \begin{align}
-    f(x)
-    &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
-  \end{align}
-  \begin{equation}
-    \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
-  \end{equation}
-  内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
-  以下で定義する．
-  \begin{equation}
-    \langle f,g\rangle
-    =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-  \end{equation}
-  #+end_quote
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
+   #+begin_quote
+   \(f\in L^{2}(-\pi,\pi)\) 
+   は
+   以下のように
+   *Fourier 級数展開*
+   される．
+   \begin{align}
+     f(x)
+     &=\sum_{n=-\infty}^{\infty}\langle f,\phi_{n}\rangle\phi_{n}(x)
+   \end{align}
+   \begin{equation}
+     \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
+   \end{equation}
+   内積は \(f,g\in L^{2}(-\pi,\pi)\) に対して
+   以下で定義する．
+   \begin{equation}
+     \langle f,g\rangle
+     =\int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
+   \end{equation}
+   #+end_quote
   
 
 * 演習
@@ -109,7 +109,7 @@
 
 ** COMMENT 解答例
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
-   - \(n=0\) のとき
+   -  \(n=0\) のとき
       #+begin_quote
       \begin{align}
         \langle f,\phi_{0}\rangle
@@ -117,7 +117,7 @@
         =\frac{\pi}{\sqrt{2\pi}}
       \end{align}
       #+end_quote
-   - \(n\not=0\) のとき
+   -  \(n\not=0\) のとき
       #+begin_quote
       \begin{align}
         \langle f,\phi_{n}\rangle
@@ -206,7 +206,7 @@
    #+end_quote
 ** COMMENT 解答例
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
-   - \(n=0\) のとき
+   -  \(n=0\) のとき
       #+begin_quote
       \begin{align}
         \langle f,\phi_{0}\rangle
@@ -217,7 +217,7 @@
 
 #+reveal: split
 - Fourier 係数 \(\langle f,\phi_{n}\rangle\) の計算
-   - \(n\not=0\) のとき
+   -  \(n\not=0\) のとき
       #+begin_quote
       \begin{align}
         \langle f,\phi_{n}\rangle
@@ -310,14 +310,14 @@
 
 #+reveal: split
 - Fourier 係数
-   - \(n\not=\pm1\) のとき
+   -  \(n\not=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{n}
         =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
       \end{equation}
       #+end_quote
-   - \(n=\pm1\) のとき
+   -  \(n=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{-1}
@@ -390,14 +390,14 @@
 
 #+reveal: split
 - Fourier 係数
-   - \(n\not=\pm1\) のとき
+   -  \(n\not=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{n}
         =\frac{(-1)^{n}+1}{2\pi(1-n^{2})}
       \end{equation}
       #+end_quote
-   - \(n=\pm1\) のとき
+   -  \(n=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{-1}
@@ -467,14 +467,14 @@
 
 #+reveal: split
 - Fourier 係数
-   - \(n\not=\pm1\) のとき
+   -  \(n\not=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{n}
         =\frac{(-1)^{n}+1}{\pi(1-n^{2})}
       \end{equation}
       #+end_quote
-   - \(n=\pm1\) のとき
+   -  \(n=\pm1\) のとき
       #+begin_quote
       \begin{equation}
         C_{-1}=C_{1}=0
@@ -544,14 +544,14 @@
 
 #+reveal: split
 - Fourier 係数
-   - \(n=0\) のとき
+   -  \(n=0\) のとき
       #+begin_quote
       \begin{equation}
         C_{0}
         =0
       \end{equation}
       #+end_quote
-   - \(n\not=0\) のとき
+   -  \(n\not=0\) のとき
       #+begin_quote
       \begin{equation}
         C_{n}
@@ -616,8 +616,8 @@
 
 ** 片側極限
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(h>0\) として
    \begin{align}
@@ -683,19 +683,19 @@
 
 #+reveal: split
 - 不連続点の Fourier 級数展開
-  #+attr_html: :class callout-note
-  #+attr_latex: :environment callout-note
-  #+begin_quote
-  関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
-  \begin{equation}
-    \tilde{f}(x)
-    =\lim_{r\to1}\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
-    =\frac{f(x{-}0)+f(x{+}0)}{2}
-  \end{equation}
-  が成り立つので，
-  \(f\) の不連続点での Fourier 級数展開は
-  両側からの極限の平均値となる．
-  #+end_quote
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
+   #+begin_quote
+   関数 \(f\) の Fourier 級数展開 \(\tilde{f}\) は
+   \begin{equation}
+     \tilde{f}(x)
+     =\lim_{r\to1}\int_{-\pi}^{\pi}P_{r}(y)f(x-y)dy
+     =\frac{f(x{-}0)+f(x{+}0)}{2}
+   \end{equation}
+   が成り立つので，
+   \(f\) の不連続点での Fourier 級数展開は
+   両側からの極限の平均値となる．
+   #+end_quote
 
 
 * 演習
@@ -761,8 +761,8 @@
 * Fourier 係数の性質
 ** 畳み込み
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    周期 \(2\pi\) をもつ関数 \(f\) と \(g\) の
    *畳み込み* (合成積; convolution) \(h\)
@@ -777,10 +777,10 @@
    - /関数 \(f,g\) は周期 \(2\pi\) をもつことに注意して，
       変数変換 \(x-y=z\) を用いて2つの定義が同値であることを確認せよ/
 
-** \(L^{p}\) ノルム
+**  \(L^{p}\) ノルム
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    関数 \(f\) の \(L^{p}\) ノルムを以下で定義する．
    \begin{equation}
@@ -790,10 +790,10 @@
    #+end_quote
    - /内積から自然に導かれたノルムは \(L^{2}\) ノルムである/
 
-** \(L^{p}\) 空間
+**  \(L^{p}\) 空間
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{align}
      L^{p}(\Omega)
@@ -834,17 +834,17 @@
 
 #+reveal: split
 - (証明のつづき)
-  #+begin_quote
-  最後の不等号は以下を用いればよい．
-  \begin{align}
-    |a_{n}|
-    &=\left|\int f(x)\frac{1}{\sqrt{2\pi}}e^{-inx}dx\right|\\
-    &\le\frac{1}{\sqrt{2\pi}}\int\left|f(x)e^{-inx}\right|dx\\
-    &=\frac{1}{\sqrt{2\pi}}\int\left|f(x)\right|dx
-      =\frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
-  \end{align}
-  #+end_quote
-  - \(L^{1}\) 関数であれば係数の存在が保証されることを示している
+   #+begin_quote
+   最後の不等号は以下を用いればよい．
+   \begin{align}
+     |a_{n}|
+     &=\left|\int f(x)\frac{1}{\sqrt{2\pi}}e^{-inx}dx\right|\\
+     &\le\frac{1}{\sqrt{2\pi}}\int\left|f(x)e^{-inx}\right|dx\\
+     &=\frac{1}{\sqrt{2\pi}}\int\left|f(x)\right|dx
+       =\frac{1}{\sqrt{2\pi}}\|f\|_{L^{1}}
+   \end{align}
+   #+end_quote
+   -  \(L^{1}\) 関数であれば係数の存在が保証されることを示している
 
 ** Riemann-Lebesgue の定理の応用
 - Fourier 級数の項別微分
@@ -916,25 +916,25 @@
 
 #+reveal: split
 - (証明のつづき)
-  #+begin_quote
-  また対数関数の単調性から
-  \begin{equation}
-    \frac{a^{p}}{p}+\frac{b^{q}}{q}
-    \ge
-    ab
-  \end{equation}
-  が成り立つ．したがって
-  \begin{align}
-    &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
-      \left|\int u(x)v(x)dx\right|
-      \le
-      \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
-    &\quad\le
-      \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
-      + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
-    &\quad=\frac{1}{p}+\frac{1}{q}=1
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   また対数関数の単調性から
+   \begin{equation}
+     \frac{a^{p}}{p}+\frac{b^{q}}{q}
+     \ge
+     ab
+   \end{equation}
+   が成り立つ．したがって
+   \begin{align}
+     &\frac{1}{\|u\|_{L^{p}}\|v\|_{L^{q}}}
+       \left|\int u(x)v(x)dx\right|
+       \le
+       \int\frac{|u(x)|}{\|u\|_{L^{p}}}\frac{|v(x)|}{\|v\|_{L^{q}}}dx\\
+     &\quad\le
+       \frac{1}{p\|u\|_{L^{p}}^{p}}\int|u(x)|^{p}dx
+       + \frac{1}{q\|v\|_{L^{q}}^{q}}\int|v(x)|^{q}dx\\
+     &\quad=\frac{1}{p}+\frac{1}{q}=1
+   \end{align}
+   #+end_quote
 
 ** 畳み込みのノルム
 - 定理
@@ -1100,8 +1100,8 @@
       = \pi-|x|
    \end{align}
    #+end_quote
-   - \(f(x-y),f(y)\)ともに1となる範囲を考えれば良い
-   - \(|x|\in L^{2}(-\pi,\pi)\) の Fourier 級数展開と比較せよ
+   -  \(f(x-y),f(y)\)ともに1となる範囲を考えれば良い
+   -  \(|x|\in L^{2}(-\pi,\pi)\) の Fourier 級数展開と比較せよ
 
     
 * 今回のまとめ
@@ -1126,6 +1126,12 @@
       - 前回の問題との結果を比較
    - 試験の意味を考えて誠実な対応をすること
    - ネットワーク環境等には自身で配慮すること
+
+** COMMENT 注意
+- 次回は理解度の確認
+   -  8:50 - 問題・解答用紙 配布
+   -  9:00 - 開始
+   - 10:00 - 解答用紙回収後に解説
 
 
 * Footnotes                                                          :ignore:

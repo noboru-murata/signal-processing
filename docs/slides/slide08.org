@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:33:32 mura>
+# Time-stamp: <2026-06-19 10:42:45 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,6 +19,8 @@
 * 前回のおさらい
 ** Fourier 級数展開
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    \(f\in L^{2}(-\pi,\pi)\) 
    は
@@ -40,6 +42,8 @@
 
 ** Fourier 変換と反転公式
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\mathbb{R}\)
    上の関数
@@ -60,6 +64,8 @@
 
 ** Parseval の定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数  \(f,g\) は \(f,g \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
    このとき以下の関係が成り立つ．
@@ -77,6 +83,8 @@
 
 ** Plancherel の定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数 \(f\) は \(f \in L^{1}(\mathbb{R})\cap L^{2}(\mathbb{R})\) とする．
    このとき以下の関係が成り立つ．
@@ -94,6 +102,8 @@
 
 ** Riemann-Lebesgue の補題
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    関数 \(f\in L^{1}(\mathbb{R})\) は滑らかで
    \(f'\in L^{1}(\mathbb{R})\) とする．
@@ -118,9 +128,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 関数
    #+begin_quote
    \begin{equation}
@@ -129,12 +136,9 @@
    #+end_quote
    の Fourier 変換を求めよ．
    - Fourier 変換と逆 Fourier 変換の関係を利用
-   - /[[color:orange][複素積分を利用 (Cauchy の積分定理・留数定理)]]/
+   - *複素積分を利用 (Cauchy の積分定理・留数定理)*
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 # - 以下の Fourier 変換を利用 (先週計算した)
 #   #+begin_quote
 #     \begin{align}
@@ -229,8 +233,8 @@
 
   \(\omega>0\) のとき積分路は \(x\) 軸と下半平面で考える
   #+end_quote
-  - \(e^{-i\omega z},\;(\omega<0)\) が上半平面でどうなるか考えよ
-  - \(e^{-i\omega z},\;(\omega>0)\) が下半平面でどうなるか考えよ
+  -  \(e^{-i\omega z},\;(\omega<0)\) が上半平面でどうなるか考えよ
+  -  \(e^{-i\omega z},\;(\omega>0)\) が下半平面でどうなるか考えよ
   #+begin_quote
   \begin{equation}
     \oint g(z)dz
@@ -239,6 +243,14 @@
     =\mathcal{F}[f](\omega)
   \end{equation}
   #+end_quote
+
+#+reveal: split
+- \(\omega<0\) のとき積分路を \(ia\) を含む \(x\) 軸と上半平面で考える
+
+#+name: fig:contour_integral1
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/contour_integral1.png]]
 
 #+reveal: split
 - 留数
@@ -262,9 +274,6 @@
   #+end_quote
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関数の Fourier 変換を求めよ．
    #+begin_quote
    \begin{equation}
@@ -291,9 +300,6 @@
    # #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の関係を利用すればよい
    #+begin_quote
    \begin{align}
@@ -352,22 +358,30 @@
 
 ** フィルタ
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
    #+end_quote
 
-#+NAME: fig:filter1
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter1
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter1.png]]
 
 ** フィルタの例
-- [[color:green][エレキギターのエフェクター]] (effects unit, pedal)
+- エレキギターのエフェクター (effects unit, pedal)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
+   #+begin_quote
    - 歪み : オーバードライブ / ディストーション / ファズ
    - モジュレーション : コーラス / フランジャー / トレモロ
    - 空間系 : リバーブ / ディレイ
    - フィルタ : ワウ / ピッチシフター / ワーミー
    - その他 :  イコライザー / コンプレッサー / ノイズゲート
+   #+end_quote
+** 参考
+https://www.watercoursestudio.com/a-primer-on-guitar-effects/
 
 ** フィルタ
 - 関数 \(f(t)\) を関数 \(g(t)\) に変換する
@@ -377,18 +391,20 @@
 
 ** 線形性
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    2つの入出力関係を考えたとき，
    入力の線形結合がそのまま出力に反映される性質
    #+end_quote
 
-#+NAME: fig:filter2
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter2
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter2.png]]
-#+NAME: fig:filter3
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter3
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter3.png]]
 
 ** 線形フィルタ
@@ -402,9 +418,9 @@
    #+end_quote
 - フィルタによる基底関数の変換
 
-#+NAME: fig:filter4
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter4
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter4.png]]
 
 #+reveal: split
@@ -420,22 +436,28 @@
 ** 非線形フィルタ
 - 信号の変換において非線形作用を持つフィルタ
 - 多くのフィルタは線形性を持っている
-- [[color:green][線形でない例]] (エフェクタ)
+- 線形でない例 (エフェクタ)
+   #+attr_html: :class callout-tip
+   #+attr_latex: :environment callout-tip
+   #+begin_quote
    - ディストーション
    - オーバードライブ
    入力信号の振幅の大きさによって歪みが生じる
+   #+end_quote
 - 非線形フィルタでは出力から入力を再現することが難しい
 
 ** 時不変性
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
    #+end_quote
    - 時間が経過してもフィルタの性質は変わらない
 
-#+NAME: fig:filter5
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter5
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter5.png]]
 
 
@@ -465,48 +487,48 @@
    \(H(t)\) に変換される．
    #+end_quote
 
-#+NAME: fig:filter6
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter6
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter6.png]]
 
 #+reveal: split
 - 時不変性
-  #+begin_quote
-  矩形波 \(\Delta\) を平行移動したものは
-  フィルタの時不変性により \(H\) を平行移動したものとなる．
-  #+end_quote
+   #+begin_quote
+   矩形波 \(\Delta\) を平行移動したものは
+   フィルタの時不変性により \(H\) を平行移動したものとなる．
+   #+end_quote
 
-#+NAME: fig:filter7
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter7
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter7.png]]
 
 #+reveal: split
 - 線形性
-  #+begin_quote
-  フィルタの線形性から入力を定数倍すると
-  出力も定数倍される．
-  #+end_quote
+   #+begin_quote
+   フィルタの線形性から入力を定数倍すると
+   出力も定数倍される．
+   #+end_quote
   
-#+NAME: fig:filter8
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.5\linewidth
+#+name: fig:filter8
+#+attr_html: :width 75%
+#+attr_latex: :width 0.5\linewidth
 [[file:figs/filter8.png]]
 
 #+reveal: split
 - 階段関数の変換
-  #+begin_quote
-  階段関数 
-  \begin{equation}
-    f_{\tau}(t)=\sum_{n}a_{n}\Delta(t{-}t_{n})
-  \end{equation}
-  はフィルタにより \(H\) の線形和である
-  \begin{equation}
-    g_{\tau}(t)=\sum_{n}a_{n}H(t{-}t_{n})
-  \end{equation}
-  に変換される．
-  #+end_quote
+   #+begin_quote
+   階段関数 
+   \begin{equation}
+     f_{\tau}(t)=\sum_{n}a_{n}\Delta(t{-}t_{n})
+   \end{equation}
+   はフィルタにより \(H\) の線形和である
+   \begin{equation}
+     g_{\tau}(t)=\sum_{n}a_{n}H(t{-}t_{n})
+   \end{equation}
+   に変換される．
+   #+end_quote
 
 ** 積分による表現
 - 階段関数の係数
@@ -549,7 +571,7 @@
      \xrightarrow{\tau\to0}h(t)
    \end{equation}
    #+end_quote
-   - \(n\tau=s\) とおいて区分求積法の原理を用いればよい
+   -  \(n\tau=s\) とおいて区分求積法の原理を用いればよい
 
 #+reveal: split
 - フィルタの積分表現
@@ -573,19 +595,19 @@
      f(t)=\int_{-\infty}^{\infty}f(s)\delta(t-s)ds
    \end{equation}
    #+end_quote
-   - \(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ
+   -  \(f(s)\) は時刻 \(s\) のインパルス \(\delta(t-s)\) の高さ
 
 #+reveal: split
 - フィルタの表現
-  #+begin_quote
-  \begin{equation}
-    h(t)
-    =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
-    =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
-  \end{equation}
-  #+end_quote
-  - \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある
-  - \(h(t)\) をフィルタの *インパルス応答* という
+   #+begin_quote
+   \begin{equation}
+     h(t)
+     =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
+     =\int_{-\infty}^{\infty}h(s)\delta(t-s)ds
+   \end{equation}
+   #+end_quote
+   -  \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある
+   -  \(h(t)\) をフィルタの *インパルス応答* という
 
 ** 因果的フィルタ
 - 音響信号などのフィルタのインパルス応答
@@ -624,9 +646,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 線形時不変フィルタの機能は
    インパルス応答の畳み込み積分として表される．
    #+begin_quote

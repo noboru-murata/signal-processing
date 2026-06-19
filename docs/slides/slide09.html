@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,18 +73,18 @@
 
 </section>
 <section>
-<section id="slide-org8fd05df">
-<h2 id="org8fd05df">前回のおさらい</h2>
-<div class="outline-text-2" id="text-org8fd05df">
+<section id="slide-org26473f1">
+<h2 id="org26473f1">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org26473f1">
 </div>
 </section>
-<section id="slide-org6ba5408">
-<h3 id="org6ba5408">フィルタ</h3>
+<section id="slide-org643979d">
+<h3 id="org643979d">フィルタ</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
 </p>
@@ -92,18 +93,18 @@
 </ul>
 
 
-<div id="org2efecae" class="figure">
-<p><img src="figs/filter1.png" alt="filter1.png" width="100%" />
+<div id="org8974f53" class="figure">
+<p><img src="figs/filter1.png" alt="filter1.png" width="75%" />
 </p>
 </div>
 </section>
-<section id="slide-org292558c">
-<h3 id="org292558c">線形性</h3>
+<section id="slide-org08187e1">
+<h3 id="org08187e1">線形性</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 2つの入出力関係を考えたとき，
 入力の線形結合がそのまま出力に反映される性質
@@ -113,23 +114,23 @@
 </ul>
 
 
-<div id="org33442d7" class="figure">
-<p><img src="figs/filter2.png" alt="filter2.png" width="100%" />
+<div id="orgaf6c281" class="figure">
+<p><img src="figs/filter2.png" alt="filter2.png" width="75%" />
 </p>
 </div>
 
-<div id="org34ed2f1" class="figure">
-<p><img src="figs/filter3.png" alt="filter3.png" width="100%" />
+<div id="org9c1d2f5" class="figure">
+<p><img src="figs/filter3.png" alt="filter3.png" width="75%" />
 </p>
 </div>
 </section>
-<section id="slide-org18787d7">
-<h3 id="org18787d7">時不変性</h3>
+<section id="slide-org5a08509">
+<h3 id="org5a08509">時不変性</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 入力の時刻が \(s\) ずれた場合，出力も \(s\) だけずれる性質
 </p>
@@ -142,13 +143,13 @@
 </ul>
 
 
-<div id="org4941fc7" class="figure">
-<p><img src="figs/filter5.png" alt="filter5.png" width="100%" />
+<div id="orgbc0fb76" class="figure">
+<p><img src="figs/filter5.png" alt="filter5.png" width="75%" />
 </p>
 </div>
 </section>
-<section id="slide-orgd10a5ac">
-<h3 id="orgd10a5ac">線形時不変フィルタの数学的表現</h3>
+<section id="slide-org5477f29">
+<h3 id="org5477f29">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
@@ -175,14 +176,14 @@
 </div>
 </blockquote>
 <ul>
-<li>\(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある</li>
+<li> \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力でもある</li>
 
 </ul></li>
 
 </ul>
 </section>
-<section id="slide-org6646896">
-<h3 id="org6646896">Fourier変換による表現</h3>
+<section id="slide-org6dfc541">
+<h3 id="org6dfc541">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -196,8 +197,7 @@
 \end{equation}
 
 </div>
-</blockquote>
-<ul>
+</blockquote></li>
 <li><p>
 周波数領域では関数の積
 </p>
@@ -213,12 +213,10 @@
 </blockquote></li>
 <li>フィルタの機能は周波数毎の振幅と位相の変換</li>
 
-</ul></li>
-
 </ul>
 </section>
-<section id="slide-org85bc387">
-<h3 id="org85bc387">因果的フィルタ</h3>
+<section id="slide-orgba610ee">
+<h3 id="orgba610ee">因果的フィルタ</h3>
 <ul>
 <li><p>
 定義
@@ -255,11 +253,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org193fca6" data-background="#fef4f4">
-<h2 id="org193fca6">演習</h2>
+<section id="slide-org05d9481" data-background="#fef4f4">
+<h2 id="org05d9481">演習</h2>
 </section>
-<section id="slide-orgc039cf7" data-background="#fef4f4">
-<h3 id="orgc039cf7">練習問題</h3>
+<section id="slide-org31ea11c">
+<h3 id="org31ea11c">練習問題</h3>
 <ul>
 <li>以下の問に答えよ
 <ul>
@@ -273,16 +271,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orgbf6f028">
-<h2 id="orgbf6f028">フィルタ回路</h2>
-<div class="outline-text-2" id="text-orgbf6f028">
+<section id="slide-org36817f7">
+<h2 id="org36817f7">フィルタ回路</h2>
+<div class="outline-text-2" id="text-org36817f7">
 </div>
 </section>
-<section id="slide-orga470a8c">
-<h3 id="orga470a8c">インパルス応答とは</h3>
+<section id="slide-orga4790ad">
+<h3 id="orga4790ad">インパルス応答とは</h3>
 <ul>
 <li><p>
-\(\delta(t)\) を入力した時のフィルタ出力
+ \(\delta(t)\) を入力した時のフィルタ出力
 </p>
 <blockquote>
 <div>
@@ -300,16 +298,16 @@
 
 </ul>
 </section>
-<section id="slide-org5c34a68">
-<h3 id="org5c34a68">2端子対回路</h3>
+<section id="slide-org8cfbb41">
+<h3 id="org8cfbb41">2端子対回路</h3>
 
-<div id="orgf70021e" class="figure">
-<p><img src="figs/信号処理 1.png" alt="信号処理 1.png" width="100%" />
+<div id="org5507fb7" class="figure">
+<p><img src="figs/circuit1.png" alt="circuit1.png" class="r-stretch" width="110%" />
 </p>
 </div>
 </section>
-<section id="slide-org3402b78">
-<h3 id="org3402b78">例題</h3>
+<section id="slide-org86d1f30">
+<h3 id="org86d1f30">例題</h3>
 <ul>
 <li>以下の回路の時間領域での入出力関係を求めよ．</li>
 <li>同じく周波数領域での入出力関係を求めよ．</li>
@@ -317,13 +315,13 @@
 </ul>
 
 
-<div id="org9ebe37e" class="figure">
-<p><img src="figs/信号処理 2.png" alt="信号処理 2.png" width="90%" />
+<div id="orgd9da58d" class="figure">
+<p><img src="figs/circuit2.png" alt="circuit2.png" width="100%" />
 </p>
 </div>
 </section>
-<section id="slide-org55d0a2b">
-<h3 id="org55d0a2b">解答</h3>
+<section id="slide-org0030b68">
+<h3 id="org0030b68">解答</h3>
 <ul>
 <li><p>
 時間領域
@@ -355,11 +353,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org4808c52" data-background="#fef4f4">
-<h2 id="org4808c52">演習</h2>
+<section id="slide-orgb00d62d" data-background="#fef4f4">
+<h2 id="orgb00d62d">演習</h2>
 </section>
-<section id="slide-orgb860df9" data-background="#fef4f4">
-<h3 id="orgb860df9">練習問題</h3>
+<section id="slide-org3b5bee3">
+<h3 id="org3b5bee3">練習問題</h3>
 <ul>
 <li>以下の回路の時間領域での入出力関係を求めよ．</li>
 <li>同じく周波数領域での入出力関係を求めよ．</li>
@@ -367,20 +365,20 @@
 </ul>
 
 
-<div id="org25bc937" class="figure">
-<p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
+<div id="org6793bd3" class="figure">
+<p><img src="figs/circuit3.png" alt="circuit3.png" width="100%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org340a5c2">
-<h2 id="org340a5c2">逆 Fourier 変換を用いた解析</h2>
-<div class="outline-text-2" id="text-org340a5c2">
+<section id="slide-org0c7b903">
+<h2 id="org0c7b903">逆 Fourier 変換を用いた解析</h2>
+<div class="outline-text-2" id="text-org0c7b903">
 </div>
 </section>
-<section id="slide-orgec1a4f0">
-<h3 id="orgec1a4f0">インパルス応答</h3>
+<section id="slide-org218aa89">
+<h3 id="org218aa89">インパルス応答</h3>
 <ul>
 <li><p>
 逆 Fourier 変換
@@ -407,16 +405,16 @@
 <ul>
 <li>複素積分の積分路
 <ul>
-<li>\(t>0\) のとき， \(ia\) を囲む上半平面</li>
-<li>\(t<0\) のとき， 下半平面</li>
+<li> \(t>0\) のとき， \(ia\) を囲む上半平面</li>
+<li> \(t<0\) のとき， 下半平面</li>
 
 </ul></li>
 
 </ul>
 
 
-<div id="org0d63aad" class="figure">
-<p><img src="figs/信号処理 4.png" alt="信号処理 4.png" width="90%" />
+<div id="org6bfe980" class="figure">
+<p><img src="figs/contour_integral2.png" alt="contour_integral2.png" class="r-stretch" width="110%" />
 </p>
 </div>
 
@@ -460,11 +458,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org1bd8702" data-background="#fef4f4">
-<h2 id="org1bd8702">演習</h2>
+<section id="slide-orgf8b3c56" data-background="#fef4f4">
+<h2 id="orgf8b3c56">演習</h2>
 </section>
-<section id="slide-org94a6b53" data-background="#fef4f4">
-<h3 id="org94a6b53">練習問題</h3>
+<section id="slide-org84bef79">
+<h3 id="org84bef79">練習問題</h3>
 <ul>
 <li>矩形波の入力に対して微分方程式を直接解き，
 その極限からインパルス応答を求めよ．</li>
@@ -472,15 +470,15 @@
 </ul>
 
 
-<div id="org8352dc6" class="figure">
-<p><img src="figs/信号処理 5.png" alt="信号処理 5.png" width="90%" />
+<div id="org7b5d396" class="figure">
+<p><img src="figs/impulse_response.png" alt="impulse_response.png" width="100%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1ae4c1a">
-<h2 id="org1ae4c1a">今回のまとめ</h2>
+<section id="slide-orgc122eed">
+<h2 id="orgc122eed">今回のまとめ</h2>
 <ul>
 <li>線形フィルタ回路
 <ul>
@@ -501,6 +499,7 @@
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -513,7 +512,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
@@ -535,7 +534,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

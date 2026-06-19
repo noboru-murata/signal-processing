@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:29:41 mura>
+# Time-stamp: <2026-06-10 09:25:22 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,8 +19,8 @@
 * 前回のおさらい
 ** ベクトル空間
 - 満たすべき条件
-   #+attr_html: :class callout-important :style font-size: 1em!important;
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
    2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
@@ -36,15 +36,14 @@
 
 ** 内積空間
 - 内積
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ベクトル空間の2つの要素
    \(u,v\in\mathcal{H}\) に対して，
    次の性質を持つ2変数関数を
    *内積*
    という．
-   #+attr_html: :style font-size: 1em!important;   
    1. \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
    2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
@@ -53,18 +52,18 @@
       =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
    #+end_quote
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
-   #+begin_quote
-   内積が定義されたベクトル空間を
-   *内積空間* 
-   という．
-   #+end_quote
+  #+attr_html: :class callout-note
+  #+attr_latex: :environment callout-note
+  #+begin_quote
+  内積が定義されたベクトル空間を
+  *内積空間* 
+  という．
+  #+end_quote
 
 ** Hilbert 空間
 - 完備性の定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合の中で無限に続く点列 \(u_{n}\) を考え，
    この点列がだんだん動かなくなる状況を考える．
@@ -77,8 +76,8 @@
    であるという．
    #+end_quote
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    内積空間 \(\mathcal{H}\) が
    ノルム \(\|u\|=\sqrt{\langle u,u\rangle}\)
@@ -88,7 +87,7 @@
    #+end_quote
 
 ** Hilbert 空間の例
--   \(l^{2}\) 空間 (無限次元数ベクトル空間)
+-  \(l^{2}\) 空間 (無限次元数ベクトル空間)
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -111,7 +110,7 @@
    - ノルムが有界であることから内積が計算できる
     
 #+reveal: split
--   \(L^{2}\) 空間 (これから扱う信号の空間)
+-  \(L^{2}\) 空間 (これから扱う信号の空間)
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -140,9 +139,9 @@
 ** 練習問題
 - 係数体を複素数 \(\mathbb{C}\) とする内積空間 \(\mathcal{H}\) を考える．
    以下を展開せよ．
-   - \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
-   - \(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)
-   - \(\langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle\)
+   -  \(\langle \alpha_1 u_1 + \alpha_2 u_2, v\rangle\)
+   -  \(\langle u, \beta_1 v_1+\beta_2 v_2\rangle\)
+   -  \(\langle \alpha_1 u_1 + \alpha_2 u_2, \beta_1 v_1+\beta_2 v_2\rangle\)
 - 複素数 \(\mathbb{C}\) を係数体とする
    以下の内積空間で Hilbert 空間となるものはどれか?
    なお，内積は 
@@ -181,8 +180,8 @@
 * 正規直交系
 ** 正規直交系
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    Hilbert 空間 \(\mathcal{H}\) の
    部分集合 \(\mathcal{A}\) を考える．
@@ -208,7 +207,7 @@
    #+end_quote
 
 ** 正規直交系の例
--   \(l^{2}\) 空間
+-  \(l^{2}\) 空間
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -221,7 +220,7 @@
    #+end_quote
 
 #+reveal: split
--   \(l^{2}\) 空間の自然な系
+-  \(l^{2}\) 空間の自然な系
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -246,10 +245,10 @@
    は正規直交系である．
    #+end_quote
 
-** Hilbert 空間の正規直交系
-- 稠密の定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+** 稠密
+- 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合の部分集合が 
    *稠密* 
@@ -259,13 +258,13 @@
    #+end_quote
    #+attr_reveal: :frag (appear)
    - 稠密な集合の例
-      - 実数の中の有理数
-      - 実数の中の無理数
+     - 実数の中の有理数
+     - 実数の中の無理数
 
-#+reveal: split
-- 可分の定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+** 可分
+- 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合が
    *可分*
@@ -281,7 +280,7 @@
       - 実数 (稠密な集合 : 有理数)
       - 複素数 (稠密な集合 : 実部と虚部がそれぞれ有理数)
 
-#+reveal: split
+** Hilbert 空間の正規直交系
 - 定理
    #+attr_html: :class callout-important
    #+attr_latex: :environment callout-important
@@ -290,72 +289,68 @@
    *高々可算* 
    な集合である．
    #+end_quote
-- 注意
    - *可算* とは自然数で番号付けできること
    - 実数や複素数を係数体として考える応用上重要な Hilbert 空間は
       定理の条件を満たす
 
-#+reveal: split
-- 定理の略証
-   #+attr_reveal: :frag (appear)
-   - その1
-      #+begin_quote
-      \(\mathcal{H}\) は可分なので，
-      稠密な可算部分集合 \(\mathcal{D}\) をとることができる．
-      #+end_quote
-   - その2
-      #+begin_quote
-      正規直交系 \(\mathcal{A}\) において
-      \(\forall\phi,\psi\in\mathcal{A},\;\phi\not=\psi\) 
-      \begin{equation}
-        \|\phi-\psi\|=\sqrt{2}
-      \end{equation}
-      が成り立つ．
-      #+end_quote
-    
-#+reveal: split
-- (証明のつづき)
-   #+attr_reveal: :frag (appear)
-   - その3
-      #+begin_quote
-      \(\phi\in\mathcal{A}\subset\mathcal{H}\)
-      に対して
-      \(u_{\phi}\in\mathcal{D}\)
-      を
-      \begin{equation}
-        \|\phi-u_{\phi}\|<\frac{1}{\sqrt{2}}
-      \end{equation}
-      となるようにとることができる(稠密なので必ずとれる)．
-      #+end_quote
-   - その4
-      #+begin_quote
-      このとき三角不等式により以下が成り立つ．
-      \begin{align}
-        \sqrt{2}
-        &=\|\phi-\psi\|\\
-        &\leq\|\phi-u_{\phi}\|+\|u_{\phi}-u_{\psi}\|+\|u_{\psi}-\psi\|\\
-        &<\sqrt{2}+\|u_{\phi}-u_{\psi}\|
-      \end{align}
-      #+end_quote
+** 定理の略証
+- その1
+   #+begin_quote
+   \(\mathcal{H}\) は可分なので，
+   稠密な可算部分集合 \(\mathcal{D}\) をとることができる．
+   #+end_quote
+#+attr_reveal: :frag (appear)
+- その2
+   #+begin_quote
+   正規直交系 \(\mathcal{A}\) において
+   \(\forall\phi,\psi\in\mathcal{A},\;\phi\not=\psi\) 
+   \begin{equation}
+     \|\phi-\psi\|=\sqrt{2}
+   \end{equation}
+   が成り立つ．
+   #+end_quote
 
 #+reveal: split
-- (証明のつづき)
-   #+attr_reveal: :frag (appear)
-   - その5
-      #+begin_quote
-      したがって
-      \begin{equation}
-        \|u_{\phi}-u_{\psi}\|\not=0
-        \;\Rightarrow\;
-        u_{\phi}\not=u_{\psi}
-      \end{equation}
-      つまり \(\phi\to u_{\phi}\) は1対1対応にできる．
-      #+end_quote
-   - その6
-      #+begin_quote
-      \(\mathcal{D}\) は可算なので，
-      \(\mathcal{A}\) は高々可算であることがわかる．
-      #+end_quote
+- その3
+   #+begin_quote
+   \(\phi\in\mathcal{A}\subset\mathcal{H}\)
+   に対して
+   \(u_{\phi}\in\mathcal{D}\)
+   を
+   \begin{equation}
+     \|\phi-u_{\phi}\|<\frac{1}{\sqrt{2}}
+   \end{equation}
+   となるようにとることができる(稠密なので必ずとれる)．
+   #+end_quote
+#+attr_reveal: :frag (appear)
+- その4
+   #+begin_quote
+   このとき三角不等式により以下が成り立つ．
+   \begin{align}
+     \sqrt{2}
+     &=\|\phi-\psi\|\\
+     &\leq\|\phi-u_{\phi}\|+\|u_{\phi}-u_{\psi}\|+\|u_{\psi}-\psi\|\\
+     &<\sqrt{2}+\|u_{\phi}-u_{\psi}\|
+   \end{align}
+   #+end_quote
+
+#+reveal: split
+- その5
+  #+begin_quote
+  したがって
+  \begin{equation}
+    \|u_{\phi}-u_{\psi}\|\not=0
+    \;\Rightarrow\;
+    u_{\phi}\not=u_{\psi}
+  \end{equation}
+  つまり \(\phi\to u_{\phi}\) は1対1対応にできる．
+  #+end_quote
+#+attr_reveal: :frag (appear)
+- その6
+  #+begin_quote
+  \(\mathcal{D}\) は可算なので，
+  \(\mathcal{A}\) は高々可算であることがわかる．
+  #+end_quote
 
 ** 正規直交系の存在
 - 定理
@@ -369,16 +364,15 @@
    \(\psi_{1},\dotsc,\psi_{n}\) が線形独立であるとする．
    このとき，次の性質を満たす \(\mathcal{H}\) の
    正規直交系 \(\{\phi_{k}\}\) が存在する．
-   #+attr_html: :style font-size: 1em!important;   
-   - \(\phi_{n}\) は \(\psi_{1},\dotsc,\psi_{n}\) の線形結合，
-   - \(\psi_{n}\) は \(\phi_{1},\dotsc,\phi_{n}\) の線形結合．
+   -  \(\phi_{n}\) は \(\psi_{1},\dotsc,\psi_{n}\) の線形結合，
+   -  \(\psi_{n}\) は \(\phi_{1},\dotsc,\phi_{n}\) の線形結合．
    #+end_quote
-- 式による表記
-   #+begin_quote
-   \begin{equation}
-     \mathrm{span}\{\psi_{k}\}_{k=1,\dotsc,n}=\mathrm{span}\{\phi_{k}\}_{k=1,\dotsc,n}
-   \end{equation}
-   #+end_quote
+   - 式による表記
+      #+begin_quote
+      \begin{equation}
+        \mathrm{span}\{\psi_{k}\}_{k=1,\dotsc,n}=\mathrm{span}\{\phi_{k}\}_{k=1,\dotsc,n}
+      \end{equation}
+      #+end_quote
 
 #+reveal: split
 - 証明
@@ -478,13 +472,13 @@
    \end{equation}
    #+end_quote
 - 証明
-   #+begin_quote
-   正規直交性より明らか
-   \begin{equation}
-     \langle\phi_{j},\phi_{k}\rangle
-     =\delta_{jk}
-   \end{equation}
-   #+end_quote
+  #+begin_quote
+  正規直交性より明らか
+  \begin{equation}
+    \langle\phi_{j},\phi_{k}\rangle
+    =\delta_{jk}
+  \end{equation}
+  #+end_quote
 
 ** Bessel の不等式
 - 定理
@@ -519,8 +513,8 @@
 
 ** 完全性
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \(\{\phi_{k}\}\) が \(\mathcal{H}\) の正規直交系とする．
    \begin{equation}
@@ -548,7 +542,6 @@
    \(\{\phi_{k}\}\) が \(\mathcal{H}\) の正規直交系，
    \(\mathcal{M}\) を \(\{\phi_{k}\}\) が生成する閉部分空間とする．
    以下の条件は同値である．
-   #+attr_html: :style font-size: 1em!important;   
    1. \(\mathcal{H}=\mathcal{M}\)
    2. \(\forall u\in\mathcal{H}\;\Rightarrow\;
       u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}\)
@@ -580,7 +573,7 @@
    #+end_quote
 
 ** 完全正規直交系の例
--   \(l^{2}\) 空間
+-  \(l^{2}\) 空間
    #+attr_html: :class callout-tip
    #+attr_latex: :environment callout-tip
    #+begin_quote
@@ -593,16 +586,16 @@
    #+end_quote
 
 #+reveal: split
--   \(L^{2}(-\pi,\pi)\) 空間
-   #+attr_html: :class callout-tip
-   #+attr_latex: :environment callout-tip
-   #+begin_quote
-   \begin{align}
-     \phi_{k}(x)
-     &=\frac{1}{\sqrt{2\pi}}e^{ikx},\;k=0,\pm1,\pm2,\dotsc\\
-     &\langle\phi_{j},\phi_{k}\rangle=\delta_{jk}
-   \end{align}
-   #+end_quote
+-  \(L^{2}(-\pi,\pi)\) 空間
+  #+attr_html: :class callout-tip
+  #+attr_latex: :environment callout-tip
+  #+begin_quote
+  \begin{align}
+    \phi_{k}(x)
+    &=\frac{1}{\sqrt{2\pi}}e^{ikx},\;k=0,\pm1,\pm2,\dotsc\\
+    &\langle\phi_{j},\phi_{k}\rangle=\delta_{jk}
+  \end{align}
+  #+end_quote
 
   
 * 演習
@@ -610,14 +603,14 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
--   \(L^{2}(-\pi,\pi)\) 空間において
+-  \(L^{2}(-\pi,\pi)\) 空間において
    #+begin_quote
    \begin{equation}
      \frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
    \end{equation}
    #+end_quote
    が正規直交系になることを確かめよ．
-- \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
+-  \(L^{2}(-1,1)\) 空間における正規直交系の1つを構成せよ．
 
 ** COMMENT 解答例
 - 任意の \(j,k\) について内積を計算してみれば良い

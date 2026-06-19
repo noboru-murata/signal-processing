@@ -1,0 +1,104 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+\usepackage[american, straightvoltages]{circuitikz}
+\usetikzlibrary{positioning, arrows.meta, calc} % arrows.meta を追加
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+\begin{circuitikz}[
+    thick,
+    font=\large,
+    circuitikz/bipoles/length=1.2cm,
+    circuitikz/bipoles/thickness=1.5
+]
+
+    % --- 1. 回路の主要ノードと素子の配置 ---
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_b) at (0,0) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_t) at (0,3) {};
+    
+    \coordinate (node_p) at (3,3) {};
+    \coordinate (node_b) at (3,0) {};
+
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_t) at (5.5,3) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_b) at (5.5,0) {};
+
+    % --- 2. 線の描画と抵抗の挿入 ---
+    \draw (in_t) to[R, l_=$R_1$] (node_p) -- (out_t);
+    \draw (node_p) to[R, l=$R_2$, *-*] (node_b);
+    \draw (in_b) -- (out_b);
+
+    % --- 3. 電圧矢印とテキストの配置 ---
+    % 閉じタグを \end{scope} に修正しました
+    \begin{scope}[>=Stealth]
+        % 入力電圧の矢印とラベル
+        \draw[->] ($(in_b)+(0, 0.3)$) -- ($(in_t)+(0, -0.3)$);
+        \node[left=0.1cm of in_b, yshift=1.5cm, align=center] {入力 \\[-0.2ex] $V_{\mathrm{in}}(t)$};
+
+        % 出力電圧の矢印とラベル
+        \draw[->] ($(out_b)+(0, 0.3)$) -- ($(out_t)+(0, -0.3)$);
+        \node[right=0.1cm of out_b, yshift=1.5cm, align=center] {出力 \\[-0.2ex] $V_{\mathrm{out}}(t)$};
+    \end{scope}
+
+\end{circuitikz}
+\end{document}
+
+\documentclass[border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+% circuitikzパッケージを読み込みます（americanオプションでギザギザ抵抗になります）
+\usepackage[american, straightvoltages]{circuitikz}
+\usetikzlibrary{positioning, calc}
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+% bipoles/lengthで抵抗のサイズ、bipoles/thicknessで線の太さを調整
+\begin{circuitikz}[
+    thick,
+    font=\large,
+    circuitikz/bipoles/length=1.2cm,
+    circuitikz/bipoles/thickness=1.5
+]
+
+    % --- 1. 回路の主要ノードと素子の配置 ---
+    % 左下の基準点を (0,0) とします
+    % 入力側の上端子(in_t)、下端子(in_b)
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_b) at (0,0) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_t) at (0,3) {};
+    
+    % 抵抗R1とR2の接続点（分岐点）を配置
+    \coordinate (node_p) at (3,3) {};
+    \coordinate (node_b) at (3,0) {};
+
+    % 出力側の上端子(out_t)、下端子(out_b)
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_t) at (5.5,3) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_b) at (5.5,0) {};
+
+    % --- 2. 線の描画と抵抗の挿入 ---
+    % 上のライン：入力端子から抵抗R1を通って分岐点、そして出力端子へ
+    \draw (in_t) to[R, l_=$R_1$] (node_p) -- (out_t);
+    
+    % 縦のライン：分岐点から抵抗R2を通って下のラインへ（交差点に黒丸を配置）
+    \draw (node_p) to[R, l=$R_2$, *-*] (node_b);
+    
+    % 下のライン：入力端子から出力端子まで一本の線で結ぶ
+    \draw (in_b) -- (out_b);
+
+
+    % --- 3. 電圧矢印とテキストの配置 ---
+    % 綺麗な上向き矢印（Stealth）にするため、一時的に矢印スタイルを変更
+    \begin{scope}[>=Stealth]
+        % 入力電圧の矢印とラベル
+        \draw[->] ($(in_b)+(0, 0.3)$) -- ($(in_t)+(0, -0.3)$);
+        \node[left=0.1cm of in_b, yshift=1.5cm, align=center] {入力 \\[-0.2ex] $V_{\mathrm{in}}(t)$};
+
+        % 出力電圧の矢印とラベル
+        \draw[->] ($(out_b)+(0, 0.3)$) -- ($(out_t)+(0, -0.3)$);
+        \node[right=0.1cm of out_b, yshift=1.5cm, align=center] {出力 \\[-0.2ex] $V_{\mathrm{out}}(t)$};
+    \begin{scope}
+
+\end{circuitikz}
+\end{document}
+

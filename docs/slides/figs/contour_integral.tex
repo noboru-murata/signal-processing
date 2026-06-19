@@ -1,0 +1,77 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc, shapes.geometric}
+\usepackage{luatexja-fontspec}
+\setmainjfont{HiraMaruProN-W4} % ヒラギノ丸ゴシックを指定
+
+\begin{document}
+\begin{tikzpicture}[
+    thick,
+    >=Stealth,
+    font=\large,
+    green_circle/.style={draw=green!60!black, ellipse, inner sep=3pt, align=center},
+    text_red/.style={text=red!80!black, font=\small, align=left},
+    % 赤丸のスタイル
+    omega_circle/.style={draw=red!80!black, circle, minimum size=13pt, inner sep=0pt}
+]
+
+    % --- 1. 座標軸の描画 ---
+    \draw [->] (-5.5, 0) -- (5.5, 0) node[below] {$\omega$};
+    \draw [->] (0, -1) -- (0, 5);
+
+    % 極 (ia) のプロット（×印）
+    \node at (0, 1.2) {$\times$};
+    \node [right=0.1cm of {0,1.2}] {$ia$};
+
+    % --- 2. 積分路（青い長方形、反時計回り） ---
+    \coordinate (BL) at (-4, 0.1);  % 左下
+    \coordinate (BR) at (4, 0.1);   % 右下
+    \coordinate (TR) at (4, 3.2);   % 右上
+    \coordinate (TL) at (-4, 3.2);  % 左上
+
+    \draw [blue, line width=1.2pt] (BL) -- (BR);
+    \draw [blue, line width=1.2pt, ->] (BR) -- ($(BR)!0.5!(TR)$) -- (TR);
+    \draw [blue, line width=1.2pt, ->] (TR) -- ($(TR)!0.5!(TL)$) -- (TL);
+    \draw [blue, line width=1.2pt, ->] (TL) -- ($(TL)!0.5!(BL)$) -- (BL);
+
+    % --- 3. 手書きの解説テキスト（下部） ---
+    \node [below left=0.1cm and 0.5cm of BL, align=left] {$x > 0$ のときは \\ $ia$ を囲む積分路};
+    \node [below left=0.5cm and -1.0cm of BR, align=left] {この積分だけが残る};
+
+
+    % --- 4. 周辺の緑・赤の注釈 ---
+    
+    % 【左側の注釈】
+    \node [green_circle] (note_L) at (-6, 2) {$\displaystyle\frac{e^{i\omega x}}{\omega - ia}$};
+    % 赤丸(wL)の位置を分母の omega に変更（縦座標を下げました）
+    \node [omega_circle] (wL) at ($(note_L.center)+(-0.35, -0.32)$) {};
+    \node [text_red, left=0.5cm of note_L, yshift=-0.5cm] (red_L) {$\omega$ の実部 \\ $\to -\infty$};
+    % 赤丸の上部から左に回り込んでテキストへ
+    \draw [red, ->] (wL.north) to[out=135, in=90] (red_L.north);
+    \draw [green!60!black, ->] (note_L.south) -- ++(0,-1) node[below] {$0$};
+
+    % 【右側の注釈】
+    \node [green_circle] (note_R) at (6, 2) {$\displaystyle\frac{e^{i\omega x}}{\omega - ia}$};
+    % 赤丸(wR)の位置を分母の omega に変更
+    \node [omega_circle] (wR) at ($(note_R.center)+(-0.35, -0.32)$) {};
+    \node [text_red, right=0.5cm of note_R, yshift=-0.5cm] (red_R) {$\omega$ の実部 \\ $\to \infty$};
+    % 赤丸の上部から右に回り込んでテキストへ
+    \draw [red, ->] (wR.north) to[out=45, in=90] (red_R.north);
+    \draw [green!60!black, ->] (note_R.south) -- ++(0,-1) node[below] {$0$};
+
+    % 【上側の注釈】
+    \node [green_circle] (note_T) at (2.5, 4.3) {$\displaystyle\frac{e^{i\omega x}}{\omega - ia}$};
+    % 上側は手書き通り「分子の omega」を囲みます
+    \node [omega_circle] (wT) at ($(note_T.center)+(0.05, 0.42)$) {};
+    \node [text_red, right=0.3cm of note_T, yshift=0.3cm] (red_T) {$\omega$ の虚部 $\to \infty$ \\ $x > 0$};
+    % 矢印の軌道を他と統一：上部(north)から出発し、なめらかに右のテキスト(red_T.north)へ落とします
+    \draw [red, ->] (wT.north) to[out=45, in=90] (red_T.north);
+    \draw [green!60!black, ->] (note_T.south east) to[out=-45, in=135] ++(1,-0.5) node[right] {$0$};
+
+
+    % 【下部：緑の長楕円】
+    \node [draw=green!60!black, ellipse, minimum width=7.8cm, minimum height=0.5cm] at (0, 0.1) {};
+
+\end{tikzpicture}
+\end{document}
+

@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:40:53 mura>
+# Time-stamp: <2026-06-19 08:38:20 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -20,20 +20,28 @@
 * 前回のおさらい
 ** フィルタ
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
    #+end_quote
 - 線形性 
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力の線形結合がそのまま出力に反映される性質
    #+end_quote
 - 時不変性
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力の時刻がずれた場合，出力も同じだけずれる性質
    #+end_quote
 
 ** 線形時不変フィルタの数学的表現
 - フィルタの積分表現
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{equation}
      g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
@@ -67,17 +75,17 @@
      =\int_{-\infty}^{\infty}\delta(s)h(t-s)ds
    \end{equation}
    #+end_quote
-- \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力
-- 物理的には
-   面積1 (\(\Delta \times 1/\Delta\))
-   の矩形波に対する出力を
-   時間幅 \(\Delta\to0\) としたときの波形
+   -  \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力
+   - 物理的には
+      面積1 (\(\Delta \times 1/\Delta\))
+      の矩形波に対する出力を
+      時間幅 \(\Delta\to0\) としたときの波形
 
 ** ローパスフィルタ(RC回路)
-#+NAME: fig:draw3
-#+ATTR_HTML: :width 90%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 3.png]]
+#+name: fig:circuit3
+#+attr_html: :width 100%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/circuit3.png]]
 
 ** 入出力の関係
 - 時間領域
@@ -139,7 +147,7 @@
      \end{cases}
    \end{equation}
    #+end_quote
-- \(\Delta\to 0\)
+-  \(\Delta\to 0\)
    #+begin_quote
    \begin{equation}
      h(t)
@@ -159,9 +167,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
    #+begin_quote
    \begin{equation}
@@ -180,10 +185,7 @@
    で構成することができる．\(a\) と \(b\) を求めよ．
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
-- \(t\)軸の拡大縮小を考え，正規化項を計算すればよい
+-  \(t\)軸の拡大縮小を考え，正規化項を計算すればよい
    #+begin_quote
    \begin{align}
      a
@@ -232,24 +234,26 @@
    - 離散データから連続データを再構成することはできるのか？
    - 再構成することができるのであれば，その条件は何か？
 
-#+NAME: fig:draw9
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 9.png]]
+#+name: fig:sample_hold1
+#+attr_html: :class r-stretch :width 105%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/sample_hold1.png]]
 
 
 * 標本化定理
 ** 標本化定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
    \(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
    #+end_quote
 
-#+NAME: fig:draw10
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 10.png]]
+#+name: fig:sample_hold2
+#+attr_html: :class r-stretch :width 105% 
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/sample_hold2.png]]
 
 #+reveal: split
 - 定理の呼び名は色々ある (同時期に独立に発見)
@@ -275,9 +279,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 以下の積分
    #+begin_quote
    \begin{equation}
@@ -288,9 +289,6 @@
    を計算しなさい．
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 定義に従って計算する
    #+begin_quote
    \begin{equation}
@@ -318,10 +316,10 @@
    (\(B\,[\mathrm{Hz}]=2\pi B\,[\mathrm{rad}]\))
    #+end_quote
 
-#+NAME: fig:draw6
-#+ATTR_HTML: :width 70%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 6.png]]
+#+name: fig:band_limited
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/band_limited.png]]
 
 #+reveal: split
 - step 2
@@ -333,10 +331,10 @@
    Fourier 級数展開が存在する．
    #+end_quote
 
-#+NAME: fig:draw7
-#+ATTR_HTML: :width 70%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 7.png]]
+#+name: fig:band_periodic
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/band_periodic.png]]
 
 #+reveal: split
 - step 3
@@ -403,7 +401,7 @@
       e^{-i\left(\frac{n}{2B}\right)\xi}d\xi
   \end{align}
   #+end_quote
-  - \(\hat{f}\) 
+  -  \(\hat{f}\) 
     は区間
     \((-2\pi B, 2\pi B)\)
     の外では0
@@ -422,7 +420,7 @@
       f\left(-\frac{n}{2B}\right)
   \end{align}
   #+end_quote
-  - \(x=-n/2B\)
+  -  \(x=-n/2B\)
     における
     \(\hat{f}\)
     の Fourier 逆変換
@@ -458,7 +456,7 @@
       e^{i\omega t}d\omega
   \end{align}
   #+end_quote
-  - \(\hat{h}_{B}\) は
+  -  \(\hat{h}_{B}\) は
     \(\tilde{f}\)
     から
     \(\hat{f}\)
@@ -481,7 +479,7 @@
       e^{i\left(t+\frac{n}{2B}\right)\omega}d\omega
   \end{align}
   #+end_quote
-  - \(\hat{h}_{B}\)
+  -  \(\hat{h}_{B}\)
     の定義に従って積分領域を書き換える
 
 #+reveal: split
@@ -517,6 +515,8 @@
 
 ** 定理に関する注意
 - 直感的な意味
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    正弦波は山と谷の値が与えられれば補間できるので，
    一番高い周波数でも1周期の間に2点の標本があれば良い．
@@ -524,6 +524,8 @@
 
 #+reveal: split
 - Nyquist 周波数での挙動
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    周波数 \(B\) で \(\theta\) の値によって位相と振幅が異なる
    次の波形を考える．
@@ -550,6 +552,8 @@
 
 ** エイリアシング
 - 定理の前提
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    信号の Fourier 変換が
    \((-2\pi B,2\pi B)\)
@@ -561,6 +565,8 @@
 
 #+reveal: split
 - 雑音の原因
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    \(4\pi B\)
    周期の関数
@@ -571,10 +577,10 @@
    元に戻すことができない．
    #+end_quote
 
-#+NAME: fig:draw8
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 8.png]]
+#+name: fig:aliasing
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/aliasing.png]]
 
 
 * 演習
@@ -582,9 +588,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - サンプリング周波数
    #+begin_quote
    CD (コンパクトディスク) のサンプリング周波数は 44.1 [kHz] である．
@@ -592,9 +595,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 標本化定理によれば 22.05 [kHz] 未満となる
 
 
@@ -606,6 +606,14 @@
    - Nyquist 周波数 
    - サンプリング周波数
    - エイリアシング
+
+** COMMENT 注意
+- 確認テスト (講義10の中)
+   - Fourier 変換の基本的な問題
+      - 手を動かしてしっかり計算すること
+      - 順逆の関係を上手く利用すること
+   - 試験の意味を考えて誠実な対応をすること
+   - ネットワーク環境等には自身で配慮すること
 
 
 * Footnotes                                                          :ignore:

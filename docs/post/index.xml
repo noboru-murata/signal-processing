@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on 信号処理</title>
-    <link>https://noboru-murata.github.io/signal-processing/post/</link>
-    <description>Recent content in Posts on 信号処理</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://noboru-murata.github.io/signal-processing/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>講義の進め方</title>
-      <link>https://noboru-murata.github.io/signal-processing/post/post1/</link>
-      <pubDate>Wed, 06 Apr 2022 00:00:00 +0900</pubDate>
-      <guid>https://noboru-murata.github.io/signal-processing/post/post1/</guid>
-      <description>&lt;h2 id=&#34;講義ノート&#34;&gt;講義ノート&lt;/h2&gt;&#xA;&lt;p&gt;Moodle に URL を掲載しました．&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>スライドの使い方</title>
-      <link>https://noboru-murata.github.io/signal-processing/post/post2/</link>
-      <pubDate>Thu, 27 Aug 2020 00:00:00 +0900</pubDate>
-      <guid>https://noboru-murata.github.io/signal-processing/post/post2/</guid>
-      <description>&lt;p&gt;スライドは&#xA;&lt;a href=&#34;https://revealjs.com&#34;&gt;reveal.js&lt;/a&gt;&#xA;を使って作っています．&lt;/p&gt;&#xA;&lt;p&gt;スライドを click して &amp;ldquo;?&amp;rdquo; を入力すると&#xA;shortcut key が表示されますが，これ以外にも以下の key などが使えます．&lt;/p&gt;&#xA;&lt;h2 id=&#34;フルスクリーン&#34;&gt;フルスクリーン&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;f フルスクリーン表示&lt;/li&gt;&#xA;&lt;li&gt;esc 元に戻る&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;印刷&#34;&gt;印刷&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e 印刷用の表示との切り替え (toggle)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Posts on 信号処理</title>
+		<link>https://noboru-murata.github.io/signal-processing/post/</link>
+		<description>Recent content in Posts on 信号処理</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0900</lastBuildDate>
+		
+			<atom:link href="https://noboru-murata.github.io/signal-processing/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>講義の進め方</title>
+				<link>https://noboru-murata.github.io/signal-processing/post/post1/</link>
+				<pubDate>Wed, 06 Apr 2022 00:00:00 +0900</pubDate>
+				<guid>https://noboru-murata.github.io/signal-processing/post/post1/</guid>
+				<description>&lt;h2 id=&#34;講義ノート&#34;&gt;講義ノート&lt;/h2&gt;&#xA;&lt;p&gt;Moodle に URL を掲載しました．&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>スライドの使い方</title>
+				<link>https://noboru-murata.github.io/signal-processing/post/post2/</link>
+				<pubDate>Thu, 27 Aug 2020 00:00:00 +0900</pubDate>
+				<guid>https://noboru-murata.github.io/signal-processing/post/post2/</guid>
+				<description>&lt;p&gt;スライドは&#xA;&lt;a href=&#34;https://revealjs.com&#34;&gt;reveal.js&lt;/a&gt;&#xA;を使って作っています．&lt;/p&gt;&#xA;&lt;p&gt;スライドを click して &amp;ldquo;?&amp;rdquo; を入力すると&#xA;shortcut key が表示されますが，これ以外にも以下の key などが使えます．&lt;/p&gt;&#xA;&lt;h2 id=&#34;フルスクリーン&#34;&gt;フルスクリーン&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;f フルスクリーン表示&lt;/li&gt;&#xA;&lt;li&gt;esc 元に戻る&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;印刷&#34;&gt;印刷&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e 印刷用の表示との切り替え (toggle)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
 </rss>

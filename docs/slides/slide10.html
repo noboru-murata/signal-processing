@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/reveal-menu/quarto-menu.css"/>
 
 <link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
 <link rel="stylesheet" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/>
 <style>
 /* Position computations of klipse get confused by reveal.js's scaling.
@@ -72,18 +73,18 @@
 
 </section>
 <section>
-<section id="slide-orgf97004a">
-<h2 id="orgf97004a">前回のおさらい</h2>
-<div class="outline-text-2" id="text-orgf97004a">
+<section id="slide-org25358ed">
+<h2 id="org25358ed">前回のおさらい</h2>
+<div class="outline-text-2" id="text-org25358ed">
 </div>
 </section>
-<section id="slide-orgfd48e83">
-<h3 id="orgfd48e83">フィルタ</h3>
+<section id="slide-org9b8a4b1">
+<h3 id="org9b8a4b1">フィルタ</h3>
 <ul>
 <li><p>
 定義
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
 </p>
@@ -91,7 +92,7 @@
 <li><p>
 線形性 
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 入力の線形結合がそのまま出力に反映される性質
 </p>
@@ -99,7 +100,7 @@
 <li><p>
 時不変性
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <p>
 入力の時刻がずれた場合，出力も同じだけずれる性質
 </p>
@@ -107,13 +108,13 @@
 
 </ul>
 </section>
-<section id="slide-org9db9c94">
-<h3 id="org9db9c94">線形時不変フィルタの数学的表現</h3>
+<section id="slide-org171ede3">
+<h3 id="org171ede3">線形時不変フィルタの数学的表現</h3>
 <ul>
 <li><p>
 フィルタの積分表現
 </p>
-<blockquote>
+<blockquote class="callout-note">
 <div>
 \begin{equation}
   g(t)=\int_{-\infty}^{\infty} f(s)h(t{-}s)ds
@@ -127,8 +128,8 @@
 
 </ul>
 </section>
-<section id="slide-orged39df2">
-<h3 id="orged39df2">Fourier変換による表現</h3>
+<section id="slide-org03d2e0e">
+<h3 id="org03d2e0e">Fourier変換による表現</h3>
 <ul>
 <li><p>
 時間領域では畳み込み積分
@@ -159,8 +160,8 @@
 
 </ul>
 </section>
-<section id="slide-org7ebb0ca">
-<h3 id="org7ebb0ca">インパルス応答</h3>
+<section id="slide-orgc9cf5f5">
+<h3 id="orgc9cf5f5">インパルス応答</h3>
 <ul>
 <li><p>
 インパルス応答
@@ -173,25 +174,28 @@
 \end{equation}
 
 </div>
-</blockquote></li>
-<li>\(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力</li>
+</blockquote>
+<ul>
+<li> \(h(t)\) はフィルタに \(\delta(t)\) を入力した時の出力</li>
 <li>物理的には
 面積1 (\(\Delta \times 1/\Delta\))
 の矩形波に対する出力を
 時間幅 \(\Delta\to0\) としたときの波形</li>
 
+</ul></li>
+
 </ul>
 </section>
-<section id="slide-org840074d">
-<h3 id="org840074d">ローパスフィルタ(RC回路)</h3>
+<section id="slide-org289da85">
+<h3 id="org289da85">ローパスフィルタ(RC回路)</h3>
 
-<div id="orgd040985" class="figure">
-<p><img src="figs/信号処理 3.png" alt="信号処理 3.png" width="90%" />
+<div id="orgf0430a5" class="figure">
+<p><img src="figs/circuit3.png" alt="circuit3.png" width="100%" />
 </p>
 </div>
 </section>
-<section id="slide-org8f33545">
-<h3 id="org8f33545">入出力の関係</h3>
+<section id="slide-org43f8b8a">
+<h3 id="org43f8b8a">入出力の関係</h3>
 <ul>
 <li><p>
 時間領域
@@ -231,8 +235,8 @@
 
 </ul>
 </section>
-<section id="slide-org8cf0f03">
-<h3 id="org8cf0f03">インパルス応答 (逆 Fourier 変換)</h3>
+<section id="slide-orgf524e5c">
+<h3 id="orgf524e5c">インパルス応答 (逆 Fourier 変換)</h3>
 <ul>
 <li><p>
 フィルタの Fourier 変換
@@ -268,8 +272,8 @@
 
 </ul>
 </section>
-<section id="slide-orge26a786">
-<h3 id="orge26a786">インパルス応答 (矩形波の極限)</h3>
+<section id="slide-orgbc6e8b9">
+<h3 id="orgbc6e8b9">インパルス応答 (矩形波の極限)</h3>
 <ul>
 <li><p>
 矩形波の出力
@@ -289,7 +293,7 @@
 </div>
 </blockquote></li>
 <li><p>
-\(\Delta\to 0\)
+ \(\Delta\to 0\)
 </p>
 <blockquote>
 <div>
@@ -311,11 +315,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org589ff2c" data-background="#fef4f4">
-<h2 id="org589ff2c">演習</h2>
+<section id="slide-org44b2846" data-background="#fef4f4">
+<h2 id="org44b2846">演習</h2>
 </section>
-<section id="slide-orgf3f07d8" data-background="#fef4f4">
-<h3 id="orgf3f07d8">練習問題</h3>
+<section id="slide-org3b28fe2">
+<h3 id="org3b28fe2">練習問題</h3>
 <ul>
 <li><p>
 周期 \(2\pi\) の Fourier 級数展開の基底(正規直交系)を
@@ -350,13 +354,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd5fa26c">
-<h2 id="orgd5fa26c">デジタル信号処理</h2>
-<div class="outline-text-2" id="text-orgd5fa26c">
+<section id="slide-orge93f0bd">
+<h2 id="orge93f0bd">デジタル信号処理</h2>
+<div class="outline-text-2" id="text-orge93f0bd">
 </div>
 </section>
-<section id="slide-orgc391abf">
-<h3 id="orgc391abf">デジタル信号処理</h3>
+<section id="slide-orgc29b022">
+<h3 id="orgc29b022">デジタル信号処理</h3>
 <ul>
 <li>計算機で信号を扱うための方法論</li>
 <li>処理の流れ
@@ -369,8 +373,8 @@
 
 </ul>
 </section>
-<section id="slide-org389e60f">
-<h3 id="org389e60f">計算機によるデータ処理</h3>
+<section id="slide-org248c5cf">
+<h3 id="org248c5cf">計算機によるデータ処理</h3>
 <ul>
 <li>アナログ信号は扱えない
 <ul>
@@ -387,8 +391,8 @@
 
 </ul>
 </section>
-<section id="slide-org5fc0d7a">
-<h3 id="org5fc0d7a">アナログとデジタル</h3>
+<section id="slide-org26edf21">
+<h3 id="org26edf21">アナログとデジタル</h3>
 <ul>
 <li>アナログ
 <ul>
@@ -407,8 +411,8 @@
 
 </ul>
 </section>
-<section id="slide-org5ca88b8">
-<h3 id="org5ca88b8">標本化と量子化</h3>
+<section id="slide-org55b4db1">
+<h3 id="org55b4db1">標本化と量子化</h3>
 <ul>
 <li>デジタル信号に変換するための離散化 (discretization)
 <ul>
@@ -421,8 +425,8 @@
 
 </ul>
 </section>
-<section id="slide-orgd381039">
-<h3 id="orgd381039">標本化における疑問</h3>
+<section id="slide-org196c103">
+<h3 id="org196c103">標本化における疑問</h3>
 <ul>
 <li>標本化 : 明らかに情報は落ちている
 <ul>
@@ -434,25 +438,25 @@
 </ul>
 
 
-<div id="org8d15f5d" class="figure">
-<p><img src="figs/信号処理 9.png" alt="信号処理 9.png" width="80%" />
+<div id="org0da6b17" class="figure">
+<p><img src="figs/sample_hold1.png" alt="sample_hold1.png" class="r-stretch" width="105%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgc47b72e">
-<h2 id="orgc47b72e">標本化定理</h2>
-<div class="outline-text-2" id="text-orgc47b72e">
+<section id="slide-org3e47cf8">
+<h2 id="org3e47cf8">標本化定理</h2>
+<div class="outline-text-2" id="text-org3e47cf8">
 </div>
 </section>
-<section id="slide-org970b34c">
-<h3 id="org970b34c">標本化定理</h3>
+<section id="slide-org1fb98cb">
+<h3 id="org1fb98cb">標本化定理</h3>
 <ul>
 <li><p>
 定理
 </p>
-<blockquote>
+<blockquote class="callout-important">
 <p>
 信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
 \(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
@@ -462,8 +466,8 @@
 </ul>
 
 
-<div id="org1f30ceb" class="figure">
-<p><img src="figs/信号処理 10.png" alt="信号処理 10.png" width="80%" />
+<div id="org543ac14" class="figure">
+<p><img src="figs/sample_hold2.png" alt="sample_hold2.png" class="r-stretch" width="105%" />
 </p>
 </div>
 
@@ -501,11 +505,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org1f9e0df" data-background="#fef4f4">
-<h2 id="org1f9e0df">演習</h2>
+<section id="slide-org01b4188" data-background="#fef4f4">
+<h2 id="org01b4188">演習</h2>
 </section>
-<section id="slide-org6495da9" data-background="#fef4f4">
-<h3 id="org6495da9">練習問題</h3>
+<section id="slide-org0cfb9d4">
+<h3 id="org0cfb9d4">練習問題</h3>
 <ul>
 <li><p>
 以下の積分
@@ -527,13 +531,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd2870d1">
-<h2 id="orgd2870d1">定理の証明と注意</h2>
-<div class="outline-text-2" id="text-orgd2870d1">
+<section id="slide-org93b8bd9">
+<h2 id="org93b8bd9">定理の証明と注意</h2>
+<div class="outline-text-2" id="text-org93b8bd9">
 </div>
 </section>
-<section id="slide-orge58f8b5">
-<h3 id="orge58f8b5">標本化定理の証明</h3>
+<section id="slide-orga95adfc">
+<h3 id="orga95adfc">標本化定理の証明</h3>
 <ul>
 <li><p>
 step 1
@@ -557,8 +561,8 @@ step 1
 </ul>
 
 
-<div id="org5bad295" class="figure">
-<p><img src="figs/信号処理 6.png" alt="信号処理 6.png" width="70%" />
+<div id="org276b7a2" class="figure">
+<p><img src="figs/band_limited.png" alt="band_limited.png" class="r-stretch" width="120%" />
 </p>
 </div>
 
@@ -583,8 +587,8 @@ Fourier 級数展開が存在する．
 </ul>
 
 
-<div id="orgad6fd4b" class="figure">
-<p><img src="figs/信号処理 7.png" alt="信号処理 7.png" width="70%" />
+<div id="orgeef2c1d" class="figure">
+<p><img src="figs/band_periodic.png" alt="band_periodic.png" class="r-stretch" width="120%" />
 </p>
 </div>
 
@@ -704,7 +708,7 @@ step 6
 </div>
 </blockquote>
 <ul>
-<li>\(\hat{f}\) 
+<li> \(\hat{f}\) 
 は区間
 \((-2\pi B, 2\pi B)\)
 の外では0</li>
@@ -736,7 +740,7 @@ step 7
 </blockquote>
 <ul>
 <li><p>
-\(x=-n/2B\)
+ \(x=-n/2B\)
 における
 \(\hat{f}\)
 の Fourier 逆変換
@@ -793,7 +797,7 @@ step 8
 </div>
 </blockquote>
 <ul>
-<li>\(\hat{h}_{B}\) は
+<li> \(\hat{h}_{B}\) は
 \(\tilde{f}\)
 から
 \(\hat{f}\)
@@ -828,7 +832,7 @@ step 9
 </div>
 </blockquote>
 <ul>
-<li>\(\hat{h}_{B}\)
+<li> \(\hat{h}_{B}\)
 の定義に従って積分領域を書き換える</li>
 
 </ul></li>
@@ -883,13 +887,13 @@ step 11
 
 </ul>
 </section>
-<section id="slide-org3348c09">
-<h3 id="org3348c09">定理に関する注意</h3>
+<section id="slide-orgd7e1261">
+<h3 id="orgd7e1261">定理に関する注意</h3>
 <ul>
 <li><p>
 直感的な意味
 </p>
-<blockquote>
+<blockquote class="callout">
 <p>
 正弦波は山と谷の値が与えられれば補間できるので，
 一番高い周波数でも1周期の間に2点の標本があれば良い．
@@ -904,7 +908,7 @@ step 11
 <li><p>
 Nyquist 周波数での挙動
 </p>
-<blockquote>
+<blockquote class="callout">
 <p>
 周波数 \(B\) で \(\theta\) の値によって位相と振幅が異なる
 次の波形を考える．
@@ -942,13 +946,13 @@ Nyquist 周波数での挙動
 
 </ul>
 </section>
-<section id="slide-org1a74450">
-<h3 id="org1a74450">エイリアシング</h3>
+<section id="slide-org933d898">
+<h3 id="org933d898">エイリアシング</h3>
 <ul>
 <li><p>
 定理の前提
 </p>
-<blockquote>
+<blockquote class="callout">
 <p>
 信号の Fourier 変換が
 \((-2\pi B,2\pi B)\)
@@ -970,7 +974,7 @@ Nyquist 周波数での挙動
 <li><p>
 雑音の原因
 </p>
-<blockquote>
+<blockquote class="callout">
 <p>
 \(4\pi B\)
 周期の関数
@@ -985,18 +989,18 @@ Nyquist 周波数での挙動
 </ul>
 
 
-<div id="org969b87a" class="figure">
-<p><img src="figs/信号処理 8.png" alt="信号処理 8.png" width="80%" />
+<div id="org2a974df" class="figure">
+<p><img src="figs/aliasing.png" alt="aliasing.png" class="r-stretch" width="120%" />
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org3a56356" data-background="#fef4f4">
-<h2 id="org3a56356">演習</h2>
+<section id="slide-org27b2e4b" data-background="#fef4f4">
+<h2 id="org27b2e4b">演習</h2>
 </section>
-<section id="slide-org9c32c1a" data-background="#fef4f4">
-<h3 id="org9c32c1a">練習問題</h3>
+<section id="slide-org8abfb6b">
+<h3 id="org8abfb6b">練習問題</h3>
 <ul>
 <li><p>
 サンプリング周波数
@@ -1012,8 +1016,8 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 </section>
 </section>
 <section>
-<section id="slide-orgcfa71d9">
-<h2 id="orgcfa71d9">今回のまとめ</h2>
+<section id="slide-orge09b539">
+<h2 id="orge09b539">今回のまとめ</h2>
 <ul>
 <li>デジタル信号処理
 <ul>
@@ -1039,6 +1043,7 @@ CD で完全に再現される周波数はどのような範囲にあると考�
 <script src="./reveal.js/plugin/notes/notes.js"></script>
 <script src="./reveal.js/plugin/search/search.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/reveal-menu/menu.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/pdf-export/pdfexport.js"></script>
@@ -1051,7 +1056,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
@@ -1073,7 +1078,7 @@ showNotes: window.location.search.match( /print-pdf/gi ) ? 'separate-page' : fal
 'controlsAuto': true, 'previewLinksAuto': true, 'pdfSeparateFragments': false, 'autoAnimateEasing': "ease", 'autoAnimateDuration': 1, 'autoAnimateUnmatched': true, 'jumpToSlide': true, 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true}, 'chalkboard': {"buttons":false}, 'smaller': false, 'spotlight': { size: 80, initialPresentationMode: false, }, keyboard: { 81: function() { RevealSpotlight.toggleSpotlight()}, 90: function() { RevealSpotlight.togglePresentationMode();}, },
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
+plugins: [ RevealNotes, RevealSearch, RevealZoom, RevealHighlight, RevealMenu, RevealChalkboard, PdfExport, RevealSpotlight ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

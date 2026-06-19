@@ -1,0 +1,50 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{luatexja-fontspec}
+\usepackage[american, straightvoltages]{circuitikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+% ヒラギノ丸ゴシックを指定
+\setmainjfont{HiraMaruProN-W4}
+
+\begin{document}
+\begin{circuitikz}[
+    thick,
+    font=\large,
+    circuitikz/bipoles/length=1.2cm,
+    circuitikz/bipoles/thickness=1.5
+]
+
+    % --- 1. 回路の主要ノードと素子の配置 ---
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_b) at (0,0) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (in_t) at (0,3) {};
+    
+    \coordinate (node_p) at (3,3) {};
+    \coordinate (node_b) at (3,0) {};
+
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_t) at (5.5,3) {};
+    \node[circle, draw, inner sep=1.5pt, fill=white] (out_b) at (5.5,0) {};
+
+    % --- 2. 線の描画と素子の挿入 ---
+    % 上のライン：抵抗Rを配置
+    \draw (in_t) to[R, l_=$R$] (node_p) -- (out_t);
+    
+    % 縦のライン：抵抗の代わりにコンデンサCを配置（交差点の黒丸 *-* も維持）
+    \draw (node_p) to[C, l=$C$, *-*] (node_b);
+    
+    % 下のライン
+    \draw (in_b) -- (out_b);
+
+    % --- 3. 電圧矢印とテキストの配置 ---
+    \begin{scope}[>=Stealth]
+        % 入力電圧の矢印とラベル
+        \draw[->] ($(in_b)+(0, 0.3)$) -- ($(in_t)+(0, -0.3)$);
+        \node[left=0.1cm of in_b, yshift=1.5cm, align=center] {入力 \\[-0.2ex] $V_{\mathrm{in}}(t)$};
+
+        % 出力電圧の矢印とラベル
+        \draw[->] ($(out_b)+(0, 0.3)$) -- ($(out_t)+(0, -0.3)$);
+        \node[right=0.1cm of out_b, yshift=1.5cm, align=center] {出力 \\[-0.2ex] $V_{\mathrm{out}}(t)$};
+    \end{scope}
+
+\end{circuitikz}
+\end{document}
+

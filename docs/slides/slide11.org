@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-04-06 11:42:33 mura>
+# Time-stamp: <2026-06-04 10:31:47 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -31,15 +31,17 @@
 
 ** 標本化定理
 - 定理
+   #+attr_html: :class callout-important
+   #+attr_latex: :environment callout-important
    #+begin_quote
    信号 \(f(t)\) が \(B\,[\mathrm{Hz}]\) 未満の周波数しか含んでいないなら，
    \(1/2B\,[s]\) ごとのサンプル点を用いて元の信号は完全に求められる．
    #+end_quote
 
-#+NAME: fig:draw10
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 10.png]]
+#+name: fig:sample_hold2
+#+attr_html: :class r-stretch :width 105% 
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/sample_hold2.png]]
 
 ** 標本化における用語
 - 1秒間に取るサンプル数 \(f_{s}\,[\mathrm{Hz}]\): \\
@@ -48,10 +50,12 @@
    *Nyquist レート*
 - 信号に含まれる周波数の上限 \(B\,[\mathrm{Hz}]\): \\
    *Nyquist 周波数*
-- /[[color:orange][角周波数と周波数の関係に注意]]/
+- /角周波数と周波数の関係に注意/
 
 ** エイリアシング
 - 折り返しによる雑音
+   #+attr_html: :class callout
+   #+attr_latex: :environment callout
    #+begin_quote
    \(4\pi B\)
    周期の関数
@@ -63,10 +67,10 @@
    元に戻すことができない．
    #+end_quote
 
-#+NAME: fig:draw8
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 8.png]]
+#+name: fig:aliasing
+#+attr_html: :class r-stretch :width 120%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/aliasing.png]]
 
 
 * 演習
@@ -74,9 +78,6 @@
 :reveal_background: #fef4f4
 :END:
 ** COMMENT 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - サンプリング周波数
    #+begin_quote
    会話に必要な周波数帯域は \(300\,[\mathrm{Hz}]\) 以上 \(7\,[\mathrm{kHz}]\) 未満と言われている．
@@ -84,14 +85,8 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 標本化定理によれば \(14\,[\mathrm{kHz}]\) 以上となる．
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - サンプリング周波数
    #+begin_quote
    若年者は 
@@ -101,9 +96,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 標本化定理によれば \(40\,[\mathrm{kHz}]\) を越えるサンプリング周波数が必要となる．
 
 
@@ -118,6 +110,8 @@
 
 ** 離散 Fourier 変換
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    長さ \(N\) の信号 \(f(t),\;t=0,1,\dotsc,N{-}1\) の離散 Fourier 変換を以下で定義する．
    \begin{equation}
@@ -131,6 +125,8 @@
 
 #+reveal: split
 - 逆変換
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    逆変換は以下で定義される．
    \begin{equation}
@@ -149,9 +145,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - サンプリング周波数と基本周波数
    #+begin_quote
    サンプリング周波数 \(f_{s}\,\mathrm{[Hz]}\) のデジタル信号から
@@ -167,9 +160,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - サンプリング周波数と基本周波数
    #+begin_quote
    サンプルの区間幅は \(1/f_s\) [s] なので，
@@ -196,9 +186,6 @@
    - 標本化定理の結果と比較せよ．
 
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 基本周波数の性質
    #+begin_quote
    \begin{equation}
@@ -216,9 +203,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 基本周波数の性質
    #+begin_quote
    \(k\) を整数として \(m=kN\) のとき (\(m\) が \(N\) の倍数)
@@ -239,7 +223,7 @@
 
 * 離散 Fourier 変換の行列表現
 ** 行列による表現
-- \(N\) 乗根を用いた展開
+-  \(N\) 乗根を用いた展開
    #+begin_quote
    \(\alpha\) を用いて定義式を書き下すと
    \begin{align}
@@ -270,56 +254,56 @@
    \end{equation}
    #+end_quote
    - 行列 \(F\) は \(N\times N\) の要素からなるが，
-     \(\alpha\) の性質から値としては(1を含めて) \(N\) 種類しかない．
+      \(\alpha\) の性質から値としては(1を含めて) \(N\) 種類しかない．
 
 #+reveal: split
 - 行列表現
-  #+begin_quote
-  \begin{equation}
-    \begin{pmatrix}
-      \hat{f}(0)\\
-      \hat{f}(1)\\
-      \vdots\\
-      \hat{f}(N{-}1)
-    \end{pmatrix}
-    =
-    F
-    \begin{pmatrix}
-      f(0)\\
-      f(1)\\
-      \vdots\\
-      f(N{-}1)
-    \end{pmatrix}
-  \end{equation}
-  \begin{equation}
-    \hat{\boldsymbol{f}}
-    =F
-    \boldsymbol{f}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \begin{pmatrix}
+       \hat{f}(0)\\
+       \hat{f}(1)\\
+       \vdots\\
+       \hat{f}(N{-}1)
+     \end{pmatrix}
+     =
+     F
+     \begin{pmatrix}
+       f(0)\\
+       f(1)\\
+       \vdots\\
+       f(N{-}1)
+     \end{pmatrix}
+   \end{equation}
+   \begin{equation}
+     \hat{\boldsymbol{f}}
+     =F
+     \boldsymbol{f}
+   \end{equation}
+   #+end_quote
 
 #+reveal: split
 - 逆変換行列
-  #+begin_quote
-  \begin{equation}
-    F^{*}
-    =\frac{1}{\sqrt{N}}
-    \begin{pmatrix}
-      1&1&1&\dots&1\\
-      1&\alpha^{1}&\alpha^{2}&\dots&\alpha^{(N{-}1)}\\
-      \vdots&&&\ddots&\vdots\\
-      1&\alpha^{(N{-}1)}&\alpha^{2(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
-    \end{pmatrix}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     F^{*}
+     =\frac{1}{\sqrt{N}}
+     \begin{pmatrix}
+       1&1&1&\dots&1\\
+       1&\alpha^{1}&\alpha^{2}&\dots&\alpha^{(N{-}1)}\\
+       \vdots&&&\ddots&\vdots\\
+       1&\alpha^{(N{-}1)}&\alpha^{2(N{-}1)}&\dots&\alpha^{(N{-}1)(N{-}1)}
+     \end{pmatrix}
+   \end{equation}
+   #+end_quote
 - 行列表現
-  #+begin_quote
-  \begin{equation}
-    \boldsymbol{f}
-    =F^{*}
-    \hat{\boldsymbol{f}}
-  \end{equation}
-  #+end_quote
+   #+begin_quote
+   \begin{equation}
+     \boldsymbol{f}
+     =F^{*}
+     \hat{\boldsymbol{f}}
+   \end{equation}
+   #+end_quote
 
 ** 変換と逆変換の関係
 - 行列 \(F,F^{*}\) の積
@@ -343,7 +327,7 @@
    #+end_quote
 
 #+reveal: split
-- \(i\) 行 \(j\) 列成分
+-  \(i\) 行 \(j\) 列成分
    #+begin_quote
    \begin{align}
      (F^{*}F)_{ij}
@@ -406,30 +390,40 @@
 * フィルタの表現
 ** フィルタ
 - 定義
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力 \(f(t)\) を変換して出力 \(g(t)\) を生成する機構
    #+end_quote
 - 線形性 
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力の線形結合がそのまま出力に反映される性質
    #+end_quote
 - 時不変性
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    入力の時刻がずれた場合，出力も同じだけずれる性質
    #+end_quote
 
 ** デジタル信号におけるフィルタの表現
 - 標本化されたフィルタの表現
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{equation}
      g(t)=\sum_{s=t-N+1}^{t}f(s)h(t{-}s)
    \end{equation}
    #+end_quote
-   - \(f,g\) : 周期 \(N\) の入力・出力信号
-   - \(h\) : 長さ \(N\) のインパルス応答
+   -  \(f,g\) : 周期 \(N\) の入力・出力信号
+   -  \(h\) : 長さ \(N\) のインパルス応答
 
 #+reveal: split
 - 周期関数の畳み込みによる表現
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    \begin{align}
      g(t)
@@ -439,7 +433,7 @@
      &\quad t=0,1,\dotsc,N-1
    \end{align}
    #+end_quote
-   - \(f,g,h\) : 周期 \(N\) の関数
+   -  \(f,g,h\) : 周期 \(N\) の関数
 
 
 * 演習
@@ -447,9 +441,6 @@
 :reveal_background: #fef4f4
 :END:
 ** 練習問題
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 離散 Fourier 変換によるフィルタの表現
    #+begin_quote
    \(f,g,h\) を長さ \(N\) のベクトルと考え，
@@ -462,9 +453,6 @@
    #+end_quote
 
 ** COMMENT 解答例
-:PROPERTIES:
-:reveal_background: #fef4f4
-:END:
 - 定義どおり展開していく
    #+begin_quote
    \begin{align}
@@ -525,10 +513,10 @@
    - デジタル信号処理 (フィルタ処理)
    - 切り出された断片を再構成 (重なりを考慮した合成処理)
 
-#+NAME: fig:draw11
-#+ATTR_HTML: :width 80%
-#+ATTR_LATEX: :width 0.5\linewidth
-[[file:figs/信号処理 11.png]]
+#+name: fig:window_function
+#+attr_html: :class r-stretch :width 100%
+#+attr_latex: :width 0.5\linewidth
+[[file:figs/window_function.png]]
 ** 矩形窓
 #+begin_quote
 \begin{equation}
@@ -546,10 +534,10 @@
   axis(1, at=c(1,128), lab=c(0,1))
   title(xlab="時間", ylab="振幅")
 #+end_src
-#+CAPTION: 矩形窓
-#+NAME: fig:rect
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: 矩形窓
+#+name: fig:rect
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/rect.png]]
 #+end_leftcol
 #+begin_rightcol
@@ -563,10 +551,10 @@
   axis(1, at=c(1,64), lab=c(0,1))
   title(xlab="周波数", ylab="ゲイン")
 #+end_src
-#+CAPTION: 周波数特性
-#+NAME: fig:rect_freq
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: 周波数特性
+#+name: fig:rect_freq
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/rect_freq.png]]
 #+end_rightcol  
 
@@ -586,10 +574,10 @@
   axis(1, at=c(1,128), lab=c(0,1))
   title(xlab="時間", ylab="振幅")
 #+end_src
-#+CAPTION: gauss 窓
-#+NAME: fig:gauss
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: gauss 窓
+#+name: fig:gauss
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/gauss.png]]
 #+end_leftcol  
 #+begin_rightcol
@@ -603,10 +591,10 @@
   axis(1, at=c(1,64), lab=c(0,1))
   title(xlab="周波数", ylab="ゲイン")
 #+end_src
-#+CAPTION: 周波数特性
-#+NAME: fig:gauss_freq
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: 周波数特性
+#+name: fig:gauss_freq
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/gauss_freq.png]]
 #+end_rightcol  
      
@@ -627,10 +615,10 @@
   axis(1, at=c(1,128), lab=c(0,1))
   title(xlab="時間", ylab="振幅")
 #+end_src
-#+CAPTION: hann 窓
-#+NAME: fig:hann
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: hann 窓
+#+name: fig:hann
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/hann.png]]
 #+end_leftcol  
 #+begin_rightcol
@@ -644,10 +632,10 @@
   axis(1, at=c(1,64), lab=c(0,1))
   title(xlab="周波数", ylab="ゲイン")
 #+end_src
-#+CAPTION: 周波数特性
-#+NAME: fig:hann_freq
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: 周波数特性
+#+name: fig:hann_freq
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/hann_freq.png]]
 #+end_rightcol  
      
@@ -667,10 +655,10 @@
   axis(1, at=c(1,128), lab=c(0,1))
   title(xlab="時間", ylab="振幅")
 #+end_src
-#+CAPTION: hamming 窓
-#+NAME: fig:hamm
-#+ATTR_HTML: :width 100%
-#+ATTR_LATEX: :width 0.6\linewidth
+#+caption: hamming 窓
+#+name: fig:hamm
+#+attr_html: :width 100%
+#+attr_latex: :width 0.6\linewidth
 [[file:figs/hamm.png]]
 #+end_leftcol  
 #+begin_rightcol

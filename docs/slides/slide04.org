@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-05-07 13:42:39 mura>
+# Time-stamp: <2026-06-10 09:25:38 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -19,8 +19,8 @@
 * 前回のおさらい
 ** ベクトル空間
 - 満たすべき条件
-   #+attr_html: :class callout-important :style font-size: 1em!important;
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    1. *\(a,b\in V\;\Rightarrow\;a+b\in V\) (線形性)*
    2. \(a,b,c\in V\;\Rightarrow\;(a+b)+c=a+(b+c)\) (結合則)
@@ -36,15 +36,14 @@
 
 ** 内積空間
 - 内積の定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ベクトル空間の2つの要素
    \(u,v\in\mathcal{H}\) に対して，
    次の性質を持つ2変数関数を
    *内積*
    という．
-   #+attr_html: :style font-size: 1em!important;   
    1. \(\langle u,u\rangle\geq0\) 
       特に \(\langle u,u\rangle=0\;\Rightarrow\;u=0\)
    2. \(\langle u,v\rangle = \overline{\langle v,u\rangle}\) (複素共役)\\
@@ -53,18 +52,18 @@
       =\alpha\langle u,v\rangle+\beta\langle u',v\rangle\) (線形性)
    #+end_quote
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
-   #+begin_quote
-   内積が定義されたベクトル空間を
-   *内積空間* 
-   という．
-   #+end_quote
+  #+attr_html: :class callout-note
+  #+attr_latex: :environment callout-note
+  #+begin_quote
+  内積が定義されたベクトル空間を
+  *内積空間* 
+  という．
+  #+end_quote
 
 ** Hilbert 空間
 - 完備性の定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ある集合の中のCauchy列
    \begin{equation}
@@ -76,8 +75,8 @@
    であるという．
    #+end_quote
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    ノルムに関して完備な内積空間を
    *Hilbert 空間*
@@ -86,8 +85,8 @@
 
 ** 正規直交系
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    Hilbert 空間 \(\mathcal{H}\) の
    部分集合 \(\mathcal{A}\) が
@@ -114,8 +113,8 @@
 
 ** 完全正規直交系
 - 定義
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
+   #+attr_html: :class callout-note
+   #+attr_latex: :environment callout-note
    #+begin_quote
    Hilbert 空間 \(\mathcal{H}\) の正規直交系 \(\{\phi_{k}\}\) が 
    *Parseval の等式*
@@ -138,22 +137,22 @@
    *可算個* の要素からなる完全正規直交系が存在する．
    #+end_quote
 - 定理
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
-   #+begin_quote
-   可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
-   #+end_quote
+  #+attr_html: :class callout-important
+  #+attr_latex: :environment callout-important
+  #+begin_quote
+  可分な無限次元 Hilbert 空間は \(l^{2}\) 空間と同型である．
+  #+end_quote
 - 定理
-   #+attr_html: :class callout-important
-   #+attr_latex: :environment callout-important
-   #+begin_quote
-   \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
-   以下が成り立つ．
-   \begin{equation}
-     \forall u\in\mathcal{H}\;\Rightarrow\;
-     u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
-   \end{equation}
-   #+end_quote
+  #+attr_html: :class callout-important
+  #+attr_latex: :environment callout-important
+  #+begin_quote
+  \(\{\phi_{k}\}\) が \(\mathcal{H}\) の完全正規直交系のとき
+  以下が成り立つ．
+  \begin{equation}
+    \forall u\in\mathcal{H}\;\Rightarrow\;
+    u=\sum_{k}\langle u,\phi_{k}\rangle\phi_{k}
+  \end{equation}
+  #+end_quote
 
 
 * Fourier 級数
@@ -222,7 +221,7 @@
    \end{align}
    #+end_quote
 
-#+reveal: split
+** 基底に関する補足
 - あとで示すように
    #+begin_quote
    \begin{equation}
@@ -321,8 +320,8 @@
 ** 練習問題
 -  \(L^{2}(-\pi,\pi)\) に含まれる以下の関数を
    Fourier 級数展開せよ．
-   - \(f(x)=|x|\)
-   - \(f(x)=x^{2}\)
+   -  \(f(x)=|x|\)
+   -  \(f(x)=x^{2}\)
 
 ** COMMENT 解答例
 - 定義に則って計算すればよい
@@ -428,7 +427,7 @@
    \end{align}
    がそれぞれ完全正規直交系となる．
    #+end_quote
-   - \((0,\pi)\) で定義された関数をそれぞれ
+   -  \((0,\pi)\) で定義された関数をそれぞれ
       偶関数，奇関数として
       \((-\pi,\pi)\) に拡張すれば，
       余弦関数または正弦関数のみで展開できることがわかる
@@ -579,33 +578,33 @@
 
 #+reveal: split
 - step 8
-  #+begin_quote
-  右辺の級数和を計算すると
-  以下になる．
-  \begin{align}
-    P_{r}(x)
-    &=\frac{1}{2\pi}
-      \left(\sum_{n=0}^{\infty}r^{n}e^{inx}
-      +\sum_{n=1}^{\infty}r^{n}e^{-inx}\right)\\
-    &=\frac{1}{2\pi}
-      \left(\frac{1}{1-re^{ix}}+\frac{re^{-ix}}{1-re^{-ix}}\right)\\
-    &=\frac{1}{2\pi}\frac{1-r^{2}}{|1-re^{ix}|^{2}}\\
-    &=\frac{1}{2\pi}\frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
-  \end{align}
-  #+end_quote
+   #+begin_quote
+   右辺の級数和を計算すると
+   以下になる．
+   \begin{align}
+     P_{r}(x)
+     &=\frac{1}{2\pi}
+       \left(\sum_{n=0}^{\infty}r^{n}e^{inx}
+       +\sum_{n=1}^{\infty}r^{n}e^{-inx}\right)\\
+     &=\frac{1}{2\pi}
+       \left(\frac{1}{1-re^{ix}}+\frac{re^{-ix}}{1-re^{-ix}}\right)\\
+     &=\frac{1}{2\pi}\frac{1-r^{2}}{|1-re^{ix}|^{2}}\\
+     &=\frac{1}{2\pi}\frac{1-r^{2}}{1+r^{2}-2r\cos{x}}
+   \end{align}
+   #+end_quote
 
 #+reveal: split
 - step 9
    #+begin_quote
    \(r\to1\) とすると \(P_{r}(x)\) は Dirac の\(\delta\)関数
    となる．
-   - \(P_{r}(x) > 0\) (3行目の表現より明らか)
-   - \(P_{r}\) の一周期分の積分は
+   -  \(P_{r}(x) > 0\) (3行目の表現より明らか)
+   -  \(P_{r}\) の一周期分の積分は
       \begin{equation}
         \int_{-\pi}^{\pi}P_{r}(x)dx
         =\int_{-\pi}^{\pi}\frac{1}{2\pi}\sum_{n}r^{|n|}e^{inx}dx=1
       \end{equation}
-   - \(\forall\delta\;(0<\delta<\pi)\) に対して
+   -  \(\forall\delta\;(0<\delta<\pi)\) に対して
       \begin{equation}
         \lim_{r\to1}\sup_{\delta\leq|x|\leq\pi}P_{r}(x)=0
       \end{equation}
@@ -672,10 +671,10 @@
           \phi_{n}(x)=\frac{1}{\sqrt{2\pi}}e^{inx},\;n=0,\pm1,\pm2,\dotsc
         \right\}
       \end{equation}
-      は完全正規直交系である．
       #+end_quote
+      は完全正規直交系である．
     
-** 注意
+** COMMENT 注意
 - 確認テスト (講義4の中)
    - 試験の意味を考えて誠実な対応をすること
    - ネットワーク環境等には自身で配慮すること
