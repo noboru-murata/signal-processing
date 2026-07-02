@@ -4,7 +4,7 @@
 #+EMAIL: noboru.murata@gmail.com
 #+DATE:
 #+STARTUP: hidestars content indent
-# Time-stamp: <2026-06-04 10:31:47 mura>
+# Time-stamp: <2026-07-02 17:54:30 mura>
 :REVEAL:
 #+SETUPFILE: "./reveal.js/local/lecture.org"
 # C-c C-x C-v でinlineを切り替え
@@ -525,14 +525,61 @@
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/rect.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  wind <- c(rep(0,10),rep(1,109),rep(0,10))
-  #' wind <- c(0,rep(1,127),0)
-  plot(wind, type="l", ylim=c(0,1), 
-       col="blue", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,128), lab=c(0,1))
-  title(xlab="時間", ylab="振幅")
+  library(signal)
+  library(ggplot2)
+
+  N <- 64
+  N_fft <- 1024
+
+  #' 4つの窓関数をリストにまとめる
+  windows <- list(
+    "Rectangular" = boxcar(N),
+    "Gaussian" = gausswin(N, w = 2.5),
+    "Hanning" = hanning(N),
+    "Hamming" = hamming(N)
+  )
+
+  #' 周波数応答を計算する関数
+  calc_freq_response <- function(w, N_fft) {
+    w_padded <- c(w, rep(0, N_fft - length(w)))
+    W_fft <- fft(w_padded)
+    
+    W_mag <- abs(W_fft)
+    W_mag_norm <- W_mag / max(W_mag)
+    W_db <- 20 * log10(W_mag_norm)
+    W_db[W_db < -100] <- -100
+    
+    return(W_db)
+  }
+
+  #' 両側の周波数軸を作成 (-0.5 ~ 0.5)
+  k <- 0:(N_fft - 1)
+  freq <- ifelse(k < N_fft/2, k/N_fft, (k - N_fft)/N_fft)
+
+  #' 矩形窓
+  win_name <- "Rectangular"
+
+  w <- windows[[win_name]]
+  W_db <- calc_freq_response(w, N_fft)
+
+  df_time <- data.frame(Sample = 0:(N-1), Amplitude = w)
+  df_freq <- data.frame(Frequency = freq, Magnitude = W_db)
+
+  # 描画のために周波数でソート
+  df_freq <- df_freq[order(df_freq$Frequency), ]
+
+
+  #' --- 1. 時間領域のグラフ ---
+  p_time <- ggplot(df_time, aes(x = Sample, y = Amplitude)) +
+    geom_segment(aes(xend = Sample, yend = 0), color = "blue", linewidth = 0.5) +
+    geom_point(shape = 21, fill = "lightblue", size = 1.2) +
+    scale_y_continuous(limits = c(0, 1.05)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Time Domain)"),
+         x = "Sample Index",
+         y = "Amplitude") +
+    theme_bw()
+
+  print(p_time)
 #+end_src
 #+caption: 矩形窓
 #+name: fig:rect
@@ -542,14 +589,17 @@
 #+end_leftcol
 #+begin_rightcol
 #+begin_src R :file figs/rect_freq.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  freq <- abs(fft(wind[1:128]))
-  freq <- log(freq/freq[1]) # normalize
-  plot(freq[1:64], type="l", # ylim=c(-20,0),
-       col="orange", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,64), lab=c(0,1))
-  title(xlab="周波数", ylab="ゲイン")
+  #' --- 2. 周波数領域のグラフ ---
+  p_freq <- ggplot(df_freq, aes(x = Frequency, y = Magnitude)) +
+    geom_line(color = "red", linewidth = 0.8) +
+    scale_x_continuous(limits = c(-0.5, 0.5)) +
+    scale_y_continuous(limits = c(-100, 0)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Frequency Response)"),
+         x = "Normalized Frequency",
+         y = "Magnitude (dB)") +
+    theme_bw()
+
+  print(p_freq)
 #+end_src
 #+caption: 周波数特性
 #+name: fig:rect_freq
@@ -566,13 +616,30 @@
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/gauss.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  wind <- exp(-(seq(0,1,len=128)-0.5)^2/0.3^2)
-  plot(wind, type="l", ylim=c(0,1), 
-       col="blue", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,128), lab=c(0,1))
-  title(xlab="時間", ylab="振幅")
+  #' gauss窓
+  win_name <- "Gaussian"
+
+  w <- windows[[win_name]]
+  W_db <- calc_freq_response(w, N_fft)
+
+  df_time <- data.frame(Sample = 0:(N-1), Amplitude = w)
+  df_freq <- data.frame(Frequency = freq, Magnitude = W_db)
+
+  # 描画のために周波数でソート
+  df_freq <- df_freq[order(df_freq$Frequency), ]
+
+
+  #' --- 1. 時間領域のグラフ ---
+  p_time <- ggplot(df_time, aes(x = Sample, y = Amplitude)) +
+    geom_segment(aes(xend = Sample, yend = 0), color = "blue", linewidth = 0.5) +
+    geom_point(shape = 21, fill = "lightblue", size = 1.2) +
+    scale_y_continuous(limits = c(0, 1.05)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Time Domain)"),
+         x = "Sample Index",
+         y = "Amplitude") +
+    theme_bw()
+
+  print(p_time)
 #+end_src
 #+caption: gauss 窓
 #+name: fig:gauss
@@ -582,14 +649,17 @@
 #+end_leftcol  
 #+begin_rightcol
 #+begin_src R :file figs/gauss_freq.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  freq <- abs(fft(wind[1:128]))
-  freq <- log(freq/freq[1]) # normalize
-  plot(freq[1:64], type="l", # ylim=c(-20,0),
-       col="orange", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,64), lab=c(0,1))
-  title(xlab="周波数", ylab="ゲイン")
+  #' --- 2. 周波数領域のグラフ ---
+  p_freq <- ggplot(df_freq, aes(x = Frequency, y = Magnitude)) +
+    geom_line(color = "red", linewidth = 0.8) +
+    scale_x_continuous(limits = c(-0.5, 0.5)) +
+    scale_y_continuous(limits = c(-100, 0)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Frequency Response)"),
+         x = "Normalized Frequency",
+         y = "Magnitude (dB)") +
+    theme_bw()
+
+  print(p_freq)
 #+end_src
 #+caption: 周波数特性
 #+name: fig:gauss_freq
@@ -606,14 +676,30 @@
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/hann.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  library(e1071)
-  wind <- hanning.window(128)
-  plot(wind, type="l", ylim=c(0,1),
-       col="blue", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,128), lab=c(0,1))
-  title(xlab="時間", ylab="振幅")
+  #' hann窓
+  win_name <- "Hanning"
+
+  w <- windows[[win_name]]
+  W_db <- calc_freq_response(w, N_fft)
+
+  df_time <- data.frame(Sample = 0:(N-1), Amplitude = w)
+  df_freq <- data.frame(Frequency = freq, Magnitude = W_db)
+
+  # 描画のために周波数でソート
+  df_freq <- df_freq[order(df_freq$Frequency), ]
+
+
+  #' --- 1. 時間領域のグラフ ---
+  p_time <- ggplot(df_time, aes(x = Sample, y = Amplitude)) +
+    geom_segment(aes(xend = Sample, yend = 0), color = "blue", linewidth = 0.5) +
+    geom_point(shape = 21, fill = "lightblue", size = 1.2) +
+    scale_y_continuous(limits = c(0, 1.05)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Time Domain)"),
+         x = "Sample Index",
+         y = "Amplitude") +
+    theme_bw()
+
+  print(p_time)
 #+end_src
 #+caption: hann 窓
 #+name: fig:hann
@@ -623,14 +709,17 @@
 #+end_leftcol  
 #+begin_rightcol
 #+begin_src R :file figs/hann_freq.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  freq <- abs(fft(wind[1:128]))
-  freq <- log(freq/freq[1]) # normalize
-  plot(freq[1:64], type="l", # ylim=c(-20,0),
-       col="orange", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,64), lab=c(0,1))
-  title(xlab="周波数", ylab="ゲイン")
+  #' --- 2. 周波数領域のグラフ ---
+  p_freq <- ggplot(df_freq, aes(x = Frequency, y = Magnitude)) +
+    geom_line(color = "red", linewidth = 0.8) +
+    scale_x_continuous(limits = c(-0.5, 0.5)) +
+    scale_y_continuous(limits = c(-100, 0)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Frequency Response)"),
+         x = "Normalized Frequency",
+         y = "Magnitude (dB)") +
+    theme_bw()
+
+  print(p_freq)
 #+end_src
 #+caption: 周波数特性
 #+name: fig:hann_freq
@@ -647,13 +736,30 @@
 #+end_quote
 #+begin_leftcol
 #+begin_src R :file figs/hamm.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  wind <- hamming.window(128)
-  plot(wind, type="l", ylim=c(0,1),
-       col="blue", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,128), lab=c(0,1))
-  title(xlab="時間", ylab="振幅")
+  #' hann窓
+  win_name <- "Hamming"
+
+  w <- windows[[win_name]]
+  W_db <- calc_freq_response(w, N_fft)
+
+  df_time <- data.frame(Sample = 0:(N-1), Amplitude = w)
+  df_freq <- data.frame(Frequency = freq, Magnitude = W_db)
+
+  # 描画のために周波数でソート
+  df_freq <- df_freq[order(df_freq$Frequency), ]
+
+
+  #' --- 1. 時間領域のグラフ ---
+  p_time <- ggplot(df_time, aes(x = Sample, y = Amplitude)) +
+    geom_segment(aes(xend = Sample, yend = 0), color = "blue", linewidth = 0.5) +
+    geom_point(shape = 21, fill = "lightblue", size = 1.2) +
+    scale_y_continuous(limits = c(0, 1.05)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Time Domain)"),
+         x = "Sample Index",
+         y = "Amplitude") +
+    theme_bw()
+
+  print(p_time)
 #+end_src
 #+caption: hamming 窓
 #+name: fig:hamm
@@ -663,14 +769,17 @@
 #+end_leftcol  
 #+begin_rightcol
 #+begin_src R :file figs/hamm_freq.png :exports results :results graphics
-  par(family="HiraginoSans-W4")
-  freq <- abs(fft(wind[1:128]))
-  freq <- log(freq/freq[1]) # normalize
-  plot(freq[1:64], type="l", # ylim=c(-20,0),
-       col="orange", lwd=4, ann=FALSE, axes=FALSE)
-  box()
-  axis(1, at=c(1,64), lab=c(0,1))
-  title(xlab="周波数", ylab="ゲイン")
+  #' --- 2. 周波数領域のグラフ ---
+  p_freq <- ggplot(df_freq, aes(x = Frequency, y = Magnitude)) +
+    geom_line(color = "red", linewidth = 0.8) +
+    scale_x_continuous(limits = c(-0.5, 0.5)) +
+    scale_y_continuous(limits = c(-100, 0)) +  # 全て同じスケール
+    labs(title = paste(win_name, "Window (Frequency Response)"),
+         x = "Normalized Frequency",
+         y = "Magnitude (dB)") +
+    theme_bw()
+
+  print(p_freq)
 #+end_src
 #+CAPTION: 周波数特性
 #+NAME: fig:hamm_freq
